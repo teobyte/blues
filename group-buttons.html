@@ -1,0 +1,133 @@
+<html lang="en-us" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Blues Framework">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+    <title>Blues 2.0 | Group Buttons</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/bz-core-2.0.0.css">
+    <link rel="stylesheet" href="css/bz-forms-2.0.0.css">
+    <link rel="stylesheet" href="../aiwee/aiwee/grails-app/assets/stylesheets/blues/blues-buttons-0.0.2.css">
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div class="bz-padding-16 bz-clearfix">
+    <nav id="nav">
+        <a href="index.html">Home</a> |
+        <a href="typography.html">Typography</a> |
+        <a href="forms.html">Forms</a> |
+        <a href="colored-forms.html">Cored Forms</a> |
+        <a href="conditional.html">Conditional</a> |
+        <a href="autocomplete.html">Autocomplete</a> |
+        <a href="selectors.html">Selectors</a> |
+        <a href="buttons.html">Buttons</a> |
+        <a href="group-buttons.html">Group Buttons</a> |
+        <a href="grouping.html">Grouping</a> |
+    </nav>
+</div>
+<div class="bz-padding-16 bz-clearfix">
+    <h5>Checkbox Buttons</h5>
+    <div class="bz-padding-4">
+        <!-- start // markup for the element without injector  -->
+        <button class="bz-btn">Button</button>
+        <div class="bz-btn-group">
+
+            <label  class="bz-check-btn">
+                <input id="chk1" type="checkbox" name="chk" checked/>
+                <span class="highlight"></span>
+                <span class="text">Check button</span>
+            </label>
+            <label  class="bz-check-btn">
+                <input id="chk2" type="checkbox" name="chk" />
+                <span class="highlight"></span>
+                <span class="text">Check button</span>
+            </label>
+            <label  class="bz-check-btn">
+                <input id="chk3" type="checkbox" name="chk" />
+                <span class="highlight"></span>
+                <span class="text">Check button</span>
+            </label>
+        </div>
+
+        <!-- end // -->
+    </div>
+
+    <div class="bz-padding-16">
+        <!-- start // markup for the element with injector  -->
+        <input id="chk11" type="checkbox" name="chk1" class="bz-checkbox" data-label="Checkbox 01" checked/>
+        <!-- end // -->
+        <input id="chk12" type="checkbox" name="chk2" class="bz-checkbox" data-label="Checkbox 02" />
+        <input id="chk13" type="checkbox" name="chk3" class="bz-checkbox" data-label="Checkbox 03" />
+    </div>
+
+</div>
+<div class="bz-padding-16 bz-clearfix">
+    <h5>Radio Buttons</h5>
+    <div class="bz-padding-4">
+        <!-- start // markup for the element without injector  -->
+        <div class="bz-btn-group">
+            <label  class="bz-check-btn">
+                <input id="radio1" type="radio" name="radios" checked/>
+                <span class="highlight"></span>
+                <span class="text">Radio 01</span>
+            </label>
+            <label  class="bz-check-btn">
+                <input id="radio2" type="radio" name="radios" />
+                <span class="highlight"></span>
+                <span class="text">Radio 01</span>
+            </label>
+            <label  class="bz-check-btn">
+                <input id="radio3" type="radio" name="radios" />
+                <span class="highlight"></span>
+                <span class="text">Radio 01</span>
+            </label>
+        </div>
+
+        <!-- end // -->
+    </div>
+    <div class="bz-padding-16">
+        <!-- start // markup for the element with injector  -->
+        <input id="radio11" type="radio" name="radios1" class="bz-radio" data-label="Radio 01" checked/>
+        <!-- end // -->
+        <input id="radio12" type="radio" name="radios1" class="bz-radio" data-label="Radio 02" />
+        <input id="radio13" type="radio" name="radios1" class="bz-radio" data-label="Radio 03" />
+    </div>
+
+
+</div>
+
+<script src="js/bz-core-2.0.0.js"></script>
+<script src="js/bz-droplist-2.0.0.js"></script>
+<script src="js/bz-inject-2.0.0.js"></script>
+<script type="text/javascript">
+    (function() {
+        // bzDom('#chk0').toggle(function() {
+        //     alert('check on');
+        // }, function() {
+        //     alert('check off');
+        // });
+        // bzDom('#chk1').toggle(function() {
+        //     alert('check on');
+        // }, function() {
+        //     alert('check off');
+        // });
+        // bzDom('#chk2').toggle(function() {
+        //     alert('switch on');
+        // }, function() {
+        //     alert('switch off');
+        // });
+        // bzDom('#chk3').toggle(function() {
+        //     alert('switch on');
+        // }, function() {
+        //     alert('switch off');
+        // });
+    })();
+</script>
+</body>
+</html>
