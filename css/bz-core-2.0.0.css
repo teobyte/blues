@@ -1,0 +1,905 @@
+/* Blues CSS Framework by AIWEE  */
+/* Based on normalize.css */
+
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+
+html {
+    line-height: 1; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+    display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+
+figcaption,
+figure,
+main { /* 1 */
+    display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+    margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+    background-color: transparent; /* 1 */
+    -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+b,
+strong {
+    font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+mark {
+    background-color: #ff0;
+    color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video {
+    display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+    border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+form { padding:0; margin:0; }
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    padding:0;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+    overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+    text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+    display: inline-block; /* 1 */
+    vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+    overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+
+details, /* 1 */
+menu {
+    display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+    display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+canvas {
+    display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+    display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/*---------------------------------------------------------------*/
+/*----------- START OF BLUES CSS UI FRAMEWORK------------------- */
+/*---------------------------------------------------------------*/
+
+:root {
+    --main-text-color: #212529;
+    --color-primary: #163d74;
+    --color-secondary: #009487;
+    --color-positive: #46ad58;
+    --color-negative: #df2f2d;
+    --color-info: #0094ef;
+    --color-warning: #ffc032;
+    --color-light: #bcbcbc;
+    --color-faded: #767676;
+    --color-dark: #444444;
+}
+html {
+    /* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    color:var(--main-text-color);
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 16px;
+
+}
+/*-------- BLUES TYPOGRAPHY -------------------------------------  */
+/*-------- HEADINGS -----------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    margin:10px 0;
+}
+h1, .bz-t-h1 {
+    font-size:5em;
+    font-weight: 300;
+    line-height:1.1em;
+    letter-spacing: -.04em;
+    opacity:.7;
+
+}
+h2, .bz-t-h2 {
+    font-size:4em;
+    font-weight: 400;
+    line-height:1.1em;
+    letter-spacing: -.02em;
+    opacity:.7;
+}
+h3, .bz-t-h3 {
+    font-size:3em;
+    font-weight:400;
+    line-height:1.1em;
+    letter-spacing: normal;
+    opacity:.7;
+}
+h4, .bz-t-h4 {
+    font-size:2em;
+    font-weight: 400;
+    line-height:1.1em;
+    letter-spacing: normal;
+    opacity:.7;
+}
+h5, .bz-t-headline {
+    font-size:1.5em;
+    font-weight: 400;
+    line-height:1.1em;
+    letter-spacing: normal;
+    opacity:.9;
+}
+h6, .bz-t-title {
+    font-size:1.2em;
+    font-weight: 500;
+    line-height:1.1em;
+    letter-spacing: .02em;
+    opacity:.9;
+}
+.bz-t-subtitle {
+    font-size:1.1em;
+    font-weight:400;
+    line-height:1.1em;
+    opacity:.9;
+}
+.bz-t-medium {
+    font-size:1em;
+    line-height:1.1em;
+    font-weight:500;
+    opacity:.9;
+}
+.bz-t-regular {
+    font-size:1em;
+    font-weight:400;
+    line-height:1.1em;
+    opacity:.8;
+}
+.bz-t-caption {
+    font-size:0.9em;
+    line-height:1.1em;
+    font-weight: 400;
+    opacity:.7;
+}
+/*--------- Font Weights ----------------------------------  */
+.bz-ft-lighter { font-weight:100; }
+.bz-ft-light { font-weight:300; }
+.bz-ft-regular { font-weight:400; }
+.bz-ft-medium { font-weight:500; }
+.bz-ft-bold { font-weight:700; }
+.bz-ft-bolder { font-weight:900; }
+/*--------------------------------------------------------- -*/
+
+.bz-uppercase {
+    text-transform:uppercase;
+}
+.bz-lowercase {
+    text-transform:lowercase;
+}
+.bz-capitalize {
+    text-transform:capitalize;
+}
+
+.bz-card .bz-footer:after,
+.bz-input:after,
+.bz-clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+* html .bz-clearfix             { zoom: 1; } /* IE6 */
+*:first-child + html .bz-clearfix { zoom: 1; } /* IE7 */
+/*---------- BLUES COLOR PALETTE ----------------------------------*/
+/*---------- MAIN COLORS -----------------------------------------*/
+/* primary #163d74 */
+/* secondary #009487 */
+/* positive #46ad58 */
+/* negative #df2f2d */
+/* info #0094ef */
+/* warning #ffc032 */
+/* light #bcbcbc */
+/* faded #767676 */
+/* dark #444444 */
+/* black #000000 */
+/* white #ffffff */
+.bz-fc-primary, .bz-fc-hover-primary { color:var(--color-primary); }
+.bz-fc-secondary, .bz-fc-hover-secondary { color:var(--color-secondary); }
+.bz-fc-positive, .bz-fc-hover-positive { color:var(--color-positive); }
+.bz-fc-negative, .bz-fc-hover-negative { color:var(--color-negative); }
+.bz-fc-info, .bz-fc-hover-info { color:var(--color-info); }
+.bz-fc-warning, .bz-fc-hover-warning { color:var(--color-warning); }
+.bz-fc-light, .bz-fc-hover-light { color:var(--color-light); }
+.bz-fc-faded, .bz-fc-hover-faded { color:var(--color-faded); }
+.bz-fc-dark, .bz-fc-hover-dark { color:var(--color-dark); }
+.bz-fc-black, .bz-fc-hover-black { color:#000000; }
+.bz-fc-white, .bz-fc-hover-white { color:#ffffff; }
+
+.bz-bc-primary, .bz-bc-hover-primary { background:var(--color-primary); }
+.bz-bc-secondary, .bz-bc-hover-secondary { background:var(--color-secondary); }
+.bz-bc-positive, .bz-bc-hover-positive { background:var(--color-positive); }
+.bz-bc-negative, .bz-bc-hover-negative { background:var(--color-negative); }
+.bz-bc-info, .bz-bc-hover-info { background:var(--color-info); }
+.bz-bc-warning, .bz-bc-hover-warning { background:var(--color-warning); }
+.bz-bc-light, .bz-bc-hover-light { background:var(--color-light); }
+.bz-bc-faded, .bz-bc-hover-faded { background:var(--color-faded); }
+.bz-bc-dark, .bz-bc-hover-dark { background:var(--color-dark); }
+.bz-bc-black, .bz-bc-hover-black { background:#000000; }
+.bz-bc-white, .bz-bc-hover-white { background:#ffffff; }
+
+/*----------- BLUES ELEMENTS -------------------------------------- */
+/*----------- Blues Box --------------------------------------------*/
+.bz-inline-block {
+    display:inline-block!important;
+}
+.bz-block {
+    display:block!important;
+}
+
+/*----------- PADDING -------------------------------------------- */
+.bz-padding-4 { padding:4px; }
+.bz-padding-8 { padding:8px; }
+.bz-padding-16 { padding:16px; }
+.bz-padding-32 { padding:32px; }
+/*----------- FLOATING --------------------------------------------*/
+.bz-float-l,
+.bz.bz-float-l:nth-child(3n+1) {
+    float:left;
+}
+.bz-float-m,
+.bz-float-m:nth-child(3n+0) {
+    margin-left: auto;
+    margin-right: auto;
+    position:absolute;
+    left:50%;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
+    /*-webkit-transform: translate(-50%, -50%);*/
+    /*-moz-transform: translate(-50%, -50%);*/
+    /*-ms-transform: translate(-50%, -50%);*/
+    /*-o-transform: translate(-50%, -50%);*/
+    /*transform: translate(-50%, -50%);*/
+}
+.bz-float-r,
+.bz-float-r:nth-child(3n+2) {
+    float:right;
+}
+/*-------- GROUPING ---------------------------------------------  */
+/*--------- BLOCKQUOTE --------------------------------------------*/
+blockquote {
+    display:block;
+    padding: 8px 16px;
+    margin: 0;
+    border-left: 4px solid var(--color-primary);
+}
+.bz-deflist {
+    line-height: 1.4;
+}
+.bz-deflist dt {
+    font-weight: 700;
+}
+.bz-deflist dd {
+    text-align:left;
+    margin:0;
+}
+.bz-deflist.horizontal dt {
+    float: left;
+    width: 25%;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 700;
+}
+.bz-deflist.horizontal dd {
+    margin-left: 30%;
+    text-align:left;
+}
+.bz-box {
+    box-sizing:border-box;
+    -moz-box-sizing: border-box;
+}
+.bz-box {
+    display:block;
+    min-height:20px;
+    line-height:20px;
+    padding:8px;
+    min-width:10px;
+}
+.bz-box.inline {
+    display:inline-block;
+}
+/*----------- Blues Card -------------------------------------------*/
+.bz-card {
+    display:inline-block;
+    border-radius: 2px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.2), 0 2px 2px rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
+    margin:8px;
+    position:relative;
+    vertical-align: top;
+}
+.bz-card .bz-header { position:relative; width:inherit; }
+.bz-card .bz-header img { width:inherit; }
+.bz-card .bz-title { padding:8px 16px; position:relative; width:calc(100% - 32px); }
+.bz-card .bz-content { padding:8px 16px; position:relative; width:calc(100% - 32px); }
+.bz-card .bz-separator {
+    background: rgba(0,0,0,.1);
+    height: 1px;
+    width:inherit;
+}
+.bz-card .bz-footer { padding:8px 0; position:relative; width:inherit; }
+.bz-card.small {
+    width:325px;
+}
+.bz-card.middle {
+    width:450px;
+}
+.bz-card.big {
+    width:640px;
+}
+/*---- BLUES SHADOWS --------------------------------------- */
+.bz-shadow-0 {
+    box-shadow: none !important;
+}
+.bz-shadow, .bz-card, .bz-popup  {
+    -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 1px 5px 0 rgba(0, 0, 0, 0.13), 0 3px 1px -2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 1px 5px 0 rgba(0, 0, 0, 0.13), 0 3px 1px -2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 1px 5px 0 rgba(0, 0, 0, 0.13), 0 3px 1px -2px rgba(0, 0, 0, 0.3);
+}
+.bz-shadow-1 {
+    -moz-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15), 0 1px 7px 0 rgba(0, 0, 0, 0.13), 0 3px 1px -1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15), 0 1px 7px 0 rgba(0, 0, 0, 0.13), 0 3px 1px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15), 0 1px 7px 0 rgba(0, 0, 0, 0.13), 0 3px 1px -1px rgba(0, 0, 0, 0.3);
+}
+.bz-shadow-2 {
+    -moz-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.15), 0 1px 10px 0 rgba(0, 0, 0, 0.13), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.15), 0 1px 10px 0 rgba(0, 0, 0, 0.13), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.15), 0 1px 10px 0 rgba(0, 0, 0, 0.13), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+}
+.bz-shadow-3 {
+    -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.15), 0 1px 18px 0 rgba(0, 0, 0, 0.13), 0 3px 5px -1px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.15), 0 1px 18px 0 rgba(0, 0, 0, 0.13), 0 3px 5px -1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.15), 0 1px 18px 0 rgba(0, 0, 0, 0.13), 0 3px 5px -1px rgba(0, 0, 0, 0.4);
+}
+.bz-shadow-4, .bz-hoverable:hover {
+    -moz-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.15), 0 3px 14px 2px rgba(0, 0, 0, 0.13), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.15), 0 3px 14px 2px rgba(0, 0, 0, 0.13), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.15), 0 3px 14px 2px rgba(0, 0, 0, 0.13), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
+}
+.bz-shadow-5 {
+    -moz-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.15), 0 6px 30px 5px rgba(0, 0, 0, 0.13), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.15), 0 6px 30px 5px rgba(0, 0, 0, 0.13), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.15), 0 6px 30px 5px rgba(0, 0, 0, 0.13), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+}
+/*---- effects -------------------------------------------- */
+/*---- Wave/Ripple effect ----------------------------------*/
+.bz-wave {
+    position: relative;
+}
+.bz-wave .wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0; right:0;
+    top: 0; bottom:0;
+    overflow: hidden;
+    cursor: pointer;
+    z-index:100;
+}
+.bz-wave .ink {
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    cursor: pointer;
+}
+.bz-wave .ink { background:#fff; }
+.bz-wave.dark-wave .ink { background:#777; }
+.bz-wave.primary-wave .ink { background:var(--color-primary); }
+.bz-wave.secondary-wave .ink { background:var(--color-secondary); }
+.bz-wave.default-wave .ink { background:var(--color-default); }
+.bz-wave.positive-wave .ink { background:var(--color-positive); }
+.bz-wave.negative-wave .ink { background:var(--color-negative); }
+.bz-wave.warning-wave .ink { background:var(--color-warning); }
+.bz-wave.info-wave .ink { background:var(--color-info); }
+.bz-wave.light-wave .ink { background:var(--color-light); }
+.bz-wave.faded-wave .ink { background:var(--color-faded); }
+.bz-wave.dark-wave .ink { background:var(--color-dark); }
+
+.bz-wave .ink.animate {
+    -webkit-animation: wave 0.25s linear;
+    animation: wave 0.25s linear;
+}
+@-webkit-keyframes wave {
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        transform: scale(2.5);
+    }
+}
+@keyframes wave {
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        transform: scale(2.5);
+    }
+}
+/* -- BLUES CHIPS ----------------*/
+.bz-chip {
+    /*color: #FFFFFF;*/
+    display: inline-block;
+    box-sizing: content-box;
+    height:50px;
+    line-height:46px;
+    border-radius: 25px;
+    background-color: #DADADA;
+    position: relative;
+    margin:2px;
+}
+.bz-chip * {
+    display: inline-block;
+}
+.bz-chip .text {
+    font-size:20px;
+    padding:0;
+    margin:2px 0 2px 20px;
+}
+.bz-chip i ~ .text,
+.bz-chip img ~ .text {
+    margin:2px 0 2px 5px;
+}
+.bz-chip.small {
+    height:30px;
+    border-radius:15px;
+    line-height:24px;
+}
+.bz-chip.small .text {
+    font-size:16px;
+}
+.bz-chip a {
+    text-decoration: none;
+}
+
+.bz-chip a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+.bz-chip .chip-close a {
+    box-sizing: content-box;
+}
+.bz-chip i,
+.bz-chip img {
+    margin:3px;
+    float: left;
+    height:44px;
+    width:44px;
+    border-radius: 50%;
+}
+.bz-chip i:before {
+    top:5px;
+    left:5px;
+}
+.bz-chip.small i,
+.bz-chip.small img {
+    margin:3px;
+    float: left;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}
+.bz-chip .chip-close {
+    margin:3px;
+    height:44px;
+    border-radius:50%;
+    display: inline-block;
+    color:#173b77;
+    float: right;
+    font-size:20px;
+    cursor: pointer;
+    text-align: center;
+    width:44px;
+}
+.bz-chip.small .chip-close {
+    height:24px;
+    width:24px;
+}
+.bz-chip .chip-close:hover {
+    color:#fff;
+    background-color: gray;
+}

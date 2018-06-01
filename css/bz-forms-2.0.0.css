@@ -1,0 +1,1017 @@
+.bz-input {
+    display: inline-block;
+    position: relative;
+    padding:0!important;
+    margin:16px 0!important;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-drag: none;
+}
+.bz-input i,
+.bz-input input:not([type]),
+.bz-input input[type=email],
+.bz-input input[type=password],
+.bz-input input[type=text],
+.bz-input input[type=url],
+.bz-input input[type=tel],
+.bz-input input[type=number],
+.bz-input input[type=search],
+.bz-input select {
+    line-height: 48px;
+    height: 48px;
+    display: inline-block;
+    float: left;
+}
+.bz-input input:not([type]),
+.bz-input input[type=email],
+.bz-input input[type=password],
+.bz-input input[type=text],
+.bz-input input[type=url],
+.bz-input input[type=tel],
+.bz-input input[type=number],
+.bz-input input[type=search],
+.bz-input select,
+.bz-input textarea {
+    border: none;
+    border-bottom: 2px solid #9e9e9e;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    font-size:18px;
+    -webkit-transition:all 0.3s ease-out;
+    transition:all 0.3s ease-out;
+    vertical-align: middle;
+}
+.bz-input input:not([type]),
+.bz-input input[type=email],
+.bz-input input[type=password],
+.bz-input input[type=text],
+.bz-input input[type=url],
+.bz-input input[type=tel],
+.bz-input input[type=number],
+.bz-input input[type=search] {
+    padding: 8px 0 0 10px;
+}
+.bz-input i {
+    overflow: hidden;
+    text-align: center;
+    width:40px;
+}
+.bz-input i + input {
+    width: calc(100% - 45px);
+}
+.bz-input i.right {
+    float:right;
+}
+.bz-input i.right + input {
+    width: calc(100% - 45px);
+}
+.bz-input input:not([type])[disabled],
+.bz-input input[type=email][disabled],
+.bz-input input[type=password][disabled],
+.bz-input input[type=text][disabled],
+.bz-input input[type=url][disabled],
+.bz-input input[type=tel][disabled],
+.bz-input input[type=number][disabled],
+.bz-input input[type=search][disabled],
+.bz-input select[disabled],
+.bz-input textarea.bz-textarea[disabled] {
+    cursor: not-allowed;
+    color: #848482;
+    border-bottom: 2px dotted #848482;
+}
+.bz-input input:not([type])[readonly],
+.bz-input input[type=email][readonly],
+.bz-input input[type=password][readonly],
+.bz-input input[type=text][readonly],
+.bz-input input[type=url][readonly],
+.bz-input input[type=tel][readonly],
+.bz-input input[type=number][readonly],
+.bz-input input[type=search][readonly],
+.bz-input select[readonly],
+.bz-input textarea.bz-textarea[readonly] {
+    background-color: #eee; /* menu hover bg color */
+    color: #777; /* menu text color */
+    border-color: #ccc;
+}
+.bz-input input:not([type])[readonly]:focus,
+.bz-input input[type=email][readonly]:focus,
+.bz-input input[type=password][readonly]:focus,
+.bz-input input[type=text][readonly]:focus,
+.bz-input input[type=url][readonly]:focus,
+.bz-input input[type=tel][readonly]:focus,
+.bz-input input[type=number][readonly]:focus,
+.bz-input input[type=search][readonly]:focus,
+.bz-input select[readonly]:focus,
+.bz-input textarea[readonly].bz-textarea:focus {
+    border-bottom: 2px solid #848482;
+}
+.bz-input input:not([type]).invalid,
+.bz-input input:not([type]):focus.invalid,
+.bz-input input[type=text].invalid,
+.bz-input input[type=text]:focus.invalid,
+.bz-input input[type=password].invalid,
+.bz-input input[type=password]:focus.invalid,
+.bz-input input[type=email].invalid,
+.bz-input input[type=email]:focus.invalid,
+.bz-input input[type=url].invalid,
+.bz-input input[type=url]:focus.invalid,
+.bz-input input[type=tel].invalid,
+.bz-input input[type=tel]:focus.invalid,
+.bz-input input[type=number].invalid,
+.bz-input input[type=number]:focus.invalid,
+.bz-input input[type=search].invalid,
+.bz-input input[type=search]:focus.invalid,
+.bz-input textarea.invalid,
+.bz-input textarea:focus.invalid,
+.bz-input select.invalid,
+.bz-input select:focus.invalid {
+    border-bottom: 2px solid #CC0000;
+}
+.bz-input input:not([type]).invalid ~ div.error,
+.bz-input input:not([type]):focus.invalid ~ div.error,
+.bz-input input[type=text].invalid ~ div.error,
+.bz-input input[type=text]:focus.invalid ~ div.error,
+.bz-input input[type=password].invalid ~ div.error,
+.bz-input input[type=password]:focus.invalid ~ div.error,
+.bz-input input[type=email].invalid ~ div.error,
+.bz-input input[type=email]:focus.invalid ~ div.error,
+.bz-input input[type=url].invalid ~ div.error,
+.bz-input input[type=url]:focus.invalid ~ div.error,
+.bz-input input[type=tel].invalid ~ div.error,
+.bz-input input[type=tel]:focus.invalid ~ div.error,
+.bz-input input[type=number].invalid ~ div.error,
+.bz-input input[type=number]:focus.invalid ~ div.error,
+.bz-input input[type=search].invalid ~ div.error,
+.bz-input input[type=search]:focus.invalid ~ div.error,
+.bz-input textarea.invalid ~ div.error,
+.bz-input textarea:focus.invalid ~ div.error,
+.bz-input select.invalid ~ div.error,
+.bz-input select:focus.invalid ~ div.error {
+    color:#CC0000;
+}
+.bz-input input:not([type]).valid,
+.bz-input input:not([type]):focus.valid,
+.bz-input input[type=text].valid,
+.bz-input input[type=text]:focus.valid,
+.bz-input input[type=password].valid,
+.bz-input input[type=password]:focus.valid,
+.bz-input input[type=email].valid,
+.bz-input input[type=email]:focus.valid,
+.bz-input input[type=url].valid,
+.bz-input input[type=url]:focus.valid,
+.bz-input input[type=tel].valid,
+.bz-input input[type=tel]:focus.valid,
+.bz-input input[type=number].valid,
+.bz-input input[type=number]:focus.valid,
+.bz-input input[type=search].valid,
+.bz-input input[type=search]:focus.valid,
+.bz-input textarea.valid,
+.bz-input textarea:focus.valid,
+.bz-input select.valid,
+.bz-input select:focus.valid {
+    border-bottom: 2px solid #00754B;
+}
+.bz-input input:not([type]).valid ~ div.error,
+.bz-input input:not([type]):focus.valid ~ div.error,
+.bz-input input[type=text].valid ~ div.error,
+.bz-input input[type=text]:focus.valid ~ div.error,
+.bz-input input[type=password].valid ~ div.error,
+.bz-input input[type=password]:focus.valid ~ div.error,
+.bz-input input[type=email].valid ~ div.error,
+.bz-input input[type=email]:focus.valid ~ div.error,
+.bz-input input[type=url].valid ~ div.error,
+.bz-input input[type=url]:focus.valid ~ div.error,
+.bz-input input[type=tel].valid ~ div.error,
+.bz-input input[type=tel]:focus.valid ~ div.error,
+.bz-input input[type=number].valid ~ div.error,
+.bz-input input[type=number]:focus.valid ~ div.error,
+.bz-input input[type=search].valid ~ div.error,
+.bz-input input[type=search]:focus.valid ~ div.error,
+.bz-input textarea.valid ~ div.error,
+.bz-input textarea:focus.valid ~ div.error,
+.bz-input select.valid ~ div.error,
+.bz-input select:focus.valid ~ div.error {
+    color: #00754B;
+}
+.bz-input label 				 {
+    color:#999;
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    top:16px;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+.bz-input input ~ label {
+    left:5px;
+}
+.bz-input i + input ~ label {
+    left:50px;
+}
+.bz-input i.right + input ~ label {
+    left:10px;
+}
+.bz-input textarea {
+    margin-top:20px;
+    width:100%;
+}
+.bz-input textarea ~ label {
+    left:10px;
+}
+.bz-input input:focus ~ label,
+.bz-input input:valid ~ label,
+.bz-input input[readonly] ~ label,
+.bz-input input[disabled] ~ label,
+.bz-input input.highlight ~ label,
+.bz-input textarea:focus ~ label,
+.bz-input textarea:valid ~ label,
+.bz-input textarea.highlight ~ label {
+    top:2px;
+    font-size:14px;
+    color:#163d74;
+}
+
+.bz-input input:focus ~ label,
+.bz-input input:valid ~ label,
+.bz-input input.highlight ~ label,
+.bz-input textarea:focus ~ label,
+.bz-input textarea:valid ~ label,
+.bz-input textarea:invalid ~ label,
+.bz-input i.right + input:focus ~ label,
+.bz-input i.right + input:valid ~ label,
+.bz-input i.right + input.highlight ~ label {
+    left:5px;
+}
+
+.bz-input i + input:focus ~ label,
+.bz-input i + input:valid ~ label,
+.bz-input i + input.highlight ~ label {
+    left:45px;
+}
+
+.bz-input .bar {
+    background:#163d74;
+    bottom:0;
+    height:2px;
+    position:absolute;
+    width:0;
+    transition:0.5s ease all;
+    -moz-transition:0.5s ease all;
+    -webkit-transition:0.5s ease all;
+}
+
+.bz-input i + input ~ .bar {
+    left:40px;
+}
+.bz-input i.right + input ~ .bar {
+    left:0;
+}
+.bz-input i + input:focus ~ .bar,
+/*.bz-input i + input:valid ~ .bar,*/
+.bz-input i + input.highlight ~ .bar {
+    left:40px;
+    width: calc(100% - 45px);
+}
+.bz-input i.right + input:focus ~ .bar,
+/*.bz-input i.right + input:valid ~ .bar,*/
+.bz-input i.right + input.highlight ~ .bar {
+    left:0;
+    width: calc(100% - 45px);
+}
+.bz-input textarea ~ .bar {
+    left:0;
+}
+.bz-input textarea:focus ~ .bar,
+/*.bz-input textarea:valid ~ .bar,*/
+.bz-input textarea.highlight ~ .bar {
+    width:100%;
+}
+/* input flash effect */
+.bz-input .flash {
+    position:absolute;
+    height:60%;
+    width:200px;
+    top:25%;
+    left:0;
+    pointer-events:none;
+    opacity:0;
+}
+
+.bz-input i + input ~ .flash {
+    left:45px;
+}
+.bz-input i.right + input ~ .flash {
+    left:0;
+}
+.bz-input input:focus ~ .flash {
+    -webkit-animation:inputflash 0.3s ease;
+    -moz-animation:inputflash 0.3s ease;
+    animation:inputflash 0.3s ease;
+}
+/* input message box */
+.bz-input div.error {
+    bottom:-1.1em;
+    font-size: 0.8em;
+    position: absolute;
+    right:45px;
+    z-index:10;
+}
+.bz-input.error-toleft div.error {
+    left:5px;
+}
+.bz-input.error-toleft i ~ div.error {
+    left:55px;
+}
+/*  border around input styles */
+.bz-input.bordered {
+    border:2px solid #9e9e9e;
+}
+
+/*.bz-input.bordered input {*/
+    /*padding-left:5px;*/
+/*}*/
+.bz-input.bordered input,
+.bz-input.bordered input.highlight,
+.bz-input.bordered input:focus {
+    border-bottom: 2px solid transparent;
+}
+/*.bz-input.bordered input ~ label,*/
+/*.bz-input.bordered i.right + input ~ label {*/
+    /*left:5px;*/
+/*}*/
+/*.bz-input.bordered i + input ~ label {*/
+    /*left:40px;*/
+/*}*/
+/*.bz-input.bordered select:focus ~ label,*/
+/*.bz-input.bordered select.highlight ~ label,*/
+/*.bz-input.bordered input:focus ~ label,*/
+/*.bz-input.bordered input:valid ~ label,*/
+/*.bz-input.bordered input.highlight ~ label,*/
+/*.bz-input.bordered textarea:focus ~ label,*/
+/*.bz-input.bordered textarea.highlight ~ label {*/
+    /*top:0;*/
+    /*font-size: 0.6em;*/
+/*}*/
+
+/*.bz-input.bordered i + input:focus ~ label,*/
+/*.bz-input.bordered i + input:valid ~ label {*/
+    /*left:40px;*/
+/*}*/
+/*.bz-input.bordered i.right + input:focus ~ label,*/
+/*.bz-input.bordered i.right + input:valid ~ label {*/
+    /*left:0;*/
+/*}*/
+.bz-input.bordered .bar::before,
+.bz-input.bordered .bar {
+    background:#163d74;
+    height:2px;
+    position:absolute;
+    width:0;
+    transition:0.5s ease all;
+    -moz-transition:0.5s ease all;
+    -webkit-transition:0.5s ease all;
+}
+.bz-input.bordered .bar::before {
+    content: " ";
+    top:50px;
+}
+.bz-input.bordered .bar {
+    top:-2px;
+}
+.bz-input.bordered i + input ~ .bar {
+    left:0;
+}
+.bz-input.bordered i.right + input ~ .bar {
+    left:0;
+}
+.bz-input.bordered i + input:focus ~ .bar,
+/*.bz-input.bordered i + input:valid ~ .bar,*/
+.bz-input.bordered i + input.highlight ~ .bar {
+    left:0px;
+    width:100%;
+}
+.bz-input.bordered i.right + input:focus ~ .bar,
+/*.bz-input.bordered i.right + input:valid ~ .bar,*/
+.bz-input.bordered i.right + input.highlight ~ .bar {
+    left:0;
+    width:100%;
+}
+.bz-input.bordered i + input:focus ~ .bar::before,
+/*.bz-input.bordered i + input:valid ~ .bar::before,*/
+.bz-input.bordered i + input.highlight ~ .bar::before {
+    left:0px;
+    width:100%;
+}
+.bz-input.bordered i.right + input:focus ~ .bar::before,
+/*.bz-input.bordered i.right + input:valid ~ .bar::before,*/
+.bz-input.bordered i.right + input.highlight ~ .bar::before {
+    left:0;
+    width:100%;
+}
+
+/*.bz-input.bordered input::before::after*/
+.bz-input.bordered input:focus::before,
+.bz-input.bordered input:focus::after {
+    background:#163d74;
+    content: " ";
+    height:46px;
+    position:absolute;
+    width:2px;
+    transition:0.5s ease all;
+    -moz-transition:0.5s ease all;
+    -webkit-transition:0.5s ease all;
+}
+/*.bz-input.bordered .bar::before::before {*/
+    /*left:0;*/
+/*}*/
+.bz-input.bordered input:focus::before {
+    left:0;
+}
+.bz-input.bordered input:focus::after {
+    right:0;
+}
+.bz-input .counter {
+    position: absolute;
+    font-size:0.8em;
+    bottom:-14px; right:10px;
+}
+
+
+/*----- FLASH ANIMATION ------------------------------------ */
+@-webkit-keyframes inputflash {
+    from { background:#163d74; }
+    to 	{ width:0; background:transparent; opacity:0.5; }
+}
+@-moz-keyframes inputflash {
+    from { background:#163d74; }
+    to 	{ width:0; background:transparent; opacity:0.5;}
+}
+@keyframes inputflash {
+    from { background:#163d74; }
+    to 	{ width:0; background:transparent; opacity:0.5; }
+}
+/*----------SEARCH BAR ------------------------------------- */
+
+input.bz-search  {
+    border: 2px solid #ccc;
+
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
+    font-size:18px;
+    padding: 12px 20px 12px 40px;
+    vertical-align: middle;
+    width: 130px;
+    margin:12px 0;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+
+    background-color: white;
+    background-image: url('https://www.w3schools.com/howto/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+}
+
+input.bz-search:focus {
+    border: 2px solid #163d74;
+    width:100%;
+}
+
+/*--RADIO -------------------------------------------*/
+.bz-radio {
+    display: inline-block;
+    vertical-align: top;
+    margin-left:10px;
+    font-size: 18px;
+    line-height:26px;
+    cursor: pointer;
+    position:relative;
+}
+.bz-radio .text {
+    margin-left:10px;
+}
+.bz-radio:hover .inner {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: .5;
+}
+.bz-radio input {
+    height: 0px;
+    width: 0px;
+    -moz-appearance:none;
+    -webkit-appearance: none;
+}
+.bz-radio input:checked + .outer .inner {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+.bz-radio input:checked + .outer {
+    border: 3px solid #163d74;
+}
+.bz-radio input:focus + .outer .inner {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    background-color: #163d74;
+}
+.bz-radio .outer {
+    height: 20px;
+    width: 20px;
+    display: block;
+    float: left;
+    border: 3px solid #767676;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.bz-radio .inner {
+    transition: all 0.25s ease-in-out;
+    height: 16px;
+    width: 16px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    display: block;
+    margin: 2px;
+    border-radius: 50%;
+    background-color: #46ad58;
+    opacity: 0;
+}
+
+.bz-radio input:checked::after {
+    background: #163d74;
+    content: '';
+    display: block;
+    position:absolute;
+    z-index: 100;
+    border-radius: 50%;
+    height: 0px;
+    width: 0px;
+    top:12px; left:13px;
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+}
+
+@-webkit-keyframes click-wave {
+    0% {
+        height: 0px;
+        width: 0px;
+        opacity: 0.35;
+    }
+    100% {
+        height: 80px;
+        width: 80px;
+        opacity: 0;
+    }
+}
+@-moz-keyframes click-wave {
+    0% {
+        height: 0px;
+        width: 0px;
+        opacity: 0.35;
+    }
+    100% {
+        height: 80px;
+        width: 80px;
+        opacity: 0;
+    }
+}
+@keyframes click-wave {
+    0% {
+        height: 0px;
+        width: 0px;
+        opacity: 0.35;
+    }
+    100% {
+        height: 80px;
+        width: 80px;
+        opacity: 0;
+    }
+}
+/*--CHECKBOX -------------------------------------------*/
+.bz-checkbox {
+    display: inline-block;
+    vertical-align: top;
+    margin-left:10px;
+    font-size: 18px;
+    line-height:26px;
+    cursor: pointer;
+    position:relative;
+}
+.bz-checkbox .text {
+    margin-left:10px;
+}
+.bz-checkbox:hover .inner {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity:.5;
+}
+.bz-checkbox input {
+    height:0px;
+    width:0px;
+    -moz-appearance:none;
+    -webkit-appearance: none;
+}
+.bz-checkbox input:checked + .outer .inner {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity:1;
+}
+
+.bz-checkbox input:checked + .outer {
+    border: 3px solid #163d74;
+}
+.bz-checkbox input:focus + .outer .inner {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity:0.5;
+    background-color: #163d74;
+}
+.bz-checkbox input:focus:checked + .outer .inner {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    background-color: #163d74;
+}
+.bz-checkbox .outer {
+    height: 20px;
+    width: 20px;
+    display: block;
+    float: left;
+    border: 3px solid #767676;
+    background-color: #fff;
+}
+.bz-checkbox .inner {
+    transition: all 0.25s ease-in-out;
+    height: 16px;
+    width: 16px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    display: block;
+    margin: 2px;
+    background-color: #46ad58;
+    opacity: 0;
+}
+
+.bz-checkbox input:checked::after {
+    background: #163d74;
+    content: '';
+    display: block;
+    position:absolute;
+    z-index: 100;
+    height:0px;
+    width:0px;
+    top:12px; left:13px;
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+}
+/* ----- SWITCHERS ---------------------- */
+.bz-switch {
+    background: #163d74;
+    font-size: 18px;
+    line-height:26px;
+    vertical-align: top;
+    margin:0 10px;
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 26px;
+}
+.bz-switch input {display:none;}
+.bz-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    background: #767676;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.bz-switch input ~ .slider {
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+.bz-switch input:checked ~ .slider {
+    top:3px;
+    left:3px;
+    right:3px;
+    bottom:3px;
+}
+.bz-switch .slider:before {
+    position: absolute;
+    content: "";
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.bz-switch input ~ .slider:before {
+    background:#fff;
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+}
+.bz-switch input:checked ~ .slider:before {
+    background:#46ad58;
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+}
+.bz-switch input:checked + .slider {
+    background: #fff;
+}
+.bz-switch input:focus + .slider {
+    box-shadow: 0 0 1px #163d74;
+}
+.bz-switch input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+/* Rounded sliders */
+.bz-switch.rounded {
+    border-radius: 26px;
+}
+.bz-switch.rounded .slider {
+    border-radius: 26px;
+}
+.bz-switch.rounded .slider:before {
+    border-radius: 50%;
+}
+/*---- RANGE SELECTOR --------------------------  */
+.bz-range-select {
+    margin:10px 0;
+    position:relative;
+    width: 100%;
+}
+
+.bz-range-select .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background:#767676;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.bz-range-select .slider:hover {
+    opacity: 1;
+}
+
+.bz-range-select .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background:#163d74;
+    cursor: pointer;
+}
+
+.bz-range-select .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background:#163d74;
+    cursor: pointer;
+}
+.bz-range-select .text {
+    top:-10px; left:50%;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+/*---- COLOR PICKER ---------------------------  */
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 52px;
+    height: 52px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+/*---- INPUT FILE ----------------------------- */
+.bz-fileinput input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.bz-fileinput input ~ label {
+    line-height: 1.2em;
+}
+.bz-fileinput input:focus + label,
+.bz-fileinput input + label:hover {
+    background:#163d74;
+}
+.bz-fileinput input + label {
+    cursor: pointer;
+}
+.bz-fileinput input:focus + label {
+    outline: 1px dotted #767676;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+.bz-fileinput input + label * {
+    pointer-events: none;
+}
+/* ---- DROP DOWN LIST ------------------------- */
+/*Blues dropdown list ver. 0.0.2 -> start*/
+.bz-droplist {
+    display:inline-block;
+    position:relative;
+    min-width:325px;
+}
+
+.bz-select:focus {
+    border:none;
+    outline:none;
+}
+
+.bz-select,
+.bz-droplist .bz-trigg {
+    background:#848482;
+    box-sizing: border-box;
+    padding: 13px 20px 14px 20px;
+    transition: all .3s ease-in;
+    border:2px solid transparent;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size:18px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-drag: none;
+    width:100%;
+}
+
+.bz-droplist .bz-ddl {
+    /*border: 1px solid #2E435A;*/
+    max-height:200px;
+    overflow:hidden;
+    overflow-y:auto;
+    background:#FFF;
+    opacity:0;
+    position:absolute;
+    top:49px;
+    width:100%;
+    -webkit-transform:scale(.25,0);
+    transform:scale(.25,0);
+    -webkit-transition:all 400ms cubic-bezier(.4,0,.2,1);
+    transition:all 400ms cubic-bezier(.4,0,.2,1);
+    -webkit-animation:none!important;
+    animation:none!important;
+    -webkit-transform-origin:50% 0!important;
+    transform-origin:50% 0!important;
+    z-index:999999;
+
+    -moz-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.15), 0 1px 10px 0 rgba(0, 0, 0, 0.13), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.15), 0 1px 10px 0 rgba(0, 0, 0, 0.13), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.15), 0 1px 10px 0 rgba(0, 0, 0, 0.13), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+}
+
+.bz-droplist .bz-ddl.bz-on {
+    transform:scale(1,1);
+    opacity:1;
+}
+
+.bz-select option,
+.bz-droplist .bz-ddl-item {
+    cursor: pointer;
+    height:40px;
+    line-height:40px;
+    font-size:18px;
+    position:relative;
+    outline: none;
+}
+.bz-select option {
+    background:#fff;
+}
+.bz-droplist .bz-ddl .bz-ddl-item > * {
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.bz-droplist .bz-ddl .text {
+    box-sizing:border-box;
+    padding-left:10px;
+}
+
+.bz-droplist .bz-ddl-item:hover .text::after {
+    content:"";
+    display: block;
+    height:40px;
+    width:100%;
+    background:#999;
+    position:absolute;
+    top:0; left:0;
+    z-index: -10;
+}
+
+.bz-droplist .bz-ddl-item .text::after {
+    content:"";
+    display: block;
+    height:40px;
+    width:100%;
+    background:#999;
+    position:absolute;
+    top:0; left:0;
+    z-index: -10;
+    opacity:0;
+}
+
+.bz-droplist .bz-ddl-item:hover .text::after {
+    opacity:1;
+}
+
+.bz-droplist .bz-checkbox {
+    visibility:hidden;
+    width:0;
+}
+.bz-droplist[multiple] .bz-checkbox {
+    visibility:visible;
+    width:auto;
+}
+.bz-droplist .bz-ddl-item.selected .text::after {
+    background:#4CAF50;
+    opacity:1;
+}
+/* width */
+.bz-ddl::-webkit-scrollbar {
+    width: 8px;
+}
+/* Track */
+.bz-ddl::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+/* Handle */
+.bz-ddl::-webkit-scrollbar-thumb {
+    background: #c0c0c1;
+}
+/* Handle on hover */
+.bz-ddl::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* The search field */
+.bz-droplist .searchfield {
+    border-box: box-sizing;
+    background-image: url('https://www.w3schools.com/howto/searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline:none;
+    width:100%;
+}
+/*end <- Blues dropdown list ver. 0.0.2*/
+
+
+
+/*---- FORM ------------------------------------ */
+.bz-form.vertical > * {
+    clear:both;
+    display:block;
+}
+.bz-form > * {
+    vertical-align:middle;
+    display:inline-block;
+}

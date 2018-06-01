@@ -1,0 +1,71 @@
+<html lang="en-us" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Blues Framework">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+    <title>Blues 2.0 | Forms</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/bz-core-2.0.0.css">
+    <link rel="stylesheet" href="css/bz-forms-2.0.0.css">
+    <link rel="stylesheet" href="css/blues-buttons-2.0.0.css">
+</head>
+<body>
+
+<div class="bz-padding-16 bz-clearfix">
+    <nav id="nav">
+        <a href="index.html">Home</a> |
+        <a href="typography.html">Typography</a> |
+        <a href="forms.html">Forms</a> |
+        <a href="colored-forms.html">Cored Forms</a> |
+        <a href="conditional.html">Conditional</a> |
+        <a href="autocomplete.html">Autocomplete</a> |
+        <a href="selectors.html">Selectors</a> |
+        <a href="buttons.html">Buttons</a> |
+        <a href="group-buttons.html">Group Buttons</a> |
+        <a href="grouping.html">Grouping</a> |
+    </nav>
+</div>
+
+<div class="bz-padding-16 bz-clearfix">
+    <h5>Search Bar</h5>
+    <form>
+        <input type="text" name="search" class="bz-search bz-float-r" placeholder="Search...">
+    </form>
+</div>
+
+<div class="bz-padding-16 bz-clearfix">
+    <h5>Vertical Form</h5>
+    <p>Form with validation on blur and submit</p>
+    <form name="validateform" class="bz-form vertical">
+
+        <input type="text"  class="bz-input flash bz-bc-faded bz-fc-white" name="firstname" placeholder="Name" data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+
+        <input type="text"  class="bz-input flash bz-bc-positive" name="firstname" placeholder="Name" data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+
+        <input type="text"  class="bz-input flash bz-bc-negative" name="firstname" placeholder="Name" data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+
+        <input type="text"  class="bz-input flash bz-bc-warning" name="firstname" placeholder="Name" data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+
+        <input type="text"  class="bz-input flash bz-bc-light" name="firstname" placeholder="Name" data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+
+        <input type="text"  class="bz-input flash bz-bc-dark" name="firstname" placeholder="Name" data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+
+    </form>
+</div>
+
+<script src="js/bz-core-2.0.0.js"></script>
+<script src="js/bz-inject-2.0.0.js"></script>
+<script src="../aiwee/aiwee/grails-app/assets/javascripts/blues-require/blues-require-0.0.1.js"></script>
+<script type="text/javascript">
+    (function() {
+        new Bzrequire({
+            form: 'validateform',
+            checkonblur : true
+        }).toSubmit();
+    })();
+</script>
+</body>
+</html>
