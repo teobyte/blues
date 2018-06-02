@@ -713,7 +713,7 @@
         elem.ifclass(classname) ? elem.offclass(classname) : elem.onclass(classname);
         return elem;
     };
-
+    // get all attributes array
     bzObject.prototype.allattr = function() {
         var elem = this.el;
         var atts = {};
@@ -722,7 +722,6 @@
         });
         return atts;
     };
-
     // get/set/check the element's attribute
     bzObject.prototype.onattr = function(name, value) {
         var elem = this.el;
@@ -778,12 +777,12 @@
         else
             return elem.clientHeight;
     };
-    // get/set element width
+    // get/set element offset width
     bzObject.prototype.offWidth = function() {
         var elem = this.el;
         return elem.offsetWidth;
     };
-    // get/set element height
+    // get/set element offset height
     bzObject.prototype.offHeight = function() {
         var elem = this.el;
         return elem.offsetHeight;
@@ -1290,7 +1289,7 @@
     bzObject.prototype.before = function(insertingelem) {
         var elem = this.el;
         var telem = insertingelem.el;
-        var parent = this.el.parentNode;
+        var parent = elem.parentNode;
         parent.insertBefore(telem, elem);
     };
     // insert after element

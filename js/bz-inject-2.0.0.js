@@ -39,6 +39,18 @@ if (typeof require === 'function') {
                 inptWrapp.onclass('bordered');
                 inpt.offclass('bordered');
             }
+            if (inpt.ifclass('chips')) {
+                inptWrapp.onclass('chips');
+                inpt.offclass('chips');
+            }
+            if (inpt.ondata('class')) {
+                inptWrapp.onclass(inpt.ondata('class'));
+                inpt.offdata('class');
+            }
+            if (inpt.ondata('style')) {
+                inptWrapp.onattr('style', inpt.ondata('style'));
+                inpt.offdata('style');
+            }
             var clone = inpt.clone().offclass('bz-input').offattr('placeholder');
             if (clone.ifclass('flash')) {
                 clone.offclass('flash');
@@ -68,7 +80,11 @@ if (typeof require === 'function') {
                 injected.append(cntr);
             }
             // replace element with enjected one
-            inpt.after(injected);
+            // inpt.after(injected);
+            injected.on('click', function() {
+                var _$inpt = bzDom(this).find('input');
+                _$inpt.focus();
+            });
             inpt.replacewith(injected);
             // add counter
             if (inpt.ondata('counter')) {

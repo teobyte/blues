@@ -38,6 +38,8 @@
     <p>Form with validation on blur and submit</p>
     <form name="validateform" class="bz-form vertical">
         <p>Input with counter</p>
+        <input type="text"  class="bz-input flash" name="firstname" placeholder="Name" data-counter="/" maxlength="22" required data-rules="required"/>
+        <p>Input with counter</p>
         <input type="text"  class="bz-input flash" name="firstname" placeholder="Name" data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
         <p>Disabled input</p>
         <input type="text" class="bz-input flash" name="lastname" placeholder="Last Name" data-icon="icon-user" disabled data-rules="required"/>
@@ -49,6 +51,7 @@
         <input type="password" class="bz-input pwd-check strength show" name="password" id="password" placeholder="Password" data-icon="icon-eye right" required data-rules="required"/>
         <input type="password" class="bz-input pwd-check show" name="confirmation" placeholder="Password" data-icon="icon-eye right" required data-rules="equalto:password"/>
         <p>Bordered input</p>
+        <input type="number" class="bz-input bordered" name="numerone" value="" placeholder="Number" required />
         <input type="number" class="bz-input bordered" name="numerone" value="" placeholder="Number"  data-icon="icon-check right" required />
         <input type="number" class="bz-input bordered" name="numerone" value="" placeholder="Number"  data-icon="icon-check right" required />
         <input type="text" class="bz-input bordered" name="numerone" value="" placeholder="Number"  data-icon="icon-check" required />

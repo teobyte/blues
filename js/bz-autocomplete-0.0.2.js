@@ -435,19 +435,30 @@ Autocomplete.prototype = {
                 },
                 '.bz-ac-box .bz-ac input' : {
                     'attr': {
-                        width: '100%'
+                        'min-width': '60px'
+                    }
+                },
+                '.bz-ac-box button' : {
+                    'attr': {
+                        position: 'absolute',
+                        bottom: '16px',
+                        right: '-4px'
                     }
                 },
                 '.bz-ac-box .bz-ac .bz-suggestions': {
                     'attr': {
                         background: '#fff',
+                        'list-style-type': 'none',
                         'max-height': '250px',
                         height: 'auto',
                         'overflow-x': 'hidden',
                         'overflow-y': 'auto',
                         position: 'absolute',
+                        margin: 0,
+                        padding: 0,
                         left: '0',
-                        top: '22px',
+                        bottom: '-34px',
+                        'min-width': '325px',
                         width:' 100%',
                         'z-index': '1000',
                         transition: 'all 0.5s ease',
@@ -596,7 +607,8 @@ Autocomplete.defaultOptions = {
         $chip.append($img);
         $chip.append($chipName);
         $chip.append($chipDel);
-        bzDom(ac.inpt).parent('.bz-ac-box').append($chip);
+        bzDom(ac.inpt).before($chip);
+        bzDom(ac.inpt).val('');
     },
     /**
      * Add copy of this method to the to a new Autocomplete as parameter
