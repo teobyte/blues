@@ -1,0 +1,114 @@
+.bz-payment-box {
+    background:#163d74;
+    margin:0 auto;
+    padding:0;
+    position:relative;
+    min-width:300px;
+    max-width:720px;
+}
+.bz-payment-form {
+    background:#fff;
+    margin:0 auto;
+    overflow:hidden;
+    padding:0;
+    position:relative;
+    min-width:300px;
+    max-width:360px;
+}
+.bz-card-help {
+    background:#fff;
+    position:absolute;
+    display:none;
+    top:45%; left:50%;
+    padding:10px;
+    width:300px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index:99999;
+}
+.bz-available-cards {
+    margin:0 auto;
+    width:220px;
+}
+.bz-available-cards img {
+    padding:0;
+    margin:0;
+    width:50px;
+}
+.bz-state-msg {
+    min-height:50px;
+    line-height:16px;
+    font-size:14px;
+    padding:10px 20px;
+}
+.bz-state-msg.valid {
+    color:#00754B;
+}
+.bz-state-msg.invalid {
+    color:#CC0000;
+}
+.bz-code-tip {
+    bottom:20px;
+    color:#9f9f9f;
+    cursor:pointer;
+    font-size:26px;
+    position: absolute;
+    right:20px;
+}
+.bz-card-type {
+    width: 80px;
+    height: 56px;
+    background: url("../src/images/cards/empty.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+    position: absolute;
+    bottom:20px;
+    right:20px;
+    zoom:0.8;
+}
+.bz-card-type.mastercard {
+    background: url("../src/images/cards/mastercard.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+}
+.bz-card-type.visa {
+    background: url("../src/images/cards/visa.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+}
+.bz-card-type.amex {
+    background: url("../src/images/cards/amex.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+}
+.bz-card-type.discover {
+    background: url("../src/images/cards/discover.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+}
+.bz-card-type.visa-electron {
+    background: url("../src/images/cards/visaelectron.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+}
+.bz-card-type.maestro {
+    background: url("../src/images/cards/maestro.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+}
+.bz-card-type.jcb {
+    background: url("../src/images/cards/jcb.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+}

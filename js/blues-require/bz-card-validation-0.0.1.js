@@ -319,7 +319,7 @@
         };
         $inputs.each(function(i, item) {
             var _$inpt = bzDom(item),
-                __type = _$inpt.onbz('pattern'),
+                __type = _$inpt.ondata('pattern'),
                 _patern = patern(__type);
             var fired = false;
             if (__type !== 'name')
@@ -337,7 +337,7 @@
             _$inpt.on('keyup', function(e) {
                 fired = false;
                 var $th = bzDom(this),
-                    _type = $th.onbz('pattern'),
+                    _type = $th.ondata('pattern'),
                     _val = $th.val();
                 validator(e, _type, _val);
                 chkBtn();
