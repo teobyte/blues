@@ -417,7 +417,7 @@
 }
 .bz-input .bz-chip {
     float: left;
-    margin:14px 2px 0px 0;
+    margin:14px 2px 0 0;
 }
 .bz-input.chips input {
     border-bottom: 2px solid transparent;
