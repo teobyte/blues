@@ -1,0 +1,51 @@
+/*--> BLUES TABLES -------------------------*/
+.bz-table {
+    /* Remove spacing between table cells (from Normalize.css) */
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border:none;
+}
+
+
+
+.bz-table td,
+.bz-table th {
+    /*border-left:none;!*  inner column border *!*/
+    /*border-width: 0 0 0 1px;*/
+    font-size: inherit;
+    margin: 0;
+    overflow: visible; /*to make ths where the title is really long work*/
+    padding:1em 1em; /* cell padding */
+}
+
+/* Consider removing this next declaration block, as it causes problems when
+there's a rowspan on the first cell. Case added to the tests. issue#432 */
+.bz-table td:first-child,
+.bz-table th:first-child {
+    border-left-width: 0;
+}
+.bz-table thead {
+    background-color:transparent;
+    color:inherit;
+    font-weight:bold;
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+
+}
+.bz-table td {
+    background-color: transparent;
+}
+.bz-table thead tr {
+    border-bottom:2px solid #cbcbcb;
+}
+.bz-table tbody tr {
+    border-bottom:1px solid #cbcbcb;
+}
+.bz-table-bordered tbody > tr:last-child > td {
+    border-bottom-width: 0;
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
