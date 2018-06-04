@@ -1303,9 +1303,11 @@
             parent.insertBefore(telem, elem.nextSibling);
     };
     // wrap element into wrapper element
-    bzObject.prototype.wrapinto = function(wraper) {
+    bzObject.prototype.wrapinto = function(wraper, make) {
         var html = this.outhtml();
         wraper.inhtml(html);
+        if (make === true)
+            this.replacewith(wraper);
         return wraper;
     };
     // clone element
@@ -1462,6 +1464,252 @@
         if (elem.tagName.toLowerCase() === 'form')
             elem.submit();
         else return;
+    };
+    // Blues Modal
+    Blues.Modal = function(options) {
+        // modal prototype
+        var Ml = {};
+        options = options || {};
+        Ml.o = {};
+        Ml.defaultOptions = {
+            selector: undefined, // has to be defined
+            type: 'modal', // modal, alert, confirm, prompt
+            position: 'center', // center, top, right, bottom, left
+            heigh: undefined,
+            width: undefined,
+            confirmcall: undefined,
+            declinecall: undefined,
+            callonshow:null,
+            callonhide:null
+        };
+        for (var k in Ml.defaultOptions) {
+            if (Ml.defaultOptions.hasOwnProperty(k)) {
+                if (options.hasOwnProperty(k))
+                    Ml.o[k] = options[k];
+                else
+                    Ml.o[k] = Ml.defaultOptions[k];
+            }
+        }
+        Ml.modal = bzDom(Ml.o.selector);
+        Ml.initButton = function() {
+            var Ml = this;
+            if (typeof Ml.modal.ondata('btn') === 'string' &&
+                       Ml.modal.ondata('btn') != '' &&
+                       Ml.modal.ondata('btn') !== undefined) {
+                var modalBtn = bzDom('#' + Ml.modal.ondata('btn'));
+                modalBtn.on('click', function() {
+                    Ml.openModal();
+                });
+            }
+        };
+        Ml.prepareModal = function() {
+            var Ml = this,
+                cont = Ml.modal.find('.content'),
+                wraper = bzDom('<div class="modal-content bz-shadow-5">'),
+                fader = bzDom('<div class="fader">');
+            if (Ml.o.width)
+                wraper.oncss('max-width', Ml.o.width);
+            if (Ml.o.height)
+                wraper.oncss('max-height', Ml.o.height);
+            cont.wrapinto(wraper, true);
+            Ml.modal.prepend(fader);
+            if (!Ml.modal.ifclass('center') &&
+                !Ml.modal.ifclass('top') &&
+                !Ml.modal.ifclass('right') &&
+                !Ml.modal.ifclass('bottom') &&
+                !Ml.modal.ifclass('left'))
+                Ml.modal.onclass('center');
+            if (Ml.o.type === 'alert')
+                Ml.alertDialog();
+            if (Ml.o.type === 'confirm')
+                Ml.confirmDialog();
+            if (Ml.o.type === 'prompt')
+                Ml.promptDialog();
+            if (Ml.o.type !== 'alert' && Ml.o.type !== 'confirm' && Ml.o.type !== 'prompt')
+                Ml.addCloseBar();
+        };
+        Ml.closeModal = function () {
+            var Ml = this;
+            Ml.modal.fadeOut();
+            if (Ml.o.callonhide)
+                Ml.o.callonhide();
+        };
+        Ml.openModal = function() {
+            var Ml = this,
+                fader = Ml.modal.find('.fader');
+            Ml.modal.fadeIn();
+            fader.on('click', function() {
+                Ml.closeModal();
+            });
+            if (Ml.o.callonshow)
+                Ml.o.callonshow();
+        };
+        Ml.confirmcall = function() {
+
+        };
+        Ml.declinecall = function() {
+
+        };
+        Ml.addCloseBar = function() {
+            var Ml = this,
+                cont = Ml.modal.find('.content');
+            var bar = bzDom('<div class="close-bar">'),
+                rem = bzDom('<div class="remove">✕</div>');
+            rem.on('click', function() {
+                Ml.closeModal();
+            });
+            bar.append(rem);
+            cont.append(bar);
+        };
+        Ml.alertDialog = function() {
+            var Ml = this,
+                cont = Ml.modal.find('.content'),
+                aD = bzDom('<div class="actions">'),
+                cBtn = bzDom('<button class="bz-btn primary bz-float-r">');
+            cBtn.inhtml('OK');
+            cBtn.on('click', function () {
+                Ml.closeModal();
+                if (Ml.o.confirmcall)
+                    Ml.o.confirmcall();
+            });
+            aD.append(cBtn);
+            cont.append(aD);
+        };
+        Ml.confirmDialog = function(agreecall, disagreecall) {
+            var Ml = this,
+                cont = Ml.modal.find('.content'),
+                aD = bzDom('<div class="actions">'),
+                cBtn = bzDom('<button class="bz-btn primary bz-float-r">'),
+                dBtn = bzDom('<button class="bz-btn primary bz-float-l">');
+            cBtn.inhtml('CONFIRM');
+            dBtn.inhtml('DISMISS');
+            cBtn.on('click', function () {
+                Ml.closeModal();
+                if (Ml.o.confirmcall)
+                    Ml.o.confirmcall();
+            });
+            dBtn.on('click', function () {
+                Ml.closeModal();
+                if (Ml.o.declinecall)
+                    Ml.o.declinecall();
+            });
+            aD.append(dBtn);
+            aD.append(cBtn);
+            cont.append(aD);
+        };
+        Ml.promptDialog = function(callback) {
+            var Ml = this,
+                cont = Ml.modal.find('.content'),
+                aD = bzDom('<div class="actions">'),
+                cBtn = bzDom('<button class="bz-btn primary bz-float-r">'),
+                dBtn = bzDom('<button class="bz-btn primary bz-float-r">');
+            cBtn.inhtml('CONFIRM');
+            dBtn.inhtml('CANCEL');
+            cBtn.on('click', function () {
+                Ml.closeModal();
+                if (Ml.o.confirmcall)
+                    Ml.o.confirmcall();
+            });
+            dBtn.on('click', function () {
+                Ml.closeModal();
+                if (Ml.o.declinecall)
+                    Ml.o.declinecall();
+            });
+            aD.append(cBtn);
+            aD.append(dBtn);
+            cont.append(aD);
+        };
+        Ml.initButton();
+        Ml.prepareModal();
+        Ml.show = function() {
+            var Ml = this;
+            Ml.openModal();
+        };
+        var Modal = Ml;
+        return Modal;
+    };
+    // prompt dialog popup
+    bzObject.prototype.prompt = function(agreecall, disagreecall, options) {
+        var modal = this,
+            width = undefined,
+            height = undefined;
+        if (options && Blues.check.ifObject(options)) {
+            options = Blues.convert.objectToArray(options);
+            if (Blues.check.ifArray(options)) {
+                for (var i = 0; i < options.length; i++) {
+                    if (options[i][0] == 'width')
+                        width = options[i][1];
+                    if (options[i][0] == 'height')
+                        height = options[i][1];
+                }
+            }
+        }
+        bz.Modal({
+            selector: modal,
+            type: 'prompt',
+            width: width,
+            height: height,
+            confirmcall: function() {
+                var data = modal.find('form').getformdata();
+                if (agreecall)
+                    agreecall(data);
+                setTimeout(function() {
+                    //alertBox.remove();
+                }, 501);
+            },
+            declinecall: function() {
+                if (disagreecall)
+                    disagreecall();
+                setTimeout(function() {
+                    //alertBox.remove();
+                }, 501);
+            }
+        }).show();
+    };
+    // alert dialog popup
+    Blues.alert = function(message, callback) {
+        var alertBox = bzDom('<div class="bz-modal minimized">'),
+            cont = bzDom('<div class="content">');
+        cont.inhtml(message);
+        alertBox.append(cont);
+        bzDom('body').append(alertBox);
+        bz.Modal({
+            selector:alertBox,
+            type: 'alert',
+            confirmcall: function() {
+                if (callback)
+                    callback();
+                setTimeout(function() {
+                    alertBox.remove();
+                }, 501);
+            }
+        }).show();
+    };
+    // confirm dialog popup
+    Blues.confirm = function(message, agreecall, disagreecall) {
+        var alertBox = bzDom('<div class="bz-modal minimized">'),
+            cont = bzDom('<div class="content">');
+        cont.inhtml(message);
+        alertBox.append(cont);
+        bzDom('body').append(alertBox);
+        bz.Modal({
+            selector:alertBox,
+            type: 'confirm',
+            confirmcall: function() {
+                if (agreecall)
+                    agreecall();
+                setTimeout(function() {
+                    alertBox.remove();
+                }, 501);
+            },
+            declinecall: function() {
+                if (disagreecall)
+                    disagreecall();
+                setTimeout(function() {
+                    alertBox.remove();
+                }, 501);
+            }
+        }).show();
     };
     ///- DHM -// DOM BASIC SETTINGS(DOMBS) /////////////////////
     // add settings to the element
@@ -1714,24 +1962,6 @@
         Loadspin.init();
         return Loadspin;
     };
-    // deprecated
-    // Blues.Hidespin = function(element, timeout) {
-    //     var Hidespin = Hidespin || {},
-    //         timeout = timeout || 0;
-    //     Hidespin = {
-    //         hide: function(elem) {
-    //             var delspin = elem.getElementsByClassName('bz-loader')[0];
-    //             delspin.parentNode.removeChild(delspin);
-    //         }
-    //     };
-    //     if (timeout > 0) {
-    //         setTimeout(function(){
-    //             Hidespin.hide(element);
-    //         }, timeout);
-    //     } else
-    //         Hidespin.hide(element);
-    //     return Hidespin;
-    // };
     // add fader
     Blues.showfader = function(target, zindex) {
         var defTarget = '.bz-content-to-fade';
@@ -1921,6 +2151,9 @@
     window.bz.ajax = Blues.ajax;
     window.bz.addwave = Blues.Waves;
     window.bz.Loadspin = Blues.Loadspin;
+    window.bz.Modal = Blues.Modal;
+    window.bz.alert = Blues.alert;
+    window.bz.confirm = Blues.confirm;
     window.bz.jss = Blues.JSS;
     return Blues;
 });

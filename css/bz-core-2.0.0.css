@@ -885,7 +885,7 @@ blockquote {
 .bz-wave.dark-wave .ink { background:#777; }
 .bz-wave.primary-wave .ink { background:var(--color-primary); }
 .bz-wave.secondary-wave .ink { background:var(--color-secondary); }
-.bz-wave.default-wave .ink { background:var(--color-default); }
+.bz-wave.default-wave .ink { background:var(--color-faded); }
 .bz-wave.positive-wave .ink { background:var(--color-positive); }
 .bz-wave.negative-wave .ink { background:var(--color-negative); }
 .bz-wave.warning-wave .ink { background:var(--color-warning); }
@@ -995,29 +995,151 @@ blockquote {
     color:#fff;
     background-color: gray;
 }
+/*---- Blues Modal ---------------------------*/
+.bz-modal {
+    border-radius: 0!important;
+    display:none;
+    position:fixed;
+    top:0; right:0;
+    bottom:0; left:0;
+    max-width: 100vw;
+    max-height: 100vh;
+    z-index: 9999;
+}
+.bz-modal .modal-content {
+    background:#fff;
+    box-sizing:border-box;
+    position:absolute;
+    overflow:hidden;
+    overflow-y:auto;
+    padding:32px;
+    transition: all .2s ease-in-out;
+}
+.bz-modal .modal-content {
+    min-height:200px;
+    min-width:325px;
+    max-height:80vh;
+}
+.bz-modal.center .modal-content {
+    top:50%; left:50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.bz-modal.top .modal-content,
+.bz-modal.bottom .modal-content {
+    left:50%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+.bz-modal.right .modal-content,
+.bz-modal.left .modal-content {
+    top:50%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+.bz-modal.top .modal-content { top:0; animation:animatetop 0.5s; }
+.bz-modal.right .modal-content { right:0; animation:animateright 0.5s; }
+.bz-modal.bottom .modal-content { bottom:0; animation:animatebottom 0.5s; }
+.bz-modal.left .modal-content { left:0; animation:animateleft 0.5s; }
+.bz-modal.top .modal-content,
+.bz-modal.right .modal-content,
+.bz-modal.bottom .modal-content,
+.bz-modal.left .modal-content,
+.bz-modal.minimized .modal-content {
+    height:200px;
+    width:325px;
+    overflow:hidden;
+    padding:8px;
+}
+.bz-modal .fader {
+    background:var(--color-faded);
+    cursor:pointer;
+    position:absolute;
+    max-width: 100vw;
+    max-height: 100vh;
+    opacity:0.5;
+    top:0; right:0;
+    bottom:0; left:0;
+    z-index:0;
+}
+.bz-modal .content {
+    margin-bottom:58px;
+    position:relative;
+    height:calc(100% - 58px);
+    width:100%;
+}
+.bz-modal .actions {
+    bottom:-58px;
+    position:absolute;
+    width:100%;
+}
+.bz-modal .close-bar {
+    height:32px;
+    font-size:26px;
+    position:absolute;
+    text-align:center;
+    top:-32px; right:-26px;
+}
+.bz-modal .remove {
+    cursor:pointer;
+    float:right;
+    padding:3px 8px;
+}
+
+
+
+/* ANIMATIONS */
+.bz-animate-fading{animation:fading 3s infinite}
+@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+.bz-animate-opacity{animation:opac 1s}
+@keyframes opac{from{opacity:0} to{opacity:1}}
+.bz-animate-top{position:relative;animation:animatetop 0.5s}
+@keyframes animatetop{from{top:-500px;opacity:0} to{top:0;opacity:1}}
+.bz-animate-left{position:relative;animation:animateleft 0.5s}
+@keyframes animateleft{from{left:-500px;opacity:0} to{left:0;opacity:1}}
+.bz-animate-right{position:relative;animation:animateright 0.5s}
+@keyframes animateright{from{right:-500px;opacity:0} to{right:0;opacity:1}}
+.bz-animate-bottom{position:relative;animation:animatebottom 0.5s}
+@keyframes animatebottom{from{bottom:-500px;opacity:0} to{bottom:0;opacity:1}}
+.bz-animate-zoom {animation:animatezoom 0.5s}
+@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
 /*--> DEVICE SIZES ---------------------------- */
 /* Mobile  <= 568px */
 @media screen and (max-width:568px) {
     .mb-hide { display: none; }
     .bz-cross-padding { padding:0; }
+    .bz-modal .modal-content { width:100vw; }
 }
 /* Mobile landscape <= 768px */
 @media screen and (min-width:568px) and (max-width:768px) {
     .tb-hide { display: none; }
     .bz-cross-padding { padding:0; }
+    .bz-modal .modal-content { width:90vw; }
 }
 /* Tablets <= 1024px */
 @media screen and (min-width:768px) and (max-width:1024px) {
     .tb-hide { display: none; }
     .bz-cross-padding { padding:10px; }
+    .bz-modal .modal-content { width:60vw; }
 }
 /* Wide screens <= 1280px */
 @media screen and (min-width:1024px) and (max-width:1280px) {
     .mt-hide { display: none; }
     .bz-cross-padding { padding:20px; }
+    .bz-modal .modal-content { width:50vw; }
 }
 /* Wide screens > 1280px */
 @media screen and (min-width:1280px) {
     .ws-hide { display: none; }
     .bz-cross-padding { padding:20px; }
+    .bz-modal .modal-content { width:50vw; }
 }
