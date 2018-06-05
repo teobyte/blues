@@ -177,7 +177,6 @@
     align-items: flex-end;
 }
 .mb-around {
-    -ms-flex-pack: distribute;
     justify-content: space-around;
 }
 .mb-between {
@@ -334,7 +333,6 @@
         align-items: flex-end;
     }
     .tb-around {
-        -ms-flex-pack: distribute;
         justify-content: space-around;
     }
     .tb-between {
@@ -489,7 +487,6 @@
         align-items: flex-end;
     }
     .mt-around {
-        -ms-flex-pack: distribute;
         justify-content: space-around;
     }
     .mt-between {
@@ -643,7 +640,6 @@
         align-items: flex-end;
     }
     .ws-around {
-        -ms-flex-pack: distribute;
         justify-content: space-around;
     }
     .ws-between {
