@@ -659,7 +659,8 @@ ul.dashed li:before {
 .h-128 { height:128px; }
 .h-256 { height:256px; }
 .h-512 { height:512px; }
-
+/*---- Clearfix --------------------------------------*/
+.bz-row:after,
 .bz-sidenav:after,
 .bz-card .bz-footer:after,
 .bz-input:after,
@@ -833,16 +834,16 @@ blockquote {
     position:relative;
     vertical-align: top;
 }
-.bz-card .bz-header { position:relative; width:inherit; }
-.bz-card .bz-header img { width:inherit; }
-.bz-card .bz-title { padding:8px 16px; position:relative; width:calc(100% - 32px); }
-.bz-card .bz-content { padding:8px 16px; position:relative; width:calc(100% - 32px); }
-.bz-card .bz-separator {
+.bz-card .header { position:relative; width:inherit; }
+.bz-card .header img { width:inherit; }
+.bz-card .title { padding:8px 16px; position:relative; width:calc(100% - 32px); }
+.bz-card .content { padding:8px 16px; position:relative; width:calc(100% - 32px); }
+.bz-card .separator {
     background: rgba(0,0,0,.1);
     height: 1px;
     width:inherit;
 }
-.bz-card .bz-footer { padding:8px 0; position:relative; width:inherit; }
+.bz-card .footer { padding:8px 0; position:relative; width:inherit; }
 .bz-card.small { width:325px; }
 .bz-card.middle { width:450px; }
 .bz-card.big { width:640px; }
@@ -1015,6 +1016,82 @@ blockquote {
     color:#fff;
     background-color: gray;
 }
+/*---- BLUES TOOLTIP ------------------------*/
+.bz-tooltip {
+    position: relative;
+    display: inline-block;
+}
+.bz-tooltip .popover {
+    background-color:var(--color-dark);
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    font-family: 'Helvetica',sans-serif;
+    margin-left:50%;
+    padding: 8px;
+    position: absolute;
+    text-align: center;
+    width: 112px;
+    z-index:100;
+}
+.bz-tooltip.top .popover {
+    bottom:calc(100% + 8px);
+    left:-64px;
+}
+.bz-tooltip.bottom .popover {
+    bottom:calc(-100% - 8px);
+    left:-64px;
+}
+.bz-tooltip.right .popover {
+    top:50%;
+    right:-8px;
+
+    -webkit-transform: translate(100%, -50%);
+    -moz-transform: translate(100%, -50%);
+    -ms-transform: translate(100%, -50%);
+    -o-transform: translate(100%, -50%);
+    transform: translate(100%, -50%);
+}
+.bz-tooltip.left .popover {
+    top:50%;
+    left:calc(-50% - 8px);
+
+    -webkit-transform: translate(-100%, -50%);
+    -moz-transform: translate(-100%, -50%);
+    -ms-transform: translate(-100%, -50%);
+    -o-transform: translate(-100%, -50%);
+    transform: translate(-100%, -50%);
+}
+.bz-tooltip.top:hover .popover {
+    display: block;
+    -webkit-animation: fade-in .3s ease-in-out, shift-up .3s ease-in-out;
+    -moz-animation: fade-in .3s ease-in-out, shift-up .3s ease-in-out;
+    -ms-animation: fade-in .3s ease-in-out, shift-up .3s ease-in-out;
+}
+.bz-tooltip.bottom:hover .popover {
+    display: block;
+    -webkit-animation: fade-in .3s ease-in-out, shift-down .3s ease-in-out;
+    -moz-animation: fade-in .3s ease-in-out, shift-down .3s ease-in-out;
+    -ms-animation: fade-in .3s ease-in-out, shift-down .3s ease-in-out;
+}
+.bz-tooltip.left:hover .popover {
+    display: block;
+    -webkit-animation: fade-in .3s ease-in-out, shift-left .3s ease-in-out;
+    -moz-animation: fade-in .3s ease-in-out, shift-left .3s ease-in-out;
+    -ms-animation: fade-in .3s ease-in-out, shift-left .3s ease-in-out;
+}
+.bz-tooltip.right:hover .popover {
+    display: block;
+    -webkit-animation: fade-in .3s ease-in-out, shift-right .3s ease-in-out;
+    -moz-animation: fade-in .3s ease-in-out, shift-right .3s ease-in-out;
+    -ms-animation: fade-in .3s ease-in-out, shift-right .3s ease-in-out;
+}
+@keyframes shift-up {from{bottom:30px;} to{bottom:calc(100% + 8px);}}
+@keyframes shift-down {from{bottom:-35px;} to{bottom:calc(-100% - 8px);}}
+@keyframes shift-left {from{left:30px;} to{left:calc(-50% - 8px);}}
+@keyframes shift-right {from{right:30px;} to{right:-8px;}}
 /*---- Blues Modal ---------------------------*/
 .bz-modal {
     border-radius: 0!important;
@@ -1147,19 +1224,30 @@ blockquote {
 
 /* ANIMATIONS */
 .bz-animate-fading{animation:fading 3s infinite}
+.bz-animate-opacity{animation:fade-in 1s}
+.bz-animate-top{position:relative;animation:animate-top 0.5s}
+.bz-animate-left{position:relative;animation:animate-left 0.5s}
+.bz-animate-right{position:relative;animation:animate-right 0.5s}
+.bz-animate-bottom{position:relative;animation:animate-bottom 0.5s}
+.bz-animate-zoom {animation:animate-zoom 0.5s}
+
 @keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
-.bz-animate-opacity{animation:opac 1s}
-@keyframes opac{from{opacity:0} to{opacity:1}}
-.bz-animate-top{position:relative;animation:animatetop 0.5s}
-@keyframes animatetop{from{top:-500px;opacity:0} to{top:0;opacity:1}}
-.bz-animate-left{position:relative;animation:animateleft 0.5s}
-@keyframes animateleft{from{left:-500px;opacity:0} to{left:0;opacity:1}}
-.bz-animate-right{position:relative;animation:animateright 0.5s}
-@keyframes animateright{from{right:-500px;opacity:0} to{right:0;opacity:1}}
-.bz-animate-bottom{position:relative;animation:animatebottom 0.5s}
-@keyframes animatebottom{from{bottom:-500px;opacity:0} to{bottom:0;opacity:1}}
-.bz-animate-zoom {animation:animatezoom 0.5s}
-@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+@keyframes animate-top{from{top:-500px;opacity:0} to{top:0;opacity:1}}
+@keyframes animate-left{from{left:-500px;opacity:0} to{left:0;opacity:1}}
+@keyframes animate-right{from{right:-500px;opacity:0} to{right:0;opacity:1}}
+@keyframes animate-bottom{from{bottom:-500px;opacity:0} to{bottom:0;opacity:1}}
+@keyframes animate-zoom{from{transform:scale(0)} to{transform:scale(1)}}
+@keyframes fade-in{from{opacity:0;} to{opacity:1;}}
+
+
+/*@-webkit-keyframes fade-in{ from { opacity: 0; } to { opacity: 1; } }*/
+/*@-moz-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }*/
+/*@-ms-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }*/
+/*@-webkit-keyframes pop-up { from { bottom: 30px; } to { bottom: 42px; } }*/
+/*@-moz-keyframes pop-up { from { bottom: 30px; } to { bottom: 42px; } }*/
+/*@-ms-keyframes pop-up { from { bottom: 30px; } to { bottom: 42px; } }*/
+
+
 /*---- SIDENAV -------------------------------  */
 .bz-sidenav-wrapper {
     position: relative;
@@ -1240,6 +1328,12 @@ blockquote {
     box-sizing: border-box;
     padding:0 0.5em;
 }
+
+.bz-sidenav-list a:active,
+.bz-sidenav-list a:focus {
+    outline:none;
+}
+
 .bz-sidenav-list li.bz-list-item a i {
     padding: 0.6em 0.5em 0.6em 0 ;
     text-align: center;
