@@ -44,7 +44,7 @@
         // check if window
         // returns @true if window
         ifWindow: function(obj) {
-            return obj != null && obj == obj.window
+            return obj != null && obj === window;
         },
         // check if function
         ifFunction: function(func) {
@@ -53,7 +53,7 @@
         // check if document
         // returns @true if document
         ifDocument: function(obj) {
-            return obj != null && obj.nodeType == obj.DOCUMENT_NODE
+            return obj != null && obj === document;
         },
         // check if string
         ifString: function(string) {
@@ -308,6 +308,22 @@
         // Time stamp
         timestamp: function () {
             return Date.now() || +new Date();
+        },
+        clickPosition: function(e) {
+            var posx = 0;
+            var posy = 0;
+            if (!e) e = window.event;
+            if (e.pageX || e.pageY) {
+                posx = e.pageX;
+                posy = e.pageY;
+            } else if (e.clientX || e.clientY) {
+                posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+                posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+            }
+            return {
+                x: posx,
+                y: posy
+            }
         }
     };
     ///////////////////////////////////////////////////////
@@ -331,22 +347,16 @@
                 }
                 // check if selector class
                 else if(Blues.check.ifClassname(selector)) {
-                    //elem = context.getElementsByClassName(selector.substring(1));
                     var elems = document.getElementsByClassName(selector.substring(1));
                     if (elems.length > 1) {
                         elem = new Array();
                         if (incontextName != undefined) {
                             for (var i=0; i < elems.length; i++) {
-                                if (parents(elems[i], incontextName).length > 0) {
+                                if (parents(elems[i], incontextName).length > 0)
                                     elem.push(elems[i]);
-                                }
                             }
-                        } else {
-                            elem = elems;
-                        }
-                    } else {
-                        elem = elems[0];
-                    }
+                        } else elem = elems;
+                    } else elem = elems[0];
                 }
                 // check if selector attribute name
                 else if(Blues.check.ifElemName(selector)) {
@@ -356,16 +366,11 @@
                         elem = new Array();
                         if (incontextName != undefined) {
                             for (var i=0; i < elems.length; i++) {
-                                if (parents(elems[i], incontextName).length > 0) {
+                                if (parents(elems[i], incontextName).length > 0)
                                     elem.push(elems[i]);
-                                }
                             }
-                        } else {
-                            elem = elems;
-                        }
-                    } else {
-                        elem = elems[0];
-                    }
+                        } else elem = elems;
+                    } else elem = elems[0];
                 }
                 // check if selector attribute
                 else if (Blues.check.ifAttrName(selector)) {
@@ -374,63 +379,44 @@
                         elem = new Array();
                         if (incontextName != undefined) {
                             for (var i=0; i < elems.length; i++) {
-                                if (parents(elems[i], incontextName).length > 0) {
+                                if (parents(elems[i], incontextName).length > 0)
                                     elem.push(elems[i]);
-                                }
                             }
-                        } else {
-                            elem = elems;
-                        }
-                    } else {
-                        elem = elems[0];
-                    }
+                        } else elem = elems;
+                    } else elem = elems[0];
                 }
                 // check if selector tag name
                 else if(!Blues.check.ifIdentifier(selector) && !Blues.check.ifClassname(selector) && !Blues.check.ifElemName(selector) && Blues.check.ifValidTag(selector)) {
-                    //alert(incontextName);
-                    //elem = document.getElementsByTagName(selector);
-
                     var elems = document.getElementsByTagName(selector);
                     if (elems.length > 1) {
                         elem = new Array();
                         if (incontextName != undefined) {
                             for (var i=0; i < elems.length; i++) {
-                                if (parents(elems[i], incontextName).length > 0) {
+                                if (parents(elems[i], incontextName).length > 0)
                                     elem.push(elems[i]);
-                                }
                             }
-                        } else {
-                            elem = elems;
-                        }
-                    } else {
-                        elem = elems[0];
-                    }
-
+                        } else elem = elems;
+                    } else elem = elems[0];
                 }
                 // if can't handle try querySelectorAll
-                else {
-                    elem = context.querySelectorAll(selector);
-                }
-                //alert(elem[0].outerHTML);
+                else elem = context.querySelectorAll(selector);
             }
             // if can't handle try querySelectorAll
-            else {
-                elem = context.querySelectorAll(selector);
-            }
+            else elem = context.querySelectorAll(selector);
             return elem;
         },
         // handle selector context
         handleContext: function(selector) {
             var elem, context;
             var selArray = selector.replace(/  +/g, ' ').split(' ');
-            function findElements(selector, context, contextName) {
-                var felem;
-                for (var j = 0; j < context.length; j++) {
-                    var foundelem = Blues.dom.qsa(selector, context[j], contextName);
-                    felem = Blues.help.combineNodeLists(felem, foundelem);
-                }
-                return felem;
-            }
+            // function findElements(selector, context, contextName) {
+            //     var felem;
+            //     for (var j = 0; j < context.length; j++) {
+            //         var foundelem = Blues.dom.qsa(selector, context[j], contextName);
+            //         felem = Blues.help.combineNodeLists(felem, foundelem);
+            //     }
+            //     return felem;
+            // }
             for (var i = 0; i < selArray.length - 1; i++) {
                 context = Blues.dom.qsa(selArray[i]);
                 if (!Blues.check.ifArray(context) && !Blues.check.ifNodeList(context)) {
@@ -442,10 +428,8 @@
                 //     elem = findElements(selArray[i + 1], context, selArray[i]);
                 // } else
                 if (context.length > 1) {
-                    //elem = findElements(selArray[i + 1], context, selArray[i]);
                     elem = Blues.dom.qsa(selArray[i + 1], context, selArray[i]);
                 } else if (context.length === 1 || Blues.check.ifDomNode(context)) {
-                    //elem = findElements(selArray[i + 1], context, selArray[i]);
                     elem = Blues.dom.qsa(selArray[i + 1], context, selArray[i]);
                 }
             }
@@ -459,21 +443,17 @@
                 elem = document.querySelectorAll(selector);
             } else if (Blues.check.ifWhitespaces(selector)) {
                 elem = Blues.dom.handleContext(selector);
-            } else {
-                elem = Blues.dom.qsa(selector);
-            }
+            } else elem = Blues.dom.qsa(selector);
             return elem;
         },
         // creates fragment or html element
         createFragment: function(selector) {
             var elem;
             var nodeName = selector.replace('<','').replace('>','');
-            if (Blues.check.ifValidTag(nodeName)) {
+            if (Blues.check.ifValidTag(nodeName))
                 elem = document.createElement(nodeName);
-            }
-            if (!elem) {
-                var elem = Blues.convert.stringToHtmlNode(selector);
-            }
+            if (!elem)
+                elem = Blues.convert.stringToHtmlNode(selector);
             return elem;
         },
         // universal selector handler
@@ -504,15 +484,13 @@
                 return null;
             }
         }
-    }
+    };
     ///////////////////////////////////////////////////////
-    //
     // General Blues Selector -/ DOM GBS
     Blues.bzSel = function(selector) {
         if (!selector)
             return null;
         var el = Blues.dom.bluesSelector(selector);
-        //alert('bzSel out: ' + el);
         if (Blues.check.ifNodeList(el)) {
             el = Blues.convert.nodeListToArray(el);
         }
@@ -535,32 +513,38 @@
     Blues.bzDom = function(selector, settings){
         var element = null,
             key = 0; // to avoid wrong object Detection
-        if (selector === undefined || selector === null) {
-            //alert('0 nope' + selector);
-            element = new bzObject();
-            return element.el = null;
-        }
-        if (Blues.check.ifFunction(selector)) {
-            //alert('what?' + selector);
-            return bzDom(document).ready(selector)
-        }
+        if (selector === undefined || selector === null)
+            return null;
+        else if (Blues.check.ifFunction(selector))
+            return bzDom(document).ready(selector);
         else if (Object.getPrototypeOf(selector) === bzObject.prototype) {
-            //alert('1'+ selector);
             element = selector;
             key = 1;
         }
-        else if (selector[0] !== '<' && key === 0 && (selector instanceof Node || selector instanceof Window)) {
-            //alert('2'+ selector);
-            element = new bzObject(); // new bzObject
+        else if (selector[0] !== '<' &&
+            key === 0 &&
+            (selector instanceof Node || selector instanceof Window) &&
+            !Blues.check.ifWindow(selector) &&
+            !Blues.check.ifDocument(selector)) {
+            element = new bzObject();
+            element.el = selector;
+        }
+        else if (Blues.check.ifWindow(selector)) {
+            element = new bzObject();
+            element.el = selector;
+        }
+        else if (Blues.check.ifDocument(selector)) {
+            element = new bzObject();
             element.el = selector;
         }
         else {
-            //alert('3'+ selector);
-            element = new bzObject(selector); // new bzObject
-            element.init();// initialize the bzObject
+            element = new bzObject(selector);
+            element.init();
         }
         // if bzDom is single dom node and not a window or document
-        if (!Blues.check.ifWindow(element.el) && !Blues.check.ifDocument(element.el) && (Blues.check.ifDomElement(element.el) || Blues.check.ifDomNode(element.el))) {
+        if (!Blues.check.ifWindow(element.el) &&
+            !Blues.check.ifDocument(element.el) &&
+            (Blues.check.ifDomElement(element.el) || Blues.check.ifDomNode(element.el))) {
             // add settings to node element
             Blues.addSettings(element, settings);
             // add quick settings selectors node element
@@ -593,15 +577,13 @@
         }
         //return the bzObject
         if (Blues.check.ifArray(element.el)) {
-            //alert('array');
+            element.init();
             return element;
         } else if (Blues.check.ifNodeList(element.el)) {
-            //alert('node list');
             Blues.convert.nodeListToArray(element.el);
+            element.init();
             return element;
-        } else {
-            return element;
-        }
+        } else return element;
     };
     /////- DHM -// DOM MANIPULATION (DOMM) ////////////
     // on document ready
@@ -679,11 +661,7 @@
             return elem.className;
         // add handle multi classes
         // if unknown return element object
-        else if (typeof classname === 'string')
-        //ToDo: check browser compatibility
-        // new way
-        //elem.classList.add(classname);
-        //old way
+        else if (typeof classname === 'string' && !this.ifclass(classname))
             elem.className ? elem.className += ' ' + classname : elem.className = classname;
         else
             return this;
@@ -1007,6 +985,8 @@
     // fade out element
     bzObject.prototype.fadeOut = function(duration, callback) {
         var elem  = this.el;
+        if (elem === null || elem === undefined)
+            return;
         var opacity = 1,
             interval = 50,
             duration = duration || 450,
@@ -1030,6 +1010,8 @@
     // fade in element
     bzObject.prototype.fadeIn = function(duration, callback) {
         var elem  = this.el;
+        if (elem === null || elem === undefined)
+            return;
         var opacity = 0,
             interval = 50,
             duration = duration || 450;
@@ -1711,6 +1693,194 @@
             }
         }).show();
     };
+    // Blues progress bar
+    Blues.Progress = function (value, options) {
+        var Pr = {};
+        options = options || {};
+        Pr.o = {};
+        Pr.defaultOptions = {
+            selector: '#progress',
+            position: 'top',
+            size: '8px',
+            barclass: 'bz-bc-positive'
+        };
+        for (var k in Pr.defaultOptions) {
+            if (Pr.defaultOptions.hasOwnProperty(k)) {
+                if (options.hasOwnProperty(k))
+                    Pr.o[k] = options[k];
+                else
+                    Pr.o[k] = Pr.defaultOptions[k];
+            }
+        }
+        var pr = undefined;
+        if (bzDom(Pr.o.selector).exist())
+            pr = bzDom(Pr.o.selector);
+        else {
+            pr = bzDom('<div id="progress">');
+            bzDom('body').append(pr);
+            var jss = {
+                'rule': {
+                    '.bz-progress': {
+                        'attr': {
+                            position: 'fixed',
+                            background: 'transparent'
+                        }
+                    },
+                    '.bz-progress.top' : {
+                        'attr': {
+                            top: 0,
+                            left: 0,
+                            width: '100%'
+                        }
+                    },
+                    '.bz-progress.bottom' : {
+                        'attr': {
+                            bottom: 0,
+                            left: 0,
+                            width: '100%'
+                        }
+                    },
+                    '.bz-progress.left': {
+                        'attr': {
+                            top: 0,
+                            left: 0
+
+                        }
+                    },
+                    '.bz-progress.right': {
+                        'attr': {
+                            top: 0,
+                            right: 0
+                        }
+                    },
+                    '.bz-progress .bar': {
+                        'attr': {
+                            position: 'absolute',
+                            width:0,
+                            height: 0
+                        }
+                    }
+                }
+            };
+            var css = Blues.JSONCSS(jss);
+            Blues.JSS(css, 'css_progress');
+        }
+        var bar;
+        if (pr.find('.bar').exist())
+            bar = pr.find('.bar');
+        else {
+            bar = bzDom('<div class="bar">');
+            pr.append(bar);
+        }
+        //wrap.find('.bar').remove();
+
+        var setTopBtm = function(side) {
+            if (!pr.ifclass(side))
+                pr.onclass(side);
+            pr.oncss('width', '100vw');
+            pr.oncss('height', Pr.o.size);
+            bar.oncss('height', Pr.o.size);
+        };
+        var setLftRgt = function(side) {
+            if (!pr.ifclass(side))
+                pr.onclass(side);
+            pr.oncss('height', '100vh');
+            pr.oncss('width', Pr.o.size);
+            bar.oncss('width', Pr.o.size);
+        };
+        if (!bar.ifclass(Pr.o.barclass))
+            bar.onclass(Pr.o.barclass);
+        if (!pr.ifclass('bz-progress'))
+            pr.onclass('bz-progress');
+        if (!pr.find('bar').exist()) {
+            if (Pr.o.position === 'top')
+                setTopBtm(Pr.o.position);
+            if (Pr.o.position === 'right')
+                setLftRgt(Pr.o.position);
+            if (Pr.o.position === 'bottom')
+                setTopBtm(Pr.o.position);
+            if (Pr.o.position === 'left')
+                setLftRgt(Pr.o.position);
+        }
+        if (Pr.o.position === 'top' || Pr.o.position === 'bottom')
+            bar.el.style.width = value + '%';
+        if (Pr.o.position === 'left' || Pr.o.position === 'right')
+            bar.el.style.height = value + '%';
+        if (value >= 100) {
+            setTimeout(function() {
+                pr.remove();
+            }, 500);
+        }
+    };
+    //Screen, client width
+    Blues.scrWidth = function() {
+        var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0];
+        return w.innerWidth || e.clientWidth || g.clientWidth;
+    };
+    //Screen, client height
+    Blues.scrHeight = function() {
+        var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0];
+        return w.innerHeight|| e.clientHeight|| g.clientHeight;
+    };
+    // get random float number from range
+    Blues.getRandom = function getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+    };
+    // get random int number from range
+    Blues.getRandomInt = function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+    // Get query parameter
+    Blues.queryParam = function(param){
+        try{
+            var q = location.search.substring(1),
+                v = q.split("&");
+            for( var i = 0; i < v.length; i++ ){
+                var p = v[i].split("=");
+                if(p[0] == param){
+                    if( p[1].indexOf('%20') != -1 )
+                        return decodeURIComponent(p[1]);
+                    else
+                        return p[1];
+                }
+            }
+        }
+        catch (e) { console.log(e); }
+    };
+    // add fader
+    Blues.showfader = function(target, zindex) {
+        alert('works');
+        var defTarget = '.bz-content-to-fade';
+        if (target === null)
+            target = defTarget;
+        target = target || defTarget;
+        zindex = zindex || 8999;
+        var fader = bzDom('<div>').onclass('bz-fader').oncss('z-index', zindex);
+        bzDom(target).append(fader);
+        fader.fadeIn();
+        return fader;
+    };
+    // remove fader
+    Blues.hidefader = function(hidecall) {
+        hidecall = hidecall || false;
+        if (bzDom('.bz-fader').exist()) {
+            var fader = bzDom('.bz-fader').fadeOut(500);
+            setTimeout(function() {
+                if (hidecall)
+                    hidecall();
+                if (fader)
+                    fader.remove();
+            }, 501);
+        }
+    };
+
+
     ///- DHM -// DOM BASIC SETTINGS(DOMBS) /////////////////////
     // add settings to the element
     Blues.addSettings = function(el, settings) {
@@ -1823,7 +1993,7 @@
         var body = document.implementation.createHTMLDocument().body;
         body.innerHTML = htmlString;
         return body.childNodes;
-    }
+    };
     //--> Blues Ajax Call
     Blues.ajax = function(options) {
         var ajax = ajax || {};
@@ -1981,7 +2151,8 @@
         setTimeout(function() {
             if (hidecall)
                 hidecall();
-            fader.remove();
+            if (fader)
+                fader.remove();
         }, 501);
     };
     // scroll to any Dom element
@@ -2046,6 +2217,191 @@
             ink.onclass("animate");
         });
 
+    };
+    //--> Blues Toasts starts here
+    Blues.Toast = function(message, options) {
+        message = message || false;
+        options = options || {};
+        var tclass= options.tclass || 'default',
+            position = options.position || 'bottom',
+            timer = options.timer || 4000,
+            callback = options.callback || null;
+        var toastbox = bzDom('<div>');
+        toastbox.onclass('bz-toast-box');
+        toastbox.onclass(position);
+        if (!bzDom('.bz-toast-box').exist()) {
+            bzDom('body').append(toastbox);
+        }
+
+        function newToast(message) {
+            var newt = bzDom('<div>');
+            newt.onclass('bz-toast');
+            newt.onclass(tclass);
+            newt.inhtml(message);
+            closeToast(newt);
+            return newt;
+        }
+        var newtoast = newToast(message);
+        if (message) {
+            var tb = bzDom('.bz-toast-box');
+            tb.append(newtoast);
+            newtoast.toggleclass('show');
+        }
+        function closeToast(toast) {
+            toast.on('click', function() {
+                var tost = bzDom(this);
+                tost.remove();
+                if (callback)
+                    callback();
+            });
+            setTimeout(function(){
+                toast.remove();
+                if (callback)
+                    callback();
+            }, timer);
+        }
+    };
+    //--> Blues Popover
+    Blues.Popover = function() {
+        if (bzDom('.bz-popover').exist()) {
+            var pps = bzDom('.bz-popover');
+            pps.each(function(i, item) {
+                var pp = bzDom(item);
+                pp.on('click', function() {
+                    var $self = bzDom(this);
+                    if (!$self.ifclass('bz-on')) {
+                        $self.onclass('bz-on');
+                        bzDom(document).on('click', function(event) {
+                            var opnds = document.getElementsByClassName('bz-on');
+                            for (var i = 0; i < opnds.length; i++) {
+                                var isClickInside = opnds[i].contains(event.target);
+                                if (!isClickInside) {
+                                    var elm = bzDom(opnds[i]);
+                                    elm.offclass('bz-on');
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+        }
+    };
+    //--> Blues Context Menu
+    Blues.Contextmenu = function(selector, callback) {
+        var contextArea;
+        var CM = {
+            init: function(selector, callback) {
+                var area = bzDom(selector),
+                    menu = bzDom('#' + area.ondata('menu'));
+                CM.contextListener(menu);
+                CM.clickListener(menu, callback);
+                CM.keyupListener(menu);
+                CM.resizeListener(menu);
+            },
+            clickInsideElement: function(e, className) {
+                var el = e.srcElement || e.target;
+                el = bzDom(el);
+                if (el.ifclass(className))
+                    return el;
+                else {
+                    while (el = el.parent()) {
+                        if (el.ifclass(className))
+                            return el;
+                    }
+                }
+                return false;
+            },
+            contextListener: function(menu) {
+                bzDom(document).on("contextmenu", function (e) {
+                    contextArea = CM.clickInsideElement(e, 'bz-context-area');
+                    if (contextArea) {
+                        e.preventDefault();
+                        CM.toggleMenuOn(menu);
+                        CM.positionMenu(e, menu);
+                    } else {
+                        contextArea = null;
+                        CM.toggleMenuOff(menu);
+                    }
+                });
+            },
+            clickListener: function(menu) {
+                menu.on("click", function (e) {
+                    var clickedEl = CM.clickInsideElement(e, 'item');
+                    if (clickedEl) {
+                        e.preventDefault();
+                        CM.menuItemListener(clickedEl, menu, callback);
+                    } else {
+                        var button = e.which || e.button;
+                        if (button === 1)
+                            CM.toggleMenuOff(menu);
+                    }
+                });
+            },
+            keyupListener: function(menu) {
+                window.onkeyup = function (e) {
+                    if (e.keyCode === 27) {
+                        CM.toggleMenuOff(menu);
+                    }
+                }
+            },
+            resizeListener: function(menu) {
+                window.onresize = function () {
+                    CM.toggleMenuOff(menu);
+                };
+            },
+            toggleMenuOn: function(menu) {
+                var menuState = menu.ondata('open');
+                if (menuState != 1) {
+                    menu.ondata('open', '1');
+                    menu.onclass('bz-on');
+                    bzDom(document).on('click', function(event) {
+                        var opnds = document.getElementsByClassName('bz-on');
+                        for (var i = 0; i < opnds.length; i++) {
+                            var isClickInside = opnds[i].contains(event.target);
+                            if (!isClickInside && bzDom(opnds[i]).ondata('open') == 1) {
+                                var elm = bzDom(opnds[i]);
+                                elm.offclass('bz-on');
+                                elm.ondata('open', '0');
+                            }
+                        }
+                    });
+                }
+            },
+            toggleMenuOff: function(menu) {
+                var menuState = menu.ondata('open');
+                if (menuState != 0) {
+                    menu.ondata('open', '0');
+                    menu.offclass('bz-on');
+                }
+            },
+            positionMenu: function(e, menu) {
+                var clkPos = bz.help.clickPosition(e),
+                    clkX = clkPos.x,
+                    clkY = clkPos.y,
+                    mW = menu.offWidth() + 4,
+                    mH = menu.offHeight + 4,
+                    wW = bz.scrWidth(),
+                    wH = bz.scrHeight();
+                if ((wW - clkX) < mW)
+                    menu.oncss('left', wW - mW + 'px');
+                else
+                    menu.oncss('left', clkX + 'px');
+                if ((wH - clkY) < mH)
+                    menu.oncss('top', wH - mH + 'px');
+                else
+                    menu.oncss('top', clkY + 'px');
+            },
+            menuItemListener: function(clickedEl, menu, callback) {
+                if (callback)
+                    callback(contextArea, clickedEl);
+                CM.toggleMenuOff(menu);
+            }
+        };
+        var ctxs = bzDom(selector);
+        ctxs.each(function(i, item) {
+            var ctx = bzDom(item);
+            CM.init(ctx);
+        });
     };
     ////////////////////////////////////////////////////////////////////
     // JSON TO <head><style> CSS
@@ -2143,9 +2499,9 @@
     //     Blues.Waves();
     // };
     // Blues initialization
-    // Blues.init = function () {
-    //     SetBlues();
-    // };
+    Blues.init = function () {
+        Blues.Popover();
+    };
     window.Bz = window.bz = window.Blues = Blues;
     window.bzDom === undefined && (window.bzDom = Blues.bzDom);
     window.bz.ajax = Blues.ajax;
@@ -2154,7 +2510,8 @@
     window.bz.Modal = Blues.Modal;
     window.bz.alert = Blues.alert;
     window.bz.confirm = Blues.confirm;
+    window.bz.progress = Blues.Progress;
     window.bz.jss = Blues.JSS;
     return Blues;
 });
-//Blues.init();
+Blues.init();

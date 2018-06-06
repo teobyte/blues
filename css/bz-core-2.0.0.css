@@ -473,7 +473,8 @@ html {
 }
 body {
     color:var(--main-text-color);
-    font-family: 'Archivo Narrow', sans-serif;
+    /*font-family: 'Archivo Narrow', sans-serif;*/
+    font-family: 'Helvetica',sans-serif;
     font-size: 16px;
 
 }
@@ -1017,32 +1018,47 @@ blockquote {
     background-color: gray;
 }
 /*---- BLUES TOOLTIP ------------------------*/
+.bz-popover,
 .bz-tooltip {
     position: relative;
     display: inline-block;
 }
+.bz-popover .popover,
+.bz-tooltip .popover {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    display: none;
+    font-family: 'Helvetica',sans-serif;
+    margin-left:50%;
+    position:absolute;
+    z-index:100;
+}
 .bz-tooltip .popover {
     background-color:var(--color-dark);
     border-radius: 4px;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     color: #fff;
-    display: none;
-    font-size: 12px;
-    font-family: 'Helvetica',sans-serif;
-    margin-left:50%;
+    font-size:14px;
+    opacity:0.9;
     padding: 8px;
-    position: absolute;
     text-align: center;
     width: 112px;
-    z-index:100;
+}
+.bz-tooltip .popover {
+    max-height:200px;
+    overflow:hidden;
 }
 .bz-tooltip.top .popover {
     bottom:calc(100% + 8px);
     left:-64px;
 }
 .bz-tooltip.bottom .popover {
-    bottom:calc(-100% - 8px);
+    bottom:-8px;
     left:-64px;
+
+    -webkit-transform: translate(0, 100%);
+    -moz-transform: translate(0, 100%);
+    -ms-transform: translate(0, 100%);
+    -o-transform: translate(0, 100%);
+    transform: translate(0, 100%);
 }
 .bz-tooltip.right .popover {
     top:50%;
@@ -1068,28 +1084,110 @@ blockquote {
     display: block;
     -webkit-animation: fade-in .3s ease-in-out, shift-up .3s ease-in-out;
     -moz-animation: fade-in .3s ease-in-out, shift-up .3s ease-in-out;
-    -ms-animation: fade-in .3s ease-in-out, shift-up .3s ease-in-out;
+    /*-ms-animation: fade-in .3s ease-in-out, shift-up .3s ease-in-out;*/
 }
 .bz-tooltip.bottom:hover .popover {
     display: block;
     -webkit-animation: fade-in .3s ease-in-out, shift-down .3s ease-in-out;
     -moz-animation: fade-in .3s ease-in-out, shift-down .3s ease-in-out;
-    -ms-animation: fade-in .3s ease-in-out, shift-down .3s ease-in-out;
+    /*-ms-animation: fade-in .3s ease-in-out, shift-down .3s ease-in-out;*/
 }
 .bz-tooltip.left:hover .popover {
     display: block;
     -webkit-animation: fade-in .3s ease-in-out, shift-left .3s ease-in-out;
     -moz-animation: fade-in .3s ease-in-out, shift-left .3s ease-in-out;
-    -ms-animation: fade-in .3s ease-in-out, shift-left .3s ease-in-out;
+    /*-ms-animation: fade-in .3s ease-in-out, shift-left .3s ease-in-out;*/
 }
 .bz-tooltip.right:hover .popover {
     display: block;
     -webkit-animation: fade-in .3s ease-in-out, shift-right .3s ease-in-out;
     -moz-animation: fade-in .3s ease-in-out, shift-right .3s ease-in-out;
-    -ms-animation: fade-in .3s ease-in-out, shift-right .3s ease-in-out;
+    /*-ms-animation: fade-in .3s ease-in-out, shift-right .3s ease-in-out;*/
+}
+/*---- BLUES Popover ------------------------*/
+.bz-popover .popover {
+    background-color:#fff;
+    font-size:16px;
+    padding:0;
+    text-align:left;
+    width: 124px;
+}
+.bz-popover .popover ul {
+    width:100%;
+}
+.bz-popover .popover li {
+    cursor:pointer;
+    padding:8px;
+    width:100%;
+}
+.bz-popover .popover li:hover {
+    background:var(--color-light);
+}
+.bz-popover .popover {
+    max-height:300px;
+    overflow:hidden;
+    overflow-y:auto;
+}
+.bz-popover.top .popover {
+    bottom:calc(100% + 8px);
+    left:-64px;
+}
+.bz-popover.bottom .popover {
+    bottom:-8px;
+    left:-64px;
+
+    -webkit-transform: translate(0, 100%);
+    -moz-transform: translate(0, 100%);
+    -ms-transform: translate(0, 100%);
+    -o-transform: translate(0, 100%);
+    transform: translate(0, 100%);
+}
+.bz-popover.right .popover {
+    top:50%;
+    right:-8px;
+
+    -webkit-transform: translate(100%, -50%);
+    -moz-transform: translate(100%, -50%);
+    -ms-transform: translate(100%, -50%);
+    -o-transform: translate(100%, -50%);
+    transform: translate(100%, -50%);
+}
+.bz-popover.left .popover {
+    top:50%;
+    left:calc(-50% - 8px);
+
+    -webkit-transform: translate(-100%, -50%);
+    -moz-transform: translate(-100%, -50%);
+    -ms-transform: translate(-100%, -50%);
+    -o-transform: translate(-100%, -50%);
+    transform: translate(-100%, -50%);
+}
+.bz-popover.top.bz-on .popover {
+    display: block;
+    -webkit-animation: fade-in .3s ease-in-out, shift-up .3s ease-in-out;
+    -moz-animation: fade-in .3s ease-in-out, shift-up .3s ease-in-out;
+    /*-ms-animation: fade-in .3s ease-in-out, shift-up .3s ease-in-out;*/
+}
+.bz-popover.bottom.bz-on .popover {
+    display: block;
+    -webkit-animation: fade-in .3s ease-in-out, shift-down .3s ease-in-out;
+    -moz-animation: fade-in .3s ease-in-out, shift-down .3s ease-in-out;
+    /*-ms-animation: fade-in .3s ease-in-out, shift-down .3s ease-in-out;*/
+}
+.bz-popover.left.bz-on .popover {
+    display: block;
+    -webkit-animation: fade-in .3s ease-in-out, shift-left .3s ease-in-out;
+    -moz-animation: fade-in .3s ease-in-out, shift-left .3s ease-in-out;
+    /*-ms-animation: fade-in .3s ease-in-out, shift-left .3s ease-in-out;*/
+}
+.bz-popover.right.bz-on .popover {
+    display: block;
+    -webkit-animation: fade-in .3s ease-in-out, shift-right .3s ease-in-out;
+    -moz-animation: fade-in .3s ease-in-out, shift-right .3s ease-in-out;
+    /*-ms-animation: fade-in .3s ease-in-out, shift-right .3s ease-in-out;*/
 }
 @keyframes shift-up {from{bottom:30px;} to{bottom:calc(100% + 8px);}}
-@keyframes shift-down {from{bottom:-35px;} to{bottom:calc(-100% - 8px);}}
+@keyframes shift-down {from{bottom:30px;} to{bottom:-8px;}}
 @keyframes shift-left {from{left:30px;} to{left:calc(-50% - 8px);}}
 @keyframes shift-right {from{right:30px;} to{right:-8px;}}
 /*---- Blues Modal ---------------------------*/
@@ -1224,7 +1322,6 @@ blockquote {
     left:10px;
     top:30%;
 }
-
 .bz-toast {
     cursor:pointer;
     opacity:1;
@@ -1264,6 +1361,39 @@ blockquote {
 .bz-toast.show {
     -webkit-animation: fade-in 0.5s;
     animation: fade-in 0.5s;
+}
+/*---- Context Menu ------------------*/
+.bz-context-menu {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    padding: 12px 0;
+    max-height:300px;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 240px;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+.bz-context-menu.bz-on {
+    display: block;
+}
+.bz-context-menu li {
+    display: block;
+    margin-bottom: 4px;
+}
+.bz-context-menu li:last-child {
+    margin-bottom: 0;
+}
+.bz-context-menu a {
+    display: block;
+    padding:8px;
+    color:var(--color-primary);
+    text-decoration: none;
+}
+.bz-context-menu a:hover {
+    color: #fff;
+    background-color:var(--color-light);
 }
 /*---- Transition --------------------*/
 .bz-transition.fast {
