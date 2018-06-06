@@ -13,180 +13,337 @@
     <link rel="stylesheet" href="css/blues-buttons-2.0.0.css">
 </head>
 <body>
-<div class="bz-padding-16 bz-clearfix">
-    <nav id="nav">
-        <a href="index.html">Home</a> |
-        <a href="typography.html">Typography</a> |
-        <a href="forms.html">Forms</a> |
-        <a href="colored-forms.html">Cored Forms</a> |
-        <a href="conditional.html">Conditional</a> |
-        <a href="autocomplete.html">Autocomplete</a> |
-        <a href="selectors.html">Selectors</a> |
-        <a href="buttons.html">Buttons</a> |
-        <a href="group-buttons.html">Group Buttons</a> |
-        <a href="grouping.html">Grouping</a> |
-    </nav>
-</div>
-<div class="bz-padding-16 bz-clearfix">
-    <h5>Checkboxes</h5>
-    <!-- start // markup for the element without injector  -->
-    <label class="bz-checkbox">
-        <input id="chk" type="checkbox" name="chk" checked/>
-        <span class="outer">
-            <span class="inner"></span>
-        </span>
-        <span class="text">Checkbox 00</span>
-    </label>
-    <!-- end // -->
-    <!-- start // markup for the element with injector  -->
-    <input id="chk1" type="checkbox" name="chk1" class="bz-checkbox" data-label="Checkbox 01" checked/>
-    <!-- end // -->
-    <input id="chk2" type="checkbox" name="chk2" class="bz-checkbox" data-label="Checkbox 02" />
-    <input id="chk3" type="checkbox" name="chk3" class="bz-checkbox" data-label="Checkbox 03" />
-</div>
-<div class="bz-padding-16 bz-clearfix">
-    <h5>Radio Buttons</h5>
-    <!-- start // markup for the element without injector  -->
-    <label class="bz-radio">
-        <input id="radio0" type="radio" name="radios" />
-        <span class="outer">
-            <span class="inner"></span>
-        </span>
-        <span class="text">Radio 01</span>
-    </label>
-    <!-- end // -->
-    <!-- start // markup for the element with injector  -->
-    <input id="radio1" type="radio" name="radios" class="bz-radio" data-label="Radio 01" checked/>
-    <!-- end // -->
-    <input id="radio2" type="radio" name="radios" class="bz-radio" data-label="Radio 02" />
-    <input id="radio3" type="radio" name="radios" class="bz-radio" data-label="Radio 03" />
-</div>
-<div class="bz-padding-16 bz-clearfix">
-    <h5>Switchers/Toggles</h5>
-    <!-- start // markup for the element without injector  -->
-    <label class="bz-switch">
-        <input type="checkbox">
-        <span class="slider"></span>
-    </label>
-    <!-- end // -->
-    <!-- start // markup for the element with injector  -->
-    <input id="sw01" type="checkbox" class="bz-switch" checked>
-    <!-- end // -->
-    <input id="sw02" type="checkbox" class="bz-switch rounded">
-    <input type="checkbox" class="bz-switch rounded" checked>
-</div>
-<div class="bz-padding-16 bz-clearfix">
-    <h5>Selectors Inline</h5>
-    <input id="chk11" type="checkbox" name="chk1" class="bz-checkbox" checked/>
-    <input id="radio11" type="radio" name="radioss" class="bz-radio" checked/>
-    <input id="radio12" type="radio" name="radioss" class="bz-radio" checked/>
-    <input type="checkbox" class="bz-switch" checked>
-</div>
-<div class="bz-padding-16 bz-clearfix">
-    <h5>Range Selector</h5>
-    <div class="bz-padding-8">
-        <!-- start // markup for the element without injector  -->
-        <div class="bz-range-select">
-            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-            <span class="text">Value: <span></span></span>
-        </div>
-        <!-- end // -->
-        </br>
-        <!-- start // markup for the element with injector  -->
-        <input type="range" class="bz-range-select" min="1" max="100" value="50" id="myRange2" data-value-name="Value">
-        <!-- end // -->
+<div id="leftSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <ul class="bz-sidenav-list"></ul>
     </div>
 </div>
-<div class="bz-padding-16 bz-clearfix">
-    <h5>Select</h5>
-    <p>Select (injected)</p>
-    <select id="injSelect" class="bz-droplist" data-name="Multiple select" multiple="true" data-search="true">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="opel">Opel</option>
-        <option value="audi">Audi</option>
-        <option value="audi">Cadillac</option>
-        <option value="audi">Dodge</option>
-        <option value="audi">Ford</option>
-    </select>
+<div id="rightSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <ul class="bz-sidenav-list">
+            <li class="subheader">
+                Right Side
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+
+        </ul>
+    </div>
 </div>
-<div class="bz-padding-16 bz-clearfix" style="height:500px;">
-    <h5>Drop Down List</h5>
-    <p>Dropdown list with multiple selection</p>
-    <form>
-        <div  class="bz-droplist" multiple="true" data-search="true">
-            <input type="hidden" id="droplist01">
-            <div class="bz-trigg">
-                <span class="text">Multiple select</span>
-                <i class="bz-flag"></i>
-            </div>
-            <div class="bz-ddl">
-                <div class="bz-ddl-item" >
-                    <input type="checkbox" class="bz-checkbox" name="01" >
-                    <div class="text">About</div>
-                </div>
-                <div class="bz-ddl-item" >
-                    <input type="checkbox" class="bz-checkbox" name="02" >
-                    <div class="text">Terms</div>
-                </div>
-                <div class="bz-ddl-item" >
-                    <input type="checkbox" class="bz-checkbox" name="03" checked="checked" >
-                    <div class="text">Policy</div>
-                </div>
-                <div class="bz-ddl-item" >
-                    <input type="checkbox" class="bz-checkbox" name="04" >
-                    <div class="text">Questions</div>
-                </div>
-                <div class="bz-ddl-item" >
-                    <input type="checkbox" class="bz-checkbox" name="05" >
-                    <div class="text">Support</div>
-                </div>
-                <div class="bz-ddl-item" >
-                    <input type="checkbox" class="bz-checkbox" name="06" >
-                    <div class="text">Help</div>
-                </div>
-            </div>
+<div class="bz-clearfix bz-sidenav-wrapper bz-content">
+    <div class="bz-toolbar primary">
+        <div id="leftSideBtn" class="tool bz-sidenav-btn"
+             data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
+            <div class="back"></div>
+            <i class="icon-menu"></i>
         </div>
-        <p>Dropdown list with single selection and search bar</p>
-        <div class="bz-droplist" data-search="true">
-            <input type="hidden" id="droplist02">
-            <div class="bz-trigg">
-                <span class="text">Select...</span>
-                <i class="bz-flag"></i>
-            </div>
-            <div class="bz-ddl">
-                <div class="bz-ddl-item" >
-                    <input type="checkbox" class="bz-checkbox" name="01" checked="checked">
-                    <div class="text">About</div>
-                </div>
-                <div class="bz-ddl-item" >
-                    <input type="checkbox" class="bz-checkbox" name="02" >
-                    <div class="text">Terms</div>
-                </div>
-                <div class="bz-ddl-item" >
-                    <input type="checkbox" class="bz-checkbox" name="03"  >
-                    <div class="text">Policy</div>
-                </div>
-                <div class="bz-ddl-item" >
-                    <input type="checkbox" class="bz-checkbox" name="04" >
-                    <div class="text">Questions</div>
-                </div>
-                <div class="bz-ddl-item" >
-                    <input type="checkbox" class="bz-checkbox" name="05" >
-                    <div class="text">Support</div>
-                </div>
-                <div class="bz-ddl-item" >
-                    <input type="checkbox" class="bz-checkbox" name="06" >
-                    <div class="text">Help</div>
-                </div>
-            </div>
+        <div class="title">Selectors</div>
+        <div id="leftRightBtn" class="tool bz-sidenav-btn"
+             data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
+            <div class="back"></div>
+            <i class="icon-menu"></i>
         </div>
-    </form>
+    </div>
+    <div class="bz-padding-16 bz-clearfix">
+        <h5>Checkboxes</h5>
+        <!-- start // markup for the element without injector  -->
+        <label class="bz-checkbox">
+            <input id="chk" type="checkbox" name="chk" checked/>
+            <span class="outer">
+            <span class="inner"></span>
+        </span>
+            <span class="text">Checkbox 00</span>
+        </label>
+        <!-- end // -->
+        <!-- start // markup for the element with injector  -->
+        <input id="chk1" type="checkbox" name="chk1" class="bz-checkbox" data-label="Checkbox 01" checked/>
+        <!-- end // -->
+        <input id="chk2" type="checkbox" name="chk2" class="bz-checkbox" data-label="Checkbox 02" />
+        <input id="chk3" type="checkbox" name="chk3" class="bz-checkbox" data-label="Checkbox 03" />
+    </div>
+    <div class="bz-padding-16 bz-clearfix">
+        <h5>Radio Buttons</h5>
+        <!-- start // markup for the element without injector  -->
+        <label class="bz-radio">
+            <input id="radio0" type="radio" name="radios" />
+            <span class="outer">
+            <span class="inner"></span>
+        </span>
+            <span class="text">Radio 01</span>
+        </label>
+        <!-- end // -->
+        <!-- start // markup for the element with injector  -->
+        <input id="radio1" type="radio" name="radios" class="bz-radio" data-label="Radio 01" checked/>
+        <!-- end // -->
+        <input id="radio2" type="radio" name="radios" class="bz-radio" data-label="Radio 02" />
+        <input id="radio3" type="radio" name="radios" class="bz-radio" data-label="Radio 03" />
+    </div>
+    <div class="bz-padding-16 bz-clearfix">
+        <h5>Switchers/Toggles</h5>
+        <!-- start // markup for the element without injector  -->
+        <label class="bz-switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+        <!-- end // -->
+        <!-- start // markup for the element with injector  -->
+        <input id="sw01" type="checkbox" class="bz-switch" checked>
+        <!-- end // -->
+        <input id="sw02" type="checkbox" class="bz-switch rounded">
+        <input type="checkbox" class="bz-switch rounded" checked>
+    </div>
+    <div class="bz-padding-16 bz-clearfix">
+        <h5>Selectors Inline</h5>
+        <input id="chk11" type="checkbox" name="chk1" class="bz-checkbox" checked/>
+        <input id="radio11" type="radio" name="radioss" class="bz-radio" checked/>
+        <input id="radio12" type="radio" name="radioss" class="bz-radio" checked/>
+        <input type="checkbox" class="bz-switch" checked>
+    </div>
+    <div class="bz-padding-16 bz-clearfix">
+        <h5>Range Selector</h5>
+        <div class="bz-padding-8">
+            <!-- start // markup for the element without injector  -->
+            <div class="bz-range-select">
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <span class="text">Value: <span></span></span>
+            </div>
+            <!-- end // -->
+            </br>
+            <!-- start // markup for the element with injector  -->
+            <input type="range" class="bz-range-select" min="1" max="100" value="50" id="myRange2" data-value-name="Value">
+            <!-- end // -->
+        </div>
+    </div>
+    <div class="bz-padding-16 bz-clearfix">
+        <h5>Select</h5>
+        <p>Select (injected)</p>
+        <select id="injSelect" class="bz-droplist" data-name="Multiple select" multiple="true" data-search="true">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+            <option value="audi">Cadillac</option>
+            <option value="audi">Dodge</option>
+            <option value="audi">Ford</option>
+        </select>
+    </div>
+    <div class="bz-padding-16 bz-clearfix" style="height:500px;">
+        <h5>Drop Down List</h5>
+        <p>Dropdown list with multiple selection</p>
+        <form>
+            <div  class="bz-droplist" multiple="true" data-search="true">
+                <input type="hidden" id="droplist01">
+                <div class="bz-trigg">
+                    <span class="text">Multiple select</span>
+                    <i class="bz-flag"></i>
+                </div>
+                <div class="bz-ddl">
+                    <div class="bz-ddl-item" >
+                        <input type="checkbox" class="bz-checkbox" name="01" >
+                        <div class="text">About</div>
+                    </div>
+                    <div class="bz-ddl-item" >
+                        <input type="checkbox" class="bz-checkbox" name="02" >
+                        <div class="text">Terms</div>
+                    </div>
+                    <div class="bz-ddl-item" >
+                        <input type="checkbox" class="bz-checkbox" name="03" checked="checked" >
+                        <div class="text">Policy</div>
+                    </div>
+                    <div class="bz-ddl-item" >
+                        <input type="checkbox" class="bz-checkbox" name="04" >
+                        <div class="text">Questions</div>
+                    </div>
+                    <div class="bz-ddl-item" >
+                        <input type="checkbox" class="bz-checkbox" name="05" >
+                        <div class="text">Support</div>
+                    </div>
+                    <div class="bz-ddl-item" >
+                        <input type="checkbox" class="bz-checkbox" name="06" >
+                        <div class="text">Help</div>
+                    </div>
+                </div>
+            </div>
+            <p>Dropdown list with single selection and search bar</p>
+            <div class="bz-droplist" data-search="true">
+                <input type="hidden" id="droplist02">
+                <div class="bz-trigg">
+                    <span class="text">Select...</span>
+                    <i class="bz-flag"></i>
+                </div>
+                <div class="bz-ddl">
+                    <div class="bz-ddl-item" >
+                        <input type="checkbox" class="bz-checkbox" name="01" checked="checked">
+                        <div class="text">About</div>
+                    </div>
+                    <div class="bz-ddl-item" >
+                        <input type="checkbox" class="bz-checkbox" name="02" >
+                        <div class="text">Terms</div>
+                    </div>
+                    <div class="bz-ddl-item" >
+                        <input type="checkbox" class="bz-checkbox" name="03"  >
+                        <div class="text">Policy</div>
+                    </div>
+                    <div class="bz-ddl-item" >
+                        <input type="checkbox" class="bz-checkbox" name="04" >
+                        <div class="text">Questions</div>
+                    </div>
+                    <div class="bz-ddl-item" >
+                        <input type="checkbox" class="bz-checkbox" name="05" >
+                        <div class="text">Support</div>
+                    </div>
+                    <div class="bz-ddl-item" >
+                        <input type="checkbox" class="bz-checkbox" name="06" >
+                        <div class="text">Help</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 <script src="js/bz-core-2.0.0.js"></script>
 <script src="js/bz-droplist-2.0.0.js"></script>
 <script src="js/bz-inject-2.0.0.js"></script>
-
+<script src="js/bz-sidenav-2.0.0.js"></script>
+<script src="js/bluessite.js"></script>
 <script type="text/javascript">
     (function() {
         // use method Droplist.all();

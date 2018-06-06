@@ -5,10 +5,12 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
-    <title>Blues 2.0 | Context menu</title>
+    <title>Blues 2.0 | Dialog</title>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/bz-core-2.0.0.css">
+    <link rel="stylesheet" href="css/bz-forms-2.0.0.css">
+    <link rel="stylesheet" href="css/blues-buttons-2.0.0.css">
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -173,66 +175,47 @@
             <div class="back"></div>
             <i class="icon-menu"></i>
         </div>
-        <div class="title">Context menu</div>
+        <div class="title">Progress</div>
         <div id="leftRightBtn" class="tool bz-sidenav-btn"
              data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
             <div class="back"></div>
             <i class="icon-menu"></i>
         </div>
     </div>
-    <div class="bz-clear h-128"></div>
     <div class="bz-padding-16 bz-clearfix">
-        <div id="greenarea" data-menu="contextmenu" class="bz-context-area bz-margin-auto bz-bc-positive bz-t-align-c bz-fc-white" style="padding:50px 0;">
-            Right mouse click in the area
-        </div>
-    </div>
-    <div class="bz-padding-16 bz-clearfix">
-        <div id="redarea" data-menu="contextmenu" class="bz-context-area bz-margin-auto bz-bc-negative bz-t-align-c bz-fc-white" style="padding:50px 0;">
-            Right mouse click in the area
+        <div class="bz-padding-8">
+            <h5>Progress bar</h5>
+            <button type="button" class="bz-btn" onclick="move()">Top Green (Default)</button>
+            <button type="button" class="bz-btn" onclick="move('right', 10, 'bz-bc-negative')">Right Red</button>
+            <button type="button" class="bz-btn" onclick="move('bottom', 10, 'bz-bc-warning')">Bottom Orange</button>
+            <button type="button" class="bz-btn" onclick="move('left')">Left</button>
         </div>
     </div>
 </div>
-
-<div id="contextmenu" class="bz-context-menu" data-open="0">
-    <ul class="bz-list-no-style">
-        <li>
-            <a href="#" class="item" data-id="1" data-action="View"><i class="icon-eye"></i>  View item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="2" data-action="Edit"><i class="icon-pencil"></i>  Edit item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="3" data-action="Delete"><i class="icon-trash"></i>  Delete item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="1" data-action="View"><i class="icon-eye"></i>  View item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="2" data-action="Edit"><i class="icon-pencil"></i>  Edit item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="3" data-action="Delete"><i class="icon-trash"></i>  Delete item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="1" data-action="View"><i class="icon-eye"></i>  View item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="2" data-action="Edit"><i class="icon-pencil"></i>  Edit item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="3" data-action="Delete"><i class="icon-trash"></i>  Delete item</a>
-        </li>
-    </ul>
-</div>
-
 <script src="js/bz-core-2.0.0.js"></script>
 <script src="js/bz-inject-2.0.0.js"></script>
 <script src="js/bz-sidenav-2.0.0.js"></script>
 <script src="js/bluessite.js"></script>
 <script>
-    bz.Contextmenu('.bz-context-area', function(contextArea, clickedEl) {
-        bz.alert('Context Area: ' + contextArea.onattr('id') + ', Selected Action: ' + clickedEl.ondata('action') + ', Selected Id: ' + clickedEl.ondata('id'));
-    });
+    function move(position, size, barclass) {
+        var options = {};
+        if (position)
+            options.position = position;
+        if(size)
+            options.size = size;
+        if(barclass)
+            options.barclass = barclass;
+        var ps = 0;
+        var id = setInterval(frame, 50);
+        function frame() {
+            if (ps >= 100) {
+                clearInterval(id);
+            } else {
+                ps++;
+                bz.progress(ps, options);
+            }
+        }
+    }
 </script>
 </body>
 </html>

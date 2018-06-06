@@ -168,30 +168,30 @@
         </ul>
     </div>
 </div>
-<div class="bz-padding-16 bz-clearfix bz-sidenav-wrapper bz-content">
-    <div class="bz-bc-white">
-        <h5>Tooltip</h5>
-        <div id="leftSideBtn" data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false"
-             class="iwe-section bz-transition bz-sidenav-btn bz-float-l">
-            <i class="icon-menu iwe-header-icon"></i>
+<div class="bz-clearfix bz-sidenav-wrapper bz-content">
+    <div class="bz-toolbar primary">
+        <div id="leftSideBtn" class="tool bz-sidenav-btn"
+             data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
+            <div class="back"></div>
+            <i class="icon-menu"></i>
         </div>
-        <div id="leftRightBtn" data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false"
-             class="iwe-section bz-transition bz-sidenav-btn bz-float-r">
-            <i class="icon-menu iwe-header-icon"></i>
+        <div class="title">Tooltip</div>
+        <div id="leftRightBtn" class="tool bz-sidenav-btn"
+             data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
+            <div class="back"></div>
+            <i class="icon-menu"></i>
         </div>
     </div>
     <div class="bz-padding-16 bz-clearfix">
         <div class="bz-clear h-128"></div>
+        <h6>Short tooltip</h6>
         <div class="bz-row">
-
-
-
             <div class="bz-col mb3 bz-t-align-c">
                 <div class="bz-tooltip top">
                     <button class="bz-btn">
                         Tooltip
                     </button>
-                    <div class="popover">What is it?</div>
+                    <div class="popover">You got me!</div>
                 </div>
             </div>
 
@@ -200,7 +200,7 @@
                     <button class="bz-btn">
                         Left
                     </button>
-                    <div class="popover">What is it? fgshs shdf h h df fg gfgh hsf hsfh sfhsfdhsh</div>
+                    <div class="popover">You got me!</div>
                 </div>
             </div>
 
@@ -209,7 +209,7 @@
                     <button class="bz-btn">
                         Right
                     </button>
-                    <div class="popover">What is it?</div>
+                    <div class="popover">You got me!</div>
                 </div>
             </div>
 
@@ -218,12 +218,48 @@
                     <button class="bz-btn">
                         Bottom
                     </button>
-                    <div class="popover">What is it? fgshs shdf h h df fg gfgh hsf hsfh sfhsfdhsh</div>
+                    <div class="popover">You got me!</div>
+                </div>
+            </div>
+        </div>
+        <div class="bz-clear h-64"></div>
+        <h6>Long tooltip message</h6>
+        <div class="bz-row">
+            <div class="bz-col mb3 bz-t-align-c">
+                <div class="bz-tooltip top">
+                    <button class="bz-btn">
+                        Tooltip
+                    </button>
+                    <div class="popover">You got me! This is a very very long tooltip message.</div>
                 </div>
             </div>
 
+            <div class="bz-col mb3 bz-t-align-c">
+                <div class="bz-tooltip left">
+                    <button class="bz-btn">
+                        Left
+                    </button>
+                    <div class="popover">You got me! This is a very very long tooltip message.</div>
+                </div>
+            </div>
 
+            <div class="bz-col mb3 bz-t-align-c">
+                <div class="bz-tooltip right">
+                    <button class="bz-btn">
+                        Right
+                    </button>
+                    <div class="popover">You got me! This is a very very long tooltip message.</div>
+                </div>
+            </div>
 
+            <div class="bz-col mb3 bz-t-align-c">
+                <div class="bz-tooltip bottom">
+                    <button class="bz-btn">
+                        Bottom
+                    </button>
+                    <div class="popover">You got me! This is a very very long tooltip message.</div>
+                </div>
+            </div>
         </div>
 
 

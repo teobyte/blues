@@ -5,10 +5,12 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
-    <title>Blues 2.0 | Context menu</title>
+    <title>Blues 2.0 | Dialog</title>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/bz-core-2.0.0.css">
+    <link rel="stylesheet" href="css/bz-forms-2.0.0.css">
+    <link rel="stylesheet" href="css/blues-buttons-2.0.0.css">
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -173,65 +175,115 @@
             <div class="back"></div>
             <i class="icon-menu"></i>
         </div>
-        <div class="title">Context menu</div>
+        <div class="title">Dialog</div>
         <div id="leftRightBtn" class="tool bz-sidenav-btn"
              data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
             <div class="back"></div>
             <i class="icon-menu"></i>
         </div>
     </div>
-    <div class="bz-clear h-128"></div>
     <div class="bz-padding-16 bz-clearfix">
-        <div id="greenarea" data-menu="contextmenu" class="bz-context-area bz-margin-auto bz-bc-positive bz-t-align-c bz-fc-white" style="padding:50px 0;">
-            Right mouse click in the area
+        <div class="bz-padding-8">
+            <h5>Alerts</h5>
+            <div class="bz-padding-8 bz-clearfix">
+                <input id="callminimized" type="button" class="bz-btn" value="Minimized">
+                <input id="calltop" type="button" class="bz-btn" value="Top alert">
+                <input id="callright" type="button" class="bz-btn" value="Right alert">
+                <input id="callbottom" type="button" class="bz-btn" value="Bottom alert">
+                <input id="callleft" type="button" class="bz-btn" value="Left alert">
+            </div>
+            <div class="bz-padding-8 bz-clearfix">
+                <input id="callalert" type="button" class="bz-btn" value="Simple alert">
+                <input id="callconfirm" type="button" class="bz-btn" value="Confirm dialog">
+                <input id="callprompt" type="button" class="bz-btn" value="Prompt dialog">
+            </div>
+        </div>
+
+    </div>
+    <div id="minimized" class="bz-modal minimized" data-btn="callminimized">
+        <div class="content">
+            <div class="bz-t-title">Minimized modal window</div>
+            <p>Alert style modal window</p>
         </div>
     </div>
-    <div class="bz-padding-16 bz-clearfix">
-        <div id="redarea" data-menu="contextmenu" class="bz-context-area bz-margin-auto bz-bc-negative bz-t-align-c bz-fc-white" style="padding:50px 0;">
-            Right mouse click in the area
+    <div id="top" class="bz-modal top" data-btn="calltop">
+        <div class="content">
+            <div class="bz-t-title">Minimized modal window</div>
+            <p>Alert style modal window</p>
+        </div>
+    </div>
+    <div id="right" class="bz-modal right" data-btn="callright">
+        <div class="content">
+            <div class="bz-t-title">Minimized modal window</div>
+            <p>Alert style modal window</p>
+        </div>
+    </div>
+    <div id="bottom" class="bz-modal bottom" data-btn="callbottom">
+        <div class="content">
+            <div class="bz-t-title">Minimized modal window</div>
+            <p>Alert style modal window</p>
+        </div>
+    </div>
+    <div id="left" class="bz-modal left" data-btn="callleft">
+        <div class="content">
+            <div class="bz-t-title">Minimized modal window</div>
+            <p>Alert style modal window</p>
+        </div>
+    </div>
+
+    <div id="prompt" class="bz-modal">
+        <div class="content">
+            <form>
+                <div class="bz-row">
+                    <input name="name" type="text" class="bz-input" data-class="w-100p" placeholder="Name">
+                </div>
+            </form>
         </div>
     </div>
 </div>
-
-<div id="contextmenu" class="bz-context-menu" data-open="0">
-    <ul class="bz-list-no-style">
-        <li>
-            <a href="#" class="item" data-id="1" data-action="View"><i class="icon-eye"></i>  View item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="2" data-action="Edit"><i class="icon-pencil"></i>  Edit item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="3" data-action="Delete"><i class="icon-trash"></i>  Delete item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="1" data-action="View"><i class="icon-eye"></i>  View item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="2" data-action="Edit"><i class="icon-pencil"></i>  Edit item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="3" data-action="Delete"><i class="icon-trash"></i>  Delete item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="1" data-action="View"><i class="icon-eye"></i>  View item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="2" data-action="Edit"><i class="icon-pencil"></i>  Edit item</a>
-        </li>
-        <li>
-            <a href="#" class="item" data-id="3" data-action="Delete"><i class="icon-trash"></i>  Delete item</a>
-        </li>
-    </ul>
-</div>
-
 <script src="js/bz-core-2.0.0.js"></script>
 <script src="js/bz-inject-2.0.0.js"></script>
 <script src="js/bz-sidenav-2.0.0.js"></script>
 <script src="js/bluessite.js"></script>
 <script>
-    bz.Contextmenu('.bz-context-area', function(contextArea, clickedEl) {
-        bz.alert('Context Area: ' + contextArea.onattr('id') + ', Selected Action: ' + clickedEl.ondata('action') + ', Selected Id: ' + clickedEl.ondata('id'));
+    bzDom('#callalert').on('click', function() {
+        bz.alert('it works', function() {
+            alert('alert callback');
+        });
+    });
+    bzDom('#callconfirm').on('click', function() {
+        bz.confirm('Are you sure?', function() {
+            alert('confirmation callback');
+        }, function() {
+            alert('declining callback');
+        });
+    });
+    bzDom('#callprompt').on('click', function() {
+        bzDom('#prompt').prompt(function(formdata) {
+            alert(JSON.stringify(formdata));
+        }, function() {
+            alert('cancel data');
+        }, { width: '640px' });
+    });
+    bz.Modal({
+        selector: '#minimized',
+        type: 'alert'
+    });
+    bz.Modal({
+        selector: '#top',
+        type: 'alert'
+    });
+    bz.Modal({
+        selector: '#right',
+        type: 'alert'
+    });
+    bz.Modal({
+        selector: '#bottom',
+        type: 'alert'
+    });
+    bz.Modal({
+        selector: '#left',
+        type: 'alert'
     });
 </script>
 </body>
