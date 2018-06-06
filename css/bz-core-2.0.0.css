@@ -1241,10 +1241,10 @@ blockquote {
     -o-transform: translate(0, -50%);
     transform: translate(0, -50%);
 }
-.bz-modal.top .modal-content { top:0; animation:animatetop 0.5s; }
-.bz-modal.right .modal-content { right:0; animation:animateright 0.5s; }
-.bz-modal.bottom .modal-content { bottom:0; animation:animatebottom 0.5s; }
-.bz-modal.left .modal-content { left:0; animation:animateleft 0.5s; }
+.bz-modal.top .modal-content { top:0; animation:animate-top 0.5s; }
+.bz-modal.right .modal-content { right:0; animation:animate-right 0.5s; }
+.bz-modal.bottom .modal-content { bottom:0; animation:animate-bottom 0.5s; }
+.bz-modal.left .modal-content { left:0; animation:animate-left 0.5s; }
 .bz-modal.top .modal-content,
 .bz-modal.right .modal-content,
 .bz-modal.bottom .modal-content,
@@ -1424,7 +1424,6 @@ blockquote {
     top:0;
     width:100%;
 }
-
 /* ANIMATIONS */
 .bz-animate-fading{animation:fading 3s infinite}
 .bz-animate-opacity{animation:fade-in 1s}
@@ -1559,6 +1558,72 @@ blockquote {
     margin-left:240px;
     margin-right:240px;
     width:calc(100% - 480px);
+}
+/*---- Toolbar ---------------------------------*/
+.bz-toolbar {
+    background:var(--color-faded);
+    color:#fff;
+    box-sizing:border-box;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    line-height:32px;
+    margin:0!important;
+    padding:0!important;
+    position: relative;
+    height: 48px;
+    width: 100%;
+}
+.bz-toolbar.primary {
+    background:var(--color-primary);
+    color:#fff;
+}
+.bz-toolbar.positive {
+    background:var(--color-positive);
+    color:#fff;
+}
+.bz-toolbar.positive.inverted {
+    background:#fff;
+    color:var(--color-positive);
+}
+.bz-toolbar.negative {
+    background:var(--color-negative);
+    color:#fff;
+}
+.bz-toolbar .title,
+.bz-toolbar .tool {
+    display:inline-block;
+    height: 32px;
+    margin:0!important;
+    padding:8px 16px!important;
+    position: relative;
+}
+.bz-toolbar .title {
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 1px;
+    max-width: 100%;
+    -webkit-flex: 1; /* Safari 6.1+ */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1;
+}
+.bz-toolbar .tool .back {
+    top:0; right:0;
+    bottom:0; left:0;
+    margin:8px;
+    border-radius:50%;
+    overflow:hidden;
+    background:transparent;
+    opacity:0.5;
+    position: absolute;
+}
+.bz-toolbar .tool:hover .back {
+    background:var(--color-light);
+}
+.bz-toolbar .tool i {
+    font-size:16px;
+    line-height:32px;
 }
 /*--> DEVICE SIZES ---------------------------- */
 /* Mobile  <= 568px */

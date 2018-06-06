@@ -73,7 +73,7 @@ if (typeof require === 'function') {
             // switch on searching option
             if ($ddlWrap.ondata('search') == 'true')
                 Dl.initsearch($itms);
-            bzDom(document).on('click', function(e) {
+            bzDom(document).on('click', function(event) {
                 var opnds = document.getElementsByClassName('bz-on');
                 for (var i = 0; i < opnds.length; i++) {
                     var isClickInside = opnds[i].contains(event.target);
@@ -97,7 +97,7 @@ if (typeof require === 'function') {
             setTimeout(function() {
                 ddl.ondata('key', '1');
                 ddl.toggleclass('bz-on');
-            }, 300)
+            }, 300);
 
             ddl.on('mouseenter', function(e) {
                 var $self = bzDom(this);
@@ -162,7 +162,7 @@ if (typeof require === 'function') {
             });
             $ddl.prepend(input);
         }
-    }
+    };
     Dl.defaultOptions = {
         selector: '.bz-droplist',
         calloncheck: function(selected, trigger) {
@@ -173,7 +173,7 @@ if (typeof require === 'function') {
             var t = trigger.find('.text');
             t.inhtml('selected: ' + JSON.stringify(selected));
         }
-    }
+    };
     function init(options) {
         if (!bzDom(options.selector).exist()) return;
         if (Object.prototype.hasOwnProperty.call(options, 'data-droplist')) return;
