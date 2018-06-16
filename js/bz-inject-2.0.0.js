@@ -235,8 +235,12 @@ if (typeof require === 'function') {
             if (ddl.find('option').exist()) {
                 var $ddl = bzDom('<div class="bz-droplist">');
                 var $inpt = bzDom('<input type="hidden">');
-                if (ddl.onattr('id'))
-                    $inpt.onattr('id', ddl.onattr('id'));
+                var attrs = ddl.el.attributes;
+                for(var i = attrs.length - 1; i >= 0; i--) {
+                    if (attrs[i].name != 'multiple' && attrs[i].name != 'data-search')
+                        $inpt.onattr(attrs[i].name, attrs[i].value);
+                }
+                $inpt.offclass('bz-droplist');
                 if (ddl.onattr('multiple'))
                     $ddl.onattr('multiple', ddl.onattr('multiple'));
                 if (ddl.ondata('search'))

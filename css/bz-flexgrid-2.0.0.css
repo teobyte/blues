@@ -31,7 +31,7 @@
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    margin:0!important;
+    margin:0;
 }
 .bz-col.mb {
     -webkit-box-flex: 1;

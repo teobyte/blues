@@ -925,10 +925,13 @@
         return (newVal !== undefined ? this.el.value = newVal : this.el.value);
     };
     // get element HTML
-    bzObject.prototype.inhtml = function(html) {
+    bzObject.prototype.inhtml = function(html, add) {
         if(html === undefined)
             return this.el.innerHTML;
-        this.el.innerHTML = html;
+        if (add === 'add')
+            this.el.innerHTML = this.el.innerHTML + html;
+        else
+            this.el.innerHTML = html;
         return this;
     };
     // get element outer HTML
@@ -1879,8 +1882,6 @@
             }, 501);
         }
     };
-
-
     ///- DHM -// DOM BASIC SETTINGS(DOMBS) /////////////////////
     // add settings to the element
     Blues.addSettings = function(el, settings) {
@@ -2267,21 +2268,40 @@
             var pps = bzDom('.bz-popover');
             pps.each(function(i, item) {
                 var pp = bzDom(item);
-                pp.on('click', function() {
-                    var $self = bzDom(this);
-                    if (!$self.ifclass('bz-on')) {
-                        $self.onclass('bz-on');
-                        bzDom(document).on('click', function(event) {
-                            var opnds = document.getElementsByClassName('bz-on');
-                            for (var i = 0; i < opnds.length; i++) {
-                                var isClickInside = opnds[i].contains(event.target);
-                                if (!isClickInside) {
-                                    var elm = bzDom(opnds[i]);
-                                    elm.offclass('bz-on');
+                if (pp.ondata('open') != '1') {
+                    pp.ondata('open', '0');
+                    pp.on('click', function() {
+                        var $self = bzDom(this);
+                        if (!$self.ifclass('bz-on') && $self.ondata('open') != '1') {
+                            $self.onclass('bz-on');
+                            $self.ondata('open', '1');
+                            bzDom(document).on('click', function(event) {
+                                var opnds = document.getElementsByClassName('bz-on');
+                                for (var i = 0; i < opnds.length; i++) {
+                                    var isClickInside = opnds[i].contains(event.target);
+                                    if (!isClickInside) {
+                                        var elm = bzDom(opnds[i]);
+                                        elm.offclass('bz-on');
+                                        elm.ondata('open', '0');
+                                    }
                                 }
-                            }
-                        });
-                    }
+                            });
+                        }
+                    });
+                }
+                var sels = pp.find('li');
+                sels.each(function(i, item) {
+                    var sel = bzDom(item);
+                    sel.on('click', function(e) {
+                        var $self = bzDom(this),
+                            pop = $self.parent('.bz-popover');
+                        if (pop.ondata('open') == '1') {
+                            pop.offclass('bz-on');
+                            setTimeout(function() {
+                                pop.ondata('open', '0');
+                            }, 100)
+                        }
+                    });
                 });
             });
         }
