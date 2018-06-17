@@ -249,7 +249,7 @@ if (typeof require === 'function') {
                 var $txt = bzDom('<span class="text">');
                 var $flag = bzDom('<i class="bz-flag">');
                 if (ddl.ondata('name'))
-                    $txt.inhtml(ddl.ondata('name'));
+                    $inpt.ondata('name', ddl.ondata('name'));
                 $trig.append($txt);
                 $trig.append($flag);
                 $ddl.append($inpt);

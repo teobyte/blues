@@ -31,8 +31,17 @@ if (typeof require === 'function') {
             var Dl = this;
             var $ddlWrap = Dl.droplist.parent('.bz-droplist'),
                 $trig = $ddlWrap.find('.bz-trigg'),
+                $inpt = $trig.prev('input'),
                 $chks = $ddlWrap.find('[type="checkbox"]'),
                 $itms = $ddlWrap.find('.bz-ddl-item');
+
+            var selectedVal = $inpt.val(),
+                selectedName = $inpt.ondata('name');
+
+
+
+            $trig.find('.text').inhtml(selectedName);
+
             $trig.on('click', function() {
                 var $th = bzDom(this),
                     _$ddl = $th.parent().find('.bz-ddl');
@@ -44,7 +53,6 @@ if (typeof require === 'function') {
             $chks.each(function(i, item) {
                 var chk = bzDom(item);
                 if (chk.el.checked == true) {
-
                     Dl.checkBox(chk);
                 }
             });
@@ -62,11 +70,11 @@ if (typeof require === 'function') {
                             Dl.uncheckAll($chks);
                         Dl.checkBox($chk);
                         if (Dl.o.calloncheck && Blues.check.ifFunction(Dl.o.calloncheck))
-                            Dl.o.calloncheck(Dl.data, $trig);
+                            Dl.o.calloncheck(Dl.data, $trig, $inpt);
                     } else {
                         Dl.uncheckBox($chk);
                         if (Dl.o.calluncheck && Blues.check.ifFunction(Dl.o.calluncheck))
-                            Dl.o.calluncheck(Dl.data, $trig);
+                            Dl.o.calluncheck(Dl.data, $trig, $inpt);
                     }
                 });
             });
@@ -165,11 +173,11 @@ if (typeof require === 'function') {
     };
     Dl.defaultOptions = {
         selector: '.bz-droplist',
-        calloncheck: function(selected, trigger) {
+        calloncheck: function(selected, trigger, inpt) {
             var t = trigger.find('.text');
             t.inhtml('selected: ' + JSON.stringify(selected));
         },
-        calluncheck: function(selected, trigger) {
+        calluncheck: function(selected, trigger, inpt) {
             var t = trigger.find('.text');
             t.inhtml('selected: ' + JSON.stringify(selected));
         }
