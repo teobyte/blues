@@ -2423,6 +2423,91 @@
             CM.init(ctx);
         });
     };
+    //--> Blues Tabs
+    Blues.Tabs = function(selector, callback) {
+        var jss = {
+            'rule': {
+                '.bz-tabs': {
+                    'attr': {
+                        position: 'relative'
+                    }
+                },
+                '.bz-tabs .bz-tab' : {
+                    'attr': {
+                        cursor: 'pointer',
+                        'text-align': 'center',
+                        padding: '8px',
+                        border: 'none',
+                        'border-bottom': '4px solid var(--color-light)'
+                    }
+                },
+                '.bz-tabs .bz-tab:hover' : {
+                    'attr': {
+                        background: 'var(--color-light)'
+                    }
+                },
+                '.bz-tabs .marker': {
+                    'attr': {
+                        background: 'var(--color-primary)',
+                        height: '4px',
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        '-webkit-transition': 'all 0.5s ease',
+                        '-moz-transition': 'all 0.5s ease',
+                        transition: 'all 0.5s ease'
+                    }
+                },
+                '.bz-tabs-containers': {
+                    'attr': {
+                        position: 'relative',
+                        overflow: 'hidden'
+                    }
+                },
+                '.bz-tabs-containers .bz-container': {
+                    'attr': {
+                        display: 'none'
+                    }
+                },
+                '.bz-tabs-containers .bz-container.show': {
+                    'attr': {
+                        display: 'block'
+                    }
+                }
+
+            }
+        };
+        var css = Blues.JSONCSS(jss);
+        Blues.JSS(css, 'css_tabs');
+
+        var $tabsBox = bzDom(selector);
+        var $tabs = $tabsBox.find('.bz-tab');
+        var $conts = bzDom('#' + $tabsBox.ondata('tabs')).find('.bz-container');
+        var qty = $tabs.el.length;
+        var marker = bzDom('<div class="marker">');
+        var markerW = 100 / qty;
+        marker.oncss('width', markerW + '%');
+        $tabsBox.append(marker);
+        $tabs.each(function(i, item) {
+            var $tab = bzDom(item);
+            $tab.ondata('item', i);
+            $tab.on('click', function() {
+                var $self = bzDom(this),
+                    shift = $self.ondata('item');
+                marker.oncss('left', markerW * shift + '%');
+                $conts.each(function(j, item) {
+                    var $cont = bzDom(item);
+                    $cont.offclass('show');
+                    if (j == shift) {
+                        if (!$cont.ifclass('show'))
+                            $cont.onclass('show');
+                    }
+                });
+                if (callback)
+                    callback(i, item);
+            });
+        });
+    };
     ////////////////////////////////////////////////////////////////////
     // JSON TO <head><style> CSS
     var start = true;
