@@ -1364,9 +1364,10 @@
         var datastr, dataObj = {};
         var i, j, q = [];
         for (i = form.elements.length - 1; i >= 0; i = i - 1) {
-            if (form.elements[i].name === "") {
+            if (form.elements[i].name === "")
                 continue;
-            }
+            if (bzDom(form.elements[i]).ifclass('formignore'))
+                continue;
             switch (form.elements[i].nodeName) {
                 case 'INPUT':
                     // switch (form.elements[i].type) {
@@ -1396,6 +1397,7 @@
                         q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
                     if (result === 'data')
                         dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+                    break;
                 case 'file':
                     break;
                 case 'TEXTAREA':
@@ -1489,15 +1491,17 @@
         };
         Ml.prepareModal = function() {
             var Ml = this,
-                cont = Ml.modal.find('.content'),
-                wraper = bzDom('<div class="modal-content bz-shadow-5">'),
-                fader = bzDom('<div class="fader">');
-            if (Ml.o.width)
-                wraper.oncss('max-width', Ml.o.width);
-            if (Ml.o.height)
-                wraper.oncss('max-height', Ml.o.height);
-            cont.wrapinto(wraper, true);
-            Ml.modal.prepend(fader);
+                cont = Ml.modal.find('.content');
+            if (!cont.parent().ifclass('modal-content')) {
+                var wraper = bzDom('<div class="modal-content bz-shadow-5">'),
+                    fader = bzDom('<div class="fader">');
+                if (Ml.o.width)
+                    wraper.oncss('max-width', Ml.o.width);
+                if (Ml.o.height)
+                    wraper.oncss('max-height', Ml.o.height);
+                cont.wrapinto(wraper, true);
+                Ml.modal.prepend(fader);
+            }
             if (!Ml.modal.ifclass('center') &&
                 !Ml.modal.ifclass('top') &&
                 !Ml.modal.ifclass('right') &&

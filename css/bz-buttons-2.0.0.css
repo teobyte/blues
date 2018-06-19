@@ -1,3 +1,4 @@
+/*--> BLUES BUTTONS ---------------------*/
 .bz-btn,
 .bz-btn-circle,
 .bz-btn-no-style,
@@ -489,6 +490,7 @@
     word-spacing: -0.3em; /* IE < 8: collapse white-space between units */
     text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
 }
+
 .bz-btn-group .text {
     letter-spacing: normal;
     word-spacing: normal;

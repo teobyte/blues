@@ -241,6 +241,8 @@ if (typeof require === 'function') {
                         $inpt.onattr(attrs[i].name, attrs[i].value);
                 }
                 $inpt.offclass('bz-droplist');
+                if (ddl.ondata('class'))
+                    $ddl.onclass(ddl.ondata('class'));
                 if (ddl.onattr('multiple'))
                     $ddl.onattr('multiple', ddl.onattr('multiple'));
                 if (ddl.ondata('search'))
@@ -256,7 +258,7 @@ if (typeof require === 'function') {
                 $ddl.append($trig);
                 var _$dll = bzDom('<div class="bz-ddl">');
                 var _$item = bzDom('<div class="bz-ddl-item" >'),
-                    _$chk = bzDom('<input type="checkbox">'),
+                    _$chk = bzDom('<input type="checkbox" class="formignore">'),
                     _$txt = bzDom('<div class="text">');
                 _$chk.onclass('bz-checkbox');
                 var opts = ddl.find('option');

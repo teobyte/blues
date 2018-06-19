@@ -38,8 +38,6 @@ if (typeof require === 'function') {
             var selectedVal = $inpt.val(),
                 selectedName = $inpt.ondata('name');
 
-
-
             $trig.find('.text').inhtml(selectedName);
 
             $trig.on('click', function() {
@@ -47,8 +45,10 @@ if (typeof require === 'function') {
                     _$ddl = $th.parent().find('.bz-ddl');
                 if (_$ddl.ondata('key') == '1')
                     Dl.closeDdl(_$ddl);
-                else
+                else {
                     Dl.openDdl(_$ddl);
+                }
+
             });
             $chks.each(function(i, item) {
                 var chk = bzDom(item);
@@ -69,12 +69,14 @@ if (typeof require === 'function') {
                         if (!$ddlWrap.onattr('multiple') == true)
                             Dl.uncheckAll($chks);
                         Dl.checkBox($chk);
+                        $inpt.ondata('name', Dl.data);
                         if (Dl.o.calloncheck && Blues.check.ifFunction(Dl.o.calloncheck))
-                            Dl.o.calloncheck(Dl.data, $trig, $inpt);
+                            Dl.o.calloncheck($self, Dl.data, $trig, $inpt);
                     } else {
                         Dl.uncheckBox($chk);
+                        $inpt.ondata('name', Dl.data);
                         if (Dl.o.calluncheck && Blues.check.ifFunction(Dl.o.calluncheck))
-                            Dl.o.calluncheck(Dl.data, $trig, $inpt);
+                            Dl.o.calluncheck($self, Dl.data, $trig, $inpt);
                     }
                 });
             });
@@ -173,13 +175,13 @@ if (typeof require === 'function') {
     };
     Dl.defaultOptions = {
         selector: '.bz-droplist',
-        calloncheck: function(selected, trigger, inpt) {
+        calloncheck: function(selector, data, trigger, inpt) {
             var t = trigger.find('.text');
-            t.inhtml('selected: ' + JSON.stringify(selected));
+            t.inhtml('selected: ' + JSON.stringify(data));
         },
-        calluncheck: function(selected, trigger, inpt) {
+        calluncheck: function(selector, data, trigger, inpt) {
             var t = trigger.find('.text');
-            t.inhtml('selected: ' + JSON.stringify(selected));
+            t.inhtml('selected: ' + JSON.stringify(data));
         }
     };
     function init(options) {

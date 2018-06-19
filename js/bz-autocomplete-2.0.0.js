@@ -2,7 +2,7 @@
  * Blues Autocomplete by Aiwee 2016-2018 v.2.0.0
  * Modes: - autocomplete (standard mode name = "ac")
  *        - dropdown list with search
- *        ///////// set attribute data-mode="ddl" for the Autocomplete's <input>
+ *        ///////// set attribute data-dllmode="true" for the Autocomplete's <input>
  *        - drop chips on selection
  *        ///////// set attribute data-mode="chip+" or data-mode="+chip" for the Autocomplete's <input>
  *        - add new value if one that you're searching for is not exist
@@ -19,6 +19,7 @@ var Autocomplete = function (inpt, options) {
     this.o = {};
     this.inpt = inpt;
     this.mode = 'ac';
+    this.ddlmode = false;
     this.listenInput = true;
     this.indata = [];
     this.cache = {};
@@ -62,9 +63,11 @@ var Autocomplete = function (inpt, options) {
         this.dataType = 'func';
     }
     // sets Autocomplete mode
-    if (bzDom(inpt).ondata('mode')) {
+    if (bzDom(inpt).ondata('mode'))
         this.mode = bzDom(inpt).ondata('mode');
-    }
+    // sets Autocomplete ddl mode
+    if (bzDom(inpt).ondata('ddlmode'))
+        this.ddlmode = bzDom(inpt).ondata('ddlmode');
     // init Autocomplete
     this.init();
 };
@@ -103,7 +106,8 @@ Autocomplete.prototype = {
                 ac.passdata(ac.o.source, searchstr, ac);
             }
         };
-        if (ac.mode == 'ddl') {
+
+        if (ac.ddlmode == 'true') {
             if ('ddl' in ac.cache) {
                 ac.indata = ac.cache['ddl'];
             } else {
@@ -123,7 +127,7 @@ Autocomplete.prototype = {
     // stores data into the Autocomplete object
     passdata: function(data, searchstr, ac) {
         ac.indata = data;
-        if (ac.mode == 'ddl') {
+        if (ac.ddlmode == 'true') {
             ac.cache['ddl'] = ac.indata;
         } else {
             ac.cache[searchstr] = ac.indata;
@@ -138,7 +142,7 @@ Autocomplete.prototype = {
             for (var i = 0; i < ac.indata.length; i++) {
                 var _data = ac.indata[i];
                 if (typeof _data == 'string') {
-                    if (ac.mode == 'ddl') {
+                    if (ac.ddlmode == 'true') {
                         tempRes.push([i+1, _data]);
                     } else if (_data.toLowerCase().indexOf(searchstr.toLowerCase()) !== -1) {
                         tempRes.push([i+1, _data]);
@@ -297,14 +301,14 @@ Autocomplete.prototype = {
         $inpt.on('click', function() {
             // var $that = bzDom(this),
             //     _searchstr = $that.val();
-            // if (ac.mode == 'ddl' && ac.listenInput == true) {
+            // if (ac.ddlmode == 'true' && ac.listenInput == true) {
             //     ac.setdata(_searchstr, $that);
             // }
 
             var $that = bzDom(this),
                 _searchstr = $that.val();
 
-            if (ac.mode == 'ddl' && ac.listenInput == true) {
+            if (ac.ddlmode == 'true' && ac.listenInput == true) {
                 ac.setdata(_searchstr, $that);
             } else {
                 if (_searchstr.length > 0) {
@@ -322,7 +326,7 @@ Autocomplete.prototype = {
         $inpt.on('blur', function() {
             var $that = bzDom(this),
                 _searchstr = $that.val();
-            if (_searchstr.length > 0 || ac.mode == 'ddl') {
+            if (_searchstr.length > 0 || ac.ddlmode == 'true') {
                 if ($that.ondata('hover') == '0')
                     ac.hideSuggestions();
             }
@@ -522,10 +526,17 @@ Autocomplete.defaultOptions = {
      *
      * **/
     source: function (passdata, url, q, _this) {
-        //var url = '/country/quicksearch';
-        var data = new FormData(),
-            ajaxdata = [];
+        var data = new FormData();
         data.append('q', q);
+        if (bzDom(_this.inpt).ondata('prop')) {
+            var props = bzDom(_this.inpt).ondata('prop'),
+                props = props.split(',');
+            for (var j=0; j<props.length; j++) {
+                var paramVal = props[j],
+                    paramName = paramVal.split(':');
+                data.append('' + paramName[0] + '', paramName[1]);
+            }
+        }
         // if (param !== 0) {
         //     param = param.split(',');
         //     for (var j=0;j<param.length;j++) {
