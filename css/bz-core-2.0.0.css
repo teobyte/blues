@@ -467,6 +467,11 @@ h6, .bz-t-title {
 .w-325px { width:325px; }
 .w-480px { width:480px; }
 .w-640px { width:640px; }
+.w-1024px { width:1024px; }
+.w-325-1024 { min-width:325px; max-width:1024px; }
+.w-325-1280 { min-width:325px; max-width:1280px; }
+.w-325-1450 { min-width:325px; max-width:1450px; }
+.w-325-100p { min-width:325px; max-width:100%; }
 /* Position */
 .bz-float-l { float:left !important; }
 .bz-float-r { float: right !important; }
@@ -515,13 +520,14 @@ ul.dashed li:before {
 .h-16 { height:16px; }
 .h-32 { height:32px; }
 .h-64 { height:64px; }
+.h-96 { height:96px; }
 .h-128 { height:128px; }
 .h-256 { height:256px; }
 .h-512 { height:512px; }
 /*---- Clearfix --------------------------------------*/
 .bz-row:after,
 .bz-sidenav:after,
-.bz-card .bz-footer:after,
+.bz-card .footer:after,
 .bz-input:after,
 .bz-clearfix:after {
     visibility: hidden;
@@ -568,12 +574,22 @@ ul.dashed li:before {
 .bz-padding-8 { padding:8px; }
 .bz-padding-16 { padding:16px; }
 .bz-padding-32 { padding:32px; }
+.bz-padding-tb4 { padding-top:4px; padding-bottom:4px; }
+.bz-padding-tb8 { padding-top:8px; padding-bottom:8px; }
+.bz-padding-tb16 { padding-top:16px; padding-bottom:16px; }
+.bz-padding-lr4 { padding-left:4px; padding-right:4px; }
+.bz-padding-lr8 { padding-left:8px; padding-right:8px; }
+.bz-padding-lr16 { padding-left:16px; padding-right:16px; }
 /*----------- margin -------------------------------------------- */
 .bz-margin-auto { margin:0 auto; }
 .bz-margin-4 { margin:4px; }
 .bz-margin-8 { margin:8px; }
 .bz-margin-16 { margin:16px; }
 .bz-margin-32 { margin:32px; }
+.bz-margin-tb4 { margin-top:4px; margin-bottom:4px; }
+.bz-margin-tb8 { margin-top:8px; margin-bottom:8px; }
+.bz-margin-lr4 { margin-left:4px; margin-right:4px; }
+.bz-margin-lr8 { margin-left:8px; margin-right:8px; }
 /*----------- FLOATING --------------------------------------------*/
 .bz-float-l,
 .bz-float-l:nth-child(3n+1) { float:left; }
@@ -687,6 +703,7 @@ blockquote {
 /*----------- Blues Card -------------------------------------------*/
 .bz-card {
     display:inline-block;
+    border-top:4px solid var(--color-primary);
     border-radius: 2px;
     box-shadow: 0 1px 5px rgba(0,0,0,.2), 0 2px 2px rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
     margin:8px;
@@ -740,6 +757,52 @@ blockquote {
     -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.15), 0 6px 30px 5px rgba(0, 0, 0, 0.13), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
     box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.15), 0 6px 30px 5px rgba(0, 0, 0, 0.13), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
 }
+/*--> BLUES BADGES --------------------------*/
+.bz-badge,
+.bz-badge.primary,
+.bz-badge.positive,
+.bz-badge.warning,
+.bz-badge.negative {
+    position:relative;
+    display: inline-block;
+}
+.bz-badge[data-badge]:after {
+    border-radius:50%;
+    /*box-shadow:0 0 1px #333;*/
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15), 0 1px 7px 0 rgba(0, 0, 0, 0.13), 0 3px 1px -1px rgba(0, 0, 0, 0.3);
+    content:attr(data-badge);
+    height:20px;
+    font-size:.7em;
+    font-weight: 500;
+    line-height:20px;
+    position:absolute;
+    right:-10px;
+    text-align:center;
+    top:5px;
+    width:20px;
+    z-index:10;
+}
+.bz-badge:after { background-color: #848482; color: #000000; }
+.bz-badge.primary:after { background-color:var(--color-primary); color: #FFFFFF; }
+.bz-badge.positive:after { background-color:var(--color-positive); color: #FFFFFF; }
+.bz-badge.warning:after { background-color:var(--color-warning); color: #FFFFFF; }
+.bz-badge.negative:after { background-color:var(--color-negative); color: #FFFFFF; }
+.bz-badge.inline[data-badge]::after {
+    right:0px;
+    top:-3px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15), 0 0 3px 1px rgba(0, 0, 0, 0.13), 0 0 4px 0px rgba(0, 0, 0, 0.7) inset;
+}
+.bz-badge.inline,
+.bz-badge.inline.primary,
+.bz-badge.inline.positive,
+.bz-badge.inline.warning,
+.bz-badge.inline.negative {
+    height: 10px;
+    position:relative;
+    display: inline-block;
+    margin:0 5px;
+    width:20px;
+}
 /*---- effects -------------------------------------------- */
 /*---- Wave/Ripple effect ----------------------------------*/
 .bz-wave { position: relative; }
@@ -792,6 +855,23 @@ blockquote {
         transform: scale(2.5);
     }
 }
+/*--> BLUES TAGS ---------------------- */
+.bz-tag {
+    border-radius:3px;
+    font-size:12px;
+    height: 18px;
+    line-height: 14px;
+    padding:2px 4px;
+    margin:4px 2px;
+    background:var(--color-faded); color: #fff;
+}
+.bz-tag.dark { background:var(--color-dark); color: #fff; }
+.bz-tag.primary { background:var(--color-primary); color: #fff; }
+.bz-tag.secondary { background:var(--color-secondary); color: #fff; }
+.bz-tag.positive { background:var(--color-positive); color: #fff; }
+.bz-tag.warning { background:var(--color-warning); color: #fff; }
+.bz-tag.negative { background:var(--color-negative); color: #fff; }
+/*--- BLUES TAGS <----------------------*/
 /* -- BLUES CHIPS ----------------*/
 .bz-chip {
     display: inline-block;
@@ -1263,6 +1343,7 @@ blockquote {
     background-color:var(--color-light);
 }
 /*---- Transition --------------------*/
+a,
 .bz-transition.fast {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -1308,8 +1389,6 @@ blockquote {
 @keyframes animate-zoom{from{transform:scale(0)} to{transform:scale(1)}}
 @keyframes fade-in{from{opacity:0;} to{opacity:1;}}
 @keyframes fade-out{from{opacity:1;} to{opacity:0;}}
-
-
 /*@-webkit-keyframes fade-in{ from { opacity: 0; } to { opacity: 1; } }*/
 /*@-moz-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }*/
 /*@-ms-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }*/
@@ -1387,6 +1466,7 @@ blockquote {
     padding:0 0.5em;
 }
 .bz-sidenav-list li.divider {
+    height:0;
     width: 100%;
     border-bottom: 1px solid var(--color-light);
 }
@@ -1413,15 +1493,15 @@ blockquote {
     background:var(--color-light);
 }
 
-.bz-content.bz-shift-left {
+.bz-shift-left {
     margin-left:240px;
     width:calc(100% - 240px);
 }
-.bz-content.bz-shift-right {
+.bz-shift-right {
     margin-right:240px;
     width:calc(100% - 240px);
 }
-.bz-content.bz-shift-left.bz-shift-right {
+.bz-shift-left.bz-shift-right {
     margin-left:240px;
     margin-right:240px;
     width:calc(100% - 480px);
@@ -1445,12 +1525,16 @@ blockquote {
     background:var(--color-primary);
     color:#fff;
 }
+.bz-toolbar.primary.inverted {
+    background:transparent;
+    color:var(--color-primary);
+}
 .bz-toolbar.positive {
     background:var(--color-positive);
     color:#fff;
 }
 .bz-toolbar.positive.inverted {
-    background:#fff;
+    background:transparent;
     color:var(--color-positive);
 }
 .bz-toolbar.negative {
@@ -1480,11 +1564,13 @@ blockquote {
     bottom:0; left:0;
     height:32px;
     margin:8px;
-    border-radius:50%;
     overflow:hidden;
     background:transparent;
     opacity:0.5;
     position: absolute;
+}
+.bz-toolbar .tool .back.circle {
+    border-radius:50%;
 }
 .bz-toolbar .tool:hover .back {
     background:var(--color-light);
@@ -1530,31 +1616,26 @@ blockquote {
 /*--> DEVICE SIZES ---------------------------- */
 /* Mobile  <= 568px */
 @media screen and (max-width:568px) {
-    .mb-hide { display: none; }
     .bz-cross-padding { padding:0; }
     .bz-modal .modal-content { width:100vw; }
 }
 /* Mobile landscape <= 768px */
 @media screen and (min-width:568px) and (max-width:768px) {
-    .tb-hide { display: none; }
     .bz-cross-padding { padding:0; }
     .bz-modal .modal-content { width:90vw; }
 }
 /* Tablets <= 1024px */
 @media screen and (min-width:768px) and (max-width:1024px) {
-    .tb-hide { display: none; }
     .bz-cross-padding { padding:10px; }
     .bz-modal .modal-content { width:60vw; }
 }
 /* Wide screens <= 1280px */
 @media screen and (min-width:1024px) and (max-width:1280px) {
-    .mt-hide { display: none; }
     .bz-cross-padding { padding:20px; }
     .bz-modal .modal-content { width:50vw; }
 }
 /* Wide screens > 1280px */
 @media screen and (min-width:1280px) {
-    .ws-hide { display: none; }
     .bz-cross-padding { padding:20px; }
     .bz-modal .modal-content { width:50vw; }
 }

@@ -21,7 +21,7 @@
                 $nav = bzDom(navElname);
             var openstart = $btn.ondata('openstart'),
                 side = $btn.ondata('side'),
-                menumode = $btn.ondata('mode') || 'mixed',
+                menumode = $btn.ondata('mode') || 'single',
                 // ToDo: rtl support
                 rtl = $btn.ondata('rtl');
             if (side)
@@ -47,7 +47,6 @@
                     }
                 });
             });
-
             $btn.on('click', function() {
                 var $theBtn = bzDom(this);
                 if ($theBtn.ondata('open') === '0') {
@@ -61,7 +60,7 @@
                                     sidenav.closenavside($_btn, $theNav, $cont);
                                 }
                             });
-                        } else if (bz.scrWidth() < 768 && menumode === 'mobile') {
+                        } else if (bz.scrWidth() < 768) {
                             $_btns.each(function(i, item) {
                                 var $_btn = bzDom(item);
                                 if ($_btn.ondata('open') === '1') {
@@ -119,15 +118,31 @@
             }
             $btn.ondata('open', '1');
         },
+        ifsideopened: function(closing, side) {
+            var menus = bzDom('.bz-sidenav');
+            var result = false;
+            menus.each(function(i, item) {
+                var _menu = bzDom(item);
+                if (_menu.onattr('id') !== closing) {
+                    if (side === 'right' && _menu.ifclass('right'))
+                        if (_menu.oncss('right') === '0px')
+                            result = true;
+                    if (side === 'left' && _menu.ifclass('left'))
+                        if (_menu.oncss('left') === '0px')
+                            result = true;
+                }
+            });
+            return result;
+        },
         closenavside: function($btn, $nav, $cont) {
             var _side = $btn.ondata('side');
             if (_side === 'left')
                 $nav.oncss('left', '-240px');
             if (_side === 'right')
                 $nav.oncss('right', '-240px');
-            if (bz.scrWidth() > 768 && _side === 'right')
+            if (!sidenav.ifsideopened($nav.onattr('id'), _side) && bz.scrWidth() > 768 && _side === 'right')
                 $cont.offclass('bz-shift-right');
-            if (bz.scrWidth() > 768 && _side === 'left')
+            if (!sidenav.ifsideopened($nav.onattr('id'), _side) && bz.scrWidth() > 768 && _side === 'left')
                 $cont.offclass('bz-shift-left');
             if (bz.scrWidth() < 768) {
                 bz.hidefader();
