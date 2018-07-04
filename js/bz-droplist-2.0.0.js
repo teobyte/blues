@@ -23,6 +23,7 @@ if (typeof require === 'function') {
         }
         this.droplist = bzDom(this.o.selector);
         this.data = [];
+        this.datanames = [];
         this.addactions();
     };
     Dl.prototype = {
@@ -69,12 +70,12 @@ if (typeof require === 'function') {
                         if (!$ddlWrap.onattr('multiple') == true)
                             Dl.uncheckAll($chks);
                         Dl.checkBox($chk);
-                        $inpt.ondata('name', Dl.data);
+                        $inpt.ondata('name', Dl.datanames);
                         if (Dl.o.calloncheck && Blues.check.ifFunction(Dl.o.calloncheck))
                             Dl.o.calloncheck($self, Dl.data, $trig, $inpt);
                     } else {
                         Dl.uncheckBox($chk);
-                        $inpt.ondata('name', Dl.data);
+                        $inpt.ondata('name', Dl.datanames);
                         if (Dl.o.calluncheck && Blues.check.ifFunction(Dl.o.calluncheck))
                             Dl.o.calluncheck($self, Dl.data, $trig, $inpt);
                     }
@@ -124,17 +125,21 @@ if (typeof require === 'function') {
             //$flag.toggleclass('bz-rotate180');
         },
         checkBox: function (chk) {
-            var $dlItem = chk.parent('.bz-ddl-item');
+            var $dlItem = chk.parent('.bz-ddl-item'),
+                _t = $dlItem.find('.text').inhtml();
             chk.el.setAttribute('checked', 'checked');
             chk.el.checked = true;
             if (!$dlItem.ifclass('selected'))
                 $dlItem.onclass('selected');
             var Dl = this;
             Dl.data.push(chk.onattr('name'));
+            Dl.datanames.push(_t);
             Dl.droplist.val(Dl.data);
+            Dl.droplist.ondata('name', Dl.datanames);
         },
         uncheckBox: function (chk) {
-            var $dlItem = chk.parent('.bz-ddl-item');
+            var $dlItem = chk.parent('.bz-ddl-item'),
+                _t = $dlItem.find('.text').inhtml();;
             chk.el.removeAttribute('checked');
             chk.el.checked = false;
             if ($dlItem.ifclass('selected'))
@@ -143,6 +148,11 @@ if (typeof require === 'function') {
             if (Dl.data.indexOf(chk.onattr('name')) > -1 ) {
                 Dl.data.splice(Dl.data.indexOf(chk.onattr('name')) , 1);
             }
+            if (Dl.datanames.indexOf(_t) > -1) {
+                Dl.datanames.splice(Dl.datanames.indexOf(_t), 1);
+            }
+            Dl.droplist.val(Dl.data);
+            Dl.droplist.ondata('name', Dl.datanames);
         },
         uncheckAll: function(chks) {
             var Dl = this;

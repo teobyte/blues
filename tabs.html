@@ -225,7 +225,61 @@
             </div>
         </div>
 
-
+        <div class="bz-clear h-32"></div>
+        <div class="bz-padding-8">
+            <p>
+                Requires next CSS and JS libraries:
+                <ul class="bz-list-no-style bz-ft-bold bz-padding-8">
+                    <li class="bz-fc-primary">bz-core-*.css</li>
+                    <li class="bz-fc-positive">bz-core-*.js</li>
+                </ul>
+            </p>
+            <textarea class="bz-code" rows="45" readonly>
+        <div id="sampletab" class="bz-row bz-tabs" data-tabs="sampletabs">
+            <div class="bz-col mb bz-tab">
+                Tab 1
+            </div>
+            <div class="bz-col mb bz-tab">
+                Tab 2
+            </div>
+            <div class="bz-col mb bz-tab">
+                Tab 3
+            </div>
+            <div class="bz-col mb bz-tab">
+                tab 4
+            </div>
+        </div>
+        <div id="sampletabs" class="bz-tabs-containers bz-padding-8">
+            <div class="bz-container show bz-animate-left">
+                TAB 1 content
+            </div>
+            <div class="bz-container bz-animate-left">
+                TAB 2 content
+            </div>
+            <div class="bz-container bz-animate-left">
+                TAB 3 content
+            </div>
+            <div class="bz-container bz-animate-left">
+                TAB 4 content
+            </div>
+        </div>
+        <script>
+            // To Initiate Tab
+            bz.Tabs('#sampletab');
+            // To initiate multiple Tabs
+            // Get Tab's list
+            var tabs = bzDom('.bz-tabs');
+            tabs.each(function(i, item) {
+                // for every Tab
+                var tab = bzDom(item);
+                // Add function that triggers action on Tab's click
+                bz.Tabs(tab, function(i, item) {
+                    alert('Tab: ' + (i + 1) + ' activated.' );
+                })
+            });
+        </script>
+            </textarea>
+        </div>
 
     </div>
 </div>

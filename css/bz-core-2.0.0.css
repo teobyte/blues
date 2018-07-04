@@ -1613,6 +1613,17 @@ a,
 .bz-inline-search input:focus + i {
     color:var(--color-faded);
 }
+.bz-code {
+    padding:8px 0 0 8px;
+    background:var(--color-faded);
+    border:2px solid var(--color-primary);
+    border-radius:4px;
+    color:#fff;
+    font-size:12px;
+    resize:none;
+    outline:none;
+    width:640px;
+}
 /*--> DEVICE SIZES ---------------------------- */
 /* Mobile  <= 568px */
 @media screen and (max-width:568px) {

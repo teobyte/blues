@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/bz-core-2.0.0.css">
+    <link rel="stylesheet" href="css/bz-flexgrid-2.0.0.css">
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -182,89 +183,161 @@
     </div>
     <div class="bz-padding-16 bz-clearfix">
         <div class="bz-padding-8">
-            <h5>Color Palettes</h5>
-            <div>
-                <div class="bz-box inline bz-bc-primary bz-t-contrast">Primary</div>
-                <div class="bz-box inline bz-bc-secondary">Secondary</div>
-                <div class="bz-box inline bz-bc-positive">Positive</div>
-                <div class="bz-box inline bz-bc-negative">Negative</div>
-                <div class="bz-box inline bz-bc-info">Info</div>
-                <div class="bz-box inline bz-bc-warning">Warning</div>
-                <div class="bz-box inline bz-bc-light">Light</div>
-                <div class="bz-box inline bz-bc-faded">Faded</div>
-                <div class="bz-box inline bz-bc-dark">Dark</div>
-                <div class="bz-box inline bz-bc-black">Black</div>
-                <div class="bz-box inline bz-bc-white">White</div>
-            </div>
-        </div>
-
-        <div class="bz-padding-8">
             <h5>Headings</h5>
-            <div>
-                <h1 class="bz-fc-primary">1 Heading</h1>
-                <h2>2 Heading</h2>
-                <h3>3 Heading</h3>
-                <h4>4 Heading</h4>
-                <h5>5 Heading - Headline</h5>
-                <h6>6 Heading - Title</h6>
-                <div class="bz-t-subtitle">Subtitle</div>
-                <div class="bz-t-medium">Medium text</div>
-                <div class="bz-t-regular">Regular text</div>
-                <div class="bz-t-caption">Caption text</div>
+            <div class="bz-row mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    tag <span class="bz-fc-positive bz-ft-bold">h1</span> or class <span class="bz-fc-positive bz-ft-bold">.bz-t-h1</span>
+                </div>
+                <div class="bz-col mb8">
+                    <h1>Heading</h1>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    tag <span class="bz-fc-positive bz-ft-bold">h2</span> or class <span class="bz-fc-positive bz-ft-bold">.bz-t-h2</span>
+                </div>
+                <div class="bz-col mb8">
+                    <h2>Heading</h2>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    tag <span class="bz-fc-positive bz-ft-bold">h3</span> or class <span class="bz-fc-positive bz-ft-bold">.bz-t-h3</span>
+                </div>
+                <div class="bz-col mb8">
+                    <h3>Heading</h3>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    tag <span class="bz-fc-positive bz-ft-bold">h4</span> or class <span class="bz-fc-positive bz-ft-bold">.bz-t-h4</span>
+                </div>
+                <div class="bz-col mb8">
+                    <h4>Heading</h4>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    tag <span class="bz-fc-positive bz-ft-bold">h5</span> or class <span class="bz-fc-positive bz-ft-bold">.bz-t-h5</span>
+                </div>
+                <div class="bz-col mb8">
+                    <h5>Headline</h5>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    tag <span class="bz-fc-positive bz-ft-bold">h6</span> or class <span class="bz-fc-positive bz-ft-bold">.bz-t-h6</span>
+                </div>
+                <div class="bz-col mb8">
+                    <h6>Title</h6>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    class <span class="bz-fc-positive bz-ft-bold">.bz-t-subtitle</span>
+                </div>
+                <div class="bz-col mb8">
+                    <div class="bz-t-subtitle">Subtitle</div>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    class <span class="bz-fc-positive bz-ft-bold">.bz-t-medium</span>
+                </div>
+                <div class="bz-col mb8">
+                    <div class="bz-t-medium">Medium text</div>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    class <span class="bz-fc-positive bz-ft-bold">.bz-t-regular</span>
+                </div>
+                <div class="bz-col mb8">
+                    <div class="bz-t-regular">Regular text</div>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    class <span class="bz-fc-positive bz-ft-bold">.bz-t-caption</span>
+                </div>
+                <div class="bz-col mb8">
+                    <div class="bz-t-caption">Caption text</div>
+                </div>
             </div>
         </div>
 
         <div class="bz-padding-8">
             <h5>Font Weight</h5>
-            <div>
-                <div class="bz-ft-lighter">Lighter text</div>
-                <div class="bz-ft-light">Light text</div>
-                <div class="bz-ft-regular">Regular</div>
-                <div class="bz-ft-medium">Medium text</div>
-                <div class="bz-ft-bold">Bold text</div>
-                <div class="bz-ft-bolder">Bolder text</div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    class <span class="bz-fc-positive bz-ft-bold">.bz-ft-lighter</span>
+                </div>
+                <div class="bz-col mb8">
+                    <div class="bz-ft-lighter">Lighter text</div>
+                </div>
             </div>
-        </div>
-
-        <div>
-            <h5>Blockquote</h5>
-            <div>
-                <blockquote>
-                    <p class="bz-t-regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <span class="bz-t-caption">Lorem ipsum dolor sit amet
-                    <cite title="Consectetur Adipiscing Elit">Consectetur Adipiscing Elit</cite>
-                </span>
-                </blockquote>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    class <span class="bz-fc-positive bz-ft-bold">.bz-ft-light</span>
+                </div>
+                <div class="bz-col mb8">
+                    <div class="bz-ft-light">Light text</div>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    class <span class="bz-fc-positive bz-ft-bold">.bz-ft-regular</span>
+                </div>
+                <div class="bz-col mb8">
+                    <div class="bz-ft-regular">Regular</div>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    class <span class="bz-fc-positive bz-ft-bold">.bz-ft-medium</span>
+                </div>
+                <div class="bz-col mb8">
+                    <div class="bz-ft-medium">Medium text</div>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    class <span class="bz-fc-positive bz-ft-bold">.bz-ft-bold</span>
+                </div>
+                <div class="bz-col mb8">
+                    <div class="bz-ft-bold">Bold text</div>
+                </div>
+            </div>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    class <span class="bz-fc-positive bz-ft-bold">.bz-ft-lighter</span>
+                </div>
+                <div class="bz-col mb8">
+                    <div class="bz-ft-bolder">Bolder text</div>
+                </div>
             </div>
         </div>
 
         <div class="bz-padding-8">
-            <h5>Definition List - Vertical</h5>
-            <div>
-                <dl class="bz-deflist">
-                    <dt>Description lists</dt>
-                    <dd>A description list is perfect for defining terms.</dd>
-                    <dt>Euismod</dt>
-                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                    <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                    <dt>Malesuada porta</dt>
-                    <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                </dl>
+            <h5>Helpers</h5>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    class <span class="bz-fc-positive bz-ft-bold">.bz-capitalize</span>
+                </div>
+                <div class="bz-col mb8">
+                    <div class="bz-capitalize">capitalize</div>
+                </div>
             </div>
-
-            <h5>Definition List - Horizontal</h5>
-            <div>
-                <dl class="bz-deflist horizontal">
-                    <dt>Description lists</dt>
-                    <dd>A description list is perfect for defining terms.</dd>
-                    <dt>Euismod</dt>
-                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                    <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                    <dt>Malesuada porta</dt>
-                    <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                </dl>
+            <div class="bz-row  mb-middle">
+                <div class="bz-col mb4 bz-padding-8">
+                    class <span class="bz-fc-positive bz-ft-bold">.bz-uppercase</span>
+                </div>
+                <div class="bz-col mb8">
+                    <div class="bz-uppercase">uppercase</div>
+                </div>
             </div>
         </div>
+
     </div>
 </div>
 <script src="js/bz-core-2.0.0.js"></script>

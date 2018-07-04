@@ -173,13 +173,13 @@
     <div class="bz-toolbar primary">
         <div id="leftSideBtn" class="tool bz-sidenav-btn"
              data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
-            <div class="back"></div>
+            <div class="back circle"></div>
             <i class="icon-menu"></i>
         </div>
         <div class="title">Toolbar</div>
         <div id="leftRightBtn" class="tool bz-sidenav-btn"
              data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
-            <div class="back"></div>
+            <div class="back circle"></div>
             <i class="icon-menu"></i>
         </div>
     </div>
@@ -187,7 +187,7 @@
     <div class="bz-padding-16">
         <div class="bz-toolbar">
             <div class="tool">
-                <div class="back bz-wave"></div>
+                <div class="back circle bz-wave"></div>
                 <i class="icon-menu"></i>
             </div>
             <div class="title">Toolbar very long title for the tool bar text. Just very very very very very long.</div>
@@ -197,7 +197,7 @@
             </div>
             <div class="bz-popover bottom">
                 <div class="tool">
-                    <div class="back bz-wave"></div>
+                    <div class="back circle bz-wave"></div>
                     <i class="icon-user"></i>
                 </div>
                 <div class="popover">
@@ -212,59 +212,78 @@
                 </div>
             </div>
             <div class="tool">
-                <div class="back bz-wave"></div>
+                <div class="back circle bz-wave"></div>
                 <i class="icon-logout"></i>
             </div>
         </div>
         <div class="bz-toolbar primary">
             <div class="tool">
-                <div class="back bz-wave"></div>
+                <div class="back circle bz-wave"></div>
                 <i class="icon-menu"></i>
             </div>
             <div class="title">Toolbar very long title for the tool bar text. Just very very very very very long.</div>
             <div class="tool">
-                <div class="back bz-wave"></div>
+                <div class="back circle bz-wave"></div>
                 <i class="icon-user"></i>
             </div>
             <div class="tool">
-                <div class="back bz-wave"></div>
+                <div class="back circle bz-wave"></div>
                 <i class="icon-logout"></i>
             </div>
         </div>
         <div class="bz-toolbar positive">
             <div class="tool">
-                <div class="back bz-wave"></div>
+                <div class="back circle bz-wave"></div>
                 <i class="icon-menu"></i>
             </div>
             <div class="title">Toolbar</div>
             <div class="tool">
-                <div class="back bz-wave"></div>
+                <div class="back circle bz-wave"></div>
                 <i class="icon-user"></i>
             </div>
             <div class="tool">
-                <div class="back bz-wave"></div>
+                <div class="back circle bz-wave"></div>
                 <i class="icon-logout"></i>
             </div>
         </div>
         <div class="bz-toolbar positive inverted">
-
             <div class="tool">
-                <div class="back bz-wave"></div>
+                <div class="back circle bz-wave"></div>
                 <i class="icon-menu"></i>
             </div>
             <div class="title">Toolbar</div>
             <div class="tool">
-                <div class="back bz-wave"></div>
+                <div class="back circle bz-wave"></div>
                 <i class="icon-user"></i>
             </div>
             <div class="tool">
-                <div class="back bz-wave"></div>
+                <div class="back circle bz-wave"></div>
                 <i class="icon-options-vertical"></i>
             </div>
         </div>
+        <div class="bz-clear h-16"></div>
+        <textarea class="bz-code" rows="16" readonly>
+        <div class="bz-toolbar">
+            <div class="tool">
+                <div class="back circle bz-wave"></div>
+                <i class="icon-menu"></i>
+            </div>
+            <div class="title">Toolbar</div>
+            <div class="tool">
+                <div class="back circle bz-wave"></div>
+                <i class="icon-user"></i>
+            </div>
+            <div class="tool">
+                <div class="back circle bz-wave"></div>
+                <i class="icon-logout"></i>
+            </div>
+        </div>
+        </textarea>
+        <div class="bz-padding-8">
+            Add class <span class="bz-fc-positive bz-ft-bold">.primary</span>, <span class="bz-fc-positive bz-ft-bold">.positive</span> to use different color, and
+            <span class="bz-fc-positive bz-ft-bold">.inverted</span> to make different color on white background.
+        </div>
     </div>
-
-
 </div>
 <script src="js/bz-core-2.0.0.js"></script>
 <script src="js/bz-inject-2.0.0.js"></script>
@@ -272,12 +291,10 @@
 <script src="js/bluessite.js"></script>
 <script>
     var waves = bzDom('.bz-wave');
-
     waves.each(function(i, item) {
         var t = bzDom(item);
         bz.Waves(t);
     });
-
 </script>
 </body>
 </html>

@@ -900,11 +900,6 @@ input[type="color"]::-webkit-color-swatch {
     display:inline-block;
     vertical-align:middle;
 }
-.bz-droplist .bz-ddl .text {
-    float:left;
-    box-sizing:border-box;
-    padding-left:10px;
-}
 .bz-droplist .bz-ddl-item:hover .text::after {
     content:"";
     display: block;
@@ -934,11 +929,17 @@ input[type="color"]::-webkit-color-swatch {
     float:left;
     visibility:hidden;
     padding:6px 0;
-    width:0;
 }
 .bz-droplist[multiple] .bz-checkbox {
     visibility:visible;
-    width:auto;
+}
+.bz-droplist .bz-ddl .text {
+    float:left;
+    box-sizing:border-box;
+    margin-left:-10px;
+}
+.bz-droplist[multiple] .bz-ddl .text {
+    margin-left:10px;
 }
 .bz-droplist .bz-ddl-item.selected .text::after {
     background:#4CAF50;
