@@ -1,184 +1,50 @@
 /* BLUES PAGINATION */
-/*
-=====
-LEVEL 0. RESET BROWSER'S STYLES
-=====
-*/
+.bz-pagination {
+    clear:both;
+    font-size:0;
+}
+.bz-pagination > * {
+    font-size:16px;
+}
+.bz-pagination .prevLink,
+.bz-pagination .nextLink,
+.bz-pagination .step,
+.bz-pagination .currentStep,
+.bz-pagination .step.gap {
+    background:var(--color-faded);
+    color:#fff;
+    cursor:pointer;
+    display:inline-block;
+    text-align:center;
+    height:2em;
+    line-height:2em;
+    padding:0 4px;
+    margin:0;
+}
+.bz-pagination .prevLink:hover,
+.bz-pagination .nextLink:hover,
+.bz-pagination .step:not(.gap):hover {
+    background:var(--color-info);
+}
+.bz-pagination .currentStep {
+    cursor: default;
+    background:var(--color-primary);
+}
+.bz-pagination .step,
+.bz-pagination .currentStep,
+.bz-pagination .step.gap {
+    min-width:2em;
+}
+.bz-pagination .step.gap {
+    cursor: default;
+}
+.bz-pagination .currentStep {
 
-.pagination__list{
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    list-style: none;
+}
+.bz-pagination .step.gap {
+
 }
 
-/*
-=====
-LEVEL 1. CORE COMPONENT STYLES
-=====
-*/
-
-.pagination{
-    --uiPaginationAlign: var(--paginationAlign);
-    --uiPaginationArrowSize: var(--paginationArrowSize, 16px);
-    --uiPaginationFontSize: var(--paginationFontSize);
-
-    font-size: var(--uiPaginationFontSize);
-}
-
-.pagination__list{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: var(--uiPaginationAlign);
-}
-
-.pagination__item:not(.pagination__control_prev):not(.pagination__item_active){
-    padding-left: .5em;
-}
-
-.pagination__item:not(.pagination__control_next):not(.pagination__item_active){
-    padding-right: .5em;
-}
-
-.pagination__item{
-    display: inline-block;
-    line-height: 1;
-}
-
-.pagination__control{
-    position: relative;
-}
-
-.pagination__control:before, .pagination__control:after{
-    font-size: var(--uiPaginationArrowSize);
-    line-height: 1;
-
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.pagination__control_prev{
-    padding-left: calc(var(--uiPaginationArrowSize) + 5px);
-}
-
-.pagination__control_prev:before{
-    content: "←";
-    left: 0;
-}
-
-.pagination__control_next{
-    padding-right: calc(var(--uiPaginationArrowSize) + 5px);
-}
-
-.pagination__control_next:after{
-    content: "→";
-    right: 0;
-}
-
-.pagination__item_active{
-    padding: .5875em .8em;
-    margin-right: .5em;
-    margin-left: .5em;
-}
-
-/*
-=====
-LEVEL 2. PRESENTATION STYLES
-=====
-*/
-
-.pagination{
-    --uiPaginationItemTextColor: var(--paginationItemTextColor);
-    --uiPaginationItemActiveTextColor: var(--paginationItemActiveTextColor);
-}
-
-.pagination__item{
-    text-decoration: none;
-    color: var(--uiPaginationItemTextColor);
-}
-
-.pagination__item_active{
-    font-weight: 700;
-    color: var(--uiPaginationItemActiveTextColor);
-}
-
-.pagination__item:focus{
-    outline-color: var(--uiPaginationItemActiveBgColor);
-}
-
-/* type 1 */
-
-.pagination_type1{
-    --uiPaginationItemActiveBgColor: var(--paginationItemActiveBgColor);
-}
-
-.pagination_type1 .pagination__item_active{
-    background-color: var(--uiPaginationItemActiveBgColor);
-}
-
-/* type 2 */
-
-.pagination_type2{
-    --uiPaginationItemActiveBorderWidth: var(--paginationItemActiveBorderWidth);
-    --uiPaginationItemActiveBorderColor: var(--paginationItemActiveBorderColor, transparent);
-}
-
-.pagination_type2 .pagination__item_active{
-    border: var(--uiPaginationItemActiveBorderWidth) solid var(--uiPaginationItemActiveBorderColor);
-}
-
-/* type 3 */
-
-.pagination_type3{
-    --uiPaginationItemBorderRadius: var(--paginationItemBorderRadius);
-}
-
-.pagination_type3 .pagination__item_active{
-    border-radius: var(--uiPaginationItemBorderRadius);
-}
-
-/*
-=====
-LEVEL 3. SETTINGS
-=====
-*/
-
-.demo{
-    --paginationAlign: center;
-    --paginationFontSize: 1rem;
-    --paginationItemActiveBgColor:var(--color-primary);
-    --paginationItemTextColor:var(--color-info);
-    --paginationItemActiveTextColor: #fff;
-}
-
-.demo:nth-of-type(2), .demo:nth-of-type(4){
-    --paginationItemTextColor:var(--color-info);
-    --paginationItemActiveTextColor:var(--color-primary);
-    --paginationItemActiveBgColor: #fff;
-    --paginationItemActiveBorderColor:var(--color-primary);
-    --paginationItemActiveBorderWidth: 2px;
-}
-
-.demo:nth-of-type(3), .demo:nth-of-type(4){
-    --paginationItemBorderRadius: 50%;
-}
-
-.demo:nth-of-type(5){
-    --paginationItemBorderRadius: 2px;
-}
-
-.demo:nth-of-type(6){
-    --paginationArrowIndent: 5px;
-    --paginationItemPadding: 10px 15px;
-    --paginationItemTextColor: #fff;
-    --paginationItemActiveBgColor:var(--color-primary);
-}
-
-.demo:nth-of-type(6) .pagination{
-    background-color:var(--color-faded);
-}
 /* BLUES BREADCRUMBS */
 .bz-breadcrumbs,
 .bz-multi-steps {
