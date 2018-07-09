@@ -287,6 +287,35 @@
             >Click me</div>
 
         </div>
+
+        <div class="bz-padding-8">
+            <p>Form</p>
+            <form class="bz-padding-8">
+                <input type="text" name="name" class="bz-margin-8" placeholder="Name">
+                <input type="text" name="lastname" class="bz-margin-8" placeholder="Last Name">
+                <button type="button"
+                        data-onclick = "submit"
+                        data-action = "/city/showAjax"
+                        data-target = "#updatethis"
+                        class="bz-ajax">Submit</button>
+            </form>
+            <div id="updatethis" class="bz-padding-8 bz-bc-light"></div>
+        </div>
+
+        <textarea class="bz-code" rows="13">
+        <form>
+            <input type="text" name="name" class="bz-input flash" placeholder="Name">
+            <input type="text" name="lastname" class="bz-input flash"
+                   placeholder="Last Name">
+            <button type="button"
+                    data-onclick = "submit"
+                    data-action = "/city/showAjax"
+                    data-target = "#updatethis"
+                    class="bz-ajax">Submit</button>
+        </form>
+        <div id="updatethis" class="bz-padding-8 bz-bc-light"></div>
+        </textarea>
+
     </div>
     <div class="bz-clear h-96"></div>
 </div>

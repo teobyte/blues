@@ -2152,10 +2152,14 @@
                     dataType: 'json',
                     data: dataParams,
                     success: function(data) {
+                        if (callback === 'append')
+                            ajax.append(data);
+                        else if (callback === 'prepend')
+                            ajax.prepend(data);
+                        else if (callback === 'update')
+                            ajax.inhtml(data);
                         if (callSuccess != null)
                             successFn(data);
-                        else
-                            data = data;
                     },
                     error: function(e) {
                         if (callError != null)
@@ -2166,13 +2170,19 @@
                 });
                 if (data === null)
                     data = 'example of some returned data';
-                callfunc(callback, data, target, action, id, name);
+                if (callback !== 'update' && callback !== 'append' && callback !== 'prepend')
+                    callfunc(callback, data, target, action, id, name);
             }
             if (ajax.ondata('onclick')) {
                 ajax.onclass('bz-cursor-pointer');
                 callback = ajax.ondata('onclick');
                 ajax.on('click', function() {
-                    // make ajax call
+
+                    if (callback === 'submit') {
+                        var frm = ajax.parent('form');
+                        dataParams = frm.getformdata();
+                    }
+
                     bz.ajax({
                         url: action,
                         type: 'post',
@@ -2180,10 +2190,28 @@
                         dataType: 'json',
                         data: dataParams,
                         success: function(data) {
+                            if (callback === 'append')
+                                ajax.append(data);
+                            else if (callback === 'prepend')
+                                ajax.prepend(data);
+                            else if (callback === 'update')
+                                ajax.inhtml(data);
+                            else if (ajax.ondata('target') && callback === 'submit') {
+                                var tar = ajax.ondata('target'),
+                                    _tar = tar.split('|')[0],
+                                    _ins = tar.split('|')[1];
+                                target = bzDom(_tar);
+                                if (data != null) {
+                                    if (_ins === 'append')
+                                        target.append(data);
+                                    else if (_ins === 'prepend')
+                                        target.prepend(data);
+                                    else
+                                        target.inhtml(data);
+                                }
+                            }
                             if (callSuccess != null)
                                 successFn(data);
-                            else
-                                data = data;
                         },
                         error: function(e) {
                             if (callError != null)
@@ -2192,9 +2220,11 @@
                                 bz.Toast('Error: ' + e, { tclass: 'negative' });
                         }
                     });
+
                     if (data === null)
                         data = 'example of some returned data';
-                    callfunc(callback, data, target, action, id, name);
+                    if (callback !== 'update' && callback !== 'append' && callback !== 'prepend')
+                        callfunc(callback, data, target, action, id, name);
                 });
             }
         });
