@@ -247,7 +247,8 @@
     </textarea>
 
         <div class="bz-padding-8">
-            <button type="button" id="ajaxBtn" name="ajaxBtnName" class="bz-btn primary wave bz-ajax"
+            <button type="button" id="ajaxBtn" name="ajaxBtnName"
+                    class="bz-btn primary wave bz-ajax"
                     data-onclick="var a = 2, b = 3; alert('Result: ' + (a + b) + '; btnId: ' + id + '; btnName: ' + name);"
                     data-action="/blues/ajaxrequest"
                     data-target="#targetdiv2|append"
@@ -257,9 +258,10 @@
 
         </div>
 
-        <textarea class="bz-code" rows="8">
-        <button type="button" id="ajaxBtn" name="ajaxBtnName" class="bz-btn primary wave bz-ajax"
-                data-onclick="var a = 2, b = 3; alert('Result: ' + (a + b) + '; btnId: ' + id + '; btnName: ' + name);"
+        <textarea class="bz-code" rows="10">
+        <button type="button" id="ajaxBtn" name="ajaxBtnName"
+                class="bz-btn primary wave bz-ajax"
+                data-onclick="var a = 2, b = 3; alert('Result: '+(a + b)+'; btnId: '+id + '; btnName: '+name);"
                 data-action="/blues/ajaxrequest"
                 data-target="#targetdiv2|append"
         >Blues Ajax</button>
