@@ -2083,6 +2083,122 @@
         ajax.init();
         return ajax;
     };
+    // Blues Ajax calls
+    Blues.Ajaxcalls = function(selector) {
+        selector = selector || '.bz-ajax';
+        var bzajaxs = bzDom(selector);
+        bzajaxs.each(function(i, item) {
+            var ajax = bzDom(item),
+                id = null, name = null,
+                action = '',
+                data = null,
+                callback = null,
+                callSuccess = null,
+                callError = null,
+                target = null,
+                dataParams = {},
+                fnn;
+            if (ajax.ondata('action'))
+                action = ajax.ondata('action');
+            id = ajax.onattr('id');
+            name = ajax.onattr('name');
+            if (ajax.ondata('params')) {
+                var par = bz.convert.stringToArray(ajax.ondata('params'));
+                dataParams = JSON.parse(JSON.stringify(par));
+            }
+            var callfunc = function(callback, data, target, action, id, name) {
+                if (callback != null) {
+                    var fn = 'fnn = function(data, action, id, name) {' + callback + '}';
+                    eval(fn);
+                    fnn(data, action, id, name);
+                }
+                if (ajax.ondata('target')) {
+                    var tar = ajax.ondata('target'),
+                        _tar = tar.split('|')[0],
+                        _ins = tar.split('|')[1];
+                    target = bzDom(_tar);
+                    if (data != null) {
+                        if (_ins === 'append')
+                            target.append(data);
+                        else if (_ins === 'prepend')
+                            target.prepend(data);
+                        else
+                            target.inhtml(data);
+                    }
+                } else
+                    ajax.inhtml(data);
+            };
+            var successFn = function(data) {
+                    if (callSuccess != null) {
+                        var fn = 'fnn = function(data, action) {' + callSuccess + '}';
+                        eval(fn);
+                        fnn(data);
+                    }
+                },
+                errorFn = function(e) {
+                    if (callError != null) {
+                        var fn = 'fnn = function(e) {' + callError + '}';
+                        eval(fn);
+                        fnn(e);
+                    }
+                };
+            if (ajax.ondata('onload')) {
+                callback = ajax.ondata('onload');
+                // make ajax call
+                bz.ajax({
+                    url: action,
+                    type: 'post',
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    data: dataParams,
+                    success: function(data) {
+                        if (callSuccess != null)
+                            successFn(data);
+                        else
+                            data = data;
+                    },
+                    error: function(e) {
+                        if (callError != null)
+                            errorFn(e);
+                        else
+                            bz.Toast('Error: ' + e, { tclass: 'negative' });
+                    }
+                });
+                if (data === null)
+                    data = 'example of some returned data';
+                callfunc(callback, data, target, action, id, name);
+            }
+            if (ajax.ondata('onclick')) {
+                ajax.onclass('bz-cursor-pointer');
+                callback = ajax.ondata('onclick');
+                ajax.on('click', function() {
+                    // make ajax call
+                    bz.ajax({
+                        url: action,
+                        type: 'post',
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        data: dataParams,
+                        success: function(data) {
+                            if (callSuccess != null)
+                                successFn(data);
+                            else
+                                data = data;
+                        },
+                        error: function(e) {
+                            if (callError != null)
+                                errorFn(e);
+                            else
+                                bz.Toast('Error: ' + e, { tclass: 'negative' });
+                        }
+                    });
+                    if (data === null)
+                        data = 'example of some returned data';
+                    callfunc(callback, data, target, action, id, name);
+                });
+            }
+        });
+    };
     //--> Blues Load Spins starts here
     //--> following 2 functions work together
     Blues.Loadspin = function(element, options, hideaction, fireonstart, fireatend) {
@@ -2610,6 +2726,7 @@
     // Blues initialization
     Blues.init = function () {
         Blues.Popover();
+        Blues.Ajaxcalls();
     };
     window.Bz = window.bz = window.Blues = Blues;
     window.bzDom === undefined && (window.bzDom = Blues.bzDom);

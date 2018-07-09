@@ -45,8 +45,11 @@
         { name: '', url: '', clas: 'divider' },
         { name: 'Progress', url: '', clas: 'subheader bz-ft-l' },
         { name: 'Progress bar', url: 'progress.html', clas: 'bz-list-item bz-t-concat' },
-        { name: 'Spinner', url: 'spinner.html', clas: 'bz-list-item bz-t-concat' }
-        //{ name: '', url: '', clas: '' }
+        { name: 'Spinner', url: 'spinner.html', clas: 'bz-list-item bz-t-concat' },
+        { name: '', url: '', clas: 'divider' },
+        { name: 'Ajax calls', url: '', clas: 'subheader bz-ft-l' },
+        { name: 'Ajax calls', url: 'ajaxcalls.html', clas: 'bz-list-item bz-t-concat' },
+        { name: '', url: '', clas: 'subheader bz-ft-l' }
     ];
     var populateMenu = function(menuitems) {
         var leftside =  bzDom('#leftSide').find('.bz-sidenav-list');
