@@ -1,0 +1,393 @@
+<html lang="en-us" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Blues Framework">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+    <title>Blues 2.0 | Ajax Calls</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/bz-core-2.0.0.css">
+    <link rel="stylesheet" href="css/bz-buttons-2.0.0.css">
+</head>
+<body>
+<div id="leftSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <ul class="bz-sidenav-list"></ul>
+    </div>
+</div>
+<div id="rightSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <ul class="bz-sidenav-list">
+            <li class="subheader">
+                Right Side
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+            <li class="bz-list-item bz-t-concat">
+                <div class="text">
+                    Menu item
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div class="bz-clearfix bz-sidenav-wrapper bz-content">
+    <div class="bz-toolbar primary">
+        <div id="leftSideBtn" class="tool bz-sidenav-btn"
+             data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
+            <div class="back"></div>
+            <i class="icon-menu"></i>
+        </div>
+        <div class="title">Ajax Calls</div>
+        <div id="leftRightBtn" class="tool bz-sidenav-btn"
+             data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
+            <div class="back"></div>
+            <i class="icon-menu"></i>
+        </div>
+    </div>
+
+    <div class="bz-padding-8">
+        <div class="bz-padding-8">
+
+            <div data-onload="alert('Ajax returned data: ' + data);"
+                 data-onclick="var a = 2, b = 3; alert(a + b + ' ' + action);"
+                 data-action="/blues/ajaxrequest"
+                 data-target="#targetdiv"
+                 data-params="param1: 'param1', param2: 'param2'"
+                 data-success="bz.Toast('Success', { tclass: 'positive'});"
+                 data-error="bz.Toast('Success', { tclass: 'negative'});"
+                 id="someid" name="somename" class="bz-ajax bz-padding-8 bz-bc-positive"
+            >Click me</div>
+
+            <p>Result will be replace into the next div</p>
+
+            <div id="targetdiv" class="bz-padding-16 bz-bc-light"></div>
+
+        </div>
+
+    <textarea class="bz-code" rows="12">
+    <div data-onload="alert('Ajax returned data: ' + data);"
+         data-onclick="var a = 2, b = 3; alert(a + b + ' ' + action);"
+         data-action="/blues/ajaxrequest"
+         data-target="#targetdiv"
+         data-params="param1: 'param1', param2: 'param2'"
+         data-success="bz.Toast('Success', { tclass: 'positive'});"
+         data-error="bz.Toast('Success', { tclass: 'negative'});"
+         id="someid" name="somename" class="bz-ajax"
+    >Click me</div>
+
+    <div id="targetdiv"></div>
+    </textarea>
+
+
+        <div class="bz-padding-8">
+
+            <div data-onclick="var a = 2, b = 3; alert(a + b + ' ' + action);"
+                 data-action="/blues/ajaxrequest"
+                 data-target="#targetdiv1|append"
+                 data-params="param1: 'param1', param2: 'param2'"
+                 data-success="bz.Toast('Success', { tclass: 'positive'});"
+                 data-error="bz.Toast('Success', { tclass: 'negative'});"
+                 id="someid1" name="somename1" class="bz-ajax bz-padding-8 bz-bc-positive"
+            >Click me</div>
+
+            <p>Result will be append into the next div</p>
+
+            <div id="targetdiv1" class="bz-padding-16 bz-bc-light"></div>
+
+        </div>
+
+    <textarea class="bz-code" rows="12">
+    <div data-onclick="var a = 2, b = 3; alert(a + b + ' ' + action);"
+         data-action="/blues/ajaxrequest"
+         data-target="#targetdiv1|append"
+         data-params="param1: 'param1', param2: 'param2'"
+         data-success="bz.Toast('Success', { tclass: 'positive'});"
+         data-error="bz.Toast('Success', { tclass: 'negative'});"
+         id="someid1" name="somename" class="bz-ajax"
+    >Click me</div>
+
+    <div id="targetdiv"></div>
+    </textarea>
+
+        <div class="bz-padding-8">
+            <button type="button" id="ajaxBtn" name="ajaxBtnName" class="bz-btn primary wave bz-ajax"
+                    data-onclick="var a = 2, b = 3; alert('Result: ' + (a + b) + '; btnId: ' + id + '; btnName: ' + name);"
+                    data-action="/blues/ajaxrequest"
+                    data-target="#targetdiv2|append"
+            >Blues Ajax</button>
+            <div class="bz-clear h-8"></div>
+            <div id="targetdiv2" class="bz-padding-16 bz-bc-light"></div>
+
+        </div>
+
+        <textarea class="bz-code" rows="8">
+        <button type="button" id="ajaxBtn" name="ajaxBtnName" class="bz-btn primary wave bz-ajax"
+                data-onclick="var a = 2, b = 3; alert('Result: ' + (a + b) + '; btnId: ' + id + '; btnName: ' + name);"
+                data-action="/blues/ajaxrequest"
+                data-target="#targetdiv2|append"
+        >Blues Ajax</button>
+
+        <div id="targetdiv2" class="bz-padding-16 bz-bc-light"></div>
+        </textarea>
+
+    </div>
+
+</div>
+<script src="js/bz-core-2.0.0.js"></script>
+<script src="js/bz-inject-2.0.0.js"></script>
+<script src="js/bz-sidenav-2.0.0.js"></script>
+<script src="js/bluessite.js"></script>
+<script>
+
+    var ajaxs = bzDom('.bz-ajax');
+    ajaxs.each(function(i, item) {
+        var ajax = bzDom(item),
+            id = null, name = null,
+            action = '',
+            data = null,
+            callback = null,
+            callSuccess = null,
+            callError = null,
+            target = null,
+            dataParams = {};
+
+        if (ajax.ondata('action'))
+            action = ajax.ondata('action');
+
+        id = ajax.onattr('id');
+        name = ajax.onattr('name');
+
+        if (ajax.ondata('params')) {
+            var par = bz.convert.stringToArray(ajax.ondata('params'));
+            dataParams = JSON.parse(JSON.stringify(par));
+        }
+
+        var callfunc = function(callback, data, target, action, id, name) {
+            if (callback != null) {
+                var fn = 'var fnn = function(data, action, id, name) {' + callback + '}';
+                eval(fn);
+                fnn(data, action, id, name);
+            }
+            if (ajax.ondata('target')) {
+                var tar = ajax.ondata('target'),
+                    _tar = tar.split('|')[0],
+                    _ins = tar.split('|')[1];
+                target = bzDom(_tar);
+                if (data != null) {
+                    if (_ins === 'append')
+                        target.append(data);
+                    else if (_ins === 'prepend')
+                        target.prepend(data);
+                    else
+                        target.inhtml(data);
+                }
+            }
+        };
+
+        var successFn = function(data) {
+                if (callSuccess != null) {
+                    var fn = 'var fnn = function(data, action) {' + callSuccess + '}';
+                    eval(fn);
+                    fnn(data);
+                }
+        },
+        errorFn = function(e) {
+            if (callError != null) {
+                var fn = 'var fnn = function(e) {' + callError + '}';
+                eval(fn);
+                fnn(e);
+            }
+        };
+
+        if (ajax.ondata('onload')) {
+            callback = ajax.ondata('onload');
+            // make ajax call
+            bz.ajax({
+                url: action,
+                type: 'post',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                data: dataParams,
+                success: function(data) {
+                    if (callSuccess != null)
+                        successFn(data);
+                    else
+                    data = data;
+                },
+                error: function(e) {
+                    if (callError != null)
+                        errorFn(e);
+                    else
+                        bz.Toast('Error: ' + e, { tclass: 'negative' });
+                }
+            });
+            data = 'some returned ajax data';
+            callfunc(callback, data, target, action, id, name);
+        }
+
+        if (ajax.ondata('onclick')) {
+            ajax.onclass('bz-cursor-pointer');
+            callback = ajax.ondata('onclick');
+            ajax.on('click', function() {
+                // make ajax call
+                bz.ajax({
+                    url: action,
+                    type: 'post',
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    data: dataParams,
+                    success: function(data) {
+                        data = data;
+                    },
+                    error: function(e) {
+                        bz.Toast('Error: ' + e, { tclass: 'negative' });
+                    }
+                });
+                data = 'some returned ajax data';
+                callfunc(callback, data, target, action, id, name);
+            });
+        }
+
+    });
+
+
+</script>
+</body>
+</html>
