@@ -2283,6 +2283,33 @@
         Loadspin.init();
         return Loadspin;
     };
+    Blues.Loadspin.hide = function(element) {
+        var el = bzDom(element),
+             par = el.parent(),
+             lsp = par.find('.bz-loader');
+        lsp.remove();
+    };
+    Blues.addSpiner = function(target, options) {
+        var options = options || {},
+            name = options.name || 'bz-spin-circle',
+            pos = options.position || 'default',
+            size = options.size || 1;
+        var sp = bzDom('<div>'),
+            d = bzDom('<div>');
+        sp.append(d.clone())
+            .append(d.clone())
+            .append(d.clone())
+            .append(d.clone());
+        if (name && !sp.ifclass(name))
+            sp.onclass(name);
+        if (pos && pos === 'center')
+            sp.onclass('center');
+        if (size)
+            sp.oncss('transform', 'scale(' + size + ')');
+        if (target)
+            bzDom(target).append(sp);
+        else return sp;
+    };
     // add fader
     Blues.showfader = function(target, zindex) {
         var defTarget = '.bz-content-to-fade';
