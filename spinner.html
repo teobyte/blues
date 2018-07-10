@@ -71,12 +71,10 @@
 
         .bz-spin-circle div {
             box-sizing: border-box;
-            display: block;
             position: absolute;
-            width: 52px;
-            height: 52px;
-            margin: 4px;
-            border: 4px solid var(--color-primary);
+            width:100%;
+            height:100%;
+            border:3px solid var(--color-primary);
             border-radius: 50%;
             animation: bz-circle 1.8s cubic-bezier(.05, 0, .13, .9) infinite;
             border-color: var(--color-primary) transparent transparent transparent;
@@ -102,32 +100,32 @@
         .bz-spin-dots {
             display: inline-block;
             position: relative;
-            width: 64px;
-            height: 64px;
+            width:64px;
+            height:64px;
         }
         .bz-spin-dots div {
             position: absolute;
             top:calc(50% - 6px);
-            width: 12px;
-            height: 12px;
+            width:20%;
+            height:20%;
             border-radius: 50%;
             background: var(--color-primary);
             animation-timing-function: cubic-bezier(0, 1, 1, 0);
         }
         .bz-spin-dots div:nth-child(1) {
-            left: 6px;
+            left:10%;
             animation: bz-dots1 0.6s infinite;
         }
         .bz-spin-dots div:nth-child(2) {
-            left: 6px;
+            left:10%;
             animation: bz-dots2 0.6s infinite;
         }
         .bz-spin-dots div:nth-child(3) {
-            left: 26px;
+            left:40%;
             animation: bz-dots2 0.6s infinite;
         }
         .bz-spin-dots div:nth-child(4) {
-            left: 45px;
+            left:80%;
             animation: bz-dots3 0.6s infinite;
         }
         @keyframes bz-dots1 {
@@ -151,7 +149,7 @@
                 transform: translate(0, 0);
             }
             100% {
-                transform: translate(19px, 0);
+                transform: translate(160%, 0);
             }
         }
 
@@ -393,7 +391,7 @@
         <div class="spin-dots bz-center"></div>
 
         <script>
-            bz.addSpiner('.spin-dots', { name: 'bz-spin-dots', size: 0.4 });
+            bz.addSpiner('.spin-dots', { name: 'bz-spin-dots', size: 30 });
         </script>
         </textarea>
 
@@ -401,11 +399,11 @@
 
         <div class="bz-padding-8 bz-clearfix">
 
-            <button id="spinbtn" class="bz-btn primary">
+            <button id="spinbtn" class="bz-btn">
                 Start Loader
             </button>
 
-            <button id="closespin" class="bz-btn primary">
+            <button id="closespin" class="bz-btn">
                 Close Loader
             </button>
 
@@ -415,7 +413,7 @@
 
         <div class="bz-padding-8 bz-clearfix">
 
-            <button id="spinbtn2" class="bz-btn primary">
+            <button id="spinbtn2" class="bz-btn">
                 Start Loader
             </button>
 
@@ -435,7 +433,7 @@
 <script>
 
     bz.addSpiner('.spin-circle');
-    bz.addSpiner('.spin-dots', { name: 'bz-spin-dots', size: 0.4 });
+    bz.addSpiner('.spin-dots', { name: 'bz-spin-dots', size: 20 });
 
 
     bzDom('#spinbtn').on('click', function() {

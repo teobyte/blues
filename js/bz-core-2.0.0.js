@@ -2245,9 +2245,10 @@
         Loadspin = {
             _spinner: null,
             init: function() {
-                this._spinner = document.createElement('span');
-                this._spinner.innerHTML = spinner;
-                Loadspin.show(element, this._spinner);
+                var spnr = bzDom('<div class="loader bz-inline-block">');
+                var sp = Blues.addSpiner(false, { size: 16 });
+                spnr.append(sp);
+                Loadspin.show(element, spnr);
             },
             show: function(elem, spinner) {
                 if (outside == true) {
@@ -2286,14 +2287,14 @@
     Blues.Loadspin.hide = function(element) {
         var el = bzDom(element),
              par = el.parent(),
-             lsp = par.find('.bz-loader');
+             lsp = par.find('.loader');
         lsp.remove();
     };
     Blues.addSpiner = function(target, options) {
         var options = options || {},
             name = options.name || 'bz-spin-circle',
             pos = options.position || 'default',
-            size = options.size || 1;
+            size = options.size || 64;
         var sp = bzDom('<div>'),
             d = bzDom('<div>');
         sp.append(d.clone())
@@ -2305,7 +2306,7 @@
         if (pos && pos === 'center')
             sp.onclass('center');
         if (size)
-            sp.oncss('transform', 'scale(' + size + ')');
+            sp.oncss({width: size + 'px', height: size + 'px'});
         if (target)
             bzDom(target).append(sp);
         else return sp;
