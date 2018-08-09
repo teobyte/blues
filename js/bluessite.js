@@ -26,6 +26,7 @@
         { name: 'Conditional', url: 'conditional.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Autocomplete', url: 'autocomplete.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Selectors', url: 'selectors.html', clas: 'bz-list-item bz-t-concat' },
+        { name: 'Rating', url: 'rating.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Card validation', url: 'card-validation.html', clas: 'bz-list-item bz-t-concat' },
         { name: '', url: '', clas: 'divider' },
         { name: 'Buttons', url: '', clas: 'subheader bz-ft-l' },

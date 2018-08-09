@@ -17,6 +17,7 @@
 "use strict";
 var Autocomplete = function (inpt, options) {
     this.o = {};
+    options = options || {};
     this.inpt = inpt;
     this.mode = 'ac';
     this.ddlmode = false;
@@ -27,12 +28,10 @@ var Autocomplete = function (inpt, options) {
     this.srchString = '';
     for (var k in Autocomplete.defaultOptions) {
         if (Autocomplete.defaultOptions.hasOwnProperty(k)) {
-            if (options.hasOwnProperty(k)) {
+            if (options.hasOwnProperty(k))
                 this.o[k] = options[k] ;
-            }
-            else {
+            else
                 this.o[k] = Autocomplete.defaultOptions[k] ;
-            }
         }
     }
     if (options.hasOwnProperty('source')) {
@@ -68,7 +67,7 @@ var Autocomplete = function (inpt, options) {
     // sets Autocomplete ddl mode
     if (bzDom(inpt).ondata('ddlmode'))
         this.ddlmode = bzDom(inpt).ondata('ddlmode');
-    bzDom(inpt).onattr('autocomplete', 'offf');
+    bzDom(inpt).onattr('autocomplete', 'off');
     // init Autocomplete
     this.init();
 };
@@ -257,7 +256,7 @@ Autocomplete.prototype = {
         var ac = this;
         var $inpt = bzDom(ac.inpt);
         var selectionId = $selection.ondata('id');
-        var selectionName = $selection.inhtml();
+        var selectionName = $selection.text();
         $inpt.ondata('id', selectionId);
         $inpt.val(selectionName);
         if (!$selection.ifclass('highlight')) {
@@ -419,11 +418,14 @@ Autocomplete.prototype = {
                 ac.removeSuggestions();
                 ac.hidesuggestnew();
                 if ($selectItems.el[ac.activeIndex] !== 'undefined') {
+                    var activeItem = bzDom($selectItems.el[ac.activeIndex]);
+                    var _selectionId = activeItem.ondata('id');
+                    var _selectionName = activeItem.text();
                     if (ac.mode == '+chip' || ac.mode == 'chip+' || ac.mode == 'chip+add') {
-                        var activeItem = bzDom($selectItems.el[ac.activeIndex]);
-                        var _selectionId = activeItem.ondata('id');
-                        var _selectionName = activeItem.inhtml();
                         ac.o.addchip(_selectionId, _selectionName, ac);
+                        ac.hidesuggestnew();
+                    } else {
+                        ac.selection(_selectionId, _selectionName);
                         ac.hidesuggestnew();
                     }
                 }
@@ -530,8 +532,8 @@ Autocomplete.defaultOptions = {
         var data = new FormData();
         data.append('q', q);
         if (bzDom(_this.inpt).ondata('prop')) {
-            var props = bzDom(_this.inpt).ondata('prop'),
-                props = props.split(',');
+            var props = bzDom(_this.inpt).ondata('prop');
+            props = props.split(',');
             for (var j=0; j<props.length; j++) {
                 var paramVal = props[j],
                     paramName = paramVal.split(':');

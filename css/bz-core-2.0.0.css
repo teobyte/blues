@@ -703,10 +703,10 @@ blockquote {
 /*----------- Blues Card -------------------------------------------*/
 .bz-card {
     display:inline-block;
+    background:#fff;
     border-top:4px solid var(--color-primary);
     border-radius: 2px;
     box-shadow: 0 1px 5px rgba(0,0,0,.2), 0 2px 2px rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
-    margin:8px;
     position:relative;
     vertical-align: top;
 }
@@ -723,6 +723,52 @@ blockquote {
 .bz-card.small { width:325px; }
 .bz-card.middle { width:450px; }
 .bz-card.big { width:640px; }
+/*----------------------- */
+.bz-list-card {
+    background:#fff;
+    border-radius:4px;
+    height:128px;
+    padding:8px;
+    min-width:325px;
+    max-width:512px;
+}
+.bz-list-card .bz-avatar {
+    border-radius:50%;
+    display:inline-block;
+    height:112px;
+    overflow:hidden;
+    padding:4px;
+    width:112px;
+
+    display:inline-block;
+    margin:0!important;
+    position: relative;
+}
+.bz-list-card .bz-avatar img {
+    height:112px;
+    width:112px;
+}
+.bz-list-card .bz-contentbox {
+    display:inline-block;
+    height:112px;
+    padding:8px;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 1px;
+    max-width: 100%;
+    -webkit-flex: 1; /* Safari 6.1+ */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1;
+}
+.bz-list-card .bz-actions {
+    display:inline-block;
+    float:right;
+    height:112px;
+    width:32px;
+    margin:0!important;
+    position: relative;
+}
 /*---- BLUES SHADOWS --------------------------------------- */
 .bz-shadow-0 {
     box-shadow: none !important;
@@ -1372,6 +1418,105 @@ a,
     top:0;
     width:100%;
 }
+/*---- Loaders ---------------------------*/
+.bz-spin-circle {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+.bz-spin-circle div {
+    box-sizing: border-box;
+    position: absolute;
+    width:100%;
+    height:100%;
+    border:3px solid var(--color-primary);
+    border-radius: 50%;
+    animation: bz-circle 1.8s cubic-bezier(.05, 0, .13, .9) infinite;
+    border-color: var(--color-primary) transparent transparent transparent;
+}
+.bz-spin-circle div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.bz-spin-circle div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.bz-spin-circle div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes bz-circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.bz-spin-dots {
+    display: inline-block;
+    position: relative;
+    width:64px;
+    height:64px;
+}
+.bz-spin-dots div {
+    position: absolute;
+    top:calc(50% - 6px);
+    width:20%;
+    height:20%;
+    border-radius: 50%;
+    background: var(--color-primary);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.bz-spin-dots div:nth-child(1) {
+    left:10%;
+    animation: bz-dots1 0.6s infinite;
+}
+.bz-spin-dots div:nth-child(2) {
+    left:10%;
+    animation: bz-dots2 0.6s infinite;
+}
+.bz-spin-dots div:nth-child(3) {
+    left:40%;
+    animation: bz-dots2 0.6s infinite;
+}
+.bz-spin-dots div:nth-child(4) {
+    left:80%;
+    animation: bz-dots3 0.6s infinite;
+}
+@keyframes bz-dots1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes bz-dots3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes bz-dots2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(160%, 0);
+    }
+}
+.bz-center {
+    position: absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 /* ANIMATIONS */
 .bz-animate-fading{animation:fading 3s infinite}
 .bz-animate-opacity{animation:fade-in 1s}
@@ -1395,8 +1540,27 @@ a,
 /*@-webkit-keyframes pop-up { from { bottom: 30px; } to { bottom: 42px; } }*/
 /*@-moz-keyframes pop-up { from { bottom: 30px; } to { bottom: 42px; } }*/
 /*@-ms-keyframes pop-up { from { bottom: 30px; } to { bottom: 42px; } }*/
-
-
+.bz-scale-out,
+.bz-scale-in {
+    -webkit-transition: all 300ms ease-in;
+    -ms-transition: all 300ms ease-in;
+    -moz-transition: all 300ms ease-in;
+    transition: all 300ms ease-in;
+}
+.bz-scale-out
+{
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -moz-transform: scale(0);
+    transform: scale(0);
+}
+.bz-scale-in
+{
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1);
+}
 /*---- SIDENAV -------------------------------  */
 .bz-sidenav-wrapper {
     position: relative;
@@ -1613,17 +1777,59 @@ a,
 .bz-inline-search input:focus + i {
     color:var(--color-faded);
 }
-.bz-code {
-    padding:8px 0 0 8px;
-    background:var(--color-faded);
-    border:2px solid var(--color-primary);
-    border-radius:4px;
-    color:#fff;
-    font-size:12px;
-    resize:none;
-    outline:none;
-    width:640px;
+/*--> Blues WOW*/
+/*--> WOW List  */
+.bz-wow-list-item {
+    border-bottom: 1px solid #9d9d9d;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    height: 50px;
 }
+
+.bz-wow-list-wrapper {
+    background:#173b77;
+    position: absolute;
+    height: 0;
+    opacity: 0.3;
+    top: 50%;
+    width: 100%;
+    z-index: -10;
+}
+.bz-wow-list-item:hover > .bz-wow-list-wrapper {
+    animation:wowlisthover 0.3s;
+    top:0;
+    height:50px;
+}
+.bz-def-highlight {
+    background:var(--color-light);
+}
+/*---- Default Pages Styles */
+.bz-inpage-header {
+    margin-bottom:16px;
+    padding:0;
+    width:100%;
+}
+.bz-inpage-header-row {
+    height:50px;
+    width:100%;
+}
+.bz-inpage-header-row .bz-header-item {
+    border-bottom:4px solid var(--color-light);
+    display:inline-block;
+    line-height:50px;
+    height:100%;
+    padding:0 8px;
+    width:auto;
+}
+.bz-inpage-header-row .bz-header-item.hoverable {
+    cursor:pointer;
+}
+.bz-inpage-header-row .bz-header-item.hoverable:hover {
+    border-bottom:4px solid var(--color-primary);
+}
+/* Blues WOW transitions */
+@keyframes wowlisthover{from{top:50%;height:0px;} to{top:0;height:50px;}}
 /*--> DEVICE SIZES ---------------------------- */
 /* Mobile  <= 568px */
 @media screen and (max-width:568px) {
@@ -1649,4 +1855,15 @@ a,
 @media screen and (min-width:1280px) {
     .bz-cross-padding { padding:20px; }
     .bz-modal .modal-content { width:50vw; }
+}
+.bz-code {
+    padding:8px 0 0 8px;
+    background:var(--color-faded);
+    border:2px solid var(--color-primary);
+    border-radius:4px;
+    color:#fff;
+    font-size:12px;
+    resize:none;
+    outline:none;
+    width:640px;
 }

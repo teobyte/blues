@@ -984,3 +984,49 @@ input[type="color"]::-webkit-color-swatch {
     vertical-align:middle;
     display:inline-block;
 }
+/*---- Editable Forms -------------------------  */
+.bz-editable-box {
+    background:#fff;
+    margin:12px 0;
+    padding:7px 0;
+    position:relative;
+    display:inline-block;
+    width:100%;
+    max-width:325px;
+}
+.bz-editable-box i {
+    margin-left:12px;
+}
+.bz-editable-box i + .bz-editable {
+    margin-left:8px;
+}
+.bz-editable {
+    border:none;
+    border-bottom:2px solid transparent;
+    cursor:pointer;
+    display:inline-block;
+    font-size:18px;
+    outline:none;
+    padding:12px 10px;
+    max-width:275px;
+}
+.bz-editable:hover,
+.bz-editable:focus {
+    background:#ebebeb;
+}
+input.bz-editable {
+    border-bottom:2px solid #9e9e9e;
+    cursor:auto;
+    padding:10px;
+    width:calc(100% - 46px);
+    max-width:205px;
+}
+input.bz-editable:focus {
+    border-bottom:2px solid var(--color-primary);
+}
+.bz-editable-box .loader-box {
+    position:absolute;
+    top:20px;
+    right:0;
+    width:25px;
+}

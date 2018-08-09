@@ -214,11 +214,11 @@
         ifValidStyleNode: function (node) {
             return (node instanceof HTMLStyleElement) && node.sheet.cssRules.length > 0;
         },
-        isEqualObjects: function (first, second) {
+        ifEqualObjects: function (first, second) {
             return (first && second && typeof first === 'object' && typeof second === 'object') ?
                 (Object.keys(first).length === Object.keys(second).length) &&
                 Object.keys(first).reduce(function(isEqual, key) {
-                    return isEqual && isEqualObjects(first[key], second[key]);
+                    return isEqual && Blues.check.ifEqualObjects(first[key], second[key]);
                 }, true) : (first === second);
         }
 
@@ -2177,12 +2177,10 @@
                 ajax.onclass('bz-cursor-pointer');
                 callback = ajax.ondata('onclick');
                 ajax.on('click', function() {
-
                     if (callback === 'submit') {
                         var frm = ajax.parent('form');
                         dataParams = frm.getformdata();
                     }
-
                     bz.ajax({
                         url: action,
                         type: 'post',
@@ -2190,13 +2188,7 @@
                         dataType: 'json',
                         data: dataParams,
                         success: function(data) {
-                            if (callback === 'append')
-                                ajax.append(data);
-                            else if (callback === 'prepend')
-                                ajax.prepend(data);
-                            else if (callback === 'update')
-                                ajax.inhtml(data);
-                            else if (ajax.ondata('target') && callback === 'submit') {
+                            if (ajax.ondata('target')) {
                                 var tar = ajax.ondata('target'),
                                     _tar = tar.split('|')[0],
                                     _ins = tar.split('|')[1];
@@ -2206,9 +2198,22 @@
                                         target.append(data);
                                     else if (_ins === 'prepend')
                                         target.prepend(data);
-                                    else
+                                    else {
                                         target.inhtml(data);
+                                        var nt = target.find('.bz-ajax');
+                                        nt.each(function(i, item) {
+                                            var _nt = bzDom(item);
+                                            Blues.Ajaxcalls(_nt);
+                                        });
+                                    }
                                 }
+                            } else {
+                                if (callback === 'append')
+                                    ajax.append(data);
+                                else if (callback === 'prepend')
+                                    ajax.prepend(data);
+                                else if (callback === 'update')
+                                    ajax.inhtml(data);
                             }
                             if (callSuccess != null)
                                 successFn(data);
@@ -2220,7 +2225,6 @@
                                 bz.Toast('Error: ' + e, { tclass: 'negative' });
                         }
                     });
-
                     if (data === null)
                         data = 'example of some returned data';
                     if (callback !== 'update' && callback !== 'append' && callback !== 'prepend')
@@ -2228,6 +2232,104 @@
                 });
             }
         });
+    };
+    //--> Blues Editable Fields
+    Blues.Editable = function(selector) {
+        selector = selector || '.bz-editable';
+        var edtbls = bzDom(selector);
+        edtbls.each(function(i, item) {
+            var editable = bzDom(item),
+                name = editable.ondata('name'),
+                placeholder = editable.onattr('placeholder'),
+                action = editable.ondata('action'),
+                edtBox = bzDom('<div class="bz-editable-box">'),
+                ldr = bzDom('<div class="loader-box">');
+            if (editable.ondata('icon')) {
+                var icn = bzDom('<i>');
+                icn.onclass(editable.ondata('icon'));
+                edtBox.append(icn);
+            }
+            editable.before(edtBox);
+            edtBox.append(editable);
+            edtBox.append(ldr);
+            function saveField(_edit, inpt, _inpt, txt) {
+                var val = _inpt.val();
+                if (val !== '' && val !== txt) {
+                    if (inpt.parent('.bz-editable-box').exist()) {
+                        var editb = inpt.parent('.bz-editable-box');
+                        editb.ondata('key', '1');
+                        if (editb.find('.loader-box').exist()) {
+                            var ldr = editb.find('.loader-box');
+                            bz.Loadspin(ldr);
+                        }
+                    }
+                    var dataParams = new FormData();
+                    dataParams[name] = val;
+                    if (editable.ondata('params')) {
+                        var props = editable.ondata('params');
+                        props = props.split(',');
+                        for (var j = 0; j < props.length; j++) {
+                            var paramVal = props[j],
+                                paramName = paramVal.split(':');
+                            dataParams[paramName[0]] = paramName[1];
+                        }
+                    }
+                    bz.ajax({
+                        url: action,
+                        type: 'post',
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        data: dataParams,
+                        success: function (data) {
+                            _edit.text(val);
+                            _inpt.replacewith(_edit);
+                            bz.Loadspin.hide(ldr);
+                        },
+                        error: function (e) {
+
+                        }
+                    });
+                } else {
+                    _edit.text(val);
+                    _inpt.replacewith(_edit);
+                }
+            }
+            editable.on('click', function() {
+                var _edit = bzDom(this);
+                var txt = _edit.text(),
+                    inpt;
+                if (_edit.ondata('type') === 'textarea')
+                    inpt = bzDom('<textarea class="bz-editable">');
+                else
+                    inpt = bzDom('<input type="text" class="bz-editable">');
+                inpt.val(txt);
+                _edit.replacewith(inpt);
+                inpt.focus();
+                inpt.on('blur', function () {
+                    var _inpt = bzDom(this);
+                    var editb = _inpt.parent('.bz-editable-box');
+                    if (editb.ondata('key') != '1')
+                        saveField(_edit, inpt, _inpt, txt);
+                });
+                inpt.on('keydown', function(e) {
+                    var _inpt = bzDom(this);
+                    // esc
+                    if (e.keyCode == 27) {
+                        e.preventDefault();
+                        var editb = _inpt.parent('.bz-editable-box');
+                        editb.ondata('key', '1');
+                        _edit.text(txt);
+                        _inpt.replacewith(_edit);
+
+                    }
+                    // enter or tab
+                    else if (e.keyCode == 13 || e.keyCode == 9) {
+                        e.preventDefault();
+                        saveField(_edit, inpt, _inpt, txt);
+                    }
+                });
+            });
+        })
     };
     //--> Blues Load Spins starts here
     //--> following 2 functions work together
@@ -2785,6 +2887,7 @@
     Blues.init = function () {
         Blues.Popover();
         Blues.Ajaxcalls();
+        Blues.Editable();
     };
     window.Bz = window.bz = window.Blues = Blues;
     window.bzDom === undefined && (window.bzDom = Blues.bzDom);

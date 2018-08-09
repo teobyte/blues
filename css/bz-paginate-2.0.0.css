@@ -1,50 +1,60 @@
-/* BLUES PAGINATION */
+/*---- Blues Pagination ------------  */
 .bz-pagination {
-    clear:both;
-    font-size:0;
+    clear: both;
+    margin: 0 auto;
+    width: 325px;
 }
-.bz-pagination > * {
-    font-size:16px;
-}
-.bz-pagination .prevLink,
+.bz-pagination li,
+.bz-pagination .step,
 .bz-pagination .nextLink,
-.bz-pagination .step,
-.bz-pagination .currentStep,
-.bz-pagination .step.gap {
-    background:var(--color-faded);
-    color:#fff;
-    cursor:pointer;
-    display:inline-block;
-    text-align:center;
-    height:2em;
-    line-height:2em;
-    padding:0 4px;
-    margin:0;
-}
-.bz-pagination .prevLink:hover,
-.bz-pagination .nextLink:hover,
-.bz-pagination .step:not(.gap):hover {
-    background:var(--color-info);
-}
+.bz-pagination .prevLink,
 .bz-pagination .currentStep {
-    cursor: default;
-    background:var(--color-primary);
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    color:#173b77;
+    display: inline-block;
+    height: 30px;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .3s;
+    min-width: 30px;
+}
+.bz-pagination .nextLink,
+.bz-pagination .prevLink {
+    font-size: 24px;
 }
 .bz-pagination .step,
-.bz-pagination .currentStep,
-.bz-pagination .step.gap {
-    min-width:2em;
+.bz-pagination .currentStep {
+    padding: 6px 0;
+    width: 30px;
 }
-.bz-pagination .step.gap {
-    cursor: default;
+.bz-pagination .nextLink,
+.bz-pagination .prevLink {
+
+}
+.bz-pagination .nextLink,
+.bz-pagination .prevLink {
+    padding:0 10px 0 0;
+}
+.bz-pagination .nextLink i,
+.bz-pagination .prevLink i {
+    position: absolute;
+}
+.bz-pagination .step:hover:not(.active) {
+    color: #FFFFFF;
+    background-color:#173b77;
 }
 .bz-pagination .currentStep {
-
+    background-color: #848482;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    border: 1px solid #848482;
 }
 .bz-pagination .step.gap {
-
+    display: none;
 }
-
 /* BLUES BREADCRUMBS */
 .bz-breadcrumbs,
 .bz-multi-steps {
