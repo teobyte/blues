@@ -166,6 +166,12 @@ Rating.prototype = {
         });
     },
     setstyle: function() {
+        var top = '10px',
+            marginleft = '30px';
+        if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+            top = '11px';
+            marginleft = '34px';
+        }
         var jss = {
             'rule': {
                 '.bz-rating': {
@@ -186,13 +192,14 @@ Rating.prototype = {
                 },
                 '.bz-rating .bz-rating-rate + .bz-rating-wrap' : {
                     'attr': {
-                        'margin-left': '30px'
+                        'margin-left': marginleft
                     }
                 },
                 '.bz-rating .bz-rating-wrap input' : {
                     'attr': {
-                        width: '0',
-                        height: '0'
+                        appearance: 'none',
+                        '-webkit-appearance': 'none',
+                        '-moz-appearance': 'none'
                     }
                 },
                 '.bz-rating .bz-rating-rate': {
@@ -201,7 +208,7 @@ Rating.prototype = {
                         'font-size': '0.8em',
                         'font-weight': 'bold',
                         position: 'absolute',
-                        top: '10px'
+                        top: top
                     }
                 },
                 '.bz-rating.primary .bz-rating-highlight': {
