@@ -13,6 +13,9 @@ var Rating = function (options) {
     }
     this.ratebox = bzDom(this.o.element);
     this.name = bz.help.timestamp();
+    this.action = null;
+    if (this.ratebox.ondata('action'))
+        this.action = this.ratebox.ondata('action');
     // init Rating
     this.init();
 };
@@ -93,6 +96,9 @@ Rating.prototype = {
             wrap = bzDom('<div class="bz-rating-wrap">'),
             wrapBack = bzDom('<div class="bz-rating-back">'),
             rate = rating.ratebox.ondata('value');
+
+        var star = bzDom('<i class="bzicon-star-in-square bz-fc-white">');
+
         if (rating.o.showvalue === true) {
             var rateDiv = bzDom('<div class="bz-rating-rate">');
             rateDiv.text(rate);
@@ -106,6 +112,7 @@ Rating.prototype = {
             rad.wrapinto(_wrap, true);
             var _wrapback = wrapBack.clone();
             _wrap.append(rating.setback(rate, i, _wrapback));
+            _wrap.append(star.clone());
         });
     },
     // check radio button
@@ -116,10 +123,39 @@ Rating.prototype = {
     },
     // highlight radio wrapper on mouseover
     mouseover: function(wrap) {
+        var rating = this,
+            key = rating.ratebox.ondata('key');
+        if (key != 1) {
+            var $that = bzDom(wrap),
+                _index = $that.find('input').val();
+            var _wraps = rating.ratebox.find('.bz-rating-wrap');
+            _wraps.each(function(i, item) {
+                var _wrap = bzDom(item);
+                rating.hidewraps();
+                if (i <= parseInt(_index) - 1) {
+                    if (!_wrap.ifclass('bz-rating-highlight'))
+                        _wrap.onclass('bz-rating-highlight');
+                }
+            });
+        }
+    },
+    mouseleave: function() {
+        var rating = this,
+            key = rating.ratebox.ondata('key');
+        if (key != 1) {
+            var _wraps = rating.ratebox.find('.bz-rating-wrap');
+            _wraps.each(function(i, item) {
+                var _wrap = bzDom(item);
+                _wrap.offclass('bz-rating-highlight');
+            });
+            rating.showwraps();
+        }
+    },
+    // set value
+    setvalue: function(wrap) {
         var rating = this;
-        var $that = bzDom(wrap),
-            _index = $that.find('input').val();
-        var _wraps = rating.ratebox.find('.bz-rating-wrap');
+        var _wraps = rating.ratebox.find('.bz-rating-wrap'),
+            _index = wrap.find('input').val();
         _wraps.each(function(i, item) {
             var _wrap = bzDom(item);
             rating.hidewraps();
@@ -129,15 +165,6 @@ Rating.prototype = {
             }
         });
     },
-    mouseleave: function() {
-        var rating = this;
-        var _wraps = rating.ratebox.find('.bz-rating-wrap');
-        _wraps.each(function(i, item) {
-            var _wrap = bzDom(item);
-            _wrap.offclass('bz-rating-highlight');
-        });
-        rating.showwraps();
-    },
     // adds actions to the Rating box
     addactions: function() {
         var rating = this;
@@ -146,8 +173,10 @@ Rating.prototype = {
             var rad = bzDom(item);
             rad.on('change', function() {
                 var $that = bzDom(this),
-                    _val = $that.val();
-                alert(_val);
+                    _val = $that.val(),
+                    _wrap = $that.parent();
+                rating.ratebox.ondata('key', '1');
+                rating.o.ajaxrequest(rating, _wrap, _val);
             });
         });
         var wraps = rating.ratebox.find('.bz-rating-wrap');
@@ -166,11 +195,11 @@ Rating.prototype = {
         });
     },
     setstyle: function() {
-        var top = '10px',
+        var top = '16px',
             marginleft = '30px';
         if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
-            top = '11px';
-            marginleft = '34px';
+            top = '17px';
+            marginleft = '36px';
         }
         var jss = {
             'rule': {
@@ -182,12 +211,13 @@ Rating.prototype = {
                 },
                 '.bz-rating .bz-rating-wrap' : {
                     'attr': {
-                        border: '1px solid #777',
+                        // border: '1px solid #777',
+                        background: '#777',
                         cursor: 'pointer',
                         display: 'inline-block',
-                        height: '8px',
+                        height: '14px',
                         position: 'relative',
-                        width: '32px'
+                        width: '14px'
                     }
                 },
                 '.bz-rating .bz-rating-rate + .bz-rating-wrap' : {
@@ -200,6 +230,13 @@ Rating.prototype = {
                         appearance: 'none',
                         '-webkit-appearance': 'none',
                         '-moz-appearance': 'none'
+                    }
+                },
+                '.bz-rating .bz-rating-wrap i' : {
+                    'attr': {
+                        position: 'absolute',
+                        top: '-1px',
+                        left: '-1px'
                     }
                 },
                 '.bz-rating .bz-rating-rate': {
@@ -239,5 +276,21 @@ Rating.prototype = {
 };
 Rating.defaultOptions = {
     element: '.bz-rating',
-    showvalue: false
+    showvalue: false,
+    ajaxrequest: function(rating, wrap, val) {
+        //rating.setvalue(wrap);
+        bz.ajax({
+            url: rating.action,
+            type: 'post',
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: { value: val },
+            success: function(data) {
+                rating.setvalue(wrap);
+            },
+            error: function() {
+                rating.setvalue(wrap);
+            }
+        });
+    }
 };
