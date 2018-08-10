@@ -216,7 +216,7 @@
             </div>
         </div>
         <div class="bz-padding-8">
-            <div class="bz-rating star-rating primary" data-value="3.81" data-action="/request/rating">
+            <div id="starrating" class="bz-rating primary" data-value="3.81" data-action="/request/rating">
                 <input type="radio">
                 <input type="radio">
                 <input type="radio">
@@ -250,9 +250,16 @@
     });
 
     new Rating({
+        element: '#starrating',
+        showvalue: true,
+        rate: true
+    });
+
+    new Rating({
         element: '#linerating',
         type: 'line',
-        showvalue: true
+        showvalue: true,
+        rate: true
     });
 
 </script>

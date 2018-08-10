@@ -13,7 +13,7 @@ var Rating = function (options) {
     }
     this.ratebox = bzDom(this.o.element);
     this.name = bz.help.timestamp();
-    this.action = null;
+    this.action = false;
     if (this.ratebox.ondata('action'))
         this.action = this.ratebox.ondata('action');
     // init Rating
@@ -96,6 +96,8 @@ Rating.prototype = {
             wrap = bzDom('<div class="bz-rating-wrap">'),
             wrapBack = bzDom('<div class="bz-rating-back">'),
             rate = rating.ratebox.ondata('value');
+        if (rating.o.rate === true)
+            wrap.onclass('bz-cursor-pointer');
         if (rating.o.showvalue === true) {
             var rateDiv = bzDom('<div class="bz-rating-rate">');
             rateDiv.text(rate);
@@ -113,7 +115,8 @@ Rating.prototype = {
                 _wrap.onclass('star');
                 var star = bzDom('<i class="bzicon-star-in-square bz-fc-white">');
                 _wrap.append(star.clone());
-                rateDiv.onclass('star');
+                if (rating.o.showvalue === true)
+                    rateDiv.onclass('star');
             }
         });
     },
@@ -123,43 +126,49 @@ Rating.prototype = {
             rad = wrap.find('input');
         rad.checkon();
     },
+    highlighton: function(wrap) {
+        var rating = this;
+        var _index = bzDom(wrap).find('input').val();
+        var _wraps = rating.ratebox.find('.bz-rating-wrap');
+        _wraps.each(function(i, item) {
+            var _wrap = bzDom(item);
+            rating.hidewraps();
+            if (i <= parseInt(_index) - 1) {
+                if (!_wrap.ifclass('bz-rating-highlight'))
+                    _wrap.onclass('bz-rating-highlight');
+            }
+        });
+    },
+    highlightoff: function() {
+        var rating = this;
+        var _wraps = rating.ratebox.find('.bz-rating-wrap');
+        _wraps.each(function(i, item) {
+            var _wrap = bzDom(item);
+            _wrap.offclass('bz-rating-highlight');
+        });
+        rating.showwraps();
+    },
     // highlight radio wrapper on mouseover
     mouseover: function(wrap) {
         var rating = this,
             key = rating.ratebox.ondata('key');
-        if (key != 1) {
-            var $that = bzDom(wrap),
-                _index = $that.find('input').val();
-            var _wraps = rating.ratebox.find('.bz-rating-wrap');
-            _wraps.each(function(i, item) {
-                var _wrap = bzDom(item);
-                rating.hidewraps();
-                if (i <= parseInt(_index) - 1) {
-                    if (!_wrap.ifclass('bz-rating-highlight'))
-                        _wrap.onclass('bz-rating-highlight');
-                }
-            });
-        }
+        if (key != 1)
+            rating.highlighton(wrap);
     },
     mouseleave: function() {
         var rating = this,
             key = rating.ratebox.ondata('key');
-        if (key != 1) {
-            var _wraps = rating.ratebox.find('.bz-rating-wrap');
-            _wraps.each(function(i, item) {
-                var _wrap = bzDom(item);
-                _wrap.offclass('bz-rating-highlight');
-            });
-            rating.showwraps();
-        }
+        if (key != 1)
+            rating.highlightoff();
     },
     // set value
     setvalue: function(wrap) {
         var rating = this;
-        var _wraps = rating.ratebox.find('.bz-rating-wrap'),
-            _index = wrap.find('input').val();
+        var _index = bzDom(wrap).find('input').val(),
+            _wraps = rating.ratebox.find('.bz-rating-wrap');
         _wraps.each(function(i, item) {
             var _wrap = bzDom(item);
+            _wrap.offclass('bz-rating-highlight');
             rating.hidewraps();
             if (i <= parseInt(_index) - 1) {
                 if (!_wrap.ifclass('bz-rating-highlight'))
@@ -178,34 +187,35 @@ Rating.prototype = {
                     _val = $that.val(),
                     _wrap = $that.parent();
                 rating.ratebox.ondata('key', '1');
-                rating.o.ajaxrequest(rating, _wrap, _val);
+                if (rating.action)
+                    rating.o.request(rating, _wrap, _val);
             });
         });
-        var wraps = rating.ratebox.find('.bz-rating-wrap');
-        wraps.each(function(i, item) {
-            var wrap = bzDom(item);
-            wrap.on('click', function(e) {
-                e.stopPropagation();
-                rating.checkbox(this);
+        if (rating.o.rate === true) {
+            var wraps = rating.ratebox.find('.bz-rating-wrap');
+            wraps.each(function(i, item) {
+                var wrap = bzDom(item);
+                wrap.on('click', function(e) {
+                    //e.stopPropagation();
+                    rating.checkbox(this);
+                    rating.setvalue(this);
+                });
+                wrap.on('mouseover', function() {
+                    rating.mouseover(this);
+                });
+                wrap.on('mouseleave', function() {
+                    rating.mouseleave();
+                });
             });
-            wrap.on('mouseover', function() {
-                rating.mouseover(this);
-            });
-            wrap.on('mouseleave', function() {
-                rating.mouseleave();
-            });
-        });
+        }
     },
     setstyle: function() {
         var rating = this,
-            top = 11,
-            topstar = 16,
+            top = 2,
+            topstar = 3,
             marginleft = 30;
-        if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
-            top = 12;
-            topstar = 16;
-            marginleft = 36;
-        }
+        if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
+            marginleft = 38;
         var jss = {
             'rule': {
                 '.bz-rating': {
@@ -218,8 +228,8 @@ Rating.prototype = {
                     'attr': {
                         border: 'none',
                         background: '#777',
-                        cursor: 'pointer',
                         display: 'inline-block',
+                        'vertical-align': 'middle',
                         height: '8px',
                         position: 'relative',
                         width: '24px'
@@ -227,6 +237,7 @@ Rating.prototype = {
                 },
                 '.bz-rating .bz-rating-wrap.star' : {
                     'attr': {
+                        'font-size': '16px',
                         height: '14px',
                         width: '14px'
                     }
@@ -253,7 +264,7 @@ Rating.prototype = {
                 '.bz-rating .bz-rating-rate': {
                     'attr': {
                         display: 'inline-block',
-                        'font-size': '0.8em',
+                        'font-size': '0.9em',
                         'font-weight': 'bold',
                         position: 'absolute',
                         top: top + 'px'
@@ -273,6 +284,7 @@ Rating.prototype = {
                     'attr': {
                         height: '100%',
                         position: 'absolute',
+                        top: '0',
                         width: '0'
                     }
                 }
@@ -292,10 +304,11 @@ Rating.prototype = {
 };
 Rating.defaultOptions = {
     element: '.bz-rating',
+    rate: false,
     type: 'star',
     showvalue: false,
-    ajaxrequest: function(rating, wrap, val) {
-        //rating.setvalue(wrap);
+    request: function(rating, wrap, val) {
+        alert(val);
         bz.ajax({
             url: rating.action,
             type: 'post',
