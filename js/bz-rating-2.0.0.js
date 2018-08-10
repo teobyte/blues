@@ -96,9 +96,6 @@ Rating.prototype = {
             wrap = bzDom('<div class="bz-rating-wrap">'),
             wrapBack = bzDom('<div class="bz-rating-back">'),
             rate = rating.ratebox.ondata('value');
-
-        var star = bzDom('<i class="bzicon-star-in-square bz-fc-white">');
-
         if (rating.o.showvalue === true) {
             var rateDiv = bzDom('<div class="bz-rating-rate">');
             rateDiv.text(rate);
@@ -112,7 +109,12 @@ Rating.prototype = {
             rad.wrapinto(_wrap, true);
             var _wrapback = wrapBack.clone();
             _wrap.append(rating.setback(rate, i, _wrapback));
-            _wrap.append(star.clone());
+            if (rating.o.type === 'star') {
+                _wrap.onclass('star');
+                var star = bzDom('<i class="bzicon-star-in-square bz-fc-white">');
+                _wrap.append(star.clone());
+                rateDiv.onclass('star');
+            }
         });
     },
     // check radio button
@@ -195,11 +197,14 @@ Rating.prototype = {
         });
     },
     setstyle: function() {
-        var top = '16px',
-            marginleft = '30px';
+        var rating = this,
+            top = 11,
+            topstar = 16,
+            marginleft = 30;
         if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
-            top = '17px';
-            marginleft = '36px';
+            top = 12;
+            topstar = 16;
+            marginleft = 36;
         }
         var jss = {
             'rule': {
@@ -211,18 +216,24 @@ Rating.prototype = {
                 },
                 '.bz-rating .bz-rating-wrap' : {
                     'attr': {
-                        // border: '1px solid #777',
+                        border: 'none',
                         background: '#777',
                         cursor: 'pointer',
                         display: 'inline-block',
-                        height: '14px',
+                        height: '8px',
                         position: 'relative',
+                        width: '24px'
+                    }
+                },
+                '.bz-rating .bz-rating-wrap.star' : {
+                    'attr': {
+                        height: '14px',
                         width: '14px'
                     }
                 },
                 '.bz-rating .bz-rating-rate + .bz-rating-wrap' : {
                     'attr': {
-                        'margin-left': marginleft
+                        'margin-left': marginleft + 'px'
                     }
                 },
                 '.bz-rating .bz-rating-wrap input' : {
@@ -245,7 +256,12 @@ Rating.prototype = {
                         'font-size': '0.8em',
                         'font-weight': 'bold',
                         position: 'absolute',
-                        top: top
+                        top: top + 'px'
+                    }
+                },
+                '.bz-rating .bz-rating-rate.star': {
+                    'attr': {
+                        top: topstar + 'px'
                     }
                 },
                 '.bz-rating.primary .bz-rating-highlight': {
@@ -276,6 +292,7 @@ Rating.prototype = {
 };
 Rating.defaultOptions = {
     element: '.bz-rating',
+    type: 'star',
     showvalue: false,
     ajaxrequest: function(rating, wrap, val) {
         //rating.setvalue(wrap);

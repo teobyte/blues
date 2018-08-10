@@ -189,7 +189,7 @@
 
     <div class="bz-padding-16 bz-clearfix">
         <div class="bz-padding-8">
-            <div class="bz-rating primary" data-value="0.86" data-action="/request/rating">
+            <div class="bz-rating star-rating primary" data-value="0.86" data-action="/request/rating">
                 <input type="radio">
                 <input type="radio">
                 <input type="radio">
@@ -198,7 +198,7 @@
             </div>
         </div>
         <div class="bz-padding-8">
-            <div class="bz-rating primary" data-value="1.46" data-action="/request/rating">
+            <div class="bz-rating star-rating primary" data-value="1.46" data-action="/request/rating">
                 <input type="radio">
                 <input type="radio">
                 <input type="radio">
@@ -207,7 +207,7 @@
             </div>
         </div>
         <div class="bz-padding-8">
-            <div class="bz-rating primary" data-value="2.57" data-action="/request/rating">
+            <div class="bz-rating star-rating primary" data-value="2.57" data-action="/request/rating">
                 <input type="radio">
                 <input type="radio">
                 <input type="radio">
@@ -216,7 +216,7 @@
             </div>
         </div>
         <div class="bz-padding-8">
-            <div class="bz-rating primary" data-value="3.81" data-action="/request/rating">
+            <div class="bz-rating star-rating primary" data-value="3.81" data-action="/request/rating">
                 <input type="radio">
                 <input type="radio">
                 <input type="radio">
@@ -225,7 +225,7 @@
             </div>
         </div>
         <div class="bz-padding-8">
-            <div class="bz-rating primary" data-value="4.28" data-action="/request/rating">
+            <div id="linerating" class="bz-rating primary" data-value="4.28" data-action="/request/rating">
                 <input type="radio">
                 <input type="radio">
                 <input type="radio">
@@ -241,12 +241,18 @@
 <script src="js/bz-rating-2.0.0.js"></script>
 <script src="js/bluessite.js"></script>
 <script>
-    var rates = bzDom('.bz-rating');
+    var rates = bzDom('.star-rating');
     rates.each(function(i, item) {
         new Rating({
             element: item,
             showvalue: true
         });
+    });
+
+    new Rating({
+        element: '#linerating',
+        type: 'line',
+        showvalue: true
     });
 
 </script>
