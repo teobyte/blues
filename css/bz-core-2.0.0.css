@@ -1857,7 +1857,7 @@ a,
     .bz-modal .modal-content { width:50vw; }
 }
 .bz-code {
-    padding:8px 0 0 8px;
+    padding:24px 0 0 8px;
     background:var(--color-faded);
     border:2px solid var(--color-primary);
     border-radius:4px;

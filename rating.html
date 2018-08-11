@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/bz-core-2.0.0.css">
     <link rel="stylesheet" href="bz-fonts/css/bz-font.css">
-
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -182,12 +181,34 @@
             <i class="icon-menu"></i>
         </div>
     </div>
-
-    <div>
-        <i class="icon-star-full bz-fc-white"></i>
+    <div class="bz-padding-8">
+        <div class="bz-padding-8">
+            <p>
+                Star rating works along with bz-fonts only and icon named <span class="bz-fc-positive bz-ft-bold">.bzicon-star-in-square</span>
+                <i class="bzicon-star-in-square bz-fc-primary"></i>
+            </p>
+            <textarea class="bz-code" rows="3" readonly>
+                <link rel="stylesheet" href="bz-fonts/css/bz-font.css">
+            </textarea>
+            <p>
+                And Blues.JS library rating with a next code
+            </p>
+            <textarea class="bz-code" rows="10" readonly>
+                <script src="js/bz-rating-2.0.0.js"></script>
+                <script>
+                    new Rating({
+                        element: '#starrating',
+                        showvalue: true
+                    });
+                </script>
+            </textarea>
+            <p>
+                If you don't need to show rating value before the bars or stars, just remove parameter <span class="bz-fc-primary bz-ft-bold">showvalue</span> or
+                set it to the <span class="bz-fc-primary bz-ft-bold">false</span>.
+            </p>
+        </div>
     </div>
-
-    <div class="bz-padding-16 bz-clearfix">
+    <div class="bz-padding-8 bz-clearfix">
         <div class="bz-padding-8">
             <div class="bz-rating star-rating primary" data-value="0.86" data-action="/request/rating">
                 <input type="radio">
@@ -215,6 +236,9 @@
                 <input type="radio">
             </div>
         </div>
+        <p class="bz-padding-8">
+            By default rating works like a widget, to make it clickable add parameter <span class="bz-fc-primary bz-ft-bold">rate: true</span>.
+        </p>
         <div class="bz-padding-8">
             <div id="starrating" class="bz-rating primary" data-value="3.81" data-action="/request/rating">
                 <input type="radio">
@@ -224,6 +248,10 @@
                 <input type="radio">
             </div>
         </div>
+        <p class="bz-padding-8">
+            For a line rating add parameter <span class="bz-fc-primary bz-ft-bold">type: 'line'</span>. The line rating works with no
+            <span class="bz-fc-primary bz-ft-bold">bz-fonts</span> linked to the page.
+        </p>
         <div class="bz-padding-8">
             <div id="linerating" class="bz-rating primary" data-value="4.28" data-action="/request/rating">
                 <input type="radio">
