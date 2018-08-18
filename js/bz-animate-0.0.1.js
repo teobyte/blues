@@ -2,9 +2,7 @@
     'use strict';
     // declare Blues
     var Blues = Blues || {};
-
-    var animate;
-    animate = function(element, styles, options) {
+    Blues.animate = function(element, styles, options) {
         var Animate = Animate || {};
         if (!element)
             return null;
@@ -107,8 +105,71 @@
         Animate.init();
         return Animate;
     };
+    Blues.flyTo = function(flyer, flyingTo) {
+        var flyerElem = bzDom(flyer),
+            flyingToElem = bzDom(flyingTo),
+            divider = 3;
+        var flyerClone = flyerElem.clone();
+        bzDom(flyerClone, {
+            addcss: {color: 'green', position: 'absolute', top: flyerElem.scrollPos().top + "px", left: flyerElem.scrollPos().left + "px", opacity: 1, 'z-index': 1000}
+        });
+        document.body.appendChild(flyerClone.el);
+        var gotoX = parseInt(flyingToElem.scrollPos().left + (flyingToElem.width() / 2) - (flyerElem.width()/divider)/2);
+        var gotoY = parseInt(flyingToElem.scrollPos().top + (flyingToElem.height() / 2) - (flyerElem.height()/divider)/2);
+        Blues.animate(flyerClone.el, {
+            //opacity: 0.4,
+            left: gotoX + 'px',
+            top: gotoY + 'px'
+        } , {
+            duration: 700,
+            callback: function() {
+                flyerClone.remove();
+                flyingToElem.oncss('color', '#FF6600');
+                setTimeout(function() {
+                    flyingToElem.oncss('color', '#0048BA');
+                }, 300);
+            }
+        })
+    };
+    Blues.dynamoValue = function(target, newvalue, unit, duration) {
+        var oldval = 0,
+            tarGet = bzDom(target),
+            duration = parseInt(duration) || 600,
+            unit = unit || '';
+        if (tarGet.inhtml()) {
+            oldval = numeral(tarGet.inhtml()).format('0.00');
+            oldval = parseFloat(oldval);
+        }
+        newvalue = parseFloat(newvalue);
+        var execute = function(target, from, to, duration, unit) {
+            var start = new Date().getTime(),
+                timer = setInterval(function() {
+                    // determine how long the animation has been going
+                    var time = new Date().getTime() - start;
+                    // if the animation is complete
+                    if( time >= duration ) {
+                        // stop the interval
+                        clearInterval(timer);
+                        // set the final position
+                        target.innerHTML = unit + ' ' + numeral(to).format('0.00');
+                        // start callback
+                        return;
+                    }
+                    // calculate the step
+                    var t = time / duration;
+                    var step = from + t * (to - from);
+                    // update the element style
+                    target.innerHTML = unit + ' ' + numeral(step).format('0.00');
+                }, 10);
+            // assign the initial starting point
+            target.innerHTML = unit + ' ' + numeral(from).format('0.00');
+        };
+        execute(target, oldval, newvalue, duration, unit);
+    };
     function init() {
-        window.bz.animate = window.Blues.animate = animate;
+        window.bz.animate = window.Blues.animate = Blues.animate;
+        window.bz.flyTo = window.Blues.flyTo = Blues.flyTo;
+        window.bz.dynamoValue = window.Blues.dynamoValue = Blues.dynamoValue;
     }
     return init();
 })();

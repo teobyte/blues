@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link rel="stylesheet" href="css/bz-core-2.0.0.css">
     <link rel="stylesheet" href="bz-fonts/css/bz-font.css">
+    <link rel="stylesheet" href="css/prism.css">
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -187,21 +188,25 @@
                 Star rating works along with bz-fonts only and icon named <span class="bz-fc-positive bz-ft-bold">.bzicon-star-in-square</span>
                 <i class="bzicon-star-in-square bz-fc-primary"></i>
             </p>
-            <textarea class="bz-code" rows="3" readonly>
-                <link rel="stylesheet" href="bz-fonts/css/bz-font.css">
-            </textarea>
+            <pre>
+                <code class="language-markup">
+                    &lt;link rel="stylesheet" href="bz-fonts/css/bz-font.css"&gt;
+                </code>
+            </pre>
             <p>
                 And Blues.JS library rating with a next code
             </p>
-            <textarea class="bz-code" rows="10" readonly>
-                <script src="js/bz-rating-2.0.0.js"></script>
-                <script>
+            <pre>
+                <code class="language-markup">
+                    &lt;script src="js/bz-rating-2.0.0.js"&gt;&lt;/script&gt;
+                </code>
+                <code class="language-js">
                     new Rating({
                         element: '#starrating',
                         showvalue: true
                     });
-                </script>
-            </textarea>
+                </code>
+            </pre>
             <p>
                 If you don't need to show rating value before the bars or stars, just remove parameter <span class="bz-fc-primary bz-ft-bold">showvalue</span> or
                 set it to the <span class="bz-fc-primary bz-ft-bold">false</span>.
@@ -268,6 +273,7 @@
 <script src="js/bz-sidenav-2.0.0.js"></script>
 <script src="js/bz-rating-2.0.0.js"></script>
 <script src="js/bluessite.js"></script>
+<script src="js/prism.js"></script>
 <script>
     var rates = bzDom('.star-rating');
     rates.each(function(i, item) {
