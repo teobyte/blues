@@ -5,12 +5,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
-    <title>Blues 2.0 | Forms</title>
+    <title>Blues 2.0 | Blank Page</title>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
-    <link rel="stylesheet" href="css/bz-core-2.0.0.css">
-    <link rel="stylesheet" href="css/bz-forms-2.0.0.css">
-    <link rel="stylesheet" href="css/bz-buttons-2.0.0.css">
+    <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
+    <link rel="stylesheet" href="../css/bz-core-2.0.0.css">
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -175,106 +173,17 @@
             <div class="back"></div>
             <i class="icon-menu"></i>
         </div>
-        <div class="title">Forms</div>
+        <div class="title">Blank page</div>
         <div id="leftRightBtn" class="tool bz-sidenav-btn"
              data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
             <div class="back"></div>
             <i class="icon-menu"></i>
         </div>
     </div>
-    <div class="bz-padding-16 bz-clearfix">
-        <h5>Search Bar</h5>
-        <form>
-            <input type="text" name="search" class="bz-search bz-float-r" placeholder="Search...">
-        </form>
-    </div>
-    <div class="bz-padding-16 bz-clearfix">
-        <h5>Vertical Form</h5>
-        <p>Form with validation on blur and submit</p>
-        <form name="validateform" class="bz-form vertical">
-            <p>Input with counter</p>
-            <input type="text"  class="bz-input flash" name="firstname" placeholder="Name" data-counter="/" maxlength="22" required data-rules="required"/>
-            <p>Input with counter</p>
-            <input type="text"  class="bz-input flash" name="firstname" placeholder="Name" data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
-            <p>Disabled input</p>
-            <input type="text" class="bz-input flash" name="lastname" placeholder="Last Name" data-icon="icon-user" disabled data-rules="required"/>
-            <p>Read only input</p>
-            <input type="text" class="bz-input flash" name="secondname" placeholder="Second Name" data-icon="icon-user right" value="Something to read" required readonly />
-            <p>Email input</p>
-            <input type="email" class="bz-input flash" name="email" placeholder="Email"  data-icon="icon-envelope" required data-rules="required|email"/>
-            <p>Password input with password viewer and password strength validation (click eye to see in action)</p>
-            <input type="password" class="bz-input pwd-check strength show" name="password" id="password" placeholder="Password" data-icon="icon-eye right" required data-rules="required"/>
-            <input type="password" class="bz-input pwd-check show" name="confirmation" placeholder="Password" data-icon="icon-eye right" required data-rules="equalto:password"/>
-            <textarea type="textarea" class="bz-input" name="message" rows="5" placeholder="Message" required data-rules="required"></textarea>
-            <button type="submit" class="bz-btn bz-wave bz-uppercase bz-float-r">
-                Submit
-            </button>
-        </form>
-    </div>
-    <div class="bz-padding-16 bz-clearfix">
-        <h5>Horizontal Form</h5>
-        <form name="validateform2" class="bz-form">
-            <input type="email" class="bz-input flash" name="email" placeholder="Email"  data-icon="icon-envelope" required data-rules="required|email"/>
-            <input type="password" class="bz-input pwd-check show" name="password" placeholder="Password" data-icon="icon-eye right" required data-rules="required"/>
-            <input type="submit" class="bz-btn bz-uppercase bz-wave" value="Sign in" />
-        </form>
-    </div>
-    <div class="bz-padding-16 bz-clearfix">
-        <h5>Horizontal Form Bordered</h5>
-        <form name="validateform3" class="bz-form">
-            <input type="email" class="bz-input bordered flash" name="email" placeholder="Email"  data-icon="icon-envelope" required data-rules="required|email"/>
-            <input type="password" class="bz-input bordered pwd-check show" name="password" placeholder="Password" data-icon="icon-eye right" required data-rules="required"/>
-            <input type="submit" class="bz-btn bz-uppercase bz-wave" value="Sign in" />
-        </form>
-    </div>
-    <div class="bz-padding-16 bz-clearfix">
-        <h5>Color Picker</h5>
-        <form class="bz-form">
-            <input type="text"  class="bz-input flash" name="firstname" placeholder="Name" data-icon="icon-user" required />
-            <input type="color" name="favcolor" value="#ff0000"/>
-            <input type="submit" class="bz-btn bz-uppercase bz-wave" value="Apply" />
-        </form>
-    </div>
-    <div class="bz-padding-16 bz-clearfix">
-        <h5>File Upload</h5>
-        <form class="bz-form bz-padding-8">
-            <!-- start // markup for the element without injector  -->
-            <div class="bz-fileinput">
-                <input type="file" name="file" id="file" data-multiple-caption="{count} files selected" multiple />
-                <label for="file" class="bz-btn">Choose a file</label>
-            </div>
-            <!-- end // -->
-            <input type="submit" class="bz-btn bz-uppercase bz-wave" value="Upload" />
-        </form>
-        <form class="bz-form bz-padding-8">
-            <!-- start // markup for the element with injector  -->
-            <input type="file" name="file" id="file2" class="bz-fileinput" data-label="Choose a file" data-multiple-caption="{count} files selected" multiple />
-            <!-- end // -->
-            <input type="submit" class="bz-btn bz-uppercase bz-wave" value="Upload" />
-        </form>
-
-    </div>
 </div>
-<script src="js/bz-core-2.0.0.js"></script>
-<script src="js/bz-inject-2.0.0.js"></script>
-<script src="js/bz-sidenav-2.0.0.js"></script>
-<script src="js/bluessite.js"></script>
-<script src="js/blues-require/bz-require-0.0.1.js"></script>
-<script type="text/javascript">
-    (function() {
-        new Bzrequire({
-            form: 'validateform',
-            checkonblur : true
-        }).toSubmit();
-        new Bzrequire({
-            form: 'validateform2',
-            checkonblur : true
-        }).toSubmit();
-        new Bzrequire({
-            form: 'validateform3',
-            checkonblur : true
-        }).toSubmit();
-    })();
-</script>
+<script src="../js/bz-core-2.0.0.js"></script>
+<script src="../js/bz-inject-2.0.0.js"></script>
+<script src="../js/bz-sidenav-2.0.0.js"></script>
+<script src="../js/bluessite.js"></script>
 </body>
 </html>

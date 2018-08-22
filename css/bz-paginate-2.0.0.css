@@ -2,7 +2,7 @@
 .bz-pagination {
     clear: both;
     margin: 0 auto;
-    width: 325px;
+    width:auto;
 }
 .bz-pagination li,
 .bz-pagination .step,

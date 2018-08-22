@@ -353,63 +353,6 @@
 .bz-input.error-toleft i ~ div.error {
     left:55px;
 }
-/*  border around input styles */
-/*.bz-input.bordered {*/
-    /*border:2px solid #9e9e9e;*/
-/*}*/
-/*.bz-input.bordered input,*/
-/*.bz-input.bordered input.highlight,*/
-/*.bz-input.bordered input:focus {*/
-    /*border-bottom: 2px solid transparent;*/
-/*}*/
-/*.bz-input.bordered .bar::before,*/
-/*.bz-input.bordered .bar {*/
-    /*background:#163d74;*/
-    /*height:2px;*/
-    /*position:absolute;*/
-    /*width:0;*/
-    /*transition:0.5s ease all;*/
-    /*-moz-transition:0.5s ease all;*/
-    /*-webkit-transition:0.5s ease all;*/
-/*}*/
-/*.bz-input.bordered .bar::before {*/
-    /*content: " ";*/
-    /*top:50px;*/
-    /*left:0px;*/
-/*}*/
-/*.bz-input.bordered .bar {*/
-    /*top:-2px;*/
-    /*left:0;*/
-/*}*/
-/*.bz-input.bordered input:focus ~ .bar,*/
-/*.bz-input.bordered input.highlight ~ .bar,*/
-/*.bz-input.bordered input:focus ~ .bar::before,*/
-/*.bz-input.bordered input.highlight ~ .bar::before,*/
-/*.bz-input.bordered i + input:focus ~ .bar,*/
-/*.bz-input.bordered i + input.highlight ~ .bar,*/
-/*.bz-input.bordered i.right + input:focus ~ .bar,*/
-/*.bz-input.bordered i.right + input.highlight ~ .bar,*/
-/*.bz-input.bordered i + input:focus ~ .bar::before,*/
-/*.bz-input.bordered i + input.highlight ~ .bar::before,*/
-/*.bz-input.bordered i.right + input:focus ~ .bar::before,*/
-/*.bz-input.bordered i.right + input.highlight ~ .bar::before {*/
-    /*left:0;*/
-    /*width:100%;*/
-/*}*/
-/*.bz-input.bordered input:focus::before,*/
-/*.bz-input.bordered input:focus::after {*/
-    /*background:#163d74;*/
-    /*content: " ";*/
-    /*height:46px;*/
-    /*position:absolute;*/
-    /*width:2px;*/
-    /*transition:0.5s ease all;*/
-    /*-moz-transition:0.5s ease all;*/
-    /*-webkit-transition:0.5s ease all;*/
-/*}*/
-/*.bz-input.bordered input:focus::before {*/
-    /*left:0;*/
-/*}*/
 .bz-input .counter {
     position: absolute;
     font-size:0.8em;
