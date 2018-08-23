@@ -49,13 +49,13 @@
     <div class="bz-toolbar primary">
         <div id="leftSideBtn" class="tool bz-sidenav-btn"
              data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
-            <div class="back"></div>
+            <div class="back circle"></div>
             <i class="bzi-menu"></i>
         </div>
         <div class="title">Blank page</div>
         <div id="leftRightBtn" class="tool bz-sidenav-btn"
              data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
-            <div class="back"></div>
+            <div class="back circle"></div>
             <i class="bzi-menu"></i>
         </div>
     </div>
@@ -78,7 +78,35 @@
         </div>
         <!--common page content goes here-->
         <div class="bz-content-box">
-            You can add any background to the .bz-page-layout container or different backgrounds to any separate page boxes.
+
+            <p>
+                Page Toolbar with the page title and actions (printer and menu)
+            </p>
+
+            <textarea class="bz-code html">
+                <div class="bz-page-layout bz-min-h-420 bz-padding-8">
+                    <div class="bz-toolbar-box">
+                        <div class="bz-toolbar primary inverted">
+                            <div class="title"><h5>Page Title may goes here</h5></div>
+                            <div class="tool">
+                                <div class="back circle bz-wave"></div>
+                                <i class="bzi-printer"></i>
+                            </div>
+                            <div class="tool">
+                                <div class="back circle bz-wave"></div>
+                                <i class="bzi-ellipsis-v"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- page alerts area -->
+                    <div class="bz-alert-box">
+                    </div>
+                    <!--common page content goes here-->
+                    <div class="bz-content-box">
+
+                    </div>
+                </div>
+            </textarea>
         </div>
     </div>
 
@@ -87,5 +115,6 @@
 <script src="../js/bz-inject-2.0.0.js"></script>
 <script src="../js/bz-sidenav-2.0.0.js"></script>
 <script src="../js/bluessite.js"></script>
+<script src="../js/bz-codelighter.js"></script>
 </body>
 </html>

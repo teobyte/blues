@@ -7,7 +7,7 @@
     <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
     <title>Blues 2.0 | Spinner</title>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
     <link rel="stylesheet" href="css/bz-core-2.0.0.css">
     <link rel="stylesheet" href="css/bz-forms-2.0.0.css">
     <link rel="stylesheet" href="css/bz-buttons-2.0.0.css">
@@ -102,14 +102,14 @@
     <div class="bz-toolbar primary">
         <div id="leftSideBtn" class="tool bz-sidenav-btn"
              data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
-            <div class="back"></div>
-            <i class="icon-menu"></i>
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
         </div>
         <div class="title">Spinners</div>
         <div id="leftRightBtn" class="tool bz-sidenav-btn"
              data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
-            <div class="back"></div>
-            <i class="icon-menu"></i>
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
         </div>
     </div>
     <div class="bz-padding-32 bz-clearfix">
@@ -147,7 +147,7 @@
             </div>
         </div>
         <h6>HTML markup</h6>
-        <textarea class="bz-code" rows="7">
+        <textarea class="bz-code html">
         <div class="bz-spin-circle">
             <div></div>
             <div></div>
@@ -163,18 +163,14 @@
             <div class="spin-dots bz-center"></div>
         </div>
         <h6>or Javascript markup</h6>
-        <textarea class="bz-code" rows="7">
+        <textarea class="bz-code html">
         <div class="spin-dots bz-center"></div>
-
         <script>
             bz.addSpiner('.spin-dots', { name: 'bz-spin-dots', size: 30 });
         </script>
         </textarea>
-
         <h6>Loader with manual hide</h6>
-
         <div class="bz-padding-8 bz-clearfix">
-
             <button id="spinbtn" class="bz-btn">
                 Start Loader
             </button>
@@ -182,30 +178,21 @@
             <button id="closespin" class="bz-btn">
                 Close Loader
             </button>
-
         </div>
-
         <h6>Loader with timeout</h6>
-
         <div class="bz-padding-8 bz-clearfix">
 
             <button id="spinbtn2" class="bz-btn">
                 Start Loader
             </button>
-
         </div>
-
-
     </div>
-
-
-
-
 </div>
 <script src="js/bz-core-2.0.0.js"></script>
 <script src="js/bz-inject-2.0.0.js"></script>
 <script src="js/bz-sidenav-2.0.0.js"></script>
 <script src="js/bluessite.js"></script>
+<script src="js/bz-codelighter.js"></script>
 <script>
 
     bz.addSpiner('.spin-circle');

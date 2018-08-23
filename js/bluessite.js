@@ -1,7 +1,7 @@
 (function() {
     var menuitems = [
         { name: 'Blues 2.0', url: '', clas: 'subheader bz-fc-primary bz-ft-xl' },
-        { name: 'Home', url: 'index.html', clas: 'bz-list-item bz-t-concat' },
+        { name: 'Home', url: 'https://aiwee.github.io/blues/index.html', clas: 'bz-list-item bz-t-concat' },
         { name: '', url: '', clas: 'divider' },
         { name: 'Layout', url: '', clas: 'subheader bz-ft-l' },
         { name: 'Sidenav', url: 'sidenav.html', clas: 'bz-list-item bz-t-concat' },

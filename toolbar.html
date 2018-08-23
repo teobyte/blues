@@ -7,9 +7,8 @@
     <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
     <title>Blues 2.0 | Blank Page</title>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
     <link rel="stylesheet" href="css/bz-core-2.0.0.css">
-    <link rel="stylesheet" href="css/prism.css">
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -51,13 +50,13 @@
         <div id="leftSideBtn" class="tool bz-sidenav-btn"
              data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
             <div class="back circle"></div>
-            <i class="icon-menu"></i>
+            <i class="bzi-menu"></i>
         </div>
         <div class="title">Toolbar</div>
         <div id="leftRightBtn" class="tool bz-sidenav-btn"
              data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
             <div class="back circle"></div>
-            <i class="icon-menu"></i>
+            <i class="bzi-menu"></i>
         </div>
     </div>
 
@@ -139,26 +138,7 @@
             </div>
         </div>
         <div class="bz-clear h-16"></div>
-        <pre>
-            <code class="language-markup">
-            &lt;div class="bz-toolbar"&gt;
-                &lt;div class="tool"&gt;
-                    &lt;div class="back circle bz-wave"&gt;&lt;/div&gt;
-                        &lt;i class="icon-menu"&gt;&lt;/i&gt;
-                    &lt;/div&gt;
-                &lt;div class="title">Toolbar&lt;/div&gt;
-                &lt;div class="tool"&gt;
-                    &lt;div class="back circle bz-wave"&gt;&lt;/div&gt;
-                        &lt;i class="icon-user"&gt;&lt;/i&gt;
-                    &lt;/div&gt;
-                &lt;div class="tool"&gt;
-                    &lt;div class="back circle bz-wave"&gt;&lt;/div&gt;
-                        &lt;i class="icon-logout"&gt;&lt;/i&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        </code>
-        </pre>
+
         <div class="bz-padding-8">
             Add class <span class="bz-fc-positive bz-ft-bold">.primary</span>, <span class="bz-fc-positive bz-ft-bold">.positive</span> to use different color, and
             <span class="bz-fc-positive bz-ft-bold">.inverted</span> to make different color on white background.
@@ -169,7 +149,7 @@
 <script src="js/bz-inject-2.0.0.js"></script>
 <script src="js/bz-sidenav-2.0.0.js"></script>
 <script src="js/bluessite.js"></script>
-<script src="js/prism.js"></script>
+<script src="js/bz-codelighter.js"></script>
 <script>
     var waves = bzDom('.bz-wave');
     waves.each(function(i, item) {
