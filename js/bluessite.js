@@ -16,6 +16,7 @@
         { name: 'Style', url: '', clas: 'subheader bz-ft-l' },
         { name: 'Colors', url: 'colors.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Typography', url: 'typography.html', clas: 'bz-list-item bz-t-concat' },
+        { name: 'Icons', url: 'icon-fonts.html', clas: 'bz-list-item bz-t-concat' },
         { name: '', url: '', clas: 'divider' },
         { name: 'CSS Helpers', url: '', clas: 'subheader bz-ft-l' },
         { name: 'Flexgrid', url: 'flexgrid.html', clas: 'bz-list-item bz-t-concat' },

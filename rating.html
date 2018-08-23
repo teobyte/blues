@@ -66,29 +66,31 @@
                 Star rating works along with bz-fonts only and icon named <span class="bz-fc-positive bz-ft-bold">.bzicon-star-in-square</span>
                 <i class="bzicon-star-in-square bz-fc-primary"></i>
             </p>
-            <pre>
-                <code class="language-markup">
-                    &lt;link rel="stylesheet" href="bz-fonts/css/bz-font.css"&gt;
-                </code>
-            </pre>
             <p>
-                And Blues.JS library rating with a next code
+                And Blues.JS library rating bz-rating-2.0.0.js with a next code
             </p>
-            <pre>
-                <code class="language-markup">
-                    &lt;script src="js/bz-rating-2.0.0.js"&gt;&lt;/script&gt;
-                </code>
-                <code class="language-js">
-                    new Rating({
-                        element: '#starrating',
-                        showvalue: true
-                    });
-                </code>
-            </pre>
+            <textarea class="bz-code js">
+                new Rating({
+                    element: '#starrating',
+                    showvalue: true
+                });
+            </textarea>
             <p>
                 If you don't need to show rating value before the bars or stars, just remove parameter <span class="bz-fc-primary bz-ft-bold">showvalue</span> or
                 set it to the <span class="bz-fc-primary bz-ft-bold">false</span>.
             </p>
+
+            <textarea class="bz-code html">
+                <div class="bz-rating star-rating"
+                     data-value="4.8" data-action="/request/rating">
+                    <input type="radio">
+                    <input type="radio">
+                    <input type="radio">
+                    <input type="radio">
+                    <input type="radio">
+                </div>
+            </textarea>
+
         </div>
     </div>
     <div class="bz-padding-8 bz-clearfix">
