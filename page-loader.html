@@ -94,17 +94,22 @@
 <script>
     (function() {
 
+        var start = new Date().getTime();
+        function onLoad() {
+            var now = new Date().getTime();
+            var latency = now - start;
+            alert("page loading time: " + latency);
+        }
+
         bzDom(document).ready(function() {
 
-            var width = 100, // width of a progress bar in percentage
-                perfEntries = performance.getEntriesByType("navigation"),
-                estTime = -(perfEntries.domContentLoadedEventEnd - perfEntries.domContentLoadedEventStart), // Calculated Estimated Time of Page Load which returns negative value.
-                time = parseInt((estTime / 1000) % 60) * 100; //Converting EstimatedTime from miliseconds to seconds.
+            onLoad();
 
-
-
-
-            alert(JSON.stringify(perfEntries));
+            // var width = 100, // width of a progress bar in percentage
+            //     perfEntries = performance,
+            //     estTime = -(perfEntries.loadEventEnd - perfEntries.loadEventStart), // Calculated Estimated Time of Page Load which returns negative value.
+            //     time = parseInt((estTime / 1000) % 60) * 100; //Converting EstimatedTime from miliseconds to seconds.
+            // alert(JSON.stringify(perfEntries));
 
         });
 
