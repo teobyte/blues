@@ -150,15 +150,10 @@
             <p>Add next js code to initiate the Tab</p>
 
             <textarea class="bz-code js">
-                // To Initiate Tab
                 bz.Tabs('#sampletab');
-                // To initiate multiple Tabs
-                // Get Tab's list
                 var tabs = bzDom('.bz-tabs');
                 tabs.each(function(i, item) {
-                    // for every Tab
                     var tab = bzDom(item);
-                    // Add function that triggers action on Tab's click
                     bz.Tabs(tab, function(i, item) {
                         alert('Tab: ' + (i + 1) + ' activated.' );
                     })

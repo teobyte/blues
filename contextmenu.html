@@ -117,8 +117,6 @@
         </p>
         <textarea class="bz-code js">
             bz.Contextmenu('.bz-context-area', function(contextArea, clickedEl) {
-                // function triggers action:
-                // in this sample alert that shows selected item attributes
                 alert('Context Area: ' + contextArea.onattr('id') +
                       ', Selected Action: ' + clickedEl.ondata('action') +
                       ', Selected Id: ' + clickedEl.ondata('id'));
