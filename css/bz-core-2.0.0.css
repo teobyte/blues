@@ -1807,6 +1807,7 @@ a,
     background:var(--color-negative);
     color:#fff;
 }
+.bz-toolbar .btn,
 .bz-toolbar .title,
 .bz-toolbar .tool {
     display:inline-block;
@@ -1815,9 +1816,12 @@ a,
     padding:8px;
     position: relative;
 }
+.bz-toolbar .btn,
 .bz-toolbar .tool {
     cursor:pointer;
     text-align:center;
+}
+.bz-toolbar .tool {
     width:48px;
 }
 .bz-toolbar .title {
@@ -1836,6 +1840,7 @@ a,
     margin: 0;
     vertical-align: middle;
 }
+.bz-toolbar .btn .back,
 .bz-toolbar .tool .back {
     top:0; right:0;
     bottom:0; left:0;
@@ -1845,11 +1850,14 @@ a,
     opacity:0.5;
     margin:4px;
     position: absolute;
+}
+.bz-toolbar .tool .back {
     width:40px;
 }
 .bz-toolbar .tool .back.circle {
     border-radius:50%;
 }
+.bz-toolbar .btn:hover .back,
 .bz-toolbar .tool:hover .back {
     background:var(--color-light);
 }
