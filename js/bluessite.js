@@ -61,6 +61,7 @@
         { name: '', url: '', clas: 'divider' },
         { name: 'Popups', url: '', clas: 'subheader bz-ft-l' },
         { name: 'Modal', url: 'modal.html', clas: 'bz-list-item bz-t-concat' },
+        { name: 'Page Alert', url: 'page-alert.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Dialog', url: 'dialog.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Tooltip', url: 'tooltip.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Popover', url: 'popover.html', clas: 'bz-list-item bz-t-concat' },
