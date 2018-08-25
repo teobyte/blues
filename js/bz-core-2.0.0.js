@@ -2002,7 +2002,7 @@
     //--> Blues Ajax Call
     Blues.ajax = function(options) {
         var ajax = ajax || {};
-        var o, data, onsuccess, onerror;
+        var o, data, onsuccess, onerror, onprogress;
         var allTypes = "*/".concat( "*" );
         var settings = {
             url: location.href,
@@ -2037,6 +2037,8 @@
         onsuccess = o.success || function(data) {return null;};
         // function that fires on bad response error: function() {}
         onerror = o.error || function(e) {return null;};
+        //
+        onprogress = o.progress || function(e) {return null;};
         // request dataTypes
         var s = settings;
         function createRequest(type, url, async){
@@ -2051,6 +2053,7 @@
                 var reqData = JSON.stringify(data);
                 // create request
                 var xhr = createRequest(s.type, s.url, s.async);
+                xhr.onprogress = ajax.progress;
                 xhr.onreadystatechange = function() {
                     if (this.readyState == 4) {
                         if (this.status == 200) {
@@ -2078,11 +2081,17 @@
             },
             error: function(e) {
                 onerror(e);
+            },
+            progress: function(e) {
+                if (e.lengthComputable) {
+                    var percent = Math.round((e.loaded / e.total) * 100);
+                    onprogress(e, percent);
+                }
             }
         };
         ajax.init();
         return ajax;
-    };
+    }
     // Blues Ajax calls
     Blues.Ajaxcalls = function(selector) {
         selector = selector || '.bz-ajax';

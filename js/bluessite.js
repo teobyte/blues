@@ -1,4 +1,25 @@
 (function() {
+    function addScript(url) {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = url;
+        var x = document.getElementsByTagName('head')[0];
+        x.appendChild(s);
+    }
+
+    function downloadJSAtOnload(url) {
+        var element = document.createElement("script");
+        element.src = url;
+        document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+        window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+
+
     var menuitems = [
         { name: 'Blues 2.0', url: '', clas: 'subheader bz-fc-primary bz-ft-xl' },
         { name: 'Home', url: 'https://aiwee.github.io/blues/index.html', clas: 'bz-list-item bz-t-concat' },

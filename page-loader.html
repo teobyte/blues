@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="css/bz-core-2.0.0.css">
 </head>
 <body>
+
+<div class='progress' id="progress_div">
+    <div class='bar' id='bar1'></div>
+    <div class='percent' id='percent1'></div>
+</div>
+<input type="hidden" id="progress_width" value="0">
+
 <div id="leftSide" class="bz-sidenav bz-bc-white">
     <div class="bz-sidenav-scroll">
         <ul class="bz-sidenav-list"></ul>
@@ -86,6 +93,16 @@
     </div>
     <!-- end copy here -->
 </div>
+<div class="bz-page-preloader" style="background: var(--color-primary); bottom:0; height:100%; left:0; position: fixed; right:0; top:0;  width:100%; z-index:99999;">
+    <div class="bz-centration" style="height: 320px; position: absolute; top:50%; left:50%; text-align: center; width: 320px;">
+        <img src="https://kitvendr.com/static/images/kitvendr-logo.svg" width="100">
+        <div class="bz-progress-box" style="background: var(--color-kv-gray); border-bottom: 1px solid var(--color-dark); height:3px; margin:200px 60px 8px 60px; position: relative; width:200px;">
+            <div class="bz-progress-bar" style="background: var(--color-kv-red); border-bottom: 1px solid var(--color-dark); height:3px; width:68%;">
+            </div>
+        </div>
+        <div class="bz-t-align-c bz-fc-white">LOADING</div>
+    </div>
+</div>
 <script src="js/bz-core-2.0.0.js"></script>
 <script src="js/bz-inject-2.0.0.js"></script>
 <script src="js/bz-sidenav-2.0.0.js"></script>
@@ -101,17 +118,24 @@
             alert("page loading time: " + latency);
         }
 
-        bzDom(document).ready(function() {
+        function preload(array) {
+            var length = array.length,
+                document = window.document,
+                body = document.body,
+                isIE = 'fileSize' in document,
+                object;
+            while (length--) {
+                if (isIE) {
+                    new Image().src = array[length];
+                    continue;
+                }
+                object = document.createElement('object');
+                object.data = array[length];
+                object.width = object.height = '0px';
+                body.appendChild(object);
+            }
+        }
 
-            onLoad();
-
-            // var width = 100, // width of a progress bar in percentage
-            //     perfEntries = performance,
-            //     estTime = -(perfEntries.loadEventEnd - perfEntries.loadEventStart), // Calculated Estimated Time of Page Load which returns negative value.
-            //     time = parseInt((estTime / 1000) % 60) * 100; //Converting EstimatedTime from miliseconds to seconds.
-            // alert(JSON.stringify(perfEntries));
-
-        });
 
     })();
 </script>

@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="css/bz-core-2.0.0.css">
     <link rel="stylesheet" href="css/bz-forms-2.0.0.css">
     <link rel="stylesheet" href="css/bz-buttons-2.0.0.css">
+    <style>
+
+    </style>
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -74,42 +77,43 @@
             <p>Input with counter</p>
             <input type="text"  class="bz-input flash" name="firstname" placeholder="Name" data-counter="/" maxlength="22" required data-rules="required"/>
             <p>Input with counter</p>
-            <input type="text"  class="bz-input flash" name="firstname" placeholder="Name" data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+            <input type="text"  class="bz-input flash" name="firstname" placeholder="Name" data-icon="bzi-user" data-counter="/" maxlength="22" required data-rules="required"/>
             <p>Disabled input</p>
-            <input type="text" class="bz-input flash" name="lastname" placeholder="Last Name" data-icon="icon-user" disabled data-rules="required"/>
+            <input type="text" class="bz-input flash" name="lastname" placeholder="Last Name" data-icon="bzi-user" disabled data-rules="required"/>
             <p>Read only input</p>
-            <input type="text" class="bz-input flash" name="secondname" placeholder="Second Name" data-icon="icon-user right" value="Something to read" required readonly />
+            <input type="text" class="bz-input flash" name="secondname" placeholder="Second Name" data-icon="bzi-user right" value="Something to read" required readonly />
             <p>Email input</p>
-            <input type="email" class="bz-input flash" name="email" placeholder="Email"  data-icon="icon-envelope" required data-rules="required|email"/>
+            <input type="email" class="bz-input flash" name="email" placeholder="Email"  data-icon="bzi-envelope" required data-rules="required|email"/>
             <p>Password input with password viewer and password strength validation (click eye to see in action)</p>
-            <input type="password" class="bz-input pwd-check strength show" name="password" id="password" placeholder="Password" data-icon="icon-eye right" required data-rules="required"/>
-            <input type="password" class="bz-input pwd-check show" name="confirmation" placeholder="Password" data-icon="icon-eye right" required data-rules="equalto:password"/>
+            <input type="password" class="bz-input pwd-check strength show" name="password" id="password" placeholder="Password" data-icon="bzi-eye right" required data-rules="required"/>
+            <input type="password" class="bz-input pwd-check show" name="confirmation" placeholder="Password" data-icon="bzi-eye right" required data-rules="equalto:password"/>
             <textarea type="textarea" class="bz-input" name="message" rows="5" placeholder="Message" required data-rules="required"></textarea>
             <button type="submit" class="bz-btn bz-wave bz-uppercase bz-float-r">
                 Submit
             </button>
         </form>
     </div>
+
     <div class="bz-padding-16 bz-clearfix">
         <h5>Horizontal Form</h5>
         <form name="validateform2" class="bz-form">
-            <input type="email" class="bz-input flash" name="email" placeholder="Email"  data-icon="icon-envelope" required data-rules="required|email"/>
-            <input type="password" class="bz-input pwd-check show" name="password" placeholder="Password" data-icon="icon-eye right" required data-rules="required"/>
+            <input type="email" class="bz-input flash" name="email" placeholder="Email"  data-icon="bzi-envelope" required data-rules="required|email"/>
+            <input type="password" class="bz-input pwd-check show" name="password" placeholder="Password" data-icon="bzi-eye right" required data-rules="required"/>
             <input type="submit" class="bz-btn bz-uppercase bz-wave" value="Sign in" />
         </form>
     </div>
     <div class="bz-padding-16 bz-clearfix">
         <h5>Horizontal Form Bordered</h5>
         <form name="validateform3" class="bz-form">
-            <input type="email" class="bz-input bordered flash" name="email" placeholder="Email"  data-icon="icon-envelope" required data-rules="required|email"/>
-            <input type="password" class="bz-input bordered pwd-check show" name="password" placeholder="Password" data-icon="icon-eye right" required data-rules="required"/>
+            <input type="email" class="bz-input bordered flash" name="email" placeholder="Email"  data-icon="bzi-envelope" required data-rules="required|email"/>
+            <input type="password" class="bz-input bordered pwd-check show" name="password" placeholder="Password" data-icon="bzi-eye right" required data-rules="required"/>
             <input type="submit" class="bz-btn bz-uppercase bz-wave" value="Sign in" />
         </form>
     </div>
     <div class="bz-padding-16 bz-clearfix">
         <h5>Color Picker</h5>
         <form class="bz-form">
-            <input type="text"  class="bz-input flash" name="firstname" placeholder="Name" data-icon="icon-user" required />
+            <input type="text"  class="bz-input flash" name="firstname" placeholder="Name" data-icon="bzi-user" required />
             <input type="color" name="favcolor" value="#ff0000"/>
             <input type="submit" class="bz-btn bz-uppercase bz-wave" value="Apply" />
         </form>
@@ -131,7 +135,6 @@
             <!-- end // -->
             <input type="submit" class="bz-btn bz-uppercase bz-wave" value="Upload" />
         </form>
-
     </div>
 </div>
 <script src="js/bz-core-2.0.0.js"></script>
