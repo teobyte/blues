@@ -79,14 +79,14 @@
         </div>
         <!-- page alerts area -->
         <div class="bz-alert-box">
-            <!--<div class="bz-page-alert">-->
-                <!--<div class="bz-alert-text">-->
-                    <!--<b>Default page alert.</b> In page notification for user.-->
-                <!--</div>-->
-                <!--<div class="bz-alert-remove">-->
-                    <!--<i class="bzi-remove"></i>-->
-                <!--</div>-->
-            <!--</div>-->
+            <div class="bz-page-alert warning">
+                <div class="bz-alert-text">
+                    <b>Predefined page alert.</b> In page notification for user.
+                </div>
+                <div class="bz-alert-remove">
+                    <i class="bzi-remove"></i>
+                </div>
+            </div>
         </div>
         <!--common page content goes here-->
         <div class="bz-content-box">
@@ -94,21 +94,23 @@
                 Page alerts initiating with JS code. Below example with all possible attributes
             </p>
             <textarea class="bz-code js">
-                bz.Pagealert('Message text',
-                             'warning filled',
-                             '#alert_container,
-                             'bzi-exclamation-in-circle',
-                             function() {
-                                 alert('Close Alert callback');
-                             }
-                );
+                bz.Pagealert({
+                    message: 'Negative page notification with icon',
+                    type: 'warning filled',
+                    icon: 'bzi-exclamation-in-circle',
+                    callback: function() {
+                        alert('Close Alert callback');
+                    }
+                });
             </textarea>
 
             <p>
                 Default alert example
             </p>
             <textarea class="bz-code js">
-                bz.Pagealert('Default page notification');
+                bz.Pagealert({
+                    message: 'Default page notification'
+                });
             </textarea>
             <div class="bz-padding-16" id="alerthere"></div>
         </div>
@@ -123,19 +125,36 @@
 <script>
     (function() {
 
-
-        bz.Pagealert('Default page notification');
-
-        bz.Pagealert('Positive page notification', 'positive filled');
-
-        bz.Pagealert('Negative page notification with icon', 'negative filled', null, 'bzi-user');
-
-        bz.Pagealert('Negative page notification with icon', 'warning filled', null, 'bzi-exclamation-in-circle', function() {
-            alert('Close Alert callback');
+        bz.Pagealert({
+            message: 'Default page notification'
         });
 
-        bz.Pagealert('Custom target', 'positive', '#alerthere', 'bzi-exclamation-in-circle');
+        bz.Pagealert({
+            message: 'Positive page notification',
+            type: 'positive filled'
+        });
 
+        bz.Pagealert({
+            message: 'Negative page notification with icon',
+            type: 'negative filled',
+            icon: 'bzi-user'
+        });
+
+        bz.Pagealert({
+            message: 'Waring page notification with icon',
+            type: 'warning filled',
+            icon: 'bzi-exclamation-in-circle',
+            callback: function() {
+                alert('Close Alert callback');
+            }
+        });
+
+        bz.Pagealert({
+            message: 'Custom target',
+            type: 'positive',
+            icon: 'bzi-exclamation-in-circle',
+            target: '#alerthere'
+        });
 
     })();
 </script>

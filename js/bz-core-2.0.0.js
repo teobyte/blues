@@ -2001,7 +2001,7 @@
     };
     //--> Blues Ajax Call
     Blues.ajax = function(options) {
-        var ajax = ajax || {};
+        var ajax = {};
         var o, data, onsuccess, onerror, onprogress;
         var allTypes = "*/".concat( "*" );
         var settings = {
@@ -2091,7 +2091,7 @@
         };
         ajax.init();
         return ajax;
-    }
+    };
     // Blues Ajax calls
     Blues.Ajaxcalls = function(selector) {
         selector = selector || '.bz-ajax';
@@ -2799,44 +2799,65 @@
     };
     //--> Blues Page Alert
     // types: positive, negative, warning, default
-    Blues.Pagealert = function(message, type, target, icon, callback) {
-        target = target || '.bz-alert-box';
-        type = type || 'default';
-        var $target = bzDom(target),
-            $alert = bzDom('<div class="bz-page-alert">'),
-            $txt = bzDom('<div class="bz-alert-text">'),
-            $remove = bzDom('<div class="bz-alert-remove">'),
-            $remove_icon = bzDom('<i class="bzi-remove">');
-
-        $txt.text(message);
-        $remove.append($remove_icon);
-
-        if (icon) {
-            var $icon_box = bzDom('<div class="bz-alert-icon">'),
-                $icon = bzDom('<i>');
-            $icon.onclass(icon);
-            $icon_box.append($icon);
-            $alert.append($icon_box);
-        }
-
-        if (type)
-            $alert.onclass(type);
-
-        $alert.append($txt);
-        $alert.append($remove);
-
-        $remove.on('click', function() {
-            if (bz.check.ifFunction(callback))
-                callback();
-            bzDom(this).parent('.bz-page-alert').fadeOut();
-            setTimeout(function() {
-                bzDom(this).parent('.bz-page-alert').remove();
-            }, 501);
-        });
-
-        $target.append($alert);
+    Blues.Pagealert = function(options) {
+        var Pagealert = {},
+            o = options || {},
+            message = o.message || '',
+            target = o.target || '.bz-alert-box',
+            type = o.type || 'default',
+            icon = o.icon || null,
+            selector = o.selector || null,
+            callback = o.callback || null;
+        Pagealert = {
+            init: function() {
+                if (!selector) {
+                    var $target = bzDom(target),
+                        $alert = bzDom('<div class="bz-page-alert">'),
+                        $txt = bzDom('<div class="bz-alert-text">'),
+                        $remove = bzDom('<div class="bz-alert-remove">'),
+                        $remove_icon = bzDom('<i class="bzi-remove">');
+                    $txt.text(message);
+                    $remove.append($remove_icon);
+                    if (icon) {
+                        var $icon_box = bzDom('<div class="bz-alert-icon">'),
+                            $icon = bzDom('<i>');
+                        $icon.onclass(icon);
+                        $icon_box.append($icon);
+                        $alert.append($icon_box);
+                    }
+                    if (type)
+                        $alert.onclass(type);
+                    $alert.append($txt);
+                    $alert.append($remove);
+                    $remove.on('click', function() {
+                        Pagealert.remove(this);
+                    });
+                    $target.append($alert);
+                } else {
+                    Pagealert.auto(selector);
+                }
+            },
+            auto: function(selector) {
+                if (selector) {
+                    var $alert = bzDom(selector),
+                        $remove = $alert.find('.bz-alert-remove');
+                    $remove.on('click', function() {
+                        Pagealert.remove(this);
+                    });
+                }
+            },
+            remove: function(self) {
+                if (bz.check.ifFunction(callback))
+                    callback();
+                bzDom(self).parent('.bz-page-alert').fadeOut();
+                setTimeout(function() {
+                    bzDom(self).parent('.bz-page-alert').remove();
+                }, 501);
+            }
+        };
+        Pagealert.init();
+        return Pagealert;
     };
-
     ////////////////////////////////////////////////////////////////////
     // JSON TO <head><style> CSS
     var start = true;
@@ -2937,6 +2958,18 @@
         Blues.Popover();
         Blues.Ajaxcalls();
         Blues.Editable();
+        // page alerts initiation
+        var page_alerts = bzDom('.bz-page-alert');
+        page_alerts.each(function(i, item) {
+            var p_a = bzDom(item);
+            bz.Pagealert({ selector: p_a });
+        });
+        // default waves effect
+        var waves = bzDom('.bz-wave');
+        waves.each(function(i, item) {
+            var t = bzDom(item);
+            bz.Waves(t);
+        });
     };
     window.Bz = window.bz = window.Blues = Blues;
     window.bzDom === undefined && (window.bzDom = Blues.bzDom);
@@ -2945,7 +2978,7 @@
     window.bz.Loadspin = Blues.Loadspin;
     window.bz.Modal = Blues.Modal;
     window.bz.alert = Blues.alert;
-    window.bz.pageAlert = Blues.pageAlert;
+    window.bz.Pagealert = Blues.Pagealert;
     window.bz.confirm = Blues.confirm;
     window.bz.progress = Blues.Progress;
     window.bz.jss = Blues.JSS;
