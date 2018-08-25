@@ -2481,13 +2481,15 @@
     };
     //--> Wave Effect on Clicks
     Blues.Waves = function(el) {
-        var $this = bzDom(el),
-            wave = bzDom('<div class="wave">');
-        $this.append(wave);
+        var $this = bzDom(el);
+        if (!$this.find('.wave').exist()) {
+            var wave = bzDom('<div class="wave">');
+            $this.append(wave);
+        }
         $this.on('click', function(e) {
             var $self = bzDom(this);
-            var waveColor = $self.ondata('wave');
             var $wave = $self.find('.wave');
+            var waveColor = $self.ondata('wave');
             if (!$wave.find(".ink").exist()) {
                 var $ink = bzDom('<span class="ink"></span>');
                 if (waveColor)
@@ -2949,10 +2951,6 @@
         //return node;
     };
     ////////////////////////////////////////////////////////////
-    // setup Blues methods
-    // var SetBlues = function() {
-    //     Blues.Waves();
-    // };
     // Blues initialization
     Blues.init = function () {
         Blues.Popover();
@@ -2967,8 +2965,8 @@
         // default waves effect
         var waves = bzDom('.bz-wave');
         waves.each(function(i, item) {
-            var t = bzDom(item);
-            bz.Waves(t);
+            var w = bzDom(item);
+            bz.Waves(w);
         });
     };
     window.Bz = window.bz = window.Blues = Blues;

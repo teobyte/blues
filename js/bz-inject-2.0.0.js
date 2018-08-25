@@ -123,8 +123,14 @@ if (typeof require === 'function') {
                 if (newIco != null)
                     btn.append(newIco);
                 btn.append(nameSpan);
-                if (btn.ifclass('bz-wave'))
+                if (btn.ifclass('bz-wave')) {
+                    if (btn.find('.text').exist()) {
+                        var $txt = btn.find('.text');
+                        if ($txt.find('.wave').exist())
+                            $txt.find('.wave').remove();
+                    }
                     bz.addwave(btn);
+                }
             }
             if (tagName === 'input') {
                 var name = btn.val();
