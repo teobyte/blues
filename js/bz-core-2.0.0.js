@@ -2797,6 +2797,46 @@
             });
         });
     };
+    //--> Blues Page Alert
+    // types: positive, negative, warning, default
+    Blues.Pagealert = function(message, type, target, icon, callback) {
+        target = target || '.bz-alert-box';
+        type = type || 'default';
+        var $target = bzDom(target),
+            $alert = bzDom('<div class="bz-page-alert">'),
+            $txt = bzDom('<div class="bz-alert-text">'),
+            $remove = bzDom('<div class="bz-alert-remove">'),
+            $remove_icon = bzDom('<i class="bzi-remove">');
+
+        $txt.text(message);
+        $remove.append($remove_icon);
+
+        if (icon) {
+            var $icon_box = bzDom('<div class="bz-alert-icon">'),
+                $icon = bzDom('<i>');
+            $icon.onclass(icon);
+            $icon_box.append($icon);
+            $alert.append($icon_box);
+        }
+
+        if (type)
+            $alert.onclass(type);
+
+        $alert.append($txt);
+        $alert.append($remove);
+
+        $remove.on('click', function() {
+            if (bz.check.ifFunction(callback))
+                callback();
+            bzDom(this).parent('.bz-page-alert').fadeOut();
+            setTimeout(function() {
+                bzDom(this).parent('.bz-page-alert').remove();
+            }, 501);
+        });
+
+        $target.append($alert);
+    };
+
     ////////////////////////////////////////////////////////////////////
     // JSON TO <head><style> CSS
     var start = true;
@@ -2905,6 +2945,7 @@
     window.bz.Loadspin = Blues.Loadspin;
     window.bz.Modal = Blues.Modal;
     window.bz.alert = Blues.alert;
+    window.bz.pageAlert = Blues.pageAlert;
     window.bz.confirm = Blues.confirm;
     window.bz.progress = Blues.Progress;
     window.bz.jss = Blues.JSS;

@@ -2044,12 +2044,13 @@ a,
 .bz-page-alert .bz-alert-text {
     display: inline-block;
     padding: 16px;
+    text-align: justify;
     vertical-align: middle;
     width:calc(100% - 34px);
 }
 .bz-page-alert .bz-alert-icon + .bz-alert-text {
     display: inline-block;
-    padding: 16px 16px 16px 8px;
+    padding: 16px 16px 16px 16px;
     vertical-align: middle;
     width:calc(100% - 70px);
 }

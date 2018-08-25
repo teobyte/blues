@@ -8,7 +8,7 @@
     <title>Blues 2.0 | Blank Page</title>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
     <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
-    <link rel="stylesheet" href="../css/bz-core-2.0.0.css">
+    <link rel="stylesheet" href="css/bz-core-2.0.0.css">
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -79,86 +79,65 @@
         </div>
         <!-- page alerts area -->
         <div class="bz-alert-box">
-            <div class="bz-page-alert">
-                <div class="bz-alert-text">
-                    <b>Default page alert.</b> In page notification for user.
-                </div>
-                <div class="bz-alert-remove">
-                    <i class="bzi-remove"></i>
-                </div>
-            </div>
-            <!--// Alert itself -->
-            <div class="bz-page-alert positive filled">
-                <div class="bz-alert-icon">
-                    <i class="bzi-exclamation-in-circle"></i>
-                </div>
-                <div class="bz-alert-text">
-                    <b>Positive page alert with icon.</b> In page notification for user. Very very very long alert text.
-                    Page Alert. In page notification for user. Very very very long alert text.
-                    Page Alert. In page notification for user. Very very very long alert text.
-                    Page Alert. In page notification for user. Very very very long alert text.
-                    Page Alert. In page notification for user. Very very very long alert text.
-                    Page Alert. In page notification for user. Very very very long alert text.
-                    Page Alert. In page notification for user. Very very very long alert text.
-                    Page Alert. In page notification for user. Very very very long alert text.
-                    Page Alert. In page notification for user. Very very very long alert text.
-                </div>
-                <div class="bz-alert-remove">
-                    <i class="bzi-remove"></i>
-                </div>
-            </div>
-            <!--alert //-->
-            <div class="bz-page-alert negative filled">
-                <div class="bz-alert-icon">
-                    <i class="bzi-exclamation-in-circle"></i>
-                </div>
-                <div class="bz-alert-text">
-                    <b>Negative page alert with icon.</b> In page notification for user.
-                </div>
-                <div class="bz-alert-remove">
-                    <i class="bzi-remove"></i>
-                </div>
-            </div>
+            <!--<div class="bz-page-alert">-->
+                <!--<div class="bz-alert-text">-->
+                    <!--<b>Default page alert.</b> In page notification for user.-->
+                <!--</div>-->
+                <!--<div class="bz-alert-remove">-->
+                    <!--<i class="bzi-remove"></i>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
         <!--common page content goes here-->
         <div class="bz-content-box">
-            You can add any background to the .bz-page-layout container or different backgrounds to any separate page boxes.
-        </div>
-        <!--list view containers-->
-        <div class="bz-listview-box">
-            <div class="bz-listview-item">
-                List View Item
-            </div>
-            <div class="bz-listview-item">
-                List View Item
-            </div>
-            <div class="bz-listview-item">
-                List View Item
-            </div>
-            <div class="bz-listview-item">
-                List View Item
-            </div>
-            <div class="bz-listview-item">
-                List View Item
-            </div>
-        </div>
-        <!--common list-->
-        <div class="bz-list-box">
-            <ul class="bz-list-no-style bz-list-striped">
-                <li>List Item</li>
-                <li>List Item</li>
-                <li>List Item</li>
-                <li>List Item</li>
-                <li>List Item</li>
-            </ul>
+            <p>
+                Page alerts initiating with JS code. Below example with all possible attributes
+            </p>
+            <textarea class="bz-code js">
+                bz.Pagealert('Message text',
+                             'warning filled',
+                             '#alert_container,
+                             'bzi-exclamation-in-circle',
+                             function() {
+                                 alert('Close Alert callback');
+                             }
+                );
+            </textarea>
+
+            <p>
+                Default alert example
+            </p>
+            <textarea class="bz-code js">
+                bz.Pagealert('Default page notification');
+            </textarea>
+            <div class="bz-padding-16" id="alerthere"></div>
         </div>
     </div>
 
 </div>
-<script src="../js/bz-core-2.0.0.js"></script>
-<script src="../js/bz-inject-2.0.0.js"></script>
-<script src="../js/bz-sidenav-2.0.0.js"></script>
-<script src="../js/bluessite.js"></script>
+<script src="js/bz-core-2.0.0.js"></script>
+<script src="js/bz-inject-2.0.0.js"></script>
+<script src="js/bz-sidenav-2.0.0.js"></script>
+<script src="js/bluessite.js"></script>
 <script src="js/bz-codelighter.js"></script>
+<script>
+    (function() {
+
+
+        bz.Pagealert('Default page notification');
+
+        bz.Pagealert('Positive page notification', 'positive filled');
+
+        bz.Pagealert('Negative page notification with icon', 'negative filled', null, 'bzi-user');
+
+        bz.Pagealert('Negative page notification with icon', 'warning filled', null, 'bzi-exclamation-in-circle', function() {
+            alert('Close Alert callback');
+        });
+
+        bz.Pagealert('Custom target', 'positive', '#alerthere', 'bzi-exclamation-in-circle');
+
+
+    })();
+</script>
 </body>
 </html>
