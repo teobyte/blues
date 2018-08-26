@@ -2184,3 +2184,9 @@ a,
     .bz-page-layout .bz-listview-box .bz-listview-item { margin: 4px; width: calc(50% - 8px); }
     .bz-page-layout .bz-content-box { padding: 8px 16px; }
 }
+
+.bz-code-class,
+.bz-code-attribute
+{ font-weight: bold; }
+.bz-code-class { color: #2a8ac7; }
+.bz-code-attribute { color: #0f9d58; }

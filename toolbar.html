@@ -60,6 +60,9 @@
         </div>
     </div>
     <div class="bz-padding-16">
+
+        <h6>Default Toolbar</h6>
+
         <div class="bz-toolbar">
             <div class="tool">
                 <div class="back circle bz-wave"></div>
@@ -91,66 +94,10 @@
                 <i class="bzi-sign-out"></i>
             </div>
         </div>
-        <div class="bz-toolbar primary">
-            <div class="tool">
-                <div class="back circle bz-wave"></div>
-                <i class="bzi-menu"></i>
-            </div>
-            <div class="title">Toolbar very long title for the tool bar text. Just very very very very very long.</div>
-            <div class="tool">
-                <div class="back circle bz-wave"></div>
-                <i class="bzi-user"></i>
-            </div>
-            <div class="tool">
-                <div class="back circle bz-wave"></div>
-                <i class="bzi-sign-out"></i>
-            </div>
-        </div>
-        <div class="bz-toolbar positive">
-            <div class="tool">
-                <div class="back bz-wave"></div>
-                <i class="bzi-menu"></i>
-            </div>
-            <div class="btn">
-                <div class="back bz-wave"></div>
-                <span class="text"><i class="bzi-envelope"></i> Inbox</span>
-            </div>
-            <div class="title"></div>
-            <div class="tool">
-                <div class="back bz-wave"></div>
-                <i class="bzi-user"></i>
-            </div>
-            <div class="tool">
-                <div class="back bz-wave"></div>
-                <i class="bzi-sign-out"></i>
-            </div>
-        </div>
-        <div class="bz-toolbar positive inverted">
-            <div class="tool">
-                <div class="back circle bz-wave"></div>
-                <i class="bzi-menu"></i>
-            </div>
-            <div class="btn">
-                <div class="back bz-wave"></div>
-                <span class="text"><i class="bzi-envelope"></i> Inbox</span>
-            </div>
-            <div class="title">Toolbar Title</div>
-            <div class="tool">
-                <div class="back circle bz-wave"></div>
-                <i class="bzi-user"></i>
-            </div>
-            <div class="tool">
-                <div class="back circle bz-wave"></div>
-                <i class="bzi-ellipsis-v"></i>
-            </div>
-        </div>
-        <div class="bz-clear h-16"></div>
-        <div class="bz-padding-8">
-            Add class <span class="bz-fc-positive bz-ft-bold">.primary</span>, <span class="bz-fc-positive bz-ft-bold">.positive</span> to use different color, and
-            <span class="bz-fc-positive bz-ft-bold">.inverted</span> to make different color on white background.
-        </div>
-    </div>
-    <div class="bz-padding-16">
+
+        <h6>HTML markup</h6>
+
+        <div class="bz-padding-16">
         <textarea class="bz-code html">
             <div class="bz-toolbar">
                 <div class="tool">
@@ -172,16 +119,69 @@
                 </div>
             </div>
         </textarea>
-        <p>
-            Activate .bz-wave (optional)
-        </p>
-        <textarea class="bz-code js">
-            var waves = bzDom('.bz-wave');
-            waves.each(function(i, item) {
-                var t = bzDom(item);
-                bz.Waves(t);
-            });
-        </textarea>
+        </div>
+
+        <p>Primary Toolbar. Add class <span class="bz-code-class">.primary</span> to the <span class="bz-code-class">.bz-toolbar.</span> </p>
+
+        <div class="bz-toolbar primary">
+            <div class="tool">
+                <div class="back circle bz-wave"></div>
+                <i class="bzi-menu"></i>
+            </div>
+            <div class="title">Toolbar very long title for the tool bar text. Just very very very very very long.</div>
+            <div class="tool">
+                <div class="back circle bz-wave"></div>
+                <i class="bzi-user"></i>
+            </div>
+            <div class="tool">
+                <div class="back circle bz-wave"></div>
+                <i class="bzi-sign-out"></i>
+            </div>
+        </div>
+
+        <p>Positive Toolbar. Add class <span class="bz-code-class">.positive</span> to the <span class="bz-code-class">.bz-toolbar.</span> </p>
+
+        <div class="bz-toolbar positive">
+            <div class="tool">
+                <div class="back bz-wave"></div>
+                <i class="bzi-menu"></i>
+            </div>
+            <div class="btn">
+                <div class="back bz-wave"></div>
+                <span class="text"><i class="bzi-envelope"></i> Inbox</span>
+            </div>
+            <div class="title"></div>
+            <div class="tool">
+                <div class="back bz-wave"></div>
+                <i class="bzi-user"></i>
+            </div>
+            <div class="tool">
+                <div class="back bz-wave"></div>
+                <i class="bzi-sign-out"></i>
+            </div>
+        </div>
+
+        <p>Inverted Toolbar. Add class <span class="bz-code-class">.inverted</span> to the <span class="bz-code-class">.bz-toolbar.</span> </p>
+
+        <div class="bz-toolbar positive inverted">
+            <div class="tool">
+                <div class="back circle bz-wave"></div>
+                <i class="bzi-menu"></i>
+            </div>
+            <div class="btn">
+                <div class="back bz-wave"></div>
+                <span class="text"><i class="bzi-envelope"></i> Inbox</span>
+            </div>
+            <div class="title">Toolbar Title</div>
+            <div class="tool">
+                <div class="back circle bz-wave"></div>
+                <i class="bzi-user"></i>
+            </div>
+            <div class="tool">
+                <div class="back circle bz-wave"></div>
+                <i class="bzi-ellipsis-v"></i>
+            </div>
+        </div>
     </div>
 </div>
 <script src="js/bz-core-2.0.0.js"></script>

@@ -2,18 +2,63 @@
 // Set Styles
 var jss = {
     'rule': {
-        '.bz-code': {
+        'pre.bz-code': {
             'attr': {
-                padding: '24px 0 0 8px',
-                background: '#fff',
+                padding: '16px 0',
+                background: 'transparent',
                 border: '1px solid var(--color-primary)',
                 clear: 'both',
-                display: 'block',
-                'font-size': '12px',
+                display: 'inline-block',
+                'font-size': '14px',
                 margin: '8px 0',
                 resize: 'none',
                 outline: 'none',
-                width: '640px',
+                overflow: 'auto',
+                position: 'relative'
+            }
+        },
+        '.bz-code code': {
+            'attr': {
+                padding: '0 16px 0 0',
+                background: 'transparent',
+                border: 'none',
+                display: 'block',
+                margin: '0',
+                position: 'relative',
+                resize: 'none',
+                outline: 'none'
+            }
+        },
+        '.bz-code ul': {
+            'attr': {
+                padding: '0',
+                background: 'transparent',
+                border: 'none',
+                display: 'inline-block',
+                float: 'left',
+                margin: '0',
+                'text-align': 'right',
+                position: 'absolute',
+                top: '16px',
+                width: '100%',
+                'z-index': '-1'
+            }
+        },
+        '.bz-code ul > li': {
+            'attr': {
+                display: 'block',
+                width: '100%'
+            }
+        },
+        '.bz-code ul > li:nth-child(even)': {
+            'attr': {
+                background: '#f3f3f3'
+            }
+        },
+        '.bz-code ul li div': {
+            'attr': {
+                padding: '0 8px',
+                width: '30px'
             }
         },
     },
@@ -23,32 +68,29 @@ var css = Blues.JSONCSS(jss);
 Blues.JSS(css, 'css_codelighter');
 // with respect to
 // https://www.w3schools.com/howto/howto_syntax_highlight.asp
-function w3CodeColor(code, mode) {
-    var lang = (mode || "html"); // html, css, js
-    //var elmntObj = (document.getElementById(elmnt) || elmnt);
+function w3CodeColor(code, lang) {
+    var lang = (lang || "html"); // html, css, js
     var elmntTxt = code;
     var tagcolor = "#4a4a4a";
     var tagnamecolor = "#a25a9f";
     var attributecolor = "#0f9d58";
     var attributevaluecolor = "#2a8ac7";
     var commentcolor = "#0f9d58";
-    var cssselectorcolor = "brown";
+    var cssselectorcolor = "#a25a9f";
     var csspropertycolor = "#db4437";
     var csspropertyvaluecolor = "#2a8ac7";
-    var cssdelimitercolor = "black";
+    var cssdelimitercolor = "#000";
     var cssimportantcolor = "#db4437";
-    var jscolor = "black";
+    var jscolor = "#000";
     var jskeywordcolor = "#2a8ac7";
     var jsstringcolor = "#0f9d58";
     var jsnumbercolor = "#db4437";
     var jspropertycolor = "black";
     if (!lang) {lang = "html"; }
-    if (lang == "html") {elmntTxt = htmlMode(elmntTxt);}
-    if (lang == "css") {elmntTxt = cssMode(elmntTxt);}
-    if (lang == "js") {elmntTxt = jsMode(elmntTxt);}
-    //elmntObj.innerHTML = elmntTxt;
+    if (lang === "html") {elmntTxt = htmlMode(elmntTxt);}
+    if (lang === "css") {elmntTxt = cssMode(elmntTxt);}
+    if (lang === "js") {elmntTxt = jsMode(elmntTxt);}
     return elmntTxt;
-
     function extract(str, start, end, func, repl) {
         var s, e, d = "", a = [];
         while (str.search(start) > -1) {
@@ -360,8 +402,8 @@ ccs.each(function(i, item) {
     if (rows.length > 0)
         cc.onattr('rows', rows.length);
     cc.onattr('readonly', 'readonly');
-    var pre = bzDom('<pre>');
-    var code = bzDom('<code class="bz-code">');
+    var pre = bzDom('<pre class="bz-code">');
+    var code = bzDom('<code>');
     if (cc.ifclass('html')) {
         lang = 'html';
         code.onclass('language-html');
@@ -378,6 +420,18 @@ ccs.each(function(i, item) {
     if (cc.ifclass('html'))
         code_txt = code_txt.replace(/</g,'&lt;').replace(/>/g,'&gt;');
     var outcode = w3CodeColor(code_txt, lang);
+    var $ul = bzDom('<ul class="bz-list-no-style">'),
+        $li = bzDom('<li>'),
+        $cont = bzDom('<div>');
+    for (var i = 0; i < rows.length - 1; i++) {
+        var _$li = $li.clone(),
+            _$cont = $cont.clone(),
+            no = i + 1;
+        _$cont.inhtml(no);
+        _$li.append(_$cont);
+        $ul.append(_$li);
+    }
+    pre.append($ul);
     code.append(outcode);
     pre.append(code);
     cc.replacewith(pre);

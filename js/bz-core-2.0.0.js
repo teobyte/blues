@@ -515,6 +515,10 @@
             key = 0; // to avoid wrong object Detection
         if (selector === undefined || selector === null)
             return null;
+        else if (Blues.check.ifString(selector)) {
+            element = new bzObject(selector);
+            element.init();
+        }
         else if (Blues.check.ifFunction(selector))
             return bzDom(document).ready(selector);
         else if (Object.getPrototypeOf(selector) === bzObject.prototype) {
@@ -536,11 +540,8 @@
         else if (Blues.check.ifDocument(selector)) {
             element = new bzObject();
             element.el = selector;
-        }
-        else {
-            element = new bzObject(selector);
-            element.init();
-        }
+        } else
+            return null;
         // if bzDom is single dom node and not a window or document
         if (!Blues.check.ifWindow(element.el) &&
             !Blues.check.ifDocument(element.el) &&
