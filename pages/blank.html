@@ -60,6 +60,36 @@
             <i class="bzi-menu"></i>
         </div>
     </div>
+
+
+    <div name="ll-one" id="list1">
+        <ul name="list-one" class="list-01">
+            <li id="it1" class="txt">text 1</li>
+            <li id="it2" class="txt">text 2</li>
+            <li id="it3" data-select="active" class="txt active">text 3</li>
+            <li id="it4" class="txt">text 4</li>
+            <li id="it5" class="txt">text 5</li>
+        </ul>
+    </div>
+    <div name="ll-two" id="list2">
+        <ul name="list-two" class="list-01">
+            <li id="it21" class="txt">text 1</li>
+            <li id="it22" class="txt">text 2</li>
+            <li id="it23" class="txt">text 3</li>
+            <li id="it24" data-select="active" class="txt active">text 4</li>
+            <li id="it25" class="txt">text 5</li>
+        </ul>
+    </div>
+    <div name="ll-three" id="list3">
+        <ul name="list-three" class="list-01">
+            <li id="it31" class="txt">text 1</li>
+            <li id="it32" class="txt">text 2</li>
+            <li id="it33" class="txt">text 3</li>
+            <li id="it34" class="txt">text 4</li>
+            <li id="it35" data-select="notactive" class="txt notactive">text 5</li>
+        </ul>
+    </div>
+
 </div>
 <script src="../js/bz-core-2.0.0.js"></script>
 <script src="../js/bz-inject-2.0.0.js"></script>
@@ -69,12 +99,18 @@
 <script src="../js/bz-select-3.0.js"></script>
 <script>
 
-    function One(elem) {
-        return document.querySelectorAll(elem);
-    }
-    const i = performance.now();
-    bzSel3('#rightSide');
-    alert(performance.now() - i);
+    // const i = performance.now();
+    // bzSel3('#rightSide');
+    // alert(performance.now() - i);
+
+    //var el = document.querySelector('#list3[name=list-three]');
+
+    var el = bzDom('#list3 [name=list-three]').el;
+    if (el.length > 1)
+        alert(el.length);
+    else
+        alert(el.outerHTML);
+
 
 </script>
 </body>
