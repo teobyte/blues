@@ -23,7 +23,7 @@ var bzSel3 = function(selector) {
                 elem = document.getElementsByName(name);
             }
             // check if single attribute and return element
-            if (Blues.check.ifAttrName(selector) || selector.test(','))
+            if (Blues.check.ifAttrName(selector) || selector.indexOf(',') > -1)
                 elem = document.querySelectorAll(selector);
         }
         // handle context
