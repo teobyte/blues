@@ -28,6 +28,7 @@
                     <input type="checkbox" id="toggle-3">
                     <ul>
                         <li>
+                            <span>text</span>
                             <a class="text" href="../pages/blank-page.html">Blank page</a>
                         </li>
                         <li>
@@ -65,13 +66,14 @@
 <script src="../js/bz-sidenav-2.0.0.js"></script>
 <script src="../js/bluessite.js"></script>
 <script src="../js/bz-codelighter.js"></script>
+<script src="../js/bz-select-3.0.js"></script>
 <script>
 
     function One(elem) {
         return document.querySelectorAll(elem);
     }
-    var i = performance.now();
-    bzDom('#rightSide');
+    const i = performance.now();
+    var res = Blues.bzSel3('#rightSide');
     alert(performance.now() - i);
 
 </script>

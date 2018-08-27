@@ -437,7 +437,7 @@
         },
         // handle string selector
         handleStringSelector: function(selector) {
-            var elem;
+            let elem;
             if (Blues.check.ifSelectorParams(selector)) {
                 // ToDo: create bette handler
                 elem = document.querySelectorAll(selector);
@@ -448,8 +448,8 @@
         },
         // creates fragment or html element
         createFragment: function(selector) {
-            var elem;
-            var nodeName = selector.replace('<','').replace('>','');
+            let elem;
+            let nodeName = selector.replace('<','').replace('>','');
             if (Blues.check.ifValidTag(nodeName))
                 elem = document.createElement(nodeName);
             if (!elem)
@@ -457,29 +457,27 @@
             return elem;
         },
         // universal selector handler
-        bluesSelector: function(selector, incontext) {
+        bluesSelector: function(selector) {
             // remove whitespaces at start/end of the selector string
             selector = selector.trim();
-            var context = incontext || document;
-            var elem;
+            let elem;
             if (Blues.check.ifString(selector)) {
-                if (selector[ 0 ] === "<" && selector[ selector.length - 1 ] === ">" && selector.length >= 3) {
-                    elem = Blues.dom.createFragment(selector);
-                } else {
+                if (selector[ 0 ] !== "<")
                     elem = Blues.dom.handleStringSelector(selector);
-                }
+                else if (selector[ 0 ] === "<" && selector[ selector.length - 1 ] === ">" && selector.length >= 3)
+                    elem = Blues.dom.createFragment(selector);
                 if(elem && elem.length === 1) {
                     return elem[0];
                 } else {
                     return elem;
                 }
             }
-            else if (Blues.check.ifWindow(selector)) {
-                return selector;
-            }
-            else if (Blues.check.ifDocument(selector)) {
-                return selector;
-            }
+            // else if (Blues.check.ifWindow(selector)) {
+            //     return selector;
+            // }
+            // else if (Blues.check.ifDocument(selector)) {
+            //     return selector;
+            // }
             else {
                 return null;
             }
@@ -507,7 +505,8 @@
         this.el = Blues.bzSel(this.selector);
         if (Blues.check.ifArray(this.el) || Blues.check.ifNodeList(this.el)) {
             this.length = this.el.length;
-        }
+        } else
+            this.length = 1;
     };
     // select or create element by selector bzDom('selector')
     Blues.bzDom = function(selector, settings){
