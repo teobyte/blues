@@ -1,6 +1,6 @@
 
 
-Blues.bzSel3 = function(selector) {
+var bzSel3 = function(selector) {
     let elem = null, key = 0;
     if (!selector)
         return null;
