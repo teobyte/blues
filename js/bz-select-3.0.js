@@ -2,7 +2,7 @@ var bzSel3 = function(selector) {
     let elem = null, key = 0;
     if (!selector)
         return null;
-    if (Blues.check.ifString(selector)) {
+    if (Blues.check.ifString(selector) && selector[ 0 ] !== "<") {
         if (!Blues.check.ifWhitespaces(selector)) {
             // check if single #id and return element
             if (Blues.check.ifIdentifier(selector)) {
@@ -46,7 +46,10 @@ var bzSel3 = function(selector) {
     else if (Object.getPrototypeOf(selector) === bzObject.prototype) {
         elem = selector;
         key = 1;
-    } else return null;
+    } else if (Blues.check.ifString(selector) && selector[ 0 ] === "<" && selector[ selector.length - 1 ] === ">" && selector.length >= 3) {
+        elem = Blues.dom.createFragment(selector);
+    }
+    else return null;
     if (Blues.check.ifNodeList(elem)) {
         if (elem.length > 0)
             elem = Blues.convert.nodeListToArray(elem);

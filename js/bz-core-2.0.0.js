@@ -20,7 +20,7 @@
     'use strict';
     ///////////////////////////////////////////////////////
     // Blues Start
-    let Blues = {};
+    var Blues = {};
     ///////////////////////////////////////////////////////
     // Blues Regular Expresions
     Blues.regex = {
@@ -78,7 +78,7 @@
         // check if selector is HTML tag
         // returns @true if valid html tag
         ifValidTag: function (tag_name) {
-            let tags = 'a abbr address area article aside audio ' +
+            var tags = 'a abbr address area article aside audio ' +
                 'b base bdo blockquote body br button ' +
                 'canvas caption cite code col colgroup ' +
                 'datalist dd del details dfn dialog div dl dt ' +
@@ -140,7 +140,7 @@
         // returns array of 2 simple selectors
         ifDoubleSelector: function(selector) {
             if (Blues.check.ifWhitespaces(selector)) {
-                let selarr = selector.split(' ');
+                var selarr = selector.split(' ');
                 if (selarr.length === 2)
                     return [ selarr[0], selarr[1] ];
             }
@@ -154,7 +154,7 @@
                 return Array.isArray(obj)
             }
             // Retain references to variables for performance optimization
-            let objectToStringFn = Object.prototype.toString,
+            var objectToStringFn = Object.prototype.toString,
                 arrayToStringResult = objectToStringFn.call([]);
 
             return function(obj){ return obj instanceof Array } || function (obj) {
@@ -166,13 +166,13 @@
         ifNodeList: function(nodes) {
             if (nodes === null)
                 return false;
-            let result = Object.prototype.toString.call(nodes);
+            var result = Object.prototype.toString.call(nodes);
             // modern browser such as IE9 / firefox / chrome etc.
             if (result === '[object HTMLCollection]' || result === '[object NodeList]') {
                 return true;
             }
             //ie 6/7/8
-            if (typeof(nodes) !== 'object') {
+            if (typeof(nodes) != 'object') {
                 return false;
             }
             // detect length and item
@@ -204,7 +204,7 @@
         },
         //
         ifEmpty: function (x) {
-            return typeof x === 'undefined' || x.length === 0 || x == null;
+            return typeof x == 'undefined' || x.length == 0 || x == null;
         },
         //
         ifCssJson: function (node) {
@@ -230,7 +230,7 @@
         stringToHtmlNode: function(html) {
             // creates temporary wrapper
             //var tempElem = document.createElement('div');
-            let tempElem = document.createElement('div');
+            var tempElem = document.createElement('div');
             // insert html
             tempElem.innerHTML = html;
             // returns wrapper childNode
@@ -330,126 +330,126 @@
     // Blues DOM Methods
     Blues.dom = {
         // query selector all handler
-        // qsa: function(selector, incontext, incontextName) {
-        //     var context = incontext || document;
-        //     var elem;
-        //     var parents = function(elem, selector) {
-        //         var parents = [];
-        //         while (elem = elem.parentNode) {
-        //             (elem.matches && elem.matches(selector)) ? parents.push(elem) : '';
-        //         }
-        //         return parents;
-        //     };
-        //     if (Blues.check.ifSimpleSelector(selector)) {
-        //         // check if selector identifier
-        //         if (Blues.check.ifIdentifier(selector)) {
-        //             elem = context.getElementById(selector.substring(1));
-        //         }
-        //         // check if selector class
-        //         else if(Blues.check.ifClassname(selector)) {
-        //             var elems = document.getElementsByClassName(selector.substring(1));
-        //             if (elems.length > 1) {
-        //                 elem = new Array();
-        //                 if (incontextName != undefined) {
-        //                     for (var i=0; i < elems.length; i++) {
-        //                         if (parents(elems[i], incontextName).length > 0)
-        //                             elem.push(elems[i]);
-        //                     }
-        //                 } else elem = elems;
-        //             } else elem = elems[0];
-        //         }
-        //         // check if selector attribute name
-        //         else if(Blues.check.ifElemName(selector)) {
-        //             var name = Blues.extract.attrNameFromString(selector);
-        //             var elems = document.getElementsByName(name);
-        //             if (elems.length > 1) {
-        //                 elem = new Array();
-        //                 if (incontextName != undefined) {
-        //                     for (var i=0; i < elems.length; i++) {
-        //                         if (parents(elems[i], incontextName).length > 0)
-        //                             elem.push(elems[i]);
-        //                     }
-        //                 } else elem = elems;
-        //             } else elem = elems[0];
-        //         }
-        //         // check if selector attribute
-        //         else if (Blues.check.ifAttrName(selector)) {
-        //             var elems = document.querySelectorAll(selector);
-        //             if (elems.length > 1) {
-        //                 elem = new Array();
-        //                 if (incontextName != undefined) {
-        //                     for (var i=0; i < elems.length; i++) {
-        //                         if (parents(elems[i], incontextName).length > 0)
-        //                             elem.push(elems[i]);
-        //                     }
-        //                 } else elem = elems;
-        //             } else elem = elems[0];
-        //         }
-        //         // check if selector tag name
-        //         else if(!Blues.check.ifIdentifier(selector) && !Blues.check.ifClassname(selector) && !Blues.check.ifElemName(selector) && Blues.check.ifValidTag(selector)) {
-        //             var elems = document.getElementsByTagName(selector);
-        //             if (elems.length > 1) {
-        //                 elem = new Array();
-        //                 if (incontextName != undefined) {
-        //                     for (var i=0; i < elems.length; i++) {
-        //                         if (parents(elems[i], incontextName).length > 0)
-        //                             elem.push(elems[i]);
-        //                     }
-        //                 } else elem = elems;
-        //             } else elem = elems[0];
-        //         }
-        //         // if can't handle try querySelectorAll
-        //         else elem = context.querySelectorAll(selector);
-        //     }
-        //     // if can't handle try querySelectorAll
-        //     else elem = context.querySelectorAll(selector);
-        //     return elem;
-        // },
+        qsa: function(selector, incontext, incontextName) {
+            var context = incontext || document;
+            var elem;
+            var parents = function(elem, selector) {
+                var parents = [];
+                while (elem = elem.parentNode) {
+                    (elem.matches && elem.matches(selector)) ? parents.push(elem) : '';
+                }
+                return parents;
+            };
+            if (Blues.check.ifSimpleSelector(selector)) {
+                // check if selector identifier
+                if (Blues.check.ifIdentifier(selector)) {
+                    elem = context.getElementById(selector.substring(1));
+                }
+                // check if selector class
+                else if(Blues.check.ifClassname(selector)) {
+                    var elems = document.getElementsByClassName(selector.substring(1));
+                    if (elems.length > 1) {
+                        elem = new Array();
+                        if (incontextName != undefined) {
+                            for (var i=0; i < elems.length; i++) {
+                                if (parents(elems[i], incontextName).length > 0)
+                                    elem.push(elems[i]);
+                            }
+                        } else elem = elems;
+                    } else elem = elems[0];
+                }
+                // check if selector attribute name
+                else if(Blues.check.ifElemName(selector)) {
+                    var name = Blues.extract.attrNameFromString(selector);
+                    var elems = document.getElementsByName(name);
+                    if (elems.length > 1) {
+                        elem = new Array();
+                        if (incontextName != undefined) {
+                            for (var i=0; i < elems.length; i++) {
+                                if (parents(elems[i], incontextName).length > 0)
+                                    elem.push(elems[i]);
+                            }
+                        } else elem = elems;
+                    } else elem = elems[0];
+                }
+                // check if selector attribute
+                else if (Blues.check.ifAttrName(selector)) {
+                    var elems = document.querySelectorAll(selector);
+                    if (elems.length > 1) {
+                        elem = new Array();
+                        if (incontextName != undefined) {
+                            for (var i=0; i < elems.length; i++) {
+                                if (parents(elems[i], incontextName).length > 0)
+                                    elem.push(elems[i]);
+                            }
+                        } else elem = elems;
+                    } else elem = elems[0];
+                }
+                // check if selector tag name
+                else if(!Blues.check.ifIdentifier(selector) && !Blues.check.ifClassname(selector) && !Blues.check.ifElemName(selector) && Blues.check.ifValidTag(selector)) {
+                    var elems = document.getElementsByTagName(selector);
+                    if (elems.length > 1) {
+                        elem = new Array();
+                        if (incontextName != undefined) {
+                            for (var i=0; i < elems.length; i++) {
+                                if (parents(elems[i], incontextName).length > 0)
+                                    elem.push(elems[i]);
+                            }
+                        } else elem = elems;
+                    } else elem = elems[0];
+                }
+                // if can't handle try querySelectorAll
+                else elem = context.querySelectorAll(selector);
+            }
+            // if can't handle try querySelectorAll
+            else elem = context.querySelectorAll(selector);
+            return elem;
+        },
         // handle selector context
-        // handleContext: function(selector) {
-        //     var elem, context;
-        //     var selArray = selector.replace(/  +/g, ' ').split(' ');
-        //     // function findElements(selector, context, contextName) {
-        //     //     var felem;
-        //     //     for (var j = 0; j < context.length; j++) {
-        //     //         var foundelem = Blues.dom.qsa(selector, context[j], contextName);
-        //     //         felem = Blues.help.combineNodeLists(felem, foundelem);
-        //     //     }
-        //     //     return felem;
-        //     // }
-        //     for (var i = 0; i < selArray.length - 1; i++) {
-        //         context = Blues.dom.qsa(selArray[i]);
-        //         if (!Blues.check.ifArray(context) && !Blues.check.ifNodeList(context)) {
-        //             elem = Blues.dom.qsa(selArray[i + 1], context);
-        //         }
-        //         // multiple context
-        //         // if (Blues.check.ifClassname(selArray[i + 1])) {
-        //         //     alert(context);
-        //         //     elem = findElements(selArray[i + 1], context, selArray[i]);
-        //         // } else
-        //         if (context.length > 1) {
-        //             elem = Blues.dom.qsa(selArray[i + 1], context, selArray[i]);
-        //         } else if (context.length === 1 || Blues.check.ifDomNode(context)) {
-        //             elem = Blues.dom.qsa(selArray[i + 1], context, selArray[i]);
-        //         }
-        //     }
-        //     return elem;
-        // },
+        handleContext: function(selector) {
+            var elem, context;
+            var selArray = selector.replace(/  +/g, ' ').split(' ');
+            // function findElements(selector, context, contextName) {
+            //     var felem;
+            //     for (var j = 0; j < context.length; j++) {
+            //         var foundelem = Blues.dom.qsa(selector, context[j], contextName);
+            //         felem = Blues.help.combineNodeLists(felem, foundelem);
+            //     }
+            //     return felem;
+            // }
+            for (var i = 0; i < selArray.length - 1; i++) {
+                context = Blues.dom.qsa(selArray[i]);
+                if (!Blues.check.ifArray(context) && !Blues.check.ifNodeList(context)) {
+                    elem = Blues.dom.qsa(selArray[i + 1], context);
+                }
+                // multiple context
+                // if (Blues.check.ifClassname(selArray[i + 1])) {
+                //     alert(context);
+                //     elem = findElements(selArray[i + 1], context, selArray[i]);
+                // } else
+                if (context.length > 1) {
+                    elem = Blues.dom.qsa(selArray[i + 1], context, selArray[i]);
+                } else if (context.length === 1 || Blues.check.ifDomNode(context)) {
+                    elem = Blues.dom.qsa(selArray[i + 1], context, selArray[i]);
+                }
+            }
+            return elem;
+        },
         // handle string selector
-        // handleStringSelector: function(selector) {
-        //     let elem;
-        //     if (Blues.check.ifSelectorParams(selector)) {
-        //         // ToDo: create bette handler
-        //         elem = document.querySelectorAll(selector);
-        //     } else if (Blues.check.ifWhitespaces(selector)) {
-        //         elem = Blues.dom.handleContext(selector);
-        //     } else elem = Blues.dom.qsa(selector);
-        //     return elem;
-        // },
+        handleStringSelector: function(selector) {
+            var elem;
+            if (Blues.check.ifSelectorParams(selector)) {
+                // ToDo: create bette handler
+                elem = document.querySelectorAll(selector);
+            } else if (Blues.check.ifWhitespaces(selector)) {
+                elem = Blues.dom.handleContext(selector);
+            } else elem = Blues.dom.qsa(selector);
+            return elem;
+        },
         // creates fragment or html element
         createFragment: function(selector) {
-            let elem;
-            let nodeName = selector.replace('<','').replace('>','');
+            var elem;
+            var nodeName = selector.replace('<','').replace('>','');
             if (Blues.check.ifValidTag(nodeName))
                 elem = document.createElement(nodeName);
             if (!elem)
@@ -457,106 +457,46 @@
             return elem;
         },
         // universal selector handler
-        // bluesSelector: function(selector) {
-        //     // remove whitespaces at start/end of the selector string
-        //     selector = selector.trim();
-        //     let elem;
-        //     if (Blues.check.ifString(selector)) {
-        //         if (selector[ 0 ] !== "<")
-        //             elem = Blues.dom.handleStringSelector(selector);
-        //         else if (selector[ 0 ] === "<" && selector[ selector.length - 1 ] === ">" && selector.length >= 3)
-        //             elem = Blues.dom.createFragment(selector);
-        //         if(elem && elem.length === 1) {
-        //             return elem[0];
-        //         } else {
-        //             return elem;
-        //         }
-        //     }
-        //     // else if (Blues.check.ifWindow(selector)) {
-        //     //     return selector;
-        //     // }
-        //     // else if (Blues.check.ifDocument(selector)) {
-        //     //     return selector;
-        //     // }
-        //     else {
-        //         return null;
-        //     }
-        // }
+        bluesSelector: function(selector, incontext) {
+            // remove whitespaces at start/end of the selector string
+            selector = selector.trim();
+            var context = incontext || document;
+            var elem;
+            if (Blues.check.ifString(selector)) {
+                if (selector[ 0 ] !== "<")
+                    elem = Blues.dom.handleStringSelector(selector);
+                else if (selector[ 0 ] === "<" && selector[ selector.length - 1 ] === ">" && selector.length >= 3)
+                    elem = Blues.dom.createFragment(selector);
+                if(elem && elem.length === 1) {
+                    return elem[0];
+                } else {
+                    return elem;
+                }
+            }
+            // else if (Blues.check.ifWindow(selector)) {
+            //     return selector;
+            // }
+            // else if (Blues.check.ifDocument(selector)) {
+            //     return selector;
+            // }
+            else {
+                return null;
+            }
+        }
     };
     ///////////////////////////////////////////////////////
     // General Blues Selector -/ DOM GBS
-    // Blues.bzSel = function(selector) {
-    //     if (!selector)
-    //         return null;
-    //     var el = Blues.dom.bluesSelector(selector);
-    //     if (Blues.check.ifNodeList(el)) {
-    //         el = Blues.convert.nodeListToArray(el);
-    //     }
-    //     return el;
-    // };
     Blues.bzSel = function(selector) {
-        let elem = null, key = 0;
         if (!selector)
             return null;
-        if (Blues.check.ifString(selector) && selector[ 0 ] !== "<") {
-            if (!Blues.check.ifWhitespaces(selector)) {
-                // check if single #id and return element
-                if (Blues.check.ifIdentifier(selector)) {
-                    elem = document.getElementById(selector.substring(1));
-                    return elem;
-                }
-                // check if single .class amd return element
-                if(Blues.check.ifClassname(selector))
-                    elem = document.querySelectorAll(selector);
-                // check if single tag and return element
-                if (Blues.check.ifValidTag(selector))
-                    elem = document.querySelectorAll(selector);
-                // check if single [name] and return element
-                if(Blues.check.ifElemName(selector)) {
-                    let name = Blues.extract.attrNameFromString(selector);
-                    elem = document.querySelectorAll(name);
-                }
-                // check if single attribute and return element
-                if (Blues.check.ifAttrName(selector) || selector.indexOf(',') > -1)
-                    elem = document.querySelectorAll(selector);
-            }
-            // handle context
-            else {
-                let selArray = selector.replace(/  +/g, ' ').split(' ');
-                let context = selArray[0];
-                if (Blues.check.ifIdentifier(context)) {
-                    let subcontext = '';
-                    for (let i = 1; i < selArray.length; i++)
-                        subcontext = subcontext + selArray[i] + ' ';
-                    let contextElem = document.getElementById(context.substring(1));
-                    elem = contextElem.querySelectorAll(subcontext);
-                } else
-                    elem = document.querySelectorAll(selector);
-            }
+        var el = Blues.dom.bluesSelector(selector);
+        if (Blues.check.ifNodeList(el)) {
+            el = Blues.convert.nodeListToArray(el);
         }
-        // if selector is Window or Document
-        else if (Blues.check.ifWindow(selector) || Blues.check.ifDocument(selector))
-            elem = selector;
-        else if (Blues.check.ifFunction(selector))
-            elem = selector;
-        else if (Object.getPrototypeOf(selector) === bzObject.prototype) {
-            elem = selector;
-            key = 1;
-        } else if (Blues.check.ifString(selector) && selector[ 0 ] === "<" && selector[ selector.length - 1 ] === ">" && selector.length >= 3) {
-            elem = Blues.dom.createFragment(selector);
-        }
-        else return null;
-        if (Blues.check.ifNodeList(elem)) {
-            if (elem.length > 0)
-                elem = Blues.convert.nodeListToArray(elem);
-            if (elem.length === 1)
-                elem = elem[0];
-        }
-        return elem;
+        return el;
     };
-
     // element prototype
-    let bzObject = function(selector) {
+    var bzObject = function(selector) {
         this.selector = selector || null; //The selector being targeted
         this.el = null; //The actual DOM element
         this.data = []; // containing data
@@ -571,7 +511,7 @@
     };
     // select or create element by selector bzDom('selector')
     Blues.bzDom = function(selector, settings){
-        let element = null,
+        var element = null,
             key = 0; // to avoid wrong object Detection
         if (selector === undefined || selector === null)
             return null;
