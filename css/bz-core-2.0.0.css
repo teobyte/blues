@@ -1580,12 +1580,7 @@ a,
 @keyframes animate-zoom{from{transform:scale(0)} to{transform:scale(1)}}
 @keyframes fade-in{from{opacity:0;} to{opacity:1;}}
 @keyframes fade-out{from{opacity:1;} to{opacity:0;}}
-/*@-webkit-keyframes fade-in{ from { opacity: 0; } to { opacity: 1; } }*/
-/*@-moz-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }*/
-/*@-ms-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }*/
-/*@-webkit-keyframes pop-up { from { bottom: 30px; } to { bottom: 42px; } }*/
-/*@-moz-keyframes pop-up { from { bottom: 30px; } to { bottom: 42px; } }*/
-/*@-ms-keyframes pop-up { from { bottom: 30px; } to { bottom: 42px; } }*/
+
 .bz-scale-out,
 .bz-scale-in {
     -webkit-transition: all 300ms ease-in;

@@ -53,7 +53,7 @@
             <div class="back circle"></div>
             <i class="bzi-menu"></i>
         </div>
-        <div class="title">Blank page</div>
+        <div class="title">JS Sandbox</div>
         <div id="leftRightBtn" class="tool bz-sidenav-btn"
              data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
             <div class="back circle"></div>
@@ -65,8 +65,8 @@
     <div name="ll-one" id="list1">
         <ul name="list-one" class="list-01">
             <li id="it1" class="txt">text 1</li>
-            <li id="it2" class="txt">text 2</li>
-            <li id="it3" data-select="active" class="txt active">text 3</li>
+            <li  id="it2" class="txt">text 2</li>
+            <li name="list-three" id="it3" data-select="active" class="txt active">text 3</li>
             <li id="it4" class="txt">text 4</li>
             <li id="it5" class="txt">text 5</li>
         </ul>
@@ -81,7 +81,7 @@
         </ul>
     </div>
     <div name="ll-three" id="list3">
-        <ul name="list-three" class="list-01">
+        <ul name="list-three" data-select="notactive" class="list-01">
             <li id="it31" class="txt">text 1</li>
             <li id="it32" class="txt">text 2</li>
             <li id="it33" class="txt">text 3</li>
@@ -105,7 +105,7 @@
 
     //var el = document.querySelector('#list3[name=list-three]');
 
-    var el = bzDom('#list3 [name=list-three]').el;
+    var el = bzDom('#list2').el;
     if (el.length > 1)
         alert(el.length);
     else
