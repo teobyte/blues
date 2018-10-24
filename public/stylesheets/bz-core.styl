@@ -1,0 +1,170 @@
+@import bz-vars
+@import bz-mixins
+@import bz-reset
+@import bz-animate
+
+:root
+  --color-aqua color-aqua
+  --color-black color-black
+  --color-blue color-blue
+  --color-gray-darker color-gray-darker
+  --color-gray-dark color-gray-dark
+  --color-gray color-gray
+  --color-gray-light color-gray-light
+  --color-gray-lighter color-gray-lighter
+  --color-green color-green
+  --color-navy color-navy
+  --color-orange color-orange
+  --color-pink color-pink
+  --color-purple color-purple
+  --color-red color-red
+  --color-white color-white
+  --color-yellow color-yellow
+
+*,
+*::after,
+*::before,
+html,
+.bz-border-box
+  vendor(box-sizing, border-box)
+
+body
+  clear: both
+  color: color-gray-darker
+  font: font-blues
+  font-size: bz-font-size
+  margin: 0!important
+  padding: 0!important
+
+@import bz-typo
+
+a
+  background-color transparent
+  color color-navy
+  text-decoration none
+  -webkit-text-decoration-skip objects
+  &:hover
+    text-decoration underline
+  body.firefox &
+    font-weight normal
+
+positions = absolute relative
+for pos in positions
+  .bz-{pos}
+    position pos
+
+@import bz-blocks
+
+.bz-cursor-pointer
+  cursor pointer
+
+/* Blues Thin Scrollbar */
+/* Width */
+::-webkit-scrollbar
+  width 8px
+  height 8px
+
+/* Track */
+::-webkit-scrollbar-track
+  box-shadow(inset 0 0 6px rgba(0, 0, 0, 0.3))
+  background-color color-gray-light
+
+/* Handle */
+::-webkit-scrollbar-thumb
+  background-color color-gray-dark
+  opacity 0.1
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+  background-color color-gray-darker
+  opacity 0.5
+
+@import bz-flex  
+@import bz-width
+@import bz-links
+@import bz-colors
+@import bz-pages
+@import bz-shadows
+@import bz-layers
+@import bz-list
+@import bz-inputs
+@import bz-buttons
+@import bz-toolbar
+@import bz-popover
+@import bz-selectors
+@import bz-spinners
+
+a,
+.bz-transition.fast
+  vendor(transition, all .3s ease)
+
+.bz-transition
+  vendor(transition, all .5s ease)
+
+.bz-transition.slow
+  vendor(transition, all .9s ease)
+
+@import bz-nav
+@import bz-sidenav
+@import bz-contextmenu
+@import bz-tags
+@import bz-breadcrumbs
+@import bz-chips
+@import bz-grouping
+@import bz-modal
+@import bz-toast
+@import bz-page-alert
+
+.bz-fader
+  background rgba(69, 69, 68, 0.5)
+  bottom 0
+  height 100%
+  left 0
+  right 0
+  top 0
+  @extends .bz-cursor-pointer
+  @extends .bz-none
+  @extends .bz-absolute
+  @extends .bz-w-100p
+
+/* Blues Mobile First Screen Size Scheme  */
+.bz-cross-padding
+  padding 0
+
+.bz-cross-margin
+  margin: 0
+
+.bz-modal .modal-content
+    width 100vw
+
+@media only screen and (min-width: mobile)
+  .bz-cross-padding
+    padding 0.5em
+  .bz-cross-margin
+    margin 0.5em
+  .bz-modal .modal-content
+    width 90vw
+
+@media only screen and (min-width: monitor)
+  .bz-cross-padding
+    padding 1em
+  .bz-cross-margin
+    margin 1em
+  .bz-modal .modal-content
+    width 60vw
+
+@media only screen and (min-width: widescreen)
+  .bz-cross-padding
+    padding 2em
+  .bz-cross-margin
+    margin 2em
+  .bz-modal .modal-content
+    width 50vw
+
+.bz-code-class,
+.bz-code-attribute
+  font-weight bold
+.bz-code-class
+  color #2a8ac7
+.bz-code-attribute
+  color #0f9d58

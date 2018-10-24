@@ -1,0 +1,163 @@
+.bz-btn-link-style,
+.bz-btn-link-style:hover,
+.bz-btn-link-style:focus,
+.bz-btn-link-style:active,
+.bz-btn-no-style,
+.bz-btn-no-style:hover,
+.bz-btn-no-style:focus,
+.bz-btn-no-style:active
+  background none!important
+  margin 10px
+  outline 0
+  padding 0
+
+.bz-btn-link-style,
+.bz-btn-link-style:hover,
+.bz-btn-link-style:focus,
+.bz-btn-link-style:active
+  border none!important
+  font-size 24px
+
+.bz-btn-link-style .text:after
+  background color-navy
+  bottom 0
+  content " "
+  height 3px
+  left 0
+  position absolute
+  width 20px
+  vendor(transition, all 0.5s ease)
+
+.bz-btn-link-style:hover .text:after
+  width 100%
+  vendor(transition, all 0.5s ease)
+
+.bz-btn-circle
+  border-radius 50%
+  font-size 18px
+  height 52px
+  width 52px
+
+.bz-btn-circle.btn-xs
+  font-size 16px
+  height 32px
+  width 32px
+
+.bz-btn-circle.btn-s
+  font-size 16px
+  height 44px
+  width 44px
+
+.bz-btn-circle.btn-l
+  font-size 22px
+  height 58px
+  width 58px
+
+.bz-btn-circle.btn-xl
+  font-size 26px
+  height 64px
+  width 64px
+
+.bz-btn-circle i
+  position absolute
+  left 50%
+  transform-translate(-50%, -50%)
+
+/* Button Groups */
+.bz-btn-group
+  .bz-btn
+    margin 0
+    border-radius 0
+
+.bz-btn-group .bz-btn:focus,
+.bz-btn-group .bz-btn:active,
+.bz-btn-group .bz-btn:hover
+  border 1px solid color-gray-dark
+
+.bz-btn-group .bz-btn:not(:last-child)
+  border 1px solid color-gray-dark
+  border-right 1px solid transparent
+
+.bz-btn-group .bz-btn:active.rounded:first-child,
+.bz-btn-group .bz-btn:focus.rounded:first-child,
+.bz-btn-group .bz-btn:hover.rounded:first-child,
+.bz-btn-group .bz-btn.rounded:first-child
+  border 1px solid color-gray-dark
+  border-right 1px solid transparent
+  border-top-left-radius 5px
+  border-bottom-left-radius 5px
+
+.bz-btn-group .bz-btn:active.rounded:last-child,
+.bz-btn-group .bz-btn:focus.rounded:last-child,
+.bz-btn-group .bz-btn:hover.rounded:last-child,
+.bz-btn-group .bz-btn.rounded:last-child
+  border 1px solid color-gray-dark
+  border-left 1px solid color-gray-dark
+  border-top-right-radius 5px
+  border-bottom-right-radius 5px
+
+.bz-btn-group
+  display inline-block
+  letter-spacing -0.31em
+  letter-spacing normal
+  word-spacing -0.3em
+  text-rendering optimizespeed
+
+.bz-btn-group
+  .text
+    letter-spacing normal
+    word-spacing normal
+    vertical-align top
+    text-rendering auto
+
+.bz-btn-w-100p .bz-btn
+  margin 5px
+  width calc(100% - 10px)
+
+.bz-check-btn
+  background color-gray
+  box-sizing border-box
+  padding 15px 20px 15px 20px
+  border 2px solid transparent
+  cursor pointer
+  display inline-block
+  font-family inherit
+  font-size 18px
+  overflow hidden
+  position relative
+  text-align center
+  text-decoration none
+  user-select none
+  vertical-align middle
+  -webkit-tap-highlight-color transparent
+  -webkit-user-drag none
+  vendor(transition, all .3s ease-in)
+
+.bz-check-btn
+  input
+    opacity 0
+    width 0
+    height 0
+
+.bz-check-btn input:checked ~ .highlight:before
+  content " "
+  cursor pointer
+  position absolute
+  left 0
+  right 0
+  top 0
+  bottom 0
+  opacity 0.3
+  z-index 0
+
+.bz-check-btn input:checked ~ .highlight:before,
+.bz-check-btn.light-hover input:checked:before
+  background color-white
+
+.bz-check-btn.dark-hover input ~ .highlight:checked:before
+  background color-white
+
+.bz-check-btn
+  .text
+    position relative
+    z-index 10

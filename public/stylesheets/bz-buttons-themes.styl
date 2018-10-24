@@ -1,0 +1,29 @@
+for t in themes
+  .bz-btn-circle.{t}:hover,
+  .bz-btn-circle.{t}:active,
+  .bz-btn-circle.{t}:focus,
+  .bz-btn.{t}:hover,
+  .bz-btn.{t}:active,
+  .bz-btn.{t}:focus
+    border-color: themes[t].fill
+    background-color: themes[t].fill
+    color: themes[t].text
+
+for t in themes
+  .bz-btn-circle.{t}.inverted,
+  .bz-btn.{t}.inverted
+    background-color: themes[t].fill
+    border-color: themes[t].fill
+    color: themes[t].text
+
+/* reverse hover - background change to white text to border color */
+for t in themes
+  .bz-btn-circle.{t}.inverted:hover,
+  .bz-btn-circle.{t}.inverted:active,
+  .bz-btn-circle.{t}.inverted:focus,
+  .bz-btn.{t}.inverted:hover,
+  .bz-btn.{t}.inverted:active,
+  .bz-btn.{t}.inverted:focus
+    background: color-white
+    border-color: themes[t].fill
+    color: themes[t].fill

@@ -1,0 +1,60 @@
+@import bz-radio
+@import bz-checkbox
+@import bz-switch
+@import bz-range
+/*---- COLOR PICKER ---------------------------  */
+input[type="color"]
+  -webkit-appearance none
+  border none
+  width 52px
+  height 52px
+
+input[type="color"]::-webkit-color-swatch-wrapper
+  padding 0
+
+input[type="color"]::-webkit-color-swatch
+  border none
+
+/*---- INPUT FILE ----------------------------- */
+.bz-fileinput input
+  width 0.1px
+  height 0.1px
+  opacity 0
+  overflow hidden
+  position absolute
+  z-index -1
+
+.bz-fileinput input ~ label
+  line-height 1.2em
+
+.bz-fileinput input:focus + label,
+.bz-fileinput input + label:hover
+  background color-navy
+
+.bz-fileinput input + label
+  cursor pointer
+
+.bz-fileinput input:focus + label
+  outline 1px dotted color-gray-dark
+  outline -webkit-focus-ring-color auto 5px
+
+.bz-fileinput input + label *
+  pointer-events none
+
+/* Blues DDL */
+@import bz-dropdown
+/* width */
+.bz-ddl::-webkit-scrollbar
+  width 8px
+
+/* Track */
+.bz-ddl::-webkit-scrollbar-track
+  background #f1f1f1
+
+/* Handle */
+.bz-ddl::-webkit-scrollbar-thumb
+  background #c0c0c1
+
+/* Handle on hover */
+.bz-ddl::-webkit-scrollbar-thumb:hover
+  background #555

@@ -1,0 +1,122 @@
+/* Blues Block Quotes */
+.bz-quote,
+blockquote
+  display block
+  padding 8px 16px
+  margin 0
+  border-left 4px solid color-gray
+
+for t in themes
+  blockquote.{t},
+  .bz-quote.{t}
+    border-left: 4px solid themes[t].fill
+
+/* Definition List*/
+.bz-deflist
+  line-height 1.4
+  dt
+    font-weight 700
+  dd
+    text-align left
+    margin 0
+
+.bz-deflist.horizontal
+  dt
+    float left
+    width 25%
+    clear left
+    text-align right
+    overflow hidden
+    text-overflow ellipsis
+    white-space nowrap
+    font-weight 700
+
+.bz-deflist.horizontal
+  dd
+    margin-left 30%
+    text-align left
+
+.bz-box
+  display block
+  min-height 20px
+  line-height 20px
+  padding 8px
+  min-width 10px
+  vendor(box-sizing, border-box)
+  &.inline
+    display inline-block
+
+/* Blues Card  */
+.bz-card
+  display inline-block
+  background color-white
+  border-top 4px solid color-navy
+  border-radius 2px
+  position relative
+  vertical-align top
+  @extends .bz-shadow
+  .header
+    position relative
+    width inherit
+  .header img
+    width inherit
+  .title
+    padding 8px 16px
+    position relative
+    width inherit
+  .content
+    padding 8px 16px
+    position relative
+    width inherit
+  .separator
+    background rgba(0, 0, 0, .1)
+    height 1px
+    width inherit
+  .footer
+    padding 8px 0
+    position relative
+    width inherit
+  &.small
+    width 325px
+  &.middle
+    width 450px
+  &.big
+    width 640px
+/*----------------------- */
+.bz-list-card
+  background #fff
+  border-radius 4px
+  height 128px
+  padding 8px
+  min-width 325px
+  max-width 512px
+  .bz-avatar
+    border-radius 50%
+    display inline-block
+    height 112px
+    overflow hidden
+    padding 4px
+    width 112px
+    display inline-block
+    margin 0!important
+    position relative
+  .bz-avatar img
+    height 112px
+    width 112px
+  .bz-content-box
+    display inline-block
+    height 112px
+    padding 8px
+    text-overflow ellipsis
+    white-space nowrap
+    overflow hidden
+    min-width 1px
+    max-width 100%
+    vendor(flex, 1)
+  .bz-actions
+    display inline-block
+    float right
+    height 112px
+    width 32px
+    margin 0!important
+    position relative

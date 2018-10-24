@@ -1,0 +1,32 @@
+.bz-btn-link-style,
+.bz-btn-link-style:hover,
+.bz-btn-link-style:focus,
+.bz-btn-link-style:active,
+.bz-btn-no-style,
+.bz-btn-no-style:hover,
+.bz-btn-no-style:focus,
+.bz-btn-no-style:active {
+  background: none !important;
+  margin: 10px;
+  outline: 0;
+  padding: 0;
+}
+.bz-btn-link-style,
+.bz-btn-link-style:hover,
+.bz-btn-link-style:focus,
+.bz-btn-link-style:active {
+  border: none !important;
+  font-size: 24px;
+}
+.bz-btn-link-style .text:after {
+  background: color-navy;
+  bottom: 0;
+  content: " ";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 20px;
+}
+.bz-btn-link-style:hover .text:after {
+  width: 100%;
+}

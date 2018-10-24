@@ -1,0 +1,75 @@
+{{#section 'styles'}}
+    <link rel="stylesheet" href="../stylesheets/bz-card-validation.css">
+{{/section}}
+<div class="bz-page-box bz-animate-left">
+    <div class="bz-toolbar-box">
+
+    </div>
+    <div class="bz-title-box">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="bz-content-box">
+        <div class="bz-box bz-block">
+            <div class="bz-padding-16 bz-clearfix">
+                <form method="post" action="" class="bz-payment-form">
+                    <div class="bz-w-100p bz-fc-primary bz-t-align-center" style="border-bottom:4px solid #163d74;">
+                        <div class="bz-padding-32 bz-t-xl">
+                            Payment form
+                        </div>
+                    </div>
+                    <div class="bz-clear h-16"></div>
+                    <div class="bz-available-cards">
+                        <img alt="visa" src="../images/cards/visa.png">
+                        <img alt="mastercard" src="../images/cards/mastercard.png">
+                        <img alt="amex" src="../images/cards/amex.png">
+                        <img alt="discover" src="../images/cards/discover.png">
+                    </div>
+                    <div class="bz-clear h-16"></div>
+                    <div class="bz-row">
+                        <div class="bz-col mb12 bz-padding-8 bz-relative">
+                            <label class="bz-block">Name on card</label>
+                            <input type="text" name="CN" data-pattern="name" class="bz-input bz-t-l bz-card-input" data-class="bz-w-100p" maxlength="22"/>
+                        </div>
+                    </div>
+                    <div class="bz-row">
+                        <div class="bz-col mb12 bz-padding-8 bz-relative">
+                            <label class="bz-block">Card number</label>
+                            <input type="text" name="CARDNO" data-pattern="number" class="bz-input bz-t-l bz-card-input" data-class="bz-w-100p" maxlength="19"/>
+                            <div class="bz-card-type"></div>
+                        </div>
+                    </div>
+                    <div class="bz-row">
+                        <div class="bz-col mb7 tb7 mt7 ws7 bz-padding-8 bz-relative">
+                            <label class="bz-block">Expiry date</label>
+                            <input type="text" name="ED" data-pattern="date" class="bz-input bz-t-l bz-card-input" maxlength="5"/>
+                        </div>
+                        <div class="bz-col mb5 tb5 mt5 ws5 bz-padding-8 bz-relative">
+                            <label class="bz-block">Security code</label>
+                            <input type="text" name="CVC" data-pattern="code" class="bz-input bz-t-l bz-card-input" maxlength="4"/>
+                            <div class="bz-code-tip">
+                                <i class="bzi-question-in-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bz-state-msg"></div>
+                    <div class="bz-margin-auto" style="width:200px;">
+                        <button type="submit" id="paymentbtn1"  class="bz-btn positive hov-reverse bz-wave dark-wave bz-w-100p" disabled>
+                            Pay
+                        </button>
+                    </div>
+                    <div class="bz-clear h-8"></div>
+                    <div class="bz-card-help bz-shadow-2">
+                        <div class="bz-fc-primary bz-float-left bz-padding-16">How to find security code?</div>
+                        <i class="bzi-question-in-circle bz-float-right bz-cursor-pointer" style="font-size:26px;"></i>
+                        <div class="bz-clear h-8"></div>
+                        <p>Visa, Master Card, Discover: The 3-digits security code printed on the back side of the card.</p>
+                        <p>American Express: The 4-digits security code printed on the front side of the card.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{#section 'scripts'}}
+    <script src="../javascripts/blues-require/bz-card-validation-0.0.1.js"></script>
+{{/section}}

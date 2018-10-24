@@ -1,0 +1,49 @@
+.bz-page-alert
+  position relative
+  margin-bottom 4px
+
+.bz-page-alert
+  border 1px solid color-gray
+  border-left 4px solid color-gray
+
+for t in themes
+  .bz-page-alert.{t}
+    border: 1px solid themes[t].fill
+    border-left: 4px solid themes[t].fill
+
+.bz-page-alert.filled
+  background color-gray
+  color color-white
+
+for t in themes
+  .bz-page-alert.{t}.filled
+    background: themes[t].fill
+
+.bz-page-alert .bz-alert-icon
+  display inline-block
+  font-size 32px
+  height 40px
+  padding 4px 4px 4px 8px
+  vertical-align middle
+  width 36px
+
+.bz-page-alert .bz-alert-text
+  display inline-block
+  padding 16px
+  text-align justify
+  vertical-align middle
+  width calc(100% - 34px)
+
+.bz-page-alert .bz-alert-icon + .bz-alert-text
+  display inline-block
+  padding 16px 16px 16px 16px
+  vertical-align middle
+  width calc(100% - 70px)
+
+.bz-page-alert .bz-alert-remove
+  cursor pointer
+  font-size 26px
+  padding 4px
+  position absolute
+  right 4px
+  top 4px

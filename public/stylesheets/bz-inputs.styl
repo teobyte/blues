@@ -1,0 +1,146 @@
+.bz-input
+  background color-white
+  border none
+  display inline-block
+  position relative
+  padding 0!important
+  margin 16px 0!important
+  text-decoration none
+  user-select none
+  vertical-align middle
+  -webkit-tap-highlight-color transparent
+  -webkit-user-drag none
+  &.transparent
+    background transparent
+  &.transparent i
+    color white
+  input
+    color color-gray-darker
+    background color-white
+    width 100%
+
+.bz-input i,
+.bz-input select,
+.bz-input input:not([type])
+  background inherit
+  line-height: 52px
+  height: 52px
+  display: inline-block
+  float: left
+
+for inpt in textinputs
+  .bz-input
+    input[type={inpt}]
+      @extends .bz-input input:not([type])
+
+.bz-input select,
+.bz-input textarea,
+.bz-input input:not([type])
+  border none
+  border-bottom 2px solid color-gray-light
+  border-radius 0
+  box-shadow none
+  outline none
+  font-size 18px
+  transition(all 0.3s ease-out)
+  vertical-align middle
+  min-width 64px
+
+for inpt in textinputs
+  .bz-input
+    input[type={inpt}]
+      @extends .bz-input input:not([type])
+
+.bz-input.transparent select,
+.bz-input.transparent textarea,
+.bz-input.transparent input:not([type])
+  background transparent
+  border-bottom 2px solid color-white
+  color color-white
+
+for inpt in textinputs
+  .bz-input.transparent
+    input[type={inpt}]
+      @extends .bz-input.transparent input:not([type])
+
+.bz-input.transparent label
+  color color-white
+
+.bz-input input[type=email]
+  padding 8px 0 0 10px
+
+for inpt in skipemail
+  .bz-input
+    input[type={inpt}]
+      @extends .bz-input input[type=email]
+
+.bz-input i
+  border none
+  font-size 1.5em
+  overflow hidden
+  text-align center
+  width 52px
+  + input
+    width: calc(100% - 52px)
+  &.right
+    float right
+  &.bz-tool
+    cursor pointer
+    float right
+    &.left
+      float left
+
+.bz-input i + i ~ input
+  width calc(100% - 104px)
+
+@import bz-inputs-label
+
+placeholder-color(".bz-input input:not(.placeholder)", transparent)
+
+placeholder-color("bz-input textarea:not(.placeholder)", transparent)
+
+@import bz-inputs-effects
+
+.bz-input input:not([type])[disabled],
+.bz-input input[type=email][disabled],
+.bz-input input[type=password][disabled],
+.bz-input input[type=text][disabled],
+.bz-input input[type=url][disabled],
+.bz-input input[type=tel][disabled],
+.bz-input input[type=number][disabled],
+.bz-input input[type=search][disabled],
+.bz-input select[disabled],
+.bz-input textarea.bz-textarea[disabled]
+  cursor not-allowed
+  color #848482
+  border-bottom 2px dotted #848482
+  ~ label
+    left 0
+
+.bz-input input:not([type])[readonly],
+.bz-input input[type=email][readonly],
+.bz-input input[type=password][readonly],
+.bz-input input[type=text][readonly],
+.bz-input input[type=url][readonly],
+.bz-input input[type=tel][readonly],
+.bz-input input[type=number][readonly],
+.bz-input input[type=search][readonly],
+.bz-input select[readonly],
+.bz-input textarea.bz-textarea[readonly]
+  background-color #eee
+  color #777
+  border-color #ccc
+  ~ label
+    left 0
+
+@import bz-inputs-themes
+
+@import bz-inputs-errors
+
+@import bz-editable
+
+
+
+
+
+

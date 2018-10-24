@@ -1,0 +1,147 @@
+<div class="bz-page-box bz-animate-left">
+    <div class="bz-toolbar-box">
+
+    </div>
+    <div class="bz-title-box">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="bz-content-box">
+        <div class="bz-block">
+            <div class="bz-padding-8">
+                <p>Use <cite class="bz-t-bold">data, target, action, id, name</cite> parameters for building custom callbacks
+                    <span class="bz-fc-primary bz-t-bold">data-onload</span> and <span class="bz-fc-primary bz-t-bold">data-onclick</span></p>
+                <p>Use <cite class="bz-t-bold">data</cite> to build <span class="bz-fc-positive bz-t-bold">data-success</span>
+                    and <cite class="bz-t-bold">e</cite> parameter to build <span class="bz-fc-negative bz-t-bold">data-error</span> callbacks</p>
+            </div>
+            <div class="bz-padding-8">
+                <div class="bz-padding-8">
+
+                    <div data-onload="alert('Ajax returned data: ' + data);"
+                         data-onclick="var a = 2, b = 3; alert(a + b + ' ' + action);"
+                         data-action="/blues/ajaxrequest"
+                         data-target="#targetdiv"
+                         data-params="param1: 'param1', param2: 'param2'"
+                         data-success="bz.Toast('Success', { tclass: 'positive'});"
+                         data-error="bz.Toast('Success', { tclass: 'negative'});"
+                         id="someid" name="somename" class="bz-ajax bz-padding-8 bz-bc-positive"
+                    >Click me</div>
+
+                    <p>Result will be replace into the next div</p>
+
+                    <div id="targetdiv" class="bz-padding-16 bz-bc-light"></div>
+
+                </div>
+
+                <textarea class="bz-code html">
+    <div data-onload="alert('Ajax returned data: ' + data);"
+         data-onclick="var a = 2, b = 3; alert(a + b + ' ' + action);"
+         data-action="/blues/ajaxrequest"
+         data-target="#targetdiv"
+         data-params="param1: 'param1', param2: 'param2'"
+         data-success="bz.Toast('Success', { tclass: 'positive'});"
+         data-error="bz.Toast('Success', { tclass: 'negative'});"
+         id="someid" name="somename" class="bz-ajax"
+    >Click me</div>
+
+    <div id="targetdiv"></div>
+    </textarea>
+
+
+                <div class="bz-padding-8">
+
+                    <div data-onclick="var a = 2, b = 3; alert(a + b + ' ' + action);"
+                         data-action="/blues/ajaxrequest"
+                         data-target="#targetdiv1|append"
+                         data-params="param1: 'param1', param2: 'param2'"
+                         data-success="bz.Toast('Success', { tclass: 'positive'});"
+                         data-error="bz.Toast('Success', { tclass: 'negative'});"
+                         id="someid1" name="somename1" class="bz-ajax bz-padding-8 bz-bc-positive"
+                    >Click me</div>
+
+                    <p>Result will be append into the next div</p>
+
+                    <div id="targetdiv1" class="bz-padding-16 bz-bc-light"></div>
+
+                </div>
+
+                <textarea class="bz-code html">
+        <div data-onclick="var a = 2, b = 3; alert(a + b + ' ' + action);"
+             data-action="/blues/ajaxrequest"
+             data-target="#targetdiv1|append"
+             data-params="param1: 'param1', param2: 'param2'"
+             data-success="bz.Toast('Success', { tclass: 'positive'});"
+             data-error="bz.Toast('Success', { tclass: 'negative'});"
+             id="someid1" name="somename" class="bz-ajax"
+        >Click me</div>
+
+        <div id="targetdiv"></div>
+    </textarea>
+
+                <div class="bz-padding-8">
+                    <button type="button" id="ajaxBtn" name="ajaxBtnName"
+                            class="bz-btn primary wave bz-ajax"
+                            data-onclick="var a = 2, b = 3; alert('Result: ' + (a + b) + ';
+                                  btnId: ' + id + '; btnName: ' + name);"
+                            data-action="/blues/ajaxrequest"
+                            data-target="#targetdiv2|append"
+                    >Blues Ajax</button>
+                    <div class="bz-clear h-8"></div>
+                    <div id="targetdiv2" class="bz-padding-16 bz-bc-light"></div>
+
+                </div>
+
+                <textarea class="bz-code html">
+        <button type="button" id="ajaxBtn" name="ajaxBtnName"
+                class="bz-btn primary wave bz-ajax"
+                data-onclick="var a = 2, b = 3; alert('Result: '+(a + b)+'; btnId: '+id + '; btnName: '+name);"
+                data-action="/blues/ajaxrequest"
+                data-target="#targetdiv2|append"
+        >Blues Ajax</button>
+
+        <div id="targetdiv2" class="bz-padding-16 bz-bc-light"></div>
+        </textarea>
+
+                <div class="bz-padding-8">
+
+                    <p>Result will be replace into itself</p>
+
+                    <div data-onclick="var a = 2, b = 3; alert(a + b + ' ' + action);"
+                         data-action="/blues/ajaxrequest"
+                         class="bz-ajax bz-padding-8 bz-bc-positive"
+                    >Click me</div>
+
+                </div>
+
+                <div class="bz-padding-8">
+                    <p>Form</p>
+                    <form class="bz-padding-8">
+                        <input type="text" name="name" class="bz-margin-8" placeholder="Name">
+                        <input type="text" name="lastname" class="bz-margin-8" placeholder="Last Name">
+                        <button type="button"
+                                data-onclick = "submit"
+                                data-action = "/city/showAjax"
+                                data-target = "#updatethis"
+                                class="bz-ajax">Submit</button>
+                    </form>
+                    <div id="updatethis" class="bz-padding-8 bz-bc-light"></div>
+                </div>
+
+                <textarea class="bz-code html">
+        <form>
+            <input type="text" name="name" class="bz-input flash" placeholder="Name">
+            <input type="text" name="lastname" class="bz-input flash"
+                   placeholder="Last Name">
+            <button type="button"
+                    data-onclick = "submit"
+                    data-action = "/city/showAjax"
+                    data-target = "#updatethis"
+                    class="bz-ajax">Submit</button>
+        </form>
+        <div id="updatethis" class="bz-padding-8 bz-bc-light"></div>
+        </textarea>
+
+            </div>
+            <div class="bz-clear h-96"></div>
+        </div>
+    </div>
+</div>

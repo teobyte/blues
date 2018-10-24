@@ -1,0 +1,599 @@
+/*--RADIO -------------------------------------------*/
+.bz-radio {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+  font-size: 18px;
+  line-height: 26px;
+  cursor: pointer;
+  position: relative;
+}
+.bz-radio .text {
+  margin-left: 10px;
+}
+.bz-radio:hover .inner {
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  opacity: 0.5;
+}
+.bz-radio input {
+  height: 0px;
+  width: 0px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.bz-radio input:checked + .outer .inner {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+.bz-radio input:checked + .outer {
+  border: 3px solid #163d74;
+}
+.bz-radio input:focus + .outer .inner {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  background-color: #163d74;
+}
+.bz-radio .outer {
+  height: 20px;
+  width: 20px;
+  display: block;
+  float: left;
+  border: 3px solid #767676;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.bz-radio .inner {
+  transition: all 0.25s ease-in-out;
+  height: 10px;
+  width: 10px;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  display: block;
+  margin: 2px;
+  border-radius: 50%;
+  background-color: #46ad58;
+  opacity: 0;
+}
+.bz-radio input:checked::after {
+  background: #163d74;
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 100;
+  border-radius: 50%;
+  height: 0px;
+  width: 0px;
+  top: 9px;
+  left: 10px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+}
+@-webkit-keyframes click-wave {
+  0% {
+    height: 0px;
+    width: 0px;
+    opacity: 0.35;
+  }
+  100% {
+    height: 80px;
+    width: 80px;
+    opacity: 0;
+  }
+}
+@-moz-keyframes click-wave {
+  0% {
+    height: 0px;
+    width: 0px;
+    opacity: 0.35;
+  }
+  100% {
+    height: 80px;
+    width: 80px;
+    opacity: 0;
+  }
+}
+/*--CHECKBOX -------------------------------------------*/
+.bz-checkbox {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+  font-size: 18px;
+  line-height: 26px;
+  cursor: pointer;
+  position: relative;
+}
+.bz-checkbox.fit {
+  margin: 13px 0;
+}
+.bz-checkbox .text {
+  margin-left: 10px;
+}
+.bz-checkbox:hover .inner {
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  opacity: 0.5;
+}
+.bz-checkbox input {
+  height: 0;
+  width: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.bz-checkbox input:checked + .outer .inner {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+.bz-checkbox input:checked + .outer {
+  border: 3px solid #163d74;
+}
+.bz-checkbox input:focus + .outer .inner {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 0.5;
+  background-color: #163d74;
+}
+.bz-checkbox input:focus:checked + .outer .inner {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  background-color: #163d74;
+}
+.bz-checkbox .outer {
+  height: 20px;
+  width: 20px;
+  display: block;
+  float: left;
+  border: 3px solid #767676;
+  background-color: #fff;
+  margin-top: 3px;
+}
+.bz-checkbox .inner {
+  transition: all 0.25s ease-in-out;
+  height: 10px;
+  width: 10px;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  display: block;
+  margin: 2px;
+  background-color: #46ad58;
+  opacity: 0;
+}
+.bz-checkbox input:checked::after {
+  background: #163d74;
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 100;
+  height: 0px;
+  width: 0px;
+  top: 9px;
+  left: 10px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+}
+/* ----- SWITCHERS ---------------------- */
+.bz-switch {
+  background: #163d74;
+  line-height: 20px;
+  vertical-align: top;
+  margin: 0 10px;
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 20px;
+}
+.bz-switch input {
+  display: none;
+}
+.bz-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  background: #767676;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.bz-switch input ~ .slider {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.bz-switch input:checked ~ .slider {
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+}
+.bz-switch .slider:before {
+  position: absolute;
+  content: "";
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.bz-switch input ~ .slider:before {
+  background: #fff;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+}
+.bz-switch input:checked ~ .slider:before {
+  background: #46ad58;
+  height: 10px;
+  width: 10px;
+  left: 2px;
+  bottom: 2px;
+}
+.bz-switch input:checked + .slider {
+  background: #fff;
+}
+.bz-switch input:focus + .slider {
+  box-shadow: 0 0 1px #163d74;
+}
+.bz-switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.bz-switch.rounded {
+  border-radius: 20px;
+}
+.bz-switch.rounded .slider {
+  border-radius: 20px;
+}
+.bz-switch.rounded .slider:before {
+  border-radius: 50%;
+}
+/*---- RANGE SELECTOR --------------------------  */
+.bz-range-select {
+  margin: 10px 0;
+  position: relative;
+  width: 100%;
+}
+.bz-range-select .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #767676;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.bz-range-select .slider:hover {
+  opacity: 1;
+}
+.bz-range-select .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #163d74;
+  cursor: pointer;
+}
+.bz-range-select .slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #163d74;
+  cursor: pointer;
+}
+.bz-range-select .text {
+  top: -10px;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/*---- COLOR PICKER ---------------------------  */
+input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  width: 52px;
+  height: 52px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+/*---- INPUT FILE ----------------------------- */
+.bz-fileinput input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.bz-fileinput input ~ label {
+  line-height: 1.2em;
+}
+.bz-fileinput input:focus + label,
+.bz-fileinput input + label:hover {
+  background: #163d74;
+}
+.bz-fileinput input + label {
+  cursor: pointer;
+}
+.bz-fileinput input:focus + label {
+  outline: 1px dotted #767676;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+.bz-fileinput input + label * {
+  pointer-events: none;
+}
+/* ---- DROP DOWN LIST ------------------------- */
+/*Blues dropdown list ver. 0.0.2 -> start*/
+.bz-droplist {
+  display: inline-block;
+  position: relative;
+  min-width: 100px;
+}
+.bz-select:focus {
+  border: none;
+  outline: none;
+}
+.bz-select,
+.bz-droplist .bz-trigg {
+  background: #848482;
+  box-sizing: border-box;
+  padding: 15px 20px 16px 20px;
+  transition: all 0.3s ease-in;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 18px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-drag: none;
+  width: 100%;
+}
+.bz-droplist .bz-ddl {
+/*border: 1px solid #2E435A;*/
+  max-height: 200px;
+  overflow: hidden;
+  overflow-y: auto;
+  background: #fff;
+  opacity: 0;
+  position: absolute;
+  top: 52px;
+  width: 100%;
+  -webkit-transform: scale(0.25, 0);
+  transform: scale(0.25, 0);
+  -webkit-transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation: none !important;
+  animation: none !important;
+  -webkit-transform-origin: 50% 0 !important;
+  transform-origin: 50% 0 !important;
+  z-index: 999999;
+  -moz-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.15), 0 1px 10px 0 rgba(0,0,0,0.13), 0 2px 4px -1px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.15), 0 1px 10px 0 rgba(0,0,0,0.13), 0 2px 4px -1px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.15), 0 1px 10px 0 rgba(0,0,0,0.13), 0 2px 4px -1px rgba(0,0,0,0.4);
+}
+.bz-droplist .bz-ddl.bz-on {
+  transform: scale(1, 1);
+  opacity: 1;
+}
+.bz-select option,
+.bz-droplist .bz-ddl-item {
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  position: relative;
+  outline: none;
+}
+.bz-select option {
+  background: #fff;
+}
+.bz-droplist .bz-ddl .bz-ddl-item > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.bz-droplist .bz-ddl-item:hover .text::after {
+  content: "";
+  display: block;
+  height: 40px;
+  width: 100%;
+  background: #999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+.bz-droplist .bz-ddl-item .text::after {
+  content: "";
+  display: block;
+  height: 40px;
+  width: 100%;
+  background: #999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  opacity: 0;
+}
+.bz-droplist .bz-ddl-item:hover .text::after {
+  opacity: 1;
+}
+.bz-droplist .bz-checkbox {
+  float: left;
+  visibility: hidden;
+  padding: 6px 0;
+}
+.bz-droplist[multiple] .bz-checkbox {
+  visibility: visible;
+}
+.bz-droplist .bz-ddl .text {
+  float: left;
+  box-sizing: border-box;
+  margin-left: -10px;
+}
+.bz-droplist[multiple] .bz-ddl .text {
+  margin-left: 10px;
+}
+.bz-droplist .bz-ddl-item.selected .text::after {
+  background: #4caf50;
+  opacity: 1;
+}
+/* width */
+.bz-ddl::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track */
+.bz-ddl::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Handle */
+.bz-ddl::-webkit-scrollbar-thumb {
+  background: #c0c0c1;
+}
+/* Handle on hover */
+.bz-ddl::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* The search field */
+.bz-droplist .searchfield {
+  border-box: box-sizing;
+  background-image: url("https://www.w3schools.com/howto/searchicon.png");
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  width: 100%;
+}
+/*end <- Blues dropdown list ver. 0.0.2*/
+/*---- FORM ------------------------------------ */
+.bz-form.vertical > * {
+  clear: both;
+  display: block;
+}
+.bz-form > * {
+  vertical-align: middle;
+  display: inline-block;
+}
+/*---- Editable Forms -------------------------  */
+.bz-editable-box {
+  background: #fff;
+  margin: 12px 0;
+  padding: 7px 0;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 325px;
+}
+.bz-editable-box i {
+  margin-left: 12px;
+}
+.bz-editable-box i + .bz-editable {
+  margin-left: 8px;
+}
+.bz-editable {
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  outline: none;
+  padding: 12px 10px;
+  max-width: 275px;
+}
+.bz-editable:hover,
+.bz-editable:focus {
+  background: #ebebeb;
+}
+input.bz-editable {
+  border-bottom: 2px solid #9e9e9e;
+  cursor: auto;
+  padding: 10px;
+  width: calc(100% - 46px);
+  max-width: 205px;
+}
+input.bz-editable:focus {
+  border-bottom: 2px solid var(--color-primary);
+}
+.bz-editable-box .loader-box {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 25px;
+}
+@-moz-keyframes click-wave {
+  0% {
+    height: 0px;
+    width: 0px;
+    opacity: 0.35;
+  }
+  100% {
+    height: 80px;
+    width: 80px;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes click-wave {
+  0% {
+    height: 0px;
+    width: 0px;
+    opacity: 0.35;
+  }
+  100% {
+    height: 80px;
+    width: 80px;
+    opacity: 0;
+  }
+}
+@-o-keyframes click-wave {
+  0% {
+    height: 0px;
+    width: 0px;
+    opacity: 0.35;
+  }
+  100% {
+    height: 80px;
+    width: 80px;
+    opacity: 0;
+  }
+}
+@keyframes click-wave {
+  0% {
+    height: 0px;
+    width: 0px;
+    opacity: 0.35;
+  }
+  100% {
+    height: 80px;
+    width: 80px;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,42 @@
+<div class="bz-page-box bz-animate-left">
+    <div class="bz-toolbar-box">
+
+    </div>
+    <div class="bz-title-box">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="bz-content-box">
+        <div class="bz-block">
+            <div class="bz-padding-16 bz-clearfix">
+                <h5>Progress bar</h5>
+                <button type="button" class="bz-btn" onclick="move()">Top Green (Default)</button>
+                <button type="button" class="bz-btn" onclick="move('right', 10, 'bz-bc-negative')">Right Red</button>
+                <button type="button" class="bz-btn" onclick="move('bottom', 10, 'bz-bc-warning')">Bottom Orange</button>
+                <button type="button" class="bz-btn" onclick="move('left')">Left</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{#section 'scripts'}}
+    <script>
+        function move(position, size, barclass) {
+            var options = {};
+            if (position)
+                options.position = position;
+            if(size)
+                options.size = size;
+            if(barclass)
+                options.barclass = barclass;
+            var ps = 0;
+            var id = setInterval(frame, 50);
+            function frame() {
+                if (ps >= 100) {
+                    clearInterval(id);
+                } else {
+                    ps++;
+                    bz.progress(ps, options);
+                }
+            }
+        }
+    </script>
+{{/section}}

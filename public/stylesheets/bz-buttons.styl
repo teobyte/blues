@@ -1,0 +1,156 @@
+.bz-btn,
+.bz-btn-circle,
+.bz-btn-no-style,
+.bz-btn-no-style:hover,
+.bz-btn-no-style:focus,
+.bz-btn-no-style:active,
+.bz-btn-link-style,
+.bz-btn-link-style:hover,
+.bz-btn-link-style:focus,
+.bz-btn-link-style:active
+  box-sizing border-box
+  cursor pointer
+  display inline-block
+  font-family inherit
+  overflow hidden
+  outline none!important
+  position relative
+  text-align center
+  text-decoration none
+  user-select none
+  vertical-align middle
+  -webkit-tap-highlight-color transparent
+  -webkit-user-drag none
+
+.bz-btn,
+.bz-btn-circle,
+.bz-btn-no-style,
+.bz-btn-no-style:hover,
+.bz-btn-no-style:focus,
+.bz-btn-no-style:active
+  vendor(transition, all .3s ease-in)
+  border 2px solid transparent
+  font-size 18px
+
+.bz-btn
+  padding 11px 20px 11px 20px
+
+.bz-btn::-moz-focus-inner
+  padding 0
+  border 0
+
+.opera-only :-o-prefocus,
+.bz-btn:focus
+  outline 0
+
+.bz-btn-active,
+.bz-btn:active
+  border-color #000\9
+
+.bz-btn.rounded
+  border-radius 5px
+
+.bz-btn:hover,
+.bz-btn:active,
+.bz-btn:focus
+  vendor(transition, all .4s ease-in)
+
+.bz-btn.default
+  background color-gray
+
+.bz-btn.white
+  color color-primary
+  background color-white
+
+.bz-btn[disabled],
+.btn-disabled,
+.btn-disabled:hover,
+.btn-disabled:focus,
+.btn-disabled:active
+  opacity 0.50
+  cursor not-allowed
+  box-shadow none
+  pointer-events none
+
+@css
+  .bz-btn[disabled],
+  .btn-disabled,
+  .btn-disabled:hover,
+  .btn-disabled:focus,
+  .btn-disabled:active
+    filter "progid:DXImageTransform.Microsoft.Alpha(opacity=50)"
+    -ms-filter "progid:DXImageTransform.Microsoft.Alpha(opacity=50)"
+
+.bz-btn.to-spin[disabled]
+  opacity .90
+  cursor not-allowed
+
+@css
+  .bz-btn.to-spin[disabled]
+    filter "progid:DXImageTransform.Microsoft.Alpha(opacity=50)"
+    -ms-filter "progid:DXImageTransform.Microsoft.Alpha(opacity=50)"
+
+.bz-btn i,
+.bz-btn .text
+    vertical-align middle
+
+.bz-btn .text
+  margin 0
+  position relative
+  padding 0
+  z-index 10!important
+
+.bz-btn .text
+  font-size 18px
+
+.bz-btn.btn-xs
+  padding 2px 7px 2px 7px
+
+.bz-btn.btn-xs i,
+.bz-btn.btn-xs .text
+  font-size 0.8em
+
+.bz-btn.btn-s
+  padding 8px 16px 9px 16px
+
+.bz-btn.btn-s i,
+.bz-btn.btn-s .text
+  font-size 0.9em
+
+.bz-btn.btn-l i,
+.bz-btn.btn-l .text
+  font-size 1.4em
+
+.bz-btn.btn-xl i,
+.bz-btn.btn-xl i.right
+  font-size 1.6em
+
+.bz-btn.btn-xl .text
+  padding-left 10px
+  font-size 1.8em
+
+.bz-btn.btn-xl i.right ~ .text
+  padding-right 10px
+  font-size 1.8em
+
+@import bz-buttons-themes
+
+.bz-btn i.right
+  position absolute
+  right 20px
+  padding 0
+  margin 0
+  z-index 10!important
+
+.bz-btn i.right ~ .text
+  margin-left 0
+  margin-right 24px
+
+.bz-btn.shadow,
+.bz-btn-circle.shadow,
+.bz-btn-circle.shadow[disabled]:hover
+  -webkit-box-shadow 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 1px 5px 0 rgba(0, 0, 0, 0.13), 0 3px 1px -2px rgba(0, 0, 0, 0.15)
+  -moz-box-shadow 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 1px 5px 0 rgba(0, 0, 0, 0.13), 0 3px 1px -2px rgba(0, 0, 0, 0.3)
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 1px 5px 0 rgba(0, 0, 0, 0.13), 0 3px 1px -2px rgba(0, 0, 0, 0.3)
+
+@import bz-buttons-addons

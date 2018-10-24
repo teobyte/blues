@@ -1,0 +1,41 @@
+/* Blues Page Styles */
+.bz-layout-box,
+.bz-page-box {
+  clear: both;
+  width: 100%;
+}
+.bz-toolbar-box,
+.bz-title-box,
+.bz-alert-box,
+.bz-list-box,
+.bz-listview-box,
+.bz-content-box {
+  margin-bottom: 8px;
+  padding: 4px;
+  position: relative;
+  width: inherit;
+}
+.bz-page-box {
+  clear: both;
+}
+.bz-toolbar-box {
+  clear: both;
+}
+.bz-title-box {
+  clear: both;
+}
+.bz-alert-box {
+  clear: both;
+}
+.bz-list-box {
+  clear: both;
+}
+.bz-listview-box {
+  clear: both;
+}
+.bz-content-box {
+  clear: both;
+}
+.bz-content-box .bz-box {
+  display: inline-block;
+}

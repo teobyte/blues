@@ -1,0 +1,100 @@
+/* Blues Typography */
+/* Blues Headings */
+h1, h2, h3, h4, h5, h6
+  margin: 8px 0
+
+.bz-t-regular
+  font-size: 1em
+  line-height: 1.1em
+  opacity: .8
+
+h1, .bz-t-h1
+  font-size: 2.4em
+  line-height: 1.1em
+  letter-spacing: -.04em
+  opacity: .7
+
+h2, .bz-t-h2
+  font-size: 2.2em
+  line-height: 1.1em
+  letter-spacing: -.02em
+  opacity: .7
+
+h3, .bz-t-h3
+  font-size: 2em
+  line-height: 1.1em
+  letter-spacing: normal
+  opacity: .7
+
+h4, .bz-t-h4
+  font-size: 1.8em
+  line-height: 1.1em
+  letter-spacing: normal
+  opacity: .7
+
+h5, .bz-t-headline
+  font-size: 1.6em
+  line-height: 1.1em
+  letter-spacing: normal
+  opacity: .9
+
+h6, .bz-t-title
+  font-size: 1.4em
+  line-height: 1.1em
+  letter-spacing: .02em
+  opacity: .9
+
+.bz-t-subtitle
+  font-size: 1.2em
+  line-height: 1.1em
+  opacity: .9
+
+.bz-t-medium
+  font-size: 1.1em
+  line-height: 1.1em
+  opacity: .9
+
+.bz-t-caption
+  font-size: 0.9em
+  line-height: 1.1em
+  opacity: .7
+
+
+/* Blues Font Size */
+for ts in text_sizes
+  .bz-t-{ts[0]}
+    font-size ts[1]
+
+/* Blues Font Weight */
+for tw in text_weights
+  .bz-t-{tw[0]}
+    font-weight tw[1]
+
+h1, .bz-t-h1, .bz-t-headline,
+h2, .bz-t-h2, .bz-t-title,
+h3, .bz-t-h3, .bz-t-subtitle,
+h4, .bz-t-h4, .bz-t-caption
+h5, h6
+  @extends .bz-t-regular
+
+/* Blues Text Shadow */
+.bz-t-shadow.dark
+  text-shadow: 1px 1px color-gray-dark
+.bz-t-shadow.light
+  text-shadow: 1px 1px color-gray-light
+
+/* Blues Text Align */
+for ta in text_aligns
+  .bz-t-align-{ta}
+    text-align ta
+
+/* Blues Text Transformation */
+for tt in text_transforms
+  .bz-t-{tt}
+    text-transform tt
+
+.bz-t-concat
+  text-overflow: ellipsis
+
+.bz-t-line-through
+  text-decoration: line-through

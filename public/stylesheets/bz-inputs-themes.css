@@ -1,0 +1,102 @@
+.bz-input.theme,
+.bz-input.primary,
+.bz-input.positive,
+.bz-input.negative,
+.bz-input.warning,
+.bz-input.info {
+  color: color-white;
+}
+.bz-input.theme input,
+.bz-input.primary input,
+.bz-input.positive input,
+.bz-input.negative input,
+.bz-input.warning input,
+.bz-input.info input {
+  color: inherit;
+}
+.bz-input.theme label,
+.bz-input.primary label,
+.bz-input.positive label,
+.bz-input.negative label,
+.bz-input.warning label,
+.bz-input.info label {
+  color: inherit;
+}
+.bz-input.default {
+  background: color-gray;
+}
+.bz-input.primary {
+  background: color-navy;
+}
+.bz-input.positive {
+  background: color-green;
+}
+.bz-input.negative {
+  background: color-red;
+}
+.bz-input.warning {
+  background: color-orange;
+}
+.bz-input.info {
+  background: color-blue;
+}
+.bz-input.default input:focus ~ label,
+.bz-input input:valid ~ label,
+.bz-input input[readonly] ~ label,
+.bz-input input[disabled] ~ label,
+.bz-input input.highlight ~ label,
+.bz-input textarea:focus ~ label,
+.bz-input textarea:valid ~ label,
+.bz-input textarea.highlight ~ label {
+  color: color-white;
+}
+.bz-input.primary input:focus ~ label,
+.bz-input input:valid ~ label,
+.bz-input input[readonly] ~ label,
+.bz-input input[disabled] ~ label,
+.bz-input input.highlight ~ label,
+.bz-input textarea:focus ~ label,
+.bz-input textarea:valid ~ label,
+.bz-input textarea.highlight ~ label {
+  color: color-white;
+}
+.bz-input.positive input:focus ~ label,
+.bz-input input:valid ~ label,
+.bz-input input[readonly] ~ label,
+.bz-input input[disabled] ~ label,
+.bz-input input.highlight ~ label,
+.bz-input textarea:focus ~ label,
+.bz-input textarea:valid ~ label,
+.bz-input textarea.highlight ~ label {
+  color: color-white;
+}
+.bz-input.negative input:focus ~ label,
+.bz-input input:valid ~ label,
+.bz-input input[readonly] ~ label,
+.bz-input input[disabled] ~ label,
+.bz-input input.highlight ~ label,
+.bz-input textarea:focus ~ label,
+.bz-input textarea:valid ~ label,
+.bz-input textarea.highlight ~ label {
+  color: color-white;
+}
+.bz-input.warning input:focus ~ label,
+.bz-input input:valid ~ label,
+.bz-input input[readonly] ~ label,
+.bz-input input[disabled] ~ label,
+.bz-input input.highlight ~ label,
+.bz-input textarea:focus ~ label,
+.bz-input textarea:valid ~ label,
+.bz-input textarea.highlight ~ label {
+  color: color-white;
+}
+.bz-input.info input:focus ~ label,
+.bz-input input:valid ~ label,
+.bz-input input[readonly] ~ label,
+.bz-input input[disabled] ~ label,
+.bz-input input.highlight ~ label,
+.bz-input textarea:focus ~ label,
+.bz-input textarea:valid ~ label,
+.bz-input textarea.highlight ~ label {
+  color: color-white;
+}

@@ -1,0 +1,89 @@
+<div class="bz-page-box bz-animate-left">
+    <div class="bz-toolbar-box">
+
+    </div>
+    <div class="bz-title-box">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="bz-content-box">
+        <div class="bz-block">
+            <div class="bz-padding-16 bz-min-h-420 ">
+                <!-- page alerts area -->
+                <div class="bz-alert-box">
+                    <div class="bz-page-alert warning">
+                        <div class="bz-alert-text">
+                            <b>Predefined page alert.</b> In page notification for user.
+                        </div>
+                        <div class="bz-alert-remove">
+                            <i class="bzi-remove"></i>
+                        </div>
+                    </div>
+                </div>
+                <!--common page content goes here-->
+                <div class="bz-content-box">
+                    <p>
+                        Page alerts initiating with JS code. Below example with all possible attributes
+                    </p>
+                    <textarea class="bz-code js">
+                bz.Pagealert({
+                    message: 'Negative page notification with icon',
+                    type: 'warning filled',
+                    icon: 'bzi-exclamation-in-circle',
+                    callback: function() {
+                        alert('Close Alert callback');
+                    }
+                });
+            </textarea>
+
+                    <p>
+                        Default alert example
+                    </p>
+                    <textarea class="bz-code js">
+                bz.Pagealert({
+                    message: 'Default page notification'
+                });
+            </textarea>
+                    <div class="bz-padding-16" id="alerthere"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{#section 'scripts'}}
+    <script>
+        (function() {
+
+            bz.Pagealert({
+                message: 'Default page notification'
+            });
+
+            bz.Pagealert({
+                message: 'Positive page notification',
+                type: 'positive filled'
+            });
+
+            bz.Pagealert({
+                message: 'Negative page notification with icon',
+                type: 'negative filled',
+                icon: 'bzi-user'
+            });
+
+            bz.Pagealert({
+                message: 'Waring page notification with icon',
+                type: 'warning filled',
+                icon: 'bzi-exclamation-in-circle',
+                callback: function() {
+                    alert('Close Alert callback');
+                }
+            });
+
+            bz.Pagealert({
+                message: 'Custom target',
+                type: 'positive',
+                icon: 'bzi-exclamation-in-circle',
+                target: '#alerthere'
+            });
+
+        })();
+    </script>
+{{/section}}

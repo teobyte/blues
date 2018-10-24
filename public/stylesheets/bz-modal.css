@@ -1,0 +1,116 @@
+.bz-modal {
+  border-radius: 0 !important;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100vw;
+  max-height: 100vh;
+  z-index: 999999;
+}
+.bz-modal .modal-content {
+  background: #fff;
+  box-sizing: border-box;
+  position: absolute;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 32px;
+  transition: all 0.2s ease-in-out;
+}
+.bz-modal .modal-content {
+  min-height: 200px;
+  min-width: 325px;
+  max-height: 80vh;
+}
+.bz-modal.center .modal-content {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.bz-modal.top .modal-content,
+.bz-modal.bottom .modal-content {
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+.bz-modal.right .modal-content,
+.bz-modal.left .modal-content {
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.bz-modal.top .modal-content {
+  top: 0;
+  animation: animate-top 0.5s;
+}
+.bz-modal.right .modal-content {
+  right: 0;
+  animation: animate-right 0.5s;
+}
+.bz-modal.bottom .modal-content {
+  bottom: 0;
+  animation: animate-bottom 0.5s;
+}
+.bz-modal.left .modal-content {
+  left: 0;
+  animation: animate-left 0.5s;
+}
+.bz-modal.top .modal-content,
+.bz-modal.right .modal-content,
+.bz-modal.bottom .modal-content,
+.bz-modal.left .modal-content,
+.bz-modal.minimized .modal-content {
+  height: 200px;
+  width: 325px;
+  overflow: hidden;
+  padding: 8px;
+}
+.bz-modal .fader {
+  background: var(--color-faded);
+  cursor: pointer;
+  position: absolute;
+  max-width: 100vw;
+  max-height: 100vh;
+  opacity: 0.5;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+.bz-modal .content {
+  margin-bottom: 58px;
+  position: relative;
+  height: calc(100% - 58px);
+  width: 100%;
+}
+.bz-modal .actions {
+  bottom: -58px;
+  position: absolute;
+  width: 100%;
+}
+.bz-modal .close-bar {
+  height: 32px;
+  font-size: 26px;
+  position: absolute;
+  text-align: center;
+  top: -32px;
+  right: -26px;
+}
+.bz-modal .remove {
+  cursor: pointer;
+  float: right;
+  padding: 3px 8px;
+}

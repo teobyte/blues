@@ -1,0 +1,95 @@
+<div class="bz-page-box bz-animate-left">
+    <div class="bz-toolbar-box">
+
+    </div>
+    <div class="bz-title-box">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="bz-content-box">
+        <div class="bz-block">
+            <div class="bz-padding-16 bz-clearfix">
+                <div class="bz-padding-8">
+                    <h5>Modal</h5>
+                    <div class="bz-padding-8 bz-clearfix">
+                        <input id="callbasic" type="button" class="bz-btn" value="Basic modal">
+                        <input id="callshow" type="button" class="bz-btn" value="Modal with show callback">
+                        <input id="callhide" type="button" class="bz-btn" value="Modal with hide callback">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{#section 'modals'}}
+    <div id="basic" class="bz-modal" data-btn="callbasic">
+        <div class="content">
+            <h1>Basic modal window</h1>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+        </div>
+    </div>
+    <div id="showcall" class="bz-modal" data-btn="callshow">
+        <div class="content">
+            <h1>Basic modal window</h1>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+        </div>
+    </div>
+    <div id="hidecall" class="bz-modal" data-btn="callhide">
+        <div class="content">
+            <h1>Basic modal window</h1>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+        </div>
+    </div>
+{{/section}}
+{{#section 'scripts'}}
+    <script>
+        var bm = bzDom('#basic');
+        bz.Modal({
+            selector: bm
+        });
+        bz.Modal({
+            selector: '#showcall',
+            callonshow: function() {
+                alert('has been shown');
+            }
+        });
+        bz.Modal({
+            selector: '#hidecall',
+            callonhide: function() {
+                alert('has been hidden');
+            }
+        });
+    </script>
+{{/section}}

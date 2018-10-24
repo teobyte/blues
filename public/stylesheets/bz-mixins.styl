@@ -1,0 +1,41 @@
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -ms-{prop} args
+  {prop} args
+
+box-shadow(args...)
+  -moz-box-shadow args
+  -webkit-box-shadow args
+  box-shadow args
+
+transform-scaling(value)
+  -webkit-transform scale(value)
+  -moz-transform scale(value)
+  -o-transform scale(value)
+  transform scale(value)
+
+transform-translate(x, y)
+  -webkit-transform: translate(x, y)
+  -moz-transform: translate(x, y)
+  -ms-transform: translate(x, y)
+  -o-transform: translate(x, y)
+  transform: translate(x, y)
+
+transform-rotate(degree)
+  -webkit-transform rotate(degree)
+  -moz-transform rotate(degree)
+  -o-transform rotate(degree)
+  transform rotate(degree)
+  transform-origin(center)
+
+placeholder-color(target, color)
+  {target}::-webkit-input-placeholder
+    color color
+  {target}:-moz-placeholder
+    color color
+  {target}::-moz-placeholder
+    color color
+  {target}:-ms-input-placeholder
+    color color
+

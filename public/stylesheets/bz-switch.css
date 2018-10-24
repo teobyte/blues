@@ -1,0 +1,73 @@
+.bz-switch {
+  background: #163d74;
+  line-height: 20px;
+  vertical-align: top;
+  margin: 0 10px;
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 20px;
+}
+.bz-switch input {
+  display: none;
+}
+.bz-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  background: #767676;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.bz-switch input ~ .slider {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.bz-switch input:checked ~ .slider {
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+}
+.bz-switch .slider:before {
+  position: absolute;
+  content: "";
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.bz-switch input ~ .slider:before {
+  background: #fff;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+}
+.bz-switch input:checked ~ .slider:before {
+  background: #46ad58;
+  height: 10px;
+  width: 10px;
+  left: 2px;
+  bottom: 2px;
+}
+.bz-switch input:checked + .slider {
+  background: #fff;
+}
+.bz-switch input:focus + .slider {
+  box-shadow: 0 0 1px #163d74;
+}
+.bz-switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.bz-switch.rounded {
+  border-radius: 20px;
+}
+.bz-switch.rounded .slider {
+  border-radius: 20px;
+}
+.bz-switch.rounded .slider:before {
+  border-radius: 50%;
+}

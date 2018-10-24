@@ -1,0 +1,105 @@
+.bz-sidenav-wrapper
+  position relative
+
+.bz-content
+  box-sizing border-box
+  min-height 100vh
+  margin-left 0
+  margin-right 0
+  position relative
+  min-width 325px
+  width 100%
+  z-index 0
+  vendor(transition, all 0.3s ease)
+
+.bz-sidenav
+  background color-white
+  bottom 0
+  box-sizing border-box
+  display block
+  height 100vh
+  overflow hidden
+  position fixed
+  top 0
+  width 240px
+  z-index 99999
+  vendor(transition, all 0.3s ease)
+
+.bz-sidenav.left
+  border-right 1px solid color-gray-light
+
+.bz-sidenav.right
+  border-left 1px solid color-gray-light
+
+.bz-sidenav-scroll
+  display block
+  height 100%
+  overflow-x hidden
+  overflow-y auto
+
+.bz-sidenav-list
+  list-style none
+  margin 0
+  padding 0
+  width 100%
+
+.bz-sidenav-list li.bz-list-item
+  width calc(100% - 1px)
+
+.bz-sidenav-list li.subheader
+  color color-navy
+  display block
+  line-height 2.5em
+  font-size 1.4em
+  box-sizing border-box
+  padding 0 0.5em
+  a
+    cursor default
+    color inherit
+    &:hover
+      cursor default
+      color inherit
+
+
+.bz-sidenav-list li .text
+  display block
+  line-height 40px
+  box-sizing border-box
+
+.bz-sidenav-list li.divider
+  height 0
+  width 100%
+  border-bottom 1px solid color-gray-light
+
+.bz-sidenav-list li.bz-list-item a
+  color color-gray-dark
+  display block
+  line-height 40px
+  text-decoration none
+  box-sizing border-box
+  padding 0 0.5em
+
+.bz-sidenav-list a:active,
+.bz-sidenav-list a:focus
+  outline none
+
+.bz-sidenav-list li.bz-list-item a i
+  padding 0.6em 0.5em 0.6em 0
+  text-align center
+  width 2em
+
+.bz-sidenav-list li.bz-list-item a:hover
+  background color-gray-light
+
+.bz-shift-left
+  margin-left 240px
+  width calc(100% - 240px)
+
+.bz-shift-right
+  margin-right 240px
+  width calc(100% - 240px)
+
+.bz-shift-left.bz-shift-right
+  margin-left 240px
+  margin-right 240px
+  width calc(100% - 480px)

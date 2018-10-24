@@ -1,0 +1,129 @@
+/* Blues Blocks */
+/* Clearfix */
+/* IE7 */
+*:first-child + html .bz-clearfix {
+  zoom: 1;
+}
+/* Display */
+template,
+[hidden],
+.bz-none {
+  display: none !important;
+}
+.bz-inline {
+  display: inline-block !important;
+}
+.bz-block {
+  display: block !important;
+}
+/* Visibility */
+.bz-no-visible {
+  visibility: hidden !important;
+}
+/* Clears */
+hr,
+.bz-breakline,
+.bz-clear {
+  box-sizing: content-box;
+  clear: both;
+  height: 0;
+  overflow: visible;
+  width: 100%;
+}
+.bz-breakline {
+  border-bottom: 1px solid #f0f0f0;
+}
+.h-4 {
+  height: 4;
+}
+.h-8 {
+  height: 8;
+}
+.h-16 {
+  height: 16;
+}
+.h-32 {
+  height: 32;
+}
+.h-64 {
+  height: 64;
+}
+.h-128 {
+  height: 128;
+}
+.h-256 {
+  height: 256;
+}
+.h-512 {
+  height: 512;
+}
+.h-96 {
+  height: 96px;
+}
+.bz-margin-auto {
+  margin: 0 auto;
+}
+.bz-padding-4 {
+  padding: 4;
+}
+.bz-padding-8 {
+  padding: 8;
+}
+.bz-padding-16 {
+  padding: 16;
+}
+.bz-padding-32 {
+  padding: 32;
+}
+/* Floating */
+.bz-float-l,
+.bz-float-l:nth-child(3n+1) {
+  float: left;
+}
+.bz-float-m,
+.bz-float-m:nth-child(3n+0) {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  left: 50%;
+}
+.bz-float-r,
+.bz-float-r:nth-child(3n+2) {
+  float: right;
+}
+.bz-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+/* Position */
+.bz-float-l {
+  float: left !important;
+}
+.bz-float-r {
+  float: right !important;
+}
+.bz-left {
+  left: 0;
+}
+.bz-right {
+  right: 0;
+}
+.bz-top {
+  top: 0;
+}
+.bz-bottom {
+  bottom: 0;
+}
+.bz-absolute {
+  position: absolute;
+}
+.bz-relative {
+  position: relative;
+}
+.bz-fixed {
+  position: fixed;
+}
+.bz-inherit {
+  position: inherit;
+}

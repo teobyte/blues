@@ -1,0 +1,148 @@
+.bz-popover,
+.bz-tooltip {
+  position: relative;
+  display: inline-block;
+}
+.bz-popover .popover,
+.bz-tooltip .popover {
+  display: none;
+  font-family: 'Helvetica', sans-serif;
+  margin-left: 50%;
+  position: absolute;
+  z-index: 9999;
+}
+.bz-tooltip .popover {
+  background-color: color-gray-dark;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.9;
+  padding: 8px;
+  text-align: center;
+  width: 112px;
+}
+.bz-tooltip .popover {
+  max-height: 200px;
+  overflow: hidden;
+}
+.bz-tooltip.top .popover {
+  bottom: calc(100% + 8px);
+  left: -64px;
+}
+.bz-tooltip.bottom .popover {
+  bottom: -8px;
+  left: -64px;
+}
+.bz-tooltip.right .popover {
+  top: 50%;
+  right: -8px;
+}
+.bz-tooltip.left .popover {
+  top: 50%;
+  left: calc(-50% - 8px);
+}
+.bz-tooltip.top:hover .popover {
+  display: block;
+  -webkit-animation: fade-in 0.3s ease-in-out, shift-up 0.3s ease-in-out;
+  -moz-animation: fade-in 0.3s ease-in-out, shift-up 0.3s ease-in-out;
+/*-ms-animation: fade-in .3s ease-in-out, shift-up .3s ease-in-out;*/
+}
+.bz-tooltip.bottom:hover .popover {
+  display: block;
+  -webkit-animation: fade-in 0.3s ease-in-out, shift-down 0.3s ease-in-out;
+  -moz-animation: fade-in 0.3s ease-in-out, shift-down 0.3s ease-in-out;
+/*-ms-animation: fade-in .3s ease-in-out, shift-down .3s ease-in-out;*/
+}
+.bz-tooltip.left:hover .popover {
+  display: block;
+  -webkit-animation: fade-in 0.3s ease-in-out, shift-left 0.3s ease-in-out;
+  -moz-animation: fade-in 0.3s ease-in-out, shift-left 0.3s ease-in-out;
+/*-ms-animation: fade-in .3s ease-in-out, shift-left .3s ease-in-out;*/
+}
+.bz-tooltip.right:hover .popover {
+  display: block;
+  -webkit-animation: fade-in 0.3s ease-in-out, shift-right 0.3s ease-in-out;
+  -moz-animation: fade-in 0.3s ease-in-out, shift-right 0.3s ease-in-out;
+/*-ms-animation: fade-in .3s ease-in-out, shift-right .3s ease-in-out;*/
+}
+/*---- BLUES Popover ------------------------*/
+.bz-popover .popover {
+  background-color: color-white;
+  font-size: 16px;
+  padding: 0;
+  text-align: left;
+  min-width: 124px;
+  max-width: 164px;
+}
+.bz-popover .popover ul {
+  width: 100%;
+}
+.bz-popover .popover li {
+  cursor: pointer;
+  padding: 0 4px;
+  width: 100%;
+  white-space: nowrap;
+}
+.bz-popover .popover li:hover {
+  background: color-gray-light;
+}
+.bz-popover .popover span {
+  color: inherit;
+  display: block;
+  height: 100%;
+  padding: 8px;
+  width: 100%;
+}
+.bz-popover .popover a {
+  color: inherit;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  padding: 8px;
+  width: 100%;
+}
+.bz-popover .popover {
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.bz-popover.top .popover {
+  bottom: calc(100% + 8px);
+  left: -64px;
+}
+.bz-popover.bottom .popover {
+  bottom: -8px;
+  left: -64px;
+}
+.bz-popover.right .popover {
+  top: 50%;
+  right: -8px;
+}
+.bz-popover.left .popover {
+  top: 50%;
+  left: calc(-50% - 8px);
+}
+.bz-popover.top.bz-on .popover {
+  display: block;
+  -webkit-animation: fade-in 0.3s ease-in-out, shift-up 0.3s ease-in-out;
+  -moz-animation: fade-in 0.3s ease-in-out, shift-up 0.3s ease-in-out;
+/*-ms-animation: fade-in .3s ease-in-out, shift-up .3s ease-in-out;*/
+}
+.bz-popover.bottom.bz-on .popover {
+  display: block;
+  -webkit-animation: fade-in 0.3s ease-in-out, shift-down 0.3s ease-in-out;
+  -moz-animation: fade-in 0.3s ease-in-out, shift-down 0.3s ease-in-out;
+/*-ms-animation: fade-in .3s ease-in-out, shift-down .3s ease-in-out;*/
+}
+.bz-popover.left.bz-on .popover {
+  display: block;
+  -webkit-animation: fade-in 0.3s ease-in-out, shift-left 0.3s ease-in-out;
+  -moz-animation: fade-in 0.3s ease-in-out, shift-left 0.3s ease-in-out;
+/*-ms-animation: fade-in .3s ease-in-out, shift-left .3s ease-in-out;*/
+}
+.bz-popover.right.bz-on .popover {
+  display: block;
+  -webkit-animation: fade-in 0.3s ease-in-out, shift-right 0.3s ease-in-out;
+  -moz-animation: fade-in 0.3s ease-in-out, shift-right 0.3s ease-in-out;
+/*-ms-animation: fade-in .3s ease-in-out, shift-right .3s ease-in-out;*/
+}

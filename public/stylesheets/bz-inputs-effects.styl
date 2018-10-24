@@ -1,0 +1,75 @@
+/* Blues Inputs Bar */
+.bz-input
+  .bar
+    background color-navy
+    bottom 0
+    height 2px
+    position absolute
+    width 0
+    vendor(transition, 0.5s ease all)
+
+.bz-input i + input ~ .bar,
+.bz-input i.right + input ~ .bar,
+.bz-input i + i.bz-tool + input ~ .bar,
+.bz-input i.bz-tool.left + input ~ .bar
+  left 52px
+
+.bz-input input ~ .bar,
+.bz-input i.right + input ~ .bar,
+.bz-input i.bz-tool + input ~ .bar
+  left 0
+
+.bz-input i + input:focus ~ .bar,
+  /*.bz-input i + input:valid ~ .bar,*/
+.bz-input i + input.highlight ~ .bar
+  left 52px
+  width calc(100% - 52px)
+
+.bz-input input:focus ~ .bar,
+.bz-input input.highlight ~ .bar
+  left 0
+  width 100%
+
+.bz-input i.right + input:focus ~ .bar,
+.bz-input i.right + input.highlight ~ .bar
+.bz-input i.bz-tool + input:focus ~ .bar,
+.bz-input i.bz-tool + input.highlight ~ .bar
+  left 0
+  width: calc(100% - 52px)
+
+.bz-input i.bz-tool.left + input:focus ~ .bar,
+.bz-input i.bz-tool.left + input.highlight ~ .bar
+  left 52px
+  width: calc(100% - 52px)
+
+.bz-input i + i.bz-tool + input:focus ~ .bar,
+.bz-input i + i.bz-tool + input.highlight ~ .bar
+  left 52px
+  width: calc(100% - 104px)
+
+.bz-input textarea ~ .bar
+  left 0
+
+.bz-input textarea:focus ~ .bar,
+  /*.bz-input textarea:valid ~ .bar,*/
+.bz-input textarea.highlight ~ .bar
+  width 100%
+
+/* Blues Input Flash Effect */
+.bz-input .flash
+  position absolute
+  height 60%
+  width 200px
+  top 25%
+  left 0
+  pointer-events none
+  opacity 0
+
+.bz-input i + input ~ .flash
+  left 45px
+
+.bz-input i.right + input ~ .flash
+  left 0
+
+.bz-input input:focus ~ .flash
+  animation input-flash 0.3s ease

@@ -1,0 +1,58 @@
+.bz-nav
+  background inherit
+  color inherit
+  box-sizing border-box!important
+  display flex!important
+  flex-direction row!important
+  flex-wrap nowrap!important
+  line-height 2em
+  margin 0!important
+  padding 0!important
+  position relative!important
+  height 48px
+  width 100%
+
+  .bz-nav-item
+    display inline-block
+    height 48px
+    margin 0!important
+    padding 8px
+    position relative
+
+    a, a:hover
+      display inline-block
+      color inherit
+      height 100%
+      padding 0
+      text-align center
+      text-decoration none
+      width 100%
+
+    a .text
+      height 100%
+      vert-align middle
+      width 100%
+
+    a .text:after
+      background color-navy
+      bottom 0
+      content " "
+      height 3px
+      left 50%
+      position absolute
+      width 0
+      vendor(transition, all .3s ease-in)
+      transform-translate(-50%, 0)
+
+    a:hover .text:after
+      width 100%
+    a:focus .text:after
+      width 100%
+
+  .bz-nav-item.middle
+    overflow hidden
+    min-width 1px
+    max-width 100%
+    -webkit-flex 1
+    -ms-flex 1
+    flex 1

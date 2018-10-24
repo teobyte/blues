@@ -1,0 +1,135 @@
+.bz-droplist
+  display inline-block
+  position relative
+  min-width 100px
+
+
+.bz-select:focus
+  border none
+  outline none
+
+.bz-select,
+.bz-droplist .bz-trigg {
+  background color-gray-light
+  box-sizing: border-box;
+  padding: 15px 20px 16px 20px;
+  transition: all .3s ease-in;
+  border:2px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size:18px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-drag: none;
+  width: 100%;
+}
+.bz-droplist .bz-ddl {
+  /*border: 1px solid #2E435A;*/
+  max-height: 200px;
+  overflow: hidden;
+  overflow-y: auto;
+  background color-white
+  opacity: 0;
+  position: absolute;
+  top: 52px;
+  width: 100%;
+  -webkit-transform: scale(.25,0);
+  transform: scale(.25,0);
+  -webkit-transition: all 400ms cubic-bezier(.4,0,.2,1);
+  transition: all 400ms cubic-bezier(.4,0,.2,1);
+  -webkit-animation: none!important;
+  animation: none!important;
+  -webkit-transform-origin: 50% 0!important;
+  transform-origin: 50% 0!important;
+  z-index: 999999;
+
+  -moz-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.15), 0 1px 10px 0 rgba(0, 0, 0, 0.13), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.15), 0 1px 10px 0 rgba(0, 0, 0, 0.13), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.15), 0 1px 10px 0 rgba(0, 0, 0, 0.13), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+}
+.bz-droplist .bz-ddl.bz-on
+  transform: scale(1,1)
+  opacity: 1
+
+.bz-select option,
+.bz-droplist .bz-ddl-item
+  cursor: pointer
+  height: 40px
+  line-height: 40px
+  font-size: 18px
+  position: relative
+  outline: none
+
+.bz-select option
+  background: #fff
+
+.bz-droplist .bz-ddl .bz-ddl-item > *
+  display: inline-block
+  vertical-align: middle
+
+.bz-droplist .bz-ddl-item:hover .text::after
+  content: " "
+  display: block
+  height: 40px
+  width: 100%
+  background: #999
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -10
+
+.bz-droplist .bz-ddl-item .text::after
+  content: " "
+  display: block
+  height: 40px
+  width: 100%
+  background: color-gray-light
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -10
+  opacity: 0
+
+.bz-droplist .bz-ddl-item:hover .text::after
+  opacity: 1
+
+
+.bz-droplist .bz-checkbox
+  float: left
+  visibility: hidden
+  padding: 6px 0
+
+.bz-droplist[multiple] .bz-checkbox
+  visibility: visible
+
+.bz-droplist .bz-ddl .text
+  float: left
+  box-sizing: border-box
+  margin-left: -10px
+
+.bz-droplist[multiple] .bz-ddl .text
+  margin-left: 10px
+
+.bz-droplist .bz-ddl-item.selected .text::after
+  background:#4CAF50
+  opacity: 1
+
+/* The search field */
+.bz-droplist
+  .searchfield
+    border-box box-sizing
+    background-image url('https://www.w3schools.com/howto/searchicon.png')
+    background-position 14px 12px
+    background-repeat no-repeat
+    font-size 16px
+    padding 14px 20px 12px 45px
+    border none
+    border-bottom 1px solid #ddd
+    outline none
+    width 100%

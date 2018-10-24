@@ -1,0 +1,31 @@
+.bz-context-menu
+  display none
+  position absolute
+  z-index 10
+  padding 12px 0
+  max-height 300px
+  overflow hidden
+  overflow-y auto
+  width 240px
+  background-color color-white
+  box-shadow(0 0 4px rgba(0, 0, 0, 0.4))
+
+.bz-context-menu.bz-on
+  display block
+
+.bz-context-menu li
+  display block
+  margin-bottom 4px
+
+.bz-context-menu li:last-child
+  margin-bottom 0
+
+.bz-context-menu a
+  display block
+  padding 8px
+  color color-navy
+  text-decoration none
+
+.bz-context-menu a:hover
+  color color-white
+  background-color color-gray-light

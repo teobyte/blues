@@ -1,0 +1,125 @@
+.bz-toolbar
+  background inherit
+  color inherit
+  box-sizing border-box
+  display flex
+  flex-direction row
+  flex-wrap nowrap
+  line-height 32px
+  margin 0!important
+  padding 0!important
+  position relative
+  height 48px
+  width 100%
+
+for t in themes
+  .bz-toolbar.{t}
+    background: themes[t].fill
+    color: themes[t].text
+
+for t in themes
+  .bz-toolbar.{t}.inverted
+    background transparent
+    color: themes[t].fill
+
+.bz-toolbar .btn,
+.bz-toolbar .title,
+.bz-toolbar .tool
+  display inline-block
+  height 48px
+  margin 0!important
+  padding 8px
+  position relative
+
+.bz-toolbar .btn,
+.bz-toolbar .tool
+  cursor pointer
+  text-align center
+
+.bz-toolbar .tool
+  width 48px
+
+.bz-toolbar .title
+  text-overflow ellipsis
+  white-space nowrap
+  overflow hidden
+  min-width 1px
+  max-width 100%
+  -webkit-flex 1
+  -ms-flex 1
+  flex 1
+
+.bz-toolbar .title h4,
+.bz-toolbar .title h5,
+.bz-toolbar .title h6
+  margin 0
+  vertical-align middle
+
+.bz-toolbar .btn .back,
+.bz-toolbar .tool .back
+  top 0
+  right 0
+  bottom 0
+  left 0
+  height 40px
+  overflow hidden
+  background transparent
+  opacity 0.5
+  margin 4px
+  position absolute
+
+.bz-toolbar .tool .back
+  width:40px
+
+.bz-toolbar .tool .back.circle
+  border-radius:50%
+
+.bz-toolbar .btn:hover .back,
+.bz-toolbar .tool:hover .back
+  background color-gray-light
+
+.bz-toolbar .tool i
+  font-size 28px
+  line-height 32px
+
+.bz-toolbar a,
+.bz-toolbar a
+  color inherit
+  text-decoration none
+
+.bz-toolbar .tool.bz-inline-search
+  position relative
+  width auto
+
+.bz-inline-search input
+  background color-gray
+  height 28px
+  line-height 28px
+  margin 2px
+  outline none
+  width 0
+  border none
+  opacity 0
+  vertical-align middle
+  vendor(transition, all 0.5s ease-out)
+
+.bz-inline-search:hover input,
+.bz-inline-search input:active,
+.bz-inline-search input:focus
+  background color-white
+  width 180px
+  border-radius 0
+  outline none
+  opacity 1
+
+.bz-inline-search i
+  vertical-align middle
+  cursor pointer
+  vendor(transition, all 0.5s ease-out)
+
+.bz-inline-search input:hover + i,
+.bz-inline-search input:active + i,
+.bz-inline-search input:focus + i
+  color color-gray
+  font-weight bold
+  font-size 20px

@@ -1,0 +1,49 @@
+.bz-input.theme
+  color color-white
+  label
+    color color-white
+
+for t in themes
+  .bz-input.{t}
+    input
+      color: themes[t].text
+
+for t in themes
+  .bz-input.{t}
+    @extends .bz-input.theme
+
+for t in themes
+  .bz-input.{t}
+    background: themes[t].fill
+
+for t in themes
+  .bz-input.{t} input:focus ~ label,
+  .bz-input.{t} input:valid ~ label,
+  .bz-input.{t} input[readonly] ~ label,
+  .bz-input.{t} input[disabled] ~ label,
+  .bz-input.{t} input.highlight ~ label,
+  .bz-input.{t} textarea:focus ~ label,
+  .bz-input.{t} textarea:valid ~ label,
+  .bz-input.{t} textarea.highlight ~ label
+    color: themes[t].text
+
+.bz-input.theme .bar
+    background color-white
+
+for t in themes
+  .bz-input.{t} .bar
+    @extends .bz-input.theme .bar
+
+for t in themes
+  .bz-input.{t} select,
+  .bz-input.{t} textarea,
+  .bz-input.{t} input:not([type])
+    border-bottom: 2px solid themes[t].fill
+
+  for inpt in textinputs
+    .bz-input.{t}
+      input[type={inpt}]
+        @extends .bz-input.{t} input:not([type])
+
+
+

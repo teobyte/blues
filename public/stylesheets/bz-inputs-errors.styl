@@ -1,0 +1,111 @@
+.bz-input input:not([type]).invalid,
+.bz-input input:not([type]):focus.invalid,
+.bz-input input[type=text].invalid,
+.bz-input input[type=text]:focus.invalid,
+.bz-input input[type=password].invalid,
+.bz-input input[type=password]:focus.invalid,
+.bz-input input[type=email].invalid,
+.bz-input input[type=email]:focus.invalid,
+.bz-input input[type=url].invalid,
+.bz-input input[type=url]:focus.invalid,
+.bz-input input[type=tel].invalid,
+.bz-input input[type=tel]:focus.invalid,
+.bz-input input[type=number].invalid,
+.bz-input input[type=number]:focus.invalid,
+.bz-input input[type=search].invalid,
+.bz-input input[type=search]:focus.invalid,
+.bz-input textarea.invalid,
+.bz-input textarea:focus.invalid,
+.bz-input select.invalid,
+.bz-input select:focus.invalid
+  border-bottom: 2px solid color-red
+
+.bz-input input:not([type]).invalid ~ div.error,
+.bz-input input:not([type]):focus.invalid ~ div.error,
+.bz-input input[type=text].invalid ~ div.error,
+.bz-input input[type=text]:focus.invalid ~ div.error,
+.bz-input input[type=password].invalid ~ div.error,
+.bz-input input[type=password]:focus.invalid ~ div.error,
+.bz-input input[type=email].invalid ~ div.error,
+.bz-input input[type=email]:focus.invalid ~ div.error,
+.bz-input input[type=url].invalid ~ div.error,
+.bz-input input[type=url]:focus.invalid ~ div.error,
+.bz-input input[type=tel].invalid ~ div.error,
+.bz-input input[type=tel]:focus.invalid ~ div.error,
+.bz-input input[type=number].invalid ~ div.error,
+.bz-input input[type=number]:focus.invalid ~ div.error,
+.bz-input input[type=search].invalid ~ div.error,
+.bz-input input[type=search]:focus.invalid ~ div.error,
+.bz-input textarea.invalid ~ div.error,
+.bz-input textarea:focus.invalid ~ div.error,
+.bz-input select.invalid ~ div.error,
+.bz-input select:focus.invalid ~ div.error
+  color color-red
+
+.bz-input input:not([type]).valid,
+.bz-input input:not([type]):focus.valid,
+.bz-input input[type=text].valid,
+.bz-input input[type=text]:focus.valid,
+.bz-input input[type=password].valid,
+.bz-input input[type=password]:focus.valid,
+.bz-input input[type=email].valid,
+.bz-input input[type=email]:focus.valid,
+.bz-input input[type=url].valid,
+.bz-input input[type=url]:focus.valid,
+.bz-input input[type=tel].valid,
+.bz-input input[type=tel]:focus.valid,
+.bz-input input[type=number].valid,
+.bz-input input[type=number]:focus.valid,
+.bz-input input[type=search].valid,
+.bz-input input[type=search]:focus.valid,
+.bz-input textarea.valid,
+.bz-input textarea:focus.valid,
+.bz-input select.valid,
+.bz-input select:focus.valid
+  border-bottom: 2px solid color-green
+
+.bz-input input:not([type]).valid ~ div.error,
+.bz-input input:not([type]):focus.valid ~ div.error,
+.bz-input input[type=text].valid ~ div.error,
+.bz-input input[type=text]:focus.valid ~ div.error,
+.bz-input input[type=password].valid ~ div.error,
+.bz-input input[type=password]:focus.valid ~ div.error,
+.bz-input input[type=email].valid ~ div.error,
+.bz-input input[type=email]:focus.valid ~ div.error,
+.bz-input input[type=url].valid ~ div.error,
+.bz-input input[type=url]:focus.valid ~ div.error,
+.bz-input input[type=tel].valid ~ div.error,
+.bz-input input[type=tel]:focus.valid ~ div.error,
+.bz-input input[type=number].valid ~ div.error,
+.bz-input input[type=number]:focus.valid ~ div.error,
+.bz-input input[type=search].valid ~ div.error,
+.bz-input input[type=search]:focus.valid ~ div.error,
+.bz-input textarea.valid ~ div.error,
+.bz-input textarea:focus.valid ~ div.error,
+.bz-input select.valid ~ div.error,
+.bz-input select:focus.valid ~ div.error
+  color color-green
+
+
+/* Blues Input Message Box */
+.bz-input div.error
+  bottom -1.15em
+  font-size 0.8em
+  position absolute
+  z-index 10
+
+.bz-input div.error,
+.bz-input i.right ~ div.error,
+.bz-input i.bz-tool ~ div.error
+  left 0
+
+.bz-input i:not(.bz-tool):not(.right) ~ div.error,
+.bz-input i.bz-tool.left ~ div.error,
+.bz-input i + i.bz-tool ~ div.error
+  left 52px
+
+.bz-input .counter
+  position absolute
+  font-size 0.8em
+  bottom -1.15em
+  right 0

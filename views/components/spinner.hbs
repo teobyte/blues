@@ -1,0 +1,108 @@
+<div class="bz-page-box bz-animate-left">
+    <div class="bz-toolbar-box">
+
+    </div>
+    <div class="bz-title-box">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="bz-content-box">
+        <div class="bz-block">
+            <div class="bz-padding-16">
+                <h5 class="bz-fc-primary">Spinners</h5>
+                <div class="bz-row mb-middle">
+                    <div class="bz-col mb6 tb4">
+                        Circle
+                        <p class="bz-fc-primary">
+                            .bz-spin-circle
+                        </p>
+                    </div>
+                    <div class="bz-col mb6 tb8">
+                        <div class="bz-spin-circle">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bz-row mb-middle">
+                    <div class="bz-col mb6 tb4">
+                        Dots
+                        <p class="bz-fc-primary">
+                            .bz-spin-dots
+                        </p>
+                    </div>
+                    <div class="bz-col mb6 tb8">
+                        <div class="bz-spin-dots">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <h6>HTML markup</h6>
+                <textarea class="bz-code html">
+        <div class="bz-spin-circle">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        </textarea>
+                <h5 class="bz-fc-primary">Centered spinners</h5>
+                <div class="bz-padding-16 bz-margin-4 bz-bc-light bz-relative bz-inline-block" style="height: 200px; width: 200px;">
+                    <div class="spin-circle bz-center"></div>
+                </div>
+                <div class="bz-padding-16 bz-margin-4 bz-bc-light bz-relative bz-inline-block" style="height: 200px; width: 200px;">
+                    <div class="spin-dots bz-center"></div>
+                </div>
+                <h6>or Javascript markup</h6>
+                <textarea class="bz-code html">
+        <div class="spin-dots bz-center"></div>
+        <script>
+            bz.addSpiner('.spin-dots', { name: 'bz-spin-dots', size: 30 });
+        </script>
+        </textarea>
+                <h6>Loader with manual hide</h6>
+                <div class="bz-padding-8 bz-clearfix">
+                    <button id="spinbtn" class="bz-btn">
+                        Start Loader
+                    </button>
+
+                    <button id="closespin" class="bz-btn">
+                        Close Loader
+                    </button>
+                </div>
+                <h6>Loader with timeout</h6>
+                <div class="bz-padding-8 bz-clearfix">
+
+                    <button id="spinbtn2" class="bz-btn">
+                        Start Loader
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{#section 'scripts'}}
+    <script>
+
+        bz.addSpiner('.spin-circle');
+        bz.addSpiner('.spin-dots', { name: 'bz-spin-dots', size: 20 });
+
+
+        bzDom('#spinbtn').on('click', function() {
+            bz.Loadspin('#spinbtn');
+        });
+
+        bzDom('#closespin').on('click', function() {
+            bz.Loadspin.hide('#spinbtn');
+        });
+
+        bzDom('#spinbtn2').on('click', function() {
+            bz.Loadspin('#spinbtn2', { timeout: 2000 });
+        });
+
+    </script>
+{{/section}}

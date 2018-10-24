@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blues | {{title}}</title>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../bz-icons/css/bz-icons.css">
+    <link rel='stylesheet' href='../stylesheets/bz-core.css' />
+    {{{_sections.styles}}}
+</head>
+<body class="bz-body">
+<div id="leftSide" class="bz-sidenav bz-bc-white left">
+    <div class="bz-sidenav-scroll">
+        {{> sidenav-left}}
+    </div>
+</div>
+<div class="bz-sidenav-wrapper bz-content">
+    <div class="bz-layout-box">
+        {{> nav}}
+        <div class="bz-cross-padding">
+            {{{body}}}
+        </div>
+        {{> footer}}
+    </div>
+</div>
+{{{_sections.modals}}}
+    <script src="../javascripts/bz-core-2.0.0.js"></script>
+    <script src="../javascripts/bz-inject-2.0.0.js"></script>
+    <script src="../javascripts/bz-sidenav-2.0.0.js"></script>
+    <script src="../javascripts/bz-codelighter.js"></script>
+{{{_sections.scripts}}}
+</body>
+</html>

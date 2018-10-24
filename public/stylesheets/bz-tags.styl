@@ -1,0 +1,12 @@
+.bz-tag
+  border-radius 3px
+  font-size 12px
+  height 18px
+  line-height 14px
+  padding 2px 4px
+  margin 4px 2px
+
+for t in themes
+  .bz-tag.{t}
+    background: themes[t].fill
+    color: themes[t].text

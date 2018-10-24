@@ -1,0 +1,50 @@
+/* Blues Width */
+.w-100p {
+  width: 100%;
+}
+.w-75p {
+  width: 75%;
+}
+.w-66p {
+  width: 66%;
+}
+.w-50p {
+  width: 50%;
+}
+.w-33p {
+  width: 33.33%;
+}
+.w-25p {
+  width: 25%;
+}
+.w-20p {
+  width: 20%;
+}
+.w-325px {
+  width: 325px;
+}
+.w-480px {
+  width: 480px;
+}
+.w-640px {
+  width: 640px;
+}
+.w-1024px {
+  width: 1024px;
+}
+.w-325-1024 {
+  min-width: 325px;
+  max-width: 1024px;
+}
+.w-325-1280 {
+  min-width: 325px;
+  max-width: 1280px;
+}
+.w-325-1450 {
+  min-width: 325px;
+  max-width: 1450px;
+}
+.w-325-100p {
+  min-width: 325px;
+  max-width: 100%;
+}

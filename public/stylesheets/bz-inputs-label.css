@@ -1,0 +1,69 @@
+.bz-input label {
+  color: color-gray;
+  font-size: 1.2em;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  top: 18px;
+}
+.bz-input input ~ label {
+  left: 10px;
+}
+.bz-input i:not(.bz-tool) + input ~ label,
+.bz-input i + i.bz-tool + input ~ label {
+  left: 62px;
+}
+.bz-input i.bz-tool + input ~ label {
+  left: 10px;
+}
+.bz-input i.bz-tool.left + input ~ label {
+  left: 62px;
+}
+.bz-input i.right + input ~ label {
+  left: 10px;
+}
+.bz-input i.right ~ i.bz-tool {
+  float: left;
+}
+.bz-input input:focus ~ label,
+.bz-input input:valid ~ label,
+.bz-input input[readonly] ~ label,
+.bz-input input[disabled] ~ label,
+.bz-input input.highlight ~ label,
+.bz-input textarea:focus ~ label,
+.bz-input textarea:valid ~ label,
+.bz-input textarea.highlight ~ label {
+  top: 0;
+  font-size: 14px;
+  color: color-navy;
+}
+.bz-input textarea:focus ~ label,
+.bz-input textarea:valid ~ label,
+.bz-input textarea.highlight ~ label {
+  top: -16px;
+}
+.bz-input input:focus ~ label,
+.bz-input input:valid ~ label,
+.bz-input input.highlight ~ label,
+.bz-input textarea:focus ~ label,
+.bz-input textarea:valid ~ label,
+.bz-input textarea:invalid ~ label,
+.bz-input i.right + input:focus ~ label,
+.bz-input i.right + input:valid ~ label,
+.bz-input i.right + input.highlight ~ label,
+.bz-input i.bz-tool + input:focus ~ label,
+.bz-input i.bz-tool + input:valid ~ label,
+.bz-input i.bz-tool + input.highlight ~ label {
+  left: 0;
+}
+.bz-input i + input:focus ~ label,
+.bz-input i + input:valid ~ label,
+.bz-input i + input.highlight ~ label,
+.bz-input i + i.bz-tool + input:focus ~ label,
+.bz-input i + i.bz-tool + input:valid ~ label,
+.bz-input i + i.bz-tool + input.highlight ~ label,
+.bz-input i.bz-tool.left + input:focus ~ label,
+.bz-input i.bz-tool.left + input:valid ~ label,
+.bz-input i.bz-tool.left + input.highlight ~ label {
+  left: 52px;
+}

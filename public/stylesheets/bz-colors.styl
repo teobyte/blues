@@ -1,0 +1,22 @@
+/* Blues Color Palette  */
+/* Font Colors */
+for t in themes
+  .bz-fc-{t},
+  .bz-fc-hover-{t}:hover
+    color: themes[t].fill
+
+for cp in color_pairs
+  .bz-fc-{cp[0]}
+    @extends .bz-fc-{cp[1]}
+
+
+
+/* Background Colors */
+for t in themes
+  .bz-bc-{t},
+  .bz-bc-hover-{t}:hover
+    background: themes[t].fill
+
+for cp in color_pairs
+  .bz-bc-{cp[0]}
+    @extends .bz-bc-{cp[1]}

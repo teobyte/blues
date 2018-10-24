@@ -1,0 +1,42 @@
+.bz-toast-box
+  height auto
+  position fixed
+  width 320px
+  z-index 99999
+
+.bz-toast-box.top
+  top 10px
+  left 50%
+  transform-translate(-50%, 0)
+
+.bz-toast-box.right
+  right 10px
+  top 30%
+
+.bz-toast-box.bottom
+  bottom 10px
+  left 50%
+  transform-translate(-50%, 0)
+
+.bz-toast-box.left
+  left 10px
+  top 30%
+
+.bz-toast
+  cursor pointer
+  opacity 1
+  min-width 250px
+  max-width 320px
+  margin 3px
+  border-radius 2px
+  padding 16px
+  font-size 17px
+  z-index 1100
+
+for t in themes
+  .bz-toast.{t}
+    background-color: themes[t].fill
+    color: themes[t].text
+
+.bz-toast.show
+  animation fade-in 0.5s

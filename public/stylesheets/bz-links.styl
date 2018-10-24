@@ -1,0 +1,31 @@
+.bz-link
+  cursor: pointer
+  position: relative
+  text-decoration: none
+  &:hover
+    text-decoration: none
+  .text:after
+    bottom: 0
+    content: ""
+    height: 1px
+    left: 50%
+    position: absolute
+    width: 0
+    vendor(transition, all .3s ease-in)
+    transform-translate(-50%, 0)
+
+for t in themes
+  .bz-link.{t},
+  .bz-link.{t}:hover,
+  .bz-link.{t}:active,
+  .bz-link.{t}:focus
+    color: themes[t].fill
+
+for t in themes
+  .bz-link.{t}
+    .text:after
+      background: themes[t].fill
+
+.bz-link:hover .text:after,
+.bz-link:focus .text:after
+  width: 100%

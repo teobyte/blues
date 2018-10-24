@@ -1,0 +1,16 @@
+/* Blues Layers */
+.bz-layer-0,
+.bz-layer-1,
+.bz-layer-2,
+.bz-layer-3,
+.bz-layer-4
+  position: absolute
+  height: inherit
+  width: 100%
+
+for j in (0..4)
+  .bz-layer-{j}
+    zval = j * 100
+    if j != 0
+      zval = zval - 1
+    z-index: zval

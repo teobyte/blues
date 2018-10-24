@@ -1,0 +1,127 @@
+/* Blues Blocks */
+/* Clearfix */
+.bz-listview-box,
+.bz-row,
+.bz-sidenav,
+.bz-card,
+.bz-input,
+.bz-clearfix
+  &:after
+    content: " "
+    display: block
+    font-size: 0
+    height: 0
+    clear: both
+    visibility: hidden
+  * html &
+    height: 1px
+    zoom: 1
+
+/* IE7 */
+*:first-child + html .bz-clearfix
+  zoom: 1
+
+/* Display */
+template,
+[hidden],
+.bz-none
+  display none
+.bz-inline-block
+  display inline-block
+.bz-block
+  display block
+
+/* Visibility */
+.bz-no-visible
+  visibility hidden!important
+
+/* Clears */
+hr,
+.bz-breakline,
+.bz-clear
+  clear both
+  height 0
+  overflow visible
+  width 100%
+.bz-breakline
+  border-bottom 1px solid #F0F0F0
+
+for j in (2..9)
+  val = 2**j
+  .h-{val}
+    height val px
+
+.h-96
+  height 96px
+
+.bz-margin-auto
+  margin 0 auto
+
+for j in (2..5)
+  val = 2**j
+  .bz-padding-{val}
+    padding val px
+
+
+for j in (2..5)
+  val = 2**j
+  .bz-padding-lr{val}
+    padding-left val px
+    padding-right val px
+
+for j in (2..5)
+  val = 2**j
+  .bz-padding-tb{val}
+    padding-top val px
+    padding-bottom val px
+
+for j in (2..5)
+  val = 2**j
+  .bz-margin-lr{val}
+    margin-left val px
+    margin-right val px
+
+for j in (2..5)
+  val = 2**j
+  .bz-margin-tb{val}
+    margin-top val px
+    margin-bottom val px
+
+/* Floating */
+.bz-float-m,
+.bz-float-m:nth-child(3n+0)
+  margin-left auto
+  margin-right auto
+  position absolute
+  left 50%
+  transform-translate(-50%, 0)
+
+for f, g in floats
+  .bz-float-{f},
+  .bz-float-{f}:nth-child(3n+{g+1})
+    float f !important
+
+.bz-center
+  position absolute
+  top 50%
+  left 50%
+  transform-translate(-50%, -50%)
+
+/* Position */
+for s in sides
+  .bz-{s}
+    {s} 0
+
+pos = absolute relative fixed inherit
+for p in pos
+  .bz-{p}
+    position p
+
+/* Blues Forms */
+.bz-form.vertical > *
+  clear both
+  display block
+
+.bz-form > *
+  vertical-align middle
+  display inline-block

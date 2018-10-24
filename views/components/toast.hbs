@@ -1,0 +1,69 @@
+<div class="bz-page-box bz-animate-left">
+    <div class="bz-toolbar-box">
+
+    </div>
+    <div class="bz-title-box">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="bz-content-box">
+        <div class="bz-block">
+            <div class="bz-padding-16">
+                <p>
+                    First call determines the initial position of all Toasts in the session. Reload the page to try different positions.
+                </p>
+                <div class="bz-row">
+                    <div class="bz-col mb3 bz-t-align-c">
+                        <button id="toastl" class="bz-btn">
+                            Left
+                        </button>
+                    </div>
+
+                    <div class="bz-col mb3 bz-t-align-c">
+                        <button id="toastt" class="bz-btn">
+                            Top
+                        </button>
+                    </div>
+
+                    <div class="bz-col mb3 bz-t-align-c">
+                        <button id="toastb" class="bz-btn">
+                            Bottom
+                        </button>
+                    </div>
+
+                    <div class="bz-col mb3 bz-t-align-c">
+                        <button id="toastr" class="bz-btn">
+                            Right
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{{#section 'scripts'}}
+    <script>
+        var html = "<b>Toast</b><br>" +
+                "I'm HTML toast.<br>"+
+                "<span class='bz-ft-italic'>Feel free to customize me in any way.</span>";
+        bzDom('#toastl').on('click', function() {
+            bz.Toast('Hey, I am new toast!', { position: 'left', tclass: 'positive' });
+        });
+        bzDom('#toastt').on('click', function() {
+            bz.Toast(html, { position: 'top', tclass: 'negative bz-t-align-l' });
+        });
+        bzDom('#toastb').on('click', function() {
+            bz.Toast('Hey, I am new toast! Very very long toast. Just so very long!', { position: 'bottom' });
+        });
+        bzDom('#toastr').on('click', function() {
+            bz.Toast('Hey, I am toast with callback! Click me to get me closed and call an action.', {
+                position: 'right',
+                tclass: 'warning',
+                timer: 10000,
+                callback: function() {
+                    bz.alert('You ate me!');
+                }
+            });
+        });
+    </script>
+{{/section}}

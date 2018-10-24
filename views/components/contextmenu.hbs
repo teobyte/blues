@@ -1,0 +1,115 @@
+<div class="bz-page-box bz-animate-left">
+    <div class="bz-toolbar-box">
+
+    </div>
+    <div class="bz-title-box">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="bz-content-box">
+        <div class="bz-box bz-block">
+            <div class="bz-clear h-64"></div>
+            <div class="bz-padding-16 bz-clearfix">
+                <div id="greenarea" data-menu="contextmenu" class="bz-context-area bz-margin-auto bz-bc-positive bz-t-align-c bz-fc-white bz-relative" style="padding:50px 0;">
+                    Right mouse click in the area
+                </div>
+            </div>
+            <div class="bz-padding-16 bz-clearfix">
+                <div id="redarea" data-menu="contextmenu" class="bz-context-area bz-margin-auto bz-bc-negative bz-t-align-c bz-fc-white" style="padding:50px 0;">
+                    Right mouse click in the area
+                </div>
+            </div>
+            <div class="bz-padding-16">
+                <p>
+                    Requires next CSS and JS libraries:
+                <ul class="bz-list-no-style bz-ft-bold bz-padding-8">
+                    <li class="bz-fc-primary">bz-core-*.css</li>
+                    <li class="bz-fc-positive">bz-core-*.js</li>
+                </ul>
+                </p>
+                <p>
+                    Set context area
+                </p>
+                <textarea class="bz-code html">
+            <div id="samplearea" data-menu="samplecontextmenu" class="bz-context-area">
+                Right mouse click in the area
+            </div>
+        </textarea>
+                <p>
+                    Set context menu
+                </p>
+                <textarea class="bz-code html">
+            <div id="samplecontextmenu" class="bz-context-menu" data-open="0">
+                <ul class="bz-list-no-style">
+                    <li>
+                        <a href="#" class="item" data-id="1" data-action="View">
+                            <i class="icon-eye"></i> View item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-id="2" data-action="Edit">
+                            <i class="icon-pencil"></i> Edit item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-id="3" data-action="Delete">
+                            <i class="icon-trash"></i> Delete item
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </textarea>
+                <p>
+                    Initiate context menu
+                </p>
+                <textarea class="bz-code js">
+            bz.Contextmenu('.bz-context-area', function(contextArea, clickedEl) {
+                alert('Context Area: ' + contextArea.onattr('id') +
+                      ', Selected Action: ' + clickedEl.ondata('action') +
+                      ', Selected Id: ' + clickedEl.ondata('id'));
+            });
+        </textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#section 'modals'}}
+    <div id="contextmenu" class="bz-context-menu" data-open="0">
+        <ul class="bz-list-no-style">
+            <li>
+                <a href="#" class="item" data-id="1" data-action="View"><i class="icon-eye"></i>  View item</a>
+            </li>
+            <li>
+                <a href="#" class="item" data-id="2" data-action="Edit"><i class="icon-pencil"></i>  Edit item</a>
+            </li>
+            <li>
+                <a href="#" class="item" data-id="3" data-action="Delete"><i class="icon-trash"></i>  Delete item</a>
+            </li>
+            <li>
+                <a href="#" class="item" data-id="1" data-action="View"><i class="icon-eye"></i>  View item</a>
+            </li>
+            <li>
+                <a href="#" class="item" data-id="2" data-action="Edit"><i class="icon-pencil"></i>  Edit item</a>
+            </li>
+            <li>
+                <a href="#" class="item" data-id="3" data-action="Delete"><i class="icon-trash"></i>  Delete item</a>
+            </li>
+            <li>
+                <a href="#" class="item" data-id="1" data-action="View"><i class="icon-eye"></i>  View item</a>
+            </li>
+            <li>
+                <a href="#" class="item" data-id="2" data-action="Edit"><i class="icon-pencil"></i>  Edit item</a>
+            </li>
+            <li>
+                <a href="#" class="item" data-id="3" data-action="Delete"><i class="icon-trash"></i>  Delete item</a>
+            </li>
+        </ul>
+    </div>
+{{/section}}
+{{#section 'scripts'}}
+    <script type="application/javascript">
+        bz.Contextmenu('.bz-context-area', function(contextArea, clickedEl) {
+            bz.alert('Context Area: ' + contextArea.onattr('id') + ', Selected Action: ' + clickedEl.ondata('action') + ', Selected Id: ' + clickedEl.ondata('id'));
+        });
+    </script>
+{{/section}}

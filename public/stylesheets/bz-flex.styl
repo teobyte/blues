@@ -1,0 +1,156 @@
+@import bz-vars
+
+colsize(size, unt = '%')
+  -ms-flex-preferred-size size+unt
+  flex-basis size+unt
+  max-width size+unt
+
+colset(size)
+  .bz-col.{size}
+    -webkit-box-flex: 1
+    -ms-flex-positive: 1
+    flex-grow: 1
+    -ms-flex-preferred-size: 0
+    flex-basis: 0
+    max-width: 100%
+
+screenset(size)
+  .{size}-left
+    -webkit-box-pack: start
+    -ms-flex-pack: start
+    justify-content: flex-start
+    text-align: start
+    -webkit-box-ordinal-group: 0
+    -ms-flex-order: -1
+    order: -1
+
+  .{size}-center
+    -webkit-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+    text-align: center
+
+  .{size}-right
+    -webkit-box-pack: end
+    -ms-flex-pack: end
+    justify-content: flex-end
+    text-align: end
+    -webkit-box-ordinal-group: 2
+    -ms-flex-order: 1
+    order: 1
+
+  .{size}-top
+    -webkit-box-align: start
+    -ms-flex-align: start
+    align-items: flex-start
+
+  .{size}-middle
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+
+  .{size}-bottom
+    -webkit-box-align: end
+    -ms-flex-align: end
+    align-items: flex-end
+
+  .{size}-around
+    justify-content: space-around
+
+  .{size}-between
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+
+  .{size}-hide
+    display: none
+
+.bz-row
+  box-sizing: border-box
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-flex: 0
+  -ms-flex: 0 1 auto
+  flex: 0 1 auto
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: normal
+  -ms-flex-direction: row
+  flex-direction: row
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  margin: 0!important
+  width 100%
+
+.bz-row.reverse
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: reverse
+  -ms-flex-direction: row-reverse
+  flex-direction: row-reverse
+
+.bz-col.reverse
+  -webkit-box-orient: vertical
+  -webkit-box-direction: reverse
+  -ms-flex-direction: column-reverse
+  flex-direction: column-reverse
+
+.bz-col
+  box-sizing: border-box
+  -webkit-box-flex: 0
+  -ms-flex: 0 0 auto
+  flex: 0 0 auto
+  margin: 0
+
+colset(mb)
+
+for i in (1..12)
+  .bz-col.mb{i}
+    colsize(i/12 * 100)
+
+for j in (1..11)
+  .bz-col.mb-shift{j}
+    margin-left: (j/12 * 100) %
+
+screenset(size: mb)
+
+@media only screen and (min-width: mobile)
+
+  colset(tb)
+
+  for i in (1..12)
+    .bz-col.tb{i}
+      colsize(i/12 * 100)
+
+  for j in (0..11)
+    .bz-col.tb-shift{j}
+      margin-left: (j/12 * 100) %
+
+  screenset(tb)
+
+@media only screen and (min-width: monitor)
+
+  colset(mt)
+
+  for i in (0..12)
+    .bz-col.mt{i}
+      colsize(i/12 * 100)
+
+  for j in (0..11)
+    .bz-col.nt-shift{j}
+      margin-left: (j/12 * 100) %
+
+  screenset(mt)
+
+@media only screen and (min-width: widescreen)
+
+  colset(ws)
+
+  for i in (0..12)
+    .bz-col.ws{i}
+      colsize(i/12 * 100)
+
+  for j in (0..11)
+    .bz-col.ws-shift{j}
+      margin-left: (j/12 * 100) %
+
+  screenset(ws)

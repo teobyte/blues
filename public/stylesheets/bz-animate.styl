@@ -1,0 +1,90 @@
+/* Blues Animation */
+//.bz-animate-opacity
+//  animation fade-in 1s
+
+//for s in sides
+//  .bz-animate-{s}
+//    position relative
+//    animation animate-{s} 0.5s
+
+//.bz-animate-zoom
+//  animation animate-zoom 0.5s
+
+@keyframes click-wave
+  0%
+    height 0
+    width 0
+    opacity 0.35
+
+  100%
+    height 80px
+    width 80px
+    opacity 0
+
+@keyframes animate-top
+  from
+    top -500px
+    opacity 0
+  to
+    top 0
+    opacity 1
+
+@keyframes animate-left
+  from
+    left -500px
+    opacity 0
+  to
+    left 0
+    opacity 1
+
+@keyframes animate-right
+  from
+    right -500px
+    opacity 0
+  to
+    right 0
+    opacity 1
+
+@keyframes animate-bottom
+  from
+    bottom -500px
+    opacity 0
+  to
+    bottom 0
+    opacity 1
+
+@keyframes animate-zoom
+  from
+    transform scale(1)
+  to
+    transform scale(1.4)
+
+@keyframes fade-in
+  from
+    opacity 0
+  to
+    opacity 1
+
+@keyframes fade-out
+  from
+    opacity 1
+  to
+    opacity 0
+
+@keyframes input-flash
+  from
+    background color-navy
+  to
+    width 0
+    background transparent
+    opacity 0.5
+
+.bz-scale-out,
+.bz-scale-in
+  vendor(transition, all 300ms ease-in)
+
+.bz-scale-out
+  scale(0)
+
+.bz-scale-in
+  scale(1)

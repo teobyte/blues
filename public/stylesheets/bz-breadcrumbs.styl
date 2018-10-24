@@ -1,0 +1,215 @@
+.bz-pagination
+  clear both
+  margin 0 auto
+  width auto
+
+.bz-pagination li,
+.bz-pagination .step,
+.bz-pagination .nextLink,
+.bz-pagination .prevLink,
+.bz-pagination .currentStep
+  border 1px solid transparent
+  box-sizing border-box
+  color color-navy
+  display inline-block
+  height 30px
+  margin 0
+  overflow hidden
+  text-align center
+  text-decoration none
+  transition background-color .3s
+  min-width 30px
+
+.bz-pagination .nextLink,
+.bz-pagination .prevLink
+  font-size 24px
+
+.bz-pagination .step,
+.bz-pagination .currentStep
+  padding 6px 0
+  width 30px
+
+//.bz-pagination .nextLink,
+//.bz-pagination .prevLink
+
+.bz-pagination .nextLink,
+.bz-pagination .prevLink
+  padding 0 10px 0 0
+
+.bz-pagination .nextLink i,
+.bz-pagination .prevLink i
+  position absolute
+
+.bz-pagination .step:hover:not(.active)
+  color color-white
+  background-color color-navy
+
+.bz-pagination .currentStep
+  background-color color-gray
+  box-sizing border-box
+  color color-white
+  border: 1px solid color-gray
+
+.bz-pagination .step.gap
+  display: none
+
+/* BLUES BREADCRUMBS */
+.bz-breadcrumbs,
+.bz-multi-steps
+  padding 8px
+
+.bz-breadcrumbs:after,
+.bz-multi-steps:after
+  content ""
+  display table
+  clear both
+
+.bz-breadcrumbs li,
+.bz-multi-steps li
+  display inline-block
+  float left
+  margin 4px 0
+
+.bz-breadcrumbs li::after,
+.bz-multi-steps li::after
+  display inline-block
+  content '\00bb'
+  margin 4px
+  color color-gray
+
+.bz-breadcrumbs li:last-of-type::after,
+.bz-multi-steps li:last-of-type::after
+  display none
+
+.bz-breadcrumbs li > *,
+.bz-multi-steps li > *
+  display inline-block
+  color #2c3f4c
+
+.bz-breadcrumbs li.current > *,
+.bz-multi-steps li.current > *
+  color color-navy
+
+.bz-breadcrumbs,
+.bz-multi-steps
+  padding 0 8px
+
+.bz-breadcrumbs li,
+.bz-multi-steps li
+  margin 8px 0
+
+.bz-breadcrumbs li::after,
+.bz-multi-steps li::after
+  margin 0 8px
+
+/* --------------------------------
+Multi steps indicator
+-------------------------------- */
+.bz-multi-steps
+  background-color transparent
+  padding 0
+  text-align center
+
+.bz-multi-steps li
+  position relative
+  float none
+  margin 4px 40px 4px 0
+
+.bz-multi-steps li:last-of-type
+  margin-right 0
+
+.bz-multi-steps li::after
+  position absolute
+  content ''
+  height 4px
+  background color-gray-light
+  margin 0
+
+.bz-multi-steps li.done::after
+  background-color color-navy
+
+.bz-multi-steps li > *, .bz-multi-steps li.current > *
+  position relative
+  color #2c3f4c
+
+.bz-multi-steps li
+  width 64px
+  text-align center
+
+.bz-multi-steps li::after
+  position absolute
+  left 50%
+  width calc(100% + 40px)
+
+.bz-multi-steps li > *::before
+  content ''
+  position absolute
+  z-index 1
+  left 50%
+  right auto
+  -webkit-transform translateX(-50%)
+  -moz-transform translateX(-50%)
+  -ms-transform translateX(-50%)
+  -o-transform translateX(-50%)
+  transform translateX(-50%)
+  height 12px
+  width 12px
+  background-color color-gray-light
+
+.bz-multi-steps.text-top.circle li > *::before,
+.bz-multi-steps.text-bottom.circle li > *::before
+  border-radius 50%
+
+.bz-multi-steps li > a:hover::before
+  background color-green
+
+.bz-multi-steps li.done > *::before,
+.bz-multi-steps li.current > *::before
+  background-color color-navy
+
+.bz-multi-steps.text-top li::after
+  bottom 4px
+
+.bz-multi-steps.text-top li > *
+  padding-bottom 20px
+
+.bz-multi-steps.text-top li > *::before
+  bottom 0
+
+
+.bz-multi-steps.text-bottom li::after
+  top 3px
+
+.bz-multi-steps.text-bottom li > *
+  padding-top 20px
+
+.bz-multi-steps.text-bottom li > *::before
+  top 0
+
+.bz-multi-steps.count li
+  counter-increment steps
+
+.bz-multi-steps.count li > *::before
+  content counter(steps) " - "
+
+.bz-multi-steps.count li > *::before
+  content counter(steps)
+  height 26px
+  width 26px
+  line-height 26px
+  color color-white
+
+.bz-multi-steps.count li:not(.current) .pseudo-a::before
+  color #2c3f4c
+
+.bz-multi-steps.text-top.count li::after
+  bottom 11px
+
+.bz-multi-steps.text-top.count li > *
+  padding-bottom 34px
+
+.bz-multi-steps.text-bottom.count li::after
+  top 11px
+
+.bz-multi-steps.text-bottom.count li > *
+  padding-top 34px
