@@ -151,12 +151,98 @@ textarea {
 summary {
   display: list-item;
 }
+.bz-wave {
+  position: relative;
+}
+.bz-wave .wave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 100;
+}
+.bz-wave .ink {
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  transform: scale(0);
+  cursor: pointer;
+  background: #fff;
+}
+.bz-wave.default-wave .ink {
+  background: #a8a9a9;
+}
+.bz-wave.primary-wave .ink {
+  background: #102a62;
+}
+.bz-wave.secondary-wave .ink {
+  background: #0072d4;
+}
+.bz-wave.positive-wave .ink {
+  background: #14cb4f;
+}
+.bz-wave.negative-wave .ink {
+  background: #ff443b;
+}
+.bz-wave.warning-wave .ink {
+  background: #ff852f;
+}
+.bz-wave.yellow-wave .ink {
+  background: #ffdc38;
+}
+.bz-wave.info-wave .ink {
+  background: #75dafd;
+}
+.bz-wave.dark-wave .ink {
+  background: #212529;
+}
+.bz-wave.light-wave .ink {
+  background: #d6d5d5;
+}
+.bz-wave.white-wave .ink {
+  background: #fff;
+}
+.bz-wave.black-wave .ink {
+  background: #000;
+}
+.bz-wave .ink.animate {
+  animation: wave 0.25s linear;
+}
 .bz-scale-out,
 .bz-scale-in {
   -webkit-transition: all 300ms ease-in;
   -moz-transition: all 300ms ease-in;
   -ms-transition: all 300ms ease-in;
   transition: all 300ms ease-in;
+}
+@-moz-keyframes wave {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+@-webkit-keyframes wave {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+@-o-keyframes wave {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+@keyframes wave {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
 }
 @-moz-keyframes click-wave {
   0% {

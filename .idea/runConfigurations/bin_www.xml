@@ -4,7 +4,7 @@
       <env name="DEBUG" value="bluesnode:*" />
     </envs>
     <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
-      <browser url="http://localhost:3000/" />
+      <browser url="http://localhost:8000/" />
     </EXTENSION>
     <method v="2" />
   </configuration>
