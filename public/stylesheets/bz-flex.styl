@@ -62,9 +62,6 @@ screenset(size)
     -ms-flex-pack: justify
     justify-content: space-between
 
-  .{size}-hide
-    display: none
-
 .bz-row
   box-sizing: border-box
   display: -webkit-box
@@ -102,55 +99,71 @@ screenset(size)
   margin: 0
 
 colset(mb)
-
 for i in (1..12)
   .bz-col.mb{i}
     colsize(i/12 * 100)
-
 for j in (1..11)
   .bz-col.mb-shift{j}
     margin-left: (j/12 * 100) %
-
 screenset(size: mb)
 
 @media only screen and (min-width: mobile)
+  colset(vt)
+  for i in (1..12)
+    .bz-col.vt{i}
+      colsize(i/12 * 100)
+  for j in (0..11)
+    .bz-col.vt-shift{j}
+      margin-left: (j/12 * 100) %
+  screenset(vt)
 
+@media only screen and (min-width: tablet)
   colset(tb)
-
   for i in (1..12)
     .bz-col.tb{i}
       colsize(i/12 * 100)
-
   for j in (0..11)
     .bz-col.tb-shift{j}
       margin-left: (j/12 * 100) %
-
   screenset(tb)
 
 @media only screen and (min-width: monitor)
-
   colset(mt)
-
   for i in (0..12)
     .bz-col.mt{i}
       colsize(i/12 * 100)
-
   for j in (0..11)
-    .bz-col.nt-shift{j}
+    .bz-col.mt-shift{j}
       margin-left: (j/12 * 100) %
-
   screenset(mt)
 
 @media only screen and (min-width: widescreen)
-
   colset(ws)
-
   for i in (0..12)
     .bz-col.ws{i}
       colsize(i/12 * 100)
-
   for j in (0..11)
     .bz-col.ws-shift{j}
       margin-left: (j/12 * 100) %
-
   screenset(ws)
+
+@media screen and (max-width: mobile)
+  .mb-hide
+    display none
+
+@media screen and (min-width: mobile) and (max-width: tablet)
+  .vt-hide
+    display none
+
+@media screen and (min-width: tablet) and (max-width: monitor)
+  .tb-hide
+    display none
+
+@media screen and (min-width: monitor) and (max-width: widescreen)
+  .mt-hide
+    display none
+
+@media screen and (min-width: widescreen)
+  .ws-hide
+    display none
+
