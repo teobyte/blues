@@ -6161,17 +6161,18 @@ blockquote.black,
   right: 0;
   top: 0;
 }
-/* Blues Mobile First Screen Size Scheme  */
-.bz-cross-padding {
-  padding: 0;
+@media screen and (max-width: 568px) {
+  .bz-cross-padding {
+    padding: 0;
+  }
+  .bz-cross-margin {
+    margin: 0;
+  }
+  .bz-modal .modal-content {
+    width: 100vw;
+  }
 }
-.bz-cross-margin {
-  margin: 0;
-}
-.bz-modal .modal-content {
-  width: 100vw;
-}
-@media only screen and (min-width: 568px) {
+@media screen and (min-width: 568px) and (max-width: 768px) {
   .bz-cross-padding {
     padding: 0.5em;
   }
@@ -6182,7 +6183,7 @@ blockquote.black,
     width: 90vw;
   }
 }
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .bz-cross-padding {
     padding: 0.5em;
   }
@@ -6193,7 +6194,7 @@ blockquote.black,
     width: 90vw;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
   .bz-cross-padding {
     padding: 1em;
   }
@@ -6204,7 +6205,7 @@ blockquote.black,
     width: 60vw;
   }
 }
-@media only screen and (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
   .bz-cross-padding {
     padding: 2em;
   }
