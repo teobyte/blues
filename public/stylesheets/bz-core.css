@@ -6161,61 +6161,6 @@ blockquote.black,
   right: 0;
   top: 0;
 }
-@media screen and (max-width: 568px) {
-  .bz-cross-padding {
-    padding: 0;
-  }
-  .bz-cross-margin {
-    margin: 0;
-  }
-  .bz-modal .modal-content {
-    width: 100vw;
-  }
-}
-@media screen and (min-width: 568px) and (max-width: 768px) {
-  .bz-cross-padding {
-    padding: 0.5em;
-  }
-  .bz-cross-margin {
-    margin: 0.5em;
-  }
-  .bz-modal .modal-content {
-    width: 90vw;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .bz-cross-padding {
-    padding: 0.5em;
-  }
-  .bz-cross-margin {
-    margin: 0.5em;
-  }
-  .bz-modal .modal-content {
-    width: 90vw;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1280px) {
-  .bz-cross-padding {
-    padding: 1em;
-  }
-  .bz-cross-margin {
-    margin: 1em;
-  }
-  .bz-modal .modal-content {
-    width: 60vw;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .bz-cross-padding {
-    padding: 2em;
-  }
-  .bz-cross-margin {
-    margin: 2em;
-  }
-  .bz-modal .modal-content {
-    width: 50vw;
-  }
-}
 .bz-code-class,
 .bz-code-attribute {
   font-weight: bold;

@@ -111,9 +111,11 @@
                     $cont.onclass('bz-shift-left');
             if (bz.scrWidth() < 768) {
                 bz.showfader('.bz-content', 9900);
+                if(bzDom('.bz-fader').exist()) {
                     bzDom('.bz-fader').on('click', function() {
                         sidenav.closenavside($btn, $nav, $cont);
                     });
+                }
                 bzDom('body').oncss({ overflow: 'hidden' });
             }
             $btn.ondata('open', '1');
@@ -145,7 +147,9 @@
             if (!sidenav.ifsideopened($nav.onattr('id'), _side) && bz.scrWidth() > 768 && _side === 'left')
                 $cont.offclass('bz-shift-left');
             if (bz.scrWidth() < 768) {
-                bz.hidefader();
+                if (bzDom('.bz-fader').exist()) {
+                    bz.hidefader();
+                }
                 bzDom('body').oncss({ overflow: 'auto' });
             }
             $btn.ondata('open', '0');
