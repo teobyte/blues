@@ -4322,7 +4322,6 @@ input.bz-editable:focus {
   display: inline-block;
   vertical-align: top;
   margin-left: 10px;
-  font-size: 18px;
   line-height: 26px;
   cursor: pointer;
   position: relative;
@@ -4369,6 +4368,7 @@ input.bz-editable:focus {
   border: 3px solid #767676;
   border-radius: 50%;
   background-color: #fff;
+  margin-top: 3px;
 }
 .bz-radio .inner {
   background-color: #46ad58;
@@ -4412,7 +4412,6 @@ input.bz-editable:focus {
   display: inline-block;
   vertical-align: top;
   margin-left: 10px;
-  font-size: 18px;
   line-height: 26px;
   cursor: pointer;
   position: relative;
@@ -4508,7 +4507,7 @@ input.bz-editable:focus {
   background: #163d74;
   line-height: 20px;
   vertical-align: top;
-  margin: 0 10px;
+  margin: 3px 10px 0 10px;
   position: relative;
   display: inline-block;
   width: 46px;
