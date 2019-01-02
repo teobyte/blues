@@ -103,6 +103,9 @@
                 $nav.oncss('left', '0px');
             if (_side === 'right')
                 $nav.oncss('right', '0px');
+            if (bz.scrWidth() > 768)
+                if (bzDom('.bz-fader').exist())
+                    bz.hidefader();
             if (bz.scrWidth() > 768 && _side === 'right')
                 if (!$cont.ifclass('bz-shift-right'))
                     $cont.onclass('bz-shift-right');
