@@ -4322,6 +4322,7 @@ input.bz-editable:focus {
   display: inline-block;
   vertical-align: top;
   margin-left: 10px;
+  font-size: 18px;
   line-height: 26px;
   cursor: pointer;
   position: relative;
@@ -4368,7 +4369,6 @@ input.bz-editable:focus {
   border: 3px solid #767676;
   border-radius: 50%;
   background-color: #fff;
-  margin-top: 3px;
 }
 .bz-radio .inner {
   background-color: #46ad58;
@@ -4412,6 +4412,7 @@ input.bz-editable:focus {
   display: inline-block;
   vertical-align: top;
   margin-left: 10px;
+  font-size: 18px;
   line-height: 26px;
   cursor: pointer;
   position: relative;
@@ -4507,7 +4508,7 @@ input.bz-editable:focus {
   background: #163d74;
   line-height: 20px;
   vertical-align: top;
-  margin: 3px 10px 0 10px;
+  margin: 0 10px;
   position: relative;
   display: inline-block;
   width: 46px;
@@ -6159,6 +6160,61 @@ blockquote.black,
   left: 0;
   right: 0;
   top: 0;
+}
+@media screen and (max-width: 568px) {
+  .bz-cross-padding {
+    padding: 0;
+  }
+  .bz-cross-margin {
+    margin: 0;
+  }
+  .bz-modal .modal-content {
+    width: 100vw;
+  }
+}
+@media screen and (min-width: 568px) and (max-width: 768px) {
+  .bz-cross-padding {
+    padding: 0.5em;
+  }
+  .bz-cross-margin {
+    margin: 0.5em;
+  }
+  .bz-modal .modal-content {
+    width: 90vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .bz-cross-padding {
+    padding: 0.5em;
+  }
+  .bz-cross-margin {
+    margin: 0.5em;
+  }
+  .bz-modal .modal-content {
+    width: 90vw;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .bz-cross-padding {
+    padding: 1em;
+  }
+  .bz-cross-margin {
+    margin: 1em;
+  }
+  .bz-modal .modal-content {
+    width: 60vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bz-cross-padding {
+    padding: 2em;
+  }
+  .bz-cross-margin {
+    margin: 2em;
+  }
+  .bz-modal .modal-content {
+    width: 50vw;
+  }
 }
 .bz-code-class,
 .bz-code-attribute {
