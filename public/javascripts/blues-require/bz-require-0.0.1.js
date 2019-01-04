@@ -194,7 +194,6 @@
                 if (obj.errors.indexOf(value) !== -1){
                     obj.errors.splice(obj.errors.indexOf(value), 1);
                 }
-                //ToDo: validation hierarchy
                 // if error, add error to object
                 if (verify)
                     obj.errors.push(value);
@@ -233,9 +232,8 @@
             return self[self.config.form].error;
         },
         fieldIsValid: function(obj) {
-            if (!bzDom(obj.field).ifclass('valid'))
+            if (!bzDom(obj.field).ifclass('valid') && !bzDom(obj.field).ifclass('invalid'))
                 bzDom(obj.field).onclass('valid');
-            //obj.field.className += ' valid';
         },
         // handle to create the message element
         // param  {Object} obj  = Object manager with information on field specific of the form
@@ -262,16 +260,6 @@
             //ToDo: create more elegant way
             // remove invalid class from field
             bzDom(elem).offclass('invalid');
-            // var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
-            // while (newClass.indexOf(' ' + 'invalid' + ' ') >= 0) {
-            //     newClass = newClass.replace(' ' + 'invalid' + ' ', ' ');
-            // }
-            // elem.className = newClass.replace(/^\s+|\s+$/g, '');
-            // var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
-            // while (newClass.indexOf(' ' + 'valid' + ' ') >= 0) {
-            //     newClass = newClass.replace(' ' + 'valid' + ' ', ' ');
-            // }
-            // elem.className = newClass.replace(/^\s+|\s+$/g, '');
             bzDom(elem).offclass('valid');
             bzDom(elem).onclass('invalid');
             // elem.className += ' invalid';
@@ -329,17 +317,6 @@
                 // remove invalid class from field
                 bzDom(elem).offclass('valid');
                 bzDom(elem).offclass('invalid');
-                // var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
-                // while (newClass.indexOf(' ' + 'invalid' + ' ') >= 0) {
-                //     newClass = newClass.replace(' ' + 'invalid' + ' ', ' ');
-                // }
-                // elem.className = newClass.replace(/^\s+|\s+$/g, '');
-                //
-                // var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
-                // while (newClass.indexOf(' ' + 'valid' + ' ') >= 0) {
-                //     newClass = newClass.replace(' ' + 'valid' + ' ', ' ');
-                // }
-                // elem.className = newClass.replace(/^\s+|\s+$/g, '');
             });
             div.appendChild(main);
             return div;
