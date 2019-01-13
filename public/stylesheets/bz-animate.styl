@@ -137,7 +137,8 @@ for t in themes
     width: 100px
     -webkit-animation: bzbounce 2s infinite
 
-.bz-rotate180
-  transform-rotate(180deg)
-  transition: all 0.5s ease
+angs = 90 180 -90 -180
+for r in angs
+  .bz-rotate{r}
+    transform-rotate(r deg)
 

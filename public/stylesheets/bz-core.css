@@ -231,12 +231,29 @@ summary {
   width: 100px;
   -webkit-animation: bzbounce 2s infinite;
 }
+.bz-rotate90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
 .bz-rotate180 {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
-  transition: all 0.5s ease;
+}
+.bz-rotate-90 {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.bz-rotate-180 {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
 @-moz-keyframes wave {
   100% {
@@ -1952,8 +1969,8 @@ hr,
 .bz-fader {
   width: 100%;
 }
-.bz-w-325px {
-  width: 325px;
+.bz-w-320px {
+  width: 320px;
 }
 .bz-w-480px {
   width: 480px;
