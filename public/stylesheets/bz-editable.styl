@@ -5,38 +5,62 @@
   position relative
   display inline-block
   width 100%
-  max-width 325px
   i
-    margin-left 12px
-  i + .bz-editable
-    margin-left 8px
+    height: 52px
+    line-height: 52px
+    font-size: 1.5em
+    display: inline-block
+    text-align: center
+    float: left
+    width: 52px
   .loader-box
     position absolute
     top 20px
     right 0
     width 25px
+  label
+    color: color-gray
+    font-size: 18px
+    position: absolute
+    left: 62px
+    top: 21px
+    vendor(transition, 0.2s ease all)
 
 .bz-editable
   border none
-  border-bottom 2px solid transparent
+  border-bottom: 2px solid #d6d5d5
   cursor pointer
   display inline-block
   font-size 18px
-  outline none
-  padding 12px 10px
-  max-width 275px
+  outline: none
+  line-height: 52px
+  padding-left: 10px
+  height: 52px
+  width: 100%
+  max-width: calc(100% - 62px)
 
 .bz-editable:hover,
 .bz-editable:focus
-  background color-gray
+  background color-gray-light
 
 input.bz-editable
   border-bottom 2px solid color-gray-light
   cursor auto
-  padding 10px
-  width calc(100% - 46px)
-  max-width 205px
+  height: 52px
+  padding-left: 10px
+  width: 100%
+  max-width: calc(100% - 62px)
 
 input.bz-editable:focus
   border-bottom 2px solid color-navy
 
+.bz-editable.valid ~ label,
+.bz-editable:focus ~ label,
+input.bz-editable:focus ~ label
+  color: color-navy
+  font-size: 14px
+  top: 5px
+  left: 52px
+
+.bz-editable:hover ~ label
+  color: color-gray

@@ -2608,6 +2608,8 @@ li.divider {
 }
 .bz-input input:focus ~ label,
 .bz-input input:valid ~ label,
+.bz-input input[readonly] ~ label,
+.bz-input input[disabled] ~ label,
 .bz-input input.highlight ~ label,
 .bz-input textarea:focus ~ label,
 .bz-input textarea:valid ~ label,
@@ -2628,7 +2630,9 @@ li.divider {
 .bz-input i + i.bz-tool + input.highlight ~ label,
 .bz-input i.bz-tool.left + input:focus ~ label,
 .bz-input i.bz-tool.left + input:valid ~ label,
-.bz-input i.bz-tool.left + input.highlight ~ label {
+.bz-input i.bz-tool.left + input.highlight ~ label,
+.bz-input i + input[readonly] ~ label,
+.bz-input i + input[disabled] ~ label {
   left: 52px;
 }
 .bz-input input:not(.placeholder)::-webkit-input-placeholder {
@@ -2743,18 +2747,6 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
   color: #848482;
   border-bottom: 2px dotted #848482;
 }
-.bz-input input:not([type])[disabled] ~ label,
-.bz-input input[type=email][disabled] ~ label,
-.bz-input input[type=password][disabled] ~ label,
-.bz-input input[type=text][disabled] ~ label,
-.bz-input input[type=url][disabled] ~ label,
-.bz-input input[type=tel][disabled] ~ label,
-.bz-input input[type=number][disabled] ~ label,
-.bz-input input[type=search][disabled] ~ label,
-.bz-input select[disabled] ~ label,
-.bz-input textarea.bz-textarea[disabled] ~ label {
-  left: 0;
-}
 .bz-input input:not([type])[readonly],
 .bz-input input[type=email][readonly],
 .bz-input input[type=password][readonly],
@@ -2768,18 +2760,6 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
   background-color: #eee;
   color: #777;
   border-color: #ccc;
-}
-.bz-input input:not([type])[readonly] ~ label,
-.bz-input input[type=email][readonly] ~ label,
-.bz-input input[type=password][readonly] ~ label,
-.bz-input input[type=text][readonly] ~ label,
-.bz-input input[type=url][readonly] ~ label,
-.bz-input input[type=tel][readonly] ~ label,
-.bz-input input[type=number][readonly] ~ label,
-.bz-input input[type=search][readonly] ~ label,
-.bz-input select[readonly] ~ label,
-.bz-input textarea.bz-textarea[readonly] ~ label {
-  left: 0;
 }
 .bz-input.theme,
 .bz-input.default,
@@ -3310,13 +3290,15 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
   position: relative;
   display: inline-block;
   width: 100%;
-  max-width: 325px;
 }
 .bz-editable-box i {
-  margin-left: 12px;
-}
-.bz-editable-box i + .bz-editable {
-  margin-left: 8px;
+  height: 52px;
+  line-height: 52px;
+  font-size: 1.5em;
+  display: inline-block;
+  text-align: center;
+  float: left;
+  width: 52px;
 }
 .bz-editable-box .loader-box {
   position: absolute;
@@ -3324,29 +3306,55 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
   right: 0;
   width: 25px;
 }
+.bz-editable-box label {
+  color: #a8a9a9;
+  font-size: 18px;
+  position: absolute;
+  left: 62px;
+  top: 21px;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
 .bz-editable {
   border: none;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid #d6d5d5;
   cursor: pointer;
   display: inline-block;
   font-size: 18px;
   outline: none;
-  padding: 12px 10px;
-  max-width: 275px;
+  line-height: 52px;
+  padding-left: 10px;
+  height: 52px;
+  width: 100%;
+  max-width: calc(100% - 62px);
 }
 .bz-editable:hover,
 .bz-editable:focus {
-  background: #a8a9a9;
+  background: #d6d5d5;
 }
 input.bz-editable {
   border-bottom: 2px solid #d6d5d5;
   cursor: auto;
-  padding: 10px;
-  width: calc(100% - 46px);
-  max-width: 205px;
+  height: 52px;
+  padding-left: 10px;
+  width: 100%;
+  max-width: calc(100% - 62px);
 }
 input.bz-editable:focus {
   border-bottom: 2px solid #102a62;
+}
+.bz-editable.valid ~ label,
+.bz-editable:focus ~ label,
+input.bz-editable:focus ~ label {
+  color: #102a62;
+  font-size: 14px;
+  top: 5px;
+  left: 52px;
+}
+.bz-editable:hover ~ label {
+  color: #a8a9a9;
 }
 .bz-btn,
 .bz-btn-circle,
