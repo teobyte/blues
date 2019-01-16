@@ -2332,7 +2332,14 @@
             }
             editable.before(edtBox);
             edtBox.append(editable);
+            if (editable.onattr('placeholder')) {
+                var lbl = bzDom('<label>');
+                lbl.append(placeholder);
+                edtBox.append(lbl);
+            }
             edtBox.append(ldr);
+            if (editable.inhtml() !== '')
+                editable.onclass('valid');
             function saveField(_edit, inpt, _inpt, txt) {
                 var val = _inpt.val();
                 if (val !== '' && val !== txt) {
@@ -2363,6 +2370,8 @@
                         data: dataParams,
                         success: function (data) {
                             _edit.text(val);
+                            if (_edit.inhtml() !== "")
+                                _edit.onclass('valid');
                             _inpt.replacewith(_edit);
                             bz.Loadspin.hide(ldr);
                         },
