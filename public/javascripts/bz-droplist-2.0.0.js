@@ -79,6 +79,11 @@ if (typeof require === 'function') {
                         if (Dl.o.calluncheck && Blues.check.ifFunction(Dl.o.calluncheck))
                             Dl.o.calluncheck($self, Dl.data, $trig, $inpt);
                     }
+                    if (!$ddlWrap.onattr('multiple') === true) {
+                        var _$ddl = $self.parent();
+                        if (_$ddl.ondata('key') === '1')
+                            Dl.closeDdl(_$ddl);
+                    }
                 });
             });
             // switch on searching option
@@ -186,12 +191,15 @@ if (typeof require === 'function') {
     Dl.defaultOptions = {
         selector: '.bz-droplist',
         calloncheck: function(selector, data, trigger, inpt) {
+            // to show the data value
+            // var t = trigger.find('.text');
+            // t.inhtml('selected: ' + JSON.stringify(data));
             var t = trigger.find('.text');
-            t.inhtml('selected: ' + JSON.stringify(data));
+            t.inhtml(inpt.ondata('name'));
         },
         calluncheck: function(selector, data, trigger, inpt) {
             var t = trigger.find('.text');
-            t.inhtml('selected: ' + JSON.stringify(data));
+            t.inhtml(inpt.ondata('name'));
         }
     };
     function init(options) {

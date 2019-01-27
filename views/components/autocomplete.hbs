@@ -60,7 +60,7 @@
                 <div class="bz-row bz-padding-8">
                     <div class="bz-ac-box" style="width:100%;">
                         <div class="bz-ac" style="width:100%;">
-                            <input type="text" class="bz-input chips bz-ac-init" data-style="width:100%;" data-action="/country/quicksearch" data-mode="add" data-add-params="[param1: 'param01', param2: 'param02']" style="width:320px;">
+                            <input type="text" class="bz-input chips bz-ac-init" data-style="width:100%;" data-action="/country/quicksearch" data-mode="add" data-add-params="[param1: 'param01', param2: 'param02']">
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
     </div>
 </div>
 {{#section 'scripts'}}
-    <script src="../javascripts/bz-autocomplete-2.0.0.js"></script>
+    <script src="../javascripts/bz-autocomplete.js"></script>
     <script>
         var acs = bzDom('.bz-ac-init');
         acs.each(function(i, item) {
@@ -94,7 +94,7 @@
                 // sets chars amount after that searching starts
                 searchAfter: 2,
                 // data as Array of options
-                source: [ 'one', 'two', 'three', 'four', 'five' ],
+                source: [ 'one', 'two', 'three', 'four', 'five', 'one one', 'one two', 'one three', 'one four', 'one five' ],
                 // data as Array of Arrays with options
                 // !! obligatory first always Id, second Name
                 //source: [ [1, 'one'], [2, 'two'], [3, 'three'], [4, 'four'], [5, 'five'] ],

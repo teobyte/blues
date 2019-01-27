@@ -743,8 +743,8 @@ h6,
   line-height: 1.1em;
   opacity: 0.7;
 }
-.bz-t-xx {
-  font-size: s;
+.bz-t-xxs {
+  font-size: 0.4em;
 }
 .bz-t-xs {
   font-size: 0.6em;
@@ -2294,7 +2294,6 @@ hr,
 }
 .bz-toolbar-box,
 .bz-title-box,
-.bz-alert-box,
 .bz-list-box,
 .bz-listview-box,
 .bz-content-box {
@@ -4786,13 +4785,14 @@ input[type="color"]::-webkit-color-swatch {
 .bz-droplist .bz-trigg {
   background: #d6d5d5;
   box-sizing: border-box;
-  padding: 15px 20px 16px 20px;
+  height: 52px;
+  padding: 13px 8px 14px 8px;
   transition: all 0.3s ease-in;
   border: 2px solid transparent;
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
-  font-size: 18px;
+  font-size: inherit;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -4841,7 +4841,7 @@ input[type="color"]::-webkit-color-swatch {
   cursor: pointer;
   height: 40px;
   line-height: 40px;
-  font-size: 18px;
+  font-size: inherit;
   position: relative;
   outline: none;
 }
@@ -4903,7 +4903,7 @@ input[type="color"]::-webkit-color-swatch {
   background-image: url("https://www.w3schools.com/howto/searchicon.png");
   background-position: 14px 12px;
   background-repeat: no-repeat;
-  font-size: 16px;
+  font-size: 1em;
   padding: 14px 20px 12px 45px;
   border: none;
   border-bottom: 1px solid #ddd;
@@ -5747,6 +5747,101 @@ a,
   color: #fff;
   background-color: #808080;
 }
+.bz-badge,
+.bz-badge.primary,
+.bz-badge.positive,
+.bz-badge.warning,
+.bz-badge.negative {
+  position: relative;
+  display: inline-block;
+}
+.bz-badge[data-badge]:after {
+  border-radius: 50%;
+  -moz-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15), 0 1px 7px 0 rgba(0,0,0,0.13), 0 3px 1px -1px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15), 0 1px 7px 0 rgba(0,0,0,0.13), 0 3px 1px -1px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15), 0 1px 7px 0 rgba(0,0,0,0.13), 0 3px 1px -1px rgba(0,0,0,0.3);
+  content: attr(data-badge);
+  height: 20px;
+  font-size: 0.7em;
+  font-weight: 500;
+  line-height: 20px;
+  position: absolute;
+  right: -10px;
+  text-align: center;
+  top: 5px;
+  width: 20px;
+  z-index: 10;
+}
+.bz-badge.default::after {
+  background-color: #a8a9a9;
+  color: #000;
+}
+.bz-badge.primary::after {
+  background-color: #102a62;
+  color: #fff;
+}
+.bz-badge.secondary::after {
+  background-color: #0072d4;
+  color: #fff;
+}
+.bz-badge.positive::after {
+  background-color: #14cb4f;
+  color: #212529;
+}
+.bz-badge.negative::after {
+  background-color: #ff443b;
+  color: #fff;
+}
+.bz-badge.warning::after {
+  background-color: #ff852f;
+  color: #fff;
+}
+.bz-badge.yellow::after {
+  background-color: #ffdc38;
+  color: #212529;
+}
+.bz-badge.info::after {
+  background-color: #75dafd;
+  color: #212529;
+}
+.bz-badge.dark::after {
+  background-color: #212529;
+  color: #fff;
+}
+.bz-badge.light::after {
+  background-color: #d6d5d5;
+  color: #212529;
+}
+.bz-badge.white::after {
+  background-color: #fff;
+  color: #212529;
+}
+.bz-badge.black::after {
+  background-color: #000;
+  color: #fff;
+}
+.bz-badge.mandy::after {
+  background-color: #e5435f;
+  color: #fff;
+}
+.bz-badge.inline[data-badge]::after {
+  right: 0;
+  top: -3px;
+  -moz-box-shadow: 0 0 2px 1px rgba(0,0,0,0.15), 0 0 3px 1px rgba(0,0,0,0.13), 0 0 4px 0px rgba(0,0,0,0.7) inset;
+  -webkit-box-shadow: 0 0 2px 1px rgba(0,0,0,0.15), 0 0 3px 1px rgba(0,0,0,0.13), 0 0 4px 0px rgba(0,0,0,0.7) inset;
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.15), 0 0 3px 1px rgba(0,0,0,0.13), 0 0 4px 0px rgba(0,0,0,0.7) inset;
+}
+.bz-badge.inline,
+.bz-badge.inline.primary,
+.bz-badge.inline.positive,
+.bz-badge.inline.warning,
+.bz-badge.inline.negative {
+  height: 10px;
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  width: 20px;
+}
 .bz-quote,
 blockquote {
   display: block;
@@ -6152,7 +6247,8 @@ blockquote.mandy,
 }
 .bz-page-alert {
   position: relative;
-  margin-bottom: 4px;
+  margin: 4px;
+  width: inherit;
 }
 .bz-page-alert {
   border: 1px solid #a8a9a9;

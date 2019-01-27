@@ -1,18 +1,18 @@
 /**
- * Blues Autocomplete by Aiwee 2016-2018 v.2.0.0
- * Modes: - autocomplete (standard mode name = "ac")
- *        - dropdown list with search
- *        ///////// set attribute data-dllmode="true" for the Autocomplete's <input>
- *        - drop chips on selection
- *        ///////// set attribute data-mode="chip+" or data-mode="+chip" for the Autocomplete's <input>
- *        - add new value if one that you're searching for is not exist
- *        ///////// set attribute data-mode="add" for the Autocomplete's <input>
- *        - add new value and drop chips
- *        ///////// set attribute data-mode="chip+add" for the Autocomplete's <input>
- *        ! To specify add data params just set attribute for the Autocomplete's <input>
- *        ///////// data-add-params="[param1: 'param01', param2: 'param02']"
- *
- * **/
+* Blues Autocomplete by Aiwee 2016-2018 v.2.0.0
+* Modes: - autocomplete (standard mode name = "ac")
+*        - dropdown list with search
+*        ///////// set attribute data-dllmode="true" for the Autocomplete's <input>
+*        - drop chips on selection
+*        ///////// set attribute data-mode="chip+" or data-mode="+chip" for the Autocomplete's <input>
+*        - add new value if one that you're searching for is not exist
+*        ///////// set attribute data-mode="add" for the Autocomplete's <input>
+*        - add new value and drop chips
+*        ///////// set attribute data-mode="chip+add" for the Autocomplete's <input>
+*        ! To specify add data params just set attribute for the Autocomplete's <input>
+*        ///////// data-add-params="[param1: 'param01', param2: 'param02']"
+*
+**/
 //////////////////////////////////////////////////////////////////////////////////////
 "use strict";
 var Autocomplete = function (inpt, options) {
@@ -92,9 +92,9 @@ Autocomplete.prototype = {
             if (ac.dataType === 'func') {
                 if (ac.o.dataurl !== '' && ac.o.dataurl !== null && ac.o.dataurl !== 'undefined') {
                     ac.dataurl = ac.o.dataurl;
-                // deprecated to avoid conflicts
-                // } else if ($inpt.ondata('action')) {
-                //     ac.dataurl = $inpt.ondata('action');
+                    // deprecated to avoid conflicts
+                    // } else if ($inpt.ondata('action')) {
+                    //     ac.dataurl = $inpt.ondata('action');
                 } else if ($inpt.ondata('ctr') && $inpt.ondata('act')) {
                     ac.dataurl = '/' +  $inpt.ondata('ctr') + '/' + $inpt.ondata('act');
                 } else {
@@ -107,7 +107,7 @@ Autocomplete.prototype = {
             }
         };
 
-        if (ac.ddlmode == 'true') {
+        if (ac.ddlmode == true) {
             if ('ddl' in ac.cache) {
                 ac.indata = ac.cache['ddl'];
             } else {
@@ -127,7 +127,7 @@ Autocomplete.prototype = {
     // stores data into the Autocomplete object
     passdata: function(data, searchstr, ac) {
         ac.indata = data;
-        if (ac.ddlmode == 'true') {
+        if (ac.ddlmode === 'true') {
             ac.cache['ddl'] = ac.indata;
         } else {
             ac.cache[searchstr] = ac.indata;
@@ -141,27 +141,27 @@ Autocomplete.prototype = {
         if (ac.indata.length > 0) {
             for (var i = 0; i < ac.indata.length; i++) {
                 var _data = ac.indata[i];
-                if (typeof _data == 'string') {
-                    if (ac.ddlmode == 'true') {
+                if (typeof _data === 'string') {
+                    if (ac.ddlmode === 'true') {
                         tempRes.push([i+1, _data]);
                     } else if (_data.toLowerCase().indexOf(searchstr.toLowerCase()) !== -1) {
                         tempRes.push([i+1, _data]);
-                    } else if (ac.mode == 'add' || ac.mode == 'chip+add') {
+                    } else if (ac.mode === 'add' || ac.mode === 'chip+add') {
                         addnew = true;
                     }
                 } else {
                     if (_data[1].toLowerCase().indexOf(searchstr.toLowerCase()) !== -1) {
                         tempRes.push(_data);
-                    } else if (ac.mode == 'add' || ac.mode == 'chip+add') {
+                    } else if (ac.mode === 'add' || ac.mode === 'chip+add') {
                         addnew = true;
                     }
                 }
             }
         } else {
-            if (ac.mode == 'add' || ac.mode == 'chip+add')
+            if (ac.mode === 'add' || ac.mode === 'chip+add')
                 addnew = true;
         }
-        if (addnew === true && (ac.mode == 'add' || ac.mode == 'chip+add')) {
+        if (addnew === true && (ac.mode === 'add' || ac.mode === 'chip+add')) {
             ac.hidesuggestnew();
             ac.suggestnew();
         }
@@ -188,7 +188,7 @@ Autocomplete.prototype = {
     addSuggestions: function() {
         var ac = this;
         var $suggestions = bzDom('<ul>');
-        $suggestions.onclass('bz-list-no-style bz-suggestions bz-transition bz-shadow');
+        $suggestions.onclass('bz-list-no-style bz-suggestions bz-transition');
         $suggestions.inhtml('');
         $suggestions.on('mouseover', function() {
             var $that = bzDom(this),
@@ -246,9 +246,8 @@ Autocomplete.prototype = {
         var $inpt = bzDom(ac.inpt);
         $inpt.ondata('id', selectionId);
         $inpt.val(selectionName);
-        if (ac.o.selAction) {
+        if (ac.o.selAction)
             ac.o.selAction($inpt, selectionId, selectionName, ac);
-        }
         ac.removeSuggestions();
     },
     // highlights selection on keyUp and keyDown events
@@ -264,25 +263,52 @@ Autocomplete.prototype = {
         }
         return item;
     },
+    // suggestions count
+    suggestionitems: function () {
+        var ac = this,
+           $selectItems = null;
+        if (bzDom(ac.inpt).parent().find('.bz-suggestions').exist()) {
+            var $suggestions = bzDom(ac.inpt).parent().find('.bz-suggestions');
+            $selectItems = $suggestions.find('li');
+        }
+        return $selectItems;
+    },
+    suggestionscount: function() {
+        var ac = this,
+            itemsLength = 0,
+            selectItems =  ac.suggestionitems();
+        if (selectItems === null)
+            return;
+        else {
+            if (selectItems.el === null && selectItems.el === 0 && selectItems.el === undefined)
+                return;
+            else if (selectItems !== null && selectItems.el !== null && selectItems.el.length > 0)
+                itemsLength = selectItems.el.length;
+        }
+        return itemsLength;
+    },
     // adds Add button if searching value hasn't been found
     suggestnew: function() {
         var ac = this;
-        if (ac.mode == 'add' || ac.mode == 'chip+add') {
-            var $inpt = bzDom(ac.inpt);
-            var params = {};
-            if ($inpt.ondata('add-params'))
-                params = $inpt.ondata('add-params');
-            var $addBtn = bzDom('<button type="button">');
-            if (ac.o.addBtnClass != '')
-                $addBtn.onclass(ac.o.addBtnClass);
-            $addBtn.inhtml('Add');
-            $addBtn.on('click', function() {
-                var $that = bzDom(this);
-                var _val = $inpt.val();
-                ac.o.addAction(_val, params, ac);
-                $that.remove();
-            });
-            $inpt.parent('.bz-ac').after($addBtn);
+        if (ac.mode === 'add' || ac.mode === 'chip+add') {
+            var itemsLength = ac.suggestionscount();
+            if (itemsLength === 0) {
+                var $inpt = bzDom(ac.inpt);
+                var params = {};
+                if ($inpt.ondata('add-params'))
+                    params = $inpt.ondata('add-params');
+                var $addBtn = bzDom('<button type="button">');
+                if (ac.o.addBtnClass !== '')
+                    $addBtn.onclass(ac.o.addBtnClass);
+                $addBtn.inhtml('Add');
+                $addBtn.on('click', function() {
+                    var $that = bzDom(this);
+                    var _val = $inpt.val();
+                    ac.o.addAction(_val, params, ac);
+                    $that.remove();
+                });
+                $inpt.parent('.bz-ac').after($addBtn);
+            }
         }
     },
     // removes Add button
@@ -304,63 +330,49 @@ Autocomplete.prototype = {
             // if (ac.ddlmode == 'true' && ac.listenInput == true) {
             //     ac.setdata(_searchstr, $that);
             // }
-
             var $that = bzDom(this),
                 _searchstr = $that.val();
-
-            if (ac.ddlmode == 'true' && ac.listenInput == true) {
+            if (ac.ddlmode == 'true' && ac.listenInput == true)
                 ac.setdata(_searchstr, $that);
-            } else {
-                if (_searchstr.length > 0) {
+            else
+                if (_searchstr.length > 0)
                     ac.showSuggestions();
-                }
-            }
         });
         $inpt.on('keyup', function() {
             var $that = bzDom(this),
                 _searchstr = $that.val();
-            if (_searchstr.length >= ac.o.searchAfter  && ac.listenInput == true) {
+            if (_searchstr.length >= ac.o.searchAfter  && ac.listenInput === true) {
                 ac.setdata(_searchstr, $that);
             }
         });
         $inpt.on('blur', function() {
             var $that = bzDom(this),
                 _searchstr = $that.val();
-            if (_searchstr.length > 0 || ac.ddlmode == 'true') {
-                if ($that.ondata('hover') == '0')
+            //if (_searchstr.length > 0 || ac.ddlmode == true) {
+                if ($that.ondata('hover') == 0)
                     ac.hideSuggestions();
-            }
+            //}
         });
         $inpt.on('keydown', function(e) {
             var $that = bzDom(this);
-            var $selectItems = null;
-            if (bzDom(ac.inpt).parent().find('.bz-suggestions').exist()) {
-                var $suggestions = bzDom(ac.inpt).parent().find('.bz-suggestions');
-                $selectItems = $suggestions.find('li');
-            }
-            if ($selectItems === null && $selectItems == 0) {
-                return;
-            }
-            var itemsLength = 0;
-            if ($selectItems !== null && $selectItems.el.length != 0) {
-                itemsLength = $selectItems.el.length;
-            }
-            var item = null;
+            var item = null,
+                $selectItems = ac.suggestionitems() || null,
+                itemsLength = ac.suggestionscount() || 0;
             // down
-            if (e.keyCode == 40) {
+            if (e.keyCode === 40) {
                 ac.listenInput = false;
                 e.preventDefault();
-                if(ac.activeIndex == -1){
+                if(ac.activeIndex === -1){
                     item = $selectItems.el[0];
                     ac.activeIndex = ac.highlightSelection(bzDom(item), 0);
                 } else {
                     //deselect current active item
-                    var activeItem = bzDom($selectItems.el[ac.activeIndex]);
+                    activeItem = bzDom($selectItems.el[ac.activeIndex]);
                     if (activeItem.ifclass('highlight'))
                         activeItem.offclass('highlight');
                     // select next item
-                    var k = ac.activeIndex;
-                    if (k + 1 == itemsLength) {
+                    k = ac.activeIndex;
+                    if (k + 1 === itemsLength) {
                         k = 0;
                         item = $selectItems.el[k];
                         ac.activeIndex = ac.highlightSelection(bzDom(item), k);
@@ -372,20 +384,20 @@ Autocomplete.prototype = {
                 }
             }
             // up
-            else if (e.keyCode == 38) {
+            else if (e.keyCode === 38) {
                 ac.listenInput = false;
                 e.preventDefault();
-                if(ac.activeIndex == -1){
+                if(ac.activeIndex === -1){
                     item = $selectItems.el[itemsLength - 1];
                     ac.activeIndex = ac.highlightSelection(bzDom(item), itemsLength - 1);
                 } else {
                     //deselect current active item
-                    var activeItem = bzDom($selectItems.el[ac.activeIndex]);
+                    activeItem = bzDom($selectItems.el[ac.activeIndex]);
                     if (activeItem.ifclass('highlight'))
                         activeItem.offclass('highlight');
                     // select previous item
                     var k = ac.activeIndex;
-                    if (k - 1 == -1) {
+                    if (k - 1 === -1) {
                         k = itemsLength - 1;
                         item = $selectItems.el[k];
                         ac.activeIndex = ac.highlightSelection(bzDom(item), k);
@@ -397,7 +409,7 @@ Autocomplete.prototype = {
                 }
             }
             // esc
-            else if (e.keyCode == 27) {
+            else if (e.keyCode === 27) {
                 e.preventDefault();
                 //deselect current active item
                 var activeItem = bzDom($selectItems.el[ac.activeIndex]);
@@ -412,27 +424,26 @@ Autocomplete.prototype = {
                 ac.hidesuggestnew();
             }
             // enter or tab
-            else if (e.keyCode == 13 || e.keyCode == 9) {
+            else if (e.keyCode === 13 || e.keyCode === 9) {
                 e.preventDefault();
-                ac.listenInput = true;
+                ac.listenInput = false;
                 ac.removeSuggestions();
-                ac.hidesuggestnew();
-                if ($selectItems.el[ac.activeIndex] !== 'undefined') {
-                    var activeItem = bzDom($selectItems.el[ac.activeIndex]);
-                    var _selectionId = activeItem.ondata('id');
-                    var _selectionName = activeItem.text();
-                    if (ac.mode == '+chip' || ac.mode == 'chip+' || ac.mode == 'chip+add') {
+                if (ac.activeIndex !== -1 && $selectItems.el[ac.activeIndex] !== 'undefined') {
+                    var activeItem = bzDom($selectItems.el[ac.activeIndex]),
+                        _selectionId = activeItem.ondata('id'),
+                        _selectionName = activeItem.text();
+                    ac.activeIndex = -1;
+                    if (ac.mode === '+chip' || ac.mode === 'chip+' || ac.mode === 'chip+add') {
                         ac.o.addchip(_selectionId, _selectionName, ac);
                         ac.hidesuggestnew();
                     } else {
                         ac.selection(_selectionId, _selectionName);
                         ac.hidesuggestnew();
                     }
-                }
-            } else {
-                // normalize
+                } else
+                    ac.hidesuggestnew();
+            } else
                 ac.listenInput = true;
-            }
         });
     },
     setstyle: function() {
@@ -453,7 +464,7 @@ Autocomplete.prototype = {
                     'attr': {
                         position: 'absolute',
                         bottom: '16px',
-                        right: '-4px'
+                        right: '0'
                     }
                 },
                 '.bz-ac-box .bz-ac .bz-suggestions': {
@@ -468,14 +479,15 @@ Autocomplete.prototype = {
                         margin: 0,
                         padding: 0,
                         left: '0',
-                        top: '48px',
+                        top: '52px',
                         'min-width': '325px',
                         width:' 100%',
                         'z-index': '1000',
                         transition: 'all 0.5s ease',
                         '-webkit-transition': 'all 0.5s ease',
-                        '-moz-transition': 'all 0.5s ease'
-
+                        '-moz-transition': 'all 0.5s ease',
+                        border: '1px solid #dcdedf',
+                        'border-top': 'none'
                     }
                 },
                 '.bz-ac-box .bz-ac .bz-suggestions.hide': {
@@ -493,7 +505,7 @@ Autocomplete.prototype = {
                 },
                 '.bz-ac-box .bz-ac .bz-suggestions li.highlight, .bz-ac-box .bz-ac .bz-suggestions li:hover': {
                     'attr': {
-                        background:'#87939a'
+                        background:'#f6f7f8'
                     }
                 },
             },
@@ -553,7 +565,7 @@ Autocomplete.defaultOptions = {
 
         }
         xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
+            if (this.readyState === 4 && this.status === 200) {
                 passdata(JSON.parse(this.responseText), q, _this);
             }
         };
@@ -581,7 +593,7 @@ Autocomplete.defaultOptions = {
                         _selectionName = $that.ondata('value'),
                         _selectionId = $that.ondata('id');
                     ac.selection(_selectionId, _selectionName);
-                    if (ac.mode == '+chip' || ac.mode == 'chip+' || ac.mode == 'chip+add') {
+                    if (ac.mode === '+chip' || ac.mode === 'chip+' || ac.mode === 'chip+add') {
                         ac.o.addchip(_selectionId, _selectionName, ac);
                     }
                     ac.hidesuggestnew();
