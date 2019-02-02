@@ -1,0 +1,169 @@
+<html lang="en-us" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Blues Framework">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+    <title>Blues 2.0 | Context menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
+    <link rel="stylesheet" href="../public/stylesheets/bz-core.css">
+</head>
+<body>
+<div id="leftSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <ul class="bz-sidenav-list"></ul>
+    </div>
+</div>
+<div id="rightSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <div class="bz-cascading-list w-100p">
+            <ul class="bz-main-list">
+                <li class="bz-cascading-list">
+                    <label class="text" for="toggle-3">
+                        Page templates
+                        <i class="bzi-chevron-right"></i>
+                    </label>
+                    <input type="checkbox" id="toggle-3">
+                    <ul>
+                        <li>
+                            <a class="text" href="pages/blank-page.html">Blank page</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-toolbar.html">Page with toolbar</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-list.html">Page with list</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-listview.html">Page with list view</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="bz-clearfix bz-sidenav-wrapper bz-content">
+    <div class="bz-toolbar primary">
+        <div id="leftSideBtn" class="tool bz-sidenav-btn"
+             data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
+        </div>
+        <div class="title">Context menu</div>
+        <div id="leftRightBtn" class="tool bz-sidenav-btn"
+             data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
+        </div>
+    </div>
+    <div class="bz-clear h-64"></div>
+    <div class="bz-padding-16 bz-clearfix">
+        <div id="greenarea" data-menu="contextmenu" class="bz-context-area bz-margin-auto bz-bc-positive bz-t-align-c bz-fc-white" style="padding:50px 0;">
+            Right mouse click in the area
+        </div>
+    </div>
+    <div class="bz-padding-16 bz-clearfix">
+        <div id="redarea" data-menu="contextmenu" class="bz-context-area bz-margin-auto bz-bc-negative bz-t-align-c bz-fc-white" style="padding:50px 0;">
+            Right mouse click in the area
+        </div>
+    </div>
+
+    <div class="bz-padding-8">
+        <p>
+            Requires next CSS and JS libraries:
+        <ul class="bz-list-no-style bz-ft-bold bz-padding-8">
+            <li class="bz-fc-primary">bz-core-*.css</li>
+            <li class="bz-fc-positive">bz-core-*.js</li>
+        </ul>
+        </p>
+        <p>
+            Set context area
+        </p>
+        <textarea class="bz-code html">
+            <div id="samplearea" data-menu="samplecontextmenu" class="bz-context-area">
+                Right mouse click in the area
+            </div>
+        </textarea>
+        <p>
+            Set context menu
+        </p>
+        <textarea class="bz-code html">
+            <div id="samplecontextmenu" class="bz-context-menu" data-open="0">
+                <ul class="bz-list-no-style">
+                    <li>
+                        <a href="#" class="item" data-id="1" data-action="View">
+                            <i class="icon-eye"></i> View item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-id="2" data-action="Edit">
+                            <i class="icon-pencil"></i> Edit item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item" data-id="3" data-action="Delete">
+                            <i class="icon-trash"></i> Delete item
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </textarea>
+        <p>
+            Initiate context menu
+        </p>
+        <textarea class="bz-code js">
+            bz.Contextmenu('.bz-context-area', function(contextArea, clickedEl) {
+                alert('Context Area: ' + contextArea.onattr('id') +
+                      ', Selected Action: ' + clickedEl.ondata('action') +
+                      ', Selected Id: ' + clickedEl.ondata('id'));
+            });
+        </textarea>
+    </div>
+</div>
+
+<div id="contextmenu" class="bz-context-menu" data-open="0">
+    <ul class="bz-list-no-style">
+        <li>
+            <a href="#" class="item" data-id="1" data-action="View"><i class="icon-eye"></i>  View item</a>
+        </li>
+        <li>
+            <a href="#" class="item" data-id="2" data-action="Edit"><i class="icon-pencil"></i>  Edit item</a>
+        </li>
+        <li>
+            <a href="#" class="item" data-id="3" data-action="Delete"><i class="icon-trash"></i>  Delete item</a>
+        </li>
+        <li>
+            <a href="#" class="item" data-id="1" data-action="View"><i class="icon-eye"></i>  View item</a>
+        </li>
+        <li>
+            <a href="#" class="item" data-id="2" data-action="Edit"><i class="icon-pencil"></i>  Edit item</a>
+        </li>
+        <li>
+            <a href="#" class="item" data-id="3" data-action="Delete"><i class="icon-trash"></i>  Delete item</a>
+        </li>
+        <li>
+            <a href="#" class="item" data-id="1" data-action="View"><i class="icon-eye"></i>  View item</a>
+        </li>
+        <li>
+            <a href="#" class="item" data-id="2" data-action="Edit"><i class="icon-pencil"></i>  Edit item</a>
+        </li>
+        <li>
+            <a href="#" class="item" data-id="3" data-action="Delete"><i class="icon-trash"></i>  Delete item</a>
+        </li>
+    </ul>
+</div>
+<script src="../public/javascripts/bz-core.js"></script>
+<script src="../public/javascripts/bz-inject.js"></script>
+<script src="../public/javascripts/bz-sidenav.js"></script>
+<script src="../public/javascripts/bluessite.js"></script>
+<script src="../public/javascripts/bz-codelighter.js"></script>
+<script>
+    bz.Contextmenu('.bz-context-area', function(contextArea, clickedEl) {
+        bz.alert('Context Area: ' + contextArea.onattr('id') + ', Selected Action: ' + clickedEl.ondata('action') + ', Selected Id: ' + clickedEl.ondata('id'));
+    });
+</script>
+</body>
+</html>

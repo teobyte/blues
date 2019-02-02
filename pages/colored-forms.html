@@ -5,10 +5,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
-    <title>Blues 2.0 | Home</title>
+    <title>Blues 2.0 | Colored input</title>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
     <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
-    <link rel="stylesheet" href="public/stylesheets/bz-core.css">
+    <link rel="stylesheet" href="../public/stylesheets/bz-core.css">
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -52,7 +52,7 @@
             <div class="back circle"></div>
             <i class="bzi-menu"></i>
         </div>
-        <div class="title">Blues 2.0</div>
+        <div class="title">Colored forms</div>
         <div id="leftRightBtn" class="tool bz-sidenav-btn"
              data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
             <div class="back circle"></div>
@@ -60,42 +60,43 @@
         </div>
     </div>
     <div class="bz-padding-16 bz-clearfix">
-        <h3 class="bz-fc-primary">Blues Front Framework v.2.0</h3>
-        <div class="bz-t-align-j">
-            <h5>CSS and JS frameworks</h5>
-            <h6 class="bz-fc-positive">Purpose</h6>
-            <p>
-                Blues built with pure css and javascript libraries from the scratch. It is cross browser and helps to build
-                rich web interfaces for any websites.
-            </p>
-            <h6 class="bz-fc-positive">Requirements</h6>
-            <p>
-                Pure CSS and Javascript written. No dependencies
-            </p>
-            <h6 class="bz-fc-positive">Size</h6>
-            <p>
-                Blues lightweight
-            <ul class="bz-list-no-style dashed bz-padding-8">
-                <li>CSS (approx. 169* kb - not minimized)</li>
-                <li>JS (approx. 280* kb - not minimized)</li>
-            </ul>
-            * - can change at any time.
-            </p>
-            <h6 class="bz-fc-positive">Repositories</h6>
-            <p>Feel free to use Blues</p>
-            <ul class="bz-list-no-style">
-                <li><a href="https://www.jsdelivr.com/package/gh/aiwee/blues" target="_blank">CDN on JSDeliver</a></li>
-                <li><a href="https://github.com/aiwee/blues" target="_blank">Get it on Github</a></li>
-            </ul>
-            <h6 class="bz-fc-positive">Education</h6>
-            <p>Code of Blues framework written with the pure css and javascript, it is very simple and primitive, so you can easily use it for any educational reasons.</p>
-        </div>
+        <h5>Search Bar</h5>
+        <form>
+            <input type="text" name="search" class="bz-search bz-float-r" placeholder="Search...">
+        </form>
+    </div>
+    <div class="bz-padding-16 bz-clearfix">
+        <h5>Vertical Form</h5>
+        <p>Form with validation on blur and submit</p>
+        <form name="validateform" class="bz-form vertical">
+            <input type="text"  class="bz-input flash bz-bc-faded bz-fc-white" name="firstname" placeholder="Name"
+                   data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+            <input type="text"  class="bz-input flash bz-bc-positive" name="firstname" placeholder="Name"
+                   data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+            <input type="text"  class="bz-input flash bz-bc-negative" name="firstname" placeholder="Name"
+                   data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+            <input type="text"  class="bz-input flash bz-bc-warning" name="firstname" placeholder="Name"
+                   data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+            <input type="text"  class="bz-input flash bz-bc-light" name="firstname" placeholder="Name"
+                   data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+            <input type="text"  class="bz-input flash bz-bc-dark" name="firstname" placeholder="Name"
+                   data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
+        </form>
     </div>
 </div>
-<script src="public/javascripts/bz-core.js"></script>
-<script src="public/javascripts/bz-inject.js"></script>
-<script src="public/javascripts/bz-sidenav.js"></script>
-<script src="public/javascripts/bluessite.js"></script>
-<script src="public/javascripts/bz-codelighter.js"></script>
+<script src="../public/javascripts/bz-core.js"></script>
+<script src="../public/javascripts/bz-inject.js"></script>
+<script src="../public/javascripts/bz-sidenav.js"></script>
+<script src="../public/javascripts/bluessite.js"></script>
+<script src="../public/javascripts/bz-codelighter.js"></script>
+<script src="../public/javascripts/blues-require/bz-require.js"></script>
+<script type="text/javascript">
+    (function() {
+        new Bzrequire({
+            form: 'validateform',
+            checkonblur : true
+        }).toSubmit();
+    })();
+</script>
 </body>
 </html>

@@ -1,0 +1,212 @@
+<html lang="en-us" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Blues Framework">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+    <title>Blues 2.0 | Autocomplete</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
+    <link rel="stylesheet" href="../public/stylesheets/bz-core.css">
+</head>
+<body>
+<div id="leftSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <ul class="bz-sidenav-list"></ul>
+    </div>
+</div>
+<div id="rightSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <div class="bz-cascading-list w-100p">
+            <ul class="bz-main-list">
+                <li class="bz-cascading-list">
+                    <label class="text" for="toggle-3">
+                        Page templates
+                        <i class="bzi-chevron-right"></i>
+                    </label>
+                    <input type="checkbox" id="toggle-3">
+                    <ul>
+                        <li>
+                            <a class="text" href="pages/blank-page.html">Blank page</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-toolbar.html">Page with toolbar</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-list.html">Page with list</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-listview.html">Page with list view</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="bz-clearfix bz-sidenav-wrapper bz-content">
+    <div class="bz-toolbar primary">
+        <div id="leftSideBtn" class="tool bz-sidenav-btn"
+             data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
+        </div>
+        <div class="title">Autocomplete</div>
+        <div id="leftRightBtn" class="tool bz-sidenav-btn"
+             data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
+        </div>
+    </div>
+    <div class="bz-padding-16 bz-clearfix">
+        <div class="bz-padding-8 bz-clearfix">
+            <div class="bz-chip small">
+                <img src="https://adm.aiweesports.com/assets/aiwee-logo-n-1627b3e27fe1e292d509e3b11e54ff91.png">
+                <div class="text">three</div>
+                <div class="chip-close" data-id="3">✕</div>
+            </div>
+            <div class="bz-chip">
+                <img src="https://adm.aiweesports.com/assets/aiwee-logo-n-1627b3e27fe1e292d509e3b11e54ff91.png">
+                <div class="text">three</div>
+                <div class="chip-close" data-id="3">✕</div>
+            </div>
+            <div class="bz-chip small">
+                <i class="icon-like"></i>
+                <div class="text">
+                    <a href="!#">three</a>
+                </div>
+                <div class="chip-close" data-id="3">✕</div>
+            </div>
+            <div class="bz-chip">
+                <div class="text">
+                    <a href="!#">three</a>
+                </div>
+                <div class="chip-close" data-id="3">✕</div>
+            </div>
+            <div class="bz-chip small">
+                <div class="text">three</div>
+                <div class="chip-close" data-id="3">✕</div>
+            </div>
+        </div>
+        <h5>Simple Autocomplete / no style</h5>
+        <div class="bz-row bz-padding-8">
+            <div class="bz-ac-box">
+                <div class="bz-ac">
+                    <input type="text" class="bz-ac-init" data-action="/country/quicksearch" style="width:320px;">
+                </div>
+            </div>
+        </div>
+        <h5>Simple Autocomplete / ddl mode</h5>
+        <div class="bz-row bz-padding-8">
+            <div class="bz-ac-box">
+                <div class="bz-ac" style="width:320px;">
+                    <input type="text" class="bz-ac-init" data-action="/country/quicksearch" data-mode="ddl" >
+                </div>
+            </div>
+        </div>
+        <h5>Autocomplete with Add New option</h5>
+        <p>
+            passing parameters param1: 'param01', param2: 'param02'
+        </p>
+        <div class="bz-row bz-padding-8">
+            <div class="bz-ac-box" style="width:100%;">
+                <div class="bz-ac" style="width:100%;">
+                    <input type="text" class="bz-input chips bz-ac-init" data-style="width:100%;" data-action="/country/quicksearch" data-mode="add" data-add-params="[param1: 'param01', param2: 'param02']" style="width:320px;">
+                </div>
+            </div>
+        </div>
+        <h5>Autocomplete + add chip</h5>
+        <div class="bz-row bz-padding-8">
+            <div class="bz-ac-box" style="width:100%;">
+                <div class="bz-ac" style="width:100%;">
+                    <input type="text" class="bz-input chips bz-ac-init" placeholder="Input words from one to five" data-style="width:100%;" data-ctr="country" data-act="quicksearch" data-mode="chip+">
+                </div>
+            </div>
+        </div>
+        <h5>Autocomplete + Add option with chip</h5>
+        <div class="bz-row bz-padding-8">
+            <div class="bz-ac-box" style="width:100%;">
+                <div class="bz-ac" style="width:100%;">
+                    <input type="text" class="bz-input bordered bz-ac-init"  style="width:320px;"
+                           data-mode="chip+add" data-style="width:100%;" data-add-params="{ someid: '86765876' }" data-ctr="country" data-act="quicksearch" >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../public/javascripts/bz-core.js"></script>
+<script src="../public/javascripts/bz-inject.js"></script>
+<script src="../public/javascripts/bz-sidenav.js"></script>
+<script src="../public/javascripts/bluessite.js"></script>
+<script src="../public/javascripts/bz-codelighter.js"></script>
+<script type="text/javascript" src="../public/javascripts/bz-autocomplete.js"></script>
+<script>
+    (function() {
+
+        var acs = bzDom('.bz-ac-init');
+        acs.each(function(i, item) {
+            new Autocomplete(item, {
+                // sets chars amount after that searching starts
+                searchAfter: 2,
+                // data as Array of options
+                source: [ 'one', 'two', 'three', 'four', 'five' ],
+                // data as Array of Arrays with options
+                // !! obligatory first always Id, second Name
+                //source: [ [1, 'one'], [2, 'two'], [3, 'three'], [4, 'four'], [5, 'five'] ],
+                // data returns by the function
+                // source: function() {
+                //     var data = [ 'one', 'two', 'three', 'four', 'five' ];
+                //     // data manipulations
+                //     return data;
+                // }
+                // set action after selection has been made
+                // selAction: function(selectionId, selectionName) {
+                //     alert('selected: ' + selectionId + '/' + selectionName);
+                // },
+                // set how items are rendering in the suggestions container or
+                // by any other way
+                // suggest: function(suggesteddata, ac) {
+                //     ac.removeSuggestions();
+                //     ac.addSuggestions();
+                //     if (suggesteddata.length > 0) {
+                //         for (var i = 0; i < suggesteddata.length; i++) {
+                //             var $listItem = bzDom('<li>');
+                //             $listItem.onclass('bz-padding10');
+                //             $listItem.inhtml(suggesteddata[i][1]);
+                //             $listItem.ondata('id', suggesteddata[i][0]);
+                //             $listItem.on('click', function() {
+                //                 var $that = bzDom(this),
+                //                     _selectionName = $that.inhtml(),
+                //                     _selectionId = $that.ondata('id');
+                //                 ac.selection(_selectionId, _selectionName);
+                //             });
+                //             ac.fillSuggestions($listItem);
+                //         }
+                //     }
+                //     bzDom(ac.inpt).after($suggestions);
+                // },
+                // set Add button class
+                addBtnClass: 'bz-btn',
+                // set Action for the Add button
+                addAction: function(val, params, ac) {
+                    alert('value: ' + val +
+                        ', params: ' + JSON.stringify(params));
+                    // add this only if use chip+add mode
+                    // better to return it in the success callback of
+                    // ajax data request to provide Id
+                    if (ac.mode == 'chip+add') {
+                        ac.o.addchip(null, val, ac);
+                    }
+                }
+            });
+        });
+
+
+    })();
+</script>
+</body>
+</html>
+
+
+

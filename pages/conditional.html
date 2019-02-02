@@ -1,0 +1,271 @@
+<html lang="en-us" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Blues Framework">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+    <title>Blues 2.0 | Conditional</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
+    <link rel="stylesheet" href="../public/stylesheets/bz-core.css">
+</head>
+<body>
+<div id="leftSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <ul class="bz-sidenav-list"></ul>
+    </div>
+</div>
+<div id="rightSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <div class="bz-cascading-list w-100p">
+            <ul class="bz-main-list">
+                <li class="bz-cascading-list">
+                    <label class="text" for="toggle-3">
+                        Page templates
+                        <i class="bzi-chevron-right"></i>
+                    </label>
+                    <input type="checkbox" id="toggle-3">
+                    <ul>
+                        <li>
+                            <a class="text" href="pages/blank-page.html">Blank page</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-toolbar.html">Page with toolbar</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-list.html">Page with list</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-listview.html">Page with list view</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="bz-clearfix bz-sidenav-wrapper bz-content">
+    <div class="bz-toolbar primary">
+        <div id="leftSideBtn" class="tool bz-sidenav-btn"
+             data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
+        </div>
+        <div class="title">Conditional</div>
+        <div id="leftRightBtn" class="tool bz-sidenav-btn"
+             data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
+        </div>
+    </div>
+    <div class="bz-padding-16 bz-clearfix">
+        <h5>Conditional Form</h5>
+        <form id="conditional" style="width:640px; position: relative;">
+            <p>Sign in/Sign up</p>
+            <!-- start // markup for the element without injector  -->
+            <div class="bz-btn-group">
+                <label  class="bz-check-btn">
+                    <input id="radio11" type="radio" name="radios11" checked/>
+                    <span class="highlight"></span>
+                    <span class="text">Sign in</span>
+                </label>
+                <label  class="bz-check-btn">
+                    <input id="radio12" type="radio" name="radios11" />
+                    <span class="highlight"></span>
+                    <span class="text">Sign up</span>
+                </label>
+            </div>
+            <p>Input with counter</p>
+            <div id="signinform" class="bz-padding-4 bz-form vertical">
+                <form name="signinform" >
+                    <p>Sign in</p>
+                    <input type="email" class="bz-input flash" name="email" placeholder="Email"  data-icon="bzi-envelope" required data-rules="required|email"/>
+                    <p>Password input with password viewer and password strength validation (click eye to see in action)</p>
+                    <input type="password" class="bz-input pwd-check strength show" name="password" placeholder="Password" data-icon="bzi-eye right" required data-rules="required"/>
+                </form>
+            </div>
+
+            <div id="signupform" class="bz-padding-4 bz-form vertical" style="display:none;">
+                <form name="signupform">
+                    <p>Sign up</p>
+                    <input type="email" class="bz-input flash" name="email" placeholder="Email"  data-icon="bzi-envelope" required data-rules="required|email"/>
+                    <p>Password input with password viewer and password strength validation (click eye to see in action)</p>
+                    <input type="password" class="bz-input pwd-check strength show" name="password" placeholder="Password" data-icon="bzi-eye right" required data-rules="required"/>
+                    <input type="password" class="bz-input pwd-check show" name="confirmation" placeholder="Confirm password" data-icon="bzi-eye right" required data-rules="equalto:password"/>
+
+                    <select id="gender" class="bz-select" data-name="Select gender" >
+                        <option value="male">Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+
+                    <div id="colors" class="bz-padding-16 bz-clearfix" style="display: none;">
+                        <p>Your favorite color</p>
+                        <label class="bz-radio">
+                            <input id="radio20" type="radio" name="radiocolors" />
+                            <span class="outer">
+                        <span class="inner"></span>
+                    </span>
+                            <span class="text">Red</span>
+                        </label>
+                        <input id="radio21" type="radio" name="radiocolors" class="bz-radio" data-label="Green" />
+                        <input id="radio22" type="radio" name="radiocolors" class="bz-radio" data-label="Blue" />
+                    </div>
+
+                    <div id="cars" class="bz-padding-16 bz-clearfix"  style="display: none;">
+                        <p>Your favorite car</p>
+                        <label class="bz-radio">
+                            <input id="radio30" type="radio" name="radiocars" checked/>
+                            <span class="outer">
+                        <span class="inner"></span>
+                    </span>
+                            <span class="text">Lexus</span>
+                        </label>
+                        <input id="radio31" type="radio" name="radiocars" class="bz-radio" data-label="Bmv" />
+                        <input id="radio32" type="radio" name="radiocars" class="bz-radio" data-label="Cadillac" />
+                    </div>
+                </form>
+            </div>
+
+            <p>Depended toggles</p>
+            <div class="bz-padding-4">
+                <label class="bz-switch">
+                    <input id="sw01" type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <input id="sw02" type="checkbox" class="bz-switch">
+                <input id="sw03" type="checkbox" class="bz-switch rounded">
+                <input id="sw04" type="checkbox" class="bz-switch rounded" disabled>
+            </div>
+
+            <form name="validateform">
+                <input id="in01" name="name" type="text" class="bz-input flash" placeholder="Name" required data-rules="required"/>
+                <input id="in02" name="lastname" type="text" class="bz-input flash" placeholder="Last name" required data-rules="required"/>
+                <input type="submit" class="bz-btn" value="Submit">
+            </form>
+        </form>
+
+    </div>
+</div>
+<script src="../public/javascripts/bz-core.js"></script>
+<script src="../public/javascripts/bz-inject.js"></script>
+<script src="../public/javascripts/bz-sidenav.js"></script>
+<script src="../public/javascripts/bluessite.js"></script>
+<script src="../public/javascripts/bz-codelighter.js"></script>
+<script src="../public/javascripts/bz-rules.js"></script>
+<script src="../public/javascripts/blues-require/bz-require.js"></script>
+<script type="text/javascript">
+    (function() {
+
+        // new Droplist.init({
+        //     selector: '#gender',
+        //     calloncheck: function(selected, trigger) {
+        //         var t = trigger.find('.text');
+        //         t.inhtml(selected[0].toUpperCase());
+        //     }
+        // });
+
+        new Bzrequire({
+            form: 'validateform',
+            checkonblur : true
+        }).toSubmit();
+
+        new Bzrequire({
+            form: 'signinform',
+            checkonblur : true
+        }).toSubmit();
+
+        new Bzrequire({
+            form: 'signupform',
+            checkonblur : true
+        }).toSubmit();
+
+        new Condition({
+            triggers: '#in01',
+            events: {
+                blur: {
+                    valid: { enable: '#in02' }
+                }
+            }
+        });
+
+        new Condition({
+            triggers: '#radio11',
+            targets: ['#signinform', '#signupform'],
+            // triggering: change, click, toggle, valid, invalid, blur, focus,
+            ////////////// keyup, keydown, mouseenter, mouseleave
+            // targeting: show, hide, on (checkbox/radio/switch), off (checkbox/radio/switch),
+            ///////////// onclass, offclass, toggleclass, disable, enable
+            events: {
+                click: {
+                    show: '#signinform',
+                    hide: '#signupform'
+                }
+            }
+        });
+
+        new Condition({
+            triggers: '#radio12',
+            targets: ['#signinform', '#signupform'],
+            events: {
+                click: {
+                    hide: '#signinform',
+                    show: '#signupform'
+                }
+            }
+        });
+
+        new Condition({
+            triggers: '#gender',
+            events: {
+                select: {
+                    'male': { show: '#cars', hide: '#colors', checkon: '#sw01' },
+                    'female': { show: '#colors', hide: '#cars', checkon: '#sw02' }
+                }
+            }
+        });
+
+        new Condition({
+            triggers: '#sw01',
+            events: {
+                toggle: {
+                    toggle: ['#sw03', '#sw04'],
+                    toggleclass: { '#signinform': 'bz-bc-positive', '#signupform': 'bz-bc-negative' }
+                }
+            }
+        });
+
+        new Condition({
+            triggers: '#sw02',
+            events: {
+                toggle: {
+                    toggle: ['#sw03', '#sw04'],
+                    toggleclass: { '#signinform': 'bz-bc-negative', '#signupform': 'bz-bc-positive' }
+                }
+            }
+        });
+
+        new Condition({
+            triggers: '#sw03',
+            events: {
+                toggle: {
+                    access: '#sw04'
+                    //checkon: '#sw04'
+                }
+            }
+        });
+
+        new Condition({
+            triggers: '#sw04',
+            events: {
+                toggle: {
+                    toggle: '#sw03'
+                }
+            }
+        });
+
+    })();
+</script>
+</body>
+</html>

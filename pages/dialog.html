@@ -1,0 +1,168 @@
+<html lang="en-us" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Blues Framework">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+    <title>Blues 2.0 | Dialog</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
+    <link rel="stylesheet" href="../public/stylesheets/bz-core.css">
+</head>
+<body>
+<div id="leftSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <ul class="bz-sidenav-list"></ul>
+    </div>
+</div>
+<div id="rightSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <div class="bz-cascading-list w-100p">
+            <ul class="bz-main-list">
+                <li class="bz-cascading-list">
+                    <label class="text" for="toggle-3">
+                        Page templates
+                        <i class="bzi-chevron-right"></i>
+                    </label>
+                    <input type="checkbox" id="toggle-3">
+                    <ul>
+                        <li>
+                            <a class="text" href="pages/blank-page.html">Blank page</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-toolbar.html">Page with toolbar</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-list.html">Page with list</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-listview.html">Page with list view</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="bz-clearfix bz-sidenav-wrapper bz-content">
+    <div class="bz-toolbar primary">
+        <div id="leftSideBtn" class="tool bz-sidenav-btn"
+             data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
+        </div>
+        <div class="title">Dialog</div>
+        <div id="leftRightBtn" class="tool bz-sidenav-btn"
+             data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
+        </div>
+    </div>
+    <div class="bz-padding-16 bz-clearfix">
+        <div class="bz-padding-8">
+            <h5>Alerts</h5>
+            <div class="bz-padding-8 bz-clearfix">
+                <input id="callminimized" type="button" class="bz-btn" value="Minimized">
+                <input id="calltop" type="button" class="bz-btn" value="Top alert">
+                <input id="callright" type="button" class="bz-btn" value="Right alert">
+                <input id="callbottom" type="button" class="bz-btn" value="Bottom alert">
+                <input id="callleft" type="button" class="bz-btn" value="Left alert">
+            </div>
+            <div class="bz-padding-8 bz-clearfix">
+                <input id="callalert" type="button" class="bz-btn" value="Simple alert">
+                <input id="callconfirm" type="button" class="bz-btn" value="Confirm dialog">
+                <input id="callprompt" type="button" class="bz-btn" value="Prompt dialog">
+            </div>
+        </div>
+
+    </div>
+    <div id="minimized" class="bz-modal minimized" data-btn="callminimized">
+        <div class="content">
+            <div class="bz-t-title">Minimized modal window</div>
+            <p>Alert style modal window</p>
+        </div>
+    </div>
+    <div id="top" class="bz-modal top" data-btn="calltop">
+        <div class="content">
+            <div class="bz-t-title">Minimized modal window</div>
+            <p>Alert style modal window</p>
+        </div>
+    </div>
+    <div id="right" class="bz-modal right" data-btn="callright">
+        <div class="content">
+            <div class="bz-t-title">Minimized modal window</div>
+            <p>Alert style modal window</p>
+        </div>
+    </div>
+    <div id="bottom" class="bz-modal bottom" data-btn="callbottom">
+        <div class="content">
+            <div class="bz-t-title">Minimized modal window</div>
+            <p>Alert style modal window</p>
+        </div>
+    </div>
+    <div id="left" class="bz-modal left" data-btn="callleft">
+        <div class="content">
+            <div class="bz-t-title">Minimized modal window</div>
+            <p>Alert style modal window</p>
+        </div>
+    </div>
+
+    <div id="prompt" class="bz-modal">
+        <div class="content">
+            <form>
+                <div class="bz-row">
+                    <input name="name" type="text" class="bz-input" data-class="w-100p" placeholder="Name">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../public/javascripts/bz-core.js"></script>
+<script src="../public/javascripts/bz-inject.js"></script>
+<script src="../public/javascripts/bz-sidenav.js"></script>
+<script src="../public/javascripts/bluessite.js"></script>
+<script src="../public/javascripts/bz-codelighter.js"></script>
+<script>
+    bzDom('#callalert').on('click', function() {
+        bz.alert('it works', function() {
+            alert('alert callback');
+        });
+    });
+    bzDom('#callconfirm').on('click', function() {
+        bz.confirm('Are you sure?', function() {
+            alert('confirmation callback');
+        }, function() {
+            alert('declining callback');
+        });
+    });
+    bzDom('#callprompt').on('click', function() {
+        bzDom('#prompt').prompt(function(formdata) {
+            alert(JSON.stringify(formdata));
+        }, function() {
+            alert('cancel data');
+        }, { width: '640px' });
+    });
+    bz.Modal({
+        selector: '#minimized',
+        type: 'alert'
+    });
+    bz.Modal({
+        selector: '#top',
+        type: 'alert'
+    });
+    bz.Modal({
+        selector: '#right',
+        type: 'alert'
+    });
+    bz.Modal({
+        selector: '#bottom',
+        type: 'alert'
+    });
+    bz.Modal({
+        selector: '#left',
+        type: 'alert'
+    });
+</script>
+</body>
+</html>

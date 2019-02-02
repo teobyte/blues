@@ -1,0 +1,215 @@
+<html lang="en-us" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Blues Framework">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+    <title>Blues 2.0 | Spinner</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
+    <link rel="stylesheet" href="../public/stylesheets/bz-core.css">
+    <style>
+
+        .bz-loader {
+            display: inline-block;
+            position:relative;
+            width: 20px;
+            height: 12px;
+        }
+
+        .bz-loader div {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            position:absolute;
+            width: 16px;
+            height: 16px;
+            -webkit-animation: spin1 2s infinite linear;
+            -moz-animation: spin1 2s infinite linear;
+            -o-animation: spin1 2s infinite linear;
+            -ms-animation: spin1 2s infinite linear;
+            animation: spin1 2s infinite linear;
+            left:0;
+            top:-4px;
+        }
+
+        .bz-rotate {
+            -webkit-animation: spin1 2s infinite linear;
+            -moz-animation: spin1 2s infinite linear;
+            -o-animation: spin1 2s infinite linear;
+            -ms-animation: spin1 2s infinite linear;
+            animation: spin1 2s infinite linear;
+        }
+
+        @-webkit-keyframes spin1 {
+            0% { -webkit-transform: rotate(0deg);}
+            100% { -webkit-transform: rotate(360deg);}
+        }
+        @-moz-keyframes spin1 {
+            0% { -moz-transform: rotate(0deg); }
+            100% { -moz-transform: rotate(360deg);}
+        }
+        @-o-keyframes spin1 {
+            0% { -o-transform: rotate(0deg);}
+            100% { -o-transform: rotate(360deg);}
+        }
+        @-ms-keyframes spin1 {
+            0% { -ms-transform: rotate(0deg);}
+            100% { -ms-transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+<div id="leftSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <ul class="bz-sidenav-list"></ul>
+    </div>
+</div>
+<div id="rightSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <div class="bz-cascading-list w-100p">
+            <ul class="bz-main-list">
+                <li class="bz-cascading-list">
+                    <label class="text" for="toggle-3">
+                        Page templates
+                        <i class="bzi-chevron-right"></i>
+                    </label>
+                    <input type="checkbox" id="toggle-3">
+                    <ul>
+                        <li>
+                            <a class="text" href="pages/blank-page.html">Blank page</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-toolbar.html">Page with toolbar</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-list.html">Page with list</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-listview.html">Page with list view</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="bz-clearfix bz-sidenav-wrapper bz-content">
+    <div class="bz-toolbar primary">
+        <div id="leftSideBtn" class="tool bz-sidenav-btn"
+             data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
+        </div>
+        <div class="title">Spinners</div>
+        <div id="leftRightBtn" class="tool bz-sidenav-btn"
+             data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
+        </div>
+    </div>
+    <div class="bz-padding-32 bz-clearfix">
+        <h5 class="bz-fc-primary">Spinners</h5>
+        <div class="bz-row mb-middle">
+            <div class="bz-col mb6 tb4">
+                Circle
+                <p class="bz-fc-primary">
+                    .bz-spin-circle
+                </p>
+            </div>
+            <div class="bz-col mb6 tb8">
+                <div class="bz-spin-circle">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="bz-row mb-middle">
+            <div class="bz-col mb6 tb4">
+                Dots
+                <p class="bz-fc-primary">
+                    .bz-spin-dots
+                </p>
+            </div>
+            <div class="bz-col mb6 tb8">
+                <div class="bz-spin-dots">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <h6>HTML markup</h6>
+        <textarea class="bz-code html">
+        <div class="bz-spin-circle">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        </textarea>
+        <h5 class="bz-fc-primary">Centered spinners</h5>
+        <div class="bz-padding-16 bz-margin-4 bz-bc-light bz-relative bz-inline-block" style="height: 200px; width: 200px;">
+            <div class="spin-circle bz-center"></div>
+        </div>
+        <div class="bz-padding-16 bz-margin-4 bz-bc-light bz-relative bz-inline-block" style="height: 200px; width: 200px;">
+            <div class="spin-dots bz-center"></div>
+        </div>
+        <h6>or Javascript markup</h6>
+        <textarea class="bz-code html">
+        <div class="spin-dots bz-center"></div>
+        <script>
+            bz.addSpiner('.spin-dots', { name: 'bz-spin-dots', size: 30 });
+        </script>
+        </textarea>
+        <h6>Loader with manual hide</h6>
+        <div class="bz-padding-8 bz-clearfix">
+            <button id="spinbtn" class="bz-btn">
+                Start Loader
+            </button>
+
+            <button id="closespin" class="bz-btn">
+                Close Loader
+            </button>
+        </div>
+        <h6>Loader with timeout</h6>
+        <div class="bz-padding-8 bz-clearfix">
+
+            <button id="spinbtn2" class="bz-btn">
+                Start Loader
+            </button>
+        </div>
+    </div>
+</div>
+<script src="../public/javascripts/bz-core.js"></script>
+<script src="../public/javascripts/bz-inject.js"></script>
+<script src="../public/javascripts/bz-sidenav.js"></script>
+<script src="../public/javascripts/bluessite.js"></script>
+<script src="../public/javascripts/bz-codelighter.js"></script>
+<script>
+
+    bz.addSpiner('.spin-circle');
+    bz.addSpiner('.spin-dots', { name: 'bz-spin-dots', size: 20 });
+
+
+    bzDom('#spinbtn').on('click', function() {
+        bz.Loadspin('#spinbtn');
+    });
+
+    bzDom('#closespin').on('click', function() {
+        bz.Loadspin.hide('#spinbtn');
+    });
+
+    bzDom('#spinbtn2').on('click', function() {
+        bz.Loadspin('#spinbtn2', { timeout: 2000 });
+    });
+
+</script>
+
+
+</body>
+</html>

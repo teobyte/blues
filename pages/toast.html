@@ -5,10 +5,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
-    <title>Blues 2.0 | Home</title>
+    <title>Blues 2.0 | Toast</title>
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
     <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
-    <link rel="stylesheet" href="public/stylesheets/bz-core.css">
+    <link rel="stylesheet" href="../public/stylesheets/bz-core.css">
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -52,7 +52,7 @@
             <div class="back circle"></div>
             <i class="bzi-menu"></i>
         </div>
-        <div class="title">Blues 2.0</div>
+        <div class="title">Toast</div>
         <div id="leftRightBtn" class="tool bz-sidenav-btn"
              data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
             <div class="back circle"></div>
@@ -60,42 +60,65 @@
         </div>
     </div>
     <div class="bz-padding-16 bz-clearfix">
-        <h3 class="bz-fc-primary">Blues Front Framework v.2.0</h3>
-        <div class="bz-t-align-j">
-            <h5>CSS and JS frameworks</h5>
-            <h6 class="bz-fc-positive">Purpose</h6>
-            <p>
-                Blues built with pure css and javascript libraries from the scratch. It is cross browser and helps to build
-                rich web interfaces for any websites.
-            </p>
-            <h6 class="bz-fc-positive">Requirements</h6>
-            <p>
-                Pure CSS and Javascript written. No dependencies
-            </p>
-            <h6 class="bz-fc-positive">Size</h6>
-            <p>
-                Blues lightweight
-            <ul class="bz-list-no-style dashed bz-padding-8">
-                <li>CSS (approx. 169* kb - not minimized)</li>
-                <li>JS (approx. 280* kb - not minimized)</li>
-            </ul>
-            * - can change at any time.
-            </p>
-            <h6 class="bz-fc-positive">Repositories</h6>
-            <p>Feel free to use Blues</p>
-            <ul class="bz-list-no-style">
-                <li><a href="https://www.jsdelivr.com/package/gh/aiwee/blues" target="_blank">CDN on JSDeliver</a></li>
-                <li><a href="https://github.com/aiwee/blues" target="_blank">Get it on Github</a></li>
-            </ul>
-            <h6 class="bz-fc-positive">Education</h6>
-            <p>Code of Blues framework written with the pure css and javascript, it is very simple and primitive, so you can easily use it for any educational reasons.</p>
+        <p>
+            First call determines the initial position of all Toasts in the session. Reload the page to try different positions.
+        </p>
+        <div class="bz-row">
+            <div class="bz-col mb3 bz-t-align-c">
+                <button id="toastl" class="bz-btn">
+                    Left
+                </button>
+            </div>
+
+            <div class="bz-col mb3 bz-t-align-c">
+                <button id="toastt" class="bz-btn">
+                    Top
+                </button>
+            </div>
+
+            <div class="bz-col mb3 bz-t-align-c">
+                <button id="toastb" class="bz-btn">
+                    Bottom
+                </button>
+            </div>
+
+            <div class="bz-col mb3 bz-t-align-c">
+                <button id="toastr" class="bz-btn">
+                    Right
+                </button>
+            </div>
         </div>
+
     </div>
 </div>
-<script src="public/javascripts/bz-core.js"></script>
-<script src="public/javascripts/bz-inject.js"></script>
-<script src="public/javascripts/bz-sidenav.js"></script>
-<script src="public/javascripts/bluessite.js"></script>
-<script src="public/javascripts/bz-codelighter.js"></script>
+<script src="../public/javascripts/bz-core.js"></script>
+<script src="../public/javascripts/bz-inject.js"></script>
+<script src="../public/javascripts/bz-sidenav.js"></script>
+<script src="../public/javascripts/bluessite.js"></script>
+<script src="../public/javascripts/bz-codelighter.js"></script>
+<script>
+    var html = "<b>Toast</b><br>" +
+               "I'm HTML toast.<br>"+
+               "<span class='bz-ft-italic'>Feel free to customize me in any way.</span>";
+    bzDom('#toastl').on('click', function() {
+        bz.Toast('Hey, I am new toast!', { position: 'left', tclass: 'positive' });
+    });
+    bzDom('#toastt').on('click', function() {
+        bz.Toast(html, { position: 'top', tclass: 'negative bz-t-align-l' });
+    });
+    bzDom('#toastb').on('click', function() {
+        bz.Toast('Hey, I am new toast! Very very long toast. Just so very long!', { position: 'bottom' });
+    });
+    bzDom('#toastr').on('click', function() {
+        bz.Toast('Hey, I am toast with callback! Click me to get me closed and call an action.', {
+            position: 'right',
+            tclass: 'warning',
+            timer: 10000,
+            callback: function() {
+                bz.alert('You ate me!');
+            }
+        });
+    });
+</script>
 </body>
 </html>
