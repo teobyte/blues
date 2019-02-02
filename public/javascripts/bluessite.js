@@ -22,7 +22,7 @@
 
     var menuitems = [
         { name: 'Blues 2.0', url: '', clas: 'subheader bz-fc-primary bz-ft-xl' },
-        { name: 'Home', url: '../index.html', clas: 'bz-list-item bz-t-concat' },
+        { name: 'Home', url: 'index.html', clas: 'bz-list-item bz-t-concat' },
         { name: '', url: '', clas: 'divider' },
         { name: 'Layout', url: '', clas: 'subheader bz-ft-l' },
         { name: 'Sidenav', url: 'sidenav.html', clas: 'bz-list-item bz-t-concat' },
@@ -83,7 +83,7 @@
                 url = Blues.extract.getMapValue(item, 'url'),
                 clas = Blues.extract.getMapValue(item, 'clas');
             if (url !== 'index.html')
-                url = '/bluesnode/pages/' + url;
+                url = url;
             var li = bzDom('<li>'),
                 a = bzDom('<a>');
             a.inhtml(name);
