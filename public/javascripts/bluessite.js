@@ -82,12 +82,10 @@
                 name = Blues.extract.getMapValue(item, 'name'),
                 url = Blues.extract.getMapValue(item, 'url'),
                 clas = Blues.extract.getMapValue(item, 'clas');
-            if (url !== 'index.html')
-                url = url;
             var li = bzDom('<li>'),
                 a = bzDom('<a>');
             a.inhtml(name);
-            a.onattr('href', url);
+            a.onattr('href', 'https://aiwee.github.io/blues/' + url);
             li.onclass(clas);
             li.append(a);
             leftside.append(li);
