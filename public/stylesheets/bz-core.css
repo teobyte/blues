@@ -2429,17 +2429,20 @@ li.divider {
   vertical-align: middle;
   margin-right: 8px;
 }
-.bz-list-hover-ease li:not(.bz-nohover):not(.subheader):not(.divider):hover {
+.bz-list-hover-ease li:not(.bz-nohover):not(.subheader):not(.divider):hover,
+.bz-list-hover-ease li.active {
   background: #e8ebee;
 }
-.bz-list-hover-ease li:not(.bz-nohover):not(.subheader):not(.divider):hover .text {
+.bz-list-hover-ease li:not(.bz-nohover):not(.subheader):not(.divider):hover .text,
+.bz-list-hover-ease li.active .text {
   padding-left: 12px;
 }
 .bz-list-hover-ease a {
   color: #444;
   text-decoration: none;
 }
-.bz-list-hover-ease a:hover {
+.bz-list-hover-ease a:hover,
+.bz-list-hover-ease li.active a {
   color: #102a62;
   text-decoration: none;
 }

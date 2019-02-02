@@ -172,7 +172,7 @@
                 return true;
             }
             //ie 6/7/8
-            if (typeof(nodes) != 'object') {
+            if (typeof(nodes) !== 'object') {
                 return false;
             }
             // detect length and item
@@ -204,8 +204,7 @@
         },
         //
         ifEmpty: function (x) {
-            if (typeof x === 'undefined') return true;
-            else return x.length === 0 || x === null;
+            return typeof x === 'undefined' || x.length === 0 || x == null;
         },
         //
         ifCssJson: function (node) {
@@ -230,6 +229,7 @@
         // converts html string to [Object HTMLElement]
         stringToHtmlNode: function(html) {
             // creates temporary wrapper
+            //var tempElem = document.createElement('div');
             var tempElem = document.createElement('div');
             // insert html
             tempElem.innerHTML = html;
@@ -290,7 +290,7 @@
     Blues.help = {
         // add nodes to Object NodeList
         combineNodeLists: function(nodelist, newnodes) {
-            var tempArr = [];
+            var tempArr = new Array();
             if (nodelist) {
                 var nList = Blues.convert.nodeListToArray(nodelist);
                 for (var i = 0; i < nList.length; i++ ) {
@@ -329,10 +329,6 @@
     ///////////////////////////////////////////////////////
     // Blues DOM Methods
     Blues.dom = {
-        findElemByIdentifier: function(selector, context) {
-            var elem = context.getElementById(selector.substring(1));
-            return elem;
-        },
         // query selector all handler
         qsa: function(selector, incontext, incontextName) {
             var context = incontext || document;
@@ -346,15 +342,16 @@
             };
             if (Blues.check.ifSimpleSelector(selector)) {
                 // check if selector identifier
-                if (Blues.check.ifIdentifier(selector))
-                    elem = Blues.dom.findElemByIdentifier(selector, context);
+                if (Blues.check.ifIdentifier(selector)) {
+                    elem = context.getElementById(selector.substring(1));
+                }
                 // check if selector class
                 else if(Blues.check.ifClassname(selector)) {
                     elems = document.getElementsByClassName(selector.substring(1));
                     if (elems.length > 1) {
                         elem = [];
                         if (incontextName !== undefined) {
-                            for (var i=0; i < elems.length; i++) {
+                            for (var i = 0; i < elems.length; i++) {
                                 if (parents(elems[i], incontextName).length > 0)
                                     elem.push(elems[i]);
                             }
@@ -368,7 +365,7 @@
                     if (elems.length > 1) {
                         elem = [];
                         if (incontextName !== undefined) {
-                            for (var i=0; i < elems.length; i++) {
+                            for (i = 0; i < elems.length; i++) {
                                 if (parents(elems[i], incontextName).length > 0)
                                     elem.push(elems[i]);
                             }
@@ -381,7 +378,7 @@
                     if (elems.length > 1) {
                         elem = [];
                         if (incontextName !== undefined) {
-                            for (var i=0; i < elems.length; i++) {
+                            for (i = 0; i < elems.length; i++) {
                                 if (parents(elems[i], incontextName).length > 0)
                                     elem.push(elems[i]);
                             }
@@ -394,7 +391,7 @@
                     if (elems.length > 1) {
                         elem = [];
                         if (incontextName !== undefined) {
-                            for (var i=0; i < elems.length; i++) {
+                            for (i = 0; i < elems.length; i++) {
                                 if (parents(elems[i], incontextName).length > 0)
                                     elem.push(elems[i]);
                             }
@@ -490,64 +487,13 @@
     ///////////////////////////////////////////////////////
     // General Blues Selector -/ DOM GBS
     Blues.bzSel = function(selector) {
-        var elem = null, key = 0;
         if (!selector)
             return null;
-        else if (Blues.check.ifString(selector) && selector[ 0 ] !== "<") {
-            if (!Blues.check.ifWhitespaces(selector)) {
-                // check if single #id and return element
-                if (Blues.check.ifIdentifier(selector)) {
-                    elem = document.getElementById(selector.substring(1));
-                    return elem;
-                }
-                // check if single .class amd return element
-                if(Blues.check.ifClassname(selector))
-                    elem = document.querySelectorAll(selector);
-                // check if single tag and return element
-                if (Blues.check.ifValidTag(selector))
-                    elem = document.querySelectorAll(selector);
-                // check if single [name] and return element
-                if(Blues.check.ifElemName(selector)) {
-                    var name = Blues.extract.attrNameFromString(selector);
-                    elem = document.querySelectorAll(name);
-                }
-                // check if single attribute and return element
-                if (Blues.check.ifAttrName(selector) || selector.indexOf(',') > -1)
-                    elem = document.querySelectorAll(selector);
-            }
-            // handle context
-            else {
-                var selArray = selector.replace(/  +/g, ' ').split(' ');
-                var context = selArray[0];
-                if (Blues.check.ifIdentifier(context)) {
-                    var subcontext = '';
-                    for (var i = 1; i < selArray.length; i++)
-                        subcontext = subcontext + selArray[i] + ' ';
-                    var contextElem = document.getElementById(context.substring(1));
-                    elem = contextElem.querySelectorAll(subcontext);
-                } else
-                    elem = document.querySelectorAll(selector);
-            }
+        var el = Blues.dom.bluesSelector(selector);
+        if (Blues.check.ifNodeList(el)) {
+            el = Blues.convert.nodeListToArray(el);
         }
-        // if selector is Window or Document
-        else if (Blues.check.ifWindow(selector) ||
-            Blues.check.ifDocument(selector) ||
-            Blues.check.ifFunction(selector) ||
-            Object.getPrototypeOf(selector) === bzObject.prototype) {
-            elem = selector;
-            key = 1;
-        }
-        else if (Blues.check.ifString(selector) && selector[ 0 ] === "<" && selector[ selector.length - 1 ] === ">" && selector.length >= 3) {
-            elem = Blues.dom.createFragment(selector);
-        }
-        else return null;
-        if (Blues.check.ifNodeList(elem)) {
-            if (elem.length > 0)
-                elem = Blues.convert.nodeListToArray(elem);
-            if (elem.length === 1)
-                elem = elem[0];
-        }
-        return elem;
+        return el;
     };
     // element prototype
     var bzObject = function(selector) {
@@ -587,11 +533,14 @@
             element = new bzObject();
             element.el = selector;
         }
-        else if (Blues.check.ifWindow(selector) || Blues.check.ifDocument(selector)) {
+        else if (Blues.check.ifWindow(selector)) {
             element = new bzObject();
             element.el = selector;
         }
-        else
+        else if (Blues.check.ifDocument(selector)) {
+            element = new bzObject();
+            element.el = selector;
+        } else
             return null;
         // if bzDom is single dom node and not a window or document
         if (!Blues.check.ifWindow(element.el) &&
@@ -638,26 +587,6 @@
         } else return element;
     };
     /////- DHM -// DOM MANIPULATION (DOMM) ////////////
-    // extend one object with another
-    Blues.deepExtend = function (target, objects, deep){
-        for(var i = 0, ii = objects.length; i < ii; i++){
-            var obj = objects[i];
-            if(!Blues.check.ifObject(obj)) continue;
-            var keys = Object.keys(obj);
-            for(var j = 0, jj = keys.length; j < jj; j++){
-                var key = keys[j];
-                var val = obj[key];
-                if(Blues.check.ifObject(val) && deep)
-                    Blues.deepExtend(target[key], [val], true);
-                else
-                    target[key] = val;
-            }
-        }
-        return target;
-    };
-    Blues.extend = function (target, src){
-        return Blues.deepExtend(target, [src], false);
-    };
     // on document ready
     bzObject.prototype.ready = function(callback) {
         var ready = false;
@@ -706,17 +635,14 @@
     };
     // check if element exist
     bzObject.prototype.exist = function() {
-        if (this === undefined || this === null ||
-            this.el === undefined || this.el === null)
+        if (this === undefined || this === null || this.el === undefined || this.el === null) {
             return false;
-        if (this.el.length > 0 && (Blues.check.ifArray(this.el) || Blues.check.ifNodeList(this.el)))
-            return true;
-        // if (this.el) {
-        //     this.el.outerHTML === undefined || this.el.outerHTML === null
-        //     return false;
-        // }
-        if (this.el) {
-            if (this.el.outerHTML) return true;
+        } else {
+            if (this.el.length > 0 && (Blues.check.ifArray(this.el) || Blues.check.ifNodeList(this.el)))
+                return true;
+            if (this.el) {
+                if (this.el.outerHTML) return true;
+            }
         }
         return false;
     };
@@ -1070,11 +996,12 @@
             opacity = opacity - gap;
             elem.style.opacity = opacity;
             if(opacity <= 0) {
+                elem.style.opacity = 0;
                 // ToDo: check for browser compatibility
                 // var display = getComputedStyle(elem)['display'];
                 // if (display && display !== 'none')
-                //     this.display = display;
-                elem.style.display = 'none';
+                //     elem.style.display = display;
+                //elem.style.display = 'none';
                 window.clearInterval(fading);
                 callback;
             }
@@ -1093,17 +1020,16 @@
         if (duration === null)
             duration = 450;
         var gap = interval / duration;
-        elem.style.display = 'block';
-        elem.style.opacity = opacity;
         function fade() {
             opacity = opacity + gap;
             elem.style.opacity = opacity;
-            if(opacity >= 1) {
+            if (opacity >= 1) {
+                elem.style.opacity = 1;
                 window.clearInterval(fading);
                 callback;
             }
-
         }
+        //elem.style.display = 'block';
         var fading = window.setInterval(fade, interval);
         return this;
     };
@@ -1386,6 +1312,21 @@
             eltodel.parentNode.removeChild(eltodel);
         }
     };
+    // scroll action
+    bzObject.prototype.scroll = function(callback, delay) {
+        var scrolling = false;
+        delay = delay || 250;
+        this.on('scroll', function() {
+            scrolling = true;
+        });
+        var interval = setInterval( function() {
+            if (scrolling) {
+                scrolling = false;
+                callback();
+                //clearInterval(interval);
+            }
+        }, delay);
+    };
     // get distance between element top/left side and
     // top/left side of the screen
     // according to the screen
@@ -1399,7 +1340,7 @@
         }
     };
     // check if element in viewport
-    bzObject.prototype.inViewport = function (elem) {
+    bzObject.prototype.inViewport = function () {
         //ToDo: check for browser compatibility
         var dist = this.el.getBoundingClientRect();
         return (
@@ -1698,9 +1639,9 @@
             options = Blues.convert.objectToArray(options);
             if (Blues.check.ifArray(options)) {
                 for (var i = 0; i < options.length; i++) {
-                    if (options[i][0] === 'width')
+                    if (options[i][0] == 'width')
                         width = options[i][1];
-                    if (options[i][0] === 'height')
+                    if (options[i][0] == 'height')
                         height = options[i][1];
                 }
             }
@@ -1934,7 +1875,6 @@
     };
     // add fader
     Blues.showfader = function(target, zindex) {
-        alert('works');
         var defTarget = '.bz-content-to-fade';
         if (target === null)
             target = defTarget;
@@ -2089,7 +2029,10 @@
                 text: "text/plain",
                 html: "text/html",
                 xml: "application/xml, text/xml",
-                json: "application/json, text/javascript"
+                json: "application/json, text/javascript",
+                jpeg: "image/jpeg",
+                png: "image/png"
+
             }
         };
         o = options || {};
@@ -2098,7 +2041,7 @@
         // set the async: @boolean true/false
         settings.async = o.async || settings.async;
         // set the Content-type: @string 'application/x-www-form-urlencoded'
-        settings.contentType = o.contentType || settings.contentType;
+        settings.contentType = o.contentType || null;
         // set Data-type
         settings.dataType = o.dataType || settings.dataType;
         // set the request url: @string '/controller/action'
@@ -2114,7 +2057,7 @@
         // request dataTypes
         var s = settings;
         function createRequest(type, url, async){
-            var xhr = typeof XMLHttpRequest !== 'undefined' ?
+            var xhr = typeof XMLHttpRequest != 'undefined' ?
                 new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             xhr.open(type, url, async);
             return xhr;
@@ -2125,16 +2068,6 @@
                 var reqData = JSON.stringify(data);
                 // create request
                 var xhr = createRequest(s.type, s.url, s.async);
-                xhr.onprogress = ajax.progress;
-                xhr.onreadystatechange = function() {
-                    if (this.readyState === 4) {
-                        if (this.status === 200) {
-                            if (this.responseText)
-                                ajax.success(this.responseText);
-                        } else
-                            ajax.error(this.status);
-                    }
-                };
                 // set Accept data type
                 xhr.setRequestHeader('Accept',
                     s.dataType ? s.accepts[s.dataType] + (s.dataType !== '*' ? ', ' + allTypes + '; q=0.01' : '') : allTypes
@@ -2142,6 +2075,16 @@
                 // set content data type
                 if (s.contentType !== null)
                     xhr.setRequestHeader('Content-type', s.contentType);
+                xhr.onprogress = ajax.progress;
+                xhr.onreadystatechange = function() {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            if (this.responseText)
+                                ajax.success(this.responseText);
+                        } else
+                            ajax.error(this.status);
+                    }
+                };
                 xhr.send(reqData);
             },
             success: function(data) {
@@ -2188,7 +2131,7 @@
                 dataParams = JSON.parse(JSON.stringify(par));
             }
             var callfunc = function(callback, data, target, action, id, name) {
-                if (callback != null) {
+                if (callback != null && callback !== 'post') {
                     var fn = 'fnn = function(data, action, id, name) {' + callback + '}';
                     eval(fn);
                     fnn(data, action, id, name);
@@ -2255,7 +2198,8 @@
                     callfunc(callback, data, target, action, id, name);
             }
             if (ajax.ondata('onclick')) {
-                ajax.onclass('bz-cursor-pointer');
+                if (ajax.ondata('cursor') === true)
+                    ajax.onclass('bz-cursor-pointer');
                 callback = ajax.ondata('onclick');
                 ajax.on('click', function() {
                     if (callback === 'submit') {
@@ -2293,7 +2237,7 @@
                                     ajax.append(data);
                                 else if (callback === 'prepend')
                                     ajax.prepend(data);
-                                else if (callback === 'update')
+                                else if (callback === 'update' || callback === 'post')
                                     ajax.inhtml(data);
                             }
                             if (callSuccess != null)
@@ -2502,29 +2446,6 @@
         if (target)
             bzDom(target).append(sp);
         else return sp;
-    };
-    // add fader
-    Blues.showfader = function(target, zindex) {
-        var defTarget = '.bz-content-to-fade';
-        if (target === null)
-            target = defTarget;
-        target = target || defTarget;
-        zindex = zindex || 8999;
-        var fader = Blues.bzDom('<div>').onclass('bz-fader').oncss('z-index', zindex);
-        Blues.bzDom(target).append(fader);
-        fader.fadeIn();
-        return fader;
-    };
-    // remove fader
-    Blues.hidefader = function(hidecall) {
-        hidecall = hidecall || false;
-        var fader = Blues.bzDom('.bz-fader').fadeOut(500);
-        setTimeout(function() {
-            if (hidecall)
-                hidecall();
-            if (fader)
-                fader.remove();
-        }, 501);
     };
     // scroll to any Dom element
     Blues.bodyScrollTop = function (position) {
@@ -2810,17 +2731,17 @@
                         'text-align': 'center',
                         padding: '8px',
                         border: 'none',
-                        'border-bottom': '4px solid var(--color-gray-light)'
+                        'border-bottom': '4px solid var(--color-light)'
                     }
                 },
                 '.bz-tabs .bz-tab:hover' : {
                     'attr': {
-                        background: 'var(--color-gray-light)'
+                        background: 'var(--color-light)'
                     }
                 },
                 '.bz-tabs .marker': {
                     'attr': {
-                        background: 'var(--color-navy)',
+                        background: 'var(--color-primary)',
                         height: '4px',
                         position: 'absolute',
                         bottom: 0,
@@ -2946,7 +2867,7 @@
     var start = true;
     Blues.JSONCSS = function (jss, depth, breakline) {
         String.prototype.repeat = function (n) {
-            return [].join(this);
+            return new Array(1 + n).join(this);
         };
         var strAttr = function (name, value, depth) {
             return '\t'.repeat(depth) + name + ': ' + value + ';\n';
@@ -2960,9 +2881,9 @@
         var cssString = '';
         if (start)
             cssString = '\n';
-        if (typeof depth === 'undefined')
+        if (typeof depth == 'undefined')
             depth = 0;
-        if (typeof breakline === 'undefined')
+        if (typeof breakline == 'undefined')
             breakline = false;
         if (jss.attr) {
             for (var i in jss.attr) {
