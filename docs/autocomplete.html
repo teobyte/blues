@@ -133,16 +133,101 @@
                 </div>
             </div>
         </div>
+
+        <h5>Dependable fields</h5>
+        <div class="bz-row">
+            <div class="bz-col mb12 tb6 bz-padding-4">
+                <div class="bz-ac-box bz-w-100p">
+                    <div class="bz-ac bz-w-100p">
+                        <input type="text" id="country" name="country" class="bz-input flash countrysearch" value="" placeholder="Country"
+                               required data-class="bz-w-100p" data-icon="bzi-map" autocomplete="new-country" data-ddlmode="true"
+                               data-source="countries" data-addfield="addcountryid" data-target="city" data-type="number">
+                    </div>
+                </div>
+                <input type="hidden" id="addcountryid" name="countryid" value=""/>
+            </div>
+            <div class="bz-col mb12 tb6 bz-padding-4">
+                <div class="bz-ac-box bz-w-100p">
+                    <div class="bz-ac bz-w-100p">
+                        <input type="text" id="city" name="city" class="bz-input flash countrysearch" value="" placeholder="City" disabled
+                               required data-class="bz-w-100p" data-icon="bzi-checkin" autocomplete="new-city"
+                               data-source="cities" data-addfield="addcityid" data-type="number">
+                    </div>
+                </div>
+                <input type="hidden" id="addcityid" name="cityid" value=""/>
+            </div>
+        </div>
+
+
     </div>
 </div>
-<script src="../public/javascripts/bz-core.js"></script>
-<script src="../public/javascripts/bz-inject.js"></script>
-<script src="../public/javascripts/bz-sidenav.js"></script>
-<script src="../public/javascripts/bluessite.js"></script>
-<script src="../public/javascripts/bz-codelighter.js"></script>
+<script type="text/javascript" src="../public/javascripts/bz-core.js"></script>
+<script type="text/javascript" src="../public/javascripts/bz-inject.js"></script>
+<script type="text/javascript" src="../public/javascripts/bz-sidenav.js"></script>
+<script type="text/javascript" src="../public/javascripts/bluessite.js"></script>
+<script type="text/javascript" src="../public/javascripts/bz-codelighter.js"></script>
 <script type="text/javascript" src="../public/javascripts/bz-autocomplete.js"></script>
 <script>
     (function() {
+
+        var countries = [
+            [20,"United Arab Emirates"],
+            [42,"Burundi"],
+            [46,"Brunei"],
+            [95,"United Kingdom"],
+            [118,"Hungary"],
+            [207,"Reunion"],
+            [242,"Tunisia"],
+            [251,"United States Minor Outlying Islands"],
+            [252,"United States"],
+            [262,"Wallis and Futuna"]
+        ];
+
+        var cities = [
+            [137539,"San Carlos"],
+            [137315,"Los Fresnos"],
+            [137316,"Los Indios"],
+            [137317,"Lost Creek"],
+            [137518,"Roma-Los Saenz"],
+            [139082,"Palos Heights"],
+            [145262,"Palos Verdes Estates"],
+            [143026,"Blossburg"],
+            [145115,"Los Altos"],
+            [145117,"Los Angeles"],
+            [145118,"Los Banos"],
+            [146224,"Los Molinos"]
+        ];
+
+        var quicksearch = function() {
+            var autofilelds = document.getElementsByClassName('countrysearch');
+            if (autofilelds.length > 0) {
+                for (var f = 0; f < autofilelds.length; f++) {
+                    //ToDo: think of it
+                    var source = bzDom(autofilelds[f]).ondata('source');
+                    if (source === 'countries')
+                        source = countries;
+                    else if (source === "cities")
+                        source = cities;
+                    new Autocomplete(autofilelds[f], {
+                        searchAfter: 2,
+                        source: source,
+                        selAction: function(inpt, selectionId, selectionName, ac) {
+                            if (inpt.ondata('target')) {
+                                var target = bzDom('#' + inpt.ondata('target'));
+                                target.ondata('prop', 'countryId:' + selectionId);
+                                target.offattr('disabled');
+                            }
+                            if (inpt.ondata('addfield')) {
+                                var addFieldId = inpt.ondata('addfield'),
+                                    idField = bzDom('#' + addFieldId);
+                                idField.val(selectionId);
+                            }
+                        }
+                    });
+                }
+            }
+        };
+        quicksearch();
 
         var acs = bzDom('.bz-ac-init');
         acs.each(function(i, item) {

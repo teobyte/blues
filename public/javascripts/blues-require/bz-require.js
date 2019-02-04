@@ -356,13 +356,14 @@
     };
     // error messages default templates (Important! Sync it with locale/*.json)
     Bzrequire.prototype.messages = {
-        "required" : "The field #fieldname is required",
+        "required" : "#fieldname is required",
         "email" : "Please, type a valid #fieldname",
-        "equalto" : "The #fieldname field and #rule doesn't match",
-        "max" : "The #fieldname field must contain a maximum of #rule characters",
-        "min" : "The #fieldname field must contain a minimum of #rule characters",
-        "card" : "Enter the #fieldname correctly",
-        "number" : "The field #fieldname must be a number",
+        "equalto" : "#fieldname and #rule doesn't match",
+        "max" : "#fieldname must contain a maximum of #rule characters",
+        "min" : "#fieldname must contain a minimum of #rule characters",
+        "card" : "Enter #fieldname correctly",
+        "minmax" : "#fieldname typed is invalid",
+        "number" : "#fieldname must be a number",
         "url" : "Please enter a valid #fieldname"
     };
     // Returns true if it does not pass verification, returns false if pass the validation

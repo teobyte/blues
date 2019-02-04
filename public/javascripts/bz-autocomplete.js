@@ -2,7 +2,7 @@
 * Blues Autocomplete by Aiwee 2016-2018 v.2.0.0
 * Modes: - autocomplete (standard mode name = "ac")
 *        - dropdown list with search
-*        ///////// set attribute data-dllmode="true" for the Autocomplete's <input>
+*        ///////// set attribute data-ddlmode="true" for the Autocomplete's <input>
 *        - drop chips on selection
 *        ///////// set attribute data-mode="chip+" or data-mode="+chip" for the Autocomplete's <input>
 *        - add new value if one that you're searching for is not exist
@@ -34,11 +34,10 @@ var Autocomplete = function (inpt, options) {
                 this.o[k] = Autocomplete.defaultOptions[k] ;
         }
     }
-    if (options.hasOwnProperty('source')) {
+    if (options.hasOwnProperty('source'))
         this.o.source = options.source ;
-    } else {
+    else
         this.dataType = 'ajax';
-    }
     // helper method checks if Object is a function
     // ToDo: check why Blues isFunction doesn't works here
     var isFunction = function (functionToCheck) {
@@ -67,6 +66,7 @@ var Autocomplete = function (inpt, options) {
     // sets Autocomplete ddl mode
     if (bzDom(inpt).ondata('ddlmode'))
         this.ddlmode = bzDom(inpt).ondata('ddlmode');
+
     bzDom(inpt).onattr('autocomplete', 'off');
     // init Autocomplete
     this.init();
@@ -107,7 +107,7 @@ Autocomplete.prototype = {
             }
         };
 
-        if (ac.ddlmode == true) {
+        if (ac.ddlmode === 'true') {
             if ('ddl' in ac.cache) {
                 ac.indata = ac.cache['ddl'];
             } else {
@@ -166,6 +166,7 @@ Autocomplete.prototype = {
             ac.suggestnew();
         }
         return tempRes;
+
     },
     /**
      * #selectdata method selects Autocomplete.data to show as <select> <options>
@@ -218,7 +219,7 @@ Autocomplete.prototype = {
         var ac = this;
         if (bzDom(ac.inpt).parent('.bz-ac').find('.bz-suggestions').exist()) {
             var $suggestions = bzDom(ac.inpt).parent('.bz-ac').find('.bz-suggestions');
-            if ($suggestions.ifclass('hide'))
+            //if ($suggestions.ifclass('hide'))
                 $suggestions.offclass('hide');
         }
     },
@@ -325,15 +326,12 @@ Autocomplete.prototype = {
         var ac = this;
         ac.activeIndex = -1;
         $inpt.on('click', function() {
-            // var $that = bzDom(this),
-            //     _searchstr = $that.val();
-            // if (ac.ddlmode == 'true' && ac.listenInput == true) {
-            //     ac.setdata(_searchstr, $that);
-            // }
             var $that = bzDom(this),
                 _searchstr = $that.val();
-            if (ac.ddlmode == 'true' && ac.listenInput == true)
+            if (ac.ddlmode === 'true' && ac.listenInput === true) {
                 ac.setdata(_searchstr, $that);
+                ac.showSuggestions();
+            }
             else
                 if (_searchstr.length > 0)
                     ac.showSuggestions();
@@ -346,12 +344,9 @@ Autocomplete.prototype = {
             }
         });
         $inpt.on('blur', function() {
-            var $that = bzDom(this),
-                _searchstr = $that.val();
-            //if (_searchstr.length > 0 || ac.ddlmode == true) {
-                if ($that.ondata('hover') == 0)
-                    ac.hideSuggestions();
-            //}
+            var $that = bzDom(this);
+            if ($that.ondata('hover') == 0)
+                ac.hideSuggestions();
         });
         $inpt.on('keydown', function(e) {
             var $that = bzDom(this);
@@ -482,7 +477,7 @@ Autocomplete.prototype = {
                         top: '52px',
                         'min-width': '325px',
                         width:' 100%',
-                        'z-index': '1000',
+                        'z-index': '999999',
                         transition: 'all 0.5s ease',
                         '-webkit-transition': 'all 0.5s ease',
                         '-moz-transition': 'all 0.5s ease',
