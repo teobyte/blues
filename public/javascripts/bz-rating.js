@@ -294,7 +294,6 @@ Rating.prototype = {
         var css = Blues.JSONCSS(jss);
         Blues.JSS(css, 'bzcss_rating');
     },
-    // Rating initialization
     init: function() {
         var rating = this;
         rating.setup();

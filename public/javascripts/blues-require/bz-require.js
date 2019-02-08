@@ -306,7 +306,7 @@
             div.setAttribute('class','error');
             //ToDo: set left align option
             main.setAttribute('class','error-text');
-            obj.field.addEventListener('focus', function(e){
+            obj.field.addEventListener('focus', function(e) {
                 var elem = this;
                 e.preventDefault();
                 e.stopPropagation();

@@ -1,6 +1,5 @@
 (function() {
     'use strict';
-    // declare Blues
     var Blues = Blues || {};
     Blues.animate = function(element, styles, options) {
         var Animate = Animate || {};

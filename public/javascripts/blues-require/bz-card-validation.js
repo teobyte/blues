@@ -79,7 +79,7 @@
                 return;
             if (state && msg) {
                 if (!$gMsg.ifclass(state))
-                $gMsg.onclass(state);
+                    $gMsg.onclass(state);
                 $gMsg.inhtml(msg);
             }
         };
@@ -91,9 +91,10 @@
                 if (_$inpt.ifclass('valid'))
                     _valid += 1;
             });
-            if (_inpts === _valid)
+            if (_inpts === _valid) {
                 $btn.offattr('disabled');
-
+                $btn.onclass('bz-fc-mandy');
+            }
         };
         var validator = function(evt, type, value) {
             if (value === '') {
@@ -133,7 +134,7 @@
             var checkcode = function(e, patern) {
                 var number = String(e.target.value),
                     _$inpt = bzDom(e.target);
-                if (number.length === _$inpt.onattr('maxlength')) {
+                if (number.length == _$inpt.onattr('maxlength')) {
                     showMsg(_$inpt, 'valid', 'Code is valid');
                 } else {
                     showMsg(_$inpt, 'invalid', 'Code is invalid');
@@ -142,6 +143,9 @@
             var checkdate = function(e, patern) {
                 var number = String(e.target.value);
                 keepLook(e, patern);
+                if (e.key !== 'Backspace' && number.length === 2) {
+                    e.target.value = e.target.value + '/';
+                }
                 if (number.length === patern.length) {
                     var num = number.split('/'),
                         mm = num[0],
@@ -344,7 +348,7 @@
             });
         });
         $btn.on('click', function() {
-            //var $theBtn = bzDom(this),
+            var $theBtn = bzDom(this);
             //    fData = $form.getformdata();
             $theBtn.find('.text').inhtml('Sending...');
             $form.submit();
@@ -360,7 +364,7 @@
         bzDom('.bz-code-tip').on('click', function() {
             bzDom('.bz-card-help').fadeIn();
         });
-        bzDom('.bz-card-help').find('.fa-times-circle').on('click', function() {
+        bzDom('.bz-card-help').find('.bzi-remove').on('click', function() {
             bzDom('.bz-card-help').fadeOut();
         });
     };

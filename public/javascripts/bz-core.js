@@ -698,6 +698,11 @@
         });
         return atts;
     };
+    bzObject.prototype.ifattr = function(name, value) {
+        var elem = this.el;
+        if (!value) return elem.hasAttribute(name);
+        else return elem.getAttribute(name) === value;
+    };
     // get/set/check the element's attribute
     bzObject.prototype.onattr = function(name, value) {
         var elem = this.el;
@@ -1132,8 +1137,10 @@
             findingelem = elem.getElementById(selector.replace('#', ''));
         }
         else if (!Blues.check.ifWhitespaces(selector) && selector[0] === '.') {
-            //alert(selector);
-            findingelem = elem.getElementsByClassName(selector.replace('.', ''));
+            if (selector.split('.').length - 1 === 1)
+                findingelem = elem.getElementsByClassName(selector.replace('.', ''));
+            else
+                findingelem = elem.querySelectorAll(selector);
         } else if (!Blues.check.ifWhitespaces(selector) && Blues.check.ifElemName(selector)) {
             //alert('4' + elem.outerHTML);
             //ToDo: think of better way
@@ -1465,6 +1472,124 @@
             elem.submit();
         else return;
     };
+    // Accordion
+    bzObject.prototype.accordion = function(options) {
+        var ac = {};
+        ac.acc = bzDom(this.el);
+        options = options || {};
+        ac.o = {};
+        ac.defaultOptions = {
+            on: 'click',
+            flag: true,
+            collapsible: true,
+            closeNested: true,
+            onClosing: undefined,
+            onClosed: undefined,
+            onOpening: undefined,
+            onOpened: undefined,
+            onChanging: undefined,
+            onChanged: undefined
+        };
+        for (var k in ac.defaultOptions) {
+            if (ac.defaultOptions.hasOwnProperty(k)) {
+                if (options.hasOwnProperty(k))
+                    ac.o[k] = options[k];
+                else
+                    ac.o[k] = ac.defaultOptions[k];
+            }
+        }
+        var trigs = ac.acc.find('.title'),
+            conts = ac.acc.find('.content');
+        conts.each(function (i, item) {
+            var $cont = bzDom(item),
+                contH = $cont.height() + 16;
+            $cont.ondata('height', contH);
+            $cont.ondata('item', i + 1);
+            $cont.oncss('height', '0');
+        });
+        ac.acts = {
+            closeActive: function(trig, topen, openh) {
+                if (ac.o.collapsible && ac.acc.find('.title.active').exist()) {
+                    if (bz.check.ifFunction(ac.o.onClosing))
+                        ac.o.onClosing();
+                    else if (bz.check.ifFunction(ac.o.onChanging))
+                        ac.o.onChanging();
+                    var actvTrig = ac.acc.find('.title.active'),
+                        actvCont = ac.acc.find('.content.active');
+                    actvTrig.offclass('active');
+                    actvCont.offclass('active');
+                    actvCont.oncss('height', '0');
+                    setTimeout(function() {
+                        if (bz.check.ifFunction(ac.o.onClosed))
+                            ac.o.onClosed();
+                        else if (bz.check.ifFunction(ac.o.onChanged))
+                            ac.o.onChanged();
+                    }, 501);
+                }
+                setTimeout(function() {
+                    topen.onclass('active');
+                    topen.oncss('height', openh + 'px');
+                    trig.toggleclass('active');
+                    setTimeout(function() {
+                        if (bz.check.ifFunction(ac.o.onOpened))
+                            ac.o.onOpened();
+                        else if (bz.check.ifFunction(ac.o.onChanged))
+                            ac.o.onChanged();
+                    }, 501);
+                }, 10);
+            },
+            addEvent: function(trig) {
+                trig.on(ac.o.on, function() {
+                    var $th = bzDom(this),
+                        id = $th.ondata('item'),
+                        $cont = $th.next('.content'),
+                        contH = $cont.ondata('height');
+                    if ($cont.ifclass('active')) {
+                        if (bz.check.ifFunction(ac.o.onClosing))
+                            ac.o.onClosing();
+                        else if (bz.check.ifFunction(ac.o.onChanging))
+                            ac.o.onChanging();
+                        $cont.offclass('active');
+                        $cont.oncss('height', '0');
+                        $th.toggleclass('active');
+                        setTimeout(function() {
+                            if (bz.check.ifFunction(ac.o.onClosed))
+                                ac.o.onClosed();
+                            else if (bz.check.ifFunction(ac.o.onChanged))
+                                ac.o.onChanged();
+                        }, 501);
+                    } else {
+                        if (bz.check.ifFunction(ac.o.onOpening))
+                            ac.o.onOpening();
+                        else if (bz.check.ifFunction(ac.o.onChanging))
+                            ac.o.onChanging();
+                        ac.acts.closeActive($th, $cont, contH);
+                    }
+                });
+            }
+        };
+        trigs.each(function(i, item) {
+            var $trig = bzDom(item);
+            $trig.ondata('item', i + 1);
+            if (!$trig.ifattr('disabled'))
+                ac.acts.addEvent($trig);
+            if ($trig.find('.info-icon').exist()) {
+                var icon = $trig.find('.info-icon'),
+                    _icon = icon.clone();
+                icon.remove();
+                var title = $trig.inhtml();
+                $trig.inhtml('');
+                var text = bzDom('<div class="text">');
+                $trig.append(_icon);
+                text.inhtml(title);
+                $trig.append(text);
+            }
+            if (ac.o.flag) {
+                var $flag = bzDom('<i class="flag-icon bz-transition bzi-chevron-down">');
+                $trig.append($flag);
+            }
+        });
+    };
     // Blues Modal
     Blues.Modal = function(options) {
         // modal prototype
@@ -1764,7 +1889,6 @@
                         'attr': {
                             top: 0,
                             left: 0
-
                         }
                     },
                     '.bz-progress.right': {
@@ -1793,7 +1917,6 @@
             pr.append(bar);
         }
         //wrap.find('.bar').remove();
-
         var setTopBtm = function(side) {
             if (!pr.ifclass(side))
                 pr.onclass(side);
@@ -1975,35 +2098,6 @@
             for (attr in attrs)
                 elem.setAttribute(attr, attrs[attr]);
         }
-        // set table
-        // if (s.tabledata) {
-        //     var tbldata = s.tabledata;
-        //     var row = null;
-        //     for (var row in tbldata) {
-        //         if (row === 'thead') {
-        //             var tr = document.createElement('thead');
-        //             var trdata = tbldata[row];
-        //             var col = null;
-        //             for (var col in trdata) {
-        //                 var td = document.createElement('td');
-        //                 td.innerHTML = col;
-        //                 tr.appendChild(td);
-        //             }
-        //             elem.appendChild(tr);
-        //         } else {
-        //             var tr = document.createElement('tr');
-        //             tr.setAttribute('iwe-item', row);
-        //             var trdata = tbldata[row];
-        //             var col = null;
-        //             for (var col in trdata) {
-        //                 var td = document.createElement('td');
-        //                 td.innerHTML = trdata[col];
-        //                 tr.appendChild(td);
-        //             }
-        //             elem.appendChild(tr);
-        //         }
-        //     }
-        // }
     };
     ////////////////////////////////////////////////////////////
     Blues.parseHTML = function(htmlString) {

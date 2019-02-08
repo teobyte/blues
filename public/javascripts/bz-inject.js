@@ -1,5 +1,5 @@
 if (typeof require === 'function') {
-    var Blues = require('./bz-core-2.0.0');
+    var Blues = require('./bz-core');
 }
 ;(function(root, factory) {
     if (typeof exports === 'object') {
@@ -491,7 +491,7 @@ if (typeof require === 'function') {
                 });
             }
         }
-    }
+    };
     var Injector = Blues.injectall();
     return Injector;
 });

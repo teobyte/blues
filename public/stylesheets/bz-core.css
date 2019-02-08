@@ -237,7 +237,8 @@ summary {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-.bz-rotate180 {
+.bz-rotate180,
+.bz-accordion .title.active .flag-icon {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -o-transform: rotate(180deg);
@@ -5175,7 +5176,8 @@ a,
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.bz-transition {
+.bz-transition,
+.bz-accordion .content {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
@@ -6380,6 +6382,77 @@ blockquote.mandy,
   position: absolute;
   right: 4px;
   top: 4px;
+}
+.bz-accordion {
+  position: relative;
+  width: 100%;
+  border: 1px solid;
+  border-bottom: none;
+}
+.bz-accordion .title,
+.bz-accordion .content {
+  margin: 0;
+  position: relative;
+  width: 100%;
+}
+.bz-accordion .title {
+  display: block;
+  min-height: 48px;
+  line-height: 32px;
+  padding: 8px;
+  cursor: pointer;
+}
+.bz-accordion .title[disabled] {
+  color: var(--color-gray);
+  cursor: not-allowed !important;
+}
+.bz-accordion .title .info-icon {
+  display: inline-block;
+  float: left;
+  height: 32px;
+  line-height: 32px;
+  text-align: left;
+  margin-right: 8px;
+  width: 16px;
+}
+.bz-accordion .title .info-icon.bz-t-2x {
+  width: 32px;
+}
+.bz-accordion .title .text {
+  display: inline-block;
+  float: left;
+  min-height: 32px;
+  line-height: 32px;
+  margin: 0;
+  width: calc(100% - 40px);
+}
+.bz-accordion .title .info-icon.bz-t-2x ~ .text {
+  width: calc(100% - 56px);
+}
+.bz-accordion .title .info-icon ~ .text {
+  width: calc(100% - 48px);
+}
+.bz-accordion .title .flag-icon {
+  display: inline-block;
+  float: right;
+  height: 32px;
+  line-height: 32px;
+  text-align: left;
+  width: 16px;
+}
+.bz-accordion .content {
+  border-bottom: 1px solid;
+  margin: 0;
+  overflow: hidden;
+  padding: 0 8px;
+}
+.bz-accordion .content.active {
+  height: auto;
+  padding: 8px;
+}
+.bz-accordion.popup .content.active {
+  height: auto;
+  padding: 8px;
 }
 .bz-fader {
   background: rgba(69,69,68,0.5);
