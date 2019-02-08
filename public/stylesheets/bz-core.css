@@ -846,10 +846,12 @@ body.firefox a {
   font-weight: normal;
 }
 .bz-absolute,
+.bz-tabs .marker,
 .bz-fader {
   position: absolute;
 }
-.bz-relative {
+.bz-relative,
+.bz-tabs-containers {
   position: relative;
 }
 .bz-listview-box:after,
@@ -880,13 +882,15 @@ body.firefox a {
 template,
 [hidden],
 .bz-none,
+.bz-tabs-containers .bz-container,
 .bz-fader {
   display: none;
 }
 .bz-inline-block {
   display: inline-block;
 }
-.bz-block {
+.bz-block,
+.bz-tabs-containers .bz-container.show {
   display: block;
 }
 .bz-no-visible {
@@ -1064,10 +1068,12 @@ hr,
   left: 0;
 }
 .bz-absolute,
+.bz-tabs .marker,
 .bz-fader {
   position: absolute;
 }
-.bz-relative {
+.bz-relative,
+.bz-tabs-containers {
   position: relative;
 }
 .bz-fixed {
@@ -5177,7 +5183,8 @@ a,
   transition: all 0.3s ease;
 }
 .bz-transition,
-.bz-accordion .content {
+.bz-accordion .content,
+.bz-tabs .marker {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
@@ -6386,7 +6393,7 @@ blockquote.mandy,
 .bz-accordion {
   position: relative;
   width: 100%;
-  border: 1px solid;
+  border: 1px solid var(--color-gray-light);
   border-bottom: none;
 }
 .bz-accordion .title,
@@ -6441,7 +6448,7 @@ blockquote.mandy,
   width: 16px;
 }
 .bz-accordion .content {
-  border-bottom: 1px solid;
+  border-bottom: 1px solid var(--color-gray-light);
   margin: 0;
   overflow: hidden;
   padding: 0 8px;
@@ -6453,6 +6460,27 @@ blockquote.mandy,
 .bz-accordion.popup .content.active {
   height: auto;
   padding: 8px;
+}
+.bz-tabs {
+  position: relative;
+}
+.bz-tabs .bz-tab {
+  cursor: pointer;
+  text-align: center;
+  padding: 8px;
+  border: none;
+  border-bottom: 4px solid var(--color-light);
+}
+.bz-tabs .bz-tab:hover {
+  background: var(--color-light);
+}
+.bz-tabs .marker {
+  height: 4px;
+  bottom: 0;
+  left: -100%;
+}
+.bz-tabs-containers {
+  overflow: hidden;
 }
 .bz-fader {
   background: rgba(69,69,68,0.5);

@@ -1147,7 +1147,7 @@
             //findingelem = document.getElementsByName(extract.getAttrNameFromString(selector));
             findingelem = elem.querySelectorAll(selector);
         } else {
-            //alert('5');
+            //alert('5 ' + selector);
             findingelem = elem.querySelectorAll(selector);
         }
         var foundelem = new bzObject();
@@ -1502,7 +1502,7 @@
             conts = ac.acc.find('.content');
         conts.each(function (i, item) {
             var $cont = bzDom(item),
-                contH = $cont.height() + 16;
+                contH = $cont.height() + 56;
             $cont.ondata('height', contH);
             $cont.ondata('item', i + 1);
             $cont.oncss('height', '0');
@@ -1589,6 +1589,89 @@
                 $trig.append($flag);
             }
         });
+    };
+    //--> Blues Tabs
+    bzObject.prototype.tab = function(options) {
+        var tab = {};
+        tab.tab = bzDom(this.el);
+        options = options || {};
+        tab.o = {};
+        tab.defaultOptions = {
+            start: true,
+            on: 'click',
+            marker: 'bz-bc-primary',
+            open: undefined,
+            onLoading: undefined,
+            onOpened: undefined
+        };
+        for (var k in tab.defaultOptions) {
+            if (tab.defaultOptions.hasOwnProperty(k)) {
+                if (options.hasOwnProperty(k))
+                    tab.o[k] = options[k];
+                else
+                    tab.o[k] = tab.defaultOptions[k];
+            }
+        }
+        tab.tabs = tab.tab.find('.bz-tab');
+        tab.conts = bzDom('#' + tab.tab.ondata('tabs')).find('.bz-container');
+        tab.qty = tab.tabs.el.length;
+        var marker = bzDom('<div class="marker">'),
+            markerW;
+        markerW = 100 / tab.qty;
+        tab.acts = {
+            opentab: function(move, shift) {
+                shift = parseInt(shift);
+                if (tab.o.onLoading)
+                    tab.o.onLoading(shift, tab.conts.el[shift]);
+                tab.acts.movemarker(move, shift);
+                if (shift !== -1)
+                    tab.acts.opencont(shift);
+                if (tab.o.onOpened) {
+                    setTimeout(function() {
+                        tab.o.onOpened(shift, tab.conts.el[shift]);
+                    }, 501);
+                }
+            },
+            opencont: function(shift) {
+                tab.conts.each(function(j, item) {
+                    var $cont = bzDom(item);
+                    $cont.offclass('show');
+                    if (j == shift)
+                        if (!$cont.ifclass('show'))
+                            $cont.onclass('show');
+                });
+            },
+            movemarker: function(move, shift, marker) {
+                marker = marker || tab.tab.find('.marker');
+                marker.oncss('width', move + '%');
+                marker.oncss('left', move * shift + '%');
+            }
+        };
+        if (tab.o.open) {
+            var shift = parseInt(tab.o.open) - 1;
+            tab.acts.opentab(markerW, shift);
+        } else {
+            if (tab.o.marker)
+                marker.onclass(tab.o.marker);
+            tab.tab.append(marker);
+            tab.conts.each(function(i, item) {
+                var $cont = bzDom(item);
+                $cont.ondata('item', i + '');
+            });
+            tab.tabs.each(function(i, item) {
+                var $tab = bzDom(item);
+                $tab.ondata('item', i + '');
+                $tab.on('click', function() {
+                    var $self = bzDom(this),
+                        shift = $self.ondata('item');
+                    tab.acts.opentab(markerW, shift);
+                });
+            });
+            if (tab.o.start === true)
+                tab.acts.opentab(markerW, 0);
+            if (Number.isInteger(tab.o.start))
+                tab.acts.opentab(markerW, tab.o.start - 1);
+        }
     };
     // Blues Modal
     Blues.Modal = function(options) {
@@ -2808,91 +2891,6 @@
         ctxs.each(function(i, item) {
             var ctx = bzDom(item);
             CM.init(ctx);
-        });
-    };
-    //--> Blues Tabs
-    Blues.Tabs = function(selector, callback) {
-        var jss = {
-            'rule': {
-                '.bz-tabs': {
-                    'attr': {
-                        position: 'relative'
-                    }
-                },
-                '.bz-tabs .bz-tab' : {
-                    'attr': {
-                        cursor: 'pointer',
-                        'text-align': 'center',
-                        padding: '8px',
-                        border: 'none',
-                        'border-bottom': '4px solid var(--color-light)'
-                    }
-                },
-                '.bz-tabs .bz-tab:hover' : {
-                    'attr': {
-                        background: 'var(--color-light)'
-                    }
-                },
-                '.bz-tabs .marker': {
-                    'attr': {
-                        background: 'var(--color-primary)',
-                        height: '4px',
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        '-webkit-transition': 'all 0.5s ease',
-                        '-moz-transition': 'all 0.5s ease',
-                        transition: 'all 0.5s ease'
-                    }
-                },
-                '.bz-tabs-containers': {
-                    'attr': {
-                        position: 'relative',
-                        overflow: 'hidden'
-                    }
-                },
-                '.bz-tabs-containers .bz-container': {
-                    'attr': {
-                        display: 'none'
-                    }
-                },
-                '.bz-tabs-containers .bz-container.show': {
-                    'attr': {
-                        display: 'block'
-                    }
-                }
-
-            }
-        };
-        var css = Blues.JSONCSS(jss);
-        Blues.JSS(css, 'css_tabs');
-
-        var $tabsBox = bzDom(selector);
-        var $tabs = $tabsBox.find('.bz-tab');
-        var $conts = bzDom('#' + $tabsBox.ondata('tabs')).find('.bz-container');
-        var qty = $tabs.el.length;
-        var marker = bzDom('<div class="marker">');
-        var markerW = 100 / qty;
-        marker.oncss('width', markerW + '%');
-        $tabsBox.append(marker);
-        $tabs.each(function(i, item) {
-            var $tab = bzDom(item);
-            $tab.ondata('item', i);
-            $tab.on('click', function() {
-                var $self = bzDom(this),
-                    shift = $self.ondata('item');
-                marker.oncss('left', markerW * shift + '%');
-                $conts.each(function(j, item) {
-                    var $cont = bzDom(item);
-                    $cont.offclass('show');
-                    if (j == shift) {
-                        if (!$cont.ifclass('show'))
-                            $cont.onclass('show');
-                    }
-                });
-                if (callback)
-                    callback(i, item);
-            });
         });
     };
     //--> Blues Page Alert

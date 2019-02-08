@@ -1,0 +1,29 @@
+.bz-tabs
+  position: relative
+
+.bz-tabs .bz-tab
+  cursor: pointer
+  text-align: center
+  padding: 8px
+  border: none
+  border-bottom: 4px solid var(--color-light)
+
+.bz-tabs .bz-tab:hover
+  background: var(--color-light)
+
+.bz-tabs .marker
+  @extend .bz-transition
+  @extend .bz-absolute
+  height: 4px
+  bottom: 0
+  left: -100%
+
+.bz-tabs-containers
+  @extend .bz-relative
+  overflow: hidden
+
+.bz-tabs-containers .bz-container
+  @extend .bz-none
+
+.bz-tabs-containers .bz-container.show
+  @extend .bz-block
