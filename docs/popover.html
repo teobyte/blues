@@ -63,26 +63,38 @@
         <div class="bz-clear h-128"></div>
         <div class="bz-row">
             <div class="bz-col mb3 bz-t-align-c">
-                <div class="bz-popover top">
-                    <button class="bz-btn">
+                <div id="pop01" class="bz-popover top">
+                    <button class="bz-btn trigger">
                         Popover
                     </button>
                     <div class="popover">
-                        <ul class="bz-list-no-style">
-                            <li>Popover item</li>
-                            <li>Popover item</li>
-                            <li>Popover item</li>
-                            <li>Popover item</li>
-                            <li>Popover item</li>
-                            <li>Popover item</li>
+                        <ul class="bz-list-no-style bz-list-hover-ease">
+                            <li>
+                                <span class="text">Popover item</span>
+                            </li>
+                            <li>
+                                <span class="text">Popover item</span>
+                            </li>
+                            <li>
+                                <span class="text">Popover item</span>
+                            </li>
+                            <li>
+                                <span class="text">Popover item</span>
+                            </li>
+                            <li>
+                                <span class="text">Popover item</span>
+                            </li>
+                            <li>
+                                <span class="text">Popover item</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="bz-col mb3 bz-t-align-c">
-                <div class="bz-popover left">
-                    <button class="bz-btn">
+                <div id="pop02" class="bz-popover left">
+                    <button class="bz-btn trigger">
                         Left
                     </button>
                     <div class="popover">
@@ -111,8 +123,8 @@
             </div>
 
             <div class="bz-col mb3 bz-t-align-c">
-                <div class="bz-popover right">
-                    <button class="bz-btn">
+                <div id="pop03" class="bz-popover right">
+                    <button class="bz-btn trigger">
                         Right
                     </button>
                     <div class="popover">
@@ -141,8 +153,8 @@
             </div>
 
             <div class="bz-col mb3 bz-t-align-c">
-                <div class="bz-popover bottom">
-                    <button class="bz-btn">
+                <div id="pop04" class="bz-popover bottom">
+                    <button class="bz-btn trigger">
                         Bottom
                     </button>
                     <div class="popover">
@@ -152,12 +164,46 @@
                             <li>Popover item</li>
                             <li>Popover item</li>
                             <li>Popover item</li>
-
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="bz-row bz-padding8">
+            <div class="bz-col mb12 bz-padding-8">
+                <p>HTML Markup</p>
+                <textarea class="bz-code html">
+                <div id="pop01" class="bz-popover top">
+                    <button class="bz-btn trigger">
+                        Popover
+                    </button>
+                    <div class="popover">
+                        <ul class="bz-list-no-style">
+                            <li>Popover item</li>
+                            <li>Popover item</li>
+                            <li>Popover item</li>
+                            <li>Popover item</li>
+                            <li>Popover item</li>
+                            <li>Popover item</li>
+                        </ul>
+                    </div>
+                </div>
+                </textarea>
+            </div>
+            <div class="bz-col mb12  bz-padding8">
+                <p>Add next js code to initiate the Popover</p>
+                <textarea class="bz-code js">
+                bzDom('#pop01').popover();
+                </textarea>
+                <p>Call/Hide on Hover</p>
+                <textarea class="bz-code js">
+                bzDom('#pop01').popover({
+                    on: 'mouseenter'
+                });
+                </textarea>
+            </div>
+        </div>
+
     </div>
 </div>
 <script src="../public/javascripts/bz-core.js"></script>
@@ -165,5 +211,21 @@
 <script src="../public/javascripts/bz-sidenav.js"></script>
 <script src="../public/javascripts/bluessite.js"></script>
 <script src="../public/javascripts/bz-codelighter.js"></script>
+<script>
+    (function() {
+        bzDom('#pop01').popover({
+            //on: 'mouseenter'
+        });
+        bzDom('#pop02').popover({
+            //on: 'mouseenter'
+        });
+        bzDom('#pop03').popover({
+            on: 'mouseenter'
+        });
+        bzDom('#pop04').popover({
+            on: 'mouseenter'
+        });
+    })();
+</script>
 </body>
 </html>

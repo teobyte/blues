@@ -1720,61 +1720,43 @@
         });
     };
     // Popup
-    bzObject.prototype.popup = function(options) {
+    bzObject.prototype.popover = function(options) {
         var pop = {};
         pop.pop = bzDom(this.el);
         options = options || {};
         pop.o = {};
         pop.defaultOptions = {
             flag: true,
-            on: 'mouseenter',
-            onSelect: undefined
+            on: 'click',
+            onEnter: undefined,
+            onLeave: undefined
         };
         pop.o = bz.help.mergeOptions(pop.defaultOptions, options);
-    };
-    //--> Blues Popover
-    Blues.Popover = function() {
-        if (bzDom('.bz-popover').exist()) {
-            var pps = bzDom('.bz-popover');
-            pps.each(function(i, item) {
-                var pp = bzDom(item);
-                if (pp.ondata('open') != '1') {
-                    pp.ondata('open', '0');
-                    pp.on('click', function() {
-                        var $self = bzDom(this);
-                        if (!$self.ifclass('bz-on') && $self.ondata('open') != '1') {
-                            $self.onclass('bz-on');
-                            $self.ondata('open', '1');
-                            // bzDom(document).on('click', function(event) {
-                            //     var opnds = document.getElementsByClassName('bz-on');
-                            //     for (var i = 0; i < opnds.length; i++) {
-                            //         var isClickInside = opnds[i].contains(event.target);
-                            //         if (!isClickInside) {
-                            //             var elm = bzDom(opnds[i]);
-                            //             elm.offclass('bz-on');
-                            //             elm.ondata('open', '0');
-                            //         }
-                            //     }
-                            // });
-                        }
-                    });
-                }
-                var sels = pp.find('li');
-                sels.each(function(i, item) {
-                    var sel = bzDom(item);
-                    sel.on('click', function(e) {
-                        var $self = bzDom(this),
-                            pop = $self.parent('.bz-popover');
-                        if (pop.ondata('open') == '1') {
-                            pop.offclass('bz-on');
-                            setTimeout(function() {
-                                pop.ondata('open', '0');
-                            }, 100)
-                        }
-                    });
-                });
+        pop.trig = pop.pop.find('.trigger');
+        pop.popover = pop.pop.find('.popover');
+        pop.acts = {
+            openpop: function() {
+                setTimeout(function() {
+                    pop.trig.toggleclass('bz-on');
+                }, 100);
+            }
+        };
+        pop.trig.on(pop.o.on, function () {
+            pop.acts.openpop();
+            if(pop.o.on === 'mouseenter')
+                pop.trig.ondata('key', '1');
+        });
+        if(pop.o.on === 'click') {
+            pop.trig.on('mouseenter', function () {
+                pop.trig.ondata('key', '1');
             });
         }
+        pop.trig.on('mouseleave', function () {
+            if(pop.o.on === 'mouseenter')
+                pop.acts.openpop();
+            if (pop.trig.ifclass('bz-on'))
+                pop.trig.ondata('key', '1');
+        });
     };
     // Blues Modal
     Blues.Modal = function(options) {
@@ -3106,7 +3088,6 @@
     ////////////////////////////////////////////////////////////
     // Blues initialization
     Blues.init = function () {
-        Blues.Popover();
         Blues.Ajaxcalls();
         Blues.Editable();
         // page alerts initiation

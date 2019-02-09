@@ -151,6 +151,24 @@ textarea {
 summary {
   display: list-item;
 }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #d6d5d5;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #444;
+  opacity: 0.1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #212529;
+  opacity: 0.5;
+}
 .bz-wave {
   position: relative;
 }
@@ -624,6 +642,28 @@ summary {
     opacity: 0.5;
   }
 }
+.bz-transition.fast,
+a {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.bz-transition,
+.bz-list-hover-ease li .text,
+.bz-accordion .content,
+.bz-tabs .marker {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.bz-transition.slow {
+  -webkit-transition: all 0.9s ease;
+  -moz-transition: all 0.9s ease;
+  -ms-transition: all 0.9s ease;
+  transition: all 0.9s ease;
+}
 :root {
   --color-aqua: #75dafd;
   --color-black: #000;
@@ -833,6 +873,11 @@ h6 {
 .bz-t-line-through {
   text-decoration: line-through;
 }
+.bz-cursor-pointer,
+.bz-tooltip,
+.bz-fader {
+  cursor: pointer;
+}
 a {
   background-color: transparent;
   color: #102a62;
@@ -845,22 +890,201 @@ a:hover {
 body.firefox a {
   font-weight: normal;
 }
+.bz-link {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
+.bz-link:hover {
+  text-decoration: none;
+}
+.bz-link .text:after {
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  width: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+.bz-link.default,
+.bz-link.default:hover,
+.bz-link.default:active,
+.bz-link.default:focus {
+  color: #a8a9a9;
+}
+.bz-link.primary,
+.bz-link.primary:hover,
+.bz-link.primary:active,
+.bz-link.primary:focus {
+  color: #102a62;
+}
+.bz-link.secondary,
+.bz-link.secondary:hover,
+.bz-link.secondary:active,
+.bz-link.secondary:focus {
+  color: #0072d4;
+}
+.bz-link.positive,
+.bz-link.positive:hover,
+.bz-link.positive:active,
+.bz-link.positive:focus {
+  color: #14cb4f;
+}
+.bz-link.negative,
+.bz-link.negative:hover,
+.bz-link.negative:active,
+.bz-link.negative:focus {
+  color: #ff443b;
+}
+.bz-link.warning,
+.bz-link.warning:hover,
+.bz-link.warning:active,
+.bz-link.warning:focus {
+  color: #ff852f;
+}
+.bz-link.yellow,
+.bz-link.yellow:hover,
+.bz-link.yellow:active,
+.bz-link.yellow:focus {
+  color: #ffdc38;
+}
+.bz-link.info,
+.bz-link.info:hover,
+.bz-link.info:active,
+.bz-link.info:focus {
+  color: #75dafd;
+}
+.bz-link.dark,
+.bz-link.dark:hover,
+.bz-link.dark:active,
+.bz-link.dark:focus {
+  color: #212529;
+}
+.bz-link.light,
+.bz-link.light:hover,
+.bz-link.light:active,
+.bz-link.light:focus {
+  color: #d6d5d5;
+}
+.bz-link.white,
+.bz-link.white:hover,
+.bz-link.white:active,
+.bz-link.white:focus {
+  color: #fff;
+}
+.bz-link.black,
+.bz-link.black:hover,
+.bz-link.black:active,
+.bz-link.black:focus {
+  color: #000;
+}
+.bz-link.mandy,
+.bz-link.mandy:hover,
+.bz-link.mandy:active,
+.bz-link.mandy:focus {
+  color: #e5435f;
+}
+.bz-link.default .text:after {
+  background: #a8a9a9;
+}
+.bz-link.primary .text:after {
+  background: #102a62;
+}
+.bz-link.secondary .text:after {
+  background: #0072d4;
+}
+.bz-link.positive .text:after {
+  background: #14cb4f;
+}
+.bz-link.negative .text:after {
+  background: #ff443b;
+}
+.bz-link.warning .text:after {
+  background: #ff852f;
+}
+.bz-link.yellow .text:after {
+  background: #ffdc38;
+}
+.bz-link.info .text:after {
+  background: #75dafd;
+}
+.bz-link.dark .text:after {
+  background: #212529;
+}
+.bz-link.light .text:after {
+  background: #d6d5d5;
+}
+.bz-link.white .text:after {
+  background: #fff;
+}
+.bz-link.black .text:after {
+  background: #000;
+}
+.bz-link.mandy .text:after {
+  background: #e5435f;
+}
+.bz-link:hover .text:after,
+.bz-link:focus .text:after {
+  width: 100%;
+}
+.bz-styless-link,
+.bz-styless-link:hover {
+  text-decoration: none;
+}
+.bz-spacing-0 {
+  letter-spacing: 0px;
+}
+.bz-spacing-1 {
+  letter-spacing: 1px;
+}
+.bz-spacing-2 {
+  letter-spacing: 2px;
+}
+.bz-spacing-3 {
+  letter-spacing: 3px;
+}
+.bz-spacing-4 {
+  letter-spacing: 4px;
+}
+.bz-spacing-5 {
+  letter-spacing: 5px;
+}
 .bz-absolute,
+.bz-popover .popover,
+.bz-tooltip .popover,
 .bz-tabs .marker,
 .bz-fader {
   position: absolute;
 }
 .bz-relative,
+.bz-popover,
+.bz-tooltip,
 .bz-tabs-containers,
 .bz-ddl {
   position: relative;
 }
-.bz-listview-box:after,
+.bz-fixed {
+  position: fixed;
+}
+.bz-clearfix:after,
 .bz-row:after,
-.bz-sidenav:after,
-.bz-card:after,
+.bz-toolbar-box:after,
+.bz-title-box:after,
+.bz-list-box:after,
+.bz-listview-box:after,
+.bz-content-box:after,
 .bz-input:after,
-.bz-clearfix:after {
+.bz-sidenav:after,
+.bz-card:after {
   content: " ";
   display: block;
   font-size: 0;
@@ -868,12 +1092,16 @@ body.firefox a {
   clear: both;
   visibility: hidden;
 }
-* html .bz-listview-box,
+* html .bz-clearfix,
 * html .bz-row,
-* html .bz-sidenav,
-* html .bz-card,
+* html .bz-toolbar-box,
+* html .bz-title-box,
+* html .bz-list-box,
+* html .bz-listview-box,
+* html .bz-content-box,
 * html .bz-input,
-* html .bz-clearfix {
+* html .bz-sidenav,
+* html .bz-card {
   height: 1px;
   zoom: 1;
 }
@@ -883,11 +1111,15 @@ body.firefox a {
 template,
 [hidden],
 .bz-none,
+.bz-popover .popover,
+.bz-tooltip .popover,
 .bz-tabs-containers .bz-container,
 .bz-fader {
   display: none;
 }
-.bz-inline-block {
+.bz-inline-block,
+.bz-popover,
+.bz-tooltip {
   display: inline-block;
 }
 .bz-block,
@@ -1069,11 +1301,15 @@ hr,
   left: 0;
 }
 .bz-absolute,
+.bz-popover .popover,
+.bz-tooltip .popover,
 .bz-tabs .marker,
 .bz-fader {
   position: absolute;
 }
 .bz-relative,
+.bz-popover,
+.bz-tooltip,
 .bz-tabs-containers,
 .bz-ddl {
   position: relative;
@@ -1091,55 +1327,6 @@ hr,
 .bz-form > * {
   vertical-align: middle;
   display: inline-block;
-}
-.bz-cursor-pointer,
-.bz-fader {
-  cursor: pointer;
-}
-/* Blues Thin Scrollbar */
-/* Width */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-  -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  background-color: #d6d5d5;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background-color: #444;
-  opacity: 0.1;
-}
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background-color: #212529;
-  opacity: 0.5;
-}
-a,
-.bz-transition.fast {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.bz-transition,
-.bz-list-hover-ease li .text,
-.bz-accordion .content,
-.bz-tabs .marker {
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-.bz-transition.slow {
-  -webkit-transition: all 0.9s ease;
-  -moz-transition: all 0.9s ease;
-  -ms-transition: all 0.9s ease;
-  transition: all 0.9s ease;
 }
 .bz-row {
   box-sizing: border-box;
@@ -2028,6 +2215,18 @@ a,
   min-width: 320px;
   max-width: 100%;
 }
+a {
+  background-color: transparent;
+  color: #102a62;
+  text-decoration: none;
+  -webkit-text-decoration-skip: objects;
+}
+a:hover {
+  text-decoration: underline;
+}
+body.firefox a {
+  font-weight: normal;
+}
 .bz-link {
   cursor: pointer;
   position: relative;
@@ -2369,6 +2568,8 @@ a,
   box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 1px 1px rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12);
 }
 .bz-shadow-2,
+.bz-popover .popover,
+.bz-tooltip .popover,
 .bz-ddl .bz-list {
   -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12);
   -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12);
@@ -4384,94 +4585,18 @@ input.bz-editable:focus ~ label {
   font-weight: bold;
   font-size: 20px;
 }
-.bz-popover,
-.bz-tooltip {
-  position: relative;
-  display: inline-block;
-}
-.bz-popover .popover,
-.bz-tooltip .popover {
-  -moz-box-shadow: 0 1px 5px 0 rgba(0,0,0,0.13);
-  -webkit-box-shadow: 0 1px 5px 0 rgba(0,0,0,0.13);
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.13);
-  display: none;
-  font-family: 'Helvetica', sans-serif;
-  margin-left: 50%;
-  position: absolute;
-  z-index: 9999;
-}
-.bz-tooltip .popover {
-  background-color: #444;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 14px;
-  opacity: 0.9;
-  padding: 8px;
-  text-align: center;
-  width: 112px;
-}
-.bz-tooltip .popover {
-  max-height: 200px;
-  overflow: hidden;
-}
-.bz-tooltip.top .popover {
-  bottom: calc(100% + 8px);
-  left: -64px;
-}
-.bz-tooltip.bottom .popover {
-  bottom: -8px;
-  left: -64px;
-  -webkit-transform: translate(0, 100%);
-  -moz-transform: translate(0, 100%);
-  -ms-transform: translate(0, 100%);
-  -o-transform: translate(0, 100%);
-  transform: translate(0, 100%);
-}
-.bz-tooltip.right .popover {
-  top: 50%;
-  right: -8px;
-  -webkit-transform: translate(100%, -50%);
-  -moz-transform: translate(100%, -50%);
-  -ms-transform: translate(100%, -50%);
-  -o-transform: translate(100%, -50%);
-  transform: translate(100%, -50%);
-}
-.bz-tooltip.left .popover {
-  top: 50%;
-  left: calc(-50% - 8px);
-  -webkit-transform: translate(-100%, -50%);
-  -moz-transform: translate(-100%, -50%);
-  -ms-transform: translate(-100%, -50%);
-  -o-transform: translate(-100%, -50%);
-  transform: translate(-100%, -50%);
-}
-.bz-tooltip.top:hover .popover {
-  display: block;
-  -webkit-animation: fade-in 0.3s ease-in-out, shift-up 0.3s ease-in-out;
-  -moz-animation: fade-in 0.3s ease-in-out, shift-up 0.3s ease-in-out;
-}
-.bz-tooltip.bottom:hover .popover {
-  display: block;
-  -webkit-animation: fade-in 0.3s ease-in-out, shift-down 0.3s ease-in-out;
-  -moz-animation: fade-in 0.3s ease-in-out, shift-down 0.3s ease-in-out;
-}
-.bz-tooltip.left:hover .popover {
-  display: block;
-  -webkit-animation: fade-in 0.3s ease-in-out, shift-left 0.3s ease-in-out;
-  -moz-animation: fade-in 0.3s ease-in-out, shift-left 0.3s ease-in-out;
-}
-.bz-tooltip.right:hover .popover {
-  display: block;
-  -webkit-animation: fade-in 0.3s ease-in-out, shift-right 0.3s ease-in-out;
-  -moz-animation: fade-in 0.3s ease-in-out, shift-right 0.3s ease-in-out;
-}
 .bz-popover .popover {
+  margin-left: 50%;
   background-color: #fff;
   font-size: 16px;
   padding: 0;
   text-align: left;
   min-width: 124px;
   max-width: 164px;
+  z-index: 9999;
+}
+.bz-popover .trigger.bz-on ~ .popover {
+  display: block;
 }
 .bz-popover .popover ul {
   width: 100%;
@@ -4536,22 +4661,87 @@ input.bz-editable:focus ~ label {
   -o-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
 }
-.bz-popover.top.bz-on .popover {
+.bz-popover.top .popover {
+  -webkit-animation: fade-in 0.3s ease-in-out, shift-up 0.3s ease-in-out;
+  -moz-animation: fade-in 0.3s ease-in-out, shift-up 0.3s ease-in-out;
+}
+.bz-popover.bottom .popover {
+  -webkit-animation: fade-in 0.3s ease-in-out, shift-down 0.3s ease-in-out;
+  -moz-animation: fade-in 0.3s ease-in-out, shift-down 0.3s ease-in-out;
+}
+.bz-popover.left .popover {
+  -webkit-animation: fade-in 0.3s ease-in-out, shift-left 0.3s ease-in-out;
+  -moz-animation: fade-in 0.3s ease-in-out, shift-left 0.3s ease-in-out;
+}
+.bz-popover.right .popover {
+  -webkit-animation: fade-in 0.3s ease-in-out, shift-right 0.3s ease-in-out;
+  -moz-animation: fade-in 0.3s ease-in-out, shift-right 0.3s ease-in-out;
+}
+.bz-tooltip .popover {
+  margin-left: 50%;
+  z-index: 9999;
+}
+.bz-tooltip .popover {
+  background-color: #444;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.9;
+  padding: 8px;
+  text-align: center;
+  width: 112px;
+}
+.bz-tooltip .popover {
+  max-height: 200px;
+  overflow: hidden;
+}
+.bz-tooltip.top .popover {
+  bottom: calc(100% + 8px);
+  left: -56px;
+}
+.bz-tooltip.bottom .popover {
+  bottom: -8px;
+  left: -56px;
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  -o-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+}
+.bz-tooltip.right .popover {
+  top: 50%;
+  right: -8px;
+  -webkit-transform: translate(100%, -50%);
+  -moz-transform: translate(100%, -50%);
+  -ms-transform: translate(100%, -50%);
+  -o-transform: translate(100%, -50%);
+  transform: translate(100%, -50%);
+}
+.bz-tooltip.left .popover {
+  top: 50%;
+  left: calc(-50% - 8px);
+  -webkit-transform: translate(-100%, -50%);
+  -moz-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  -o-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+.bz-tooltip.top:hover .popover {
   display: block;
   -webkit-animation: fade-in 0.3s ease-in-out, shift-up 0.3s ease-in-out;
   -moz-animation: fade-in 0.3s ease-in-out, shift-up 0.3s ease-in-out;
 }
-.bz-popover.bottom.bz-on .popover {
+.bz-tooltip.bottom:hover .popover {
   display: block;
   -webkit-animation: fade-in 0.3s ease-in-out, shift-down 0.3s ease-in-out;
   -moz-animation: fade-in 0.3s ease-in-out, shift-down 0.3s ease-in-out;
 }
-.bz-popover.left.bz-on .popover {
+.bz-tooltip.left:hover .popover {
   display: block;
   -webkit-animation: fade-in 0.3s ease-in-out, shift-left 0.3s ease-in-out;
   -moz-animation: fade-in 0.3s ease-in-out, shift-left 0.3s ease-in-out;
 }
-.bz-popover.right.bz-on .popover {
+.bz-tooltip.right:hover .popover {
   display: block;
   -webkit-animation: fade-in 0.3s ease-in-out, shift-right 0.3s ease-in-out;
   -moz-animation: fade-in 0.3s ease-in-out, shift-right 0.3s ease-in-out;
