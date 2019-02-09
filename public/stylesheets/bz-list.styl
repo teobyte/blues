@@ -29,9 +29,9 @@ li.divider
   overflow: hidden
 
 .bz-list-hover-ease li .text
+  @extend .bz-transition
   padding: 8px
   position: relative
-  vendor(transition, all 0.5s ease)
 
 .bz-list-hover-ease li .text i
   font-size: 28px
@@ -59,3 +59,8 @@ li.divider
 .bz-list-striped li:nth-child(2n-1),
 .bz-table-striped tr:nth-child(2n-1) td
   background-color: color-gray-light
+
+.bz-list-devider
+  border-bottom: 1px solid color-gray-light
+  float: right
+  width: 100%

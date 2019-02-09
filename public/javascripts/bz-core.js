@@ -324,6 +324,18 @@
                 x: posx,
                 y: posy
             }
+        },
+        mergeOptions: function(defaultOptions, options) {
+            var o = {};
+            for (var k in defaultOptions) {
+                if (defaultOptions.hasOwnProperty(k)) {
+                    if (options.hasOwnProperty(k))
+                        o[k] = options[k];
+                    else
+                        o[k] = defaultOptions[k];
+                }
+            }
+            return o;
         }
     };
     ///////////////////////////////////////////////////////
@@ -1490,14 +1502,7 @@
             onChanging: undefined,
             onChanged: undefined
         };
-        for (var k in ac.defaultOptions) {
-            if (ac.defaultOptions.hasOwnProperty(k)) {
-                if (options.hasOwnProperty(k))
-                    ac.o[k] = options[k];
-                else
-                    ac.o[k] = ac.defaultOptions[k];
-            }
-        }
+        ac.o = bz.help.mergeOptions(ac.defaultOptions, options);
         var trigs = ac.acc.find('.title'),
             conts = ac.acc.find('.content');
         conts.each(function (i, item) {
@@ -1604,14 +1609,7 @@
             onLoading: undefined,
             onOpened: undefined
         };
-        for (var k in tab.defaultOptions) {
-            if (tab.defaultOptions.hasOwnProperty(k)) {
-                if (options.hasOwnProperty(k))
-                    tab.o[k] = options[k];
-                else
-                    tab.o[k] = tab.defaultOptions[k];
-            }
-        }
+        tab.o = bz.help.mergeOptions(tab.defaultOptions, options);
         tab.tabs = tab.tab.find('.bz-tab');
         tab.conts = bzDom('#' + tab.tab.ondata('tabs')).find('.bz-container');
         tab.qty = tab.tabs.el.length;
@@ -1671,6 +1669,111 @@
                 tab.acts.opentab(markerW, 0);
             if (Number.isInteger(tab.o.start))
                 tab.acts.opentab(markerW, tab.o.start - 1);
+        }
+    };
+    // Dropdown
+    bzObject.prototype.ddl = function(options) {
+        var ddl = {};
+        ddl.ddl = bzDom(this.el);
+        options = options || {};
+        ddl.o = {};
+        ddl.defaultOptions = {
+            flag: true,
+            on: 'click',
+            onSelect: undefined
+        };
+        ddl.o = bz.help.mergeOptions(ddl.defaultOptions, options);
+        ddl.trig = ddl.ddl.find('.bz-trigger');
+        ddl.list = ddl.ddl.find('.bz-list');
+        if (ddl.o.flag) {
+            var $flag = bzDom('<i class="flag-icon bz-transition bzi-chevron-down">');
+            ddl.trig.append($flag);
+        }
+        ddl.acts = {
+          openddl: function() {
+              setTimeout(function() {
+                  ddl.list.toggleclass('bz-on');
+              }, 100);
+          },
+          onselect: function(i, item) {
+              if (bz.check.ifFunction(ddl.o.onSelect))
+                  ddl.o.onSelect(i, item);
+              ddl.acts.openddl();
+          }
+        };
+        ddl.trig.on(ddl.o.on, function() {
+            ddl.acts.openddl();
+        });
+        ddl.trig.on('mouseenter', function() {
+            ddl.list.ondata('key', '0');
+        });
+        ddl.trig.on('mouseleave', function() {
+            if (ddl.list.ifclass('bz-on'))
+                ddl.list.ondata('key', '1');
+        });
+        var selects = ddl.list.find('.bz-list-item');
+        selects.each(function(i, item) {
+            var $sl = bzDom(item);
+            $sl.on('click', function() {
+                ddl.acts.onselect(i, $sl);
+            });
+        });
+    };
+    // Popup
+    bzObject.prototype.popup = function(options) {
+        var pop = {};
+        pop.pop = bzDom(this.el);
+        options = options || {};
+        pop.o = {};
+        pop.defaultOptions = {
+            flag: true,
+            on: 'mouseenter',
+            onSelect: undefined
+        };
+        pop.o = bz.help.mergeOptions(pop.defaultOptions, options);
+    };
+    //--> Blues Popover
+    Blues.Popover = function() {
+        if (bzDom('.bz-popover').exist()) {
+            var pps = bzDom('.bz-popover');
+            pps.each(function(i, item) {
+                var pp = bzDom(item);
+                if (pp.ondata('open') != '1') {
+                    pp.ondata('open', '0');
+                    pp.on('click', function() {
+                        var $self = bzDom(this);
+                        if (!$self.ifclass('bz-on') && $self.ondata('open') != '1') {
+                            $self.onclass('bz-on');
+                            $self.ondata('open', '1');
+                            // bzDom(document).on('click', function(event) {
+                            //     var opnds = document.getElementsByClassName('bz-on');
+                            //     for (var i = 0; i < opnds.length; i++) {
+                            //         var isClickInside = opnds[i].contains(event.target);
+                            //         if (!isClickInside) {
+                            //             var elm = bzDom(opnds[i]);
+                            //             elm.offclass('bz-on');
+                            //             elm.ondata('open', '0');
+                            //         }
+                            //     }
+                            // });
+                        }
+                    });
+                }
+                var sels = pp.find('li');
+                sels.each(function(i, item) {
+                    var sel = bzDom(item);
+                    sel.on('click', function(e) {
+                        var $self = bzDom(this),
+                            pop = $self.parent('.bz-popover');
+                        if (pop.ondata('open') == '1') {
+                            pop.offclass('bz-on');
+                            setTimeout(function() {
+                                pop.ondata('open', '0');
+                            }, 100)
+                        }
+                    });
+                });
+            });
         }
     };
     // Blues Modal
@@ -2732,50 +2835,6 @@
             }, timer);
         }
     };
-    //--> Blues Popover
-    Blues.Popover = function() {
-        if (bzDom('.bz-popover').exist()) {
-            var pps = bzDom('.bz-popover');
-            pps.each(function(i, item) {
-                var pp = bzDom(item);
-                if (pp.ondata('open') != '1') {
-                    pp.ondata('open', '0');
-                    pp.on('click', function() {
-                        var $self = bzDom(this);
-                        if (!$self.ifclass('bz-on') && $self.ondata('open') != '1') {
-                            $self.onclass('bz-on');
-                            $self.ondata('open', '1');
-                            bzDom(document).on('click', function(event) {
-                                var opnds = document.getElementsByClassName('bz-on');
-                                for (var i = 0; i < opnds.length; i++) {
-                                    var isClickInside = opnds[i].contains(event.target);
-                                    if (!isClickInside) {
-                                        var elm = bzDom(opnds[i]);
-                                        elm.offclass('bz-on');
-                                        elm.ondata('open', '0');
-                                    }
-                                }
-                            });
-                        }
-                    });
-                }
-                var sels = pp.find('li');
-                sels.each(function(i, item) {
-                    var sel = bzDom(item);
-                    sel.on('click', function(e) {
-                        var $self = bzDom(this),
-                            pop = $self.parent('.bz-popover');
-                        if (pop.ondata('open') == '1') {
-                            pop.offclass('bz-on');
-                            setTimeout(function() {
-                                pop.ondata('open', '0');
-                            }, 100)
-                        }
-                    });
-                });
-            });
-        }
-    };
     //--> Blues Context Menu
     Blues.Contextmenu = function(selector, callback) {
         var contextArea;
@@ -3061,6 +3120,19 @@
         waves.each(function(i, item) {
             var w = bzDom(item);
             bz.Waves(w);
+        });
+        bzDom(document).on('click', function(event) {
+            var opnds = document.getElementsByClassName('bz-on');
+            for (var i = 0; i < opnds.length; i++) {
+                var isClickInside = opnds[i].contains(event.target);
+                if (!isClickInside) {
+                    var elm = bzDom(opnds[i]);
+                    if (elm.ondata('key') == '1') {
+                        elm.ondata('key', '0');
+                        elm.toggleclass('bz-on');
+                    }
+                }
+            }
         });
     };
     window.Bz = window.bz = window.Blues = Blues;

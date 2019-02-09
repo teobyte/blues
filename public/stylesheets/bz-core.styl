@@ -79,6 +79,16 @@ for pos in positions
   background-color color-gray-darker
   opacity 0.5
 
+a,
+.bz-transition.fast
+  vendor(transition, all .3s ease)
+
+.bz-transition
+  vendor(transition, all .5s ease)
+
+.bz-transition.slow
+  vendor(transition, all .9s ease)
+
 @import bz-flex  
 @import bz-width
 @import bz-links
@@ -94,15 +104,7 @@ for pos in positions
 @import bz-selectors
 @import bz-spinners
 
-a,
-.bz-transition.fast
-  vendor(transition, all .3s ease)
 
-.bz-transition
-  vendor(transition, all .5s ease)
-
-.bz-transition.slow
-  vendor(transition, all .9s ease)
 
 @import bz-nav
 @import bz-sidenav
@@ -117,6 +119,7 @@ a,
 @import bz-page-alert
 @import bz-accordion
 @import bz-tabs
+@import bz-ddl
 
 .bz-fader
   background rgba(69, 69, 68, 0.5)

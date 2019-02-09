@@ -1,6 +1,3 @@
-if (typeof require === 'function') {
-    var Blues = require('./bz-core-2.0.0');
-}
 ;(function(root, factory) {
     if (typeof exports === 'object') {
         module.exports = factory(window, document)

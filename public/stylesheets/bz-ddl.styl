@@ -1,0 +1,41 @@
+.bz-ddl
+  @extend .bz-relative
+  display: inline-block
+  height: 52px
+  .bz-trigger
+    height: inherit
+    line-height: 21px
+    padding 15px 20px 16px 20px
+    width: 100%
+    .flag-icon
+      margin-left: 16px
+      float: right
+  .bz-list
+    @extend .bz-list-no-style
+    @extend .bz-shadow-2
+    opacity: 0
+    top: 52px
+    left: 0
+    position: absolute
+    width: 100%
+    max-height: 200px
+    overflow: hidden
+    overflow-y: auto
+    background: #fff
+    z-index: 999999
+    transform-scaling(.25,0)
+    -webkit-transition: all 400ms cubic-bezier(.4,0,.2,1)
+    transition: all 400ms cubic-bezier(.4,0,.2,1)
+    -webkit-animation: none!important
+    animation: none!important
+    -webkit-transform-origin: 50% 0!important
+    transform-origin: 50% 0!important
+    &.bz-on
+      transform-scaling(1,1)
+      opacity: 1
+    .bz-list-item
+      padding: 8px
+
+.bz-trigger:focus ~ .bz-list
+  transform-scaling(1,1)
+  opacity: 1
