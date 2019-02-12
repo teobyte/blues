@@ -54,6 +54,7 @@
         { name: 'Buttons', url: '', clas: 'subheader bz-ft-l' },
         { name: 'Buttons', url: 'buttons.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Group Buttons', url: 'group-buttons.html', clas: 'bz-list-item bz-t-concat' },
+        { name: 'Dropdown Buttons', url: 'dropdown.html', clas: 'bz-list-item bz-t-concat' },
         { name: '', url: '', clas: 'divider' },
         { name: 'Grouping', url: '', clas: 'subheader bz-ft-l' },
         { name: 'Accordion', url: 'accordion.html', clas: 'bz-list-item bz-t-concat' },

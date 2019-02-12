@@ -1767,27 +1767,20 @@
         Ml.defaultOptions = {
             selector: undefined, // has to be defined
             type: 'modal', // modal, alert, confirm, prompt
-            position: 'center', // center, top, right, bottom, left
-            heigh: undefined,
+            position: 'center', // center, top, right, bottom, left, fullscreen
+            height: undefined,
             width: undefined,
             confirmcall: undefined,
             declinecall: undefined,
-            callonshow:null,
-            callonhide:null
+            callonshow: undefined,
+            callonhide: undefined
         };
-        for (var k in Ml.defaultOptions) {
-            if (Ml.defaultOptions.hasOwnProperty(k)) {
-                if (options.hasOwnProperty(k))
-                    Ml.o[k] = options[k];
-                else
-                    Ml.o[k] = Ml.defaultOptions[k];
-            }
-        }
+        Ml.o = bz.help.mergeOptions(Ml.defaultOptions, options);
         Ml.modal = bzDom(Ml.o.selector);
         Ml.initButton = function() {
             var Ml = this;
             if (typeof Ml.modal.ondata('btn') === 'string' &&
-                       Ml.modal.ondata('btn') != '' &&
+                       Ml.modal.ondata('btn') !== '' &&
                        Ml.modal.ondata('btn') !== undefined) {
                 var modalBtn = bzDom('#' + Ml.modal.ondata('btn'));
                 modalBtn.on('click', function() {
@@ -1800,20 +1793,29 @@
                 cont = Ml.modal.find('.content');
             if (!cont.parent().ifclass('modal-content')) {
                 var wraper = bzDom('<div class="modal-content bz-shadow-5">'),
+                    cont_wrap = bzDom('<div class="content-wrapper">'),
                     fader = bzDom('<div class="fader">');
-                if (Ml.o.width)
+                if (Ml.o.width) {
                     wraper.oncss('max-width', Ml.o.width);
-                if (Ml.o.height)
+                    wraper.oncss('width', Ml.o.width);
+                }
+                if (Ml.o.height) {
+                    wraper.oncss('height', Ml.o.height);
                     wraper.oncss('max-height', Ml.o.height);
-                cont.wrapinto(wraper, true);
+                }
+                cont.wrapinto(cont_wrap, true);
+                cont_wrap.wrapinto(wraper, true);
                 Ml.modal.prepend(fader);
             }
-            if (!Ml.modal.ifclass('center') &&
-                !Ml.modal.ifclass('top') &&
-                !Ml.modal.ifclass('right') &&
-                !Ml.modal.ifclass('bottom') &&
-                !Ml.modal.ifclass('left'))
+            if (Ml.o.position !== 'fullscreen' && !Ml.modal.ifclass('center') &&
+                !Ml.modal.ifclass('top') && !Ml.modal.ifclass('right') &&
+                !Ml.modal.ifclass('bottom') && !Ml.modal.ifclass('left'))
                 Ml.modal.onclass('center');
+            if (Ml.o.position === 'fullscreen') {
+                wraper.oncss('width', '100vw');
+                wraper.oncss('height', '100vh');
+                wraper.oncss('max-height', '100vh');
+            }
             if (Ml.o.type === 'alert')
                 Ml.alertDialog();
             if (Ml.o.type === 'confirm')
@@ -1825,13 +1827,17 @@
         };
         Ml.closeModal = function () {
             var Ml = this;
-            Ml.modal.fadeOut();
+            setTimeout(function () {
+                Ml.modal.fadeOut();
+            }, 501);
+            Ml.modal.hide();
             if (Ml.o.callonhide)
                 Ml.o.callonhide();
         };
         Ml.openModal = function() {
             var Ml = this,
                 fader = Ml.modal.find('.fader');
+            Ml.modal.show();
             Ml.modal.fadeIn();
             fader.on('click', function() {
                 Ml.closeModal();
@@ -1847,20 +1853,20 @@
         };
         Ml.addCloseBar = function() {
             var Ml = this,
-                cont = Ml.modal.find('.content');
-            var bar = bzDom('<div class="close-bar">'),
+                cont = Ml.modal.find('.content-wrapper');
+            var bar = bzDom('<div class="close-bar bz-t-2x">'),
                 rem = bzDom('<div class="remove">✕</div>');
             rem.on('click', function() {
                 Ml.closeModal();
             });
             bar.append(rem);
-            cont.append(bar);
+            cont.prepend(bar);
         };
         Ml.alertDialog = function() {
             var Ml = this,
                 cont = Ml.modal.find('.content'),
                 aD = bzDom('<div class="actions">'),
-                cBtn = bzDom('<button class="bz-btn primary bz-float-r">');
+                cBtn = bzDom('<button class="bz-btn primary bz-float-right">');
             cBtn.inhtml('OK');
             cBtn.on('click', function () {
                 Ml.closeModal();
@@ -1874,8 +1880,8 @@
             var Ml = this,
                 cont = Ml.modal.find('.content'),
                 aD = bzDom('<div class="actions">'),
-                cBtn = bzDom('<button class="bz-btn primary bz-float-r">'),
-                dBtn = bzDom('<button class="bz-btn primary bz-float-l">');
+                cBtn = bzDom('<button class="bz-btn primary bz-float-right">'),
+                dBtn = bzDom('<button class="bz-btn primary bz-float-left">');
             cBtn.inhtml('CONFIRM');
             dBtn.inhtml('DISMISS');
             cBtn.on('click', function () {
@@ -1896,8 +1902,8 @@
             var Ml = this,
                 cont = Ml.modal.find('.content'),
                 aD = bzDom('<div class="actions">'),
-                cBtn = bzDom('<button class="bz-btn primary bz-float-r">'),
-                dBtn = bzDom('<button class="bz-btn primary bz-float-r">');
+                cBtn = bzDom('<button class="bz-btn primary bz-float-right">'),
+                dBtn = bzDom('<button class="bz-btn primary bz-float-right">');
             cBtn.inhtml('CONFIRM');
             dBtn.inhtml('CANCEL');
             cBtn.on('click', function () {
@@ -1948,16 +1954,10 @@
                 var data = modal.find('form').getformdata();
                 if (agreecall)
                     agreecall(data);
-                setTimeout(function() {
-                    //alertBox.remove();
-                }, 501);
             },
             declinecall: function() {
                 if (disagreecall)
                     disagreecall();
-                setTimeout(function() {
-                    //alertBox.remove();
-                }, 501);
             }
         }).show();
     };

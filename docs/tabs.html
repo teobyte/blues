@@ -150,21 +150,33 @@
                     </div>
                 </div>
             </textarea>
-
-
             <p>Add next js code to initiate the Tab</p>
-
+            <p>Default initialization</p>
             <textarea class="bz-code js">
-                bz.Tabs('#sampletab');
-                var tabs = bzDom('.bz-tabs');
-                tabs.each(function(i, item) {
-                    var tab = bzDom(item);
-                    bz.Tabs(tab, function(i, item) {
-                        alert('Tab: ' + (i + 1) + ' activated.' );
-                    })
-                });
+            bzDom('.bz-tabs').tab();
             </textarea>
-
+            <p>Custom Tabs</p>
+            <textarea class="bz-code js">
+            bzDom('.bz-tabs').tab({
+                start: false,
+                marker: 'bz-bc-mandy',
+                onLoading: function(i, item) {
+                    if (i === 2)
+                    bzDom(item).inhtml('new text in the 3d tab');
+                },
+                onOpened: function(i, item) {
+                    alert('Tab: ' + (i + 1) + ' activated.' );
+                }
+            });
+            </textarea>
+            <p>To call any tab by no.</p>
+            <textarea class="bz-code js">
+            bzDom('#calltab3').on('click', function() {
+                bzDom('.bz-tabs').tab({
+                    open: 3
+                });
+            });
+            </textarea>
         </div>
 
     </div>

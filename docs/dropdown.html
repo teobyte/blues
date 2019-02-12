@@ -87,7 +87,6 @@
                     <span class="text">
                         <i class="bzi-user"></i>
                         Item 01
-
                     </span>
                 </li>
                 <li class="bz-list-devider"></li>
@@ -99,6 +98,41 @@
                 </li>
             </ul>
         </div>
+    </div>
+    <div class="bz-padding-16">
+        <p>Dropdown Markup</p>
+        <textarea class="bz-code html">
+        <div id="ddl01" class="bz-ddl">
+            <div class="bz-btn primary inverted bz-trigger">
+                Trigger DDL
+            </div>
+            <ul class="bz-list bz-list-hover-ease">
+                <li class="bz-list-item">
+                    <span class="text">Item 01</span>
+                </li>
+                <li class="bz-list-item">
+                    <span class="text">Item 02</span>
+                </li>
+                <li class="bz-list-item">
+                    <span class="text">Item 03</span>
+                </li>
+            </ul>
+        </div>
+        </textarea>
+        <p>Dropdown Initialization</p>
+        <textarea class="bz-code js">
+        bzDom('#ddl01').ddl();
+        </textarea>
+        <p>Custom options</p>
+        <textarea class="bz-code js">
+        bzDom('#ddl01').ddl({
+            //flag: false,
+            //on: 'mouseover', // default: 'click' | 'onmouseover' | 'onmouseenter'
+            onSelect: function(i, item) {
+                alert(item.outhtml());
+            }
+        });
+        </textarea>
     </div>
 </div>
 <script type="text/javascript" src="../public/javascripts/bz-core.js"></script>
