@@ -7,6 +7,7 @@ colsize(size, unt = '%')
 
 colset(size)
   .bz-col.{size}
+    -webkit-flex-grow: 1
     -webkit-box-flex: 1
     -ms-flex-positive: 1
     flex-grow: 1
@@ -39,20 +40,48 @@ screenset(size)
     -ms-flex-order: 1
     order: 1
 
-  .{size}-top
+  .{size}-col-top
     -webkit-box-align: start
     -ms-flex-align: start
     align-items: flex-start
 
-  .{size}-middle
+  .{size}-col-bottom
+    -webkit-box-align: end
+    -ms-flex-align: end
+    align-items: flex-end
+
+  .{size}-col-middle
     -webkit-box-align: center
     -ms-flex-align: center
     align-items: center
 
+  .{size}-top
+    -webkit-align-self: flex-start
+    -ms-flex-item-align: start
+    align-self: flex-start
+
   .{size}-bottom
-    -webkit-box-align: end
-    -ms-flex-align: end
-    align-items: flex-end
+    align-self: flex-end
+
+  .{size}-middle
+    -webkit-align-self: center
+    -ms-flex-item-align: center
+    align-self: center
+
+  .{size}-align-top
+    justify-content: flex-start !important
+    flex-direction: column
+    display: flex
+
+  .{size}-align-bottom
+    justify-content: flex-end !important
+    flex-direction: column
+    display: flex
+
+  .{size}-align-middle
+    justify-content: center
+    flex-direction: column
+    display: flex
 
   .{size}-around
     justify-content: space-around
@@ -62,23 +91,31 @@ screenset(size)
     -ms-flex-pack: justify
     justify-content: space-between
 
+  .{size}-first
+    order: -1
+
+  .{size}-last
+    order: 1
+
 .bz-row
-  @extend .bz-clearfix
   box-sizing: border-box
-  display: -webkit-box
+  display: -webkit-flex
   display: -ms-flexbox
+  display: -webkit-box
   display: flex
   -webkit-box-flex: 0
+  -webkit-flex: 0 1 auto
   -ms-flex: 0 1 auto
   flex: 0 1 auto
   -webkit-box-orient: horizontal
   -webkit-box-direction: normal
+  -webkit-flex-direction: row
   -ms-flex-direction: row
   flex-direction: row
+  -webkit-flex-wrap: wrap
   -ms-flex-wrap: wrap
   flex-wrap: wrap
   margin: 0!important
-  width 100%
 
 .bz-row.reverse
   -webkit-box-orient: horizontal

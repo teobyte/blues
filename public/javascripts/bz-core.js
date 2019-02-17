@@ -1826,6 +1826,7 @@
                 Ml.addCloseBar();
         };
         Ml.closeModal = function () {
+            bzDom('body').offclass('modal-open');
             var Ml = this;
             setTimeout(function () {
                 Ml.modal.fadeOut();
@@ -1835,6 +1836,7 @@
                 Ml.o.callonhide();
         };
         Ml.openModal = function() {
+            bzDom('body').onclass('modal-open');
             var Ml = this,
                 fader = Ml.modal.find('.fader');
             Ml.modal.show();
