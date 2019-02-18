@@ -101,8 +101,7 @@ if (typeof require === 'function') {
                     newIco = oldIco.clone();
                     btn.find('i').remove();
                 }
-                var name = btn.inhtml();
-                btn.inhtml('');
+
                 if (btn.ondata('icon')) {
                     var ico = bzDom('<i>'),
                         dataIcon = btn.ondata('icon'),
@@ -118,17 +117,27 @@ if (typeof require === 'function') {
                     btn.append(ico);
                 }
 
-                var nameSpan = bzDom('<span class="text">');
-                nameSpan.inhtml(name);
-                if (newIco != null)
-                    btn.append(newIco);
-                btn.append(nameSpan);
+                if (!btn.find('.text').exist()) {
+                    var name = btn.inhtml();
+                    btn.inhtml('');
+                    var nameSpan = bzDom('<span class="text">');
+                    nameSpan.inhtml(name);
+                    if (newIco != null)
+                        btn.append(newIco);
+                    btn.append(nameSpan);
+                } else {
+                    if (newIco != null)
+                        btn.append(newIco);
+                }
+
+
+
                 if (btn.ifclass('bz-wave')) {
-                    if (btn.find('.text').exist()) {
-                        var $txt = btn.find('.text');
-                        if ($txt.find('.wave').exist())
-                            $txt.find('.wave').remove();
-                    }
+                    // if (btn.find('.text').exist()) {
+                    //     var $txt = btn.find('.text');
+                    //     if ($txt.find('.wave').exist())
+                    //         $txt.find('.wave').remove();
+                    // }
                     bz.addwave(btn);
                 }
             }

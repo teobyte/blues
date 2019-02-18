@@ -4,8 +4,8 @@
   border none
   display inline-block
   position relative
-  padding 0!important
-  margin 16px 0!important
+  padding 0
+  margin 0
   text-decoration none
   user-select none
   vertical-align middle
@@ -24,8 +24,7 @@
 .bz-input select,
 .bz-input input:not([type])
   background inherit
-  line-height: 52px
-  height: 52px
+  vertical-align: middle
   display: inline-block
   float: left
 
@@ -42,10 +41,10 @@ for inpt in textinputs
   border-radius 0
   box-shadow none
   outline none
-  font-size 18px
+  font-size: 1em
+  line-height: 1em
   transition(all 0.3s ease-out)
   vertical-align middle
-  min-width 64px
 
 for inpt in textinputs
   .bz-input
@@ -68,7 +67,7 @@ for inpt in textinputs
   color color-white
 
 .bz-input input[type=email]
-  padding 8px 0 0 10px
+  padding 1.475em .6em 0.4em 1em
 
 for inpt in skipemail
   .bz-input
@@ -80,9 +79,10 @@ for inpt in skipemail
   font-size 1.5em
   overflow hidden
   text-align center
-  width 52px
+  line-height: 50px;
+  width 50px
   + input
-    width: calc(100% - 52px)
+    width: calc(100% - 50px)
   &.right
     float right
   &.bz-tool
@@ -92,7 +92,7 @@ for inpt in skipemail
       float left
 
 .bz-input i + i ~ input
-  width calc(100% - 104px)
+  width calc(100% - 100px)
 
 @import bz-inputs-label
 

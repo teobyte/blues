@@ -1462,7 +1462,7 @@ hr,
 .bz-popover,
 .bz-tooltip,
 .bz-tabs-containers,
-.bz-ddl {
+.bz-ddlist {
   position: relative;
 }
 .bz-fixed {
@@ -2597,7 +2597,7 @@ hr,
 .bz-shadow-2,
 .bz-popover .popover,
 .bz-tooltip .popover,
-.bz-ddl .bz-list {
+.bz-ddlist .bz-list {
   -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12);
   -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12);
   box-shadow: 0 1px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12);
@@ -2738,7 +2738,7 @@ hr,
 }
 .bz-list-no-style,
 .bz-cascading-list ul,
-.bz-ddl .bz-list {
+.bz-ddlist .bz-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -2872,8 +2872,8 @@ li.divider {
   border: none;
   display: inline-block;
   position: relative;
-  padding: 0 !important;
-  margin: 16px 0 !important;
+  padding: 0;
+  margin: 0;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;
@@ -2902,8 +2902,7 @@ li.divider {
 .bz-input input[type=text],
 .bz-input input[type=url] {
   background: inherit;
-  line-height: 52px;
-  height: 52px;
+  vertical-align: middle;
   display: inline-block;
   float: left;
 }
@@ -2924,9 +2923,9 @@ li.divider {
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: none;
-  font-size: 18px;
+  font-size: 1em;
+  line-height: 1em;
   vertical-align: middle;
-  min-width: 64px;
 }
 .bz-input.transparent select,
 .bz-input.transparent textarea,
@@ -2952,17 +2951,18 @@ li.divider {
 .bz-input input[type=tel],
 .bz-input input[type=text],
 .bz-input input[type=url] {
-  padding: 8px 0 0 10px;
+  padding: 1.475em 0.6em 0.4em 1em;
 }
 .bz-input i {
   border: none;
   font-size: 1.5em;
   overflow: hidden;
   text-align: center;
-  width: 52px;
+  line-height: 50px;
+  width: 50px;
 }
 .bz-input i + input {
-  width: calc(100% - 52px);
+  width: calc(100% - 50px);
 }
 .bz-input i.right {
   float: right;
@@ -2975,15 +2975,15 @@ li.divider {
   float: left;
 }
 .bz-input i + i ~ input {
-  width: calc(100% - 104px);
+  width: calc(100% - 100px);
 }
 .bz-input label {
   color: #a8a9a9;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  top: 18px;
+  top: 1.5em;
   -webkit-transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -ms-transition: 0.2s ease all;
@@ -3017,7 +3017,7 @@ li.divider {
 .bz-input textarea:valid ~ label,
 .bz-input textarea.highlight ~ label {
   top: 0;
-  font-size: 14px;
+  font-size: 0.8em;
   color: #102a62;
 }
 .bz-input textarea:focus ~ label,
@@ -3812,7 +3812,8 @@ input.bz-editable:focus ~ label {
   border: 2px solid transparent;
 }
 .bz-btn {
-  padding: 15px 20px 16px 20px;
+  padding: 0.94em;
+  vertical-align: middle;
 }
 .bz-btn::-moz-focus-inner {
   padding: 0;
@@ -3886,38 +3887,10 @@ input.bz-editable:focus ~ label {
   padding: 0;
   z-index: 10 !important;
 }
+.bz-btn,
 .bz-btn .text {
-  font-size: 18px;
-}
-.bz-btn.btn-xs {
-  padding: 2px 7px 2px 7px;
-}
-.bz-btn.btn-xs i,
-.bz-btn.btn-xs .text {
-  font-size: 0.8em;
-}
-.bz-btn.btn-s {
-  padding: 8px 16px 9px 16px;
-}
-.bz-btn.btn-s i,
-.bz-btn.btn-s .text {
-  font-size: 0.9em;
-}
-.bz-btn.btn-l i,
-.bz-btn.btn-l .text {
-  font-size: 1.4em;
-}
-.bz-btn.btn-xl i,
-.bz-btn.btn-xl i.right {
-  font-size: 1.6em;
-}
-.bz-btn.btn-xl .text {
-  padding-left: 10px;
-  font-size: 1.8em;
-}
-.bz-btn.btn-xl i.right ~ .text {
-  padding-right: 10px;
-  font-size: 1.8em;
+  line-height: 1em;
+  font-size: 1em;
 }
 .bz-btn-circle.default:hover,
 .bz-btn-circle.default:active,
@@ -4361,9 +4334,11 @@ input.bz-editable:focus ~ label {
 .bz-btn-group .bz-btn:hover {
   border: 1px solid #444;
 }
-.bz-btn-group .bz-btn:not(:last-child) {
+.bz-btn-group .bz-btn {
   border: 1px solid #444;
-  border-right: 1px solid transparent;
+}
+.bz-btn-group .bz-btn:not(:last-child) {
+  border-right: 1px transparent;
 }
 .bz-btn-group .bz-btn:active.rounded:first-child,
 .bz-btn-group .bz-btn:focus.rounded:first-child,
@@ -5193,8 +5168,7 @@ input[type="color"]::-webkit-color-swatch {
 .bz-droplist .bz-trigg {
   background: #d6d5d5;
   box-sizing: border-box;
-  height: 52px;
-  padding: 13px 8px 14px 8px;
+  padding: 0.9em;
   transition: all 0.3s ease-in;
   border: 2px solid transparent;
   cursor: pointer;
@@ -6864,21 +6838,21 @@ body.modal-open {
 .bz-tabs-containers {
   overflow: hidden;
 }
-.bz-ddl {
+.bz-ddlist {
   display: inline-block;
   height: 52px;
 }
-.bz-ddl .bz-trigger {
+.bz-ddlist .bz-trigger {
   height: inherit;
   line-height: 21px;
   padding: 15px 20px 16px 20px;
   width: 100%;
 }
-.bz-ddl .bz-trigger .flag-icon {
+.bz-ddlist .bz-trigger .flag-icon {
   margin-left: 16px;
   float: right;
 }
-.bz-ddl .bz-list {
+.bz-ddlist .bz-list {
   opacity: 0;
   top: 52px;
   left: 0;
@@ -6900,14 +6874,14 @@ body.modal-open {
   -webkit-transform-origin: 50% 0 !important;
   transform-origin: 50% 0 !important;
 }
-.bz-ddl .bz-list.bz-on {
+.bz-ddlist .bz-list.bz-on {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
   opacity: 1;
 }
-.bz-ddl .bz-list .bz-list-item {
+.bz-ddlist .bz-list .bz-list-item {
   padding: 8px;
 }
 .bz-trigger:focus ~ .bz-list {
