@@ -5,6 +5,7 @@
         init: function(selector) {
             selector = selector || '.bz-sidenav-btn';
             var btns = bzDom(selector);
+            if (!btns.exist()) return;
             if (btns.el.length < 1) return;
             var initNav = function(btn) {
                 var $btn = bzDom(btn),

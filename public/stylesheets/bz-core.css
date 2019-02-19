@@ -2872,8 +2872,9 @@ li.divider {
   border: none;
   display: inline-block;
   position: relative;
+  height: 50px;
   padding: 0;
-  margin: 0;
+  margin: 4px 0;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;
@@ -2923,8 +2924,8 @@ li.divider {
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: none;
-  font-size: 1em;
-  line-height: 1em;
+  font-size: 1.3em;
+  line-height: 1.3em;
   vertical-align: middle;
 }
 .bz-input.transparent select,
@@ -2951,7 +2952,7 @@ li.divider {
 .bz-input input[type=tel],
 .bz-input input[type=text],
 .bz-input input[type=url] {
-  padding: 1.475em 0.6em 0.4em 1em;
+  padding: 0.51em;
 }
 .bz-input i {
   border: none;
@@ -2979,11 +2980,11 @@ li.divider {
 }
 .bz-input label {
   color: #a8a9a9;
-  font-size: 1em;
+  font-size: 1.3em;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  top: 1.5em;
+  top: 0.62em;
   -webkit-transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -ms-transition: 0.2s ease all;
@@ -2994,19 +2995,25 @@ li.divider {
 }
 .bz-input i:not(.bz-tool) + input ~ label,
 .bz-input i + i.bz-tool + input ~ label {
-  left: 62px;
+  left: 60px;
 }
 .bz-input i.bz-tool + input ~ label {
   left: 10px;
 }
 .bz-input i.bz-tool.left + input ~ label {
-  left: 62px;
+  left: 60px;
 }
 .bz-input i.right + input ~ label {
   left: 10px;
 }
 .bz-input i.right ~ i.bz-tool {
   float: left;
+}
+.bz-input i.right + input[readonly] ~ label,
+.bz-input i.right + input[disabled] ~ label,
+.bz-input input[readonly] ~ label,
+.bz-input input[disabled] ~ label {
+  left: 0;
 }
 .bz-input input:focus ~ label,
 .bz-input input:valid ~ label,
@@ -3016,7 +3023,7 @@ li.divider {
 .bz-input textarea:focus ~ label,
 .bz-input textarea:valid ~ label,
 .bz-input textarea.highlight ~ label {
-  top: 0;
+  top: -0.1em;
   font-size: 0.8em;
   color: #102a62;
 }
@@ -3050,9 +3057,11 @@ li.divider {
 .bz-input i.bz-tool.left + input:focus ~ label,
 .bz-input i.bz-tool.left + input:valid ~ label,
 .bz-input i.bz-tool.left + input.highlight ~ label,
+.bz-input i:not('.right') + input[readonly] ~ label,
+.bz-input i:not('.right') + input[disabled] ~ label,
 .bz-input i + input[readonly] ~ label,
 .bz-input i + input[disabled] ~ label {
-  left: 52px;
+  left: 50px;
 }
 .bz-input input:not(.placeholder)::-webkit-input-placeholder {
   color: transparent;
@@ -3093,7 +3102,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input i.right + input ~ .bar,
 .bz-input i + i.bz-tool + input ~ .bar,
 .bz-input i.bz-tool.left + input ~ .bar {
-  left: 52px;
+  left: 50px;
 }
 .bz-input input ~ .bar,
 .bz-input i.right + input ~ .bar,
@@ -3102,8 +3111,8 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 }
 .bz-input i + input:focus ~ .bar,
 .bz-input i + input.highlight ~ .bar {
-  left: 52px;
-  width: calc(100% - 52px);
+  left: 50px;
+  width: calc(100% - 50px);
 }
 .bz-input input:focus ~ .bar,
 .bz-input input.highlight ~ .bar {
@@ -3115,17 +3124,17 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input i.bz-tool + input:focus ~ .bar,
 .bz-input i.bz-tool + input.highlight ~ .bar {
   left: 0;
-  width: calc(100% - 52px);
+  width: calc(100% - 50px);
 }
 .bz-input i.bz-tool.left + input:focus ~ .bar,
 .bz-input i.bz-tool.left + input.highlight ~ .bar {
-  left: 52px;
-  width: calc(100% - 52px);
+  left: 50px;
+  width: calc(100% - 50px);
 }
 .bz-input i + i.bz-tool + input:focus ~ .bar,
 .bz-input i + i.bz-tool + input.highlight ~ .bar {
   left: 52px;
-  width: calc(100% - 104px);
+  width: calc(100% - 100px);
 }
 .bz-input textarea ~ .bar {
   left: 0;
@@ -3681,7 +3690,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
   color: #14cb4f;
 }
 .bz-input div.error {
-  bottom: -1.15em;
+  bottom: -1.2em;
   font-size: 0.8em;
   position: absolute;
   z-index: 10;
@@ -3694,7 +3703,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input i:not(.bz-tool):not(.right) ~ div.error,
 .bz-input i.bz-tool.left ~ div.error,
 .bz-input i + i.bz-tool ~ div.error {
-  left: 52px;
+  left: 50px;
 }
 .bz-input .counter {
   position: absolute;
@@ -3812,7 +3821,8 @@ input.bz-editable:focus ~ label {
   border: 2px solid transparent;
 }
 .bz-btn {
-  padding: 0.94em;
+  margin: 4px 0;
+  padding: 0.8em;
   vertical-align: middle;
 }
 .bz-btn::-moz-focus-inner {
@@ -3887,10 +3897,13 @@ input.bz-editable:focus ~ label {
   padding: 0;
   z-index: 10 !important;
 }
-.bz-btn,
+.bz-btn {
+  font-size: inherit;
+  height: 50px;
+}
 .bz-btn .text {
-  line-height: 1em;
-  font-size: 1em;
+  line-height: 1em !important;
+  font-size: 1.3em;
 }
 .bz-btn-circle.default:hover,
 .bz-btn-circle.default:active,
@@ -5166,15 +5179,17 @@ input[type="color"]::-webkit-color-swatch {
 }
 .bz-select,
 .bz-droplist .bz-trigg {
+  height: 50px;
   background: #d6d5d5;
   box-sizing: border-box;
-  padding: 0.9em;
+  padding: 1.08em;
   transition: all 0.3s ease-in;
   border: 2px solid transparent;
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
   font-size: inherit;
+  line-height: 1em !important;
   overflow: hidden;
   position: relative;
   text-align: center;

@@ -117,20 +117,31 @@ if (typeof require === 'function') {
                     btn.append(ico);
                 }
 
-                if (!btn.find('.text').exist()) {
-                    var name = btn.inhtml();
+                var name = btn.inhtml(),
+                    btnHasChild = bz.check.ifDomNode(name);
+
+                if (!btnHasChild)
+                    name = btn.text();
+
+
+
+                if (btn.find('.text').exist()) {
+                    if (newIco != null)
+                        btn.append(newIco);
+                } else {
                     btn.inhtml('');
                     var nameSpan = bzDom('<span class="text">');
-                    nameSpan.inhtml(name);
+
+
+                    if (btnHasChild)
+                        nameSpan.inhtml(name);
+                    else
+                        nameSpan.text(name);
+
                     if (newIco != null)
                         btn.append(newIco);
                     btn.append(nameSpan);
-                } else {
-                    if (newIco != null)
-                        btn.append(newIco);
                 }
-
-
 
                 if (btn.ifclass('bz-wave')) {
                     // if (btn.find('.text').exist()) {
