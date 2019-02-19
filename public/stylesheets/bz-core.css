@@ -2872,9 +2872,8 @@ li.divider {
   border: none;
   display: inline-block;
   position: relative;
-  height: 50px;
   padding: 0;
-  margin: 4px 0;
+  margin: 8px 0;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;
@@ -2928,6 +2927,10 @@ li.divider {
   line-height: 1.3em;
   vertical-align: middle;
 }
+.bz-input select,
+.bz-input textarea {
+  width: 100%;
+}
 .bz-input.transparent select,
 .bz-input.transparent textarea,
 .bz-input.transparent input:not([type]),
@@ -2953,6 +2956,7 @@ li.divider {
 .bz-input input[type=text],
 .bz-input input[type=url] {
   padding: 0.51em;
+  height: 50px;
 }
 .bz-input i {
   border: none;
@@ -3821,7 +3825,7 @@ input.bz-editable:focus ~ label {
   border: 2px solid transparent;
 }
 .bz-btn {
-  margin: 4px 0;
+  margin: 8px 0;
   padding: 0.8em;
   vertical-align: middle;
 }
@@ -5200,6 +5204,9 @@ input[type="color"]::-webkit-color-swatch {
   -webkit-user-drag: none;
   width: 100%;
 }
+.bz-select {
+  padding: 0.8em;
+}
 .bz-droplist .bz-ddl {
   max-height: 200px;
   overflow: hidden;
@@ -5207,7 +5214,7 @@ input[type="color"]::-webkit-color-swatch {
   background: #fff;
   opacity: 0;
   position: absolute;
-  top: 52px;
+  top: 50px;
   width: 100%;
   -webkit-transform: scale(0.25);
   -moz-transform: scale(0.25);

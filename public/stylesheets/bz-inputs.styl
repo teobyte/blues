@@ -4,9 +4,8 @@
   border none
   display inline-block
   position relative
-  height: 50px
   padding 0
-  margin 4px 0
+  margin 8px 0
   text-decoration none
   user-select none
   vertical-align middle
@@ -47,6 +46,10 @@ for inpt in textinputs
   transition(all 0.3s ease-out)
   vertical-align middle
 
+.bz-input select,
+.bz-input textarea
+  width: 100%
+
 for inpt in textinputs
   .bz-input
     input[type={inpt}]
@@ -69,6 +72,7 @@ for inpt in textinputs
 
 .bz-input input[type=email]
   padding 0.51em
+  height: 50px
 
 for inpt in skipemail
   .bz-input
