@@ -3,9 +3,9 @@
   background color-white
   border 2px solid transparent
   display inline-block
-  height:  calc(2.3em + 4px)
   font-size: 1.3em
   line-height: normal
+  height: calc(2.3em + 4px)
   position relative
   padding 0
   margin 8px 0
@@ -29,6 +29,9 @@
   display: inline-block
   vertical-align: middle
   height: 100%
+
+.bz-input.bz-textarea:before
+  height: auto
 
 .bz-input i,
 .bz-input select,
@@ -69,6 +72,9 @@ for inpt in textinputs
 .bz-input select,
 .bz-input textarea
   width: 100%
+
+.bz-input.bz-textarea
+  height: auto
 
 for inpt in textinputs
   .bz-input
@@ -135,7 +141,7 @@ placeholder-color("bz-input textarea:not(.placeholder)", transparent)
 .bz-input input[type=number][disabled],
 .bz-input input[type=search][disabled],
 .bz-input select[disabled],
-.bz-input textarea.bz-textarea[disabled]
+.bz-input textarea[disabled]
   cursor not-allowed
   color #848482
   border-bottom 2px dotted #848482
@@ -149,7 +155,7 @@ placeholder-color("bz-input textarea:not(.placeholder)", transparent)
 .bz-input input[type=number][readonly],
 .bz-input input[type=search][readonly],
 .bz-input select[readonly],
-.bz-input textarea.bz-textarea[readonly]
+.bz-input textarea[readonly]
   background-color #eee
   color #777
   border-color #ccc

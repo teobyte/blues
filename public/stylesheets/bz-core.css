@@ -2871,9 +2871,9 @@ li.divider {
   background: #fff;
   border: 2px solid transparent;
   display: inline-block;
-  height: calc(2.3em + 4px);
   font-size: 1.3em;
   line-height: normal;
+  height: calc(2.3em + 4px);
   position: relative;
   padding: 0;
   margin: 8px 0;
@@ -2901,6 +2901,9 @@ li.divider {
   display: inline-block;
   vertical-align: middle;
   height: 100%;
+}
+.bz-input.bz-textarea:before {
+  height: auto;
 }
 .bz-input i,
 .bz-input select,
@@ -2953,6 +2956,9 @@ li.divider {
 .bz-input select,
 .bz-input textarea {
   width: 100%;
+}
+.bz-input.bz-textarea {
+  height: auto;
 }
 .bz-input.transparent select,
 .bz-input.transparent textarea,
@@ -3198,7 +3204,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input input[type=number][disabled],
 .bz-input input[type=search][disabled],
 .bz-input select[disabled],
-.bz-input textarea.bz-textarea[disabled] {
+.bz-input textarea[disabled] {
   cursor: not-allowed;
   color: #848482;
   border-bottom: 2px dotted #848482;
@@ -3212,7 +3218,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input input[type=number][readonly],
 .bz-input input[type=search][readonly],
 .bz-input select[readonly],
-.bz-input textarea.bz-textarea[readonly] {
+.bz-input textarea[readonly] {
   background-color: #eee;
   color: #777;
   border-color: #ccc;
@@ -5216,17 +5222,18 @@ input[type="color"]::-webkit-color-swatch {
 }
 .bz-select,
 .bz-droplist .bz-trigg {
-  height: 50px;
+  height: calc(2.3em + 4px);
   background: #d6d5d5;
   box-sizing: border-box;
-  padding: 1.08em;
+  padding: 0.52em;
   transition: all 0.3s ease-in;
   border: 2px solid transparent;
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
-  font-size: inherit;
-  line-height: 1em !important;
+  font-size: 1.3em;
+  line-height: normal;
+  margin: 8px 0 8px 0;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -5237,9 +5244,6 @@ input[type="color"]::-webkit-color-swatch {
   -webkit-user-drag: none;
   width: 100%;
 }
-.bz-select {
-  padding: 0.8em;
-}
 .bz-droplist .bz-ddl {
   max-height: 200px;
   overflow: hidden;
@@ -5247,7 +5251,7 @@ input[type="color"]::-webkit-color-swatch {
   background: #fff;
   opacity: 0;
   position: absolute;
-  top: 50px;
+  top: calc(3.5em + 4px);
   width: 100%;
   -webkit-transform: scale(0.25);
   -moz-transform: scale(0.25);

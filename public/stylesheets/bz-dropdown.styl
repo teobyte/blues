@@ -9,17 +9,18 @@
 
 .bz-select,
 .bz-droplist .bz-trigg
-  height: 50px
+  height: calc(2.3em + 4px)
   background: color-gray-light
   box-sizing: border-box
-  padding: 1.08em
+  padding: .52em
   transition: all .3s ease-in
   border: 2px solid transparent
   cursor: pointer
   display: inline-block
   font-family: inherit
-  font-size: inherit
-  line-height: 1em!important
+  font-size: 1.3em
+  line-height: normal
+  margin: 8px 0 8px 0
   overflow: hidden
   position: relative
   text-align: center
@@ -30,8 +31,6 @@
   -webkit-user-drag: none
   width: 100%
 
-.bz-select
-  padding: 0.8em
 
 .bz-droplist .bz-ddl
   max-height: 200px
@@ -40,7 +39,7 @@
   background: color-white
   opacity: 0
   position: absolute
-  top: 50px
+  top: calc(3.5em + 4px)
   width: 100%
   transform-scaling(.25,0)
   -webkit-transition: all 400ms cubic-bezier(.4,0,.2,1)
