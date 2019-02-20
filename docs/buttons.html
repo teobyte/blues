@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
     <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
     <link rel="stylesheet" href="../public/stylesheets/bz-core.css">
+    <style>
+        .a { font-family: Helvetica }
+        .b { font-family: Gruppo    }
+        .c { font-family: Catamaran }
+    </style>
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -64,20 +69,20 @@
 
             <div class="bz-btn-group">
 
-                <button class="bz-btn borad border-dark primary bz-wave">
+                <button class="bz-btn primary bz-wave">
                     Primary
                 </button>
 
-                <button class="bz-btn borad border-dark negative bz-wave">
+                <button class="bz-btn negative bz-wave a">
                     Negative
                 </button>
 
-                <button class="bz-btn borad border-dark warning bz-wave">
+                <button class="bz-btn warning bz-wave b">
                     <span class="text">Warning</span>
                 </button>
 
-                <button class="bz-btn borad border-dark positive bz-wave">
-                    <span class="text">positive</span>
+                <button class="bz-btn positive bz-wave c">
+                    <span class="text">Positive</span>
                     <div class="wave"></div>
                 </button>
 
@@ -85,11 +90,52 @@
 
         </div>
 
-        <div class="bz-padding-16">
-            <input class="bz-input" placeholder="Email" type="email" required>
+        <div class="bz-padding-16 a">
+            <input class="bz-input" placeholder="Email" data-icon="bzi-user" type="email" required>
             <button type="button" class="bz-btn bz-wave">
                 <span class="text">Send</span>
             </button>
+        </div>
+
+        <div class="bz-clear"></div>
+
+        <div class="bz-padding-16 b">
+            <div class="bz-row mb-col-middle">
+                <div class="bz-col">
+                    <input class="bz-input" placeholder="Email" data-icon="bzi-user" type="email" required>
+                </div>
+                <div class="bz-col">
+                    <button type="button" class="bz-btn bz-wave">
+                        <span class="text">Send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bz-padding-16">
+            <div class="bz-row mb-col-middle">
+                <div class="bz-col a">
+                    <input class="bz-input" data-class="size-xl" placeholder="Email" data-icon="bzi-user" type="email" required>
+                </div>
+                <div class="bz-col b">
+                    <button type="button" class="bz-btn size-xl bz-wave">
+                        <span class="text">Send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bz-padding-16 b">
+            <div class="bz-row mb-col-middle">
+                <div class="bz-col">
+                    <input class="bz-input" data-class="size-xs" placeholder="Email" data-icon="bzi-user" type="email" required>
+                </div>
+                <div class="bz-col">
+                    <button type="button" class="bz-btn size-xs bz-wave">
+                        <span class="text">Send</span>
+                    </button>
+                </div>
+            </div>
         </div>
 
         <div class="bz-padding-16 bz-bc-white">
@@ -165,25 +211,25 @@
             <h5>.bz-btn .border-dark</h5>
             <p>Icon on right .bz-right</p>
             <p>To use with light color backgrounds</p>
-            <button class="bz-btn borad border-dark bz-wave dark-wave">
+            <button class="bz-btn bz-wave dark-wave">
                 Button
             </button>
-            <button class="bz-btn border-dark default bz-wave">
+            <button class="bz-btn default bz-wave">
                 Default
             </button>
-            <button class="bz-btn borad border-dark primary btn-xs bz-wave">
+            <button class="bz-btn size-xs primary bz-wave">
                 .btn-xs
             </button>
-            <button class="bz-btn border-dark positive btn-s bz-wave">
+            <button class="bz-btn size-s positive bz-wave">
                 .btn-s
             </button>
-            <button class="bz-btn borad border-dark warning btn-l bz-wave" data-icon="icon-emotsmile">
+            <button class="bz-btn size-l warning bz-wave" data-icon="bzi-user">
                 .btn-l
             </button>
-            <button class="bz-btn border-dark negative btn-xl bz-wave" data-icon="right:icon-emotsmile">
+            <button class="bz-btn size-xl negative bz-wave" data-icon="right:bzi-user">
                 .btn-xl
             </button>
-            <button class="bz-btn borad border-dark faded bz-wave">
+            <button class="bz-btn faded bz-wave">
                 Faded
             </button>
         </div>
@@ -192,25 +238,25 @@
             <h5>.bz-btn .border-dark</h5>
             <p>Icon on right .bz-right</p>
             <p>To use with light color backgrounds</p>
-            <button class="bz-btn borad border-dark hov-reverse bz-wave dark-wave">
+            <button class="bz-btn hov-reverse bz-wave dark-wave">
                 Button
             </button>
-            <button class="bz-btn border-dark default hov-reverse bz-wave dark-wave">
+            <button class="bz-btn default hov-reverse bz-wave dark-wave">
                 Default
             </button>
-            <button class="bz-btn border-dark primary hov-reverse bz-wave dark-wave borad">
+            <button class="bz-btn primary hov-reverse bz-wave dark-wave">
                 Primary
             </button>
-            <button class="bz-btn border-dark positive hov-reverse bz-wave dark-wave">
+            <button class="bz-btn positive hov-reverse bz-wave dark-wave">
                 Positive
             </button>
-            <button class="bz-btn borad border-dark warning hov-reverse bz-wave dark-wave">
+            <button class="bz-btn warning hov-reverse bz-wave dark-wave">
                 Warning
             </button>
-            <button class="bz-btn border-dark negative hov-reverse bz-wave dark-wave">
+            <button class="bz-btn negative hov-reverse bz-wave dark-wave">
                 Negative
             </button>
-            <button class="bz-btn borad border-dark faded hov-reverse bz-wave dark-wave">
+            <button class="bz-btn faded hov-reverse bz-wave dark-wave">
                 Faded
             </button>
         </div>

@@ -1,7 +1,7 @@
 .bz-input
   label
     color color-gray
-    font-size 1.3em
+    font-size 1em
     font-weight normal
     position absolute
     pointer-events none
@@ -9,20 +9,20 @@
     vendor(transition, 0.2s ease all)
 
 .bz-input input ~ label
-  left 10px
+  left 0.5em
 
 .bz-input i:not(.bz-tool) + input ~ label,
 .bz-input i + i.bz-tool + input ~ label
-  left 60px
+  left 3em
 
 .bz-input i.bz-tool + input ~ label
-  left 10px
+  left 0.5em
 
 .bz-input i.bz-tool.left + input ~ label
-  left 60px
+  left 3em
 
 .bz-input i.right + input ~ label
-  left 10px
+  left 0.5em
 
 .bz-input i.right ~ i.bz-tool
   float left
@@ -42,13 +42,13 @@
 .bz-input textarea:valid ~ label,
 .bz-input textarea.highlight ~ label
   top: -0.1em
-  font-size 0.8em
+  font-size 0.6em
   color color-navy
 
 .bz-input textarea:focus ~ label,
 .bz-input textarea:valid ~ label,
 .bz-input textarea.highlight ~ label
-  top: -16px
+  top: -1em
 
 .bz-input input:focus ~ label,
 .bz-input input:valid ~ label,
@@ -73,10 +73,12 @@
 .bz-input i + i.bz-tool + input:valid ~ label,
 .bz-input i + i.bz-tool + input.highlight ~ label,
 .bz-input i.bz-tool.left + input:focus ~ label,
-.bz-input i.bz-tool.left + input:valid ~ label,
+.bz-input i.bz-tool.left + input:valid ~ label
+  left: 3.8em
+
 .bz-input i.bz-tool.left + input.highlight ~ label,
 .bz-input i:not('.right') + input[readonly] ~ label,
 .bz-input i:not('.right') + input[disabled] ~ label,
 .bz-input i + input[readonly] ~ label,
 .bz-input i + input[disabled] ~ label
-  left 50px
+  left 3em

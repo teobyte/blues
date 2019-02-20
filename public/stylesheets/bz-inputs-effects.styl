@@ -2,7 +2,7 @@
 .bz-input
   .bar
     background color-navy
-    bottom 0
+    bottom -2px
     height 2px
     position absolute
     width 0
@@ -12,7 +12,7 @@
 .bz-input i.right + input ~ .bar,
 .bz-input i + i.bz-tool + input ~ .bar,
 .bz-input i.bz-tool.left + input ~ .bar
-  left 50px
+  left 2.3em
 
 .bz-input input ~ .bar,
 .bz-input i.right + input ~ .bar,
@@ -22,8 +22,8 @@
 .bz-input i + input:focus ~ .bar,
   /*.bz-input i + input:valid ~ .bar,*/
 .bz-input i + input.highlight ~ .bar
-  left 50px
-  width calc(100% - 50px)
+  left 2.3em
+  width calc(100% - 2.3em)
 
 .bz-input input:focus ~ .bar,
 .bz-input input.highlight ~ .bar
@@ -35,17 +35,17 @@
 .bz-input i.bz-tool + input:focus ~ .bar,
 .bz-input i.bz-tool + input.highlight ~ .bar
   left 0
-  width: calc(100% - 50px)
+  width: calc(100% - 2.3em)
 
 .bz-input i.bz-tool.left + input:focus ~ .bar,
 .bz-input i.bz-tool.left + input.highlight ~ .bar
-  left 50px
-  width: calc(100% - 50px)
+  left 2.3em
+  width: calc(100% - 2.3em)
 
 .bz-input i + i.bz-tool + input:focus ~ .bar,
 .bz-input i + i.bz-tool + input.highlight ~ .bar
-  left 52px
-  width: calc(100% - 100px)
+  left 2.3em
+  width: calc(100% - 4.6em)
 
 .bz-input textarea ~ .bar
   left 0
@@ -66,7 +66,7 @@
   opacity 0
 
 .bz-input i + input ~ .flash
-  left 45px
+  left 2.5em
 
 .bz-input i.right + input ~ .flash
   left 0

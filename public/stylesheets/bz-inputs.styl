@@ -1,8 +1,11 @@
 .bz-input
   @extend .bz-clearfix
   background color-white
-  border none
+  border 2px solid transparent
   display inline-block
+  height:  calc(2.3em + 4px)
+  font-size: 1.3em
+  line-height: normal
   position relative
   padding 0
   margin 8px 0
@@ -18,7 +21,14 @@
   input
     color color-gray-darker
     background color-white
+    height:  calc(2.3em + 2px)
     width 100%
+
+.bz-input:before
+  content: ""
+  display: inline-block
+  vertical-align: middle
+  height: 100%
 
 .bz-input i,
 .bz-input select,
@@ -41,10 +51,20 @@ for inpt in textinputs
   border-radius 0
   box-shadow none
   outline none
-  font-size: 1.3em
-  line-height: 1.3em
+  font-size: 1em
+  line-height: normal
   transition(all 0.3s ease-out)
   vertical-align middle
+
+.bz-input
+  &.size-xs
+    font-size: 0.9em
+  &.size-s
+    font-size: 1.1em
+  &.size-l
+    font-size: 1.5em
+  &.size-xl
+    font-size: 1.7em
 
 .bz-input select,
 .bz-input textarea
@@ -71,8 +91,7 @@ for inpt in textinputs
   color color-white
 
 .bz-input input[type=email]
-  padding 0.51em
-  height: 50px
+  padding calc(.7em + 2px) .5em calc(.3em + 1px) .5em
 
 for inpt in skipemail
   .bz-input
@@ -84,10 +103,10 @@ for inpt in skipemail
   font-size 1.5em
   overflow hidden
   text-align center
-  line-height: 50px;
-  width 50px
+  line-height: 1.5em
+  width: 1.5em
   + input
-    width: calc(100% - 50px)
+    width: calc(100% - 2.3em)
   &.right
     float right
   &.bz-tool
@@ -97,7 +116,7 @@ for inpt in skipemail
       float left
 
 .bz-input i + i ~ input
-  width calc(100% - 100px)
+  width calc(100% - 4.6em)
 
 @import bz-inputs-label
 

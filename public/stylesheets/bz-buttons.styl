@@ -22,6 +22,9 @@
   -webkit-tap-highlight-color transparent
   -webkit-user-drag none
 
+.bz-btn:before
+  @extends .bz-input:before
+
 .bz-btn,
 .bz-btn-circle,
 .bz-btn-no-style,
@@ -32,8 +35,9 @@
   border 2px solid transparent
 
 .bz-btn
-  margin: 8px 0
-  padding: 0.8em
+  height: calc(2.3em + 4px)
+  margin: 8px 0 8px 0
+  padding: .52em
   vertical-align: middle
 
 .bz-btn::-moz-focus-inner
@@ -95,19 +99,22 @@
 .bz-btn .text
     vertical-align middle
 
-.bz-btn .text
-  margin 0
-  position relative
-  padding 0
-  z-index 10!important
-
 .bz-btn
-  font-size inherit
-  height: 50px
-
-.bz-btn .text
-  line-height 1em!important
+  line-height: normal
   font-size 1.3em
+  &.size-xs
+    font-size: 0.9em
+  &.size-s
+    font-size: 1.1em
+  &.size-l
+    font-size: 1.5em
+  &.size-xl
+    font-size: 1.7em
+  .text
+    margin 0
+    position relative
+    padding 0
+    z-index 10!important
 
 @import bz-buttons-themes
 

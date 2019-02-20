@@ -2869,8 +2869,11 @@ li.divider {
 }
 .bz-input {
   background: #fff;
-  border: none;
+  border: 2px solid transparent;
   display: inline-block;
+  height: calc(2.3em + 4px);
+  font-size: 1.3em;
+  line-height: normal;
   position: relative;
   padding: 0;
   margin: 8px 0;
@@ -2889,7 +2892,15 @@ li.divider {
 .bz-input input {
   color: #212529;
   background: #fff;
+  height: calc(2.3em + 2px);
   width: 100%;
+}
+.bz-input:before,
+.bz-btn:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
 }
 .bz-input i,
 .bz-input select,
@@ -2923,9 +2934,21 @@ li.divider {
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: none;
-  font-size: 1.3em;
-  line-height: 1.3em;
+  font-size: 1em;
+  line-height: normal;
   vertical-align: middle;
+}
+.bz-input.size-xs {
+  font-size: 0.9em;
+}
+.bz-input.size-s {
+  font-size: 1.1em;
+}
+.bz-input.size-l {
+  font-size: 1.5em;
+}
+.bz-input.size-xl {
+  font-size: 1.7em;
 }
 .bz-input select,
 .bz-input textarea {
@@ -2955,19 +2978,18 @@ li.divider {
 .bz-input input[type=tel],
 .bz-input input[type=text],
 .bz-input input[type=url] {
-  padding: 0.51em;
-  height: 50px;
+  padding: calc(0.7em + 2px) 0.5em calc(0.3em + 1px) 0.5em;
 }
 .bz-input i {
   border: none;
   font-size: 1.5em;
   overflow: hidden;
   text-align: center;
-  line-height: 50px;
-  width: 50px;
+  line-height: 1.5em;
+  width: 1.5em;
 }
 .bz-input i + input {
-  width: calc(100% - 50px);
+  width: calc(100% - 2.3em);
 }
 .bz-input i.right {
   float: right;
@@ -2980,11 +3002,11 @@ li.divider {
   float: left;
 }
 .bz-input i + i ~ input {
-  width: calc(100% - 100px);
+  width: calc(100% - 4.6em);
 }
 .bz-input label {
   color: #a8a9a9;
-  font-size: 1.3em;
+  font-size: 1em;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
@@ -2995,20 +3017,20 @@ li.divider {
   transition: 0.2s ease all;
 }
 .bz-input input ~ label {
-  left: 10px;
+  left: 0.5em;
 }
 .bz-input i:not(.bz-tool) + input ~ label,
 .bz-input i + i.bz-tool + input ~ label {
-  left: 60px;
+  left: 3em;
 }
 .bz-input i.bz-tool + input ~ label {
-  left: 10px;
+  left: 0.5em;
 }
 .bz-input i.bz-tool.left + input ~ label {
-  left: 60px;
+  left: 3em;
 }
 .bz-input i.right + input ~ label {
-  left: 10px;
+  left: 0.5em;
 }
 .bz-input i.right ~ i.bz-tool {
   float: left;
@@ -3028,13 +3050,13 @@ li.divider {
 .bz-input textarea:valid ~ label,
 .bz-input textarea.highlight ~ label {
   top: -0.1em;
-  font-size: 0.8em;
+  font-size: 0.6em;
   color: #102a62;
 }
 .bz-input textarea:focus ~ label,
 .bz-input textarea:valid ~ label,
 .bz-input textarea.highlight ~ label {
-  top: -16px;
+  top: -1em;
 }
 .bz-input input:focus ~ label,
 .bz-input input:valid ~ label,
@@ -3059,13 +3081,15 @@ li.divider {
 .bz-input i + i.bz-tool + input:valid ~ label,
 .bz-input i + i.bz-tool + input.highlight ~ label,
 .bz-input i.bz-tool.left + input:focus ~ label,
-.bz-input i.bz-tool.left + input:valid ~ label,
+.bz-input i.bz-tool.left + input:valid ~ label {
+  left: 3.8em;
+}
 .bz-input i.bz-tool.left + input.highlight ~ label,
 .bz-input i:not('.right') + input[readonly] ~ label,
 .bz-input i:not('.right') + input[disabled] ~ label,
 .bz-input i + input[readonly] ~ label,
 .bz-input i + input[disabled] ~ label {
-  left: 50px;
+  left: 3em;
 }
 .bz-input input:not(.placeholder)::-webkit-input-placeholder {
   color: transparent;
@@ -3093,7 +3117,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 }
 .bz-input .bar {
   background: #102a62;
-  bottom: 0;
+  bottom: -2px;
   height: 2px;
   position: absolute;
   width: 0;
@@ -3106,7 +3130,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input i.right + input ~ .bar,
 .bz-input i + i.bz-tool + input ~ .bar,
 .bz-input i.bz-tool.left + input ~ .bar {
-  left: 50px;
+  left: 2.3em;
 }
 .bz-input input ~ .bar,
 .bz-input i.right + input ~ .bar,
@@ -3115,8 +3139,8 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 }
 .bz-input i + input:focus ~ .bar,
 .bz-input i + input.highlight ~ .bar {
-  left: 50px;
-  width: calc(100% - 50px);
+  left: 2.3em;
+  width: calc(100% - 2.3em);
 }
 .bz-input input:focus ~ .bar,
 .bz-input input.highlight ~ .bar {
@@ -3128,17 +3152,17 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input i.bz-tool + input:focus ~ .bar,
 .bz-input i.bz-tool + input.highlight ~ .bar {
   left: 0;
-  width: calc(100% - 50px);
+  width: calc(100% - 2.3em);
 }
 .bz-input i.bz-tool.left + input:focus ~ .bar,
 .bz-input i.bz-tool.left + input.highlight ~ .bar {
-  left: 50px;
-  width: calc(100% - 50px);
+  left: 2.3em;
+  width: calc(100% - 2.3em);
 }
 .bz-input i + i.bz-tool + input:focus ~ .bar,
 .bz-input i + i.bz-tool + input.highlight ~ .bar {
-  left: 52px;
-  width: calc(100% - 100px);
+  left: 2.3em;
+  width: calc(100% - 4.6em);
 }
 .bz-input textarea ~ .bar {
   left: 0;
@@ -3157,7 +3181,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
   opacity: 0;
 }
 .bz-input i + input ~ .flash {
-  left: 45px;
+  left: 2.5em;
 }
 .bz-input i.right + input ~ .flash {
   left: 0;
@@ -3694,8 +3718,8 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
   color: #14cb4f;
 }
 .bz-input div.error {
-  bottom: -1.2em;
-  font-size: 0.8em;
+  bottom: -1.5em;
+  font-size: 0.6em;
   position: absolute;
   z-index: 10;
 }
@@ -3707,7 +3731,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input i:not(.bz-tool):not(.right) ~ div.error,
 .bz-input i.bz-tool.left ~ div.error,
 .bz-input i + i.bz-tool ~ div.error {
-  left: 50px;
+  left: 3.6em;
 }
 .bz-input .counter {
   position: absolute;
@@ -3825,8 +3849,9 @@ input.bz-editable:focus ~ label {
   border: 2px solid transparent;
 }
 .bz-btn {
-  margin: 8px 0;
-  padding: 0.8em;
+  height: calc(2.3em + 4px);
+  margin: 8px 0 8px 0;
+  padding: 0.52em;
   vertical-align: middle;
 }
 .bz-btn::-moz-focus-inner {
@@ -3895,19 +3920,27 @@ input.bz-editable:focus ~ label {
 .bz-btn .text {
   vertical-align: middle;
 }
+.bz-btn {
+  line-height: normal;
+  font-size: 1.3em;
+}
+.bz-btn.size-xs {
+  font-size: 0.9em;
+}
+.bz-btn.size-s {
+  font-size: 1.1em;
+}
+.bz-btn.size-l {
+  font-size: 1.5em;
+}
+.bz-btn.size-xl {
+  font-size: 1.7em;
+}
 .bz-btn .text {
   margin: 0;
   position: relative;
   padding: 0;
   z-index: 10 !important;
-}
-.bz-btn {
-  font-size: inherit;
-  height: 50px;
-}
-.bz-btn .text {
-  line-height: 1em !important;
-  font-size: 1.3em;
 }
 .bz-btn-circle.default:hover,
 .bz-btn-circle.default:active,
