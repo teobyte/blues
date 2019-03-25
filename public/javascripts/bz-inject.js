@@ -82,13 +82,20 @@ if (typeof require === 'function') {
             // replace element with enjected one
             // inpt.after(injected);
             injected.on('click', function() {
-                var _$inpt = bzDom(this).find('input');
+                var $th = bzDom(this),
+                    sel = 'input';
+                if ($th.find('textarea').exist())
+                    sel = 'textarea';
+                var _$inpt = bzDom(this).find(sel);
                 _$inpt.focus();
             });
             inpt.replacewith(injected);
             // add counter
             if (inpt.ondata('counter')) {
-                Blues.inject.inputCounter(injected.find('input'));
+                var sel = 'input';
+                if (inpt.find('textarea').exist())
+                    sel = 'textarea';
+                Blues.inject.inputCounter(injected.find(sel));
             }
         },
         button: function (element) {

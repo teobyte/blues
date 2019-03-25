@@ -766,7 +766,7 @@
     bzObject.prototype.height = function(height) {
         var elem = this.el;
         if (typeof height === 'string')
-            elem.style.width = height;
+            elem.style.height = height;
         else
             return elem.clientHeight;
     };
@@ -904,9 +904,9 @@
         }
     };
     // toggle events of checkbox or switch
-    bzObject.prototype.toggle = function(oncallback, offcallback) {
+    bzObject.prototype.toggle = function(callback) {
         var elem = this.el;
-        if (oncallback === undefined && offcallback === undefined) {
+        function callitback() {
             if (elem.hasAttribute('checked')) {
                 // uncheck
                 elem.removeAttribute('checked');
@@ -916,23 +916,10 @@
                 elem.setAttribute('checked', 'checked');
                 elem.checked = true;
             }
+            if (callback && Blues.check.ifFunction(callback))
+                callback(elem.checked);
         }
-        function callback() {
-            if (elem.hasAttribute('checked')) {
-                // uncheck
-                elem.removeAttribute('checked');
-                elem.checked = false;
-                if (offcallback && Blues.check.ifFunction(offcallback))
-                    offcallback();
-            } else {
-                // check
-                elem.setAttribute('checked', 'checked');
-                elem.checked = true;
-                if (oncallback && Blues.check.ifFunction(oncallback))
-                    oncallback();
-            }
-        }
-        this.eventHandler.bindEvent('change', callback, elem);
+        this.eventHandler.bindEvent('change', callitback, elem);
     };
     ///////////////////////////////////////////////////////
     // get element.value
@@ -1768,6 +1755,9 @@
             selector: undefined, // has to be defined
             type: 'modal', // modal, alert, confirm, prompt
             position: 'center', // center, top, right, bottom, left, fullscreen
+            shadow: 'bz-shadow-5',
+            style: { background: '#fff' },
+            class: '',
             height: undefined,
             width: undefined,
             confirmcall: undefined,
@@ -1790,21 +1780,35 @@
         };
         Ml.prepareModal = function() {
             var Ml = this,
+                contback = null,
                 cont = Ml.modal.find('.content');
+            if (Ml.modal.find('.content-back').exist())
+                contback = Ml.modal.find('.content-back');
             if (!cont.parent().ifclass('modal-content')) {
-                var wraper = bzDom('<div class="modal-content bz-shadow-5">'),
+                var wraper = bzDom('<div class="modal-content">'),
+                    cont_prewrap = bzDom('<div class="content-prewrapper">'),
                     cont_wrap = bzDom('<div class="content-wrapper">'),
                     fader = bzDom('<div class="fader">');
+                wraper.onclass(Ml.o.shadow);
+                wraper.onclass(Ml.o.class);
+                wraper.oncss(Ml.o.style);
                 if (Ml.o.width) {
                     wraper.oncss('max-width', Ml.o.width);
                     wraper.oncss('width', Ml.o.width);
+                    cont_prewrap.oncss('max-width', Ml.o.width);
+                    cont_prewrap.oncss('width', Ml.o.width);
                 }
                 if (Ml.o.height) {
                     wraper.oncss('height', Ml.o.height);
                     wraper.oncss('max-height', Ml.o.height);
+                    cont_prewrap.oncss('height', Ml.o.height);
+                    cont_prewrap.oncss('max-height', Ml.o.height);
                 }
                 cont.wrapinto(cont_wrap, true);
-                cont_wrap.wrapinto(wraper, true);
+                cont_wrap.wrapinto(cont_prewrap, true);
+                cont_prewrap.wrapinto(wraper, true);
+                if (contback)
+                    wraper.prepend(contback);
                 Ml.modal.prepend(fader);
             }
             if (Ml.o.position !== 'fullscreen' && !Ml.modal.ifclass('center') &&
@@ -1816,6 +1820,8 @@
                 wraper.oncss('height', '100vh');
                 wraper.oncss('max-height', '100vh');
             }
+            if (bz.check.ifObject(Ml.o.position))
+                wraper.oncss('top', Ml.o.position.top);
             if (Ml.o.type === 'alert')
                 Ml.alertDialog();
             if (Ml.o.type === 'confirm')
@@ -1902,8 +1908,11 @@
         };
         Ml.promptDialog = function(callback) {
             var Ml = this,
-                cont = Ml.modal.find('.content'),
-                aD = bzDom('<div class="actions">'),
+                cont = Ml.modal.find('.content');
+            if (cont.find('.actions').exist()) {
+                cont.find('.actions').remove();
+            }
+            var aD = bzDom('<div class="actions">'),
                 cBtn = bzDom('<button class="bz-btn primary bz-float-right">'),
                 dBtn = bzDom('<button class="bz-btn primary bz-float-right">');
             cBtn.inhtml('CONFIRM');
@@ -2172,9 +2181,10 @@
         if (target === null)
             target = defTarget;
         target = target || defTarget;
-        zindex = zindex || 8999;
+        zindex = zindex || 899999;
         var fader = bzDom('<div>').onclass('bz-fader').oncss('z-index', zindex);
         bzDom(target).append(fader);
+        fader.show();
         fader.fadeIn();
         return fader;
     };
@@ -2722,11 +2732,9 @@
             window.pageXOffset = document.documentElement.scrollLeft = document.body.scrollLeft = position;
         else return window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
     };
-    Blues.scrollToElement = function (selector, duration) {
-        var perTick = 0, difference = 0, to = 0;
+    Blues.scrollFor = function(to, duration) {
+        var perTick = 0, difference = 0;
         duration = duration || 500;
-        if (selector)
-            to = document.querySelector(selector).offsetTop;
         function scrollTo(to, duration) {
             difference = to - bz.bodyScrollTop();
             perTick = (difference / duration) * 10;
@@ -2744,6 +2752,14 @@
             }
         }
         scrollTo(to, duration);
+    };
+    Blues.scrollToElement = function (selector, duration) {
+        // var perTick = 0, difference = 0, to = 0;
+        // duration = duration || 500;
+        var to = 0;
+        if (selector)
+            to = document.querySelector(selector).offsetTop;
+        Blues.scrollFor(to, duration);
     };
     //--> Wave Effect on Clicks
     Blues.Waves = function(el) {

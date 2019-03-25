@@ -67,7 +67,8 @@ var Autocomplete = function (inpt, options) {
     if (bzDom(inpt).ondata('ddlmode'))
         this.ddlmode = bzDom(inpt).ondata('ddlmode');
 
-    bzDom(inpt).onattr('autocomplete', 'off');
+    if (!bzDom(inpt).ifattr('autocomplete'))
+        bzDom(inpt).onattr('autocomplete', 'false');
     // init Autocomplete
     this.init();
 };
@@ -166,7 +167,6 @@ Autocomplete.prototype = {
             ac.suggestnew();
         }
         return tempRes;
-
     },
     /**
      * #selectdata method selects Autocomplete.data to show as <select> <options>
@@ -441,79 +441,10 @@ Autocomplete.prototype = {
                 ac.listenInput = true;
         });
     },
-    setstyle: function() {
-        var jss = {
-            'rule': {
-                '.bz-ac-box, .bz-ac-box .bz-ac': {
-                    'attr': {
-                        position: 'relative',
-                        display: 'inline-block'
-                    }
-                },
-                '.bz-ac-box .bz-ac input' : {
-                    'attr': {
-                        'min-width': '60px'
-                    }
-                },
-                '.bz-ac-box button' : {
-                    'attr': {
-                        position: 'absolute',
-                        bottom: '16px',
-                        right: '0'
-                    }
-                },
-                '.bz-ac-box .bz-ac .bz-suggestions': {
-                    'attr': {
-                        background: '#fff',
-                        'list-style-type': 'none',
-                        'max-height': '250px',
-                        height: 'auto',
-                        'overflow-x': 'hidden',
-                        'overflow-y': 'auto',
-                        position: 'absolute',
-                        margin: 0,
-                        padding: 0,
-                        left: '0',
-                        top: '52px',
-                        'min-width': '325px',
-                        width:' 100%',
-                        'z-index': '999999',
-                        transition: 'all 0.5s ease',
-                        '-webkit-transition': 'all 0.5s ease',
-                        '-moz-transition': 'all 0.5s ease',
-                        border: '1px solid #dcdedf',
-                        'border-top': 'none'
-                    }
-                },
-                '.bz-ac-box .bz-ac .bz-suggestions.hide': {
-                    'attr': {
-                        height:'0px',
-                        '-webkit-transition': 'all 0.5s ease',
-                        '-moz-transition': 'all 0.5s ease',
-                        transition: 'all 0.5s ease'
-                    }
-                },
-                '.bz-ac-box .bz-ac .bz-suggestions li': {
-                    'attr': {
-                        cursor:'pointer'
-                    }
-                },
-                '.bz-ac-box .bz-ac .bz-suggestions li.highlight, .bz-ac-box .bz-ac .bz-suggestions li:hover': {
-                    'attr': {
-                        background:'#f6f7f8'
-                    }
-                },
-            },
-            'attr': {}
-        }
-        var css = Blues.JSONCSS(jss);
-        Blues.JSS(css, 'css_autocomplete');
-    },
     // Autocomplete initialization
     init: function() {
         var ac = this,
             _input = bzDom(ac.inpt);
-        ac.setstyle();
         ac.addactions(_input);
     }
 };

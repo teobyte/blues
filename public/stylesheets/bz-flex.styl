@@ -14,6 +14,9 @@ colset(size)
     -ms-flex-preferred-size: 0
     flex-basis: 0
     max-width: 100%
+    -webkit-box-flex: 10000
+    -ms-flex: 10000 1 0
+    flex: 10000 1 0
 
 screenset(size)
   .{size}-left
@@ -205,3 +208,7 @@ screenset(size: mb)
   .ws-hide
     display none
 
+.bz-row
+  input.bz-col
+    @extend .bz-row
+    flex: 1

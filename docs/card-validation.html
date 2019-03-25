@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
     <link rel="stylesheet" href="https://aiwee.github.io/blues-icons/bz-icons/css/bz-icons.css">
     <link rel="stylesheet" href="../public/stylesheets/bz-core.css">
+    <link rel="stylesheet" href="../public/javascripts/blues-require/bz-card-validation.css">
 </head>
 <body>
 <div id="leftSide" class="bz-sidenav bz-bc-white">
@@ -60,54 +61,60 @@
         </div>
     </div>
     <div class="bz-padding-16 bz-clearfix">
+        <div class="bz-padding-32 bz-t-xl kv-fjalla-font bz-t-uppercase bz-spacing-3 bz-fc-primary">
+            Pay Invoice
+        </div>
         <form method="post" action="" class="bz-payment-form">
-            <div class="w-100p bz-fc-primary bz-t-align-c" style="border-bottom:4px solid #163d74;">
-                <div class="bz-padding-32 bz-ft-xl">
-                    Payment form
-                </div>
-            </div>
             <div class="bz-clear h-16"></div>
-            <div class="bz-available-cards">
-                <img alt="visa" src="./src/images/cards/visa.png">
-                <img alt="mastercard" src="./src/images/cards/mastercard.png">
-                <img alt="amex" src="./src/images/cards/amex.png">
-                <img alt="discover" src="./src/images/cards/discover.png">
-            </div>
-            <div class="bz-clear h-16"></div>
-            <div class="bz-row bz-padding-8 bz-relative">
-                <label>Name on card</label>
-                <input type="text" name="CN" data-pattern="name" class="bz-input bz-ft-l bz-card-input" maxlength="22"/>
-            </div>
-            <div class="bz-row bz-padding-8 bz-relative">
-                <label>Card number</label>
-                <input type="text" name="CARDNO" data-pattern="number" class="bz-input bz-ft-l bz-card-input" maxlength="19"/>
-                <div class="bz-card-type"></div>
-            </div>
             <div class="bz-row">
-                <div class="bz-col mb7 tb7 mt7 ws7 bz-padding-8 bz-relative">
-                    <label>Expiry date</label>
-                    <input type="text" name="ED" data-pattern="date" class="bz-input bz-ft-l bz-card-input" maxlength="5"/>
-                </div>
-                <div class="bz-col mb5 tb5 mt5 ws5 bz-padding-8 bz-relative">
-                    <label>Security code</label>
-                    <input type="text" name="CVC" data-pattern="code" class="bz-input bz-ft-l bz-card-input" maxlength="4"/>
-                    <div class="bz-code-tip">
-                        <i class="far fa-question-circle"></i>
+                <div class="bz-col mb12">
+                    <div class="bz-available-cards">
+                        <img alt="visa" src="../public/images/cards/visa.png">
+                        <img alt="mastercard" src="../public/images/cards/mastercard.png">
+                        <img alt="jsb" src="../public/images/cards/jcb.png">
+                        <img alt="maestro" src="../public/images/cards/maestro.png">
                     </div>
                 </div>
             </div>
-            <div class="bz-state-msg"></div>
-            <div class="bz-margin-auto" style="width:200px;">
-                <button type="submit" id="paymentbtn1"  class="bz-btn border-dark positive hov-reverse bz-wave dark-wave w-100p" disabled>
-                <span class="bz-uppercase bz-ft-bold">
-                    Pay
-                </span>
-                </button>
+            <div class="bz-clear h-16"></div>
+            <div class="bz-row bz-padding-8 bz-relative">
+                <div class="bz-col mb12 bz-relative bz-padding-tb8">
+                    <div class="bz-fc-gray">Name on card</div>
+                    <input type="text" name="CN" data-pattern="name" class="bz-input bz-card-input" maxlength="22"/>
+                </div>
+                <div class="bz-col mb12 bz-relative bz-padding-tb8">
+                    <div class="bz-fc-gray">Card number</div>
+                    <input type="text" name="CARDNO" data-pattern="number" class="bz-input bz-card-input" maxlength="19"/>
+                    <div class="bz-card-type"></div>
+                </div>
+                <div class="bz-col mb12 bz-relative bz-padding-tb8">
+                    <div class="bz-row">
+                        <div class="bz-col mb7 bz-padding-8 bz-relative">
+                            <div class="bz-fc-gray">Expiry date</div>
+                            <input type="text" name="ED" data-pattern="date" class="bz-input bz-card-input" maxlength="5"/>
+                        </div>
+                        <div class="bz-col mb5 bz-padding-8 bz-relative">
+                            <div class="bz-fc-gray" style="white-space: nowrap;">Security code</div>
+                            <input type="text" name="CVC" data-pattern="code" class="bz-input bz-card-input" maxlength="4"/>
+                            <div class="bz-code-tip">
+                                <i class="bzi-question-in-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bz-col mb12 bz-relative">
+                    <div class="bz-state-msg"></div>
+                    <button type="button" id="paymentbtn1" class="bz-btn-no-style bz-float-left" disabled>
+                        <div class="text bz-t-uppercase kv-fjalla-font bz-relative">
+                            <i class="bzi-lock-closed left" style="font-size:16px;"></i>
+                            Pay
+                        </div>
+                    </button>
+                </div>
             </div>
-            <div class="bz-clear h-8"></div>
-            <div class="bz-card-help bz-shadow-2">
-                <div class="bz-fc-primary bz-float-l bz-padding-16">How to find security code?</div>
-                <i class="far fa-times-circle bz-float-r bz-cursor-pointer" style="font-size:26px;"></i>
+            <div class="bz-card-help bz-shadow-1">
+                <i class="bzi-remove bz-float-right bz-cursor-pointer" style="font-size:26px;"></i>
+                <div   class="bz-fc-primary bz-float-left bz-padding-16">How to find security code?</div>
                 <div class="bz-clear h-8"></div>
                 <p>Visa, Master Card, Discover: The 3-digits security code printed on the back side of the card.</p>
                 <p>American Express: The 4-digits security code printed on the front side of the card.</p>

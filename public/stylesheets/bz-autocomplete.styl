@@ -1,0 +1,88 @@
+.bz-ac-box
+  position: relative
+  display: inline-block
+  @extend .bz-w-100p
+
+.bz-ac-box .bz-ac
+  border-top: 2px solid transparent
+  border-bottom: 2px solid color-gray-light
+  font-size: 1.3em
+  line-height: normal
+  min-height: calc(2.3em + 4px)
+  position relative
+  padding 0
+  margin 8px 0
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  user-select none
+  vertical-align middle
+  @extend .bz-w-100p
+
+.bz-ac-box .bz-ac label
+  top: -0.1em
+  font-size 0.6em
+  color color-navy
+  font-weight normal
+  position absolute
+  pointer-events none
+
+.bz-ac-box .bz-ac input
+  border none
+  border-radius 0
+  box-shadow none
+  color: color-gray-darker
+  height:  calc(2.3em + 0)
+  line-height: normal
+  outline none
+  padding calc(.7em + 2px) .5em calc(.3em + 1px) .5em
+  min-width: 70px!important
+  vertical-align middle
+  -webkit-flex 1
+  -ms-flex 1
+  flex 1
+  max-width 100%
+  min-height 32px
+  transition(all 0.3s ease-out)
+
+.bz-ac-box .bz-ac input:focus
+  border none
+  outline none
+
+.bz-ac-box button
+  position: absolute
+  top: 0
+  right: 0
+
+.bz-ac-box .bz-ac .bz-suggestions
+  background: #fff
+  list-style-type: none
+  max-height: 250px
+  height: auto
+  overflow-x: hidden
+  overflow-y: auto
+  margin: 0
+  padding: 0
+  left: 0
+  top: calc(100% + 2px)
+  min-width: 325px
+  width: 100%
+  z-index: 799999
+  border: 1px solid #dcdedf
+  border-top: none
+  @extend .bz-absolute
+  @extend .bz-transition
+
+.bz-ac-box .bz-ac .bz-suggestions.hide
+  height: 0
+  display: none
+
+.bz-ac-box .bz-ac .bz-suggestions li
+  @extend .bz-cursor-pointer
+
+.bz-ac-box .bz-ac .bz-suggestions li.highlight,
+.bz-ac-box .bz-ac .bz-suggestions li:hover
+  background:'#f6f7f8'
+
+.bz-ac-box .bz-ac .bz-chip
+  margin-top: calc(.7em - 2px)

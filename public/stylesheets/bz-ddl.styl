@@ -1,20 +1,29 @@
 .bz-ddlist
   @extend .bz-relative
+  font-size: 1.3em
   display: inline-block
-  height: 52px
+  vertical-align: middle
+  margin: 8px 0
+  padding: 0!important
+  height: calc(2.3em + 4px)
   .bz-trigger
+    @extend .bz-relative
     height: inherit
-    line-height: 21px
-    padding 15px 20px 16px 20px
+    font-size: 0.8em
+    line-height: normal
+    margin: 0!important
+    padding: .7em 1.5em .7em .5em
     width: 100%
     .flag-icon
-      margin-left: 16px
-      float: right
+      @extend .bz-absolute
+      right: 4px
+      top: calc(50% - 8px)
+
   .bz-list
     @extend .bz-list-no-style
     @extend .bz-shadow-2
     opacity: 0
-    top: 52px
+    top: calc(2.3em + 4px)
     left: 0
     position: absolute
     width: 100%
@@ -36,6 +45,6 @@
     .bz-list-item
       padding: 8px
 
-.bz-trigger:focus ~ .bz-list
-  transform-scaling(1,1)
-  opacity: 1
+  .bz-trigger:focus ~ .bz-list
+    transform-scaling(1,1)
+    opacity: 1

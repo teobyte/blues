@@ -90,17 +90,17 @@
             </div>
         </div>
         <h5>Simple Autocomplete / no style</h5>
-        <div class="bz-row bz-padding-8">
-            <div class="bz-ac-box">
-                <div class="bz-ac">
-                    <input type="text" class="bz-ac-init" data-action="/country/quicksearch" style="width:320px;">
+        <div class="bz-padding-8">
+            <div class="bz-ac-box bz-w-100p">
+                <div class="bz-ac bz-w-100p">
+                    <input type="text" class="bz-col bz-ac-init" data-action="/country/quicksearch">
                 </div>
             </div>
         </div>
         <h5>Simple Autocomplete / ddl mode</h5>
-        <div class="bz-row bz-padding-8">
-            <div class="bz-ac-box">
-                <div class="bz-ac" style="width:320px;">
+        <div class="bz-padding-8">
+            <div class="bz-ac-box bz-w-100p">
+                <div class="bz-ac bz-w-100p">
                     <input type="text" class="bz-ac-init" data-action="/country/quicksearch" data-mode="ddl" >
                 </div>
             </div>
@@ -109,27 +109,34 @@
         <p>
             passing parameters param1: 'param01', param2: 'param02'
         </p>
-        <div class="bz-row bz-padding-8">
-            <div class="bz-ac-box" style="width:100%;">
-                <div class="bz-ac" style="width:100%;">
-                    <input type="text" class="bz-input chips bz-ac-init" data-style="width:100%;" data-action="/country/quicksearch" data-mode="add" data-add-params="[param1: 'param01', param2: 'param02']" style="width:320px;">
+        <div class="bz-padding-8">
+            <div class="bz-ac-box bz-w-100p">
+                <div class="bz-ac bz-w-100p">
+                    <input type="text" class="chips bz-ac-init" data-action="/country/quicksearch" data-mode="add" data-add-params="[param1: 'param01', param2: 'param02']">
                 </div>
             </div>
         </div>
         <h5>Autocomplete + add chip</h5>
-        <div class="bz-row bz-padding-8">
-            <div class="bz-ac-box" style="width:100%;">
-                <div class="bz-ac" style="width:100%;">
-                    <input type="text" class="bz-input chips bz-ac-init" placeholder="Input words from one to five" data-style="width:100%;" data-ctr="country" data-act="quicksearch" data-mode="chip+">
+        <div class="bz-padding-8">
+            <div class="bz-ac-box bz-w-100p">
+                <div class="bz-ac bz-w-100p">
+                    <input type="text" class="chips bz-ac-init" placeholder="Input words from one to five" data-ctr="country" data-act="quicksearch" data-mode="chip+">
                 </div>
             </div>
         </div>
         <h5>Autocomplete + Add option with chip</h5>
-        <div class="bz-row bz-padding-8">
-            <div class="bz-ac-box" style="width:100%;">
-                <div class="bz-ac" style="width:100%;">
-                    <input type="text" class="bz-input bordered bz-ac-init"  style="width:320px;"
-                           data-mode="chip+add" data-style="width:100%;" data-add-params="{ someid: '86765876' }" data-ctr="country" data-act="quicksearch" >
+
+        <div class="bz-row">
+            <div class="bz-col mb6">
+                <input type="text" class="bz-input" data-class="bz-w-100p" placeholder="Name" required>
+            </div>
+            <div class="bz-col mb6">
+                <div class="bz-ac-box bz-w-100p">
+                    <div class="bz-ac bz-w-100p">
+                        <label>Field name</label>
+                        <input type="text" class="bz-ac-init" placeholder="+ Value"
+                               data-mode="chip+add" data-add-params="{ someid: '86765876' }" data-ctr="country" data-act="quicksearch" >
+                    </div>
                 </div>
             </div>
         </div>
@@ -139,8 +146,8 @@
             <div class="bz-col mb12 tb6 bz-padding-4">
                 <div class="bz-ac-box bz-w-100p">
                     <div class="bz-ac bz-w-100p">
-                        <input type="text" id="country" name="country" class="bz-input flash countrysearch" value="" placeholder="Country"
-                               required data-class="bz-w-100p" data-icon="bzi-map" autocomplete="new-country" data-ddlmode="true"
+                        <input type="text" id="country" name="country" class="flash countrysearch" value="" placeholder="Country"
+                               required data-icon="bzi-map" autocomplete="new-country" data-ddlmode="true"
                                data-source="countries" data-addfield="addcountryid" data-target="city" data-type="number">
                     </div>
                 </div>
@@ -149,8 +156,8 @@
             <div class="bz-col mb12 tb6 bz-padding-4">
                 <div class="bz-ac-box bz-w-100p">
                     <div class="bz-ac bz-w-100p">
-                        <input type="text" id="city" name="city" class="bz-input flash countrysearch" value="" placeholder="City" disabled
-                               required data-class="bz-w-100p" data-icon="bzi-checkin" autocomplete="new-city"
+                        <input type="text" id="city" name="city" class="flash countrysearch" value="" placeholder="City" disabled
+                               required data-icon="bzi-checkin" autocomplete="new-city"
                                data-source="cities" data-addfield="addcityid" data-type="number">
                     </div>
                 </div>
