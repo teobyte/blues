@@ -1479,8 +1479,7 @@ hr,
 .bz-popover .popover,
 .bz-tooltip .popover,
 .bz-tabs .marker,
-.bz-ddlist .bz-trigger .flag-icon,
-.bz-fader {
+.bz-ddlist .bz-trigger .flag-icon {
   position: absolute;
 }
 .bz-relative,
@@ -1492,7 +1491,8 @@ hr,
 .bz-ddlist .bz-trigger {
   position: relative;
 }
-.bz-fixed {
+.bz-fixed,
+.bz-fader {
   position: fixed;
 }
 .bz-inherit {
