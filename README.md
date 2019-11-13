@@ -4,7 +4,7 @@ Blues Framework is an MIT-licensed open source project.
 
 ## Documentation
 
-Head on to the Blues Framework official website: [https://aiwee.github.io/blues](https://aiwee.github.io/blues)
+Head on to the Blues Framework official website: [https://teobyte.github.io/blues](https://teobyte.github.io/blues)
 
 ## License
 
