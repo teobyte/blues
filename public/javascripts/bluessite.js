@@ -86,9 +86,9 @@
                 clas = Blues.extract.getMapValue(item, 'clas');
 
             if (url === 'index.html')
-                url = 'https://aiwee.github.io/blues/' + url;
+                url = 'https://teobyte.github.io/blues/' + url;
             else
-                url = 'https://aiwee.github.io/blues/docs/' + url;
+                url = 'https://teobyte.github.io/blues/docs/' + url;
 
             var li = bzDom('<li>'),
                 a = bzDom('<a>');
