@@ -12,7 +12,7 @@
     "express-handlebars": "^3.0.0",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
-    "morgan": "~1.9.0",
+    "morgan": "~1.9.1",
     "stylus": "0.54.5",
     "uglify-js": "^3.4.9",
     "yuicompressor": "^2.4.8"
