@@ -18,8 +18,6 @@
     // else if (window.attachEvent)
     //     window.attachEvent("onload", downloadJSAtOnload);
     // else window.onload = downloadJSAtOnload;
-
-
     var menuitems = [
         { name: 'Blues 2.0', url: '', clas: 'subheader bz-fc-primary bz-ft-xl' },
         { name: 'Home', url: 'index.html', clas: 'bz-list-item bz-t-concat' },
@@ -84,12 +82,7 @@
                 name = Blues.extract.getMapValue(item, 'name'),
                 url = Blues.extract.getMapValue(item, 'url'),
                 clas = Blues.extract.getMapValue(item, 'clas');
-
-            if (url === 'index.html')
-                url = 'https://teobyte.github.io/blues/' + url;
-            else
-                url = 'https://teobyte.github.io/blues/docs/' + url;
-
+            url = './' + url;
             var li = bzDom('<li>'),
                 a = bzDom('<a>');
             a.inhtml(name);

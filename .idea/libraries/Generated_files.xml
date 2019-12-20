@@ -2,10 +2,42 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/docs/js/blues-require/bz-card-validation.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/blues-require/bz-require.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/blues-require/locale/bz-card-validation-0.0.1.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/blues-require/locale/bz-require-0.0.1.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bluessite.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bz-animate.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bz-autocomplete.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bz-codelighter.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bz-core.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bz-droplist.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bz-inject.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bz-modal-proto.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bz-rating.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bz-rules.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bz-select.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bz-sidenav.min.js" />
         <item url="file://$PROJECT_DIR$/public/javascripts/bluessite.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/docs/js/blues-require/bz-card-validation.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/blues-require/bz-require.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/blues-require/locale/bz-card-validation-0.0.1.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/blues-require/locale/bz-require-0.0.1.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bluessite.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bz-animate.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bz-autocomplete.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bz-codelighter.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bz-core.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bz-droplist.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bz-inject.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bz-modal-proto.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bz-rating.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bz-rules.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bz-select.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bz-sidenav.min.js" />
       <root url="file://$PROJECT_DIR$/public/javascripts/bluessite.min.js" />
     </CLASSES>
     <JAVADOC />
