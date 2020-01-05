@@ -19,6 +19,7 @@
         <item url="file://$PROJECT_DIR$/docs/js/bz-select.min.js" />
         <item url="file://$PROJECT_DIR$/docs/js/bz-sidenav.min.js" />
         <item url="file://$PROJECT_DIR$/public/javascripts/bluessite.min.js" />
+        <item url="file://$PROJECT_DIR$/public/javascripts/bz-inject.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -39,6 +40,7 @@
       <root url="file://$PROJECT_DIR$/docs/js/bz-select.min.js" />
       <root url="file://$PROJECT_DIR$/docs/js/bz-sidenav.min.js" />
       <root url="file://$PROJECT_DIR$/public/javascripts/bluessite.min.js" />
+      <root url="file://$PROJECT_DIR$/public/javascripts/bz-inject.min.js" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

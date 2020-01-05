@@ -14,11 +14,20 @@ if (typeof require === 'function') {
         inputCounter: function(inpt) {
             inpt.on('input', function() {
                 var $self = bzDom(this);
-                var sep = $self.ondata('counter');
+                var sep = $self.parent('.bz-input').ondata('counter');
                 var val = $self.onattr('maxlength');
                 var $cntr = $self.parent().find('.counter');
                 $cntr.inhtml($self.val().length + sep + val);
             })
+        },
+        initCounter: function(inpt) {
+            // add counter
+            if (inpt.ondata('counter')) {
+                var sel = 'input';
+                if (inpt.find('textarea').exist())
+                    sel = 'textarea';
+                Blues.inject.inputCounter(inpt.find(sel));
+            }
         },
         /////////////////////////////////////////////////////
         // set this method globaly to initiate range selector
@@ -34,6 +43,10 @@ if (typeof require === 'function') {
         // input injector
         input: function(element) {
             var inpt = bzDom(element);
+            if (inpt.find('input').exist() || inpt.find('textarea').exist()) {
+                Blues.inject.initCounter(inpt);
+                return;
+            }
             var inptWrapp = bzDom('<div class="bz-input">');
             if (inpt.ifclass('bordered')) {
                 inptWrapp.onclass('bordered');
@@ -90,13 +103,7 @@ if (typeof require === 'function') {
                 _$inpt.focus();
             });
             inpt.replacewith(injected);
-            // add counter
-            if (inpt.ondata('counter')) {
-                var sel = 'input';
-                if (inpt.find('textarea').exist())
-                    sel = 'textarea';
-                Blues.inject.inputCounter(injected.find(sel));
-            }
+            Blues.inject.initCounter(injected);
         },
         button: function (element) {
             var btn = bzDom(element);
@@ -340,7 +347,7 @@ if (typeof require === 'function') {
                 rng.replacewith(wrap);
             }
         }
-    }
+    };
     Blues.injectall = function() {
         // inject bz-input
         var inpts = document.getElementsByClassName('bz-input');
