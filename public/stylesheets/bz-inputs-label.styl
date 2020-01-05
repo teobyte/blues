@@ -11,8 +11,9 @@
 .bz-input input ~ label
   left 0.5em
 
-.bz-input i:not(.bz-tool) + input ~ label,
-.bz-input i + i.bz-tool + input ~ label
+//.bz-input i:not(.bz-tool) + input ~ label,
+//.bz-input i + i.bz-tool + input ~ label
+.bz-input i + input ~ label
   left 3em
 
 .bz-input i.bz-tool + input ~ label
@@ -32,6 +33,13 @@
 .bz-input input[readonly] ~ label,
 .bz-input input[disabled] ~ label
   left 0
+
+.bz-input i + input[readonly] ~ label,
+.bz-input i + input[disabled] ~ label
+  left 3.8em
+
+.bz-input i + i.bz-tool + input ~ label
+  left 3em
 
 .bz-input input:focus ~ label,
 .bz-input input:valid ~ label,
@@ -81,4 +89,4 @@
 .bz-input i:not('.right') + input[disabled] ~ label,
 .bz-input i + input[readonly] ~ label,
 .bz-input i + input[disabled] ~ label
-  left 3em
+  left 3.8em
