@@ -7,7 +7,6 @@
   @extend .bz-shadow-2
   @extend .bz-none
   @extend .bz-absolute
-  margin-left 50%
   background-color color-white
   font-size 16px
   padding 0
@@ -52,23 +51,49 @@
   overflow-y auto
 
 .bz-popover.top .popover
-  bottom calc(100% + 8px)
-  left -64px
+  bottom 100%
+  left: 50%
+  transform-translate(-50%, 0%)
 
 .bz-popover.bottom .popover
-  bottom -8px
-  left -64px
-  transform-translate(0, 100%)
+  top 100%
+  left: 50%
+  transform-translate(-50%, 0%)
 
 .bz-popover.right .popover
-  top 50%
-  right -8px
+  right 0
+  top: 50%
   transform-translate(100%, -50%)
 
 .bz-popover.left .popover
-  top 50%
-  left calc(-50% - 8px)
+  left 0
+  left: auto
+  top: 50%
   transform-translate(-100%, -50%)
+
+.bz-popover.top.left .popover
+  bottom 100%
+  left 0
+  top: auto
+  transform: none
+
+.bz-popover.top.right .popover
+  bottom 100%
+  top: auto
+  left: auto
+  right: 0
+  transform: none
+
+.bz-popover.bottom.left .popover
+  left 0
+  top: 100%
+  transform: none
+
+.bz-popover.bottom.right .popover
+  right 0
+  left: auto
+  top: 100%
+  transform: none
 
 .bz-popover.top .popover
   -webkit-animation fade-in .3s ease-in-out, shift-up .3s ease-in-out
