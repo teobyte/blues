@@ -3,7 +3,6 @@
   box-sizing content-box
   height 50px
   line-height 46px
-  border-radius 25px
   background-color color-gray-lighter
   position relative
   margin 2px
@@ -19,14 +18,19 @@
     color green
     text-decoration none
 
+.bz-chip.rounded
+  border-radius 25px
+
 .bz-chip i ~ .text,
 .bz-chip img ~ .text
   margin 2px 0 2px 5px
 
 .bz-chip.small
   height 30px
-  border-radius 15px
   line-height 24px
+
+.bz-chip.small.rounded
+  border-radius 15px
 
 .bz-chip.small .text
   font-size 16px
@@ -59,7 +63,7 @@
   height 44px
   border-radius 50%
   display inline-block
-  color color-navy
+  color color-gray
   float right
   font-size 20px
   cursor pointer
@@ -71,5 +75,4 @@
   width 24px
 
 .bz-chip .chip-close:hover
-  color color-white
-  background-color gray
+  color color-navy

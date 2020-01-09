@@ -93,9 +93,6 @@ Autocomplete.prototype = {
             if (ac.dataType === 'func') {
                 if (ac.o.dataurl !== '' && ac.o.dataurl !== null && ac.o.dataurl !== 'undefined') {
                     ac.dataurl = ac.o.dataurl;
-                    // deprecated to avoid conflicts
-                    // } else if ($inpt.ondata('action')) {
-                    //     ac.dataurl = $inpt.ondata('action');
                 } else if ($inpt.ondata('ctr') && $inpt.ondata('act')) {
                     ac.dataurl = '/' +  $inpt.ondata('ctr') + '/' + $inpt.ondata('act');
                 } else {
@@ -105,24 +102,25 @@ Autocomplete.prototype = {
                 ac.o.source(ac.passdata, ac.dataurl, searchstr, ac);
             } else {
                 ac.passdata(ac.o.source, searchstr, ac);
+                ac.selectdata(searchstr);
             }
         };
 
         if (ac.ddlmode === 'true') {
             if ('ddl' in ac.cache) {
                 ac.indata = ac.cache['ddl'];
+                ac.selectdata(searchstr);
             } else {
                 getData();
             }
-            ac.selectdata(searchstr);
         } else if (searchstr.toLowerCase() !== ac.srchString.toLowerCase()) {
             ac.srchString = searchstr;
             if (searchstr.substring(0, ac.o.searchAfter) in ac.cache) {
                 ac.indata = ac.cache[searchstr.substring(0, ac.o.searchAfter)];
+                ac.selectdata(searchstr);
             } else {
                 getData();
             }
-            ac.selectdata(searchstr);
         }
     },
     // stores data into the Autocomplete object
@@ -133,6 +131,7 @@ Autocomplete.prototype = {
         } else {
             ac.cache[searchstr] = ac.indata;
         }
+        //ac.selectdata(searchstr);
     },
     // checks and prepares data according to the search string
     checkdata: function(searchstr) {
@@ -219,8 +218,7 @@ Autocomplete.prototype = {
         var ac = this;
         if (bzDom(ac.inpt).parent('.bz-ac').find('.bz-suggestions').exist()) {
             var $suggestions = bzDom(ac.inpt).parent('.bz-ac').find('.bz-suggestions');
-            //if ($suggestions.ifclass('hide'))
-                $suggestions.offclass('hide');
+            $suggestions.offclass('hide');
         }
     },
     // hide suggestions container
@@ -332,15 +330,15 @@ Autocomplete.prototype = {
                 ac.setdata(_searchstr, $that);
                 ac.showSuggestions();
             }
-            else
-                if (_searchstr.length > 0)
-                    ac.showSuggestions();
+            else if (_searchstr.length > 0)
+                ac.showSuggestions();
         });
         $inpt.on('keyup', function() {
             var $that = bzDom(this),
                 _searchstr = $that.val();
             if (_searchstr.length >= ac.o.searchAfter  && ac.listenInput === true) {
                 ac.setdata(_searchstr, $that);
+                ac.showSuggestions();
             }
         });
         $inpt.on('blur', function() {
@@ -429,6 +427,7 @@ Autocomplete.prototype = {
                         _selectionName = activeItem.text();
                     ac.activeIndex = -1;
                     if (ac.mode === '+chip' || ac.mode === 'chip+' || ac.mode === 'chip+add') {
+                        ac.selection(_selectionId, _selectionName);
                         ac.o.addchip(_selectionId, _selectionName, ac);
                         ac.hidesuggestnew();
                     } else {
@@ -478,14 +477,6 @@ Autocomplete.defaultOptions = {
                 data.append('' + paramName[0] + '', paramName[1]);
             }
         }
-        // if (param !== 0) {
-        //     param = param.split(',');
-        //     for (var j=0;j<param.length;j++) {
-        //         var paramVal = param[j],
-        //             paramName = paramVal.split(':');
-        //         data.append('' + paramName[0] + '', paramName[1]);
-        //     }
-        // }
         var xhr = new XMLHttpRequest();
         try { xhr.abort(); } catch(e){
 
@@ -493,6 +484,7 @@ Autocomplete.defaultOptions = {
         xhr.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
                 passdata(JSON.parse(this.responseText), q, _this);
+                _this.selectdata(q);
             }
         };
         xhr.open('POST', url, true);
@@ -553,8 +545,6 @@ Autocomplete.defaultOptions = {
         var $chip = bzDom('<div>');
         $chip.onclass('bz-chip small');
         var $img = bzDom('<img>');
-        // img or icon
-        //$img.onattr('src', 'https://adm.aiweesports.com/assets/aiwee-logo-n-1627b3e27fe1e292d509e3b11e54ff91.png');
         var $chipName = bzDom('<div>');
         $chipName.onclass('text');
         $chipName.inhtml(selectionName);

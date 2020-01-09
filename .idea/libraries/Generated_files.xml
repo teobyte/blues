@@ -19,6 +19,8 @@
         <item url="file://$PROJECT_DIR$/docs/js/bz-select.min.js" />
         <item url="file://$PROJECT_DIR$/docs/js/bz-sidenav.min.js" />
         <item url="file://$PROJECT_DIR$/public/javascripts/bluessite.min.js" />
+        <item url="file://$PROJECT_DIR$/public/javascripts/bz-autocomplete-prev.min.js" />
+        <item url="file://$PROJECT_DIR$/public/javascripts/bz-autocomplete.min.js" />
         <item url="file://$PROJECT_DIR$/public/javascripts/bz-inject.min.js" />
       </sourceFilesUrls>
     </properties>
@@ -40,6 +42,8 @@
       <root url="file://$PROJECT_DIR$/docs/js/bz-select.min.js" />
       <root url="file://$PROJECT_DIR$/docs/js/bz-sidenav.min.js" />
       <root url="file://$PROJECT_DIR$/public/javascripts/bluessite.min.js" />
+      <root url="file://$PROJECT_DIR$/public/javascripts/bz-autocomplete-prev.min.js" />
+      <root url="file://$PROJECT_DIR$/public/javascripts/bz-autocomplete.min.js" />
       <root url="file://$PROJECT_DIR$/public/javascripts/bz-inject.min.js" />
     </CLASSES>
     <JAVADOC />

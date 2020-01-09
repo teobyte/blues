@@ -3840,6 +3840,7 @@ input.bz-editable:focus ~ label {
   box-shadow: none;
   color: #212529;
   height: calc(2.3em + 0);
+  float: none;
   line-height: normal;
   outline: none;
   padding: calc(0.7em + 2px) 0.5em calc(0.3em + 1px) 0.5em;
@@ -3850,6 +3851,13 @@ input.bz-editable:focus ~ label {
   flex: 1;
   max-width: 100%;
   min-height: 32px;
+  width: auto;
+}
+.bz-ac-box .bz-ac .bz-input {
+  margin: 0;
+}
+.bz-ac-box .bz-ac .bar {
+  bottom: -4px;
 }
 .bz-ac-box .bz-ac input:focus {
   border: none;
@@ -6191,7 +6199,6 @@ input[type="color"]::-webkit-color-swatch {
   box-sizing: content-box;
   height: 50px;
   line-height: 46px;
-  border-radius: 25px;
   background-color: #e8ebee;
   position: relative;
   margin: 2px;
@@ -6211,14 +6218,19 @@ input[type="color"]::-webkit-color-swatch {
   color: #008000;
   text-decoration: none;
 }
+.bz-chip.rounded {
+  border-radius: 25px;
+}
 .bz-chip i ~ .text,
 .bz-chip img ~ .text {
   margin: 2px 0 2px 5px;
 }
 .bz-chip.small {
   height: 30px;
-  border-radius: 15px;
   line-height: 24px;
+}
+.bz-chip.small.rounded {
+  border-radius: 15px;
 }
 .bz-chip.small .text {
   font-size: 16px;
@@ -6251,7 +6263,7 @@ input[type="color"]::-webkit-color-swatch {
   height: 44px;
   border-radius: 50%;
   display: inline-block;
-  color: #102a62;
+  color: #a8a9a9;
   float: right;
   font-size: 20px;
   cursor: pointer;
@@ -6263,8 +6275,7 @@ input[type="color"]::-webkit-color-swatch {
   width: 24px;
 }
 .bz-chip .chip-close:hover {
-  color: #fff;
-  background-color: #808080;
+  color: #102a62;
 }
 .bz-badge,
 .bz-badge.primary,
