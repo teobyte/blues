@@ -95,14 +95,11 @@
             </textarea>
                     <p>Add next js code to initiate the Tab</p>
                     <textarea class="bz-code js">
-                bz.Tabs('#sampletab');
-                var tabs = bzDom('.bz-tabs');
-                tabs.each(function(i, item) {
-                    var tab = bzDom(item);
-                    bz.Tabs(tab, function(i, item) {
-                        alert('Tab: ' + (i + 1) + ' activated.' );
-                    })
-                });
+        var tabs = bzDom('.bz-tabs');
+        tabs.each(function(i, item) {
+            var tab = bzDom(item);
+            tab.tab();
+        });
             </textarea>
                 </div>
             </div>
@@ -111,12 +108,12 @@
 </div>
 {{#section 'scripts'}}
     <script>
+
         var tabs = bzDom('.bz-tabs');
         tabs.each(function(i, item) {
             var tab = bzDom(item);
-            bz.Tabs(tab, function(i, item) {
-                alert('Tab: ' + (i + 1) + ' activated.' );
-            })
+            tab.tab();
         });
+
     </script>
 {{/section}}

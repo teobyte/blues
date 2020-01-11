@@ -1,10 +1,22 @@
 ;(function(root, factory) {
-    if (typeof exports === 'object') {
-        module.exports = factory(window, document)
-    } else {
-        root.Droplist = factory(window, document)
+    'use strict';
+    // AMD. Register as an anonymous module. Wrap in function so we have access
+    // to root via `this`.
+    if (typeof define === 'function' && define.amd) {
+        define([], function() {
+            return factory.apply(window);
+        });
     }
-})(this, function(w, d) {
+    // Node. Does not work with strict CommonJS, but only CommonJS-like
+    // environments that support module.exports, like Node.
+    else if (typeof exports === 'object') {
+        module.exports = factory.call(window);
+    }
+    // Browser globals.
+    else {
+        window.Droplist = factory.call(window);
+    }
+})(typeof global === 'object' ? global : this, function() {
     'use strict';
     // droplist prototype
     var Dl = function (options) {
@@ -228,6 +240,8 @@
     Dl.init = init;
     Dl.all = all;
     var Droplist = Dl;
+
+    window.Droplist = Droplist;
     return Droplist;
 });
 

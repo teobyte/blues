@@ -19,9 +19,10 @@
         <item url="file://$PROJECT_DIR$/docs/js/bz-select.min.js" />
         <item url="file://$PROJECT_DIR$/docs/js/bz-sidenav.min.js" />
         <item url="file://$PROJECT_DIR$/public/javascripts/bluessite.min.js" />
-        <item url="file://$PROJECT_DIR$/public/javascripts/bz-autocomplete-prev.min.js" />
-        <item url="file://$PROJECT_DIR$/public/javascripts/bz-autocomplete.min.js" />
+        <item url="file://$PROJECT_DIR$/public/javascripts/bz-core.min.js" />
+        <item url="file://$PROJECT_DIR$/public/javascripts/bz-droplist.min.js" />
         <item url="file://$PROJECT_DIR$/public/javascripts/bz-inject.min.js" />
+        <item url="file://$PROJECT_DIR$/public/javascripts/bz-tabs.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -42,9 +43,10 @@
       <root url="file://$PROJECT_DIR$/docs/js/bz-select.min.js" />
       <root url="file://$PROJECT_DIR$/docs/js/bz-sidenav.min.js" />
       <root url="file://$PROJECT_DIR$/public/javascripts/bluessite.min.js" />
-      <root url="file://$PROJECT_DIR$/public/javascripts/bz-autocomplete-prev.min.js" />
-      <root url="file://$PROJECT_DIR$/public/javascripts/bz-autocomplete.min.js" />
+      <root url="file://$PROJECT_DIR$/public/javascripts/bz-core.min.js" />
+      <root url="file://$PROJECT_DIR$/public/javascripts/bz-droplist.min.js" />
       <root url="file://$PROJECT_DIR$/public/javascripts/bz-inject.min.js" />
+      <root url="file://$PROJECT_DIR$/public/javascripts/bz-tabs.min.js" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
