@@ -82,21 +82,16 @@ if (typeof require === 'function') {
             // replace element with enjected one
             // inpt.after(injected);
             injected.on('click', function() {
-                var $th = bzDom(this),
-                    sel = 'input';
-                if ($th.find('textarea').exist())
-                    sel = 'textarea';
-                var _$inpt = bzDom(this).find(sel);
+                var _$inpt = bzDom(this).find('input');
                 _$inpt.focus();
             });
             inpt.replacewith(injected);
             // add counter
-            if (inpt.ondata('counter')) {
-                var sel = 'input';
-                if (inpt.find('textarea').exist())
-                    sel = 'textarea';
-                Blues.inject.inputCounter(injected.find(sel));
-            }
+            if (inpt.ondata('counter'))
+                Blues.inject.inputCounter(injected.find('input'));
+            // focus if not empty
+            if (inpt.val() != '')
+                inpt.focus();
         },
         button: function (element) {
             var btn = bzDom(element);
@@ -124,31 +119,20 @@ if (typeof require === 'function') {
                     btn.append(ico);
                 }
 
-                var name = btn.inhtml(),
-                    btnHasChild = bz.check.ifDomNode(name);
-
-                if (!btnHasChild)
-                    name = btn.text();
-
-
-
-                if (btn.find('.text').exist()) {
-                    if (newIco != null)
-                        btn.append(newIco);
-                } else {
+                if (!btn.find('.text').exist()) {
+                    var name = btn.inhtml();
                     btn.inhtml('');
                     var nameSpan = bzDom('<span class="text">');
-
-
-                    if (btnHasChild)
-                        nameSpan.inhtml(name);
-                    else
-                        nameSpan.text(name);
-
+                    nameSpan.inhtml(name);
                     if (newIco != null)
                         btn.append(newIco);
                     btn.append(nameSpan);
+                } else {
+                    if (newIco != null)
+                        btn.append(newIco);
                 }
+
+
 
                 if (btn.ifclass('bz-wave')) {
                     // if (btn.find('.text').exist()) {
