@@ -334,6 +334,12 @@
                 y: posy
             }
         },
+        extendObject: function extend(obj, src) {
+            for (var key in src) {
+                if (src.hasOwnProperty(key)) obj[key] = src[key];
+            }
+            return obj;
+        },
         mergeOptions: function(defaultOptions, options) {
             var o = {};
             for (var k in defaultOptions) {
@@ -727,7 +733,7 @@
     // get/set/check the element's attribute
     bzObject.prototype.onattr = function(name, value) {
         var elem = this.el;
-        if (value) {
+        if (value !== null && value !== undefined) {
             elem.setAttribute(name, value);
             return this;
         } else if (elem.hasAttribute(name))
@@ -746,7 +752,7 @@
         var elem = this.el,
             name = 'data-' + name;
         // if method has income value set attribute
-        if (value) {
+        if (value !== null && value !== undefined) {
             elem.setAttribute(name, value);
             return this;
             //if elem has such attribute return it's value

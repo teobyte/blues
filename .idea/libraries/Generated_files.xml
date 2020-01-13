@@ -18,11 +18,15 @@
         <item url="file://$PROJECT_DIR$/docs/js/bz-rules.min.js" />
         <item url="file://$PROJECT_DIR$/docs/js/bz-select.min.js" />
         <item url="file://$PROJECT_DIR$/docs/js/bz-sidenav.min.js" />
+        <item url="file://$PROJECT_DIR$/docs/js/bz-stepper.min.js" />
         <item url="file://$PROJECT_DIR$/public/javascripts/blues-require/bz-card-validation.min.js" />
         <item url="file://$PROJECT_DIR$/public/javascripts/bluessite.min.js" />
         <item url="file://$PROJECT_DIR$/public/javascripts/bz-core.min.js" />
         <item url="file://$PROJECT_DIR$/public/javascripts/bz-droplist.min.js" />
         <item url="file://$PROJECT_DIR$/public/javascripts/bz-inject.min.js" />
+        <item url="file://$PROJECT_DIR$/public/javascripts/bz-stepper.min.js" />
+        <item url="file://$PROJECT_DIR$/routes/components.min.js" />
+        <item url="file://$PROJECT_DIR$/routes/sitevars.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -42,11 +46,15 @@
       <root url="file://$PROJECT_DIR$/docs/js/bz-rules.min.js" />
       <root url="file://$PROJECT_DIR$/docs/js/bz-select.min.js" />
       <root url="file://$PROJECT_DIR$/docs/js/bz-sidenav.min.js" />
+      <root url="file://$PROJECT_DIR$/docs/js/bz-stepper.min.js" />
       <root url="file://$PROJECT_DIR$/public/javascripts/blues-require/bz-card-validation.min.js" />
       <root url="file://$PROJECT_DIR$/public/javascripts/bluessite.min.js" />
       <root url="file://$PROJECT_DIR$/public/javascripts/bz-core.min.js" />
       <root url="file://$PROJECT_DIR$/public/javascripts/bz-droplist.min.js" />
       <root url="file://$PROJECT_DIR$/public/javascripts/bz-inject.min.js" />
+      <root url="file://$PROJECT_DIR$/public/javascripts/bz-stepper.min.js" />
+      <root url="file://$PROJECT_DIR$/routes/components.min.js" />
+      <root url="file://$PROJECT_DIR$/routes/sitevars.min.js" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

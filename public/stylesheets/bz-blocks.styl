@@ -119,10 +119,10 @@ for p in pos
     position p
 
 /* Blues Forms */
-.bz-form.vertical > *
+.bz-form.vertical > *:not(.vertical-ignore)
   clear both
   display block
 
-.bz-form > *
+.bz-form > *:not(.vertical-ignore)
   vertical-align middle
   display inline-block

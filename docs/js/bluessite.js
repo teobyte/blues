@@ -43,6 +43,7 @@
         { name: 'Forms', url: '', clas: 'subheader bz-ft-l' },
         { name: 'Input', url: 'forms.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Colored Forms', url: 'colored-forms.html', clas: 'bz-list-item bz-t-concat' },
+        { name: 'Stepper', url: 'stepper.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Conditional', url: 'conditional.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Autocomplete', url: 'autocomplete.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Selectors', url: 'selectors.html', clas: 'bz-list-item bz-t-concat' },

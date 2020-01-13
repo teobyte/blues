@@ -1,4 +1,3 @@
-
 .bz-fc-default,
 .bz-fc-hover-default:hover,
 .bz-fc-gray {
@@ -1247,7 +1246,8 @@ body.firefox a {
 .bz-input:after,
 .bz-sidenav:after,
 .bz-card:after,
-.bz-modal .actions:after {
+.bz-modal .actions:after,
+.bz-stepper .stepper-tabs .step-tab:after {
   content: " ";
   display: block;
   font-size: 0;
@@ -1264,7 +1264,8 @@ body.firefox a {
 * html .bz-input,
 * html .bz-sidenav,
 * html .bz-card,
-* html .bz-modal .actions {
+* html .bz-modal .actions,
+* html .bz-stepper .stepper-tabs .step-tab {
   height: 1px;
   zoom: 1;
 }
@@ -1479,7 +1480,8 @@ hr,
 .bz-tooltip,
 .bz-tabs-containers,
 .bz-ddlist,
-.bz-ddlist .bz-trigger {
+.bz-ddlist .bz-trigger,
+.bz-stepper {
   position: relative;
 }
 .bz-fixed,
@@ -1489,11 +1491,11 @@ hr,
 .bz-inherit {
   position: inherit;
 }
-.bz-form.vertical > * {
+.bz-form.vertical > *:not(.vertical-ignore) {
   clear: both;
   display: block;
 }
-.bz-form > * {
+.bz-form > *:not(.vertical-ignore) {
   vertical-align: middle;
   display: inline-block;
 }
@@ -3007,8 +3009,7 @@ li.divider {
 .bz-input input ~ label {
   left: 0.5em;
 }
-.bz-input i:not(.bz-tool) + input ~ label,
-.bz-input i + i.bz-tool + input ~ label {
+.bz-input i + input ~ label {
   left: 3em;
 }
 .bz-input i.bz-tool + input ~ label {
@@ -3028,6 +3029,13 @@ li.divider {
 .bz-input input[readonly] ~ label,
 .bz-input input[disabled] ~ label {
   left: 0;
+}
+.bz-input i + input[readonly] ~ label,
+.bz-input i + input[disabled] ~ label {
+  left: 3.8em;
+}
+.bz-input i + i.bz-tool + input ~ label {
+  left: 3em;
 }
 .bz-input input:focus ~ label,
 .bz-input input:valid ~ label,
@@ -3077,7 +3085,7 @@ li.divider {
 .bz-input i:not('.right') + input[disabled] ~ label,
 .bz-input i + input[readonly] ~ label,
 .bz-input i + input[disabled] ~ label {
-  left: 3em;
+  left: 3.8em;
 }
 .bz-input input:not(.placeholder)::-webkit-input-placeholder {
   color: transparent;
@@ -3154,6 +3162,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 }
 .bz-input textarea ~ .bar {
   left: 0;
+  bottom: 0;
 }
 .bz-input textarea:focus ~ .bar,
 .bz-input textarea.highlight ~ .bar {
@@ -3723,8 +3732,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 }
 .bz-input .counter {
   position: absolute;
-  font-size: 0.8em;
-  bottom: -1.15em;
+  font-size: 0.6em;
   right: 0;
 }
 .bz-editable-box {
@@ -3835,6 +3843,7 @@ input.bz-editable:focus ~ label {
   box-shadow: none;
   color: #212529;
   height: calc(2.3em + 0);
+  float: none;
   line-height: normal;
   outline: none;
   padding: calc(0.7em + 2px) 0.5em calc(0.3em + 1px) 0.5em;
@@ -3845,6 +3854,13 @@ input.bz-editable:focus ~ label {
   flex: 1;
   max-width: 100%;
   min-height: 32px;
+  width: auto;
+}
+.bz-ac-box .bz-ac .bz-input {
+  margin: 0;
+}
+.bz-ac-box .bz-ac .bar {
+  bottom: -4px;
 }
 .bz-ac-box .bz-ac input:focus {
   border: none;
@@ -4767,7 +4783,6 @@ input.bz-editable:focus ~ label {
   font-size: 20px;
 }
 .bz-popover .popover {
-  margin-left: 50%;
   background-color: #fff;
   font-size: 16px;
   padding: 0;
@@ -4812,21 +4827,26 @@ input.bz-editable:focus ~ label {
   overflow-y: auto;
 }
 .bz-popover.top .popover {
-  bottom: calc(100% + 8px);
-  left: -64px;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
 }
 .bz-popover.bottom .popover {
-  bottom: -8px;
-  left: -64px;
-  -webkit-transform: translate(0, 100%);
-  -moz-transform: translate(0, 100%);
-  -ms-transform: translate(0, 100%);
-  -o-transform: translate(0, 100%);
-  transform: translate(0, 100%);
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
 }
 .bz-popover.right .popover {
+  right: 0;
   top: 50%;
-  right: -8px;
   -webkit-transform: translate(100%, -50%);
   -moz-transform: translate(100%, -50%);
   -ms-transform: translate(100%, -50%);
@@ -4834,13 +4854,38 @@ input.bz-editable:focus ~ label {
   transform: translate(100%, -50%);
 }
 .bz-popover.left .popover {
+  left: 0;
+  left: auto;
   top: 50%;
-  left: calc(-50% - 8px);
   -webkit-transform: translate(-100%, -50%);
   -moz-transform: translate(-100%, -50%);
   -ms-transform: translate(-100%, -50%);
   -o-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
+}
+.bz-popover.top.left .popover {
+  bottom: 100%;
+  left: 0;
+  top: auto;
+  transform: none;
+}
+.bz-popover.top.right .popover {
+  bottom: 100%;
+  top: auto;
+  left: auto;
+  right: 0;
+  transform: none;
+}
+.bz-popover.bottom.left .popover {
+  left: 0;
+  top: 100%;
+  transform: none;
+}
+.bz-popover.bottom.right .popover {
+  right: 0;
+  left: auto;
+  top: 100%;
+  transform: none;
 }
 .bz-popover.top .popover {
   -webkit-animation: fade-in 0.3s ease-in-out, shift-up 0.3s ease-in-out;
@@ -6099,6 +6144,10 @@ input[type="color"]::-webkit-color-swatch {
 .bz-multi-steps.text-bottom.circle li > *::before {
   border-radius: 50%;
 }
+.bz-multi-steps li > a,
+.bz-multi-steps li > a:hover {
+  text-decoration: none;
+}
 .bz-multi-steps li > a:hover::before {
   background: #14cb4f;
 }
@@ -6157,7 +6206,6 @@ input[type="color"]::-webkit-color-swatch {
   box-sizing: content-box;
   height: 50px;
   line-height: 46px;
-  border-radius: 25px;
   background-color: #e8ebee;
   position: relative;
   margin: 2px;
@@ -6177,14 +6225,19 @@ input[type="color"]::-webkit-color-swatch {
   color: #008000;
   text-decoration: none;
 }
+.bz-chip.rounded {
+  border-radius: 25px;
+}
 .bz-chip i ~ .text,
 .bz-chip img ~ .text {
   margin: 2px 0 2px 5px;
 }
 .bz-chip.small {
   height: 30px;
-  border-radius: 15px;
   line-height: 24px;
+}
+.bz-chip.small.rounded {
+  border-radius: 15px;
 }
 .bz-chip.small .text {
   font-size: 16px;
@@ -6217,7 +6270,7 @@ input[type="color"]::-webkit-color-swatch {
   height: 44px;
   border-radius: 50%;
   display: inline-block;
-  color: #102a62;
+  color: #a8a9a9;
   float: right;
   font-size: 20px;
   cursor: pointer;
@@ -6229,8 +6282,7 @@ input[type="color"]::-webkit-color-swatch {
   width: 24px;
 }
 .bz-chip .chip-close:hover {
-  color: #fff;
-  background-color: #808080;
+  color: #102a62;
 }
 .bz-badge,
 .bz-badge.primary,
@@ -7021,6 +7073,39 @@ body.modal-open {
   -o-transform: scale(1);
   transform: scale(1);
   opacity: 1;
+}
+.bz-stepper .stepper-navs {
+  margin-bottom: 32px;
+  position: relative;
+}
+.bz-stepper .stepper-navs .step {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+}
+.bz-stepper .stepper-navs .marker {
+  bottom: -4px;
+  height: 4px;
+  left: 0;
+  position: absolute;
+}
+.bz-stepper .stepper-tabs {
+  height: inherit;
+  min-height: 420px;
+  overflow: hidden;
+  width: inherit;
+}
+.bz-stepper .stepper-tabs .step-tab {
+  left: -110vw;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  z-index: -100;
+}
+.bz-stepper .stepper-tabs .step-tab.active {
+  left: 0;
+  opacity: 1;
+  z-index: 1000;
 }
 .bz-fader {
   background-color: rgba(69,69,68,0.5);

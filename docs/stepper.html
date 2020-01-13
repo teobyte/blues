@@ -1,0 +1,153 @@
+<html lang="en-us" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Blues Framework">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+    <title>Blues 2.0 | Stepper</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="https://teobyte.github.io/blues-icons/bz-icons/css/bz-icons.css">
+    <link rel="stylesheet" href="./css/bz-core.css">
+</head>
+<body>
+<div id="leftSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <ul class="bz-sidenav-list"></ul>
+    </div>
+</div>
+<div id="rightSide" class="bz-sidenav bz-bc-white">
+    <div class="bz-sidenav-scroll">
+        <div class="bz-cascading-list w-100p">
+            <ul class="bz-main-list">
+                <li class="bz-cascading-list">
+                    <label class="text" for="toggle-3">
+                        Page templates
+                        <i class="bzi-chevron-right"></i>
+                    </label>
+                    <input type="checkbox" id="toggle-3">
+                    <ul>
+                        <li>
+                            <a class="text" href="pages/blank-page.html">Blank page</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-toolbar.html">Page with toolbar</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-list.html">Page with list</a>
+                        </li>
+                        <li>
+                            <a class="text" href="pages/page-listview.html">Page with list view</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="bz-clearfix bz-sidenav-wrapper bz-content">
+    <div class="bz-toolbar primary">
+        <div id="leftSideBtn" class="tool bz-sidenav-btn"
+             data-nav="leftSide" data-cont=".bz-content" data-mode="single" data-openstart="1" data-side="left" data-rtl="false">
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
+        </div>
+        <div class="title">Tabs</div>
+        <div id="leftRightBtn" class="tool bz-sidenav-btn"
+             data-nav="rightSide" data-cont=".bz-content" data-mode="mobile" data-openstart="0" data-side="right" data-rtl="false">
+            <div class="back circle"></div>
+            <i class="bzi-menu"></i>
+        </div>
+    </div>
+    <div class="bz-w-100p bz-clearfix">
+        <div class="bz-w-640px bz-margin-auto">
+            <div class="bz-stepper">
+                <div class="stepper-tabs">
+                    <div class="step-tab bz-padding-4 bz-transition active" data-name="Step One">
+                        <div class="bz-shadow-1">
+                            <div class="bz-w-100p bz-t-align-center bz-padding-32">
+                                <h2>
+                                    Personal Info
+                                </h2>
+                                <div>
+                                    Tell us more about you.
+                                </div>
+                            </div>
+                            <form class="bz-form vertical bz-padding-32 bz-clearfix" data-ctr="profile" data-act="savename">
+                                <input type="text" name="name" class="bz-input flash" placeholder="Name" data-icon="bzi-user" required/>
+                                <input type="text" name="email" class="bz-input flash" placeholder="Email" data-icon="bzi-envelope" required />
+                                <input type="password" name="password" class="bz-input flash" placeholder="Password" data-icon="bzi-key" required />
+                                <div class="bz-clear h-8"></div>
+                                <button type="button" name="btn-next" class="bz-btn primary inverted primary-wave bz-float-right">Next</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="step-tab bz-padding-4 bz-transition" data-name="Step Two">
+                        <div class="bz-shadow-1">
+                            <div class="bz-w-100p bz-t-align-center bz-padding-32">
+                                <h2>
+                                    Company Info
+                                </h2>
+                                <div>
+                                    Tell us more about your company.
+                                </div>
+                            </div>
+                            <form class="bz-form vertical bz-padding-32 bz-clearfix" data-ctr="profile" data-act="savecompany">
+                                <input type="text" name="companyName" class="bz-input flash" placeholder="Company Name" required />
+                                <input type="text" name="jobTitle" class="bz-input flash" placeholder="Job title" required />
+                                <input type="text" name="location" class="bz-input flash" placeholder="Location" required />
+                                <div class="bz-clear h-8"></div>
+                                <button type="button" name="btn-prev" class="bz-btn primary inverted primary-wave bz-float-left vertical-ignore">Previous</button>
+                                <button type="button" name="btn-next" class="bz-btn primary inverted primary-wave bz-float-right vertical-ignore">Next</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="step-tab bz-padding-4 bz-transition" data-name="Step Three">
+                        <div class="bz-shadow-1">
+                            <div class="bz-w-100p bz-t-align-center bz-padding-32">
+                                <h2>
+                                    Social account
+                                </h2>
+                                <div>
+                                    Tell us more about your social account.
+                                </div>
+                            </div>
+                            <form class="bz-form vertical bz-padding-32 bz-clearfix" data-ctr="profile" data-act="savesocial">
+                                <input type="text" name="linkedin" class="bz-input flash" placeholder="Linkedin" required />
+                                <input type="text" name="twitter" class="bz-input flash" placeholder="Twitter" required />
+                                <input type="text" name="github" class="bz-input flash" placeholder="Github" required />
+                                <div class="bz-clear h-8"></div>
+                                <button type="button" name="btn-prev" class="bz-btn primary inverted primary-wave bz-float-left vertical-ignore">Previous</button>
+                                <button type="button" name="btn-submit" class="bz-btn primary primary-wave inverted bz-float-right vertical-ignore">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./js/bz-core.js"></script>
+<script src="./js/bz-inject.js"></script>
+<script src="./js/bz-sidenav.js"></script>
+<script src="./js/bluessite.js"></script>
+<script src="./js/bz-codelighter.js"></script>
+<script src="./js/bz-stepper.js"></script>
+<script>
+    Stepper.init({
+        selector: '.bz-stepper',
+        reset: true,
+        //stepRequest: true
+        nextCall: function() {
+            alert('next was clicked');
+        },
+        prevCall: function() {
+            alert('prev was clicked');
+        },
+        submitCall: function() {
+            alert('submit was clicked');
+        },
+    });
+</script>
+</body>
+</html>

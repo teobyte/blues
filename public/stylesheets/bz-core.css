@@ -1246,7 +1246,8 @@ body.firefox a {
 .bz-input:after,
 .bz-sidenav:after,
 .bz-card:after,
-.bz-modal .actions:after {
+.bz-modal .actions:after,
+.bz-stepper .stepper-tabs .step-tab:after {
   content: " ";
   display: block;
   font-size: 0;
@@ -1263,7 +1264,8 @@ body.firefox a {
 * html .bz-input,
 * html .bz-sidenav,
 * html .bz-card,
-* html .bz-modal .actions {
+* html .bz-modal .actions,
+* html .bz-stepper .stepper-tabs .step-tab {
   height: 1px;
   zoom: 1;
 }
@@ -1478,7 +1480,8 @@ hr,
 .bz-tooltip,
 .bz-tabs-containers,
 .bz-ddlist,
-.bz-ddlist .bz-trigger {
+.bz-ddlist .bz-trigger,
+.bz-stepper {
   position: relative;
 }
 .bz-fixed,
@@ -1488,11 +1491,11 @@ hr,
 .bz-inherit {
   position: inherit;
 }
-.bz-form.vertical > * {
+.bz-form.vertical > *:not(.vertical-ignore) {
   clear: both;
   display: block;
 }
-.bz-form > * {
+.bz-form > *:not(.vertical-ignore) {
   vertical-align: middle;
   display: inline-block;
 }
@@ -7070,6 +7073,39 @@ body.modal-open {
   -o-transform: scale(1);
   transform: scale(1);
   opacity: 1;
+}
+.bz-stepper .stepper-navs {
+  margin-bottom: 32px;
+  position: relative;
+}
+.bz-stepper .stepper-navs .step {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+}
+.bz-stepper .stepper-navs .marker {
+  bottom: -4px;
+  height: 4px;
+  left: 0;
+  position: absolute;
+}
+.bz-stepper .stepper-tabs {
+  height: inherit;
+  min-height: 420px;
+  overflow: hidden;
+  width: inherit;
+}
+.bz-stepper .stepper-tabs .step-tab {
+  left: -110vw;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  z-index: -100;
+}
+.bz-stepper .stepper-tabs .step-tab.active {
+  left: 0;
+  opacity: 1;
+  z-index: 1000;
 }
 .bz-fader {
   background-color: rgba(69,69,68,0.5);

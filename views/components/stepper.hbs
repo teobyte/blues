@@ -1,0 +1,96 @@
+<div class="bz-page-box bz-animate-left">
+    <div class="bz-toolbar-box">
+
+    </div>
+    <div class="bz-title-box">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="bz-content-box">
+        <div class="bz-box bz-block">
+            <div class="bz-w-640px bz-margin-auto">
+                <div class="bz-stepper">
+                    <div class="stepper-tabs">
+                        <div class="step-tab bz-padding-4 bz-transition active" data-name="Step One">
+                            <div class="bz-shadow-1">
+                                <div class="bz-w-100p bz-t-align-center bz-padding-32">
+                                    <h2>
+                                        Personal Info
+                                    </h2>
+                                    <div>
+                                        Tell us more about you.
+                                    </div>
+                                </div>
+                                <form class="bz-form vertical bz-padding-32 bz-clearfix" data-ctr="profile" data-act="savename">
+                                    <input type="text" name="name" class="bz-input flash" placeholder="Name" data-icon="bzi-user" required/>
+                                    <input type="text" name="email" class="bz-input flash" placeholder="Email" data-icon="bzi-envelope" required />
+                                    <input type="password" name="password" class="bz-input flash" placeholder="Password" data-icon="bzi-key" required />
+                                    <div class="bz-clear h-8"></div>
+                                    <button type="button" name="btn-next" class="bz-btn primary inverted primary-wave bz-float-right">Next</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="step-tab bz-padding-4 bz-transition" data-name="Step Two">
+                            <div class="bz-shadow-1">
+                                <div class="bz-w-100p bz-t-align-center bz-padding-32">
+                                    <h2>
+                                        Company Info
+                                    </h2>
+                                    <div>
+                                        Tell us more about your company.
+                                    </div>
+                                </div>
+                                <form class="bz-form vertical bz-padding-32 bz-clearfix" data-ctr="profile" data-act="savecompany">
+                                    <input type="text" name="companyName" class="bz-input flash" placeholder="Company Name" required />
+                                    <input type="text" name="jobTitle" class="bz-input flash" placeholder="Job title" required />
+                                    <input type="text" name="location" class="bz-input flash" placeholder="Location" required />
+                                    <div class="bz-clear h-8"></div>
+                                    <button type="button" name="btn-prev" class="bz-btn primary inverted primary-wave bz-float-left vertical-ignore">Previous</button>
+                                    <button type="button" name="btn-next" class="bz-btn primary inverted primary-wave bz-float-right vertical-ignore">Next</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="step-tab bz-padding-4 bz-transition" data-name="Step Three">
+                            <div class="bz-shadow-1">
+                                <div class="bz-w-100p bz-t-align-center bz-padding-32">
+                                    <h2>
+                                        Social account
+                                    </h2>
+                                    <div>
+                                        Tell us more about your social account.
+                                    </div>
+                                </div>
+                                <form class="bz-form vertical bz-padding-32 bz-clearfix" data-ctr="profile" data-act="savesocial">
+                                    <input type="text" name="linkedin" class="bz-input flash" placeholder="Linkedin" required />
+                                    <input type="text" name="twitter" class="bz-input flash" placeholder="Twitter" required />
+                                    <input type="text" name="github" class="bz-input flash" placeholder="Github" required />
+                                    <div class="bz-clear h-8"></div>
+                                    <button type="button" name="btn-prev" class="bz-btn primary inverted primary-wave bz-float-left vertical-ignore">Previous</button>
+                                    <button type="button" name="btn-submit" class="bz-btn primary primary-wave inverted bz-float-right vertical-ignore">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{#section 'scripts'}}
+    <script src="../javascripts/bz-stepper.js"></script>
+    <script>
+        Stepper.init({
+            selector: '.bz-stepper',
+            reset: true,
+            //stepRequest: true
+            nextCall: function() {
+                alert('next was clicked');
+            },
+            prevCall: function() {
+                alert('prev was clicked');
+            },
+            submitCall: function() {
+                alert('submit was clicked');
+            },
+        });
+    </script>
+{{/section}}

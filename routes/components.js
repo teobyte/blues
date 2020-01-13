@@ -47,6 +47,9 @@ router.get('/grouping', function(req, res, next) {
 router.get('/cards', function(req, res, next) {
     res.render('./components/cards', { title: 'Cards', pages: sitevars.pages });
 });
+router.get('/stepper', function(req, res, next) {
+    res.render('./components/stepper', { title: 'Stepper', pages: sitevars.pages });
+});
 router.get('/conditional', function(req, res, next) {
     res.render('./components/conditional', { title: 'Conditional', pages: sitevars.pages });
 });

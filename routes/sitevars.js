@@ -89,6 +89,11 @@ module.exports.pages = {
         pageTitle: 'Selectors',
         pagePath: '../components/selectors'
     },
+    stepper: {
+        itemClass: 'bz-list-item bz-t-concat',
+        pageTitle: 'Stepper',
+        pagePath: '../components/stepper'
+    },
     conditional: {
         itemClass: 'bz-list-item bz-t-concat',
         pageTitle: 'Conditional',
