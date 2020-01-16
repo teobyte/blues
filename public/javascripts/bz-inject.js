@@ -34,6 +34,8 @@ if (typeof require === 'function') {
         // input injector
         input: function(element) {
             var inpt = bzDom(element);
+            if (inpt.el.tagName.toLowerCase() != "input")
+                return;
             var inptWrapp = bzDom('<div class="bz-input">');
             if (inpt.ifclass('bordered')) {
                 inptWrapp.onclass('bordered');
@@ -82,19 +84,26 @@ if (typeof require === 'function') {
             // replace element with enjected one
             // inpt.after(injected);
             injected.on('click', function() {
-                var _$inpt = bzDom(this).find('input');
+                var $th = bzDom(this),
+                    sel = 'input';
+                if ($th.find('textarea').exist())
+                    sel = 'textarea';
+                var _$inpt = bzDom(this).find(sel);
                 _$inpt.focus();
             });
             inpt.replacewith(injected);
             // add counter
-            if (inpt.ondata('counter'))
-                Blues.inject.inputCounter(injected.find('input'));
-            // focus if not empty
-            if (inpt.val() != '')
-                inpt.focus();
+            if (inpt.ondata('counter')) {
+                var sel = 'input';
+                if (inpt.find('textarea').exist())
+                    sel = 'textarea';
+                Blues.inject.inputCounter(injected.find(sel));
+            }
         },
         button: function (element) {
             var btn = bzDom(element);
+            if (!btn || btn.find('.text').exist())
+                return;
             var tagName = btn.el.tagName.toLowerCase();
             if (tagName == 'button') {
                 var newIco = null;
@@ -103,7 +112,6 @@ if (typeof require === 'function') {
                     newIco = oldIco.clone();
                     btn.find('i').remove();
                 }
-
                 if (btn.ondata('icon')) {
                     var ico = bzDom('<i>'),
                         dataIcon = btn.ondata('icon'),
@@ -118,22 +126,25 @@ if (typeof require === 'function') {
                     ico.onclass(iconName);
                     btn.append(ico);
                 }
-
-                if (!btn.find('.text').exist()) {
-                    var name = btn.inhtml();
+                var name = btn.inhtml(),
+                    btnHasChild = bz.check.ifDomNode(name);
+                if (!btnHasChild)
+                    name = btn.text();
+                if (btn.find('.text').exist()) {
+                    if (newIco != null)
+                        btn.append(newIco);
+                } else {
                     btn.inhtml('');
                     var nameSpan = bzDom('<span class="text">');
-                    nameSpan.inhtml(name);
+                    if (btnHasChild)
+                        nameSpan.inhtml(name);
+                    else
+                        nameSpan.text(name);
+
                     if (newIco != null)
                         btn.append(newIco);
                     btn.append(nameSpan);
-                } else {
-                    if (newIco != null)
-                        btn.append(newIco);
                 }
-
-
-
                 if (btn.ifclass('bz-wave')) {
                     // if (btn.find('.text').exist()) {
                     //     var $txt = btn.find('.text');

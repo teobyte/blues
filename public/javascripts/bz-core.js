@@ -229,6 +229,18 @@
                 Object.keys(first).reduce(function(isEqual, key) {
                     return isEqual && Blues.check.ifEqualObjects(first[key], second[key]);
                 }, true) : (first === second);
+        },
+        ifTouchScreen: function() {
+            var prefixes = ' -webkit- -moz- -o- -ms- '.split(' '),
+                mq = function(query) {
+                    return window.matchMedia(query).matches;
+                };
+            if (('ontouchstart' in window) || navigator.msMaxTouchPoints)
+                return true;
+            // include the 'heartz' as a way to have a non matching MQ to help terminate the join
+            // https://git.io/vznFH
+            var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+            return mq(query);
         }
 
     };
