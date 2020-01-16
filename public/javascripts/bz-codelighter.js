@@ -64,8 +64,8 @@ var jss = {
     },
     'attr': {}
 };
-var css = Blues.JSONCSS(jss);
-Blues.JSS(css, 'css_codelighter');
+var css = bz.JSONCSS(jss);
+bz.JSS(css, 'css_codelighter');
 // with respect to
 // https://www.w3schools.com/howto/howto_syntax_highlight.asp
 function w3CodeColor(code, lang) {

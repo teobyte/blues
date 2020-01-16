@@ -1417,35 +1417,65 @@
                 continue;
             switch (form.elements[i].nodeName) {
                 case 'INPUT':
-                    // switch (form.elements[i].type) {
-                    //     case 'text':
-                    //     case 'hidden':
-                    //     case 'password':1
-                    //     case 'button':
-                    //     case 'reset':
-                    //     case 'submit':
-                    //         if (result === 'string')
-                    //             q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                    //         if (result === 'data')
-                    //             dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
-                    //         break;
-                    //     case 'checkbox':
-                    //     case 'radio':
-                    //         if (form.elements[i].checked) {
-                    //             if (result === 'string')
-                    //                 q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                    //             if (result === 'data')
-                    //                 dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
-                    //         }
-                    //         break;
-                    // }
-                    // break;
-                    if (result === 'string')
-                        q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                    if (result === 'data')
-                        dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
-                    break;
-                case 'file':
+                    switch (form.elements[i].type) {
+                        case 'button':
+                            break;
+                        case 'reset':
+                            break;
+                        case 'submit':
+                            break;
+                        case 'checkbox':
+                            if (form.elements[i].checked) {
+                                if (result === 'string')
+                                    q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                                if (result === 'data')
+                                    dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+                            }
+                            break;
+                        case 'radio':
+                            if (form.elements[i].checked) {
+                                if (result === 'string')
+                                    q.push(form.elements[i].name + "=" + '#' + form.elements[i].id + '@' + encodeURIComponent(form.elements[i].value));
+                                if (result === 'data')
+                                    dataObj[form.elements[i].name] = '#' + form.elements[i].id + '@' + bzDom(form.elements[i]).ondata('label');
+                                //encodeURIComponent(form.elements[i].value);
+                            }
+                            break;
+                        case 'file':
+                            if (result === 'string') {
+                                q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                            }
+                            if (result === 'data') {
+                                // dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+
+                                var toBase64 = function (propname, file, target, callBack) {
+                                    file=file.files[0];
+                                    var reader = new FileReader();
+                                    reader.readAsDataURL(file);
+                                    reader.onload = function () {
+                                        callBack(propname, file, target, reader.result);
+                                    };
+                                    reader.onerror = function (error) {
+                                        console.log('Error: ', error);
+                                    };
+                                };
+                                toBase64(form.elements[i].name, form.elements[i], dataObj,function(propname, file, dataObj, base64) {
+                                    dataObj[propname] = base64;
+                                });
+
+                                //dataObj[form.elements[i].name] = toBase64(form.elements[i]);
+                            }
+                            break;
+                        // case 'text':
+                        // case 'hidden':
+                        // case 'password':
+                        default:
+                            if (result === 'string')
+                                q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                            if (result === 'data')
+                                dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+                            break;
+                    }
                     break;
                 case 'TEXTAREA':
                     if (result === 'string')
@@ -2049,33 +2079,24 @@
     Blues.Progress = function (value, options) {
         var Pr = {};
         options = options || {};
-        Pr.o = {};
         Pr.defaultOptions = {
             selector: '#progress',
             position: 'top',
-            size: '8px',
+            size: '8',
             barclass: 'bz-bc-positive'
         };
-        for (var k in Pr.defaultOptions) {
-            if (Pr.defaultOptions.hasOwnProperty(k)) {
-                if (options.hasOwnProperty(k))
-                    Pr.o[k] = options[k];
-                else
-                    Pr.o[k] = Pr.defaultOptions[k];
-            }
-        }
+        Pr.o = bz.help.mergeOptions(Pr.defaultOptions, options);
         var pr = undefined;
         if (bzDom(Pr.o.selector).exist())
             pr = bzDom(Pr.o.selector);
         else {
-            pr = bzDom('<div id="progress">');
-            bzDom('body').append(pr);
             var jss = {
                 'rule': {
                     '.bz-progress': {
                         'attr': {
                             position: 'fixed',
-                            background: 'transparent'
+                            background: 'transparent',
+                            'z-index': '100000'
                         }
                     },
                     '.bz-progress.top' : {
@@ -2113,8 +2134,10 @@
                     }
                 }
             };
-            var css = Blues.JSONCSS(jss);
-            Blues.JSS(css, 'css_progress');
+            var css = bz.JSONCSS(jss);
+            bz.JSS(css, 'css_progress');
+            pr = bzDom('<div id="progress">');
+            bzDom('body').append(pr);
         }
         var bar;
         if (pr.find('.bar').exist())
@@ -2128,15 +2151,15 @@
             if (!pr.ifclass(side))
                 pr.onclass(side);
             pr.oncss('width', '100vw');
-            pr.oncss('height', Pr.o.size);
-            bar.oncss('height', Pr.o.size);
+            pr.oncss('height', Pr.o.size + 'px');
+            bar.oncss('height', Pr.o.size + 'px');
         };
         var setLftRgt = function(side) {
             if (!pr.ifclass(side))
                 pr.onclass(side);
             pr.oncss('height', '100vh');
-            pr.oncss('width', Pr.o.size);
-            bar.oncss('width', Pr.o.size);
+            pr.oncss('width', Pr.o.size + 'px');
+            bar.oncss('width', Pr.o.size + 'px');
         };
         if (!bar.ifclass(Pr.o.barclass))
             bar.onclass(Pr.o.barclass);
@@ -2334,7 +2357,6 @@
                 json: "application/json, text/javascript",
                 jpeg: "image/jpeg",
                 png: "image/png"
-
             }
         };
         o = options || {};
@@ -2675,7 +2697,7 @@
         var outside = options.outside || false,
             position = options.position || 'right',
             timeout = options.timeout || 0,
-            spinner = options.spinner || '<div class="bz-loader"><div>',
+            spinner = options.spinner || '<div class="bz-spinner"><div>',
             hideaction = hideaction || null,
             fireonstart = fireonstart || null,
             fireatend = fireatend || null;
@@ -2686,7 +2708,8 @@
                 var spnr = bzDom('<div class="loader bz-inline-block">');
                 var sp = Blues.addSpiner(false, { size: 16 });
                 spnr.append(sp);
-                Loadspin.show(element, spnr);
+                if (!Blues.bzDom(element).find('.bz-spinner').exist())
+                    Loadspin.show(element, spnr);
             },
             show: function(elem, spinner) {
                 if (outside == true) {
@@ -2730,24 +2753,21 @@
     };
     Blues.addSpiner = function(target, options) {
         var options = options || {},
-            name = options.name || 'bz-spin-circle',
+            name = options.name || 'bz-spinner',
             pos = options.position || 'default',
             size = options.size || 64;
         var sp = bzDom('<div>'),
-            d = bzDom('<div>');
-        sp.append(d.clone())
-            .append(d.clone())
-            .append(d.clone())
-            .append(d.clone());
+            wrap = bzDom('<div class="bz-spin-wrap">');
         if (name && !sp.ifclass(name))
             sp.onclass(name);
         if (pos && pos === 'center')
-            sp.onclass('center');
+            wrap.onclass('bz-center');
         if (size)
             sp.oncss({width: size + 'px', height: size + 'px'});
+        wrap.append(sp);
         if (target)
-            bzDom(target).append(sp);
-        else return sp;
+            bzDom(target).append(wrap);
+        else return wrap;
     };
     // scroll to any Dom element
     Blues.bodyScrollTop = function (position) {
@@ -3106,11 +3126,15 @@
         if (Blues.check.ifCssJson(data))
             data = Blues.JSONCSS(data);
         var node = document.createElement('style');
-        node.type = 'text/css';
+
+        bzDom(node).onattr('type', 'text/css');
+
         if (!Blues.check.ifEmpty(id)) {
-            node.id = id;
+            bzDom(node).onattr('id', id);
+            //node.id = id;
         } else {
-            node.id = 'jss_' + Blues.help.timestamp();
+            bzDom(node).onattr('id', 'jss_' + Blues.help.timestamp());
+            //node.id = 'jss_' + Blues.help.timestamp();
         }
         if (node.styleSheet) {
             node.styleSheet.cssText = data;

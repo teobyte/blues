@@ -9,61 +9,73 @@
         <div class="bz-block">
             <div class="bz-padding-16">
                 <h5 class="bz-fc-primary">Spinners</h5>
+
                 <div class="bz-row mb-middle">
                     <div class="bz-col mb6 tb4">
-                        Circle
                         <p class="bz-fc-primary">
-                            .bz-spin-circle
+                            .bz-spinner.small
                         </p>
                     </div>
                     <div class="bz-col mb6 tb8">
-                        <div class="bz-spin-circle">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
+                        <div class="bz-spinner small"></div>
                     </div>
                 </div>
                 <div class="bz-row mb-middle">
                     <div class="bz-col mb6 tb4">
-                        Dots
                         <p class="bz-fc-primary">
-                            .bz-spin-dots
+                            .bz-spinner.primary
                         </p>
                     </div>
                     <div class="bz-col mb6 tb8">
-                        <div class="bz-spin-dots">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
+                        <div class="bz-spinner primary"></div>
                     </div>
                 </div>
+                <div class="bz-row mb-middle">
+                    <div class="bz-col mb6 tb4">
+                        <p class="bz-fc-primary">
+                            .bz-spinner.positive.large.thick
+                        </p>
+                    </div>
+                    <div class="bz-col mb6 tb8">
+                        <div class="bz-spinner positive large thick"></div>
+                    </div>
+                </div>
+
+                <div class="bz-row mb-middle">
+                    <div class="bz-col mb6 tb4">
+                        <p class="bz-fc-primary">
+                            JS Spinner
+                        </p>
+                    </div>
+                    <div id="js-spinner" class="bz-col mb6 tb8"></div>
+                </div>
+
+                <div class="bz-row mb-middle">
+                    <div class="bz-col mb6 tb4">
+                        <p class="bz-fc-primary">
+                            JS Spinner Primary Centered
+                        </p>
+                    </div>
+                    <div id="js-spinner2" class="bz-col mb4 bz-relative bz-bc-gray-light" style="height: 200px;"></div>
+                </div>
+
                 <h6>HTML markup</h6>
                 <textarea class="bz-code html">
-        <div class="bz-spin-circle">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        </textarea>
+                <div class="bz-spinner"></div>
+                </textarea>
                 <h5 class="bz-fc-primary">Centered spinners</h5>
                 <div class="bz-padding-16 bz-margin-4 bz-bc-light bz-relative bz-inline-block" style="height: 200px; width: 200px;">
-                    <div class="spin-circle bz-center"></div>
-                </div>
-                <div class="bz-padding-16 bz-margin-4 bz-bc-light bz-relative bz-inline-block" style="height: 200px; width: 200px;">
-                    <div class="spin-dots bz-center"></div>
+                    <div class="bz-center">
+                        <div class="bz-spinner primary"></div>
+                    </div>
                 </div>
                 <h6>or Javascript markup</h6>
                 <textarea class="bz-code html">
-        <div class="spin-dots bz-center"></div>
-        <script>
-            bz.addSpiner('.spin-dots', { name: 'bz-spin-dots', size: 30 });
-        </script>
-        </textarea>
+                    <div id="js-spinner2" class="bz-relative"></div>
+                    <script>
+                        bz.addSpiner('#js-spinner2', { name: 'bz-spinner primary', size: 40, position: 'center' });
+                    </script>
+                </textarea>
                 <h6>Loader with manual hide</h6>
                 <div class="bz-padding-8 bz-clearfix">
                     <button id="spinbtn" class="bz-btn">
@@ -88,8 +100,8 @@
 {{#section 'scripts'}}
     <script>
 
-        bz.addSpiner('.spin-circle');
-        bz.addSpiner('.spin-dots', { name: 'bz-spin-dots', size: 20 });
+        bz.addSpiner('#js-spinner', { size: 20 });
+        bz.addSpiner('#js-spinner2', { name: 'bz-spinner negative thick', size: 60, position: 'center' });
 
 
         bzDom('#spinbtn').on('click', function() {

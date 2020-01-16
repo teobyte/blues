@@ -1,103 +1,28 @@
-.bz-spin-circle
-  display inline-block
-  position relative
-  width 64px
-  height 64px
-
-.bz-spin-circle div
-  border-color color-navy transparent transparent transparent
-  box-sizing border-box
-  position absolute
-  width 100%
-  height 100%
-  border 3px solid color-navy
-  border-radius 50%
+.bz-spinner
+  display: inline-block
+  width: 50px
+  height: 50px
+  border: 3px solid color-gray
+  border-top-color: color-gray-dark
+  border-radius: 50%
   vendor(animation, bz-circle 1.8s cubic-bezier(.05, 0, .13, .9) infinite)
+  &.small
+    height 20px
+    width 20px
 
-.bz-spin-circle div:nth-child(1)
-  animation-delay -0.45s
+  &.large
+    height 70px
+    width 70px
 
-.bz-spin-circle div:nth-child(2)
-  animation-delay -0.3s
+  &.thick
+    border-width 6px
 
-.bz-spin-circle div:nth-child(3)
-  animation-delay -0.15s
+for t in themes
+  .bz-spinner.{t}
+    border-top-color: themes[t].fill
 
 @keyframes bz-circle
   from
     transform rotate(0deg)
   to
     transform rotate(360deg)
-
-.bz-spin-dots
-  display inline-block
-  position relative
-  width 64px
-  height 64px
-
-.bz-spin-dots div
-  position absolute
-  top calc(50% - 6px)
-  width 20%
-  height 20%
-  border-radius 50%
-  background color-navy
-  animation-timing-function cubic-bezier(0, 1, 1, 0)
-
-.bz-spin-dots div:nth-child(1)
-  left 10%
-  animation bz-dots1 0.6s infinite
-
-.bz-spin-dots div:nth-child(2)
-  left 10%
-  animation bz-dots2 0.6s infinite
-
-.bz-spin-dots div:nth-child(3)
-  left 40%
-  animation bz-dots2 0.6s infinite
-
-.bz-spin-dots div:nth-child(4)
-  left 80%
-  animation bz-dots3 0.6s infinite
-
-@keyframes bz-dots1
-  from
-    transform scale(0)
-  to
-    transform scale(1)
-
-@keyframes bz-dots3
-  from
-    transform scale(1)
-  to
-    transform scale(0)
-
-@keyframes bz-dots2
-  from
-    transform-translate(0, 0)
-  to
-    transform-translate(160%, 0)
-
-.bz-loader
-  display inline-block
-  position relative
-  width 20px
-  height 12px
-
-.bz-loader div
-  border none
-  position absolute
-  width 16px
-  height 16px
-  left 0
-  top -4px
-  vendor(animation, spin1 2s infinite linear)
-
-.bz-rotate
-  vendor(animation, spin1 2s infinite linear)
-
-@keyframes spin1
-  from
-    transform(rotate, 0deg)
-  to
-    transform(rotate, 360deg)

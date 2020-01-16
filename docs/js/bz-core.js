@@ -229,6 +229,18 @@
                 Object.keys(first).reduce(function(isEqual, key) {
                     return isEqual && Blues.check.ifEqualObjects(first[key], second[key]);
                 }, true) : (first === second);
+        },
+        ifTouchScreen: function() {
+            var prefixes = ' -webkit- -moz- -o- -ms- '.split(' '),
+                mq = function(query) {
+                    return window.matchMedia(query).matches;
+                };
+            if (('ontouchstart' in window) || navigator.msMaxTouchPoints)
+                return true;
+            // include the 'heartz' as a way to have a non matching MQ to help terminate the join
+            // https://git.io/vznFH
+            var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+            return mq(query);
         }
 
     };
@@ -1405,35 +1417,65 @@
                 continue;
             switch (form.elements[i].nodeName) {
                 case 'INPUT':
-                    // switch (form.elements[i].type) {
-                    //     case 'text':
-                    //     case 'hidden':
-                    //     case 'password':1
-                    //     case 'button':
-                    //     case 'reset':
-                    //     case 'submit':
-                    //         if (result === 'string')
-                    //             q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                    //         if (result === 'data')
-                    //             dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
-                    //         break;
-                    //     case 'checkbox':
-                    //     case 'radio':
-                    //         if (form.elements[i].checked) {
-                    //             if (result === 'string')
-                    //                 q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                    //             if (result === 'data')
-                    //                 dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
-                    //         }
-                    //         break;
-                    // }
-                    // break;
-                    if (result === 'string')
-                        q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                    if (result === 'data')
-                        dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
-                    break;
-                case 'file':
+                    switch (form.elements[i].type) {
+                        case 'button':
+                            break;
+                        case 'reset':
+                            break;
+                        case 'submit':
+                            break;
+                        case 'checkbox':
+                            if (form.elements[i].checked) {
+                                if (result === 'string')
+                                    q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                                if (result === 'data')
+                                    dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+                            }
+                            break;
+                        case 'radio':
+                            if (form.elements[i].checked) {
+                                if (result === 'string')
+                                    q.push(form.elements[i].name + "=" + '#' + form.elements[i].id + '@' + encodeURIComponent(form.elements[i].value));
+                                if (result === 'data')
+                                    dataObj[form.elements[i].name] = '#' + form.elements[i].id + '@' + bzDom(form.elements[i]).ondata('label');
+                                //encodeURIComponent(form.elements[i].value);
+                            }
+                            break;
+                        case 'file':
+                            if (result === 'string') {
+                                q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                            }
+                            if (result === 'data') {
+                                // dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+
+                                var toBase64 = function (propname, file, target, callBack) {
+                                    file=file.files[0];
+                                    var reader = new FileReader();
+                                    reader.readAsDataURL(file);
+                                    reader.onload = function () {
+                                        callBack(propname, file, target, reader.result);
+                                    };
+                                    reader.onerror = function (error) {
+                                        console.log('Error: ', error);
+                                    };
+                                };
+                                toBase64(form.elements[i].name, form.elements[i], dataObj,function(propname, file, dataObj, base64) {
+                                    dataObj[propname] = base64;
+                                });
+
+                                //dataObj[form.elements[i].name] = toBase64(form.elements[i]);
+                            }
+                            break;
+                        // case 'text':
+                        // case 'hidden':
+                        // case 'password':
+                        default:
+                            if (result === 'string')
+                                q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                            if (result === 'data')
+                                dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+                            break;
+                    }
                     break;
                 case 'TEXTAREA':
                     if (result === 'string')
@@ -2037,72 +2079,73 @@
     Blues.Progress = function (value, options) {
         var Pr = {};
         options = options || {};
-        Pr.o = {};
+        //Pr.o = {};
         Pr.defaultOptions = {
             selector: '#progress',
             position: 'top',
             size: '8px',
             barclass: 'bz-bc-positive'
         };
-        for (var k in Pr.defaultOptions) {
-            if (Pr.defaultOptions.hasOwnProperty(k)) {
-                if (options.hasOwnProperty(k))
-                    Pr.o[k] = options[k];
-                else
-                    Pr.o[k] = Pr.defaultOptions[k];
+        Pr.o = bz.help.mergeOptions(Pr.defaultOptions, options);
+        // for (var k in Pr.defaultOptions) {
+        //     if (Pr.defaultOptions.hasOwnProperty(k)) {
+        //         if (options.hasOwnProperty(k))
+        //             Pr.o[k] = options[k];
+        //         else
+        //             Pr.o[k] = Pr.defaultOptions[k];
+        //     }
+        // }
+        var jss = {
+            'rule': {
+                '.bz-progress': {
+                    'attr': {
+                        position: 'fixed',
+                        background: 'transparent'
+                    }
+                },
+                '.bz-progress.top' : {
+                    'attr': {
+                        top: 0,
+                        left: 0,
+                        width: '100%'
+                    }
+                },
+                '.bz-progress.bottom' : {
+                    'attr': {
+                        bottom: 0,
+                        left: 0,
+                        width: '100%'
+                    }
+                },
+                '.bz-progress.left': {
+                    'attr': {
+                        top: 0,
+                        left: 0
+                    }
+                },
+                '.bz-progress.right': {
+                    'attr': {
+                        top: 0,
+                        right: 0
+                    }
+                },
+                '.bz-progress .bar': {
+                    'attr': {
+                        position: 'absolute',
+                        width:0,
+                        height: 0
+                    }
+                }
             }
-        }
+        };
+        var css = bz.JSONCSS(jss);
+        bz.JSS(css, 'css_progress');
         var pr = undefined;
         if (bzDom(Pr.o.selector).exist())
             pr = bzDom(Pr.o.selector);
         else {
             pr = bzDom('<div id="progress">');
             bzDom('body').append(pr);
-            var jss = {
-                'rule': {
-                    '.bz-progress': {
-                        'attr': {
-                            position: 'fixed',
-                            background: 'transparent'
-                        }
-                    },
-                    '.bz-progress.top' : {
-                        'attr': {
-                            top: 0,
-                            left: 0,
-                            width: '100%'
-                        }
-                    },
-                    '.bz-progress.bottom' : {
-                        'attr': {
-                            bottom: 0,
-                            left: 0,
-                            width: '100%'
-                        }
-                    },
-                    '.bz-progress.left': {
-                        'attr': {
-                            top: 0,
-                            left: 0
-                        }
-                    },
-                    '.bz-progress.right': {
-                        'attr': {
-                            top: 0,
-                            right: 0
-                        }
-                    },
-                    '.bz-progress .bar': {
-                        'attr': {
-                            position: 'absolute',
-                            width:0,
-                            height: 0
-                        }
-                    }
-                }
-            };
-            var css = Blues.JSONCSS(jss);
-            Blues.JSS(css, 'css_progress');
         }
         var bar;
         if (pr.find('.bar').exist())
@@ -2322,7 +2365,6 @@
                 json: "application/json, text/javascript",
                 jpeg: "image/jpeg",
                 png: "image/png"
-
             }
         };
         o = options || {};
@@ -3094,11 +3136,15 @@
         if (Blues.check.ifCssJson(data))
             data = Blues.JSONCSS(data);
         var node = document.createElement('style');
-        node.type = 'text/css';
+
+        bzDom(node).onattr('type', 'text/css');
+
         if (!Blues.check.ifEmpty(id)) {
-            node.id = id;
+            bzDom(node).onattr('id', id);
+            //node.id = id;
         } else {
-            node.id = 'jss_' + Blues.help.timestamp();
+            bzDom(node).onattr('id', 'jss_' + Blues.help.timestamp());
+            //node.id = 'jss_' + Blues.help.timestamp();
         }
         if (node.styleSheet) {
             node.styleSheet.cssText = data;

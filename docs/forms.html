@@ -89,7 +89,6 @@
             </button>
         </form>
     </div>
-
     <div class="bz-padding-16 bz-clearfix">
         <h5>Horizontal Form</h5>
         <form name="validateform2" class="bz-form">
@@ -124,6 +123,200 @@
             <input type="submit" class="bz-btn bz-uppercase bz-wave" value="Upload" />
         </form>
     </div>
+
+
+
+
+    <div class="bz-box bz-block">
+        <div class="bz-padding-16">
+            <h6>Regular Field</h6>
+            <div class="bz-input">
+                <input type="text" placeholder="Last Name" required>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+            <div class="bz-input">
+                <input type="text" placeholder="Last Name" required readonly>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+            <div class="bz-input">
+                <input type="text" placeholder="Last Name" required disabled>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+        </div>
+        <div class="bz-padding-16">
+            <h6>Regular Field with icon</h6>
+            <div class="bz-input">
+                <i class="bzi-user"></i>
+                <input type="text" placeholder="Last Name" required>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+            <div class="bz-input">
+                <i class="bzi-user"></i>
+                <input type="text" placeholder="Last Name" required readonly>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+            <div class="bz-input">
+                <i class="bzi-user"></i>
+                <input type="text" placeholder="Last Name" required disabled>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+        </div>
+        <div class="bz-padding-16">
+            <h6>Field with icon on the left (by default) and right</h6>
+            <div class="bz-input">
+                <i class="bzi-user"></i>
+                <input type="text" placeholder="Last Name" required>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+            <div class="bz-input">
+                <i class="bzi-user right"></i>
+                <input type="text" placeholder="Last Name" required>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+            <!--<input type="button" class="bz-btn" value="Add">-->
+        </div>
+        <div class="bz-padding-16">
+            <h6>Field with icon and tool</h6>
+            <div class="bz-input">
+                <i class="bzi-user"></i>
+                <i class="bzi-gear bz-tool"></i>
+                <input type="text" placeholder="Name" required>
+                <label>Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+            <div class="bz-input">
+                <i class="bzi-user right"></i>
+                <i class="bzi-gear bz-tool"></i>
+                <input type="text" placeholder="Last Name" required>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+        </div>
+        <div class="bz-padding-16">
+            <h6>Field with tool on the right (by default) and left</h6>
+            <div class="bz-input">
+                <i class="bzi-gear bz-tool"></i>
+                <input type="text" placeholder="Name" required>
+                <label>Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+            <div class="bz-input">
+                <i class="bzi-gear bz-tool left"></i>
+                <input type="text" placeholder="Last Name" required>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+        </div>
+        <div class="bz-padding-16">
+            <h6>Textarea</h6>
+            <div class="bz-input bz-textarea bz-w-100p" data-counter="/">
+                <textarea rows="5" maxlength="220" required></textarea>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+                <div class="counter"></div>
+            </div>
+        </div>
+
+        <div class="bz-padding-16">
+            <h6>Validation styles</h6>
+            <div class="bz-padding-16">
+                <div class="bz-input">
+                    <i class="bzi-user"></i>
+                    <input type="text" class="valid" placeholder="Name" required>
+                    <label>Name</label>
+                    <div class="bar"></div>
+                    <div class="flash"></div>
+                    <div class="error">Positive validation</div>
+                </div>
+                <div class="bz-input">
+                    <i class="bzi-user"></i>
+                    <input type="text" class="invalid" placeholder="Last Name" required>
+                    <label>Last Name</label>
+                    <div class="bar"></div>
+                    <div class="flash"></div>
+                    <div class="counter">10/120</div>
+                    <div class="error">Negative validation</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bz-padding-16">
+            <h6>Type Counter</h6>
+            <div class="bz-padding-16">
+                <div class="bz-input" data-counter="/">
+                    <i class="bzi-user"></i>
+                    <input type="text" placeholder="Name" maxlength="22" required>
+                    <label>Name</label>
+                    <div class="bar"></div>
+                    <div class="flash"></div>
+                    <div class="counter"></div>
+                </div>
+                <button class="bz-btn positive hov-reverse">
+                    <i class="bzi-user"></i>
+                    Button
+                </button>
+            </div>
+        </div>
+
+        <div class="bz-padding-16">
+            <h6>With background</h6>
+            <div class="bz-padding-16 bz-bc-faded">
+                <div class="bz-input">
+                    <i class="bzi-user"></i>
+                    <input type="text" placeholder="Name" required>
+                    <label>Name</label>
+                    <div class="bar"></div>
+                    <div class="flash"></div>
+                </div>
+                <button id="btn-one" class="bz-btn primary hov-reverse">
+                    <i class="bzi-user"></i>
+                    Button
+                </button>
+            </div>
+        </div>
+
+        <div class="bz-padding-16">
+            <h6>With background transparent field</h6>
+            <div class="bz-padding-16 bz-bc-gray">
+                <div class="bz-input transparent">
+                    <i class="bzi-user"></i>
+                    <input type="text" placeholder="Name" required>
+                    <label>Name</label>
+                    <div class="bar"></div>
+                    <div class="flash"></div>
+                </div>
+                <button class="bz-btn primary hov-reverse">
+                    <i class="bzi-user"></i>
+                    Button
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
 </div>
 <script src="./js/bz-core.js"></script>
 <script src="./js/bz-inject.js"></script>

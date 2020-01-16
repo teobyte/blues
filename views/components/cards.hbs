@@ -20,18 +20,106 @@
                     </div>
                     <div class="separator"></div>
                     <div class="footer">
-                        <div class="bz-box bz-float-l">
-                            <i class="bzi-user"></i>
+                        <div class="bz-toolbar primary inverted">
+                            <div class="tool">
+                                <div class="back circle bz-wave"></div>
+                                <i class="bzi-user"></i>
+                            </div>
+                            <div class="btn">
+                                <div class="back bz-wave"></div>
+                                <span class="text"><i class="bzi-envelope"></i> Inbox</span>
+                            </div>
+                            <div class="title">Some text</div>
+                            <div class="tool">
+                                <div class="back circle bz-wave"></div>
+                                <i class="bzi-ellipsis-v"></i>
+                            </div>
                         </div>
-                        <div class="bz-box bz-float-r">
-                            <i class="bzi-map"></i>
-                        </div>
-                        <div class="bz-box bz-float-m">
-                            <i class="bzi-ellipsis-v"></i>
+                    </div>
+                </div>
+
+                <div class="bz-card middle">
+                    <div class="title">Some title</div>
+                    <div class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <div class="separator"></div>
+                    <div class="footer">
+                        <div class="bz-toolbar primary inverted">
+                            <div class="tool">
+                                <div class="back circle bz-wave"></div>
+                                <i class="bzi-user"></i>
+                            </div>
+                            <div class="btn">
+                                <div class="back bz-wave"></div>
+                                <span class="text"><i class="bzi-envelope"></i> Inbox</span>
+                            </div>
+                            <div class="title">Some text</div>
+                            <div class="bz-popover top right">
+                                <div class="tool trigger">
+                                    <div class="back circle bz-wave"></div>
+                                    <i class="bzi-ellipsis-v"></i>
+                                </div>
+                                <div class="popover">
+                                    <ul class="bz-list-no-style bz-fc-faded">
+                                        <li class="bz-fc-hover-white">Popover item</li>
+                                        <li class="bz-fc-hover-white">Popover item</li>
+                                        <li class="bz-fc-hover-white">Popover item</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="bz-box bz-block">
+                <h2>HTML Markup</h2>
+                <textarea class="bz-code html">
+                    <div class="bz-card middle">
+                        <div class="header">
+                            <img src="http://www.gelatogiuliana.com/images/GelatoGiulianaCones.png">
+                        </div>
+                        <div class="title">Some title</div>
+                        <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="separator"></div>
+                        <div class="footer">
+                            <div class="bz-toolbar primary inverted">
+                                <div class="tool">
+                                    <div class="back circle bz-wave"></div>
+                                    <i class="bzi-user"></i>
+                                </div>
+                                <div class="btn">
+                                    <div class="back bz-wave"></div>
+                                    <span class="text"><i class="bzi-envelope"></i> Inbox</span>
+                                </div>
+                                <div class="title">Some text</div>
+                                <div class="tool">
+                                    <div class="back circle bz-wave"></div>
+                                    <i class="bzi-ellipsis-v"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </textarea>
+            </div>
         </div>
     </div>
 </div>
+{{#section 'scripts'}}
+    <script>
+        (function() {
+            var pops = bzDom('.bz-popover');
+            pops.each(function(i, item) {
+                bzDom(item).popover({
+                    //on: 'mouseenter'
+                });
+            });
+        })();
+    </script>
+{{/section}}

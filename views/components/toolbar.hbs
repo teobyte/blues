@@ -21,8 +21,8 @@
                         <i class="bzi-magnifier"></i>
                         <input type="search">
                     </div>
-                    <div class="bz-popover bottom">
-                        <div class="tool">
+                    <div class="bz-popover bottom right">
+                        <div class="tool trigger">
                             <div class="back circle bz-wave"></div>
                             <i class="bzi-user"></i>
                         </div>
@@ -134,5 +134,13 @@
         </div>
     </div>
 </div>
-
-
+{{#section 'scripts'}}
+    <script>
+        (function() {
+            var pops = bzDom('.bz-popover');
+            pops.each(function(i, item) {
+                bzDom(item).popover();
+            });
+        })();
+    </script>
+{{/section}}

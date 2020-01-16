@@ -60,28 +60,65 @@
         </div>
     </div>
     <div class="bz-padding-16 bz-clearfix">
-        <h5>Search Bar</h5>
-        <form>
-            <input type="text" name="search" class="bz-search bz-float-r" placeholder="Search...">
-        </form>
-    </div>
-    <div class="bz-padding-16 bz-clearfix">
-        <h5>Vertical Form</h5>
-        <p>Form with validation on blur and submit</p>
-        <form name="validateform" class="bz-form vertical">
-            <input type="text"  class="bz-input flash bz-bc-faded bz-fc-white" name="firstname" placeholder="Name"
-                   data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
-            <input type="text"  class="bz-input flash bz-bc-positive" name="firstname" placeholder="Name"
-                   data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
-            <input type="text"  class="bz-input flash bz-bc-negative" name="firstname" placeholder="Name"
-                   data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
-            <input type="text"  class="bz-input flash bz-bc-warning" name="firstname" placeholder="Name"
-                   data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
-            <input type="text"  class="bz-input flash bz-bc-light" name="firstname" placeholder="Name"
-                   data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
-            <input type="text"  class="bz-input flash bz-bc-dark" name="firstname" placeholder="Name"
-                   data-icon="icon-user" data-counter="/" maxlength="22" required data-rules="required"/>
-        </form>
+        <h5>Colored Fields</h5>
+        <p></p>
+        <div class="bz-padding-16">
+            <h6>Fields themes</h6>
+            <div class="bz-input default">
+                <i class="bzi-user"></i>
+                <i class="bzi-gear bz-tool"></i>
+                <input type="text" placeholder="Name" required>
+                <label>Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+            <div class="bz-input primary">
+                <i class="bzi-user right"></i>
+                <i class="bzi-gear bz-tool"></i>
+                <input type="text" placeholder="Last Name" required>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+        </div>
+        <div class="bz-padding-16">
+            <div class="bz-input positive">
+                <i class="bzi-user"></i>
+                <i class="bzi-gear bz-tool"></i>
+                <input type="text" class="invalid" placeholder="Name" required>
+                <label>Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+                <div class="error">Negative validation</div>
+            </div>
+            <div class="bz-input negative">
+                <i class="bzi-user right"></i>
+                <i class="bzi-gear bz-tool"></i>
+                <input type="text" class="valid" placeholder="Last Name" required>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+                <div class="error">Positive validation</div>
+            </div>
+        </div>
+        <div class="bz-padding-16">
+            <div class="bz-input warning">
+                <i class="bzi-user"></i>
+                <i class="bzi-gear bz-tool"></i>
+                <input type="text" placeholder="Name" required>
+                <label>Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+            <div class="bz-input info">
+                <i class="bzi-user right"></i>
+                <i class="bzi-gear bz-tool"></i>
+                <input type="text" placeholder="Last Name" required>
+                <label>Last Name</label>
+                <div class="bar"></div>
+                <div class="flash"></div>
+            </div>
+        </div>
     </div>
 </div>
 <script src="./js/bz-core.js"></script>
@@ -89,13 +126,9 @@
 <script src="./js/bz-sidenav.js"></script>
 <script src="./js/bluessite.js"></script>
 <script src="./js/bz-codelighter.js"></script>
-<script src="../public/javascripts/blues-require/bz-require.js"></script>
 <script type="text/javascript">
     (function() {
-        new Bzrequire({
-            form: 'validateform',
-            checkonblur : true
-        }).toSubmit();
+
     })();
 </script>
 </body>
