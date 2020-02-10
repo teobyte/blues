@@ -8,6 +8,7 @@ var exphbs = require('express-handlebars');
 
 var indexRouter = require('./routes/index');
 var compsRouter = require('./routes/components');
+var neuRouter = require('./routes/neu');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/components', compsRouter);
+app.use('/neu', neuRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

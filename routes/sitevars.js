@@ -154,6 +154,11 @@ module.exports.pages = {
         pageTitle: 'Cards',
         pagePath: '../components/cards'
     },
+    slider: {
+        itemClass: 'bz-list-item bz-t-concat',
+        pageTitle: 'Slider',
+        pagePath: '../components/slider'
+    },
     groupdivider: {
         itemClass: 'divider',
         pageTitle: '',
@@ -228,6 +233,11 @@ module.exports.pages = {
         itemClass: 'bz-list-item bz-t-concat',
         pageTitle: 'AJAX Calls',
         pagePath: '../components/ajaxcalls'
+    },
+    neu: {
+        itemClass: 'bz-list-item bz-t-concat',
+        pageTitle: 'Neumorphic Design',
+        pagePath: '../neu/index'
     },
 };
 

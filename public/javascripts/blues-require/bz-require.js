@@ -49,7 +49,7 @@
                 if (!self.fails()) {
                     callback(data);
                     objForm.submitted = false;
-                    return;
+                    //return;
                 }
             }, false);
         },
@@ -96,7 +96,7 @@
                 'error' : false
             };
             self.prepare(nameForm);
-            return;
+            //return;
         },
         // prepare form to validations
         // param  {string} nameForm = name the form
@@ -291,12 +291,12 @@
                     return;
                 }
                 resetScroll();
-                return;
+                //return;
             }
             // remove the iteration range
             function resetScroll(){
                 clearInterval(animate);
-                return;
+                //return;
             }
         },
         // creates a simple alert with the message text
@@ -343,7 +343,7 @@
             //replace field name with custom name
             msgRule = msgRule.replace(/(#fieldname)/g, custom);
             elemText.innerHTML = msgRule;
-            return;
+            //return;
         },
         //just service function name says itself
         convertObjToArray : function(obj){

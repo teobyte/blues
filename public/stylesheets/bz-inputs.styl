@@ -1,3 +1,25 @@
+input,
+select,
+textarea
+  //-webkit-transition background-color 50000s, color 50000s, filter 50000s
+  //-moz-transition background-color 50000s, color 50000s, filter 50000s
+  //-ms-transition background-color 50000s, color 50000s, filter 50000s
+  //transition background-color 50000s, color 50000s, filter 50000s
+
+  &:-webkit-autofill
+    animation-duration 50000s
+    animation-name onautofillstart
+
+  &:not(:-webkit-autofill)
+    animation-duration 50000s
+    animation-name onautofillcancel
+
+@keyframes onautofillstart
+  from
+
+@keyframes onautofillcancel
+  from
+
 .bz-input
   @extend .bz-clearfix
   background color-white

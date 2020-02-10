@@ -57,6 +57,7 @@
         { name: '', url: '', clas: 'divider' },
         { name: 'Grouping', url: '', clas: 'subheader bz-ft-l' },
         { name: 'Accordion', url: 'accordion.html', clas: 'bz-list-item bz-t-concat' },
+        { name: 'Slider', url: 'slider.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Grouping elements', url: 'grouping.html', clas: 'bz-list-item bz-t-concat' },
         { name: 'Cards', url: 'cards.html', clas: 'bz-list-item bz-t-concat' },
         { name: '', url: '', clas: 'divider' },

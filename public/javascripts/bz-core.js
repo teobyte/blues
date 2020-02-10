@@ -84,22 +84,24 @@
         // check if selector is HTML tag
         // returns @true if valid html tag
         ifValidTag: function (tag_name) {
-            var tags = 'a abbr address area article aside audio ' +
-                'b base bdo blockquote body br button ' +
-                'canvas caption cite code col colgroup ' +
-                'datalist dd del details dfn dialog div dl dt ' +
-                'em embed ' +
-                'filedset figcaption figure footer form '+
-                'head header hr html ' +
-                'h1 h2 h3 h4 h5 h6 h7 h8 h9 ' +
-                'i iframe img ins input ' +
-                'kbd keygen label legend li link ' +
-                'map mark menu menuitem meta meter nav' +
-                'object ol opt optgroup option output ' +
-                'p param pre progress q' +
-                's samp script section select small source span strong style sub summary sup ' +
-                'table td th tr tbody thead textarea time title track ' +
-                'u ul var video'.split(' ');
+            var tags = [
+                'a', 'abbr', 'address', 'area', 'article', 'aside', 'audio',
+                'b', 'base', 'bdo', 'blockquote', 'body', 'br', 'button',
+                'canvas', 'caption', 'cite', 'code', 'col', 'colgroup',
+                'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'div', 'dl', 'dt',
+                'em', 'embed',
+                'filedset', 'figcaption', 'figure', 'footer', 'form',
+                'head', 'header', 'hr', 'html',
+                'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'h8', 'h9',
+                'i', 'iframe', 'img', 'ins', 'input',
+                'kbd', 'keygen', 'label', 'legend', 'li', 'link',
+                'map', 'mark', 'menu', 'menuitem', 'meta', 'meter', 'nav',
+                'object', 'ol', 'opt', 'optgroup', 'option', 'output',
+                'p', 'param', 'pre', 'progress', 'q',
+                's', 'samp', 'script', 'section', 'select', 'small', 'source', 'span', 'strong', 'style', 'sub', 'summary', 'sup',
+                'table', 'td', 'th', 'tr', 'tbody', 'thead', 'textarea', 'time', 'title', 'track',
+                'u', 'ul', 'var', 'video'
+            ];
             return tags.indexOf(tag_name.trim().toLowerCase()) > -1;
         },
         // check if dom node

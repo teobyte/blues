@@ -89,5 +89,7 @@ router.get('/popover', function(req, res, next) {
 router.get('/toast', function(req, res, next) {
     res.render('./components/toast', { title: 'Toast', pages: sitevars.pages });
 });
-
+router.get('/slider', function(req, res, next) {
+    res.render('./components/slider', { title: 'Slider', pages: sitevars.pages });
+});
 module.exports = router;

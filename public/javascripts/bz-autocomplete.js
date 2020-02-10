@@ -182,6 +182,8 @@ Autocomplete.prototype = {
         var result = ac.checkdata(searchstr);
         if (ac.indata.length > 0) {
             ac.o.suggest(searchstr, result, ac);
+        } else {
+            ac.o.noresults();
         }
     },
     // add suggestions container into the Autocomplete's DOM
@@ -489,6 +491,9 @@ Autocomplete.defaultOptions = {
         };
         xhr.open('POST', url, true);
         xhr.send(data);
+    },
+    noresults: function() {
+
     },
     /**
      * Add copy of this method to the to a new Autocomplete as parameter

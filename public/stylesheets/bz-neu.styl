@@ -1,0 +1,160 @@
+.bz-neo-theme {
+  color #7D8A97
+}
+
+.bz-neo-fc-gray
+  color #A1B1C5
+
+.bz-neo-fc-gray-dark
+  color #7D8A97
+
+.bz-neo-bc-default
+  background-color #E0E5EC
+
+.bz-neo-bc-default
+  background-color #E0E5EB
+
+.bz-neo
+  box-sizing border-box
+  display inline-block
+  box-shadow 6px 6px 11px rgba(163,177,198, 0.6), -6px -6px 11px  rgba(255,255,255, 0.5)
+
+for t in (4 8 16)
+  .neo-box.neo-radius-{t}
+    border-radius: t px
+
+.bz-neo.neo-circle
+  border-radius:50%
+  text-align: center
+
+/* block sizes */
+for t in (8 16 24 32 48 64)
+  .bz-neo.neo-h-{t}
+    height t px
+    //line-height t px
+
+for t in (16 24 32 48 64)
+  .bz-neo.neo-w-{t}
+    width t px
+
+select.bz-neo,
+button.bz-neo,
+input.bz-neo
+  color #7D8A97
+  font-weight bold
+  height  48px
+  margin-bottom 18px
+  padding 8px
+
+button.bz-neo
+  cursor pointer
+  display inline-block
+  font-family inherit
+  overflow hidden
+  outline none!important
+  position relative
+  text-align center
+  text-decoration none
+  user-select none
+  vertical-align middle
+  -webkit-tap-highlight-color transparent
+  -webkit-user-drag none
+  vertical-align middle
+  border 1px solid transparent
+
+button.bz-neo::-moz-focus-inner
+  padding 0
+  border 0
+
+.opera-only:-o-prefocus,
+button.bz-neo:focus
+  outline 0
+
+select.bz-neo,
+input.bz-neo
+  outline 0
+  vertical-align middle
+  border 1px solid transparent
+  outline none
+  font-size 1em
+  line-height normal
+  z-index 1
+
+button.bz-neo[disabled],
+input.bz-neo:focus,
+select.bz-neo:active,
+button.bz-neo:active
+  border-left 1px solid #C4CEDA
+  border-top 1px solid #C4CEDA
+  border-right 1px solid #E5E9EF
+  border-bottom 1px solid #E5E9EF
+  background-color #D3DAE3
+  box-shadow none
+
+button.bz-neo[disabled]
+  cursor default
+
+select.bz-neo
+  margin 0
+  margin-bottom 16px
+
+::-webkit-input-placeholder
+  color #7D8A97
+
+:-ms-input-placeholder
+  color #7D8A97
+
+::placeholder
+  color #7D8A97
+
+input.bz-neo.valid,
+select.bz-neo.valid
+  border-bottom 1px solid #99cbaf
+
+input.bz-neo.invalid,
+select.bz-neo.invalid
+  border-bottom 1px solid #b4959d
+
+.bz-neo-input
+  position relative
+
+.bz-neo-input .bz-neo + .error
+  bottom 0
+  color #b45961
+  display none
+  font-size 0.8em
+  left 8px
+  position absolute
+
+.bz-neo-input .bz-neo.invalid + .error
+  display block
+
+select.bz-neo.extend
+  width 100%
+
+.bz-neo-input i
+  font-size 1.8em
+  top 15%
+  position absolute
+
+.bz-neo-input i:not(.bz-neo-show-pass)
+  left 6px
+
+
+.bz-neo-input i:not(.bz-neo-show-pass) ~ input.bz-neo
+  padding-left 46px
+
+.bz-neo-input i.bz-neo-show-pass
+  right 6px
+
+.bz-neo.progress
+  position relative
+  min-width 320px
+  width 100%
+
+
+.bz-neo.progress > .bz-neo
+  left 0
+  position absolute
+  top 0
+

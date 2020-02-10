@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/public/stylesheets/bz-neu.styl" line="75" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1f49e47b-0aa6-46ac-bd17-918a746803fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/js/bz-slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/slider.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/javascripts/bz-slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/stylesheets/bz-neu.styl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/stylesheets/bz-slider.styl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/components/slider.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/neu/index.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/autocomplete.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/autocomplete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/bz-inject.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/bz-inject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/css/bz-core.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/css/bz-core.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bluessite.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/bluessite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/blues-require/bz-require.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/blues-require/bz-require.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/blues-require/locale/bz-card-validation-0.0.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/blues-require/locale/bz-require-0.0.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/blues-require/locale/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/blues-require/locale/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/bluessite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/bz-autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bz-autocomplete.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/bz-core.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bz-core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/bz-inject.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bz-inject.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-core.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-core.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-core.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-core.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-inputs.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-inputs.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/sitevars.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/sitevars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/layout.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/nav.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/nav.hbs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,37 +43,44 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/components/inputs.hbs">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/bz-slider.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-515">
-              <caret line="170" column="60" selection-start-line="170" selection-start-column="60" selection-end-line="170" selection-end-column="60" />
+            <state relative-caret-position="370">
+              <caret line="213" column="41" lean-forward="true" selection-start-line="213" selection-start-column="41" selection-end-line="213" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/bz-inject.js">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-slider.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+            <state relative-caret-position="225">
+              <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/js/bz-inject.js">
+        <entry file="file://$PROJECT_DIR$/views/components/slider.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="38" column="57" lean-forward="true" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/forms.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="90" column="10" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
+            <state relative-caret-position="315">
+              <caret line="45" column="81" lean-forward="true" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
+              <folding>
+                <element signature="e#535#571#0#HTML" expanded="true" />
+                <element signature="e#682#707#0#HTML" expanded="true" />
+                <element signature="e#803#828#0#HTML" expanded="true" />
+                <element signature="e#870#895#0#HTML" expanded="true" />
+                <element signature="e#937#962#0#HTML" expanded="true" />
+                <element signature="e#1004#1029#0#HTML" expanded="true" />
+                <element signature="e#889#914#0#HTML" expanded="true" />
+                <element signature="e#1696#1732#0#HTML" expanded="true" />
+                <element signature="e#1888#1913#0#HTML" expanded="true" />
+                <element signature="e#2009#2034#0#HTML" expanded="true" />
+                <element signature="e#2076#2101#0#HTML" expanded="true" />
+                <element signature="e#2143#2168#0#HTML" expanded="true" />
+                <element signature="e#2210#2235#0#HTML" expanded="true" />
+                <element signature="e#2277#2302#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,6 +90,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
@@ -85,6 +114,9 @@
       <find>.tabs</find>
       <find>prototype.ondata</find>
       <find>formdata</find>
+      <find>bz-card</find>
+      <find>progress</find>
+      <find>autofill</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -93,40 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/bluessite.js" />
-        <option value="$PROJECT_DIR$/routes/sitevars.js" />
-        <option value="$PROJECT_DIR$/routes/components.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/bz-core.styl" />
-        <option value="$PROJECT_DIR$/public/stylesheets/bz-blocks.styl" />
-        <option value="$PROJECT_DIR$/public/javascripts/bz-droplist.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/bz-stepper.styl" />
-        <option value="$PROJECT_DIR$/views/components/stepper.hbs" />
-        <option value="$PROJECT_DIR$/public/javascripts/bz-stepper.js" />
-        <option value="$PROJECT_DIR$/docs/js/bluessite.js" />
-        <option value="$PROJECT_DIR$/docs/accordion.html" />
-        <option value="$PROJECT_DIR$/docs/ajaxcalls.html" />
-        <option value="$PROJECT_DIR$/docs/breadcrumbs.html" />
-        <option value="$PROJECT_DIR$/docs/buttons.html" />
-        <option value="$PROJECT_DIR$/docs/card-validation.html" />
-        <option value="$PROJECT_DIR$/docs/cards.html" />
-        <option value="$PROJECT_DIR$/docs/cascading-list.html" />
-        <option value="$PROJECT_DIR$/docs/colored-forms.html" />
-        <option value="$PROJECT_DIR$/docs/colors.html" />
-        <option value="$PROJECT_DIR$/docs/conditional.html" />
-        <option value="$PROJECT_DIR$/docs/contextmenu.html" />
-        <option value="$PROJECT_DIR$/docs/dialog.html" />
-        <option value="$PROJECT_DIR$/docs/dropdown.html" />
-        <option value="$PROJECT_DIR$/docs/flexgrid.html" />
-        <option value="$PROJECT_DIR$/docs/forms.html" />
-        <option value="$PROJECT_DIR$/docs/group-buttons.html" />
-        <option value="$PROJECT_DIR$/docs/grouping.html" />
-        <option value="$PROJECT_DIR$/docs/icon-fonts.html" />
-        <option value="$PROJECT_DIR$/docs/stepper.html" />
-        <option value="$PROJECT_DIR$/docs/tabs.html" />
-        <option value="$PROJECT_DIR$/docs/toast.html" />
-        <option value="$PROJECT_DIR$/docs/toolbar.html" />
-        <option value="$PROJECT_DIR$/docs/sidenav.html" />
-        <option value="$PROJECT_DIR$/docs/pagination.html" />
         <option value="$PROJECT_DIR$/docs/typography.html" />
         <option value="$PROJECT_DIR$/docs/selectors.html" />
         <option value="$PROJECT_DIR$/docs/rating.html" />
@@ -139,11 +137,45 @@
         <option value="$PROJECT_DIR$/docs/modal.html" />
         <option value="$PROJECT_DIR$/docs/index.html" />
         <option value="$PROJECT_DIR$/docs/autocomplete.html" />
-        <option value="$PROJECT_DIR$/public/javascripts/bz-core.js" />
         <option value="$PROJECT_DIR$/views/index.hbs" />
-        <option value="$PROJECT_DIR$/views/layouts/layout.hbs" />
         <option value="$PROJECT_DIR$/docs/js/bz-inject.js" />
         <option value="$PROJECT_DIR$/public/javascripts/bz-inject.js" />
+        <option value="$PROJECT_DIR$/docs/forms.html" />
+        <option value="$PROJECT_DIR$/docs/colored-forms.html" />
+        <option value="$PROJECT_DIR$/docs/cards.html" />
+        <option value="$PROJECT_DIR$/public/stylesheets/bz-grouping.styl" />
+        <option value="$PROJECT_DIR$/views/partials/footer.hbs" />
+        <option value="$PROJECT_DIR$/views/components/toolbar.hbs" />
+        <option value="$PROJECT_DIR$/views/components/cards.hbs" />
+        <option value="$PROJECT_DIR$/public/javascripts/bz-codelighter.js" />
+        <option value="$PROJECT_DIR$/views/components/progress.hbs" />
+        <option value="$PROJECT_DIR$/views/components/spinner.hbs" />
+        <option value="$PROJECT_DIR$/public/stylesheets/bz-spinners.styl" />
+        <option value="$PROJECT_DIR$/public/stylesheets/bz-mixins.styl" />
+        <option value="$PROJECT_DIR$/public/javascripts/bz-autofill.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/blues-require/locale/en.json" />
+        <option value="$PROJECT_DIR$/public/javascripts/blues-require/bz-require.js" />
+        <option value="$PROJECT_DIR$/views/nomorphism/index.hbs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/bz-neo.css" />
+        <option value="$PROJECT_DIR$/public/stylesheets/bz-neu.css" />
+        <option value="$PROJECT_DIR$/public/stylesheets/bz-inputs.styl" />
+        <option value="$PROJECT_DIR$/routes/neu.js" />
+        <option value="$PROJECT_DIR$/views/partials/nav.hbs" />
+        <option value="$PROJECT_DIR$/views/layouts/layout.hbs" />
+        <option value="$PROJECT_DIR$/public/stylesheets/bz-neu.styl" />
+        <option value="$PROJECT_DIR$/views/neu/index.hbs" />
+        <option value="$PROJECT_DIR$/public/javascripts/bz-autocomplete.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/bz-core.js" />
+        <option value="$PROJECT_DIR$/views/components/autocomplete.hbs" />
+        <option value="$PROJECT_DIR$/routes/components.js" />
+        <option value="$PROJECT_DIR$/routes/sitevars.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/bz-core.styl" />
+        <option value="$PROJECT_DIR$/docs/js/bluessite.js" />
+        <option value="$PROJECT_DIR$/docs/slider.html" />
+        <option value="$PROJECT_DIR$/public/javascripts/bz-slider.js" />
+        <option value="$PROJECT_DIR$/views/components/slider.hbs" />
+        <option value="$PROJECT_DIR$/public/stylesheets/bz-slider.styl" />
       </list>
     </option>
   </component>
@@ -181,19 +213,18 @@
             <path>
               <item name="blues" type="b2602c69:ProjectViewProjectNode" />
               <item name="blues" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blues" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blues" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blues" type="b2602c69:ProjectViewProjectNode" />
               <item name="blues" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blues" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blues" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -206,16 +237,17 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/javascripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/css" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/javascripts" />
-      <recent name="$PROJECT_DIR$/docs/js" />
       <recent name="$PROJECT_DIR$/docs/css" />
+      <recent name="$PROJECT_DIR$/docs/js" />
+      <recent name="$PROJECT_DIR$/public/javascripts" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/docs" />
     </key>
@@ -272,7 +304,16 @@
       <workItem from="1579003949967" duration="608000" />
       <workItem from="1579017807390" duration="1026000" />
       <workItem from="1579072839856" duration="665000" />
-      <workItem from="1579156325382" duration="3256000" />
+      <workItem from="1579156325382" duration="19821000" />
+      <workItem from="1579244748535" duration="17613000" />
+      <workItem from="1579341626512" duration="9225000" />
+      <workItem from="1579365468224" duration="10000" />
+      <workItem from="1579425640840" duration="231000" />
+      <workItem from="1579427770001" duration="1297000" />
+      <workItem from="1579887816479" duration="1630000" />
+      <workItem from="1580500213823" duration="28000" />
+      <workItem from="1581319803589" duration="4557000" />
+      <workItem from="1581352334165" duration="8697000" />
     </task>
     <task id="LOCAL-00001" summary="name update">
       <created>1573629883662</created>
@@ -400,17 +441,31 @@
       <option name="project" value="LOCAL" />
       <updated>1578912542431</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="inject bug fixes">
+      <created>1579162877320</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1579162877321</updated>
+    </task>
+    <task id="LOCAL-00020" summary="spinner updates">
+      <created>1579192267772</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1579192267772</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89261000" />
+    <option name="totallyTimeSpent" value="149114000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21664888" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24012807" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -428,7 +483,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3293348" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3293348" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.2497332" />
@@ -454,358 +509,374 @@
     <MESSAGE value="IE polyfill" />
     <MESSAGE value="some updates and rearrangements &#10; + Stepper plugin" />
     <MESSAGE value="inject update" />
-    <option name="LAST_COMMIT_MESSAGE" value="inject update" />
+    <MESSAGE value="inject bug fixes" />
+    <MESSAGE value="spinner updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="spinner updates" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docs/js/bluessite.js">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/bz-select.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/bz-droplist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        <state relative-caret-position="-2930" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/components/progress.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-stepper.styl">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-buttons-themes.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-radio.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-230" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-modal.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="55" column="33" lean-forward="true" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-spinners.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-transitions.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-mixins.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-core.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="2860" column="23" selection-start-line="2860" selection-start-column="23" selection-end-line="2860" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/blues-require/locale/en.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/blues-require/bz-require.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-720">
+          <caret line="345" column="14" selection-start-line="345" selection-start-column="14" selection-end-line="345" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/components/stepper.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1124">
-          <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
+        <state relative-caret-position="775">
+          <caret line="95" column="12" selection-end-line="95" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/card-validation.html">
+    <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+        <state relative-caret-position="-775" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-blocks.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-buttons.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/stepper.html">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-reset.styl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-inputs-themes.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
+        <state relative-caret-position="-185" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/neu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/components/toolbar.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="745">
+          <caret line="143" column="13" lean-forward="true" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/nav.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-inputs.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2225">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-inputs-effects.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-575" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-inputs-errors.styl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-colors.styl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-vars.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-neu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/neu/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="72" column="98" selection-start-line="72" selection-start-column="98" selection-end-line="72" selection-end-column="98" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#3041#3060#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/accordion.html">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-neu.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2205">
-          <caret line="147" column="39" lean-forward="true" selection-start-line="147" selection-start-column="39" selection-end-line="147" selection-end-column="39" />
+        <state relative-caret-position="835">
+          <caret line="158" column="7" selection-start-line="158" selection-start-column="7" selection-end-line="158" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/ajaxcalls.html">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/bz-autocomplete.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
-          <caret line="200" column="25" lean-forward="true" selection-start-line="200" selection-start-column="25" selection-end-line="200" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/breadcrumbs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1965">
-          <caret line="131" column="25" lean-forward="true" selection-start-line="131" selection-start-column="25" selection-end-line="131" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/buttons.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5400">
-          <caret line="360" column="25" selection-start-line="360" selection-start-column="25" selection-end-line="360" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/typography.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/rating.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/tooltip.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/toolbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/toast.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/tabs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/spinner.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/sidenav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/selectors.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/progress.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/popover.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/pagination.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/page-loader.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/page-alert.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/icon-fonts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31920">
-          <caret line="2128" column="25" selection-start-line="2128" selection-start-column="25" selection-end-line="2128" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/grouping.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="128" column="25" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/group-buttons.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="107" column="25" lean-forward="true" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/flexgrid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7470">
-          <caret line="498" column="25" lean-forward="true" selection-start-line="498" selection-start-column="25" selection-end-line="498" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/dropdown.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="140" column="25" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/dialog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="119" column="25" selection-start-line="119" selection-start-column="25" selection-end-line="119" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/contextmenu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2355">
-          <caret line="157" column="25" lean-forward="true" selection-start-line="157" selection-start-column="25" selection-end-line="157" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/conditional.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="150" column="25" lean-forward="true" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/colors.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/colored-forms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/cascading-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4155">
-          <caret line="277" column="25" lean-forward="true" selection-start-line="277" selection-start-column="25" selection-end-line="277" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../aiweeAdmin/grails-app/assets/javascripts/blues/bz-core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../aiweeAdmin/grails-app/assets/javascripts/blues/bz-inject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-810" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/components/autocomplete.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/autocomplete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="247" column="16" selection-start-line="247" selection-start-column="16" selection-end-line="247" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/components.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2315">
-          <caret line="9" column="96" selection-start-line="9" selection-start-column="96" selection-end-line="9" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/cards.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="87" column="25" lean-forward="true" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/components/popover.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="240" selection-start-line="240" selection-end-line="240" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/layout.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="80" column="57" selection-start-line="80" selection-start-column="57" selection-end-line="80" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="53" column="8" selection-start-line="53" selection-start-column="11" selection-end-line="57" selection-end-column="12" />
+        <state relative-caret-position="1860">
+          <caret line="496" column="6" selection-start-line="496" selection-start-column="6" selection-end-line="496" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/bz-core.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="237" column="73" selection-start-line="237" selection-start-column="73" selection-end-line="237" selection-end-column="73" />
+        <state relative-caret-position="600">
+          <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
+          <folding>
+            <element signature="e#53563#53871#0" />
+            <element signature="e#53957#54329#0" />
+            <element signature="e#54399#54757#0" />
+            <element signature="e#82194#85923#0" />
+            <element signature="e#85984#86190#0" />
+            <element signature="e#86253#86460#0" />
+            <element signature="e#86555#86612#0" />
+            <element signature="e#86711#86784#0" />
+            <element signature="e#86851#87331#0" />
+            <element signature="e#87397#87771#0" />
+            <element signature="e#87834#88170#0" />
+            <element signature="e#88319#91118#0" />
+            <element signature="e#91228#91374#0" />
+            <element signature="e#91437#95139#0" />
+            <element signature="e#95206#101969#0" />
+            <element signature="e#102043#106502#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/components/inputs.hbs">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/bz-autofill.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-515">
-          <caret line="170" column="60" selection-start-line="170" selection-start-column="60" selection-end-line="170" selection-end-column="60" />
+        <state relative-caret-position="375">
+          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/forms.html">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-inputs-label.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="90" column="10" selection-start-line="90" selection-start-column="10" selection-end-line="90" selection-end-column="10" />
+        <state relative-caret-position="327">
+          <caret line="61" column="29" selection-start-line="61" selection-end-line="61" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/js/bz-inject.js">
+    <entry file="file://$PROJECT_DIR$/views/components/spinner.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="38" column="57" lean-forward="true" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+        <state relative-caret-position="445">
+          <caret line="97" column="10" lean-forward="true" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/bz-inject.js">
+    <entry file="file://$PROJECT_DIR$/views/components/tabs.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/components/autocomplete.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="835">
+          <caret line="88" column="61" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/components.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="745">
+          <caret line="92" column="54" selection-start-line="92" selection-start-column="54" selection-end-line="92" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/sitevars.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="160" column="6" selection-start-line="160" selection-start-column="6" selection-end-line="160" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-core.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="75" column="14" lean-forward="true" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/tabs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/js/bluessite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/css/bz-core.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/js/bz-slider.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/slider.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/layout.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/bz-slider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="213" column="41" lean-forward="true" selection-start-line="213" selection-start-column="41" selection-end-line="213" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/components/slider.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="45" column="81" lean-forward="true" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
+          <folding>
+            <element signature="e#535#571#0#HTML" expanded="true" />
+            <element signature="e#682#707#0#HTML" expanded="true" />
+            <element signature="e#803#828#0#HTML" expanded="true" />
+            <element signature="e#870#895#0#HTML" expanded="true" />
+            <element signature="e#937#962#0#HTML" expanded="true" />
+            <element signature="e#1004#1029#0#HTML" expanded="true" />
+            <element signature="e#889#914#0#HTML" expanded="true" />
+            <element signature="e#1696#1732#0#HTML" expanded="true" />
+            <element signature="e#1888#1913#0#HTML" expanded="true" />
+            <element signature="e#2009#2034#0#HTML" expanded="true" />
+            <element signature="e#2076#2101#0#HTML" expanded="true" />
+            <element signature="e#2143#2168#0#HTML" expanded="true" />
+            <element signature="e#2210#2235#0#HTML" expanded="true" />
+            <element signature="e#2277#2302#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-slider.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
         </state>
       </provider>
     </entry>

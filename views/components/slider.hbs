@@ -1,0 +1,124 @@
+
+{{#section 'styles'}}
+    <style>
+        #slider2.bz-slider ul li {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+{{/section}}
+<div class="bz-page-box bz-animate-left">
+    <div class="bz-toolbar-box">
+
+    </div>
+    <div class="bz-title-box">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="bz-content-box">
+        <div class="bz-box bz-block">
+
+            <div class="bz-padding-8">
+                <div class="bz-margin-auto" style="height: 250px; width: 350px;">
+                    <div id="slider" class="bz-slider" data-nav="slider_nav">
+                        <ul>
+                            <li class="bz-padding-16" style="background: #ccc;">
+                                SLIDE 1
+                            </li>
+                            <li style="background: #aaa;">SLIDE 2</li>
+                            <li style="background: #ccc;">SLIDE 3</li>
+                            <li style="background: #aaa;">SLIDE 4</li>
+                            <li style="background: #ccc;">SLIDE 5</li>
+                            <li style="background: #aaa;">SLIDE 6</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slider_option">
+                    <p>Input slide No from 0 to 5</p>
+                    <input id="slide_num" type="text" />
+                    <input id="slide_btn" type="button" class="move-btn" value="Move">
+                    <br/><br/>
+                    <div id="pause-btn" class="bz-slider-pause-btn"></div>
+                </div>
+            </div>
+
+            <div class="bz-padding-8">
+
+                <div class="bz-margin-auto" style="height: 150px; width: 500px;">
+                    <div id="slider2" class="bz-slider" data-nav="slider_nav">
+                        <ul>
+                            <li class="bz-padding-16" style="background: #ccc;">
+                                SLIDE 1
+                            </li>
+                            <li style="background: #aaa;">SLIDE 2</li>
+                            <li style="background: #ccc;">SLIDE 3</li>
+                            <li style="background: #aaa;">SLIDE 4</li>
+                            <li style="background: #ccc;">SLIDE 5</li>
+                            <li style="background: #aaa;">SLIDE 6</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slider_option">
+                    <p>Input slide No from 0 to 5</p>
+                    <input id="slide_num2" type="text" />
+                    <input id="slide_btn2" type="button" class="move-btn" value="Move">
+                    <br/><br/>
+                    <div id="pause-btn2" class="bz-slider-pause-btn"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{{#section 'scripts'}}
+    <script src="../javascripts/bz-slider.js"></script>
+    <script>
+        (function () {
+            let slider = new bzSlider('slider', {
+                rotSpeed: 3000,
+                moveSpeed: 200,
+                // moveStop: function(slideNo) {
+                //     alert(slideNo);
+                // },
+                autoRotation: true,
+                moveOnClick: false,
+                slideCallback: function(slideNo) {
+                    alert(slideNo);
+                },
+                pauseBtn: 'pause-btn',
+                controls: false,
+                fillParent: true
+            });
+            slider.init();
+            let slideNum = document.getElementById('slide_num'),
+                    moveBtn = document.getElementById('slide_btn');
+            moveBtn.addEventListener('click', function () {
+                slider.moveToSlide(slideNum.value);
+            });
+            let slider2 = new bzSlider('slider2', {
+                rotSpeed: 4000,
+                moveSpeed: 500,
+                moveStop: function(slideNo) {
+                    document.getElementById('slide_num2').value = slideNo + 1;
+                },
+                //autoRotation: true,
+                moveOnClick: false,
+                slideCallback: function(slideNo) {
+                    alert(slideNo);
+                },
+                pauseBtn: 'pause-btn2',
+                thumbs: false,
+                customCtrls: true,
+                prevKey: '<i class="bzi-chevron-left bz-t-3x bz-fc-mandy"></i>',
+                nextKey: '<i class="bzi-chevron-right bz-t-3x bz-fc-mandy"></i>',
+                slidesToShow: 3,
+                fillParent: true
+            });
+            slider2.init();
+            let slideNum2 = document.getElementById('slide_num2'),
+                    moveBtn2 = document.getElementById('slide_btn2');
+            moveBtn2.addEventListener('click', function () {
+                slider2.moveToSlide(slideNum2.value);
+            });
+        })();
+    </script>
+{{/section}}
