@@ -11,7 +11,7 @@
         options = options || {};
         this.o = {};
         this.o = bz.help.mergeOptions(Dl.defaultOptions, options);
-        this.droplist = bzDom(this.o.selector);
+        this.droplist = bzDom(this.o.selector).parent('.bz-droplist');
         this.inpt = this.droplist.find('[type="hidden"]');
         this.data = [];
         this.datanames = [];
@@ -84,10 +84,11 @@
                 Dl.initsearch($itms);
         },
         triggName: function(inpt, trigger) {
-            var prop_name = '' + inpt.onattr('name'),
+            var prop_name = inpt.onattr('name') ? inpt.onattr('name') + ': ' : '',
+                trig_name = inpt.ondata('title') ? inpt.ondata('title') + ': ' : '',
                 prop = inpt.val();
             var displayVal = inpt.ondata('val') ? inpt.ondata('val') : prop;
-            var prop_title = inpt.ondata('title') ? inpt.ondata('title')+': ' : prop_name + ': ';
+            var prop_title = inpt.ondata('title') ? trig_name : prop_name;
             var t = trigger.find('.text');
             t.inhtml(prop_title + displayVal);
         },
@@ -130,28 +131,15 @@
         },
         closeDdl: function (ddl) {
             ddl.ondata('key', '0');
-            ddl.toggleclass('bz-on');
+            ddl.offclass('bz-on');
             //$flag.toggleclass('bz-rotate180');
         },
         openDdl: function(ddl) {
             var Dl = this;
             setTimeout(function() {
                 ddl.ondata('key', '1');
-                ddl.toggleclass('bz-on');
-            }, 300);
-            ddl.on('mouseenter', function(e) {
-                var $self = bzDom(this);
-                $self.on('mouseleave', function() {
-                    $self.ondata('hold', '0');
-                    if ($self.ondata('key') == '1') {
-                        setTimeout(function() {
-                            if ($self.ondata('key') == '1')
-                                Dl.closeDdl($self);
-                        }, 1500)
-                    }
-                });
-            });
-            //$flag.toggleclass('bz-rotate180');
+                ddl.onclass('bz-on');
+            }, 200);
         },
         checkBox: function (chk) {
             var $dlItem = chk.parent('.bz-ddl-item'),

@@ -80,7 +80,7 @@
             <div class="bz-padding-16 bz-clearfix">
                 <h5>Select</h5>
                 <p>Select (injected)</p>
-                <select id="injSelect" class="bz-droplist" data-name="Multiple select" multiple="true" data-search="true">
+                <select id="injSelect" class="bz-droplist" data-name="Multiple select" multiple="true" data-noselect="Select..." data-search="true">
                     <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>
                     <option value="opel">Opel</option>
@@ -95,7 +95,7 @@
                 <p>Dropdown list with multiple selection</p>
                 <form>
                     <div  class="bz-droplist" multiple="true" data-search="true">
-                        <input type="hidden" id="droplist01">
+                        <input type="hidden" id="droplist01" data-noselect="Select...">
                         <div class="bz-trigg">
                             <span class="text">Multiple select</span>
                             <i class="bz-flag"></i>
@@ -129,7 +129,7 @@
                     </div>
                     <p>Dropdown list with single selection and search bar</p>
                     <div class="bz-droplist" data-search="true">
-                        <input type="hidden" id="droplist02">
+                        <input type="hidden" id="droplist02" data-noselect="Select doc" data-title="Doc">
                         <div class="bz-trigg">
                             <span class="text">Select...</span>
                             <i class="bz-flag"></i>
@@ -183,15 +183,7 @@
                 selector: '#droplist01'
             });
             Droplist.init({
-                selector: '#droplist02',
-                calloncheck: function(selected, trigger) {
-                    var t = trigger.find('.text');
-                    t.inhtml('checked: ' + JSON.stringify(selected));
-                },
-                calluncheck: function(selected, trigger) {
-                    var t = trigger.find('.text');
-                    t.inhtml('checked: ' + JSON.stringify(selected));
-                }
+                selector: '#droplist02'
             });
             bzDom('#chk2').toggle(function() {
                 alert('check on');
