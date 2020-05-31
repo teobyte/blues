@@ -41,9 +41,9 @@
                 </div>
             </div>
 
-            <div class="bz-padding-8">
+            <div class="bz-padding-8 bz-relative">
 
-                <div class="bz-margin-auto" style="height: 150px; width: 500px;">
+                <div class="bz-margin-auto bz-relative" style="height: 300px; width: 90%; max-width: 900px;">
                     <div id="slider2" class="bz-slider" data-nav="slider_nav">
                         <ul>
                             <li class="bz-padding-16" style="background: #ccc;">
@@ -88,7 +88,7 @@
                 controls: false,
                 fillParent: true
             });
-            slider.init();
+
             let slideNum = document.getElementById('slide_num'),
                     moveBtn = document.getElementById('slide_btn');
             moveBtn.addEventListener('click', function () {
@@ -107,13 +107,20 @@
                 },
                 pauseBtn: 'pause-btn2',
                 thumbs: false,
-                customCtrls: true,
+                //customCtrls: true,
                 prevKey: '<i class="bzi-chevron-left bz-t-3x bz-fc-mandy"></i>',
                 nextKey: '<i class="bzi-chevron-right bz-t-3x bz-fc-mandy"></i>',
                 slidesToShow: 3,
                 fillParent: true
             });
-            slider2.init();
+
+            bzDom(document).ready(function() {
+                setTimeout(function () {
+                    slider.init();
+                    slider2.init();
+                }, 200)
+            });
+
             let slideNum2 = document.getElementById('slide_num2'),
                     moveBtn2 = document.getElementById('slide_btn2');
             moveBtn2.addEventListener('click', function () {

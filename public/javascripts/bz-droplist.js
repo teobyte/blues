@@ -1,36 +1,18 @@
 ;(function(root, factory) {
-    'use strict';
-    // AMD. Register as an anonymous module. Wrap in function so we have access
-    // to root via `this`.
-    if (typeof define === 'function' && define.amd) {
-        define([], function() {
-            return factory.apply(window);
-        });
+    if (typeof exports === 'object') {
+        module.exports = factory(window, document)
+    } else {
+        root.Droplist = factory(window, document)
     }
-    // Node. Does not work with strict CommonJS, but only CommonJS-like
-    // environments that support module.exports, like Node.
-    else if (typeof exports === 'object') {
-        module.exports = factory.call(window);
-    }
-    // Browser globals.
-    else {
-        window.Droplist = factory.call(window);
-    }
-})(typeof global === 'object' ? global : this, function() {
+})(this, function(w, d) {
     'use strict';
     // droplist prototype
     var Dl = function (options) {
         options = options || {};
         this.o = {};
-        for (var k in Dl.defaultOptions) {
-            if (Dl.defaultOptions.hasOwnProperty(k)) {
-                if (options.hasOwnProperty(k))
-                    this.o[k] = options[k];
-                else
-                    this.o[k] = Dl.defaultOptions[k];
-            }
-        }
+        this.o = bz.help.mergeOptions(Dl.defaultOptions, options);
         this.droplist = bzDom(this.o.selector);
+        this.inpt = this.droplist.find('[type="hidden"]');
         this.data = [];
         this.datanames = [];
         this.addactions();
@@ -39,26 +21,22 @@
         // main methods
         addactions: function() {
             var Dl = this;
-            var $ddlWrap = Dl.droplist.parent('.bz-droplist'),
-                $trig = $ddlWrap.find('.bz-trigg'),
+            var $ddlWrap = Dl.droplist;
+            var $trig = $ddlWrap.find('.bz-trigg'),
                 $inpt = $trig.prev('input'),
                 $chks = $ddlWrap.find('[type="checkbox"]'),
                 $itms = $ddlWrap.find('.bz-ddl-item');
-
-            var selectedVal = $inpt.val(),
-                selectedName = $inpt.ondata('name');
-
-            $trig.find('.text').inhtml(selectedName);
-
+            var dVal = $inpt.ondata('val') || '';
+            var displayVal = $inpt.val() ? $inpt.val() : dVal;
+            var prop_title = $inpt.ondata('title') ? $inpt.ondata('title')+': ' : $inpt.onattr('name');
+            if ($inpt.ondata('noselect'))
+                $trig.find('.text').inhtml($inpt.ondata('noselect') + displayVal);
+            else $trig.find('.text').inhtml(prop_title + displayVal);
             $trig.on('click', function() {
                 var $th = bzDom(this),
                     _$ddl = $th.parent().find('.bz-ddl');
-                if (_$ddl.ondata('key') == '1')
-                    Dl.closeDdl(_$ddl);
-                else {
-                    Dl.openDdl(_$ddl);
-                }
-
+                if (_$ddl.ondata('key') == '1') Dl.closeDdl(_$ddl);
+                else Dl.openDdl(_$ddl);
             });
             $chks.each(function(i, item) {
                 var chk = bzDom(item);
@@ -79,12 +57,18 @@
                         if (!$ddlWrap.onattr('multiple') == true)
                             Dl.uncheckAll($chks);
                         Dl.checkBox($chk);
-                        $inpt.ondata('name', Dl.datanames);
+                        $inpt.ondata('val', Dl.datanames);
+                        Dl.triggName($inpt, $trig);
+                        if ($inpt.ondata('action'))
+                            Dl.makeRequest($self, Dl.data, $trig, $inpt, true);
                         if (Dl.o.calloncheck && Blues.check.ifFunction(Dl.o.calloncheck))
                             Dl.o.calloncheck($self, Dl.data, $trig, $inpt);
                     } else {
                         Dl.uncheckBox($chk);
-                        $inpt.ondata('name', Dl.datanames);
+                        $inpt.ondata('val', Dl.datanames);
+                        Dl.triggName($inpt, $trig);
+                        if ($inpt.ondata('action'))
+                            Dl.makeRequest($self, Dl.data, $trig, $inpt, false);
                         if (Dl.o.calluncheck && Blues.check.ifFunction(Dl.o.calluncheck))
                             Dl.o.calluncheck($self, Dl.data, $trig, $inpt);
                     }
@@ -98,19 +82,51 @@
             // switch on searching option
             if ($ddlWrap.ondata('search') == 'true')
                 Dl.initsearch($itms);
-            bzDom(document).on('click', function(event) {
-                var opnds = document.getElementsByClassName('bz-on');
-                for (var i = 0; i < opnds.length; i++) {
-                    var isClickInside = opnds[i].contains(event.target);
-                    if (!isClickInside) {
-                        var elm = bzDom(opnds[i]);
-                        if (elm.ondata('key') == '1') {
-                            elm.ondata('key', '0');
-                            elm.toggleclass('bz-on');
-                        }
+        },
+        triggName: function(inpt, trigger) {
+            var prop_name = '' + inpt.onattr('name'),
+                prop = inpt.val();
+            var displayVal = inpt.ondata('val') ? inpt.ondata('val') : prop;
+            var prop_title = inpt.ondata('title') ? inpt.ondata('title')+': ' : prop_name + ': ';
+            var t = trigger.find('.text');
+            t.inhtml(prop_title + displayVal);
+        },
+        makeRequest: function(selector, data, trigger, inpt, chk) {
+            var prop_name = '' + inpt.onattr('name');
+            var act = inpt.ondata('action'),
+                obj_id;
+            var makeReq = false;
+            if (inpt.ondata('id')) {
+                obj_id = inpt.ondata('id');
+                makeReq = true;
+            } else if (document.getElementById('objectId')) {
+                obj_id = document.getElementById('objectId').value;
+                makeReq = true;
+            } else return;
+            if (makeReq) {
+                var dataObj = {};
+                dataObj['id'] = obj_id;
+                var _$ddlWrap = inpt.parent('.bz-droplist');
+                if (_$ddlWrap.onattr('multiple') === true)
+                    dataObj[prop_name] = data;
+                else dataObj[prop_name] = data[0];
+                dataObj['checked'] = chk;
+                // if (inpt.onattr('data-val'))
+                //     dataObj['propval'] = inpt.onattr('data-val');
+                bz.ajax({
+                    url: act,
+                    type: 'post',
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    data: dataObj,
+                    success: function(data) {
+                        bz.Toast('Has been saved!', { tclass: 'positive' });
+                    },
+                    error: function(e) {
+                        bz.Toast('Error: ' + e, { tclass: 'negative' });
                     }
-                }
-            });
+                });
+            }
         },
         closeDdl: function (ddl) {
             ddl.ondata('key', '0');
@@ -123,7 +139,6 @@
                 ddl.ondata('key', '1');
                 ddl.toggleclass('bz-on');
             }, 300);
-
             ddl.on('mouseenter', function(e) {
                 var $self = bzDom(this);
                 $self.on('mouseleave', function() {
@@ -148,25 +163,25 @@
             var Dl = this;
             Dl.data.push(chk.onattr('name'));
             Dl.datanames.push(_t);
-            Dl.droplist.val(Dl.data);
-            Dl.droplist.ondata('name', Dl.datanames);
+            Dl.inpt.val(Dl.data);
+            Dl.inpt.ondata('val', Dl.datanames);
         },
         uncheckBox: function (chk) {
             var $dlItem = chk.parent('.bz-ddl-item'),
-                _t = $dlItem.find('.text').inhtml();;
+                _t = $dlItem.find('.text').inhtml();
             chk.el.removeAttribute('checked');
             chk.el.checked = false;
             if ($dlItem.ifclass('selected'))
                 $dlItem.offclass('selected');
             var Dl = this;
-            if (Dl.data.indexOf(chk.onattr('name')) > -1 ) {
+            if (Dl.data.indexOf(chk.onattr('val')) > -1 ) {
                 Dl.data.splice(Dl.data.indexOf(chk.onattr('name')) , 1);
             }
             if (Dl.datanames.indexOf(_t) > -1) {
                 Dl.datanames.splice(Dl.datanames.indexOf(_t), 1);
             }
-            Dl.droplist.val(Dl.data);
-            Dl.droplist.ondata('name', Dl.datanames);
+            Dl.inpt.val(Dl.data);
+            Dl.inpt.ondata('val', Dl.datanames);
         },
         uncheckAll: function(chks) {
             var Dl = this;
@@ -199,25 +214,18 @@
     };
     Dl.defaultOptions = {
         selector: '.bz-droplist',
-        calloncheck: function(selector, data, trigger, inpt) {
-            // to show the data value
-            // var t = trigger.find('.text');
-            // t.inhtml('selected: ' + JSON.stringify(data));
-            var t = trigger.find('.text');
-            t.inhtml(inpt.ondata('name'));
-        },
-        calluncheck: function(selector, data, trigger, inpt) {
-            var t = trigger.find('.text');
-            t.inhtml(inpt.ondata('name'));
-        }
+        calloncheck: null,
+        calluncheck:  null
     };
     function init(options) {
         if (!bzDom(options.selector).exist()) return;
-        if (Object.prototype.hasOwnProperty.call(options, 'data-droplist')) return;
-        Object.defineProperty(options, 'data-droplist', { value: new Droplist(options) });
+        //if (Object.prototype.hasOwnProperty.call(options, 'data-droplist')) return;
+        //Object.defineProperty(options, 'data-droplist', { value: new Droplist(options) });
+        new Droplist(options);
     }
-    function all() {
-        var ddls = bzDom('.bz-droplist');
+    function all(selector) {
+        selector = selector || '.bz-droplist';
+        var ddls = bzDom(selector);
         ddls.each(function(i, item) {
             var options = {};
             options.selector = bzDom(item);
@@ -240,8 +248,6 @@
     Dl.init = init;
     Dl.all = all;
     var Droplist = Dl;
-
-    window.Droplist = Droplist;
     return Droplist;
 });
 

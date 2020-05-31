@@ -1,35 +1,275 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/public/stylesheets/bz-neu.styl" line="75" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="1f49e47b-0aa6-46ac-bd17-918a746803fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/js/bz-slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/slider.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/javascripts/bz-slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/bz-neu.styl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/bz-slider.styl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/components/slider.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/neu/index.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/data/built-in-features.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/data/built-ins.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/data/plugin-features.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/data/plugins.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/lib/default-includes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/lib/module-transformations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/lib/normalize-options.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/lib/targets-parser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/lib/transform-polyfill-require-plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/babel-preset-env/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/cookie-parser/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/cookie-parser/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/cookie-parser/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/cookie-parser/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/cookie-parser/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/.coveralls.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/src/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/src/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/src/inspector-log.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/debug/src/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-handlebars/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-handlebars/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-handlebars/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-handlebars/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-handlebars/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-handlebars/lib/express-handlebars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-handlebars/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-handlebars/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/lib/application.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/lib/express.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/lib/middleware/init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/lib/middleware/query.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/lib/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/lib/response.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/lib/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/lib/router/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/lib/router/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/lib/view.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/extend/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/extend/public/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/extend/public/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/extend/views/index.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/extend/views/layout.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/partial/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/partial/public/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/partial/views/index.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/partial/views/layout.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/partial/views/partial.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/partial/views/partials/partial1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/partial/views/partials/partial2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/partial/views/partials/partial3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/partial/views/partials/partial4.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/examples/partial/views/partials/partial5.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/lib/async.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/lib/hbs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/hbs/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/http-errors/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/http-errors/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/http-errors/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/http-errors/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/http-errors/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/morgan/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/morgan/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/morgan/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/morgan/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/morgan/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/bin/stylus" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/browserify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/cache/fs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/cache/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/cache/memory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/cache/null.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/colors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/convert/css.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/errors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/add-property.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/adjust.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/alpha.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/base-convert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/basename.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/blend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/blue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/clone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/contrast.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/convert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/current-media.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/define.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/dirname.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/error.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/extname.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/green.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/hsl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/hsla.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/hue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/image-size.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/image.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/index.styl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/json.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/length.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/lightness.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/list-separator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/lookup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/luminosity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/match.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/math-prop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/math.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/merge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/operate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/opposite-position.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/p.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/pathjoin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/pop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/prefix-classes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/push.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/range.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/red.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/remove.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/replace.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/resolver.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/rgb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/rgba.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/s.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/saturation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/selector-exists.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/selector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/selectors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/shift.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/slice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/split.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/substr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/tan.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/trace.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/transparentify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/type.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/unit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/unquote.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/unshift.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/url.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/use.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/functions/warn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/lexer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/arguments.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/atblock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/atrule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/binop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/block.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/boolean.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/call.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/charset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/comment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/each.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/expression.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/extend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/feature.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/function.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/group.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/hsla.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/ident.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/if.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/import.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/keyframes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/literal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/media.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/member.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/namespace.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/null.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/params.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/property.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/query-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/query.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/return.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/rgba.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/root.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/selector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/string.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/supports.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/ternary.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/unaryop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/nodes/unit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/parser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/renderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/selector-parser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/stack/frame.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/stack/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/stack/scope.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/stylus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/token.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/units.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/visitor/compiler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/visitor/deps-resolver.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/visitor/evaluator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/visitor/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/visitor/normalizer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/lib/visitor/sourcemapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/stylus/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/minify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/uglify-js/tools/exit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/yuicompressor/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/yuicompressor/nodejs/cli.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/yuicompressor/nodejs/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/yuicompressor/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/css/bz-core.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/css/bz-core.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/bluessite.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/bluessite.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/blues-require/bz-require.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/blues-require/bz-require.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/blues-require/locale/bz-card-validation-0.0.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/blues-require/locale/bz-require-0.0.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/blues-require/locale/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/blues-require/locale/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/bluessite.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/bz-autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bz-autocomplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/bz-core.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bz-core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/bin/extract-props.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/bin/uglifyjs" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/bin/uglifyjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/ast.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/ast.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/compress.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/compress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/mozilla-ast.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/mozilla-ast.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/output.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/output.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/parse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/propmangle.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/propmangle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/scope.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/scope.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/sourcemap.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/sourcemap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/transform.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/transform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/lib/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/tools/domprops.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/tools/domprops.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/tools/exports.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/tools/exports.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/uglify-js/tools/node.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uglify-js/tools/node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/bz-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bz-slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-autocomplete.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-autocomplete.styl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-core.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-core.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-core.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-core.styl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-inputs.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-inputs.styl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/components.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/sitevars.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/sitevars.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/layout.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/nav.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/nav.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-slider.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-slider.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/components/slider.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/components/slider.hbs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,53 +279,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/bz-slider.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="213" column="41" lean-forward="true" selection-start-line="213" selection-start-column="41" selection-end-line="213" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-slider.styl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/components/slider.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="45" column="81" lean-forward="true" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
-              <folding>
-                <element signature="e#535#571#0#HTML" expanded="true" />
-                <element signature="e#682#707#0#HTML" expanded="true" />
-                <element signature="e#803#828#0#HTML" expanded="true" />
-                <element signature="e#870#895#0#HTML" expanded="true" />
-                <element signature="e#937#962#0#HTML" expanded="true" />
-                <element signature="e#1004#1029#0#HTML" expanded="true" />
-                <element signature="e#889#914#0#HTML" expanded="true" />
-                <element signature="e#1696#1732#0#HTML" expanded="true" />
-                <element signature="e#1888#1913#0#HTML" expanded="true" />
-                <element signature="e#2009#2034#0#HTML" expanded="true" />
-                <element signature="e#2076#2101#0#HTML" expanded="true" />
-                <element signature="e#2143#2168#0#HTML" expanded="true" />
-                <element signature="e#2210#2235#0#HTML" expanded="true" />
-                <element signature="e#2277#2302#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -117,127 +310,25 @@
       <find>bz-card</find>
       <find>progress</find>
       <find>autofill</find>
+      <find>bz-ac</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/docs/typography.html" />
-        <option value="$PROJECT_DIR$/docs/selectors.html" />
-        <option value="$PROJECT_DIR$/docs/rating.html" />
-        <option value="$PROJECT_DIR$/docs/tooltip.html" />
-        <option value="$PROJECT_DIR$/docs/spinner.html" />
-        <option value="$PROJECT_DIR$/docs/progress.html" />
-        <option value="$PROJECT_DIR$/docs/popover.html" />
-        <option value="$PROJECT_DIR$/docs/page-loader.html" />
-        <option value="$PROJECT_DIR$/docs/page-alert.html" />
-        <option value="$PROJECT_DIR$/docs/modal.html" />
-        <option value="$PROJECT_DIR$/docs/index.html" />
-        <option value="$PROJECT_DIR$/docs/autocomplete.html" />
-        <option value="$PROJECT_DIR$/views/index.hbs" />
-        <option value="$PROJECT_DIR$/docs/js/bz-inject.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/bz-inject.js" />
-        <option value="$PROJECT_DIR$/docs/forms.html" />
-        <option value="$PROJECT_DIR$/docs/colored-forms.html" />
-        <option value="$PROJECT_DIR$/docs/cards.html" />
-        <option value="$PROJECT_DIR$/public/stylesheets/bz-grouping.styl" />
-        <option value="$PROJECT_DIR$/views/partials/footer.hbs" />
-        <option value="$PROJECT_DIR$/views/components/toolbar.hbs" />
-        <option value="$PROJECT_DIR$/views/components/cards.hbs" />
-        <option value="$PROJECT_DIR$/public/javascripts/bz-codelighter.js" />
-        <option value="$PROJECT_DIR$/views/components/progress.hbs" />
-        <option value="$PROJECT_DIR$/views/components/spinner.hbs" />
-        <option value="$PROJECT_DIR$/public/stylesheets/bz-spinners.styl" />
-        <option value="$PROJECT_DIR$/public/stylesheets/bz-mixins.styl" />
-        <option value="$PROJECT_DIR$/public/javascripts/bz-autofill.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/blues-require/locale/en.json" />
-        <option value="$PROJECT_DIR$/public/javascripts/blues-require/bz-require.js" />
-        <option value="$PROJECT_DIR$/views/nomorphism/index.hbs" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/bz-neo.css" />
-        <option value="$PROJECT_DIR$/public/stylesheets/bz-neu.css" />
-        <option value="$PROJECT_DIR$/public/stylesheets/bz-inputs.styl" />
-        <option value="$PROJECT_DIR$/routes/neu.js" />
-        <option value="$PROJECT_DIR$/views/partials/nav.hbs" />
-        <option value="$PROJECT_DIR$/views/layouts/layout.hbs" />
-        <option value="$PROJECT_DIR$/public/stylesheets/bz-neu.styl" />
-        <option value="$PROJECT_DIR$/views/neu/index.hbs" />
-        <option value="$PROJECT_DIR$/public/javascripts/bz-autocomplete.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/bz-core.js" />
-        <option value="$PROJECT_DIR$/views/components/autocomplete.hbs" />
-        <option value="$PROJECT_DIR$/routes/components.js" />
-        <option value="$PROJECT_DIR$/routes/sitevars.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/bz-core.styl" />
-        <option value="$PROJECT_DIR$/docs/js/bluessite.js" />
-        <option value="$PROJECT_DIR$/docs/slider.html" />
-        <option value="$PROJECT_DIR$/public/javascripts/bz-slider.js" />
-        <option value="$PROJECT_DIR$/views/components/slider.hbs" />
-        <option value="$PROJECT_DIR$/public/stylesheets/bz-slider.styl" />
-      </list>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
     <option name="y" value="53" />
-    <option name="width" value="1400" />
+    <option name="width" value="838" />
     <option name="height" value="1000" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="blues" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blues" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blues" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blues" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blues" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blues" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blues" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blues" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blues" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blues" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
+  <component name="ProjectId" id="1a89pFtpDJbqeRQzOCKhUw6odP2" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/javascripts" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -313,7 +404,20 @@
       <workItem from="1579887816479" duration="1630000" />
       <workItem from="1580500213823" duration="28000" />
       <workItem from="1581319803589" duration="4557000" />
-      <workItem from="1581352334165" duration="8697000" />
+      <workItem from="1581352334165" duration="8909000" />
+      <workItem from="1581407674223" duration="4650000" />
+      <workItem from="1581429424944" duration="4741000" />
+      <workItem from="1581494323981" duration="616000" />
+      <workItem from="1581523077533" duration="624000" />
+      <workItem from="1581575802655" duration="599000" />
+      <workItem from="1581666636662" duration="6000" />
+      <workItem from="1581746706130" duration="30000" />
+      <workItem from="1581757890456" duration="1871000" />
+      <workItem from="1581766495405" duration="599000" />
+      <workItem from="1582008943818" duration="6000" />
+      <workItem from="1582014113938" duration="1559000" />
+      <workItem from="1586106537260" duration="104000" />
+      <workItem from="1586335437707" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="name update">
       <created>1573629883662</created>
@@ -455,49 +559,31 @@
       <option name="project" value="LOCAL" />
       <updated>1579192267772</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="slider plugin">
+      <created>1581362395189</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1581362395190</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149114000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24012807" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Learn" order="6" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24536532" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3293348" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3293348" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.2497332" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" weight="0.17289221" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="name update" />
@@ -511,374 +597,11 @@
     <MESSAGE value="inject update" />
     <MESSAGE value="inject bug fixes" />
     <MESSAGE value="spinner updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="spinner updates" />
+    <MESSAGE value="slider plugin" />
+    <option name="LAST_COMMIT_MESSAGE" value="slider plugin" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/javascripts/bz-select.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/bz-droplist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2930" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/components/progress.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-buttons-themes.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-radio.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-230" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-modal.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="55" column="33" lean-forward="true" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-spinners.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-transitions.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-mixins.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-core.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="2860" column="23" selection-start-line="2860" selection-start-column="23" selection-end-line="2860" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/blues-require/locale/en.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/blues-require/bz-require.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-720">
-          <caret line="345" column="14" selection-start-line="345" selection-start-column="14" selection-end-line="345" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/components/stepper.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="95" column="12" selection-end-line="95" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-775" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-blocks.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-buttons.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-reset.styl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-inputs-themes.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-185" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/neu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/components/toolbar.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="143" column="13" lean-forward="true" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/nav.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-inputs.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2225">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-inputs-effects.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-575" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-inputs-errors.styl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-colors.styl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-vars.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-neu.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/neu/index.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="72" column="98" selection-start-line="72" selection-start-column="98" selection-end-line="72" selection-end-column="98" />
-          <folding>
-            <element signature="e#3041#3060#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-neu.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="158" column="7" selection-start-line="158" selection-start-column="7" selection-end-line="158" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/bz-autocomplete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="496" column="6" selection-start-line="496" selection-start-column="6" selection-end-line="496" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/bz-core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
-          <folding>
-            <element signature="e#53563#53871#0" />
-            <element signature="e#53957#54329#0" />
-            <element signature="e#54399#54757#0" />
-            <element signature="e#82194#85923#0" />
-            <element signature="e#85984#86190#0" />
-            <element signature="e#86253#86460#0" />
-            <element signature="e#86555#86612#0" />
-            <element signature="e#86711#86784#0" />
-            <element signature="e#86851#87331#0" />
-            <element signature="e#87397#87771#0" />
-            <element signature="e#87834#88170#0" />
-            <element signature="e#88319#91118#0" />
-            <element signature="e#91228#91374#0" />
-            <element signature="e#91437#95139#0" />
-            <element signature="e#95206#101969#0" />
-            <element signature="e#102043#106502#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/bz-autofill.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-inputs-label.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="61" column="29" selection-start-line="61" selection-end-line="61" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/components/spinner.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="97" column="10" lean-forward="true" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/components/tabs.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/components/autocomplete.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="88" column="61" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/components.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="92" column="54" selection-start-line="92" selection-start-column="54" selection-end-line="92" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/sitevars.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="160" column="6" selection-start-line="160" selection-start-column="6" selection-end-line="160" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-core.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="75" column="14" lean-forward="true" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/tabs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/js/bluessite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/css/bz-core.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/js/bz-slider.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/slider.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#5;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/layout.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/bz-slider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="213" column="41" lean-forward="true" selection-start-line="213" selection-start-column="41" selection-end-line="213" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/components/slider.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="45" column="81" lean-forward="true" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
-          <folding>
-            <element signature="e#535#571#0#HTML" expanded="true" />
-            <element signature="e#682#707#0#HTML" expanded="true" />
-            <element signature="e#803#828#0#HTML" expanded="true" />
-            <element signature="e#870#895#0#HTML" expanded="true" />
-            <element signature="e#937#962#0#HTML" expanded="true" />
-            <element signature="e#1004#1029#0#HTML" expanded="true" />
-            <element signature="e#889#914#0#HTML" expanded="true" />
-            <element signature="e#1696#1732#0#HTML" expanded="true" />
-            <element signature="e#1888#1913#0#HTML" expanded="true" />
-            <element signature="e#2009#2034#0#HTML" expanded="true" />
-            <element signature="e#2076#2101#0#HTML" expanded="true" />
-            <element signature="e#2143#2168#0#HTML" expanded="true" />
-            <element signature="e#2210#2235#0#HTML" expanded="true" />
-            <element signature="e#2277#2302#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bz-slider.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

@@ -3222,7 +3222,6 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input input[type=search][readonly],
 .bz-input select[readonly],
 .bz-input textarea[readonly] {
-  background-color: #eee;
   color: #777;
   border-color: #ccc;
 }
@@ -3827,7 +3826,6 @@ input.bz-editable:focus ~ label {
 .bz-ac-box .bz-ac {
   border-top: 2px solid transparent;
   border-bottom: 2px solid #d6d5d5;
-  font-size: 1.3em;
   line-height: normal;
   min-height: calc(2.3em + 4px);
   position: relative;
@@ -3864,12 +3862,14 @@ input.bz-editable:focus ~ label {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  max-width: 100%;
   min-height: 32px;
-  width: auto;
 }
 .bz-ac-box .bz-ac .bz-input {
   margin: 0;
+}
+.bz-ac-box .bz-ac .bz-input.chips input {
+  max-width: 100%;
+  width: auto;
 }
 .bz-ac-box .bz-ac .bar {
   bottom: -4px;
@@ -6970,92 +6970,6 @@ body.modal-open {
   left: 0;
   opacity: 1;
   z-index: 1000;
-}
-.bz-slider {
-  position: relative;
-  overflow: hidden;
-  margin: 20px auto;
-}
-.bz-slider ul {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.bz-slider ul li {
-  position: relative;
-  display: block;
-  float: left;
-  margin: 0;
-}
-.bz-slider .control-prev,
-.bz-slider .control-next {
-  position: absolute;
-  top: 50%;
-  z-index: 999;
-  display: block;
-  width: auto;
-  height: auto;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
-  opacity: 0.4;
-  cursor: pointer;
-  transform: translate(0, -50%);
-}
-.bz-slider .control-prev.default-back,
-.bz-slider .control-next.default-back {
-  background: #2a2a2a;
-  color: #fff;
-  padding: 4% 3%;
-}
-.bz-slider .slider-thumbs {
-  position: absolute;
-  bottom: 0;
-  min-height: 20px;
-  left: 50%;
-  min-width: 100px;
-  width: auto;
-  transform: translate(-50%, -50%);
-}
-.bz-slider .slider-thumbs .slider-thumb {
-  border: 3px solid;
-  border-radius: 50%;
-  cursor: pointer;
-  display: inline-block;
-  margin: 2px;
-  height: 14px;
-  width: 14px;
-}
-.bz-slider .slider-thumbs .slider-thumb.active {
-  background: #0b800f;
-}
-.bz-slider .control-prev:hover,
-.bz-slider .control-next:hover {
-  opacity: 0.7;
-  -webkit-transition: all 0.2s ease;
-}
-.bz-slider .control-prev {
-  border-radius: 0 2px 2px 0;
-}
-.bz-slider .control-next {
-  right: 0;
-  border-radius: 2px 0 0 2px;
-}
-.slider_option {
-  position: relative;
-  margin: 8px auto;
-  width: 300px;
-  font-size: 18px;
-}
-.bz-slider-pause-btn::after {
-  content: 'Play';
-  cursor: pointer;
-}
-.bz-slider-pause-btn.active::after,
-.bz-slider-pause-btn[checked=checked]::after {
-  content: 'Pause';
-  color: #f00;
 }
 .bz-fader {
   background-color: rgba(69,69,68,0.5);

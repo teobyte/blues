@@ -18,12 +18,6 @@
     }
 })(typeof global === 'object' ? global : this, function() {
     'use strict';
-    // Polyfill
-    Number.isInteger = Number.isInteger || function(value) {
-        return typeof value === 'number' &&
-            isFinite(value) &&
-            Math.floor(value) === value;
-    };
     ///////////////////////////////////////////////////////
     // Blues Start
     var Blues = {};
@@ -84,24 +78,22 @@
         // check if selector is HTML tag
         // returns @true if valid html tag
         ifValidTag: function (tag_name) {
-            var tags = [
-                'a', 'abbr', 'address', 'area', 'article', 'aside', 'audio',
-                'b', 'base', 'bdo', 'blockquote', 'body', 'br', 'button',
-                'canvas', 'caption', 'cite', 'code', 'col', 'colgroup',
-                'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'div', 'dl', 'dt',
-                'em', 'embed',
-                'filedset', 'figcaption', 'figure', 'footer', 'form',
-                'head', 'header', 'hr', 'html',
-                'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'h8', 'h9',
-                'i', 'iframe', 'img', 'ins', 'input',
-                'kbd', 'keygen', 'label', 'legend', 'li', 'link',
-                'map', 'mark', 'menu', 'menuitem', 'meta', 'meter', 'nav',
-                'object', 'ol', 'opt', 'optgroup', 'option', 'output',
-                'p', 'param', 'pre', 'progress', 'q',
-                's', 'samp', 'script', 'section', 'select', 'small', 'source', 'span', 'strong', 'style', 'sub', 'summary', 'sup',
-                'table', 'td', 'th', 'tr', 'tbody', 'thead', 'textarea', 'time', 'title', 'track',
-                'u', 'ul', 'var', 'video'
-            ];
+            var tags = 'a abbr address area article aside audio ' +
+                'b base bdo blockquote body br button ' +
+                'canvas caption cite code col colgroup ' +
+                'datalist dd del details dfn dialog div dl dt ' +
+                'em embed ' +
+                'filedset figcaption figure footer form '+
+                'head header hr html ' +
+                'h1 h2 h3 h4 h5 h6 h7 h8 h9 ' +
+                'i iframe img ins input ' +
+                'kbd keygen label legend li link ' +
+                'map mark menu menuitem meta meter nav' +
+                'object ol opt optgroup option output ' +
+                'p param pre progress q' +
+                's samp script section select small source span strong style sub summary sup ' +
+                'table td th tr tbody thead textarea time title track ' +
+                'u ul var video'.split(' ');
             return tags.indexOf(tag_name.trim().toLowerCase()) > -1;
         },
         // check if dom node
@@ -135,17 +127,14 @@
         // check if selector have no spaces or special characters
         // returns @true if selector simple
         ifSimpleSelector: function(selector) {
-            var res = false;
             if (!Blues.check.ifWhitespaces(selector)) {
-                if (!selector.indexOf('#') == 1 && !selector.indexOf('.') == 1 && !selector.indexOf('[') == 1)
-                    res = true;
-                // return !selector.includes('#', 1) &&
-                //     !selector.includes('.', 1) &&
-                //     !selector.includes('[', 1) // &&
+                return !selector.includes('#', 1) &&
+                    !selector.includes('.', 1) &&
+                    !selector.includes('[', 1) // &&
                 //!selector.includes(']', selector.length - 1) &&
                 //!selector.includes('=')
-            }
-            return res;
+            } else return false;
+
         },
         // check if selector id double selector
         // returns array of 2 simple selectors
@@ -231,18 +220,6 @@
                 Object.keys(first).reduce(function(isEqual, key) {
                     return isEqual && Blues.check.ifEqualObjects(first[key], second[key]);
                 }, true) : (first === second);
-        },
-        ifTouchScreen: function() {
-            var prefixes = ' -webkit- -moz- -o- -ms- '.split(' '),
-                mq = function(query) {
-                    return window.matchMedia(query).matches;
-                };
-            if (('ontouchstart' in window) || navigator.msMaxTouchPoints)
-                return true;
-            // include the 'heartz' as a way to have a non matching MQ to help terminate the join
-            // https://git.io/vznFH
-            var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
-            return mq(query);
         }
 
     };
@@ -267,7 +244,7 @@
         stringToArray: function(string) {
             string = string.replace(Blues.regex.multispaces, ' ');
             string = string.replace(' ,', ',');
-            return string = string.split(',');
+            return string.split(',');
         },
         objectToArray: function(obj) {
             if (!Blues.check.ifObject(obj)) return null;
@@ -347,12 +324,6 @@
                 x: posx,
                 y: posy
             }
-        },
-        extendObject: function extend(obj, src) {
-            for (var key in src) {
-                if (src.hasOwnProperty(key)) obj[key] = src[key];
-            }
-            return obj;
         },
         mergeOptions: function(defaultOptions, options) {
             var o = {};
@@ -747,7 +718,7 @@
     // get/set/check the element's attribute
     bzObject.prototype.onattr = function(name, value) {
         var elem = this.el;
-        if (value !== null && value !== undefined) {
+        if (value) {
             elem.setAttribute(name, value);
             return this;
         } else if (elem.hasAttribute(name))
@@ -766,7 +737,7 @@
         var elem = this.el,
             name = 'data-' + name;
         // if method has income value set attribute
-        if (value !== null && value !== undefined) {
+        if (value) {
             elem.setAttribute(name, value);
             return this;
             //if elem has such attribute return it's value
@@ -946,7 +917,7 @@
                 elem.checked = true;
             }
             if (callback && Blues.check.ifFunction(callback))
-                callback(elem.checked);
+                callback(elem.checked, elem);
         }
         this.eventHandler.bindEvent('change', callitback, elem);
     };
@@ -1150,8 +1121,7 @@
     bzObject.prototype.find = function(selector) {
         var elem = this.el;
         var findingelem;
-        if (!selector) return;
-        if (!selector && typeof selector !== 'string') {
+        if (typeof selector !== 'string') {
             //alert('0');
             return null;
         }
@@ -1166,8 +1136,9 @@
             findingelem = elem.getElementById(selector.replace('#', ''));
         }
         else if (!Blues.check.ifWhitespaces(selector) && selector[0] === '.') {
-            if (selector.split('.').length - 1 === 1)
+            if (selector.split('.').length - 1 === 1) {
                 findingelem = elem.getElementsByClassName(selector.replace('.', ''));
+            }
             else
                 findingelem = elem.querySelectorAll(selector);
         } else if (!Blues.check.ifWhitespaces(selector) && Blues.check.ifElemName(selector)) {
@@ -1280,7 +1251,7 @@
     bzObject.prototype.append = function(child) {
         var elem = this.el,
             key = 0; // to avoid wrong object Detection
-        if (bz.check.ifObject(child) && Object.getPrototypeOf(child)  === bzObject.prototype) {
+        if (Object.getPrototypeOf(child)  === bzObject.prototype) {
             elem.appendChild(child.el);
             return this;
         } else if (key === 0 && (child instanceof Node || child instanceof Window)) {
@@ -1419,65 +1390,35 @@
                 continue;
             switch (form.elements[i].nodeName) {
                 case 'INPUT':
-                    switch (form.elements[i].type) {
-                        case 'button':
-                            break;
-                        case 'reset':
-                            break;
-                        case 'submit':
-                            break;
-                        case 'checkbox':
-                            if (form.elements[i].checked) {
-                                if (result === 'string')
-                                    q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                                if (result === 'data')
-                                    dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
-                            }
-                            break;
-                        case 'radio':
-                            if (form.elements[i].checked) {
-                                if (result === 'string')
-                                    q.push(form.elements[i].name + "=" + '#' + form.elements[i].id + '@' + encodeURIComponent(form.elements[i].value));
-                                if (result === 'data')
-                                    dataObj[form.elements[i].name] = '#' + form.elements[i].id + '@' + bzDom(form.elements[i]).ondata('label');
-                                //encodeURIComponent(form.elements[i].value);
-                            }
-                            break;
-                        case 'file':
-                            if (result === 'string') {
-                                q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                            }
-                            if (result === 'data') {
-                                // dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
-
-                                var toBase64 = function (propname, file, target, callBack) {
-                                    file=file.files[0];
-                                    var reader = new FileReader();
-                                    reader.readAsDataURL(file);
-                                    reader.onload = function () {
-                                        callBack(propname, file, target, reader.result);
-                                    };
-                                    reader.onerror = function (error) {
-                                        console.log('Error: ', error);
-                                    };
-                                };
-                                toBase64(form.elements[i].name, form.elements[i], dataObj,function(propname, file, dataObj, base64) {
-                                    dataObj[propname] = base64;
-                                });
-
-                                //dataObj[form.elements[i].name] = toBase64(form.elements[i]);
-                            }
-                            break;
-                        // case 'text':
-                        // case 'hidden':
-                        // case 'password':
-                        default:
-                            if (result === 'string')
-                                q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
-                            if (result === 'data')
-                                dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
-                            break;
-                    }
+                    // switch (form.elements[i].type) {
+                    //     case 'text':
+                    //     case 'hidden':
+                    //     case 'password':1
+                    //     case 'button':
+                    //     case 'reset':
+                    //     case 'submit':
+                    //         if (result === 'string')
+                    //             q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                    //         if (result === 'data')
+                    //             dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+                    //         break;
+                    //     case 'checkbox':
+                    //     case 'radio':
+                    //         if (form.elements[i].checked) {
+                    //             if (result === 'string')
+                    //                 q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                    //             if (result === 'data')
+                    //                 dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+                    //         }
+                    //         break;
+                    // }
+                    // break;
+                    if (result === 'string')
+                        q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                    if (result === 'data')
+                        dataObj[form.elements[i].name] = encodeURIComponent(form.elements[i].value);
+                    break;
+                case 'file':
                     break;
                 case 'TEXTAREA':
                     if (result === 'string')
@@ -1664,11 +1605,11 @@
             markerW;
         markerW = 100 / tab.qty;
         tab.acts = {
-            opentab: function(move, shift) {
+            opentab: function(move, shift, marker) {
                 shift = parseInt(shift);
                 if (tab.o.onLoading)
                     tab.o.onLoading(shift, tab.conts.el[shift]);
-                tab.acts.movemarker(move, shift);
+                tab.acts.movemarker(move, shift, marker);
                 if (shift !== -1)
                     tab.acts.opencont(shift);
                 if (tab.o.onOpened) {
@@ -1687,18 +1628,19 @@
                 });
             },
             movemarker: function(move, shift, marker) {
-                marker = marker || tab.tab.find('.marker');
+                //marker = marker || tab.tab.find('.marker');
                 marker.oncss('width', move + '%');
                 marker.oncss('left', move * shift + '%');
             }
         };
+        tab.tab.append(marker);
+        if (tab.o.marker)
+            marker.onclass(tab.o.marker);
         if (tab.o.open) {
             var shift = parseInt(tab.o.open) - 1;
-            tab.acts.opentab(markerW, shift);
+            tab.acts.opentab(markerW, shift, marker);
         } else {
-            if (tab.o.marker)
-                marker.onclass(tab.o.marker);
-            tab.tab.append(marker);
+            //tab.tab.append(marker);
             tab.conts.each(function(i, item) {
                 var $cont = bzDom(item);
                 $cont.ondata('item', i + '');
@@ -1709,13 +1651,13 @@
                 $tab.on('click', function() {
                     var $self = bzDom(this),
                         shift = $self.ondata('item');
-                    tab.acts.opentab(markerW, shift);
+                    tab.acts.opentab(markerW, shift, marker);
                 });
             });
             if (tab.o.start === true)
-                tab.acts.opentab(markerW, 0);
+                tab.acts.opentab(markerW, 0, marker);
             if (Number.isInteger(tab.o.start))
-                tab.acts.opentab(markerW, tab.o.start - 1);
+                tab.acts.opentab(markerW, tab.o.start - 1, marker);
         }
     };
     // Dropdown
@@ -2081,24 +2023,33 @@
     Blues.Progress = function (value, options) {
         var Pr = {};
         options = options || {};
+        Pr.o = {};
         Pr.defaultOptions = {
             selector: '#progress',
             position: 'top',
-            size: '8',
+            size: '8px',
             barclass: 'bz-bc-positive'
         };
-        Pr.o = bz.help.mergeOptions(Pr.defaultOptions, options);
+        for (var k in Pr.defaultOptions) {
+            if (Pr.defaultOptions.hasOwnProperty(k)) {
+                if (options.hasOwnProperty(k))
+                    Pr.o[k] = options[k];
+                else
+                    Pr.o[k] = Pr.defaultOptions[k];
+            }
+        }
         var pr = undefined;
         if (bzDom(Pr.o.selector).exist())
             pr = bzDom(Pr.o.selector);
         else {
+            pr = bzDom('<div id="progress">');
+            bzDom('body').append(pr);
             var jss = {
                 'rule': {
                     '.bz-progress': {
                         'attr': {
                             position: 'fixed',
-                            background: 'transparent',
-                            'z-index': '100000'
+                            background: 'transparent'
                         }
                     },
                     '.bz-progress.top' : {
@@ -2136,10 +2087,8 @@
                     }
                 }
             };
-            var css = bz.JSONCSS(jss);
-            bz.JSS(css, 'css_progress');
-            pr = bzDom('<div id="progress">');
-            bzDom('body').append(pr);
+            var css = Blues.JSONCSS(jss);
+            Blues.JSS(css, 'css_progress');
         }
         var bar;
         if (pr.find('.bar').exist())
@@ -2153,15 +2102,15 @@
             if (!pr.ifclass(side))
                 pr.onclass(side);
             pr.oncss('width', '100vw');
-            pr.oncss('height', Pr.o.size + 'px');
-            bar.oncss('height', Pr.o.size + 'px');
+            pr.oncss('height', Pr.o.size);
+            bar.oncss('height', Pr.o.size);
         };
         var setLftRgt = function(side) {
             if (!pr.ifclass(side))
                 pr.onclass(side);
             pr.oncss('height', '100vh');
-            pr.oncss('width', Pr.o.size + 'px');
-            bar.oncss('width', Pr.o.size + 'px');
+            pr.oncss('width', Pr.o.size);
+            bar.oncss('width', Pr.o.size);
         };
         if (!bar.ifclass(Pr.o.barclass))
             bar.onclass(Pr.o.barclass);
@@ -2359,6 +2308,7 @@
                 json: "application/json, text/javascript",
                 jpeg: "image/jpeg",
                 png: "image/png"
+
             }
         };
         o = options || {};
@@ -2453,8 +2403,9 @@
             id = ajax.onattr('id');
             name = ajax.onattr('name');
             if (ajax.ondata('params')) {
-                var par = bz.convert.stringToArray(ajax.ondata('params'));
-                dataParams = JSON.parse(JSON.stringify(par));
+                var par = ajax.ondata('params');
+                par = par.replace("'", '"');
+                dataParams = JSON.parse(par);
             }
             var callfunc = function(callback, data, target, action, id, name) {
                 if (callback != null && callback !== 'post') {
@@ -2699,7 +2650,7 @@
         var outside = options.outside || false,
             position = options.position || 'right',
             timeout = options.timeout || 0,
-            spinner = options.spinner || '<div class="bz-spinner"><div>',
+            spinner = options.spinner || '<div class="bz-loader"><div>',
             hideaction = hideaction || null,
             fireonstart = fireonstart || null,
             fireatend = fireatend || null;
@@ -2710,8 +2661,7 @@
                 var spnr = bzDom('<div class="loader bz-inline-block">');
                 var sp = Blues.addSpiner(false, { size: 16 });
                 spnr.append(sp);
-                if (!Blues.bzDom(element).find('.bz-spinner').exist())
-                    Loadspin.show(element, spnr);
+                Loadspin.show(element, spnr);
             },
             show: function(elem, spinner) {
                 if (outside == true) {
@@ -2755,21 +2705,24 @@
     };
     Blues.addSpiner = function(target, options) {
         var options = options || {},
-            name = options.name || 'bz-spinner',
+            name = options.name || 'bz-spin-circle',
             pos = options.position || 'default',
             size = options.size || 64;
         var sp = bzDom('<div>'),
-            wrap = bzDom('<div class="bz-spin-wrap">');
+            d = bzDom('<div>');
+        sp.append(d.clone())
+            .append(d.clone())
+            .append(d.clone())
+            .append(d.clone());
         if (name && !sp.ifclass(name))
             sp.onclass(name);
         if (pos && pos === 'center')
-            wrap.onclass('bz-center');
+            sp.onclass('center');
         if (size)
             sp.oncss({width: size + 'px', height: size + 'px'});
-        wrap.append(sp);
         if (target)
-            bzDom(target).append(wrap);
-        else return wrap;
+            bzDom(target).append(sp);
+        else return sp;
     };
     // scroll to any Dom element
     Blues.bodyScrollTop = function (position) {
@@ -3128,15 +3081,11 @@
         if (Blues.check.ifCssJson(data))
             data = Blues.JSONCSS(data);
         var node = document.createElement('style');
-
-        bzDom(node).onattr('type', 'text/css');
-
+        node.type = 'text/css';
         if (!Blues.check.ifEmpty(id)) {
-            bzDom(node).onattr('id', id);
-            //node.id = id;
+            node.id = id;
         } else {
-            bzDom(node).onattr('id', 'jss_' + Blues.help.timestamp());
-            //node.id = 'jss_' + Blues.help.timestamp();
+            node.id = 'jss_' + Blues.help.timestamp();
         }
         if (node.styleSheet) {
             node.styleSheet.cssText = data;
