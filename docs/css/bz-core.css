@@ -60,6 +60,11 @@
 .bz-fc-pink {
   color: #f03064;
 }
+.bz-fc-golden,
+.bz-fc-hover-golden:hover,
+.bz-fc-gold {
+  color: #cca471;
+}
 .bz-bc-default,
 .bz-bc-hover-default:hover,
 .bz-bc-gray {
@@ -121,6 +126,11 @@
 .bz-bc-hover-mandy:hover,
 .bz-bc-pink {
   background: #f03064;
+}
+.bz-bc-golden,
+.bz-bc-hover-golden:hover,
+.bz-bc-gold {
+  background: #cca471;
 }
 html {
   line-height: 1;
@@ -354,6 +364,9 @@ summary {
 }
 .bz-wave.mandy-wave .ink {
   background: #f03064;
+}
+.bz-wave.golden-wave .ink {
+  background: #cca471;
 }
 .bz-wave .ink.animate {
   animation: wave 0.25s linear;
@@ -1172,6 +1185,12 @@ body.firefox a {
 .bz-link.mandy:focus {
   color: #f03064;
 }
+.bz-link.golden,
+.bz-link.golden:hover,
+.bz-link.golden:active,
+.bz-link.golden:focus {
+  color: #cca471;
+}
 .bz-link.default .text:after {
   background: #a8a9a9;
 }
@@ -1210,6 +1229,9 @@ body.firefox a {
 }
 .bz-link.mandy .text:after {
   background: #f03064;
+}
+.bz-link.golden .text:after {
+  background: #cca471;
 }
 .bz-link:hover .text:after,
 .bz-link:focus .text:after {
@@ -2868,7 +2890,7 @@ textarea:not(:-webkit-autofill) {
   display: inline-block;
   font-size: 1.3em;
   line-height: normal;
-  height: calc(2.3em + 4px);
+  height: max-content;
   position: relative;
   padding: 0;
   margin: 8px 0;
@@ -3125,7 +3147,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 }
 .bz-input .bar {
   background: #102a62;
-  bottom: -2px;
+  bottom: 0;
   height: 2px;
   position: absolute;
   width: 0;
@@ -3182,7 +3204,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 }
 .bz-input .flash {
   position: absolute;
-  height: 60%;
+  height: inherit;
   width: 200px;
   top: 25%;
   left: 0;
@@ -3222,7 +3244,6 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input input[type=search][readonly],
 .bz-input select[readonly],
 .bz-input textarea[readonly] {
-  background-color: #eee;
   color: #777;
   border-color: #ccc;
 }
@@ -3239,7 +3260,8 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input.light,
 .bz-input.white,
 .bz-input.black,
-.bz-input.mandy {
+.bz-input.mandy,
+.bz-input.golden {
   color: #fff;
 }
 .bz-input.theme label,
@@ -3255,7 +3277,8 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input.light label,
 .bz-input.white label,
 .bz-input.black label,
-.bz-input.mandy label {
+.bz-input.mandy label,
+.bz-input.golden label {
   color: #fff;
 }
 .bz-input.default input {
@@ -3297,6 +3320,9 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input.mandy input {
   color: #fff;
 }
+.bz-input.golden input {
+  color: #000;
+}
 .bz-input.default {
   background: #a8a9a9;
 }
@@ -3335,6 +3361,9 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 }
 .bz-input.mandy {
   background: #f03064;
+}
+.bz-input.golden {
+  background: #cca471;
 }
 .bz-input.default input:focus ~ label,
 .bz-input.default input:valid ~ label,
@@ -3466,6 +3495,16 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input.mandy textarea.highlight ~ label {
   color: #fff;
 }
+.bz-input.golden input:focus ~ label,
+.bz-input.golden input:valid ~ label,
+.bz-input.golden input[readonly] ~ label,
+.bz-input.golden input[disabled] ~ label,
+.bz-input.golden input.highlight ~ label,
+.bz-input.golden textarea:focus ~ label,
+.bz-input.golden textarea:valid ~ label,
+.bz-input.golden textarea.highlight ~ label {
+  color: #000;
+}
 .bz-input.theme .bar,
 .bz-input.default .bar,
 .bz-input.primary .bar,
@@ -3479,7 +3518,8 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input.light .bar,
 .bz-input.white .bar,
 .bz-input.black .bar,
-.bz-input.mandy .bar {
+.bz-input.mandy .bar,
+.bz-input.golden .bar {
   background: #fff;
 }
 .bz-input.default select,
@@ -3637,6 +3677,18 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 .bz-input.mandy input[type=text],
 .bz-input.mandy input[type=url] {
   border-bottom: 2px solid #f03064;
+}
+.bz-input.golden select,
+.bz-input.golden textarea,
+.bz-input.golden input:not([type]),
+.bz-input.golden input[type=email],
+.bz-input.golden input[type=number],
+.bz-input.golden input[type=password],
+.bz-input.golden input[type=search],
+.bz-input.golden input[type=tel],
+.bz-input.golden input[type=text],
+.bz-input.golden input[type=url] {
+  border-bottom: 2px solid #cca471;
 }
 .bz-input input:not([type]).invalid,
 .bz-input input:not([type]):focus.invalid,
@@ -3827,7 +3879,6 @@ input.bz-editable:focus ~ label {
 .bz-ac-box .bz-ac {
   border-top: 2px solid transparent;
   border-bottom: 2px solid #d6d5d5;
-  font-size: 1.3em;
   line-height: normal;
   min-height: calc(2.3em + 4px);
   position: relative;
@@ -3864,12 +3915,14 @@ input.bz-editable:focus ~ label {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  max-width: 100%;
   min-height: 32px;
-  width: auto;
 }
 .bz-ac-box .bz-ac .bz-input {
   margin: 0;
+}
+.bz-ac-box .bz-ac .bz-input.chips input {
+  max-width: 100%;
+  width: auto;
 }
 .bz-ac-box .bz-ac .bar {
   bottom: -4px;
@@ -4167,6 +4220,16 @@ input.bz-editable:focus ~ label {
   background-color: #f03064;
   color: #fff;
 }
+.bz-btn-circle.golden:hover,
+.bz-btn-circle.golden:active,
+.bz-btn-circle.golden:focus,
+.bz-btn.golden:hover,
+.bz-btn.golden:active,
+.bz-btn.golden:focus {
+  border-color: #cca471;
+  background-color: #cca471;
+  color: #000;
+}
 .bz-btn-circle.default.inverted,
 .bz-btn.default.inverted {
   background-color: #a8a9a9;
@@ -4244,6 +4307,12 @@ input.bz-editable:focus ~ label {
   background-color: #f03064;
   border-color: #f03064;
   color: #fff;
+}
+.bz-btn-circle.golden.inverted,
+.bz-btn.golden.inverted {
+  background-color: #cca471;
+  border-color: #cca471;
+  color: #000;
 }
 .bz-btn-circle.default.inverted:hover,
 .bz-btn-circle.default.inverted:active,
@@ -4374,6 +4443,16 @@ input.bz-editable:focus ~ label {
   background: #fff;
   border-color: #f03064;
   color: #f03064;
+}
+.bz-btn-circle.golden.inverted:hover,
+.bz-btn-circle.golden.inverted:active,
+.bz-btn-circle.golden.inverted:focus,
+.bz-btn.golden.inverted:hover,
+.bz-btn.golden.inverted:active,
+.bz-btn.golden.inverted:focus {
+  background: #fff;
+  border-color: #cca471;
+  color: #cca471;
 }
 .bz-btn i.right {
   position: absolute;
@@ -4635,6 +4714,10 @@ input.bz-editable:focus ~ label {
   background: #f03064;
   color: #fff;
 }
+.bz-toolbar.golden {
+  background: #cca471;
+  color: #000;
+}
 .bz-toolbar.default.inverted {
   background: transparent;
   color: #a8a9a9;
@@ -4686,6 +4769,10 @@ input.bz-editable:focus ~ label {
 .bz-toolbar.mandy.inverted {
   background: transparent;
   color: #f03064;
+}
+.bz-toolbar.golden.inverted {
+  background: transparent;
+  color: #cca471;
 }
 .bz-toolbar .btn,
 .bz-toolbar .title,
@@ -5545,6 +5632,9 @@ input[type="color"]::-webkit-color-swatch {
 .bz-spinner.mandy {
   border-top-color: #f03064;
 }
+.bz-spinner.golden {
+  border-top-color: #cca471;
+}
 @-moz-keyframes bz-circle {
   from {
     transform: rotate(0deg);
@@ -5850,6 +5940,10 @@ input[type="color"]::-webkit-color-swatch {
 .bz-tag.mandy {
   background: #f03064;
   color: #fff;
+}
+.bz-tag.golden {
+  background: #cca471;
+  color: #000;
 }
 .bz-pagination {
   clear: both;
@@ -6224,6 +6318,10 @@ input[type="color"]::-webkit-color-swatch {
   background-color: #f03064;
   color: #fff;
 }
+.bz-badge.golden::after {
+  background-color: #cca471;
+  color: #000;
+}
 .bz-badge.inline[data-badge]::after {
   right: 0;
   top: -3px;
@@ -6300,6 +6398,10 @@ blockquote.black,
 blockquote.mandy,
 .bz-quote.mandy {
   border-left: 4px solid #f03064;
+}
+blockquote.golden,
+.bz-quote.golden {
+  border-left: 4px solid #cca471;
 }
 .bz-deflist {
   line-height: 1.4;
@@ -6651,6 +6753,10 @@ body.modal-open {
   background-color: #f03064;
   color: #fff;
 }
+.bz-toast.golden {
+  background-color: #cca471;
+  color: #000;
+}
 .bz-toast.show {
   animation: fade-in 0.5s;
 }
@@ -6715,6 +6821,10 @@ body.modal-open {
   border: 1px solid #f03064;
   border-left: 4px solid #f03064;
 }
+.bz-page-alert.golden {
+  border: 1px solid #cca471;
+  border-left: 4px solid #cca471;
+}
 .bz-page-alert.filled {
   background: #a8a9a9;
   color: #fff;
@@ -6757,6 +6867,9 @@ body.modal-open {
 }
 .bz-page-alert.mandy.filled {
   background: #f03064;
+}
+.bz-page-alert.golden.filled {
+  background: #cca471;
 }
 .bz-page-alert .bz-alert-icon {
   display: inline-block;
@@ -6970,93 +7083,6 @@ body.modal-open {
   left: 0;
   opacity: 1;
   z-index: 1000;
-}
-.bz-slider {
-  position: relative;
-  overflow: hidden;
-  margin: 20px auto;
-}
-.bz-slider ul {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.bz-slider ul li {
-  position: relative;
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0;
-  width: 300px;
-  height: 200px;
-  background: #ccc;
-  text-align: center;
-}
-.bz-slider .control-prev,
-.bz-slider .control-next {
-  position: absolute;
-  top: 40%;
-  z-index: 999;
-  display: block;
-  padding: 4% 3%;
-  width: auto;
-  height: auto;
-  background: #2a2a2a;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
-  opacity: 0.4;
-  cursor: pointer;
-}
-.bz-slider .slider-thumbs {
-  position: absolute;
-  bottom: 0;
-  min-height: 20px;
-  left: 50%;
-  min-width: 100px;
-  width: auto;
-  transform: translate(-50%, -50%);
-}
-.bz-slider .slider-thumbs .slider-thumb {
-  border: 3px solid;
-  border-radius: 50%;
-  cursor: pointer;
-  display: inline-block;
-  margin: 2px;
-  height: 14px;
-  width: 14px;
-}
-.bz-slider .slider-thumbs .slider-thumb.active {
-  background: #0b800f;
-}
-.bz-slider .control-prev:hover,
-.bz-slider .control-next:hover {
-  opacity: 0.7;
-  -webkit-transition: all 0.2s ease;
-}
-.bz-slider .control-prev {
-  border-radius: 0 2px 2px 0;
-}
-.bz-slider .control-next {
-  right: 0;
-  border-radius: 2px 0 0 2px;
-}
-.slider_option {
-  position: relative;
-  margin: 10px auto;
-  width: 300px;
-  font-size: 18px;
-}
-.bz-slider-pause-btn::after {
-  content: 'Play';
-  cursor: pointer;
-}
-.bz-slider-pause-btn.active::after,
-.bz-slider-pause-btn[checked=checked]::after {
-  content: 'Pause';
-  color: #f00;
 }
 .bz-fader {
   background-color: rgba(69,69,68,0.5);

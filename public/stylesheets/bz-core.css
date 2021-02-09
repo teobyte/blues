@@ -2890,7 +2890,7 @@ textarea:not(:-webkit-autofill) {
   display: inline-block;
   font-size: 1.3em;
   line-height: normal;
-  height: auto;
+  height: max-content;
   position: relative;
   padding: 0;
   margin: 8px 0;
@@ -3204,7 +3204,7 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
 }
 .bz-input .flash {
   position: absolute;
-  height: 60%;
+  height: inherit;
   width: 200px;
   top: 25%;
   left: 0;
