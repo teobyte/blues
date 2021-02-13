@@ -84,11 +84,10 @@
                 Dl.initsearch($itms);
         },
         triggName: function(inpt, trigger) {
-            var prop_name = inpt.onattr('name') ? inpt.onattr('name') + ': ' : '',
-                trig_name = inpt.ondata('title') ? inpt.ondata('title') + ': ' : '',
+            var prop_name = '' + inpt.onattr('name'),
                 prop = inpt.val();
             var displayVal = inpt.ondata('val') ? inpt.ondata('val') : prop;
-            var prop_title = inpt.ondata('title') ? trig_name : prop_name;
+            var prop_title = inpt.ondata('title') ? inpt.ondata('title')+': ' : prop_name + ': ';
             var t = trigger.find('.text');
             t.inhtml(prop_title + displayVal);
         },
@@ -131,15 +130,28 @@
         },
         closeDdl: function (ddl) {
             ddl.ondata('key', '0');
-            ddl.offclass('bz-on');
+            ddl.toggleclass('bz-on');
             //$flag.toggleclass('bz-rotate180');
         },
         openDdl: function(ddl) {
             var Dl = this;
             setTimeout(function() {
                 ddl.ondata('key', '1');
-                ddl.onclass('bz-on');
-            }, 200);
+                ddl.toggleclass('bz-on');
+            }, 300);
+            ddl.on('mouseenter', function(e) {
+                var $self = bzDom(this);
+                $self.on('mouseleave', function() {
+                    $self.ondata('hold', '0');
+                    if ($self.ondata('key') == '1') {
+                        setTimeout(function() {
+                            if ($self.ondata('key') == '1')
+                                Dl.closeDdl($self);
+                        }, 1500)
+                    }
+                });
+            });
+            //$flag.toggleclass('bz-rotate180');
         },
         checkBox: function (chk) {
             var $dlItem = chk.parent('.bz-ddl-item'),
