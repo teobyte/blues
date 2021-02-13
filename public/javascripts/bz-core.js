@@ -953,7 +953,7 @@
                 elem.checked = true;
             }
             if (callback && Blues.check.ifFunction(callback))
-                callback(elem.checked);
+                callback(elem.checked, elem);
         }
         this.eventHandler.bindEvent('change', callitback, elem);
     };

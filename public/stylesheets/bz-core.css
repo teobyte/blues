@@ -2575,7 +2575,6 @@ hr,
   width: 90%;
 }
 .bz-w-100p,
-.bz-ac-box,
 .bz-ac-box .bz-ac,
 .bz-fader {
   width: 100%;
@@ -2888,7 +2887,7 @@ textarea:not(:-webkit-autofill) {
   background: #fff;
   border: 2px solid transparent;
   display: inline-block;
-  font-size: 1.3em;
+  font-size: 1em;
   line-height: normal;
   height: max-content;
   position: relative;
@@ -3889,6 +3888,7 @@ input.bz-editable:focus ~ label {
   flex-wrap: wrap;
   user-select: none;
   vertical-align: middle;
+  width: 300px;
 }
 .bz-ac-box .bz-ac label {
   top: -0.1em;
@@ -3905,7 +3905,7 @@ input.bz-editable:focus ~ label {
   -webkit-box-shadow: none;
   box-shadow: none;
   color: #212529;
-  height: calc(2.3em + 0);
+  height: max-content;
   float: none;
   line-height: normal;
   outline: none;
@@ -3921,13 +3921,23 @@ input.bz-editable:focus ~ label {
 }
 .bz-ac-box .bz-ac .bz-input {
   margin: 0;
+  width: inherit;
 }
 .bz-ac-box .bz-ac .bar {
+  left: -2px;
+  bottom: -5px;
+}
+.bz-ac-box .bz-ac .bz-input.chips .bar {
   bottom: -4px;
 }
 .bz-ac-box .bz-ac input:focus {
   border: none;
   outline: none;
+}
+.bz-ac-box .bz-ac input:focus ~ .bar,
+.bz-ac-box .bz-ac input.highlight ~ .bar {
+  left: 0;
+  width: 100%;
 }
 .bz-ac-box button {
   position: absolute;
