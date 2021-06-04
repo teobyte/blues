@@ -203,7 +203,7 @@ Autocomplete.prototype = {
             $inpt.ondata('hover', '0');
         });
         if (bzDom(ac.inpt).exist()) {
-            bzDom(ac.inpt).after($suggestions);
+            bzDom(ac.inpt).parent('.bz-ac').append($suggestions);
         }
     },
     // fill suggestions container with selecting items
@@ -268,8 +268,8 @@ Autocomplete.prototype = {
     suggestionitems: function () {
         var ac = this,
            $selectItems = null;
-        if (bzDom(ac.inpt).parent().find('.bz-suggestions').exist()) {
-            var $suggestions = bzDom(ac.inpt).parent().find('.bz-suggestions');
+        if (bzDom(ac.inpt).parent('.bz-ac').find('.bz-suggestions').exist()) {
+            var $suggestions = bzDom(ac.inpt).parent('.bz-ac').find('.bz-suggestions');
             $selectItems = $suggestions.find('li');
         }
         return $selectItems;
@@ -338,7 +338,7 @@ Autocomplete.prototype = {
         $inpt.on('keyup', function() {
             var $that = bzDom(this),
                 _searchstr = $that.val();
-            if (_searchstr.length >= ac.o.searchAfter  && ac.listenInput === true) {
+            if (_searchstr.length >= ac.o.searchAfter && ac.listenInput === true) {
                 ac.setdata(_searchstr, $that);
                 ac.showSuggestions();
             }

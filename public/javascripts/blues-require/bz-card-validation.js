@@ -2,12 +2,10 @@
     'use strict';
     var validateCard = function(selector) {
         if (!selector) return;
-        var $form = bzDom(selector);
-
-        var $btn = bzDom('.bz-payment-submit'),
-            $inputs = bzDom('.bz-card-input'),
-            $type = bzDom('.bz-card-type');
-
+        var $form = bzDom(selector),
+            $btn = $form.find('button'),
+            $inputs = $form.find('.bz-card-input'),
+            $type = $form.find('.bz-card-type');
         function ifLetter(str) {
             var regex = /^[A-Za-z]+$/;
             if(str.match(regex)) return true;
@@ -348,6 +346,16 @@
                 validator(e, _type, _val);
                 chkBtn();
             });
+            _$inpt.on('paste', function(e) {
+                fired = false;
+                var $th = bzDom(this);
+                setTimeout(function () {
+                    var _type = $th.ondata('pattern'),
+                        _val = $th.val();
+                    validator(e, _type, _val);
+                    chkBtn();
+                }, 100);
+            });
         });
         $btn.on('click', function() {
             var $theBtn = bzDom(this);
@@ -363,12 +371,12 @@
             //     $type.offattr('class').onclass('bz-card-type');
             // });
         });
-        // bzDom('.bz-code-tip').on('click', function() {
-        //     bzDom('.bz-card-help').fadeIn();
-        // });
-        // bzDom('.bz-card-help').find('.bzi-remove').on('click', function() {
-        //     bzDom('.bz-card-help').fadeOut();
-        // });
+        bzDom('.bz-code-tip').on('click', function() {
+            bzDom('.bz-card-help').fadeIn();
+        });
+        bzDom('.bz-card-help').find('.bzi-remove').on('click', function() {
+            bzDom('.bz-card-help').fadeOut();
+        });
     };
     validateCard('.bz-payment-form');
 })();

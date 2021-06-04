@@ -3,13 +3,79 @@
   <component name="ChangeListManager">
     <list default="true" id="1f49e47b-0aa6-46ac-bd17-918a746803fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/bz-core.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bz-core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/accordion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ajaxcalls.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/autocomplete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/breadcrumbs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/buttons.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/card-validation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cards.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/cascading-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/colored-forms.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/colors.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/conditional.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/contextmenu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/css/bz-core.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/dialog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/dropdown.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/flexgrid.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/forms.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/group-buttons.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/grouping.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/icon-fonts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/blues-require/bz-card-validation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/blues-require/bz-card-validation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/blues-require/bz-require.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/blues-require/locale/bz-card-validation-0.0.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/blues-require/locale/bz-card-validation-0.0.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/blues-require/locale/bz-require-0.0.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/blues-require/locale/bz-require-0.0.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/blues-require/locale/en.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bluessite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-animate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-autocomplete.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-codelighter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-droplist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-inject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-modal-proto.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-rating.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-rules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-select.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-sidenav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/js/bz-stepper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/modal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/page-alert.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/page-loader.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/pagination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/popover.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/progress.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/rating.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/selectors.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/sidenav.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/slider.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/spinner.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/stepper.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tabs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/toast.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/toolbar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tooltip.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/typography.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/blues-require/bz-card-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/blues-require/bz-card-validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/bz-autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bz-autocomplete.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-autocomplete.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-autocomplete.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-buttons.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-buttons.styl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-core.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-core.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-core.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-core.styl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-inputs.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-inputs.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-spinners.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-spinners.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-vars.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-vars.styl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/components/autocomplete.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/components/autocomplete.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/components/buttons.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/components/buttons.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/components/spinner.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/components/spinner.hbs" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,39 +97,31 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1a89pFtpDJbqeRQzOCKhUw6odP2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aiwee/grails-app/assets/javascripts/blues/bz-core.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/javascripts" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../aiwee/grails-app/assets/javascripts/blues/bz-core.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/docs/css" />
       <recent name="$PROJECT_DIR$/public/javascripts" />
+      <recent name="$PROJECT_DIR$/public/javascripts/blues-require" />
+      <recent name="$PROJECT_DIR$/docs/css" />
       <recent name="$PROJECT_DIR$/docs/js" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/docs" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -137,7 +195,27 @@
       <workItem from="1610895787844" duration="216000" />
       <workItem from="1612887577866" duration="4252000" />
       <workItem from="1612979418580" duration="744000" />
-      <workItem from="1613221748050" duration="8987000" />
+      <workItem from="1613221748050" duration="11926000" />
+      <workItem from="1613287585456" duration="3178000" />
+      <workItem from="1613370080789" duration="4371000" />
+      <workItem from="1613592811278" duration="201000" />
+      <workItem from="1613649481768" duration="1924000" />
+      <workItem from="1613654205578" duration="14000" />
+      <workItem from="1613916407207" duration="75000" />
+      <workItem from="1613916598257" duration="1427000" />
+      <workItem from="1614506172441" duration="2123000" />
+      <workItem from="1621282755057" duration="319000" />
+      <workItem from="1622406060535" duration="136000" />
+      <workItem from="1622449406446" duration="992000" />
+      <workItem from="1622470240076" duration="2024000" />
+      <workItem from="1622484623605" duration="1924000" />
+      <workItem from="1622488713781" duration="7000" />
+      <workItem from="1622546634209" duration="7047000" />
+      <workItem from="1622572013599" duration="1268000" />
+      <workItem from="1622618844024" duration="48000" />
+      <workItem from="1622644047145" duration="1498000" />
+      <workItem from="1622664193528" duration="27000" />
+      <workItem from="1622792985747" duration="5921000" />
     </task>
     <task id="LOCAL-00001" summary="name update">
       <created>1573629883662</created>
@@ -328,24 +406,30 @@
       <option name="project" value="LOCAL" />
       <updated>1613226539095</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="forms update">
+      <created>1613236835146</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1613236835146</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="name update" />
@@ -364,7 +448,38 @@
     <MESSAGE value="golden theme&#10;textarea fix" />
     <MESSAGE value="input height bug fix" />
     <MESSAGE value="some updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="some updates" />
+    <MESSAGE value="forms update" />
+    <option name="LAST_COMMIT_MESSAGE" value="forms update" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="595" y="334" width="719" height="459" key="EditFileWatcherDialog" timestamp="1622485953799">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="595" y="334" width="719" height="459" key="EditFileWatcherDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1622485953799" />
+    <state width="1874" height="197" key="GridCell.Tab.0.bottom" timestamp="1622802877643">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="197" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1622802877643" />
+    <state width="1874" height="197" key="GridCell.Tab.0.center" timestamp="1622802877642">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="197" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1622802877642" />
+    <state width="1874" height="197" key="GridCell.Tab.0.left" timestamp="1622802877633">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="197" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1622802877633" />
+    <state width="1874" height="197" key="GridCell.Tab.0.right" timestamp="1622802877642">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="197" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1622802877642" />
+    <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1622485955641">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1622485955641" />
+    <state x="269" y="155" width="1372" height="803" key="new project wizard" timestamp="1622483362911">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="269" y="155" width="1372" height="803" key="new project wizard/0.27.1920.1053@0.27.1920.1053" timestamp="1622483362911" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

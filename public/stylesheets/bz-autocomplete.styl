@@ -3,9 +3,8 @@
   display: inline-block
   //@extend .bz-w-100p
 
-.bz-ac-box .bz-ac
-  border-top: 2px solid transparent
-  border-bottom: 2px solid color-gray-light
+.bz-ac
+  border: none
   line-height: normal
   min-height: calc(2.3em + 4px)
   position relative
@@ -16,18 +15,9 @@
   flex-wrap wrap
   user-select none
   vertical-align middle
-  width 300px
-  @extend .bz-w-100p
+  width auto
 
-.bz-ac-box .bz-ac label
-  top: -0.1em
-  font-size 0.6em
-  color color-navy
-  font-weight normal
-  position absolute
-  pointer-events none
-
-.bz-ac-box .bz-ac input
+.bz-ac input
   border none
   border-radius 0
   box-shadow none
@@ -48,36 +38,35 @@
   width auto
   transition(all 0.3s ease-out)
 
-.bz-ac-box .bz-ac .bz-input
+.bz-ac .bz-input
   margin 0
-  width inherit
 
 //.bz-ac-box .bz-ac .bz-input.chips input
 //  max-width: 100%;
 //  width: auto;
 
-.bz-ac-box .bz-ac .bar
-  left -2px
-  bottom -5px
-
-.bz-ac-box .bz-ac .bz-input.chips .bar
-  bottom -4px
-
-.bz-ac-box .bz-ac input:focus
-  border none
-  outline none
-
-.bz-ac-box .bz-ac input:focus ~ .bar,
-.bz-ac-box .bz-ac input.highlight ~ .bar
-  left 0
-  width 100%
+//.bz-ac .bar
+//  left -2px
+//  bottom -5px
+//
+//.bz-ac .bz-input.chips .bar
+//  bottom -4px
+//
+//.bz-ac input:focus
+//  border none
+//  outline none
+//
+//.bz-ac input:focus ~ .bar,
+//.bz-ac input.highlight ~ .bar
+//  left 0
+//  width 100%
 
 .bz-ac-box button
   position: absolute
   top: 0
   right: 0
 
-.bz-ac-box .bz-ac .bz-suggestions
+.bz-ac .bz-suggestions
   background: #fff
   list-style-type: none
   max-height: 250px
@@ -96,16 +85,16 @@
   @extend .bz-absolute
   @extend .bz-transition
 
-.bz-ac-box .bz-ac .bz-suggestions.hide
+.bz-ac .bz-suggestions.hide
   height: 0
   display: none
 
-.bz-ac-box .bz-ac .bz-suggestions li
+.bz-ac .bz-suggestions li
   @extend .bz-cursor-pointer
 
-.bz-ac-box .bz-ac .bz-suggestions li.highlight,
-.bz-ac-box .bz-ac .bz-suggestions li:hover
+.bz-ac .bz-suggestions li.highlight,
+.bz-ac .bz-suggestions li:hover
   background: #f6f7f8
 
-.bz-ac-box .bz-ac .bz-chip
+.bz-ac .bz-chip
   margin-top: calc(.7em - 2px)
