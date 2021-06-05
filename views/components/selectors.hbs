@@ -62,7 +62,7 @@
                 <input id="radio12" type="radio" name="radioss" class="bz-radio" checked/>
                 <input type="checkbox" class="bz-switch" checked>
             </div>
-            <div class="bz-padding-16 bz-clearfix">
+            <div class="bz-padding-16 bz-clearfix bz-relative">
                 <h5>Range Selector</h5>
                 <div class="bz-padding-8">
                     <!-- start // markup for the element without injector  -->
@@ -77,27 +77,30 @@
                     <!-- end // -->
                 </div>
             </div>
-            <div class="bz-padding-16 bz-clearfix">
+            <div class="bz-padding-16 bz-clearfix bz-relative">
                 <h5>Select</h5>
                 <p>Select (injected)</p>
+                <input type="text" class="bz-input" placeholder="Name" required>
                 <select id="injSelect" class="bz-droplist" data-name="Multiple select" multiple="true" data-noselect="Select..." data-search="true">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
+                    <option value="volvo">Volvo cars</option>
+                    <option value="saab">Saab cars</option>
+                    <option value="opel">Opel cars</option>
                     <option value="audi">Audi</option>
                     <option value="audi">Cadillac</option>
                     <option value="audi">Dodge</option>
                     <option value="audi">Ford</option>
                 </select>
+                <input type="button" value="Set" class="bz-btn">
             </div>
-            <div class="bz-padding-16 bz-clearfix" style="height:500px;">
+            <div class="bz-padding-16 bz-clearfix bz-relative" style="height:500px;">
                 <h5>Drop Down List</h5>
                 <p>Dropdown list with multiple selection</p>
                 <form>
+                    <input type="text" class="bz-input" placeholder="Name" required>
                     <div  class="bz-droplist" multiple="true" data-search="true">
                         <input type="hidden" id="droplist01" data-noselect="Select...">
                         <div class="bz-trigg">
-                            <span class="text">Multiple select</span>
+                            <div class="text">Multiple select</div>
                             <i class="bz-flag"></i>
                         </div>
                         <div class="bz-ddl">
@@ -127,11 +130,13 @@
                             </div>
                         </div>
                     </div>
+                    <input type="button" value="Set" class="bz-btn">
                     <p>Dropdown list with single selection and search bar</p>
+                    <input type="text" class="bz-input" placeholder="Name" required>
                     <div class="bz-droplist" data-search="true">
                         <input type="hidden" id="droplist02" data-noselect="Select doc" data-title="Doc">
                         <div class="bz-trigg">
-                            <span class="text">Select...</span>
+                            <div class="text">Select...</div>
                             <i class="bz-flag"></i>
                         </div>
                         <div class="bz-ddl">
@@ -161,6 +166,7 @@
                             </div>
                         </div>
                     </div>
+                    <input type="button" value="Set" class="bz-btn">
                 </form>
             </div>
         </div>

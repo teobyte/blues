@@ -25,6 +25,7 @@
             var $trig = $ddlWrap.find('.bz-trigg'),
                 $inpt = $trig.prev('input'),
                 $chks = $ddlWrap.find('[type="checkbox"]'),
+                $ddl = $ddlWrap.find('.bz-ddl'),
                 $itms = $ddlWrap.find('.bz-ddl-item');
             var dVal = $inpt.ondata('val') || '';
             var displayVal = $inpt.val() ? $inpt.val() : dVal;
@@ -34,7 +35,7 @@
             else $trig.find('.text').inhtml(prop_title + displayVal);
             $trig.on('click', function() {
                 var $th = bzDom(this),
-                    _$ddl = $th.parent().find('.bz-ddl');
+                    _$ddl = $th.parent('.bz-droplist').find('.bz-ddl');
                 if (_$ddl.ondata('key') == '1') Dl.closeDdl(_$ddl);
                 else Dl.openDdl(_$ddl);
             });
@@ -50,7 +51,7 @@
             });
             $itms.each(function(i, item) {
                 var itm = bzDom(item);
-                itm.on('click', function(e) {
+                itm.on('click', function() {
                     var $self = bzDom(this),
                         $chk = $self.find('input');
                     if ($chk.el.checked == false || $chk.onattr('checked') != 'checked') {
@@ -139,18 +140,18 @@
                 ddl.ondata('key', '1');
                 ddl.toggleclass('bz-on');
             }, 300);
-            ddl.on('mouseenter', function(e) {
-                var $self = bzDom(this);
-                $self.on('mouseleave', function() {
-                    $self.ondata('hold', '0');
-                    if ($self.ondata('key') == '1') {
-                        setTimeout(function() {
-                            if ($self.ondata('key') == '1')
-                                Dl.closeDdl($self);
-                        }, 1500)
-                    }
-                });
-            });
+            // ddl.on('mouseenter', function(e) {
+            //     var $self = bzDom(this);
+            //     $self.on('mouseleave', function() {
+            //         $self.ondata('hold', '0');
+            //         if ($self.ondata('key') == '1') {
+            //             setTimeout(function() {
+            //                 if ($self.ondata('key') == '1')
+            //                     Dl.closeDdl($self);
+            //             }, 1500)
+            //         }
+            //     });
+            // });
             //$flag.toggleclass('bz-rotate180');
         },
         checkBox: function (chk) {

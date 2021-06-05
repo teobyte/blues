@@ -2904,7 +2904,7 @@ textarea:not(:-webkit-autofill) {
 }
 .bz-input {
   background: #fff;
-  border: 2px solid transparent;
+  border: none;
   display: inline-block;
   font-size: 1em;
   line-height: normal;
@@ -2929,7 +2929,7 @@ textarea:not(:-webkit-autofill) {
   background: #fff;
   height: calc(2.3em + 2px);
   min-width: 70px !important;
-  width: 100%;
+  width: calc(100% - 5px);
 }
 .bz-input:before,
 .bz-btn:before {
@@ -3026,22 +3026,32 @@ textarea:not(:-webkit-autofill) {
   overflow: hidden;
   text-align: center;
   line-height: 1.5em;
+  position: absolute;
   width: 1.5em;
 }
 .bz-input i + input {
-  width: calc(100% - 2.3em);
+  margin-left: 2.3em;
+  width: calc(100% - 2.6em);
 }
 .bz-input i.right {
-  float: right;
+  right: 0;
 }
 .bz-input i.bz-tool {
   cursor: pointer;
-  float: right;
+  right: 0;
 }
 .bz-input i.bz-tool.left {
-  float: left;
+  left: 0;
 }
-.bz-input i + i ~ input {
+.bz-input i.bz-tool + input {
+  margin-left: 0;
+}
+.bz-input i.right ~ input {
+  margin-left: 0;
+}
+.bz-input i + i.bz-tool ~ input,
+.bz-input i.bz-tool.left ~ input {
+  margin-left: 2.3em;
   width: calc(100% - 4.6em);
 }
 .bz-input label {
@@ -3056,20 +3066,15 @@ textarea:not(:-webkit-autofill) {
   -ms-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
-.bz-input input ~ label {
-  left: 0.5em;
-}
-.bz-input i + input ~ label {
-  left: 3em;
-}
-.bz-input i.bz-tool + input ~ label {
-  left: 0.5em;
-}
-.bz-input i.bz-tool.left + input ~ label {
-  left: 3em;
-}
+.bz-input input ~ label,
+.bz-input i.bz-tool + input ~ label,
 .bz-input i.right + input ~ label {
   left: 0.5em;
+}
+.bz-input i + input ~ label,
+.bz-input i.bz-tool.left + input ~ label,
+.bz-input i + i.bz-tool + input ~ label {
+  left: 3em;
 }
 .bz-input i.right ~ i.bz-tool {
   float: left;
@@ -3078,14 +3083,11 @@ textarea:not(:-webkit-autofill) {
 .bz-input i.right + input[disabled] ~ label,
 .bz-input input[readonly] ~ label,
 .bz-input input[disabled] ~ label {
-  left: 0;
+  left: 2.3em;
 }
 .bz-input i + input[readonly] ~ label,
 .bz-input i + input[disabled] ~ label {
   left: 3.8em;
-}
-.bz-input i + i.bz-tool + input ~ label {
-  left: 3em;
 }
 .bz-input input:focus ~ label,
 .bz-input input:valid ~ label,
@@ -3194,7 +3196,10 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
   width: 100%;
 }
 .bz-input i.right + input:focus ~ .bar,
-.bz-input i.right + input.highlight ~ .bar,
+.bz-input i.right + input.highlight ~ .bar {
+  left: 0;
+  width: calc(100% - 2.3em);
+}
 .bz-input i.bz-tool + input:focus ~ .bar,
 .bz-input i.bz-tool + input.highlight ~ .bar {
   left: 0;
@@ -3231,6 +3236,9 @@ bz-input textarea:not(.placeholder):-ms-input-placeholder {
   left: 2.5em;
 }
 .bz-input i.right + input ~ .flash {
+  left: 0;
+}
+.bz-input i.right ~ .bz-tool {
   left: 0;
 }
 .bz-input input:focus ~ .flash {
@@ -4031,8 +4039,7 @@ input.bz-editable:focus ~ label {
   border: 2px solid transparent;
 }
 .bz-btn {
-  height: calc(2.3em + 4px);
-  padding: 0.52em;
+  padding: 0.2em 0.52em;
   vertical-align: middle;
 }
 .bz-btn::-moz-focus-inner {
@@ -5483,7 +5490,7 @@ input[type="color"]::-webkit-color-swatch {
   display: inline-block;
   margin: 8px 0;
   position: relative;
-  min-width: 100px;
+  min-width: 200px;
 }
 .bz-select:focus {
   border: none;
@@ -5491,16 +5498,12 @@ input[type="color"]::-webkit-color-swatch {
 }
 .bz-select,
 .bz-droplist .bz-trigg {
-  height: calc(2.3em + 4px);
   background: #d6d5d5;
   box-sizing: border-box;
-  padding: 0.52em;
   transition: all 0.3s ease-in;
-  border: 2px solid transparent;
   cursor: pointer;
   display: inline-block;
   font-family: inherit;
-  font-size: 1.3em;
   line-height: normal;
   margin: 0;
   overflow: hidden;
@@ -5513,6 +5516,9 @@ input[type="color"]::-webkit-color-swatch {
   -webkit-user-drag: none;
   width: 100%;
 }
+.bz-droplist .bz-trigg .text {
+  padding: 0.52em;
+}
 .bz-droplist .bz-ddl {
   font-size: 0.8em;
   max-height: 200px;
@@ -5521,12 +5527,12 @@ input[type="color"]::-webkit-color-swatch {
   background: #fff;
   opacity: 0;
   position: absolute;
-  top: 4em;
-  width: 100%;
-  -webkit-transform: scale(0.25);
-  -moz-transform: scale(0.25);
-  -o-transform: scale(0.25);
-  transform: scale(0.25);
+  left: 0;
+  top: 0;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
   -webkit-transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-animation: none !important;

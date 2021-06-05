@@ -16,7 +16,7 @@ if (typeof require === 'function') {
                 var $self = bzDom(this);
                 var sep = $self.ondata('counter');
                 var val = $self.onattr('maxlength');
-                var $cntr = $self.parent().find('.counter');
+                var $cntr = $self.parent('.bz-input').find('.counter');
                 $cntr.inhtml($self.val().length + sep + val);
             })
         },
@@ -276,7 +276,7 @@ if (typeof require === 'function') {
                 if (ddl.ondata('search'))
                     $ddl.ondata('search', ddl.ondata('search'));
                 var $trig = bzDom('<div class="bz-trigg">');
-                var $txt = bzDom('<span class="text">');
+                var $txt = bzDom('<div class="text">');
                 var $flag = bzDom('<i class="bz-flag">');
                 if (ddl.ondata('name'))
                     $inpt.ondata('name', ddl.ondata('name'));

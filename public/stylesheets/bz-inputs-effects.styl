@@ -32,6 +32,9 @@
 
 .bz-input i.right + input:focus ~ .bar,
 .bz-input i.right + input.highlight ~ .bar
+  left 0
+  width: calc(100% - 2.3em)
+
 .bz-input i.bz-tool + input:focus ~ .bar,
 .bz-input i.bz-tool + input.highlight ~ .bar
   left 0
@@ -70,6 +73,9 @@
   left 2.5em
 
 .bz-input i.right + input ~ .flash
+  left 0
+
+.bz-input i.right ~ .bz-tool
   left 0
 
 .bz-input input:focus ~ .flash

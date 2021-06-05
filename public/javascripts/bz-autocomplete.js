@@ -1,5 +1,5 @@
 /**
-* Blues Autocomplete by Aiwee 2016-2018 v.2.0.0
+* Blues Autocomplete by Teobyte 2016-2021 v.2.0.0
 * Modes: - autocomplete (standard mode name = "ac")
 *        - dropdown list with search
 *        ///////// set attribute data-ddlmode="true" for the Autocomplete's <input>

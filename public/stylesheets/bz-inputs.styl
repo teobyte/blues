@@ -23,7 +23,7 @@ textarea
 .bz-input
   @extend .bz-clearfix
   background color-white
-  border 2px solid transparent
+  border none
   display inline-block
   font-size: 1em
   line-height: normal
@@ -46,7 +46,7 @@ textarea
     background: color-white
     height:  calc(2.3em + 2px)
     min-width: 70px!important
-    width: 100%
+    width: calc(100% - 5px)
 
 .bz-input:before
   content: ""
@@ -133,18 +133,29 @@ for inpt in skipemail
   overflow hidden
   text-align center
   line-height: 1.5em
+  position absolute
   width: 1.5em
   + input
-    width: calc(100% - 2.3em)
+    margin-left 2.3em
+    width calc(100% - 2.6em)
   &.right
-    float right
+    right 0
   &.bz-tool
     cursor pointer
-    float right
+    right 0
     &.left
-      float left
+      left 0
 
-.bz-input i + i ~ input
+.bz-input i.bz-tool
+  + input
+    margin-left 0
+
+.bz-input i.right ~ input
+    margin-left 0
+
+.bz-input i + i.bz-tool ~ input,
+.bz-input i.bz-tool.left ~ input
+  margin-left 2.3em
   width calc(100% - 4.6em)
 
 @import bz-inputs-label
