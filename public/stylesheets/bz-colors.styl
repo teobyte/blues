@@ -1,13 +1,75 @@
 /* Blues Color Palette  */
+color-brightness(prefix, name, color-code, attr, steps-lighter, steps-darker)
+  tot = steps-lighter + 1 + steps-darker
+  for i in (steps-lighter..0)
+    ind = steps-lighter - i
+    {prefix}-{name}-{ind},
+    {prefix}-{name}-{ind}-hover:hover
+      {attr} color-code + i*18%
+
+  {prefix}-{name}-{steps-lighter + 1},
+  {prefix}-{name},
+  {prefix}-{name}-{steps-lighter + 1}-hover:hover,
+  {prefix}-{name}-hover:hover
+    {attr} color-code
+
+  srkSt = steps-lighter + 2
+  for j in (srkSt..tot)
+    drkStp = j - steps-lighter - 1
+    {prefix}-{name}-{j},
+    {prefix}-{name}-{j}-hover:hover
+      {attr} color-code - drkStp*10%
+
+/* Color Themes */
+colors-palette = {
+  red: {
+    fill: color-gray,
+    text: #DC2626
+  },
+  gray: {
+    fill: color-navy,
+    text: #9CA3AF
+  },
+  yellow: {
+    fill: color-blue,
+    text: #FBBF24
+  },
+  green: {
+    fill: color-green,
+    text: #059669
+  },
+  blue: {
+    fill: color-red,
+    text: #2563EB
+  },
+  indigo: {
+    fill: color-orange,
+    text: #4F46E5
+  },
+  purple: {
+    fill: color-yellow,
+    text: #7C3AED
+  },
+  pink: {
+    fill: color-aqua,
+    text: #EC4899
+  }
+}
+
+for c in colors-palette
+  color-brightness('.bz-fc', c, colors-palette[c].text, color, 5, 4)
+  color-brightness('.bz-bc', c, colors-palette[c].text, background, 5, 4)
+
+
 /* Font Colors */
 for t in themes
   .bz-fc-{t},
   .bz-fc-hover-{t}:hover
     color: themes[t].fill
 
-for cp in color_pairs
-  .bz-fc-{cp[0]}
-    @extends .bz-fc-{cp[1]}
+//for cp in color_pairs
+//  .bz-fc-{cp[0]}
+//    @extends .bz-fc-{cp[1]}
 
 /* Background Colors */
 for t in themes
@@ -15,6 +77,7 @@ for t in themes
   .bz-bc-hover-{t}:hover
     background: themes[t].fill
 
-for cp in color_pairs
-  .bz-bc-{cp[0]}
-    @extends .bz-bc-{cp[1]}
+//for cp in color_pairs
+//  .bz-bc-{cp[0]}
+//    @extends .bz-bc-{cp[1]}
+

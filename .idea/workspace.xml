@@ -3,18 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="1f49e47b-0aa6-46ac-bd17-918a746803fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/bz-autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bz-autocomplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/bz-droplist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bz-droplist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/bz-inject.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/bz-inject.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-autocomplete.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-autocomplete.styl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-buttons.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-buttons.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-badge.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-blocks.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-colors.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-colors.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-colors.styl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-core.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-core.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-dropdown.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-dropdown.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-dropdown.styl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-inputs-effects.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-inputs-effects.styl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-inputs-label.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-inputs-label.styl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-inputs.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-inputs.styl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/inputs.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/components/inputs.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/components/selectors.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/components/selectors.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-flex.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-grouping.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-inputs-effects.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-list.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-mixins.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-mixins.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-modal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-toolbar.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-toolbar.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/bz-vars.styl" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/bz-vars.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/sitevars.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/sitevars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/components/colors.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/components/colors.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +164,13 @@
       <workItem from="1622644047145" duration="1498000" />
       <workItem from="1622664193528" duration="27000" />
       <workItem from="1622792985747" duration="14373000" />
-      <workItem from="1622878439386" duration="19101000" />
+      <workItem from="1622878439386" duration="21023000" />
+      <workItem from="1622964426168" duration="16028000" />
+      <workItem from="1623057928982" duration="599000" />
+      <workItem from="1623074100300" duration="6000" />
+      <workItem from="1623086578640" duration="2116000" />
+      <workItem from="1623134268107" duration="63000" />
+      <workItem from="1623134344829" duration="26000" />
     </task>
     <task id="LOCAL-00001" summary="name update">
       <created>1573629883662</created>
@@ -364,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622808990019</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="autocomplete updates">
+      <created>1622917542687</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1622917542687</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,38 +421,38 @@
     <option name="LAST_COMMIT_MESSAGE" value="autocomplete updates" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="101" width="912" height="911" key="CommitChangelistDialog2" timestamp="1622808989768">
+    <state x="499" y="101" width="912" height="911" key="CommitChangelistDialog2" timestamp="1622917542511">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="499" y="101" width="912" height="911" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1622808989768" />
+    <state x="499" y="101" width="912" height="911" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1622917542511" />
     <state x="595" y="334" width="719" height="459" key="EditFileWatcherDialog" timestamp="1622485953799">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="595" y="334" width="719" height="459" key="EditFileWatcherDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1622485953799" />
-    <state width="1874" height="197" key="GridCell.Tab.0.bottom" timestamp="1622879498123">
+    <state width="1874" height="197" key="GridCell.Tab.0.bottom" timestamp="1623109284691">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="197" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1622879498123" />
-    <state width="1874" height="197" key="GridCell.Tab.0.center" timestamp="1622879498123">
+    <state width="1874" height="197" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1623109284691" />
+    <state width="1874" height="197" key="GridCell.Tab.0.center" timestamp="1623109284690">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="197" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1622879498123" />
-    <state width="1874" height="197" key="GridCell.Tab.0.left" timestamp="1622879498122">
+    <state width="1874" height="197" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1623109284690" />
+    <state width="1874" height="197" key="GridCell.Tab.0.left" timestamp="1623109284690">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="197" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1622879498122" />
-    <state width="1874" height="197" key="GridCell.Tab.0.right" timestamp="1622879498123">
+    <state width="1874" height="197" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1623109284690" />
+    <state width="1874" height="197" key="GridCell.Tab.0.right" timestamp="1623109284691">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="197" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1622879498123" />
+    <state width="1874" height="197" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1623109284691" />
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1622809526931">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1622809526931" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1622808991197">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1622917544402">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1622808991197" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1622917544402" />
     <state x="100" y="127" width="1720" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1622904418084">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

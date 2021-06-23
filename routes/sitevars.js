@@ -22,7 +22,17 @@ module.exports.pages = {
     colors: {
         itemClass: 'bz-list-item bz-t-concat',
         pageTitle: 'Colors',
-        pagePath: '../components/colors'
+        pagePath: '../components/colors',
+        colorsPalette : [
+            { name: 'red' },
+            { name: 'gray' },
+            { name: 'yellow' },
+            { name: 'green' },
+            { name: 'blue' },
+            { name: 'indigo' },
+            { name: 'purple' },
+            { name: 'pink' }
+        ]
     },
     typography: {
         itemClass: 'bz-list-item bz-t-concat',
